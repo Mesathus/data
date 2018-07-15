@@ -1,0 +1,17 @@
+sets.exported={
+    main="Aeneas",
+    sub="Twashtar",
+    ammo="Pemphredo Tathlum",
+    head={ name="Herculean Helm", augments={'"Mag.Atk.Bns."+24','"Fast Cast"+6','STR+7','Mag. Acc.+14',}},
+    body={ name="Samnuha Coat", augments={'Mag. Acc.+14','"Mag.Atk.Bns."+13','"Fast Cast"+4','"Dual Wield"+3',}},
+    hands={ name="Herculean Gloves", augments={'"Mag.Atk.Bns."+26','DEX+5','Mag. Acc.+10 "Mag.Atk.Bns."+10',}},
+    legs={ name="Herculean Trousers", augments={'"Mag.Atk.Bns."+24','Weapon skill damage +3%','INT+4','Mag. Acc.+1',}},
+    feet={ name="Adhemar Gamashes", augments={'AGI+10','Rng.Acc.+15','Rng.Atk.+15',}},
+    neck="Sanctity Necklace",
+    waist="Eschan Stone",
+    left_ear="Friomisi Earring",
+    right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +25',}},
+    left_ring="Ilabrat Ring",
+    right_ring="Shiva Ring +1",
+    back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}},
+}

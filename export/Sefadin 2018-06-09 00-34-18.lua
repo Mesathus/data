@@ -1,0 +1,17 @@
+sets.exported={
+    main="Ragnarok",
+    sub="Utu Grip",
+    ammo="Yetshila",
+    head="Flam. Zucchetto +2",
+    body="Flamma Korazin +2",
+    hands="Flam. Manopolas +2",
+    legs="Sulev. Cuisses +2",
+    feet="Flam. Gambieras +2",
+    neck="Lissome Necklace",
+    waist="Sailfi Belt +1",
+    left_ear="Brutal Earring",
+    right_ear="Cessance Earring",
+    left_ring="Rajas Ring",
+    right_ring="Petrov Ring",
+    back={ name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}},
+}

@@ -1,0 +1,44 @@
+function check_ammo(spell, action, spellMap, eventArgs)
+	-- Filter ammo checks depending on Unlimited Shot
+	if state.Buff['Unlimited Shot'] then
+		if player.equipment.ammo ~= U_Shot_Ammo[player.equipment.range] then
+			if player.inventory[U_Shot_Ammo[player.equipment.range]] or player.wardrobe[U_Shot_Ammo[player.equipment.range]] then
+				add_to_chat(122,"Unlimited Shot active. Using custom ammo.")
+				equip({ammo=U_Shot_Ammo[player.equipment.range]})
+			elseif player.inventory[DefaultAmmo[player.equipment.range]] or player.wardrobe[DefaultAmmo[player.equipment.range]] then
+				add_to_chat(122,"Unlimited Shot active but no custom ammo available. Using default ammo.")
+				equip({ammo=DefaultAmmo[player.equipment.range]})
+			else
+				add_to_chat(122,"Unlimited Shot active but unable to find any custom or default ammo.")
+			end
+		end
+	else
+		if player.equipment.ammo == U_Shot_Ammo[player.equipment.range] and player.equipment.ammo ~= DefaultAmmo[player.equipment.range] then
+			if DefaultAmmo[player.equipment.range] then
+				if player.inventory[DefaultAmmo[player.equipment.range]] then
+					add_to_chat(122,"Unlimited Shot not active. Using Default Ammo")
+					equip({ammo=DefaultAmmo[player.equipment.range]})
+				else
+					add_to_chat(122,"Default ammo unavailable.  Removing Unlimited Shot ammo.")
+					equip({ammo=empty})
+				end
+			else
+				add_to_chat(122,"Unable to determine default ammo for current weapon.  Removing Unlimited Shot ammo.")
+				equip({ammo=empty})
+			end
+		elseif player.equipment.ammo == 'empty' then
+			if DefaultAmmo[player.equipment.range] then
+				if player.inventory[DefaultAmmo[player.equipment.range]] then
+					add_to_chat(122,"Using Default Ammo")
+					equip({ammo=DefaultAmmo[player.equipment.range]})
+				else
+					add_to_chat(122,"Default ammo unavailable.  Leaving empty.")
+				end
+			else
+				add_to_chat(122,"Unable to determine default ammo for current weapon.  Leaving empty.")
+			end
+		elseif player.inventory[player.equipment.ammo].count < 15 then
+			add_to_chat(122,"Ammo '"..player.inventory[player.equipment.ammo].shortname.."' running low ("..player.inventory[player.equipment.ammo].count..")")
+		end
+	end
+end

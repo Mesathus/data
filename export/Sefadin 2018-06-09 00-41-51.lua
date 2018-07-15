@@ -1,0 +1,17 @@
+sets.exported={
+    main="Ragnarok",
+    sub="Utu Grip",
+    ammo="Seeth. Bomblet +1",
+    head="Sulevia's Mask +1",
+    body="Sulevia's Plate. +1",
+    hands="Sulev. Gauntlets +1",
+    legs="Sulev. Cuisses +2",
+    feet="Hermes' Sandals",
+    neck="Loricate Torque +1",
+    waist="Kentarch Belt +1",
+    left_ear="Etiolation Earring",
+    right_ear="Infused Earring",
+    left_ring="Defending Ring",
+    right_ring="Fortified Ring",
+    back="Moonbeam Cape",
+}
