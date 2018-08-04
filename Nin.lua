@@ -199,10 +199,10 @@ function init_gear_sets()
     sets.engaged = {
     head={ name="Adhemar Bonnet", augments={'STR+10','DEX+10','Attack+15',}},
     body={ name="Adhemar Jacket", augments={'STR+10','DEX+10','Attack+15',}},
-    hands={ name="Adhemar Wristbands", augments={'DEX+10','AGI+10','Accuracy+15',}},
+    hands={ name="Adhemar Wristbands +1"},
     legs={ name="Samnuha Tights", augments={'STR+10','DEX+10','"Dbl.Atk."+3','"Triple Atk."+3',}},
     feet={ name="Herculean Boots", augments={'Accuracy+28','"Triple Atk."+4',}},
-    neck="Yarak Torque",
+    neck="Lissome necklace",
     waist="Kentarch Belt +1",
     left_ear="Brutal Earring",
     right_ear="Cessance Earring",
