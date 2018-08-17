@@ -283,6 +283,7 @@ end
 -- Set eventArgs.handled to true if we don't want automatic equipping of gear.
 function job_update(cmdParams, eventArgs)
   update_pet_mode()
+  engage_pet(eventArgs)
 end
 
 
@@ -346,6 +347,14 @@ function display_pet_status()
 
     add_to_chat(122,petInfoString)
   end
+end
+
+function engage_pet(eventArgs)
+	if player.status == 'Engaged' then
+		if pet.isvalid then
+			send_command('input /pet Deploy <t>')
+		end
+	end
 end
 
 -- Select default macro book on initial load or subjob change.
