@@ -360,6 +360,7 @@ function engage_pet(eventArgs)
 		end
 	end
 end
+end
 
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
