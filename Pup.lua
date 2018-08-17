@@ -354,6 +354,10 @@ function engage_pet(eventArgs)
 		if pet.isvalid then
 			send_command('input /pet Deploy <t>')
 		end
+	else if player.status == 'Idle' then
+		if pet.isvalid then
+			send_command('input /pet Retrieve <me>')
+		end
 	end
 end
 
