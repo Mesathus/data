@@ -271,10 +271,7 @@ function init_gear_sets()
         body="Respite cloak",hands="Bagua mitaines",ring1="Sheltered Ring",ring2="Paguroidea Ring",
         back="Umbra Cape",waist="Fucho-no-obi",legs="Assiduity pants +1",feet="Geomancy sandals"}
  
-    sets.idle.Weak = {main="Bolelabunga",sub="Genmei Shield",Range="Dunna",
-        head=empty,neck="Wiglen Gorget",ear1="Sanare earring",ear2="ethereal earring",
-        body="Respite cloak",hands="Bagua mitaines",ring1="Sheltered Ring",ring2="Paguroidea Ring",
-        back="Umbra Cape",waist="Fucho-no-obi",legs="Assiduity pants +1",feet="Geomancy sandals"}
+    sets.idle.Weak = set_combine(sets.idle,{})
  
     -- Defense sets
  

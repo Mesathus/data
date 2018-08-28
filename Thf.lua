@@ -142,7 +142,7 @@ function init_gear_sets()
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {ammo="Falcon eye",
         head="Pillager's Bonnet +3",neck="Fotia Gorget",ear1="Ishvara Earring",ear2="Moonshade Earring",
-        body="Herculean vest",hands="Meghanada gloves +2",ring1="Ilabrat Ring",ring2="Ramuh Ring +1",
+        body="Herculean vest",hands="Meghanada gloves +2",ring1="Ilabrat Ring",ring2="Regal Ring",
         back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}},waist="Fotia Belt",legs="Plunderer's culottes +3",feet="Lustratio leggings +1"}
     sets.precast.WS.Acc = set_combine(sets.precast.WS, {ammo="Honed Tathlum"})
 
@@ -201,7 +201,7 @@ function init_gear_sets()
     waist="Eschan Stone",
     left_ear="Friomisi Earring",
     right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +25',}},
-    left_ring="Ilabrat Ring",
+    left_ring="Dingir Ring",
     right_ring="Shiva Ring +1",
     back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}}}
 	
@@ -290,7 +290,7 @@ function init_gear_sets()
     sets.defense.PDT = {
         head="Meghanada Visor +2",neck="Loricate torque +1",
         body="Meghanada cuirie +2",hands="Meghanada gloves +2",ring1="Defending Ring",ring2="Patricius Ring",
-        back="Moonbeam Cape",waist="Sailfi belt +1",legs="Meghanada Chausses +2",feet={name="Herculean boots", augments={'Accuracy+24 Attack+24','Damage taken-2%','STR+7','Accuracy+11','Attack+15',}}}
+        back="Moonbeam Cape",waist="Sailfi belt +1",legs="Meghanada Chausses +2",feet="Ahosi leggings"}
 
     sets.defense.MDT = {
         neck="Loricate torque +1",
@@ -309,7 +309,7 @@ function init_gear_sets()
         back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10',}},waist="Patentia Sash",legs="Samnuha tights",feet={name="Taeon boots",augments={'Accuracy+20 Attack+20','"Dual Wield"+4','Crit. hit damage +2%'}}}
     sets.engaged.Acc = {ammo="Yamarang",
         head="Pillager's Bonnet +3",neck="Combatant's torque",ear1="Dignitary's Earring",ear2="Zennaroi earring",
-        body="Pillager's vest +3",hands="Adhemar Wristbands +1",ring1="Rajas Ring",ring2="Ramuh Ring +1",
+        body="Pillager's vest +3",hands="Adhemar Wristbands +1",ring1="Regal Ring",ring2="Ramuh Ring +1",
         back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10',}},waist="Olseni belt",legs="Pillager's Culottes +3",feet={name="Herculean boots", augments={'Accuracy+24 Attack+24','Damage taken-2%','STR+7','Accuracy+11','Attack+15',}}}
         
     -- Mod set for trivial mobs (Skadi+1)
@@ -329,8 +329,9 @@ function init_gear_sets()
         back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10',}},waist="Chiner's Belt +1",legs="Samnuha tights",feet="Plunderer's Poulaines +3"}
 
     -- Mod set for trivial mobs (Thaumas)
-    sets.engaged.TAcc = set_combine(sets.engaged.TA, {ammo="Mantoptera eye",
+    sets.engaged.TAcc = set_combine(sets.engaged.TA, {ammo="Yamarang",
 		head="Pillager's Bonnet +3",neck="Combatant's torque", ear1="Dignitary's earring", ear2="Zennaroi earring",
+		ring1="Regal Ring",
 		waist="Kentarch belt +1", legs="Pillager's Culottes +3",feet="Plunderer's Poulaines +3"})
 
     -- Mod set for trivial mobs (CP)

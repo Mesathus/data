@@ -16,6 +16,7 @@ function job_setup()
 	state.Buff.Barrage = buffactive.Barrage or false
 	state.Buff.Camouflage = buffactive.Camouflage or false
 	state.Buff['Unlimited Shot'] = buffactive['Unlimited Shot'] or false
+	state.Buff['Double Shot'] = buffactive['Double Shot'] or false
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -102,7 +103,7 @@ function init_gear_sets()
     left_ear="Ishvara Earring",
     right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +25',}},
     left_ring="Shiva Ring +1",
-    right_ring="Apate Ring",
+    right_ring="Dingir Ring",
     back="Belenus's cape"}
 
 	sets.precast.WS['Wildfire'] = set_combine(sets.precast.WS['Trueflight'])
@@ -192,7 +193,8 @@ function init_gear_sets()
 	--------------------------------------
 
 	sets.buff.Barrage = set_combine(sets.midcast.RA.Acc, {hands="Orion Bracers +2"})
-	sets.buff.Camouflage = {body="Orion Jerkin +2"}
+	sets.buff.Camouflage = {body="Orion Jerkin +3"}
+	sets.buff['Double Shot'] = set_combine(sets.midcast.RA.Acc, {body = "Arcadian jerkin +3"})
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -222,6 +224,9 @@ end
 function job_midcast(spell, action, spellMap, eventArgs)
 	if spell.action_type == 'Ranged Attack' and state.Buff.Barrage then
 		equip(sets.buff.Barrage)
+		eventArgs.handled = true
+	elseif spell.action_type == 'Ranged Attack' and state.Buff['Double Shot'] then
+		equip(sets.buff['Double Shot'])
 		eventArgs.handled = true
 	end
 end
