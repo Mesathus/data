@@ -187,7 +187,7 @@ function init_gear_sets()
     hands={ name="Amalric Gages", augments={'INT+10','Mag. Acc.+15','"Mag.Atk.Bns."+15',}},
     legs={ name="Vanya Slops", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
     feet={ name="Merlinic Crackows", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Magic burst mdg.+7%','"Mag.Atk.Bns."+11',}},
-    neck="Loricate Torque", waist="Eschan Stone", left_ear="Barkaro. Earring", right_ear="Digni. Earring", left_ring="Defending Ring",
+    neck="Loricate Torque +1", waist="Eschan Stone", left_ear="Barkaro. Earring", right_ear="Digni. Earring", left_ring="Defending Ring",
     right_ring="Sangoma Ring",
     back={ name="Lifestream Cape", augments={'Geomancy Skill +10','Indi. eff. dur. +15','Pet: Damage taken -4%',}},
 }
@@ -199,7 +199,7 @@ function init_gear_sets()
     hands={ name="Amalric Gages", augments={'INT+10','Mag. Acc.+15','"Mag.Atk.Bns."+15',}},
     legs={ name="Vanya Slops", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
     feet={ name="Merlinic Crackows", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Magic burst mdg.+7%','"Mag.Atk.Bns."+11',}},
-    neck="Loricate Torque", waist="Eschan Stone", left_ear="Barkaro. Earring", right_ear="Digni. Earring",
+    neck="Loricate Torque +1", waist="Eschan Stone", left_ear="Barkaro. Earring", right_ear="Digni. Earring",
     left_ring="Defending Ring", right_ring="Sangoma Ring",
     back={ name="Lifestream Cape", augments={'Geomancy Skill +10','Indi. eff. dur. +15','Pet: Damage taken -4%',}},
 }
@@ -240,24 +240,24 @@ function init_gear_sets()
     -- Idle sets
  
     sets.idle = {main="Bolelabunga",sub="Genmei shield",Range="Dunna",
-        head="Befouled Crown",neck="Loricate Torque",ear1="Sanare earring",ear2="Ethereal earring",
-        body="Amalric doublet",hands="Bagua mitaines",ring1="Defending Ring",ring2="Paguroidea Ring",
+        head="Befouled Crown",neck="Loricate Torque +1",ear1="Sanare earring",ear2="Ethereal earring",
+        body="Jhakri robe +2",hands="Bagua mitaines",ring1="Defending Ring",ring2="Paguroidea Ring",
         back="Umbra Cape",waist="Fucho-no-obi",legs="Assiduity pants +1",feet="Geomancy sandals"}
  
     sets.idle.PDT = {main="Mafic cudgel",sub="Genmei shield",Range="Dunna",
-        head="Azimuth Hood +1",neck="Loricate Torque",ear1="Sanare earring",ear2="ethereal earring",
-        body="Amalric doublet",hands="Geomancy mitaines +1",ring1="Defending ring",ring2="Patricius Ring",
+        head="Azimuth Hood +1",neck="Loricate Torque +1",ear1="Sanare earring",ear2="ethereal earring",
+        body="Jhakri robe +2",hands="Geomancy mitaines +1",ring1="Defending ring",ring2="Patricius Ring",
         back="Umbra Cape",waist="Fucho-no-obi",legs="Vanya slops",feet="Azimuth gaiters +1"}
  
     -- .Pet sets are for when Luopan is present.
     sets.idle.Pet = {main="Solstice",sub="Genmei shield",Range="Dunna",
-        head="Azimuth Hood +1",neck="Loricate Torque",ear1="Sanare earring",ear2="Handler's earring +1",
-        body="Amalric doublet",hands="Geomancy mitaines +1",ring1="Defending Ring",ring2="Patricius Ring",
+        head="Azimuth Hood +1",neck="Loricate Torque +1",ear1="Sanare earring",ear2="Handler's earring +1",
+        body="Jhakri robe +2",hands="Geomancy mitaines +1",ring1="Defending Ring",ring2="Patricius Ring",
         back="Lifestream Cape",waist="Fucho-no-obi",legs="Vanya slops",feet="Geomancy sandals"}
  
     sets.idle.PDT.Pet = {main="Solstice",sub="Genmei shield",Range="Dunna",
-        head="Azimuth Hood +1",neck="Loricate Torque",ear1="Sanare earring",ear2="ethereal earring",
-        body="Respite cloak",hands="Geomancy mitaines +1",ring1="Defending ring",ring2="Dark Ring",
+        head="Azimuth Hood +1",neck="Loricate Torque +1",ear1="Sanare earring",ear2="ethereal earring",
+        body="Jhakri robe +2",hands="Geomancy mitaines +1",ring1="Defending ring",ring2="Dark Ring",
         back="Umbra Cape",waist="Fucho-no-obi",legs="Vanya slops",feet="Azimuth gaiters +1"}
  
     -- .Indi sets are for when an Indi-spell is active.
@@ -276,12 +276,12 @@ function init_gear_sets()
     -- Defense sets
  
     sets.defense.PDT = {main="Mafic cudgel",sub="Genmei shield",Range="Dunna",
-        head=empty,neck="Loricate Torque",ear1="Sanare earring",ear2="ethereal earring",
+        head=empty,neck="Loricate Torque +1",ear1="Sanare earring",ear2="ethereal earring",
         body="Respite cloak",hands="Hagondes cuffs +1",ring1="Defending Ring",ring2="Dark Ring",
         back="Umbra Cape",waist="Fucho-no-obi",legs="Assiduity pants +1",feet="Azimuth gaiters +1"}
  
     sets.defense.MDT = {main="Terra's staff",sub="Oneiros grip",Range="Dunna",
-        head="Azimuth hood",neck="Loricate Torque",ear1="Sanare earring",ear2="Etiolation earring",
+        head="Azimuth hood",neck="Loricate Torque +1",ear1="Sanare earring",ear2="Etiolation earring",
         body="Amalric doublet",hands="Geomancy mitaines +1",ring1="Defending Ring",ring2="Fortified Ring",
         back="Solemnity Cape",waist="Fucho-no-obi",legs="Assiduity pants +1",feet="Azimuth gaiters +1"}
  

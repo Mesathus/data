@@ -117,7 +117,7 @@ function init_gear_sets()
 	--------------------------------------
 
     sets.idle = {ammo='Inlamvuyeso',
-            head="Ocelomeh Headpiece +1", neck="Bathy choker", ear1="Ethereal earring", ear2="Moonshade earring",
+            head="Turms cap", neck="Bathy choker", ear1="Ethereal earring", ear2="Moonshade earring",
             body="Mekosu. Harness", hands="Umuthi Gloves", ring1="Sheltered Ring", ring2="Paguroidea ring",
             back="Evasionist's Cape", waist="Flume Belt", legs="Carmine cuisses +1", feet="Hermes' sandals"}
     sets.idle.Refresh = set_combine(sets.idle, {body="Runeist Coat +1", waist="Fucho-no-obi"})

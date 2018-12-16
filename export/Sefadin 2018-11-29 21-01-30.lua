@@ -1,0 +1,18 @@
+sets.exported={
+    main="Fettering Blade",
+    sub="Demers. Degen +1",
+    range="Fomalhaut",
+    ammo="Chrono Bullet",
+    head="Pixie Hairpin +1",
+    body={ name="Herculean Vest", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Crit.hit rate+2','STR+5','Mag. Acc.+12','"Mag.Atk.Bns."+15',}},
+    hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}},
+    legs={ name="Herculean Trousers", augments={'"Mag.Atk.Bns."+24','Weapon skill damage +3%','INT+4','Mag. Acc.+1',}},
+    feet={ name="Adhemar Gamashes", augments={'AGI+10','Rng.Acc.+15','Rng.Atk.+15',}},
+    neck="Sanctity Necklace",
+    waist="Eschan Stone",
+    left_ear="Ishvara Earring",
+    right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
+    left_ring="Dingir Ring",
+    right_ring="Archon Ring",
+    back={ name="Camulus's Mantle", augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+10','Weapon skill damage +10%',}},
+}

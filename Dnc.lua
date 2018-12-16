@@ -158,7 +158,7 @@ function init_gear_sets()
     left_ear="Ishvara Earring",
     right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +25',}},
     left_ring="Ilabrat Ring",
-    right_ring="Ramuh Ring +1",
+    right_ring="Regal Ring",
     back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}}
 	
     sets.precast.WS.Acc = set_combine(sets.precast.WS)
@@ -204,18 +204,18 @@ function init_gear_sets()
     -- Sets to return to when not performing an action.
     
     -- Resting sets
-    sets.resting = {head="Ocelomeh Headpiece +1",neck="Wiglen Gorget",
+    sets.resting = {head="Turms cap",neck="Wiglen Gorget",
         ring1="Sheltered Ring",ring2="Paguroidea Ring"}
-    sets.ExtraRegen = {head="Ocelomeh Headpiece +1"}
+    sets.ExtraRegen = {head="Turms cap"}
     
 
     -- Idle sets
 
-    sets.idle = {ammo="Iron Gobbet",
-        head="Meghanada vospr +2",neck="Loricate torque +1",ear1="Infused Earring",ear2="Etiolation Earring",
-        body="Meghanada cuirie +2",hands="Meghanada gloves +2",ring1="Sheltered Ring",ring2="Paguroidea Ring",
-        back="Moonbeam cape",waist="Flume Belt",legs="Meghanada chausses +1",feet="Tandava Crackows"}
-
+    sets.idle = {ammo="Yamarang",
+        head="Turms cap",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Infused Earring",
+        body="Meghanada cuirie +2",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Sheltered Ring",
+        back="Moonbeam cape",waist="Flume Belt",legs="Volte hose",feet="Jute boots +1"}
+		
     sets.idle.Town = {main="Izhiikoh", sub="Sabebus",ammo="Charis Feather",
         head="Whirlpool Mask",neck="Charis Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
         body="Qaaxo Harness",hands="Iuitl Wristbands",ring1="Sheltered Ring",ring2="Paguroidea Ring",
@@ -277,18 +277,18 @@ function init_gear_sets()
         -- back="Atheling Mantle",waist="Patentia Sash",legs=gear.AugQuiahuiz,feet="Horos Toe Shoes"}
 
     sets.engaged.Acc = {
-    ammo="Falcon Eye",
-    head="Meghanada Visor +2",
+    ammo="Yamarang",
+    head="Dampening Tam",
     body="Meg. Cuirie +2",
-    hands="Meg. Gloves +2",
-    legs="Meg. Chausses +1",
-    feet="Meg. Jam. +2",
+    hands="Adhemar wristbands +1",
+    legs="Samnuha tights",
+    feet={name="Herculean boots", augments={'Accuracy+28','"Triple Atk."+4',}},
     neck="Lissome Necklace",
     waist="Sailfi Belt +1",
     left_ear="Sherida Earring",
     right_ear="Digni. Earring",
     left_ring="Ilabrat Ring",
-    right_ring="Ramuh Ring +1",
+    right_ring="Regal Ring",
     back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}}
 	
     sets.engaged.Evasion = {ammo="Charis Feather",

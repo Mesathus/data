@@ -283,7 +283,7 @@ end
 -- Set eventArgs.handled to true if we don't want automatic equipping of gear.
 function job_update(cmdParams, eventArgs)
   update_pet_mode()
-  engage_pet(eventArgs)
+  --engage_pet(eventArgs)
 end
 
 
@@ -349,18 +349,18 @@ function display_pet_status()
   end
 end
 
-function engage_pet(eventArgs)
-	if player.status == 'Engaged' then
-		if pet.isvalid then
-			send_command('input /pet Deploy <t>')
-		end
-	else if player.status == 'Idle' then
-		if pet.isvalid then
-			send_command('input /pet Retrieve <me>')
-		end
-	end
-end
-end
+--function engage_pet(eventArgs)
+--	if player.status == 'Engaged' then
+--		if pet.isvalid then
+--			send_command('input /pet Deploy <t>')
+--		end
+--	else if player.status == 'Idle' then
+--		if pet.isvalid then
+--			send_command('input /pet Retrieve <me>')
+--		end
+--	end
+--end
+--end
 
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()

@@ -42,10 +42,10 @@ function user_setup()
     state.CastingMode:options('Normal', 'Resistant')
     state.IdleMode:options('Normal', 'PDT', 'Refresh')
 
-    gear.RAbullet = "Adlivun Bullet"
-    gear.WSbullet = "Adlivun Bullet"
-    gear.MAbullet = "Bronze Bullet"
-    gear.QDbullet = "Adlivun Bullet"
+    gear.RAbullet = "Chrono Bullet"
+    gear.WSbullet = "Chrono Bullet"
+    gear.MAbullet = "Chrono Bullet"
+    gear.QDbullet = "Chrono Bullet"
     options.ammo_warning_limit = 15
 
     -- Additional local binds
@@ -111,8 +111,8 @@ function init_gear_sets()
 
     sets.precast.RA = {ammo=gear.RAbullet,
         head="Navarch's Tricorne +2",
-        body="Laksamana's Frac",hands="Lanun Gants",
-        back="Navarch's Mantle",waist="Impulse Belt",legs="Nahtirah Trousers",feet="Wurrukatte Boots"}
+        body="Laksamana's Frac",hands="Carmine finger gauntlets +1",
+        back="Navarch's Mantle",waist="Impulse Belt",legs="Nahtirah Trousers",feet="Meghanada jambeaux +2"}
 
        
     -- Weaponskill sets
@@ -130,29 +130,55 @@ function init_gear_sets()
 
     sets.precast.WS['Requiescat'] = set_combine(sets.precast.WS, {legs="Nahtirah Trousers"})
 
-    sets.precast.WS['Last Stand'] = {ammo=gear.WSbullet,
-        head="Whirlpool Mask",neck=gear.ElementalGorget,ear1="Clearview Earring",ear2="Moonshade Earring",
-        body="Laksamana's Frac",hands="Iuitl Wristbands",ring1="Rajas Ring",ring2="Stormsoul Ring",
-        back="Terebellum Mantle",waist=gear.ElementalBelt,legs="Nahtirah Trousers",feet="Iuitl Gaiters +1"}
+    sets.precast.WS['Last Stand'] = {
+		head="Meghanada Visor +2",neck="Fotia gorget",ear1="Enervating earring",ear2="Moonshade Earring",
+		body="Meghanada cuirie +2",hands="Meghanada gloves +2",ring1="Illabrat Ring",ring2="Regal Ring",
+		back="Camulus's cape",waist="Fotia belt",legs="Meghanada chausses +2",feet="Meghanada jambeaux +2" }
 
-    sets.precast.WS['Last Stand'].Acc = {ammo=gear.WSbullet,
-        head="Laksamana's Hat",neck=gear.ElementalGorget,ear1="Clearview Earring",ear2="Moonshade Earring",
-        body="Laksamana's Frac",hands="Buremte Gloves",ring1="Hajduk Ring",ring2="Stormsoul Ring",
-        back="Libeccio Mantle",waist=gear.ElementalBelt,legs="Thurandaut Tights +1",feet="Laksamana's Bottes"}
+    sets.precast.WS['Last Stand'].Acc = {
+        head="Meghanada Visor +2",neck="Fotia gorget",ear1="Enervating earring",ear2="Moonshade Earring",
+		body="Meghanada cuirie +2",hands="Meghanada gloves +2",ring1="Illabrat Ring",ring2="Regal Ring",
+		back="Camulus's cape",waist="Fotia belt",legs="Meghanada chausses +2",feet="Meghanada jambeaux +2" }
 
 
-    sets.precast.WS['Wildfire'] = {ammo=gear.MAbullet,
-        head="Wayfarer Circlet",neck="Stoicheion Medal",ear1="Friomisi Earring",ear2="Hecate's Earring",
-        body="Manibozho Jerkin",hands="Iuitl Wristbands",ring1="Stormsoul Ring",ring2="Demon's Ring",
-        back="Toro Cape",waist=gear.ElementalBelt,legs="Iuitl Tights",feet="Iuitl Gaiters +1"}
+    sets.precast.WS['Wildfire'] = {head={ name="Herculean Helm", augments={'"Mag.Atk.Bns."+24','"Fast Cast"+6','STR+7','Mag. Acc.+14',}},
+		body={ name="Herculean Vest", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Crit.hit rate+2','STR+5','Mag. Acc.+12','"Mag.Atk.Bns."+15',}},
+		hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}},
+		legs={ name="Herculean Trousers", augments={'"Mag.Atk.Bns."+24','Weapon skill damage +3%','INT+4','Mag. Acc.+1',}},
+		feet="Adhemar gamashes",
+		neck="Sanctity Necklace",
+		waist="Eschan Stone",
+		left_ear="Ishvara Earring",
+		right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
+		left_ring="Dingir Ring",
+		right_ring="Regal Ring",
+		back="Camulus's Mantle",
+		}
 
     sets.precast.WS['Wildfire'].Brew = {ammo=gear.MAbullet,
         head="Wayfarer Circlet",neck="Stoicheion Medal",ear1="Friomisi Earring",ear2="Hecate's Earring",
         body="Manibozho Jerkin",hands="Iuitl Wristbands",ring1="Stormsoul Ring",ring2="Demon's Ring",
         back="Toro Cape",waist=gear.ElementalBelt,legs="Iuitl Tights",feet="Iuitl Gaiters +1"}
     
-    sets.precast.WS['Leaden Salute'] = sets.precast.WS['Wildfire']
-    
+    sets.precast.WS['Leaden Salute'] = {head="Pixie Hairpin +1",
+		body={ name="Herculean Vest", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Crit.hit rate+2','STR+5','Mag. Acc.+12','"Mag.Atk.Bns."+15',}},
+		hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}},
+		legs={ name="Herculean Trousers", augments={'"Mag.Atk.Bns."+24','Weapon skill damage +3%','INT+4','Mag. Acc.+1',}},
+		feet="Adhemar gamashes",
+		neck="Sanctity Necklace",
+		waist="Eschan Stone",
+		left_ear="Friomisi Earring",
+		right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
+		left_ring="Dingir Ring",
+		right_ring="Archon Ring",
+		back="Camulus's Mantle",
+		}
+		
+	sets.precast.WS['Savage Blade'] = 
+    {
+        head="Adhemar bonnet",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Ishvara Earring",
+        body="Herculean Vest",hands="Adhemar Wristbands +1",ring1="Rajas Ring",ring2="Rufescent ring",
+        back="Bleating Mantle",waist="Fotia Belt",legs="Samnuha tights",feet="Carmine greaves +1"}
     
     -- Midcast Sets
     sets.midcast.FastRecast = {
@@ -164,9 +190,19 @@ function init_gear_sets()
     sets.midcast.Utsusemi = sets.midcast.FastRecast
 
     sets.midcast.CorsairShot = {ammo=gear.QDbullet,
-        head="Blood Mask",neck="Stoicheion Medal",ear1="Friomisi Earring",ear2="Hecate's Earring",
-        body="Lanun Frac",hands="Schutzen Mittens",ring1="Hajduk Ring",ring2="Demon's Ring",
-        back="Toro Cape",waist="Aquiline Belt",legs="Iuitl Tights",feet="Lanun Bottes"}
+        head="Blood Mask",
+		body={ name="Herculean Vest", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Crit.hit rate+2','STR+5','Mag. Acc.+12','"Mag.Atk.Bns."+15',}},
+		hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}},
+		legs={ name="Herculean Trousers", augments={'"Mag.Atk.Bns."+24','Weapon skill damage +3%','INT+4','Mag. Acc.+1',}},
+		feet="Adhemar gamashes",
+		neck="Sanctity Necklace",
+		waist="Eschan Stone",
+		left_ear="Ishvara Earring",
+		right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
+		left_ring="Dingir Ring",
+		right_ring="Regal Ring",
+		back="Camulus's Mantle",
+		}
 
     sets.midcast.CorsairShot.Acc = {ammo=gear.QDbullet,
         head="Laksamana's Hat",neck="Stoicheion Medal",ear1="Lifestorm Earring",ear2="Psystorm Earring",
@@ -183,14 +219,14 @@ function init_gear_sets()
 
     -- Ranged gear
     sets.midcast.RA = {ammo=gear.RAbullet,
-        head="Lanun Tricorne",neck="Ocachi Gorget",ear1="Clearview Earring",ear2="Volley Earring",
-        body="Laksamana's Frac",hands="Iuitl Wristbands",ring1="Rajas Ring",ring2="Stormsoul Ring",
-        back="Terebellum Mantle",waist="Commodore Belt",legs="Nahtirah Trousers",feet="Iuitl Gaiters +1"}
+        head="Meghanada Visor +2",neck="Marked Gorget",ear1="Enervating Earring",ear2="Tripudio Earring",
+        body="Meghanada cuirie +2",hands="Carmine finger gauntlets +1",ring1="Regal Ring",ring2="Illabrat Ring",
+        back="Camulus's Mantle",waist="Yemaya Belt",legs="Meghanada chausses +2",feet="Meghanada jambeaux +1"}
 
     sets.midcast.RA.Acc = {ammo=gear.RAbullet,
-        head="Laksamana's Hat",neck="Huani Collar",ear1="Clearview Earring",ear2="Volley Earring",
-        body="Laksamana's Frac",hands="Buremte Gloves",ring1="Hajduk Ring",ring2="Beeline Ring",
-        back="Libeccio Mantle",waist="Commodore Belt",legs="Thurandaut Tights +1",feet="Laksamana's Bottes"}
+        head="Meghanada Visor +2",neck="Marked Gorget",ear1="Enervating Earring",ear2="Tripudio Earring",
+        body="Meghanada cuirie +2",hands="Meghanada gloves +2",ring1="Regal Ring",ring2="Illabrat Ring",
+        back="Camulus's Mantle",waist="Yemaya Belt",legs="Meghanada chausses +2",feet="Meghanada jambeaux +1"}
 
     
     -- Sets to return to when not performing an action.
@@ -243,14 +279,32 @@ function init_gear_sets()
         back="Atheling Mantle",waist="Hurch'lan Sash",legs="Manibozho Brais",feet="Iuitl Gaiters +1"}
 
     sets.engaged.DW = {ammo=gear.RAbullet,
-        head="Whirlpool Mask",neck="Asperity Necklace",ear1="Cessance Earring",ear2="Suppanomimi",
-        body="Iuitl Vest",hands="Iuitl Wristbands",ring1="Rajas Ring",ring2="Epona's Ring",
-        back="Atheling Mantle",waist="Windbuffet Belt",legs="Samnuha tights",feet="Iuitl Gaiters +1"}
+        head={ name="Dampening Tam", augments={'DEX+10','Accuracy+15','Mag. Acc.+15','Quadruple Attack +3',}},
+    body={ name="Adhemar Jacket", augments={'STR+10','DEX+10','Attack+15',}},
+    hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
+    legs={ name="Samnuha Tights", augments={'STR+10','DEX+10','"Dbl.Atk."+3','"Triple Atk."+3',}},
+    feet={ name="Herculean Boots", augments={'Accuracy+24 Attack+24','Damage taken-2%','STR+7','Accuracy+11','Attack+15',}},
+    neck="Combatant's Torque",
+    waist="Reiki Yotai",
+    left_ear="Cessance Earring",
+    right_ear="Digni. Earring",
+    left_ring="Ilabrat Ring",
+    right_ring="Epona's Ring",
+    back="Kayapa Cape"}
     
     sets.engaged.DW.Acc = {ammo=gear.RAbullet,
-        head="Whirlpool Mask",neck="Asperity Necklace",ear1="Cessance Earring",ear2="Suppanomimi",
-        body="Iuitl Vest",hands="Iuitl Wristbands",ring1="Rajas Ring",ring2="Epona's Ring",
-        back="Atheling Mantle",waist="Hurch'lan Sash",legs="Samnuha tights",feet="Iuitl Gaiters +1"}
+        head="Carmine Mask +1",
+    body={ name="Adhemar Jacket", augments={'STR+10','DEX+10','Attack+15',}},
+    hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
+    legs="Carmine cuisses +1",
+    feet={ name="Herculean Boots", augments={'Accuracy+24 Attack+24','Damage taken-2%','STR+7','Accuracy+11','Attack+15',}},
+    neck="Combatant's Torque",
+    waist="Reiki Yotai",
+    left_ear="Cessance Earring",
+    right_ear="Digni. Earring",
+    left_ring="Ilabrat Ring",
+    right_ring="Regal Ring",
+    back="Kayapa Cape"}
 
 
     sets.engaged.Ranged = {ammo=gear.RAbullet,
@@ -483,5 +537,5 @@ end
 
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
-    set_macro_page(1, 19)
+    set_macro_page(10, 10)
 end

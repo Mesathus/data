@@ -85,8 +85,8 @@ function init_gear_sets()
 	-- Default set for any weaponskill that isn't any more specifically defined
 	sets.precast.WS = {
 		head="Orion beret +3",neck="Fotia gorget",ear1="Enervating earring",ear2="Moonshade Earring",
-		body="Amini Caban +1",hands="Meghanada gloves +2",ring1="Rajas Ring",ring2="Apate Ring",
-		back="Belenus's cape",waist="Fotia belt",legs="Meghanada chausses +1",feet="Meghanada jambeaux +2" }
+		body="Amini Caban +1",hands="Meghanada gloves +2",ring1="Illabrat Ring",ring2="Regal Ring",
+		back="Belenus's cape",waist="Fotia belt",legs="Meghanada chausses +2",feet="Meghanada jambeaux +2" }
 
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {ring1="Cacoethic Ring +1"
 		})
@@ -164,7 +164,7 @@ function init_gear_sets()
 	sets.defense.PDT = {
         head="Meghanada Visor +2",neck="Loricate torque +1",
         body="Meghanada cuirie +2",hands="Meghanada gloves +2",ring1="Defending Ring",ring2="Patricius Ring",
-        back="Moonbeam Cape",waist="Sailfi belt +1",legs="Meghanada Chausses +1",feet={name="Herculean boots", augments={'Accuracy+24 Attack+24','Damage taken-2%','STR+7','Accuracy+11','Attack+15',}}}
+        back="Moonbeam Cape",waist="Sailfi belt +1",legs="Meghanada chausses +2",feet={name="Herculean boots", augments={'Accuracy+24 Attack+24','Damage taken-2%','STR+7','Accuracy+11','Attack+15',}}}
 
 	sets.defense.MDT = {
 		head="Orion Beret +2",neck="Loricate torque +1",

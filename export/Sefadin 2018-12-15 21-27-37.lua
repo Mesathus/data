@@ -1,0 +1,17 @@
+sets.exported={
+    main="Aeneas",
+    sub="Twashtar",
+    ammo="Yamarang",
+    head="Turms Cap",
+    body="Tanner's Apron",
+    hands="Tanner's Gloves",
+    legs="Pill. Culottes +3",
+    feet="Jute Boots +1",
+    neck="Tanner's Torque",
+    waist="Patentia Sash",
+    left_ear="Etiolation Earring",
+    right_ear="Infused Earring",
+    left_ring="Orvail Ring",
+    right_ring="Sheltered Ring",
+    back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Damage taken-5%',}},
+}
