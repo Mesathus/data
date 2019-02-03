@@ -166,10 +166,12 @@ function init_gear_sets()
     
 
     -- Idle sets
-    sets.idle = {ammo="Iron Gobbet",
-        head="Loess Barbuta +1",neck="Creed Collar",ear1="Creed Earring",ear2="Bloodgem Earring",
-        body="Reverence Surcoat +1",hands="Reverence Gauntlets +1",ring1="Sheltered Ring",ring2="Meridian Ring",
-        back="Fierabras's Mantle",waist="Flume Belt",legs="Carmine cuisses +1",feet="Reverence Leggings +1"}
+    sets.idle = {head="Loess Barbuta +1",body={ name="Cab. Surcoat +1", augments={'Enhances "Fealty" effect',}},
+		hands={ name="Odyssean Gauntlets", augments={'"Dbl.Atk."+2','Mag. Acc.+28','Chance of successful block +7',}},
+		legs={ name="Odyssean Cuisses", augments={'Magic dmg. taken -1%','"Occult Acumen"+8','Damage taken-5%','Accuracy+14 Attack+14','Mag. Acc.+5 "Mag.Atk.Bns."+5',}},
+		feet={ name="Odyssean Greaves", augments={'Attack+13','Accuracy+5','Chance of successful block +9','Accuracy+15 Attack+15',}},
+		neck="Agitator's Collar",waist="Flume Belt",left_ear="Digni. Earring",right_ear="Cessance Earring",
+		left_ring="Defending Ring",right_ring="Fortified Ring",back="Moonbeam cape"}
 
     sets.idle.Town = {main="Anahera Sword",ammo="Incantor Stone",
         head="Reverence Coronet +1",neck="Creed Collar",ear1="Creed Earring",ear2="Bloodgem Earring",
@@ -208,8 +210,8 @@ function init_gear_sets()
 		hands={ name="Odyssean Gauntlets", augments={'"Dbl.Atk."+2','Mag. Acc.+28','Chance of successful block +7',}},
 		legs={ name="Odyssean Cuisses", augments={'Magic dmg. taken -1%','"Occult Acumen"+8','Damage taken-5%','Accuracy+14 Attack+14','Mag. Acc.+5 "Mag.Atk.Bns."+5',}},
 		feet={ name="Odyssean Greaves", augments={'Attack+13','Accuracy+5','Chance of successful block +9','Accuracy+15 Attack+15',}},
-		neck="Agitator's Collar",waist="Olseni Belt",left_ear="Digni. Earring",right_ear="Cessance Earring",
-		left_ring="Defending Ring",right_ring="Patricius Ring",back={ name="Weard Mantle", augments={'VIT+2','Enmity+1','Phalanx +2',}},}
+		neck="Agitator's Collar",waist="Flume Belt",left_ear="Digni. Earring",right_ear="Cessance Earring",
+		left_ring="Defending Ring",right_ring="Fortified Ring",back="Moonbeam cape"}
     sets.defense.HP = {ammo="Iron Gobbet",
         head="Reverence Coronet +1",neck="Loricate torque +1",ear1="Creed Earring",ear2="Bloodgem Earring",
         body="Reverence Surcoat +1",hands="Reverence Gauntlets +1",ring1="Defending Ring",ring2="Meridian Ring",

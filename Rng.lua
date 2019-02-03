@@ -58,10 +58,10 @@ function init_gear_sets()
 	-- Precast sets to enhance JAs
 	sets.precast.JA['Bounty Shot'] = {hands="Amini Glovelettes +1",waist="Chaac Belt"}
 	sets.precast.JA['Camouflage'] = {body="Orion Jerkin +3"}
-	sets.precast.JA['Scavenge'] = {feet="Orion Socks +1"}
+	sets.precast.JA['Scavenge'] = {feet="Orion Socks +2"}
 	sets.precast.JA['Shadowbind'] = {hands="Orion Bracers +2"}
-	sets.precast.JA['Sharpshot'] = {legs="Orion Braccae +1"}
-	sets.precast.JA['Velocity Shot'] = {body="Amini Caban"}
+	sets.precast.JA['Sharpshot'] = {legs="Orion Braccae +2"}
+	sets.precast.JA['Velocity Shot'] = {body="Amini Caban +1"}
 
 
 	-- Fast cast sets for spells
@@ -78,7 +78,7 @@ function init_gear_sets()
 	sets.precast.RA = {
 		head="Amini gapette +1",
 		body="Amini Caban +1",hands="Carmine finger gauntlets +1",
-		back="Lutian Cape",waist="Yemaya Belt",legs="Nahtirah Trousers",feet="Meghanada jambeaux +2"}
+		back="Lutian Cape",waist="Yemaya Belt",legs="Orion Braccae +2",feet="Meghanada jambeaux +2"}
 
 
 	-- Weaponskill sets
@@ -124,12 +124,13 @@ function init_gear_sets()
 	-- Ranged sets
 
 	sets.midcast.RA = {
-		head="Meghanada Visor +2",neck="Marked gorget",ear1="Enervating earring",ear2="Tripudio Earring",
-		body="Amini Caban +1",hands="Carmine finger gauntlets +1",ring1="Rajas Ring",ring2="Apate Ring",
+		head="Arcadian beret +2",neck="Iskur Gorget",ear1="Enervating earring",ear2="Sherida Earring",
+		body="Amini Caban +1",hands="Carmine finger gauntlets +1",ring1="Rajas Ring",ring2="Regal Ring",
 		back="Belenus's Cape",waist="Yemaya Belt",legs="Amini Brague +1",feet="Meghanada jambeaux +2"}
 	
-	sets.midcast.RA.Acc = set_combine(sets.midcast.RA,
-		{head="Orion beret +3",body ="Orion jerkin +3",hands="Meghanada gloves +2",ring2="Cacoethic Ring +1"})
+	sets.midcast.RA.Acc = set_combine(sets.midcast.RA,{
+		head="Orion beret +3",
+		body ="Orion jerkin +3",hands="Meghanada gloves +2",ring1="Cacoethic Ring +1"})
 
 	sets.midcast.RA.Annihilator = set_combine(sets.midcast.RA, {hands="Carmine finger gauntlets +1"})
 
@@ -153,10 +154,10 @@ function init_gear_sets()
 	sets.idle = {
 		head="Meghanada visor +2",neck="Loricate torque +1",ear1="Etiolation earring",ear2="Infused earring",
 		body="Meghanada cuirie +2",hands="Meghanada gloves +2",ring1="Defending Ring",ring2="Paguroidea Ring",
-		back="Moonbeam cape",waist="Pya'ekue Belt +1",legs="Meghanada chausses +2",feet="Jute Boots +1"}
+		back="Moonbeam cape",waist="Flume Belt",legs="Meghanada chausses +2",feet="Jute Boots +1"}
 		
 	sets.idle.Vagary = {	
-		head="Arcadian Beret +1",neck="Marked gorget",ear1="Enervating earring",ear2="Tripudio Earring",
+		head="Arcadian Beret +1",neck="Iskur Gorget",ear1="Enervating earring",ear2="Tripudio Earring",
 		body="Amini Caban +1",hands="Amini glovelettes +1",ring1="Rajas Ring",ring2="Cacoethic Ring +1",
 		back="Lutian Cape",waist="Eschan stone",legs="Amini Brague +1",feet="Adhemar Gamashes"}
 	

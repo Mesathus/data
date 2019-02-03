@@ -102,9 +102,9 @@ function init_gear_sets()
     sets.precast.FC.BardSong = {main="Vampirism",range="Gjallarhorn",
         head="Fili Calot +1",neck="Aoidos' Matinee",ear1="Etiolation Earring",ear2="Loquac. Earring",
         body="Sha'ir Manteel",hands="Leyline gloves",ring1="Prolix Ring",ring2="Kishar Ring",
-        back="Swith Cape +1",waist="Aoidos' Belt",legs="Querkening brais",feet="Telchine Pigaches"}
+        back="Intarabus's cape",waist="Aoidos' Belt",legs="Querkening brais",feet="Telchine Pigaches"}
 
-    sets.precast.FC.Daurdabla = set_combine(sets.precast.FC.BardSong, {range=info.ExtraSongInstrument})
+    sets.precast.FC.Daurdabla = set_combine(sets.precast.FC.BardSong, {range= "Daurdabla"})
 	
 	sets.precast.FC['Honor March'] = set_combine(sets.precast.FC, {range = "Marsyas"})
         
@@ -150,7 +150,7 @@ function init_gear_sets()
 		
     -- Gear to enhance certain classes of songs.  No instruments added here since Gjallarhorn is being used.
     sets.midcast.Ballad = {legs="Fili Rhingrave +1"}
-    sets.midcast.Lullaby = {hands="Brioso cuffs +1"}
+    sets.midcast.Lullaby = {hands="Brioso cuffs +2"}
     sets.midcast.Madrigal = {head="Fili Calot +1"}
     sets.midcast.March = {hands="Fili Manchettes +1"}
     sets.midcast.Minuet = {body="Fili Hongreline +1"}
@@ -173,10 +173,10 @@ function init_gear_sets()
         back="Intarabus's Cape",waist="Sailfi belt +1",legs="Inyanga Shalwar +2",feet="Brioso Slippers +2"}
 
     -- For song debuffs (duration primary, accuracy secondary)
-    sets.midcast.SongDebuff = {main="Carnwenhan",sub="Mephitis Grip",range="Gjallarhorn",
-        head="Chironic hat",neck="Moonbow whistle +1",ear1="Regal Earring",ear2="Lifestorm Earring",
+    sets.midcast.SongDebuff = {main="Carnwenhan",range="Gjallarhorn",
+        head="Chironic hat",neck="Moonbow whistle +1",ear1="Regal Earring",ear2="Dignitary's Earring",
         body="Fili Hongreline +1",hands="Fili Manchettes +1",ring1="Prolix Ring",ring2="Sangoma Ring",
-        back="Rhapsode's Cape",waist="Eschan stone",legs="Chironic hose",feet="Telchine pigaches"}
+        back="Intarabus's Cape",waist="Eschan stone",legs="Inyanga Shalwar +2",feet="Brioso Slippers +2"}
 		
 
 
@@ -184,7 +184,7 @@ function init_gear_sets()
     sets.midcast.ResistantSongDebuff = {main="Carnwenhan",range="Gjallarhorn",
         head="Fili Calot +1",neck="Moonbow whistle +1",ear1="Regal Earring",ear2="Dignitary's Earring",
         body="Fili Hongreline +1",hands="Fili Manchettes +1",ring1="Prolix Ring",
-        back="Rhapsode's Cape",waist="Eschan Stone",legs="Inyanga Shalwar +2",feet="Brioso Slippers +2"}
+        back="Intarabus's Cape",waist="Eschan Stone",legs="Inyanga Shalwar +2",feet="Brioso Slippers +2"}
 		
 	--sets.midcast.ResistantSongDebuff = {main="Carnwenhan",sub="Mephitis Grip",range="Gjallarhorn",
     --    head="Chironic hat",neck="Moonbow whistle +1",ear1="Psystorm Earring",ear2="Lifestorm Earring",

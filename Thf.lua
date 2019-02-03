@@ -75,7 +75,7 @@ function init_gear_sets()
     -- Special sets (required by rules)
     --------------------------------------
 
-    sets.TreasureHunter = {hands="Plunderer's Armlets +1", waist="Chaac Belt", feet="Skulk. Poulaines"}
+    sets.TreasureHunter = {hands="Plunderer's Armlets +2", feet="Skulk. Poulaines"}
     sets.ExtraRegen = {head="Turms cap"}
     sets.Kiting = {feet="Jute boots +1"}
 
@@ -101,7 +101,7 @@ function init_gear_sets()
     sets.precast.JA['Conspirator'] = {} -- {body="Skulker's Vest +1"}
     sets.precast.JA['Steal'] = {head="Plunderer's Bonnet +3",hands="Pillager's Armlets +1",legs="Pillager's Culottes +3",feet="Pillager's Poulaines +1"}
     sets.precast.JA['Despoil'] = {legs="Skulker's Culottes",feet="Skulker's Poulaines"}
-    sets.precast.JA['Perfect Dodge'] = {hands="Plunderer's Armlets +1"}
+    sets.precast.JA['Perfect Dodge'] = {hands="Plunderer's Armlets +2"}
     sets.precast.JA['Feint'] = {legs="Plunderer's Culottes +2"}
 
     sets.precast.JA['Sneak Attack'] = sets.buff['Sneak Attack']
@@ -225,13 +225,13 @@ function init_gear_sets()
 
     -- Ranged gear
     sets.midcast.RA = {
-        head="Meghanada Visor +2",neck="Marked gorget",ear1="Enervating earring",ear2="Tripudio Earring",
+        head="Meghanada Visor +2",neck="Iskur Gorget",ear1="Enervating earring",ear2="Tripudio Earring",
 		body="Meghanada cuirie +2",hands="Meghanada gloves +2",ring1="Rajas Ring",ring2="Cacoethic Ring +1",
 		back="Quarrel mantle",waist="Yemaya belt",legs="Meghanada chausses +2",feet="Meghanada jambeaux +1"}
 
 
     sets.midcast.RA.Acc = {
-        head="Meghanada Visor +2",neck="Marked gorget",ear1="Enervating earring",ear2="Tripudio Earring",
+        head="Meghanada Visor +2",neck="Iskur Gorget",ear1="Enervating earring",ear2="Tripudio Earring",
 		body="Meghanada cuirie +2",hands="Meghanada gloves +2",ring1="Rajas Ring",ring2="Cacoethic Ring +1",
 		back="Quarrel mantle",waist="Yemaya belt",legs="Meghanada chausses +2",feet="Meghanada jambeaux +1"}
 
@@ -253,7 +253,7 @@ function init_gear_sets()
         back="Moonbeam cape",waist="Flume Belt",legs="Volte hose",feet="Jute boots +1"}
 		
 	sets.idle.Vagary = {
-        head="Meghanada Visor +2",neck="Marked gorget",ear1="Enervating earring",ear2="Tripudio Earring",
+        head="Meghanada Visor +2",neck="Iskur Gorget",ear1="Enervating earring",ear2="Tripudio Earring",
 		body="Adhemar jacket",hands="Meghanada gloves +2",ring1="Rajas Ring",ring2="Cacoethic Ring +1",
 		back="Quarrel mantle",waist="Yemaya belt",legs="Meghanada chausses +2",feet="Meghanada jambeaux +1"}
 

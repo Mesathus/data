@@ -219,12 +219,12 @@ function init_gear_sets()
 
     -- Ranged gear
     sets.midcast.RA = {ammo=gear.RAbullet,
-        head="Meghanada Visor +2",neck="Marked Gorget",ear1="Enervating Earring",ear2="Tripudio Earring",
+        head="Meghanada Visor +2",neck="Iskur Gorget",ear1="Enervating Earring",ear2="Tripudio Earring",
         body="Meghanada cuirie +2",hands="Carmine finger gauntlets +1",ring1="Regal Ring",ring2="Illabrat Ring",
         back="Camulus's Mantle",waist="Yemaya Belt",legs="Meghanada chausses +2",feet="Meghanada jambeaux +1"}
 
     sets.midcast.RA.Acc = {ammo=gear.RAbullet,
-        head="Meghanada Visor +2",neck="Marked Gorget",ear1="Enervating Earring",ear2="Tripudio Earring",
+        head="Meghanada Visor +2",neck="Iskur Gorget",ear1="Enervating Earring",ear2="Tripudio Earring",
         body="Meghanada cuirie +2",hands="Meghanada gloves +2",ring1="Regal Ring",ring2="Illabrat Ring",
         back="Camulus's Mantle",waist="Yemaya Belt",legs="Meghanada chausses +2",feet="Meghanada jambeaux +1"}
 
