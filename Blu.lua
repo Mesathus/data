@@ -470,7 +470,7 @@ function init_gear_sets()
     sets.engaged.DW = {ammo="Ginsen",
         head="Adhemar bonnet",neck="Lissome Necklace",ear1="Cessance Earring",ear2="Suppanomimi",
         body="Adhemar jacket",hands="Adhemar Wristbands +1",ring1="Hetairoi Ring",ring2="Epona's Ring",
-        back="Bleating Mantle",waist="Reiki Yotai",legs="Carmine cuisses +1",feet={name="Herculean boots", augments={'Accuracy+28','"Triple Atk."+4',}}}
+        back="Bleating Mantle",waist="Reiki Yotai",legs="Carmine cuisses +1",feet={ name="Herculean Boots", augments={'Accuracy+26','"Triple Atk."+4','DEX+9','Attack+1',}}}
 
     sets.engaged.DW.Acc = {ammo="Falcon eye",
         head="Carmine Mask +1",neck="Combatant's torque",ear1="Dignitary's Earring",ear2="Cessance Earring",

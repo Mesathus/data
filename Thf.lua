@@ -136,8 +136,9 @@ function init_gear_sets()
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {ammo="Falcon eye",
         head="Pillager's Bonnet +3",neck="Fotia Gorget",ear1="Ishvara Earring",ear2="Moonshade Earring",
-        body="Herculean vest",hands="Meghanada gloves +2",ring1="Ilabrat Ring",ring2="Regal Ring",
-        back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}},waist="Fotia Belt",legs="Plunderer's culottes +3",feet="Lustratio leggings +1"}
+        body="Herculean vest",hands="Meghanada gloves +2",ring1="Regal Ring",ring2="Illabrat Ring",
+        back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}},waist="Fotia Belt",
+		legs="Plunderer's culottes +3",feet="Lustratio leggings +1"}
     sets.precast.WS.Acc = set_combine(sets.precast.WS, {ammo="Honed Tathlum"})
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
@@ -156,7 +157,9 @@ function init_gear_sets()
     sets.precast.WS['Dancing Edge'].SATA = set_combine(sets.precast.WS['Dancing Edge'].Mod, {ammo="Qirmiz Tathlum"})
 
     sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {ammo = "Yetshila",ear1="Sherida Earring",
-        body ="Plunderer's vest +3",feet="Plunderer's poulaines +3"})
+        body ="Plunderer's vest +3",hands="Mummu wrists +2",
+		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10'}},ring2="Begrudging Ring",
+		legs="Pillager's culottes +3",feet="Plunderer's poulaines +3"})
     sets.precast.WS['Evisceration'].Acc = set_combine(sets.precast.WS['Evisceration'])
     sets.precast.WS['Evisceration'].Mod = set_combine(sets.precast.WS['Evisceration'])
     sets.precast.WS['Evisceration'].SA = set_combine(sets.precast.WS['Evisceration'].Mod, {head = "Pillager's Bonnet +3"})
@@ -183,6 +186,11 @@ function init_gear_sets()
     sets.precast.WS['Mandalic Stab'].SA = set_combine(sets.precast.WS['Mandalic Stab'].Mod, {ammo = "Yetshila"})
     sets.precast.WS['Mandalic Stab'].TA = set_combine(sets.precast.WS['Mandalic Stab'].Mod, {ammo = "Yetshila"})
     sets.precast.WS['Mandalic Stab'].SATA = set_combine(sets.precast.WS['Mandalic Stab'].Mod, {ammo = "Yetshila"})
+	
+	sets.precast.WS['Asuran Fists'] = set_combine(sets.precast.WS, {head="Plunderer's Bonnet +3",ear1="Sherida Earring",ear2="Dignitary's Earring",
+		body="Plunderer's vest +3",hands="Meghanada gloves +2",
+		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10'}},
+		})
 
     sets.precast.WS['Aeolian Edge'] = {ammo="Pemphredo Tathlum",
     head={ name="Herculean Helm", augments={'"Mag.Atk.Bns."+24','"Fast Cast"+6','STR+7','Mag. Acc.+14',}},
@@ -314,7 +322,7 @@ function init_gear_sets()
 	sets.engaged.Farm = {ammo = "Yamarang",
 		head="Skulker's bonnet +1", neck="Loricate Torque +1",ear1="Sherida Earring",ear2="Brutal earring",
         body="Pillager's vest +3",hands="Herculean gloves",ring1="Defending Ring",ring2="Epona's Ring",
-        back="Moonbeam Cape",waist="Sailfi Belt +1",legs="Pillager's Culottes +3",feet={name="Herculean boots", augments={'Accuracy+28','"Triple Atk."+4',}}}
+        back="Moonbeam Cape",waist="Sailfi Belt +1",legs="Pillager's Culottes +3",feet={ name="Herculean Boots", augments={'Accuracy+26','"Triple Atk."+4','DEX+9','Attack+1',}}}
 		
 	sets.engaged.TAD = {ammo="Ginsen",
         head="Plunderer's Bonnet +3",neck="Lissome Necklace",ear1="Dignitary's Earring",ear2="Tripudio earring",
@@ -323,7 +331,7 @@ function init_gear_sets()
 
     -- Mod set for trivial mobs (Thaumas)
     sets.engaged.TAcc = set_combine(sets.engaged.TA, {ammo="Yamarang",
-		head="Pillager's Bonnet +3",neck="Combatant's torque", ear1="Dignitary's earring", ear2="Zennaroi earring",
+		head="Plunderer's Bonnet +3",neck="Combatant's torque", ear1="Dignitary's earring", ear2="Zennaroi earring",
 		ring1="Regal Ring",
 		waist="Kentarch belt +1", legs="Pillager's Culottes +3",feet="Plunderer's Poulaines +3"})
 

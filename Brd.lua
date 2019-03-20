@@ -52,7 +52,7 @@ function user_setup()
     state.CastingMode:options('Resistant' , 'Normal')
     state.IdleMode:options('Normal', 'PDT')
 
-    brd_daggers = S{'Carnwenhan', 'Vanir Knife', 'Atoyac', 'Aphotic Kukri', 'Sabebus','Twashtar','Aeneas'}
+    brd_daggers = S{'Carnwenhan','Kaja Knife','Twashtar','Aeneas'}
     pick_tp_weapon()
     
     -- Adjust this if using the Terpander (new +song instrument)
@@ -130,7 +130,8 @@ function init_gear_sets()
         back="Ground. Mantle +1",waist="Grunfeld rope",legs="Lustratio subligar +1",feet="Lustratio leggings +1"}
     
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
-    sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS)
+    sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {neck="Fotia Gorget", ear1="Dignitary's Earring",
+																	ring1="Begrudging Ring",ring2="Ilabrat Ring",waist="Fotia Belt"})
 
     sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS)
 
@@ -421,13 +422,13 @@ function job_handle_equipping_gear(playerStatus, eventArgs)
     --check_buff('Trick Attack', eventArgs)
 end
 
-function check_dagger_lock()
-	if player.equipment.sub == 'Twashtar' then
-		disable('main','sub')
-	else
-		enable('main','sub')
-	end
-end
+ function check_dagger_lock()
+	-- if brd_daggers:contains(player.equipment.sub) then
+		-- disable('main','sub')
+	-- else
+		-- enable('main','sub')
+	-- end
+ end
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
     if player.mpp < 51 then
@@ -547,7 +548,7 @@ function calculate_duration(spellName, spellMap)
     if player.equipment.range == 'Daurdabla' then mult = mult + 0.3 end -- change to 0.25 with 90 Daur
     if player.equipment.range == "Gjallarhorn" then mult = mult + 0.4 end -- change to 0.3 with 95 Gjall
     
-    if player.equipment.main == "Carnwenhan" then mult = mult + 0.1 end -- 0.1 for 75, 0.4 for 95, 0.5 for 99/119
+    if player.equipment.main == "Carnwenhan" then mult = mult + 0.5 end -- 0.1 for 75, 0.4 for 95, 0.5 for 99/119
     if player.equipment.main == "Legato Dagger" then mult = mult + 0.05 end
     if player.equipment.sub == "Legato Dagger" then mult = mult + 0.05 end
     if player.equipment.neck == "Aoidos' Matinee" then mult = mult + 0.1 end

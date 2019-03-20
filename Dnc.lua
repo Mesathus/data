@@ -282,7 +282,7 @@ function init_gear_sets()
     body="Meg. Cuirie +2",
     hands="Adhemar wristbands +1",
     legs="Samnuha tights",
-    feet={name="Herculean boots", augments={'Accuracy+28','"Triple Atk."+4',}},
+    feet={ name="Herculean Boots", augments={'Accuracy+26','"Triple Atk."+4','DEX+9','Attack+1',}},
     neck="Lissome Necklace",
     waist="Sailfi Belt +1",
     left_ear="Sherida Earring",

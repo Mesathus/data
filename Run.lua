@@ -142,7 +142,7 @@ function init_gear_sets()
     sets.engaged = {ammo="Ginsen",
         head="Dampening tam",neck="Ainia collar",ear1="Sherida Earring",ear2="Tripudio earring",
         body="Adhemar jacket",hands="Adhemar Wristbands +1",ring1="Hetairoi Ring",ring2="Epona's Ring",
-        back="Bleating mantle",waist="Chiner's Belt +1",legs="Samnuha tights",feet={name="Herculean boots", augments={'Accuracy+28','"Triple Atk."+4',}}}
+        back="Bleating mantle",waist="Chiner's Belt +1",legs="Samnuha tights",feet={ name="Herculean Boots", augments={'Accuracy+26','"Triple Atk."+4','DEX+9','Attack+1',}}}
     sets.engaged.DD = {ammo="Ginsen",
             head="Skormoth mask", neck="Asperity Necklace", ear1="Bladeborn Earring", ear2="Steelflash Earring",
             body="Adhemar jacket", hands="Taeon gloves", ring1="Epona's Ring", ring2="Rajas Ring",
