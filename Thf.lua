@@ -333,7 +333,7 @@ function init_gear_sets()
     sets.engaged.TAcc = set_combine(sets.engaged.TA, {ammo="Yamarang",
 		head="Plunderer's Bonnet +3",neck="Combatant's torque", ear1="Dignitary's earring", ear2="Zennaroi earring",
 		ring1="Regal Ring",
-		waist="Kentarch belt +1", legs="Pillager's Culottes +3",feet="Plunderer's Poulaines +3"})
+		waist="Reiki Yotai", legs="Pillager's Culottes +3",feet="Plunderer's Poulaines +3"})
 
     -- Mod set for trivial mobs (CP)
     sets.engaged.CP = {ammo="Thew Bomblet",
