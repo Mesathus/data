@@ -171,13 +171,13 @@ function init_gear_sets()
     sets.midcast.SongEffect = {main="Carnwenhan",range="Gjallarhorn",
         head="Fili Calot +1",neck="Moonbow whistle +1",ear2="Loquacious Earring",
         body="Fili Hongreline +1",hands="Fili Manchettes +1",ring1="Defending Ring",
-        back="Intarabus's Cape",waist="Sailfi belt +1",legs="Inyanga Shalwar +2",feet="Brioso Slippers +2"}
+        back="Intarabus's Cape",waist="Sailfi belt +1",legs="Inyanga Shalwar +2",feet="Brioso Slippers +3"}
 
     -- For song debuffs (duration primary, accuracy secondary)
     sets.midcast.SongDebuff = {main="Carnwenhan",range="Gjallarhorn",
         head="Chironic hat",neck="Moonbow whistle +1",ear1="Regal Earring",ear2="Dignitary's Earring",
         body="Fili Hongreline +1",hands="Fili Manchettes +1",ring1="Prolix Ring",ring2="Sangoma Ring",
-        back="Intarabus's Cape",waist="Eschan stone",legs="Inyanga Shalwar +2",feet="Brioso Slippers +2"}
+        back="Intarabus's Cape",waist="Eschan stone",legs="Inyanga Shalwar +2",feet="Brioso Slippers +3"}
 		
 
 
@@ -185,7 +185,7 @@ function init_gear_sets()
     sets.midcast.ResistantSongDebuff = {main="Carnwenhan",range="Gjallarhorn",
         head="Brioso Roundlet +2",neck="Moonbow whistle +1",ear1="Regal Earring",ear2="Dignitary's Earring",
         body="Brioso justacorps +2",hands="Brioso cuffs +3",ring1="Prolix Ring",ring2="Sangoma Ring",
-        back="Intarabus's Cape",waist="Eschan Stone",legs="Inyanga Shalwar +2",feet="Brioso Slippers +2"}
+        back="Intarabus's Cape",waist="Eschan Stone",legs="Inyanga Shalwar +2",feet="Brioso Slippers +3"}
 		
 	--sets.midcast.ResistantSongDebuff = {main="Carnwenhan",sub="Mephitis Grip",range="Gjallarhorn",
     --    head="Chironic hat",neck="Moonbow whistle +1",ear1="Psystorm Earring",ear2="Lifestorm Earring",
@@ -556,7 +556,7 @@ function calculate_duration(spellName, spellMap)
     if player.equipment.legs == "Mdk. Shalwar +1" then mult = mult + 0.1 end
     if player.equipment.feet == "Brioso Slippers" then mult = mult + 0.1 end
     if player.equipment.feet == "Brioso Slippers +1" then mult = mult + 0.11 end
-	if player.equipment.feet == "Brioso Slippers +2" then mult = mult + 0.13 end
+	if player.equipment.feet == "Brioso Slippers +3" then mult = mult + 0.13 end
     
     if spellMap == 'Paeon' and player.equipment.head == "Brioso Roundlet" then mult = mult + 0.1 end
     if spellMap == 'Paeon' and player.equipment.head == "Brioso Roundlet +1" then mult = mult + 0.1 end
