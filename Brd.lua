@@ -156,7 +156,7 @@ function init_gear_sets()
     sets.midcast.March = {hands="Fili Manchettes +1"}
     sets.midcast.Minuet = {body="Fili Hongreline +1"}
     sets.midcast.Minne = {}
-    sets.midcast.Paeon = {head="Brioso Roundlet +1"}
+    sets.midcast.Paeon = {head="Brioso Roundlet +3"}
     sets.midcast.Carol = {head="Fili Calot +1",
         body="Fili Hongreline +1",hands="Fili Manchettes +1",
         legs="Fili Rhingrave +1",feet="Fili Cothurnes +1"}
@@ -183,7 +183,7 @@ function init_gear_sets()
 
     -- For song debuffs (accuracy primary, duration secondary)
     sets.midcast.ResistantSongDebuff = {main="Carnwenhan",range="Gjallarhorn",
-        head="Brioso Roundlet +2",neck="Moonbow whistle +1",ear1="Regal Earring",ear2="Dignitary's Earring",
+        head="Brioso Roundlet +3",neck="Moonbow whistle +1",ear1="Regal Earring",ear2="Dignitary's Earring",
         body="Brioso justacorps +3",hands="Brioso cuffs +3",ring1="Prolix Ring",ring2="Sangoma Ring",
         back="Intarabus's Cape",waist="Eschan Stone",legs="Inyanga Shalwar +2",feet="Brioso Slippers +3"}
 		
@@ -559,7 +559,7 @@ function calculate_duration(spellName, spellMap)
 	if player.equipment.feet == "Brioso Slippers +3" then mult = mult + 0.13 end
     
     if spellMap == 'Paeon' and player.equipment.head == "Brioso Roundlet" then mult = mult + 0.1 end
-    if spellMap == 'Paeon' and player.equipment.head == "Brioso Roundlet +1" then mult = mult + 0.1 end
+    if spellMap == 'Paeon' and player.equipment.head == "Brioso Roundlet +3" then mult = mult + 0.1 end
     if spellMap == 'Madrigal' and player.equipment.head == "Aoidos' Calot +2" then mult = mult + 0.1 end
     if spellMap == 'Minuet' and player.equipment.body == "Aoidos' Hngrln. +2" then mult = mult + 0.1 end
     if spellMap == 'March' and player.equipment.hands == "Ad. Mnchtte. +2" then mult = mult + 0.1 end
