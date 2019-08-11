@@ -1,0 +1,18 @@
+sets.exported={
+    main="Fettering Blade",
+    sub="Kaja Knife",
+    range="Fomalhaut",
+    ammo="Chrono Bullet",
+    head={ name="Adhemar Bonnet", augments={'STR+10','DEX+10','Attack+15',}},
+    body={ name="Herculean Vest", augments={'Accuracy+21 Attack+21','Weapon skill damage +5%','DEX+10','Accuracy+14','Attack+5',}},
+    hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
+    legs={ name="Samnuha Tights", augments={'STR+10','DEX+10','"Dbl.Atk."+3','"Triple Atk."+3',}},
+    feet={ name="Carmine Greaves +1", augments={'Accuracy+12','DEX+12','MND+20',}},
+    neck="Fotia Gorget",
+    waist="Fotia Belt",
+    left_ear="Friomisi Earring",
+    right_ear="Ishvara Earring",
+    left_ring="Rajas Ring",
+    right_ring="Rufescent Ring",
+    back="Bleating Mantle",
+}

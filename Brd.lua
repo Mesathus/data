@@ -90,7 +90,7 @@ function init_gear_sets()
 
     -- Fast cast sets for spells
     sets.precast.FC = {main="Vampirism",sub="Ammurapi shield",head="Haruspex Hat +1",neck="Voltsurge torque",ear1="Etiolation earring",ear2="Loquac. Earring",
-        body="Inyanga Jubbah +1",hands="Leyline gloves",ring1="Prolix Ring",ring2="Kishar Ring",
+        body="Inyanga Jubbah +2",hands="Leyline gloves",ring1="Prolix Ring",ring2="Kishar Ring",
         back="Swith Cape +1",waist="Witful Belt",legs="Lengo Pants",feet="Telchine Pigaches"}
 
     sets.precast.FC.Cure = set_combine(sets.precast.FC, {body="Heka's Kalasiris",legs="Vanya slops",feet = "Vanya clogs"})
@@ -125,8 +125,8 @@ function init_gear_sets()
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
-        head="Aya. Zucchetto +1",neck="Caro necklace",ear1="Ishvara Earring",ear2="Moonshade Earring",
-        body="Ayanmo Corazza +1",hands="Aya. Manopolas +1",ring1="Apate Ring",ring2="Ramuh Ring +1",
+        head="Aya. Zucchetto +2",neck="Caro necklace",ear1="Ishvara Earring",ear2="Moonshade Earring",
+        body="Ayanmo Corazza +2",hands="Aya. Manopolas +2",ring1="Apate Ring",ring2="Ramuh Ring +1",
         back="Ground. Mantle +1",waist="Grunfeld rope",legs="Lustratio subligar +1",feet="Lustratio leggings +1"}
     
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
@@ -214,7 +214,7 @@ function init_gear_sets()
     sets.midcast.Curaga = sets.midcast.Cure
 	
 	sets.midcast['Enhancing Magic'] = {sub = "Ammurapi shield",
-		head = "Inyanga tiara", neck = "Voltsurge torque", ear1 = "Etiolation earring", ear2 = "Loquacious earring",
+		head = "Inyanga tiara +2", neck = "Voltsurge torque", ear1 = "Etiolation earring", ear2 = "Loquacious earring",
 		body = "Telchine Chasuble", hands = "Telchine gloves", ring1="Kishar ring",
 		back = "Intarabus's cape", waist = "Luminary sash", legs = "Telchine Braconi",feet = "Telchine pigaches" }
         
@@ -284,11 +284,11 @@ function init_gear_sets()
     
     -- Basic set for if no TP weapon is defined.
     sets.engaged = {
-        head="Aya. Zucchetto +1",
-    body="Ayanmo Corazza +1",
-    hands="Aya. Manopolas +1",
-    legs="Aya. Cosciales +1",
-    feet="Aya. Gambieras +1",
+        head="Aya. Zucchetto +2",
+    body="Ayanmo Corazza +2",
+    hands="Aya. Manopolas +2",
+    legs="Aya. Cosciales +2",
+    feet="Aya. Gambieras +2",
     neck="Combatant's torque",
     waist="Kentarch Belt +1",
     left_ear="Digni. Earring",
@@ -299,29 +299,27 @@ function init_gear_sets()
 
     -- Sets with weapons defined.
     sets.engaged.Dagger = {
-        head="Aya. Zucchetto +1",
-    body="Ayanmo Corazza +1",
-    hands="Aya. Manopolas +1",
-    legs="Aya. Cosciales +1",
-    feet="Aya. Gambieras +1",
+        head="Aya. Zucchetto +2",
+    body="Ayanmo Corazza +2",
+    hands="Aya. Manopolas +2",
+    legs="Aya. Cosciales +2",
+    feet="Aya. Gambieras +2",
     neck="Combatant's torque",
     waist="Kentarch Belt +1",
     left_ear="Digni. Earring",
     right_ear="Suppanomimi",
     left_ring="Rajas Ring",
-    right_ring="Ramuh Ring +1",
+    right_ring="Ilabrat Ring",
     back="Ground. Mantle +1"}
 
     -- Set if dual-wielding
     sets.engaged.DW = {
-    main="Aeneas",
-    sub="Twashtar",
     range="Gjallarhorn",
-    head="Aya. Zucchetto +1",
-    body="Ayanmo Corazza +1",
-    hands="Aya. Manopolas +1",
+    head="Aya. Zucchetto +2",
+    body="Ayanmo Corazza +2",
+    hands="Aya. Manopolas +2",
     legs="Jokushu Haidate",
-    feet="Aya. Gambieras +1",
+    feet="Aya. Gambieras +2",
     neck="Clotharius Torque",
     waist="Shetal Stone",
     left_ear="Digni. Earring",

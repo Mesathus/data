@@ -75,7 +75,7 @@ function init_gear_sets()
     -- Special sets (required by rules)
     --------------------------------------
 
-    sets.TreasureHunter = {hands="Plunderer's Armlets +2", feet="Skulk. Poulaines"}
+    sets.TreasureHunter = {hands="Plunderer's Armlets +3", feet="Skulker's Poulaines +1"}
     sets.ExtraRegen = {head="Turms cap"}
     sets.Kiting = {feet="Jute boots +1"}
 
@@ -100,9 +100,9 @@ function init_gear_sets()
     sets.precast.JA['Hide'] = {body="Pillager's Vest +3"}
     sets.precast.JA['Conspirator'] = {} -- {body="Skulker's Vest +1"}
     sets.precast.JA['Steal'] = {head="Plunderer's Bonnet +3",hands="Pillager's Armlets +1",legs="Pillager's Culottes +3",feet="Pillager's Poulaines +1"}
-    sets.precast.JA['Despoil'] = {legs="Skulker's Culottes",feet="Skulker's Poulaines"}
-    sets.precast.JA['Perfect Dodge'] = {hands="Plunderer's Armlets +2"}
-    sets.precast.JA['Feint'] = {legs="Plunderer's Culottes +2"}
+    sets.precast.JA['Despoil'] = {legs="Skulker's Culottes",feet="Skulker's Poulaines +1"}
+    sets.precast.JA['Perfect Dodge'] = {hands="Plunderer's Armlets +3"}
+    sets.precast.JA['Feint'] = {legs="Plunderer's Culottes +3"}
 
     sets.precast.JA['Sneak Attack'] = sets.buff['Sneak Attack']
     sets.precast.JA['Trick Attack'] = sets.buff['Trick Attack']
@@ -111,7 +111,7 @@ function init_gear_sets()
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {ammo="Sonia's Plectrum",
         head="Whirlpool Mask",
-        body="Pillager's Vest +1",hands="Pillager's Armlets +1",ring1="Asklepian Ring",
+        body="Pillager's Vest +3",hands="Pillager's Armlets +1",ring1="Asklepian Ring",
         back="Iximulew Cape",waist="Caudata Belt",legs="Pillager's Culottes +3",feet="Plunderer's Poulaines +3"}
 
     -- Don't need any special gear for Healing Waltz.
@@ -120,7 +120,7 @@ function init_gear_sets()
 
     -- Fast cast sets for spells
     sets.precast.FC = {ammo="Sapience orb",{ name="Herculean Helm", augments={'"Mag.Atk.Bns."+24','"Fast Cast"+6','STR+7','Mag. Acc.+14',}},
-		neck="Voltsurge torque",ear1="Etiolation earring",ear2="Loquacious Earring",body="Samnuha coat",
+		neck="Voltsurge torque",ear1="Etiolation earring",ear2="Loquacious Earring",body="Dread Jupon",
 		hands="Leyline Gloves",ring1="Prolix Ring",legs="Rawhide trousers"}
 
     sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads",body="Passion Jacket"})
@@ -134,7 +134,7 @@ function init_gear_sets()
     -- Weaponskill sets
 
     -- Default set for any weaponskill that isn't any more specifically defined
-    sets.precast.WS = {ammo="Falcon eye",
+    sets.precast.WS = {ammo="Cath Palug stone",
         head="Pillager's Bonnet +3",neck="Fotia Gorget",ear1="Ishvara Earring",ear2="Moonshade Earring",
         body="Herculean vest",hands="Meghanada gloves +2",ring1="Regal Ring",ring2="Illabrat Ring",
         back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}},waist="Fotia Belt",
@@ -223,7 +223,7 @@ function init_gear_sets()
     --------------------------------------
 
     sets.midcast.FastRecast = {ammo="Sapience orb",{ name="Herculean Helm", augments={'"Mag.Atk.Bns."+24','"Fast Cast"+6','STR+7','Mag. Acc.+14',}},
-		neck="Voltsurge torque",ear1="Etiolation earring",ear2="Loquacious Earring",body="Samnuha coat",
+		neck="Voltsurge torque",ear1="Etiolation earring",ear2="Loquacious Earring",body="Dread Jupon",
 		hands="Leyline Gloves",ring1="Prolix Ring",legs="Rawhide trousers"}
 
     -- Specific spells
@@ -311,7 +311,7 @@ function init_gear_sets()
     sets.engaged.Acc = {ammo="Yamarang",
         head="Pillager's Bonnet +3",neck="Loricate torque +1",ear1="Dignitary's Earring",ear2="Zennaroi earring",
         body="Meghanada cuirie +2",hands="Adhemar Wristbands +1",ring1="Regal Ring",ring2="Defending Ring",
-        back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Damage taken-5%',}},waist="Flume belt",legs="Pillager's Culottes +3",feet={name="Herculean boots", augments={'Accuracy+24 Attack+24','Damage taken-2%','STR+7','Accuracy+11','Attack+15',}}}
+        back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Damage taken-5%',}},waist="Reiki Yotai",legs="Pillager's Culottes +3",feet={name="Herculean boots", augments={'Accuracy+24 Attack+24','Damage taken-2%','STR+7','Accuracy+11','Attack+15',}}}
         
     -- Mod set for trivial mobs (Skadi+1)
     sets.engaged.TA = {ammo="Ginsen",

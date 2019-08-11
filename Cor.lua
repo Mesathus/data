@@ -79,7 +79,7 @@ function init_gear_sets()
     sets.precast.JA['Random Deal'] = {body="Lanun Frac"}
 
     
-    sets.precast.CorsairRoll = {head="Lanun Tricorne",hands="Navarch's Gants +2"}
+    sets.precast.CorsairRoll = {head="Lanun Tricorne",neck="Regal Necklace",hands="Navarch's Gants +2"}
     
     sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Navarch's Culottes +2"})
     sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Navarch's Bottes +2"})
@@ -177,7 +177,8 @@ function init_gear_sets()
 	sets.precast.WS['Savage Blade'] = 
     {
         head="Adhemar bonnet",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Ishvara Earring",
-        body="Herculean Vest",hands="Adhemar Wristbands +1",ring1="Rajas Ring",ring2="Rufescent ring",
+        body={name="Herculean Vest", augments={'Accuracy+21 Attack+21','Weapon skill damage +5%','DEX+10','Accuracy+14','Attack+5',}},
+		hands="Adhemar Wristbands +1",ring1="Rajas Ring",ring2="Rufescent ring",
         back="Bleating Mantle",waist="Fotia Belt",legs="Samnuha tights",feet="Carmine greaves +1"}
     
     -- Midcast Sets

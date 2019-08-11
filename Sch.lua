@@ -231,10 +231,10 @@ function init_gear_sets()
 
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 
-    sets.idle.Town = {ammo="Incantor Stone",
-        head="Savant's Bonnet +2",neck="Bathy choker",ear1="Bloodgem Earring",ear2="Loquacious Earring",
-        body="Savant's Gown +2",hands="Savant's Bracers +2",ring1="Sheltered Ring",ring2="Paguroidea Ring",
-        back="Umbra Cape",waist="Hierarch Belt",legs="Savant's Pants +2",feet="Herald's Gaiters"}
+    sets.idle.Town = {main="Akademos",sub="Niobid strap",ammo="Incantor Stone",
+        head="Befouled crown",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Loquacious Earring",
+        body="Jhakri robe +2",hands="Volte gloves",ring1="Sheltered Ring",ring2="Defending Ring",
+        back="Moonbeam Cape",waist="Hierarch Belt",legs="Volte brais",feet="Herald's Gaiters"}
 
     sets.idle.Field = {main="Akademos",sub="Niobid strap",ammo="Incantor Stone",
         head="Befouled crown",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Loquacious Earring",
