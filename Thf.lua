@@ -136,7 +136,7 @@ function init_gear_sets()
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {ammo="Cath Palug stone",
         head="Pillager's Bonnet +3",neck="Fotia Gorget",ear1="Ishvara Earring",ear2="Moonshade Earring",
-        body="Herculean vest",hands="Meghanada gloves +2",ring1="Regal Ring",ring2="Illabrat Ring",
+        body="Herculean vest",hands="Meghanada gloves +2",ring1="Regal Ring",ring2="Ilabrat Ring",
         back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}},waist="Fotia Belt",
 		legs="Plunderer's culottes +3",feet="Lustratio leggings +1"}
     sets.precast.WS.Acc = set_combine(sets.precast.WS, {ammo="Honed Tathlum"})
