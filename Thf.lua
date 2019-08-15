@@ -187,6 +187,12 @@ function init_gear_sets()
     sets.precast.WS['Mandalic Stab'].TA = set_combine(sets.precast.WS['Mandalic Stab'].Mod, {ammo = "Yetshila"})
     sets.precast.WS['Mandalic Stab'].SATA = set_combine(sets.precast.WS['Mandalic Stab'].Mod, {ammo = "Yetshila"})
 	
+	sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {ammo="Seething bomblet +1",neck="Caro necklace",ring2="Rufescent Ring",waist="Grunfeld rope"})
+	sets.precast.WS['Savage Blade'].Mod = set_combine(sets.precast.WS['Savage Blade'], {})
+	sets.precast.WS['Savage Blade'].SA = set_combine(sets.precast.WS['Savage Blade'].Mod, {ammo = "Yetshila"})
+    sets.precast.WS['Savage Blade'].TA = set_combine(sets.precast.WS['Savage Blade'].Mod, {ammo = "Yetshila"})
+
+	
 	sets.precast.WS['Asuran Fists'] = set_combine(sets.precast.WS, {head="Plunderer's Bonnet +3",ear1="Sherida Earring",ear2="Dignitary's Earring",
 		body="Plunderer's vest +3",hands="Meghanada gloves +2",
 		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10'}},
@@ -216,7 +222,8 @@ function init_gear_sets()
         head="Meghanada Visor +2",neck="Fotia gorget",ear1="Enervating earring",ear2="Tripudio Earring",
 		body="Adhemar jacket",hands="Meghanada gloves +2",ring1="Rajas Ring",ring2="Cacoethic Ring +1",
 		back="Quarrel mantle",waist="Fotia belt",legs="Meghanada chausses +2",feet="Meghanada jambeaux +1"}
-
+		
+	
 
     --------------------------------------
     -- Midcast sets
