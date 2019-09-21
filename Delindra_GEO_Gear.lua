@@ -200,7 +200,7 @@ function init_gear_sets()
     sets.idle = {main="Bolelabunga",sub="Genbu's Shield",Range="Dunna",
         head="Merlinic hood",neck="Wiglen Gorget",ear1="Sanare earring",ear2="Ethereal earring",
         body="Hagondes coat +1",hands="Bagua mitaines",ring1="Sheltered Ring",ring2="Defending Ring",
-        back="Umbra Cape",waist="Fucho-no-obi",legs="Assiduity pants +1",feet="Geomancy sandals +1"}
+        back="Lifestream Cape",waist="Fucho-no-obi",legs="Assiduity pants +1",feet="Geomancy sandals +1"}
  
     sets.idle.PDT = {main="Terra's staff",sub="Oneiros grip",Range="Dunna",
         head="Merlinic hood",neck="Twilight torque",ear1="Sanare earring",ear2="Ethereal earring",
@@ -211,7 +211,7 @@ function init_gear_sets()
     sets.idle.Pet = {main="Solstice",sub="Genbu's Shield",Range="Dunna",
         head="Azimuth hood +1",neck="Wiglen Gorget",ear1="Sanare earring",ear2="ethereal earring",
         body="Hagondes coat +1",hands="Geomancy mitaines +1",ring1="Defending Ring",ring2="Paguroidea Ring",
-        back="Umbra Cape",waist="Fucho-no-obi",legs="Assiduity pants +1",feet="Geomancy sandals +1"}
+        back="Lifestream Cape",waist="Fucho-no-obi",legs="Assiduity pants +1",feet="Geomancy sandals +1"}
  
     sets.idle.PDT.Pet = {main="Solstice",sub="Oneiros grip",Range="Dunna",
         head="Azimuth hood +1",neck="Twilight torque",ear1="Sanare earring",ear2="ethereal earring",

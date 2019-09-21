@@ -95,7 +95,7 @@ function init_gear_sets()
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
     sets.precast.WS['Vidohunir'] = {ammo="Dosis Tathlum",
-        head="Hagondes Hat",neck="Eddy Necklace",ear1="Friomisi Earring",ear2="Hecate's Earring",
+        head="Hagondes Hat",neck="Eddy Necklace",ear1="Regal Earring",ear2="Hecate's Earring",
         body="Hagondes Coat",hands="Yaoyotl Gloves",ring1="Icesoul Ring",ring2="Acumen Ring",
         back="Toro Cape",waist="Thunder Belt",legs="Hagondes Pants",feet="Hagondes Sabots"}
     
@@ -154,22 +154,22 @@ function init_gear_sets()
     -- Elemental Magic sets
     
     sets.midcast['Elemental Magic'] = {main="Lathi",sub="Niobid strap",ammo="Seraphic ampulla",
-        head="Merlinic hood",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Friomisi Earring",
+        head="Merlinic hood",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Regal Earring",
         body="Spaekona's Coat +1",hands="Amalric gages",ring1="Sangoma Ring",ring2="Shiva Ring +1",
         back="Bane Cape",waist="Refoccilation stone",legs="Merlinic shalwar",feet="Merlinic crackows"}
 
     sets.midcast['Elemental Magic'].Resistant = {main="Lathi",sub="Enki strap",ammo="Pemphredo Tathlum",
-        head="Merlinic hood",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Friomisi Earring",
+        head="Merlinic hood",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Regal Earring",
         body="Amalric doublet",hands="Amalric gages",ring1="Sangoma Ring",ring2="Shiva Ring +1",
         back="Bane Cape",waist="Refoccilation stone",legs="Merlinic shalwar",feet="Merlinic crackows"}
 		
 	sets.midcast['Elemental Magic'].Burst = {main="Lathi",sub="Niobid strap",ammo="Seraphic ampulla",
-        head="Merlinic hood",neck="Mizukage-no-Kubikazari",ear1="Barkarole Earring",ear2="Friomisi Earring",
+        head="Merlinic hood",neck="Mizukage-no-Kubikazari",ear1="Barkarole Earring",ear2="Regal Earring",
         body="Spaekona's Coat +1",hands="Amalric gages",ring1="Mujin band",ring2="Locus Ring",
         back="Seshaw Cape",waist="Refoccilation stone",legs="Merlinic shalwar",feet="Merlinic crackows"}
 		
 	sets.midcast['Elemental Magic'].Burst2 = {main="Lathi",sub="Niobid strap",ammo="Pemphredo Tathlum",
-        head="Merlinic hood",neck="Mizukage-no-Kubikazari",ear1="Barkarole Earring",ear2="Friomisi Earring",
+        head="Merlinic hood",neck="Mizukage-no-Kubikazari",ear1="Barkarole Earring",ear2="Regal Earring",
         body="Amalric doublet",hands="Amalric gages",ring1="Mujin band",ring2="Locus Ring",
         back="Seshaw Cape",waist="Refoccilation stone",legs="Merlinic shalwar",feet="Merlinic crackows"}
 
@@ -203,7 +203,7 @@ function init_gear_sets()
         back="Moonbeam cape",waist="Hierarch Belt",legs="Volte Brais",feet="Herald's Gaiters"}
 		
 	sets.idle.Vagary = {main="Lathi",sub="Niobid strap",ammo="Pemphredo Tathlum",
-        head="Merlinic hood",neck="Mizukage-no-Kubikazari",ear1="Barkarole Earring",ear2="Friomisi Earring",
+        head="Merlinic hood",neck="Mizukage-no-Kubikazari",ear1="Barkarole Earring",ear2="Regal Earring",
         body="Amalric doublet",hands="Amalric gages",ring1="Mujin band",ring2="Locus Ring",
         back="Seshaw Cape",waist="Eschan stone",legs="Merlinic shalwar",feet="Merlinic crackows"}
 
