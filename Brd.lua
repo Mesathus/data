@@ -55,6 +55,8 @@ function user_setup()
     brd_daggers = S{'Carnwenhan','Kaja Knife','Twashtar','Aeneas'}
     pick_tp_weapon()
     
+	gear.RefreshHead = { name="Chironic Hat", augments={'"Dual Wield"+1','INT+2','"Refresh"+1','Accuracy+19 Attack+19','Mag. Acc.+20 "Mag.Atk.Bns."+20',}}
+	
     -- Adjust this if using the Terpander (new +song instrument)
     info.ExtraSongInstrument = 'Daurdabla'
     -- How many extra songs we can keep from Daurdabla/Terpander
@@ -238,8 +240,8 @@ function init_gear_sets()
     
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
     sets.idle = {main="Daybreak", sub="Genmei Shield",range="Oneiros Harp",
-        head="Genmei kabuto",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Infused Earring",
-        body="Emet harness +1",hands="Volte gloves",ring1="Defending Ring",ring2="Patricius Ring",
+        head=gear.RefreshHead,neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Infused Earring",
+        body="Inyanga Jubbah +2",hands="Volte gloves",ring1="Defending Ring",ring2="Moonlight Ring",
         back="Moonbeam Cape",waist="Flume Belt",legs="Inyanga shalwar +2",feet="Fili Cothurnes +1"}
 
 
