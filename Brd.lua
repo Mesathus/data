@@ -109,6 +109,7 @@ function init_gear_sets()
     sets.precast.FC.Daurdabla = set_combine(sets.precast.FC.BardSong, {range= "Daurdabla"})
 	
 	sets.precast.FC['Honor March'] = set_combine(sets.precast.FC, {range = "Marsyas"})
+	sets.precast.FC['Dispelga'] = set_combine(sets.precast.FC, {main="Daybreak"})
         
     
     -- Precast sets to enhance JAs
@@ -149,6 +150,7 @@ function init_gear_sets()
         back="Swith Cape +1",waist="Goading Belt",legs="Lengo Pants",feet="Telchine pigaches"}
 		
 	sets.midcast['Haste'] = set_combine(sets.midcast.FastRecast, {body = "Telchine Chasuble", hands = "Telchine gloves", legs = "Telchine Braconi"}) 
+	sets.midcast['Dispelga'] = set_combine(sets.midcast.FastRecast, {main="Daybreak"})
 		
 		
     -- Gear to enhance certain classes of songs.  No instruments added here since Gjallarhorn is being used.
