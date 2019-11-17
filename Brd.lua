@@ -210,7 +210,7 @@ function init_gear_sets()
     sets.midcast.DaurdablaDummy = set_combine(sets.midcast.FastRecast, {main="Taming Sari",range="Daurdabla"})
 
     -- Other general spells and classes.
-    sets.midcast.Cure = {main="Serenity",sub='Achaq Grip',
+    sets.midcast.Cure = {main="Daylight",
         head="Gendewitha Caubeen",
         body="Emet harness +1",hands="Leyline Gloves",
         back="Solemnity cape",legs="Vanya slops",feet="Vanya clogs"}
@@ -241,7 +241,7 @@ function init_gear_sets()
     
     
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
-    sets.idle = {main="Daybreak", sub="Genmei Shield",range="Oneiros Harp",
+    sets.idle = {main="Daybreak", sub="Genmei Shield",range="Nibiru Harp",
         head=gear.RefreshHead,neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Infused Earring",
         body="Inyanga Jubbah +2",hands="Volte gloves",ring1="Defending Ring",ring2="Moonlight Ring",
         back="Moonbeam Cape",waist="Flume Belt",legs="Inyanga shalwar +2",feet="Fili Cothurnes +1"}
