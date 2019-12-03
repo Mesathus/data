@@ -34,7 +34,6 @@
 	
 	gear.HercHeadREFRESH = {name="Herculean Helm", augments={'Accuracy+9','Weapon Skill Acc.+12','"Refresh"+2','Accuracy+19 Attack+19','Mag. Acc.+1 "Mag.Atk.Bns."+1',}}
 	gear.HercHandsREFRESH = {name="Herculean gloves", augments={'Accuracy+10','Pet: "Dbl.Atk."+1 Pet: Crit.hit rate +1','"Refresh"+2','Accuracy+16 Attack+16','Mag. Acc.+17 "Mag.Atk.Bns."+17'}}
-	gear.HercLegsREFRESH = {name="Herculean Trousers", augments={'"Fast Cast"+1','STR+3','"Refresh"+1','Accuracy+2 Attack+2',}}
 	gear.HercFeetREFRESH = {name="Herculean Boots", augments={'DEX+12','INT+14','"Refresh"+1','Accuracy+6 Attack+6','Mag. Acc.+7 "Mag.Atk.Bns."+7'}}
 	
 	gear.HercHeadSTR = {name="Herculean helm", augments={'Accuracy+22','Weapon skill damage +3%','STR+14','Attack+15'}}

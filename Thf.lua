@@ -313,7 +313,7 @@ function init_gear_sets()
         body="Adhemar jacket +1",hands="Adhemar Wristbands +1",ring1="Rajas Ring",ring2="Epona's Ring",
         back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}},waist="Reiki Yotai",legs="Pillager's Culottes +3",feet={name="Taeon boots",augments={'Accuracy+20 Attack+20','"Dual Wield"+4','Crit. hit damage +2%'}}}
     sets.engaged.Acc = {ammo="Yamarang",
-        head="Pillager's Bonnet +3",neck="Loricate torque +1",ear1="Dignitary's Earring",ear2="Zennaroi earring",
+        head="Pillager's Bonnet +3",neck="Loricate torque +1",ear1="Dignitary's Earring",ear2="Telos earring",
         body="Meghanada cuirie +2",hands="Adhemar Wristbands +1",ring1="Regal Ring",ring2="Defending Ring",
         back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}},waist="Reiki Yotai",legs="Pillager's Culottes +3",feet={name="Herculean boots", augments={'Accuracy+24 Attack+24','Damage taken-2%','STR+7','Accuracy+11','Attack+15',}}}
         
@@ -329,13 +329,13 @@ function init_gear_sets()
         back="Moonbeam Cape",waist="Sailfi Belt +1",legs="Pillager's Culottes +3",feet={ name="Herculean Boots", augments={'Accuracy+26','"Triple Atk."+4','DEX+9','Attack+1',}}}
 		
 	sets.engaged.Hybrid = {ammo="Yamarang",
-        head="Malignance chapeau",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Dignitary's Earring",
+        head="Malignance chapeau",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Telos Earring",
         body="Pillager's Vest +3",hands="Adhemar Wristbands +1",ring1="Moonlight Ring",ring2="Moonlight Ring",
         back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%'}},waist="Reiki Yotai",legs="Pillager's Culottes +3",feet="Malignance boots"}
 
     -- Mod set for trivial mobs (Thaumas)
     sets.engaged.TAcc = set_combine(sets.engaged.TA, {ammo="Yamarang",
-		head="Plunderer's Bonnet +3",neck="Assassin's gorget +2", ear2="Dignitary's earring",
+		head="Plunderer's Bonnet +3",neck="Assassin's gorget +2",ear2="Telos Earring",
 		ring1="Regal Ring",ring2="Hetairoi Ring",
 		waist="Reiki Yotai", legs="Pillager's Culottes +3",feet="Plunderer's Poulaines +3"})
 

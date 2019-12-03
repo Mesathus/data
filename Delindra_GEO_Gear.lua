@@ -8,16 +8,10 @@ function user_setup()
     state.CastingMode:options('Normal', 'Resistant')
     state.IdleMode:options('Normal', 'PDT')
  
-    gear.default.obi_waist = "Yamabuki-no-obi"
-	gear.default.obi_back = "Toro cape"
 	
-	gear.HeliosHeadMAB = {name="Helios band", augments={'Mag. Atk. Bns.+24'}}
-	gear.HeliosHandsMAB = {name="Helios gloves", augments={'Mag. Acc.+15 Mag. Atk. Bns.+15'}}
-	gear.HeliosFeetMAB = {name="Helios boots", augments={'Mag. Acc.+19 Mag. Atk. Bns.+19'}}
-	
-	gear.TelchineFeetFC = {name="Telchine pigaches", augments={"Fast cast+4"}}
-	
-	gear.TelchineHandsCP = {name="Telchine gloves", augments={"Cure potency +7%"}}
+	gear.TelchineFeetDuration = {name="Telchine pigaches", augments={'Enh. Mag. eff. dur. +8'}}
+	gear.TelchineLegsDuration = {name="Telchine braconi", augments={'Enh. Mag. eff. dur. +10'}}
+	gear.TelchineHandsDuration = {name="Telchine gloves", augments={'Enh. Mag. eff. dur. +8'}}
 	
 	info.low_nukes = S{"Stone", "Water", "Aero", "Fire", "Blizzard", "Thunder"}
     info.mid_nukes = S{"Stone II", "Water II", "Aero II", "Fire II", "Blizzard II", "Thunder II",
@@ -89,41 +83,41 @@ function init_gear_sets()
     -- Base fast recast for spells
     sets.midcast.FastRecast = {main="Solstice",range="Dunna",
         head="Nahtirah Hat",neck="Orunmila's torque",ear1="Enchanter earring +1",ear2="Loquacious Earring",
-        body="Vrikodara jupon",hands="Hagondes cuffs +1",ring1="Defending ring",ring2="Lebeche ring",
-        back="Lifestream cape",waist="Witful Belt",legs="Geomancy pants +1",feet="Regal pumps +1"}
+        body="Jhakri robe +2",hands=gear.TelchineHandsDuration,ring1="Defending ring",ring2="Lebeche ring",
+        back="Lifestream cape",waist="Witful Belt",legs=gear.TelchineLegsDuration,feet=gear.TelchineFeetDuration}
  
     sets.midcast.Geomancy = set_combine(sets.midcast.FastRecast, {range="Dunna",
-		head="Azimuth hood +1",
+		head="Azimuth hood +1",neck="Incanter's torque",
 		body="Bagua tunic",hands="Geomancy mitaines +1",ear1="Magnetic Earring",
 		back="Lifestream cape",legs="Azimuth tights +1",feet="Azimuth gaiters +1"})
 		
     sets.midcast.Geomancy.Indi = set_combine(sets.midcast.FastRecast, {main ="Solstice",range="Dunna",
-		head="Azimuth hood +1",
+		head="Azimuth hood +1",neck="Incanter's torque",
 		body="Bagua tunic",hands="Geomancy mitaines +1", ear1="Magnetic Earring",
 		back="Lifestream cape",legs="Bagua Pants",feet="Azimuth gaiters +1"})
  
     sets.midcast.Cure = {main="Tamaxchi",sub="Genbu's Shield",
-        head="Nahtirah hat",neck="Phalaina locket",ear1="Novia earring",ear2="Domesticator's earring",
-        body="Vrikodara jupon",hands=gear.TelchineHandsCP,ring1="Sirona's ring",ring2="Lebeche ring",
-        back="Tempered cape +1",waist="Bishop's sash",legs="Assiduity pants +1",feet="Regal pumps +1"}
+        head="Vanya hood",neck="Incanter's torque",ear1="Magnetic earring",ear2="Domesticator's earring",
+        body="Vrikodara jupon",hands="Bokwus gloves",ring1="Sirona's ring",ring2="Lebeche ring",
+        back="Solemnity cape",waist="Austerity belt",legs="Vanya slops",feet="Vanya clogs"}
     
     sets.midcast.Curaga = sets.midcast.Cure
- 
-    sets.midcast.Protectra = {ring1="Sheltered Ring"}
- 
-    sets.midcast.Shellra = {ring1="Sheltered Ring"}
-		
-	sets.midcast.Regen = {main="Bolelabunga", 
-		body="Telchine chasuble",
-		feet=gear.TelchineFeetFC}
-		
+	
 	sets.midcast['Enhancing Magic'] = {
         head="Befouled crown",neck="Colossus's Torque",ear1="Andoaa earring",
-        body="Telchine chasuble",hands="Ayao's Gages",
-        back="Merciful cape",waist="Olympus sash",legs="Shedir seraweels",feet="Regal pumps +1"}
+        body="Telchine chasuble",hands="Telchine Gloves",
+        back="Merciful cape",waist="Olympus sash",legs="Telchine braconi",feet="Telchine Pigaches"}
+ 
+    sets.midcast.Protectra = set_combine(sets.midcast['Enhancing Magic'],{ring1="Sheltered Ring"})
+ 
+    sets.midcast.Shellra = set_combine(sets.midcast['Enhancing Magic'],{ring1="Sheltered Ring"})
+		
+	sets.midcast.Regen = set_combine(sets.midcast['Enhancing Magic'], {main="Bolelabunga", 
+		body="Telchine chasuble"})	
+	
 		
 	sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {
-		neck="Stone gorget",legs="Shedir seraweels",waist="Siegel Sash"})
+		neck="Nodens gorget",waist="Siegel Sash"})
 		
 	sets.midcast.Aquaveil = set_combine(sets.midcast['Enhancing Magic'], {
 		legs="Shedir seraweels"})
