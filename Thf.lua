@@ -127,8 +127,8 @@ function init_gear_sets()
 
 
     -- Ranged snapshot gear
-    sets.precast.RA = {head="Aurore Beret",hands="Mrigavyadha gloves",
-	waist="Yemaya belt",legs="Nahtirah Trousers",feet="Meghanada jambeaux +2"}
+    sets.precast.RA = {head="Volte tiara",hands="Mrigavyadha gloves",
+	waist="Yemaya belt",legs="Volte tights",feet="Meghanada jambeaux +2"}
 
 
     -- Weaponskill sets
@@ -219,9 +219,9 @@ function init_gear_sets()
     sets.precast.WS['Aeolian Edge'].TH = set_combine(sets.precast.WS['Aeolian Edge'], sets.TreasureHunter)
 
     sets.precast.WS['Last Stand'] = {
-        head="Meghanada Visor +2",neck="Fotia gorget",ear1="Enervating earring",ear2="Tripudio Earring",
-		body="Adhemar jacket +1",hands="Meghanada gloves +2",ring1="Rajas Ring",ring2="Cacoethic Ring +1",
-		back="Quarrel mantle",waist="Fotia belt",legs="Meghanada chausses +2",feet="Meghanada jambeaux +1"}
+        head="Meghanada Visor +2",neck="Fotia gorget",ear1="Enervating earring",ear2="Telos Earring",
+		body="Adhemar jacket +1",hands="Meghanada gloves +2",ring1="Regal Ring",ring2="Cacoethic Ring +1",
+		waist="Fotia belt",legs="Meghanada chausses +2",feet="Meghanada jambeaux +1"}
 		
 	
 
@@ -240,9 +240,9 @@ function init_gear_sets()
 
     -- Ranged gear
     sets.midcast.RA = {
-        head="Meghanada Visor +2",neck="Iskur Gorget",ear1="Enervating earring",ear2="Tripudio Earring",
-		body="Meghanada cuirie +2",hands="Meghanada gloves +2",ring1="Rajas Ring",ring2="Cacoethic Ring +1",
-		back="Quarrel mantle",waist="Yemaya belt",legs="Meghanada chausses +2",feet="Meghanada jambeaux +1"}
+        head="Malignance chapeau",neck="Iskur Gorget",ear1="Enervating earring",ear2="Telos Earring",
+		body="Meghanada cuirie +2",hands="Meghanada gloves +2",ring1="Regal Ring",ring2="Cacoethic Ring +1",
+		back="Kayapa cape",waist="Yemaya belt",legs="Meghanada chausses +2",feet="Malignance boots"}
 
 
     sets.midcast.RA.Acc = {
