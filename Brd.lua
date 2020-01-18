@@ -103,7 +103,7 @@ function init_gear_sets()
 
     sets.precast.FC.BardSong = {main="Vampirism",range="Gjallarhorn",
         head="Fili Calot +1",neck="Aoidos' Matinee",ear1="Etiolation Earring",ear2="Loquac. Earring",
-        body="Brioso justacorps +3",hands="Leyline gloves",ring1="Prolix Ring",ring2="Kishar Ring",
+        body="Brioso justaucorps +3",hands="Leyline gloves",ring1="Prolix Ring",ring2="Kishar Ring",
         back="Intarabus's cape",waist="Aoidos' Belt",legs="Querkening brais",feet="Telchine Pigaches"}
 
     sets.precast.FC.Daurdabla = set_combine(sets.precast.FC.BardSong, {range= "Daurdabla"})
@@ -188,7 +188,7 @@ function init_gear_sets()
     -- For song debuffs (accuracy primary, duration secondary)
     sets.midcast.ResistantSongDebuff = {main="Carnwenhan",range="Gjallarhorn",
         head="Brioso Roundlet +3",neck="Moonbow whistle +1",ear1="Regal Earring",ear2="Dignitary's Earring",
-        body="Brioso justacorps +3",hands="Brioso cuffs +3",ring1="Prolix Ring",ring2="Sangoma Ring",
+        body="Brioso justaucorps +3",hands="Brioso cuffs +3",ring1="Prolix Ring",ring2="Sangoma Ring",
         back="Intarabus's Cape",waist="Eschan Stone",legs="Inyanga Shalwar +2",feet="Brioso Slippers +3"}
 		
 	--sets.midcast.ResistantSongDebuff = {main="Carnwenhan",sub="Mephitis Grip",range="Gjallarhorn",

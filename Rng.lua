@@ -126,7 +126,7 @@ function init_gear_sets()
 	sets.midcast.RA = {
 		head="Arcadian beret +2",neck="Iskur Gorget",ear1="Enervating earring",ear2="Sherida Earring",
 		body="Amini Caban +1",hands="Carmine finger gauntlets +1",ring1="Rajas Ring",ring2="Regal Ring",
-		back="Belenus's Cape",waist="Yemaya Belt",legs="Amini Brague +1",feet="Meghanada jambeaux +2"}
+		back="Belenus's Cape",waist="Yemaya Belt",legs="Amini Brague +1",feet="Malignance boots"}
 	
 	sets.midcast.RA.Acc = set_combine(sets.midcast.RA,{
 		head="Orion beret +3",
@@ -152,9 +152,9 @@ function init_gear_sets()
 
 	-- Idle sets
 	sets.idle = {
-		head="Meghanada visor +2",neck="Loricate torque +1",ear1="Etiolation earring",ear2="Infused earring",
+		head="Malignance Chapeau",neck="Loricate torque +1",ear1="Etiolation earring",ear2="Infused earring",
 		body="Meghanada cuirie +2",hands="Meghanada gloves +2",ring1="Defending Ring",ring2="Paguroidea Ring",
-		back="Moonbeam cape",waist="Flume Belt",legs="Meghanada chausses +2",feet="Jute Boots +1"}
+		back="Moonbeam cape",waist="Flume Belt",legs="Carmine cuisses +1",feet="Malignance Boots"}
 		
 	sets.idle.Vagary = {	
 		head="Arcadian Beret +1",neck="Iskur Gorget",ear1="Enervating earring",ear2="Tripudio Earring",
@@ -163,9 +163,9 @@ function init_gear_sets()
 	
 	-- Defense sets
 	sets.defense.PDT = {
-        head="Meghanada Visor +2",neck="Loricate torque +1",
+        head="Malignance Chapeau",neck="Loricate torque +1",
         body="Meghanada cuirie +2",hands="Meghanada gloves +2",ring1="Defending Ring",ring2="Patricius Ring",
-        back="Moonbeam Cape",waist="Sailfi belt +1",legs="Meghanada chausses +2",feet={name="Herculean boots", augments={'Accuracy+24 Attack+24','Damage taken-2%','STR+7','Accuracy+11','Attack+15',}}}
+        back="Moonbeam Cape",waist="Sailfi belt +1",legs="Meghanada chausses +2",feet="Malignance boots"}
 
 	sets.defense.MDT = {
 		head="Orion Beret +2",neck="Loricate torque +1",
