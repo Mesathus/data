@@ -154,7 +154,7 @@ function init_gear_sets()
 	sets.midcast.Minne = {legs="Mousai Seraweels",}
 	sets.midcast.Paeon = {head="Brioso roundlet +3"}
 	sets.midcast.Prelude = {back=gear.IntarabusMACC}
-	sets.midcast.Carol = {}
+	sets.midcast.Carol = {hands="Mousai Gages +1"}
 	sets.midcast["Sentinel's Scherzo"] = {feet="Fili cothurnes +1"}
 	sets.midcast['Magic Finale'] = {}
 	sets.midcast.Mazurka = {range=info.DaurdablaInstrument}
@@ -228,6 +228,7 @@ function init_gear_sets()
 		hands=gear.TelchineHandsDURATION,
 		legs=gear.TelchineLegsDURATION,
 		feet=gear.TelchineFeetDURATION,
+		waist="Embla Sash",
 		})
 	
 	sets.midcast.Regen = set_combine(sets.midcast.EnhancingDuration, {sub="Ammurapi Shield",
@@ -236,7 +237,9 @@ function init_gear_sets()
 	
 	sets.midcast['Haste'] = sets.midcast.EnhancingDuration
 	sets.midcast['Flurry'] = sets.midcast.EnhancingDuration
-	sets.midcast['Refresh'] = set_combine(sets.midcast.EnhancingDuration, {waist="Gishdubar sash"})
+	sets.midcast['Refresh'] = set_combine(sets.midcast.EnhancingDuration, {
+		--waist="Gishdubar sash"
+		})
 		
 	sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {
 		neck="Stone gorget",legs="Shedir seraweels",waist="Siegel Sash"})

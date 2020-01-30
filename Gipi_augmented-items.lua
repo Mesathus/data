@@ -34,6 +34,7 @@
 	
 	gear.HercHeadREFRESH = {name="Herculean Helm", augments={'Accuracy+9','Weapon Skill Acc.+12','"Refresh"+2','Accuracy+19 Attack+19','Mag. Acc.+1 "Mag.Atk.Bns."+1',}}
 	gear.HercHandsREFRESH = {name="Herculean gloves", augments={'Accuracy+10','Pet: "Dbl.Atk."+1 Pet: Crit.hit rate +1','"Refresh"+2','Accuracy+16 Attack+16','Mag. Acc.+17 "Mag.Atk.Bns."+17'}}
+	gear.HercLegsREFRESH = {name="Herculean Trousers", augments={'"Fast Cast"+1','STR+3','"Refresh"+1','Accuracy+2 Attack+2',}}
 	gear.HercFeetREFRESH = {name="Herculean Boots", augments={'DEX+12','INT+14','"Refresh"+1','Accuracy+6 Attack+6','Mag. Acc.+7 "Mag.Atk.Bns."+7'}}
 	
 	gear.HercHeadSTR = {name="Herculean helm", augments={'Accuracy+22','Weapon skill damage +3%','STR+14','Attack+15'}}
@@ -62,6 +63,7 @@
 	gear.HercHandsTH = {name="Herculean gloves", augments={'Accuracy+15','"Treasure Hunter"+1','Mag. Acc.+15 "Mag.Atk.Bns."+15',}}	
 	
 	gear.HercLegsPHALANX = {name="Herculean trousers", augments={'Attack+29','"Dual Wield"+3','Phalanx +4','Accuracy+19 Attack+19','Mag. Acc.+20 "Mag.Atk.Bns."+20',}}
+	gear.HercFeetPHALANX = {name="Herculean boots", augments={'Accuracy+9','Crit.hit rate+2','Phalanx +4',}}
 
 --Merlinic
 	gear.MerlinHeadMB = {name="Merlinic hood", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','Magic burst dmg.+6%','INT+2','"Mag.Atk.Bns."+9'}}
@@ -104,7 +106,7 @@
 	gear.ValHeadWS = {name="Valorous Mask", augments={'Accuracy+17 Attack+17','Weapon skill damage +3%','STR+6','Accuracy+14',}}
 	gear.ValBodyWS = {name="Valorous Mail", augments={'Weapon skill damage +5%','STR+10','Attack+4',}}
 	gear.ValHandsWS = {name="Valorous Mitts", augments={'Attack+28','Weapon skill damage +3%','STR+9','Accuracy+3',}}
-	gear.ValFeetWS = {name="Valorous Greaves", augments={'Mag. Acc.+25','Weapon skill damage +4%','Accuracy+20 Attack+20',}}
+	gear.ValFeetWS = {name="Valorous Greaves", augments={'Accuracy+25 Attack+25','Crit. hit damage +1%','STR+8','Attack+12',}}
 
 	gear.ValBodySTP = {name="Valorous Mail", augments={'Accuracy+16','"Store TP"+8',}}
 	gear.ValLegsSTP = {name="Valorous Hose", augments={'Accuracy+30','"Store TP"+7','Attack+8',}}
@@ -181,7 +183,7 @@
 	gear.OgmaCapeFC = {name="Ogma's cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','"Fast Cast"+10','Phys. dmg. taken-10%',}}
 
 --Capes SAM
-	gear.SmertTP = {name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','Phys. dmg. taken-10%',}}
+	gear.SmertTP = {name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Phys. dmg. taken-10%',}}
 	gear.SmertWS = {name="Smertrios's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
 	
 --Capes SCH

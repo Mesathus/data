@@ -180,7 +180,7 @@ function init_gear_sets()
 
     sets.midcast.Aspir = sets.midcast.Drain
 
-    sets.midcast.Stun = {main="Akademos",sub="Niobid strap",ammo="Pemphredo tathlum",
+    sets.midcast.Stun = {main="Daybreak",sub="Ammurapi",ammo="Pemphredo tathlum",
         head="Merlinic hood",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Dignitary's Earring",
         body="Amalric doublet",hands="Jhakri cuffs +1",ring1="Sangoma Ring",ring2="Kishar Ring",
         back="Bookworm's Cape",waist="Refoccilation stone",legs="Merlinic shalwar",feet="Merlinic crackows"}
@@ -189,22 +189,22 @@ function init_gear_sets()
 
 
     -- Elemental Magic sets are default for handling low-tier nukes.
-    sets.midcast['Elemental Magic'] = {main="Akademos",sub="Niobid strap",ammo="Seraphic ampulla",
+    sets.midcast['Elemental Magic'] = {main="Daybreak",sub="Ammurapi",ammo="Seraphic ampulla",
         head="Merlinic hood",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Friomisi Earring",
         body="Amalric doublet",hands="Amalric gages",ring1="Sangoma Ring",ring2="Shiva Ring +1",
         back="Bookworm's Cape",waist="Refoccilation stone",legs="Merlinic shalwar",feet="Merlinic crackows"}
 
-    sets.midcast['Elemental Magic'].Resistant = {main="Akademos",sub="Niobid strap",ammo="Seraphic ampulla",
+    sets.midcast['Elemental Magic'].Resistant = {main="Daybreak",sub="Ammurapi",ammo="Seraphic ampulla",
         head="Merlinic hood",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Friomisi Earring",
         body="Amalric doublet",hands="Amalric gages",ring1="Sangoma Ring",ring2="Shiva Ring +1",
         back="Bookworm's Cape",waist="Refoccilation stone",legs="Merlinic shalwar",feet="Merlinic crackows"}
 				
-	sets.midcast['Elemental Magic'].Burst = {main="Akademos",sub="Niobid strap",ammo="Pemphredo tathlum",
+	sets.midcast['Elemental Magic'].Burst = {main="Daybreak",sub="Ammurapi",ammo="Pemphredo tathlum",
         head="Merlinic hood",neck="Mizukage-no-kubikazari",ear1="Barkarole Earring",ear2="Friomisi Earring",
         body="Amalric doublet",hands="Amalric gages",ring1="Mujin band",ring2="Shiva Ring +1",
         back="Seshaw Cape",waist="Refoccilation stone",legs="Merlinic shalwar",feet="Merlinic crackows"}
 		
-	sets.midcast['Elemental Magic'].Helix = {main="Akademos",sub="Niobid strap",ammo="Pemphredo tathlum",
+	sets.midcast['Elemental Magic'].Helix = {main="Daybreak",sub="Ammurapi",ammo="Pemphredo tathlum",
         head="Merlinic hood",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Friomisi Earring",
         body="Amalric doublet",hands="Amalric gages",ring1="Sangoma Ring",ring2="Shiva Ring +1",
         back="Bookworm's Cape",waist="Refoccilation stone",legs="Merlinic shalwar",feet="Merlinic crackows"}
@@ -236,7 +236,7 @@ function init_gear_sets()
         body="Jhakri robe +2",hands="Volte gloves",ring1="Sheltered Ring",ring2="Defending Ring",
         back="Moonbeam Cape",waist="Hierarch Belt",legs="Volte brais",feet="Herald's Gaiters"}
 
-    sets.idle.Field = {main="Akademos",sub="Niobid strap",ammo="Incantor Stone",
+    sets.idle.Field = {main="Daybreak",sub="Genmei shield",ammo="Incantor Stone",
         head="Befouled crown",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Loquacious Earring",
         body="Jhakri robe +2",hands="Volte gloves",ring1="Sheltered Ring",ring2="Defending Ring",
         back="Moonbeam Cape",waist="Hierarch Belt",legs="Volte brais",feet="Chironic slippers"}
