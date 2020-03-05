@@ -77,8 +77,8 @@ function init_gear_sets()
 	
 	sets.precast.RA = {
 		head="Amini gapette +1",
-		body="Amini Caban +1",hands="Carmine finger gauntlets +1",
-		back="Lutian Cape",waist="Yemaya Belt",legs="Orion Braccae +2",feet="Meghanada jambeaux +2"}
+		body="Amini Caban +1",hands="Oshosi gloves +1",
+		back="Lutian Cape",waist="Yemaya Belt",legs="Oshosi trousers +1",feet="Meghanada jambeaux +2"}
 
 
 	-- Weaponskill sets
@@ -124,7 +124,7 @@ function init_gear_sets()
 	-- Ranged sets
 
 	sets.midcast.RA = {
-		head="Arcadian beret +2",neck="Iskur Gorget",ear1="Enervating earring",ear2="Sherida Earring",
+		head="Arcadian beret +2",neck="Iskur Gorget",ear1="Enervating earring",ear2="Telos Earring",
 		body="Amini Caban +1",hands="Carmine finger gauntlets +1",ring1="Rajas Ring",ring2="Regal Ring",
 		back="Belenus's Cape",waist="Yemaya Belt",legs="Amini Brague +1",feet="Malignance boots"}
 	
@@ -195,7 +195,9 @@ function init_gear_sets()
 
 	sets.buff.Barrage = set_combine(sets.midcast.RA.Acc, {hands="Orion Bracers +2"})
 	sets.buff.Camouflage = {body="Orion Jerkin +3"}
-	sets.buff['Double Shot'] = set_combine(sets.midcast.RA.Acc, {body = "Arcadian jerkin +3"})
+	sets.buff['Double Shot'] = set_combine(sets.midcast.RA.Acc, {head="Arcadian beret +2",
+																body = "Arcadian jerkin +3", hands="Oshosi gloves +1",
+																legs="Oshosi trousers +1",feet="Oshosi leggings +1"})
 end
 
 -------------------------------------------------------------------------------------------------------------------

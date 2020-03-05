@@ -273,7 +273,7 @@ function init_gear_sets()
     
     sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {ammo="Mantoptera eye",
 	neck="Caro necklace",ear1="Moonshade Earring",
-		hands="Jhakri cuffs +2",ring1="Apate ring",ring2="Rufescent ring",
+		hands="Jhakri cuffs +2",ring1="Epaminondas's ring",ring2="Rufescent ring",
 		waist="Grunfeld rope",feet="Carmine greaves +1"})
 
     sets.precast.WS['Chant du Cygne'] = set_combine(sets.precast.WS, {
@@ -455,7 +455,7 @@ function init_gear_sets()
     sets.engaged = {ammo="Falcon eye",
         head="Adhemar bonnet",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Suppanomimi",
         body="Assim. Jubbah +1",hands="Taeon gloves",ring1="Rajas Ring",ring2="Epona's Ring",
-        back="Atheling Mantle",waist="Shetal stone",legs="Taeon tights",feet="Taeon Boots"}
+        back="Atheling Mantle",waist="Shetal stone",legs="Samnuha tights",feet="Taeon Boots"}
 
     sets.engaged.Acc = {ammo="Falcon eye",
         head="Whirlpool Mask",neck="Ej Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
@@ -480,7 +480,7 @@ function init_gear_sets()
     sets.engaged.DW.Refresh = {ammo="Ginsen",
         head="Rawhide Mask",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Suppanomimi",
         body="Assim. Jubbah +1",hands="Taeon gloves",ring1="Rajas Ring",ring2="Epona's Ring",
-        back="Atheling Mantle",waist="Shetal stone",legs="Taeon tights",feet="Taeon Boots"}
+        back="Atheling Mantle",waist="Shetal stone",legs="Samnuha tights",feet="Taeon Boots"}
 
     sets.engaged.Learning = set_combine(sets.engaged, sets.Learning)
     sets.engaged.DW.Learning = set_combine(sets.engaged.DW, sets.Learning)

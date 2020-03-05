@@ -129,7 +129,7 @@ function init_gear_sets()
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
         head="Aya. Zucchetto +2",neck="Caro necklace",ear1="Ishvara Earring",ear2="Moonshade Earring",
-        body="Ayanmo Corazza +2",hands="Aya. Manopolas +2",ring1="Apate Ring",ring2="Ramuh Ring +1",
+        body="Ayanmo Corazza +2",hands="Aya. Manopolas +2",ring1="Epaminondas's Ring",ring2="Ramuh Ring +1",
         back="Ground. Mantle +1",waist="Grunfeld rope",legs="Lustratio subligar +1",feet="Lustratio leggings +1"}
     
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
@@ -252,10 +252,6 @@ function init_gear_sets()
         body="Emet harness +1",hands="Umuthi gloves",ring1="Defending Ring",ring2="Fortified Ring",
         back="Moonbeam Cape",waist="Flume Belt",legs="Vanya slops",feet="Fili Cothurnes +1"}
 
-    -- --sets.idle.Town = {main="Carnwenhan", sub="Genmei shield",range="Gjallarhorn",
-        -- head="Genmei kabuto",neck="Loricate torque +1",ear1="Bloodgem Earring",ear2="Loquacious Earring",
-        -- body="Emet harness",hands="Umuthi gloves",ring1="Defending Ring",ring2="Patricius Ring",
-        -- back="Kumbira Cape",waist="Flume Belt",legs="Gendewitha Spats",feet="Fili Cothurnes +1"}
 
     -- --sets.idle.Weak = {main=gear.Staff.PDT,sub="Mephitis Grip",range="Oneiros Harp",
         -- head="Genmei kabuto",neck="Loricate torque +1",ear1="Bloodgem Earring",
@@ -267,7 +263,7 @@ function init_gear_sets()
 
     sets.defense.PDT = {
         neck="Loricate torque +1",
-        ring1="Defending Ring",ring2="Patricius Ring",
+        ring1="Defending Ring",ring2="Moonlight Ring",
         back="Moonbeam Cape"}
 
     sets.defense.MDT = {main=gear.Staff.PDT,sub="Mephitis Grip",
@@ -294,7 +290,7 @@ function init_gear_sets()
     legs="Aya. Cosciales +2",
     feet="Aya. Gambieras +2",
     neck="Combatant's torque",
-    waist="Kentarch Belt +1",
+    waist="Reiki yotai",
     left_ear="Digni. Earring",
     right_ear="Suppanomimi",
     left_ring="Rajas Ring",
@@ -309,7 +305,7 @@ function init_gear_sets()
     legs="Aya. Cosciales +2",
     feet="Aya. Gambieras +2",
     neck="Combatant's torque",
-    waist="Kentarch Belt +1",
+    waist="Reiki yotai",
     left_ear="Digni. Earring",
     right_ear="Suppanomimi",
     left_ring="Rajas Ring",
