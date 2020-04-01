@@ -156,7 +156,8 @@ function init_gear_sets()
     sets.precast.WS['Dancing Edge'].TA = set_combine(sets.precast.WS['Dancing Edge'].Mod, {ammo="Qirmiz Tathlum"})
     sets.precast.WS['Dancing Edge'].SATA = set_combine(sets.precast.WS['Dancing Edge'].Mod, {ammo="Qirmiz Tathlum"})
 
-    sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {ammo = "Yetshila +1",ear1="Sherida Earring",
+    sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {ammo = "Yetshila +1",
+		head="Adhemar bonnet +1",ear1="Sherida Earring",
         body ="Plunderer's vest +3",hands="Mummu wrists +2",
 		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10'}},ring2="Mummu Ring",
 		legs="Pillager's culottes +3",feet="Adhemar Gamashes +1"})
@@ -275,7 +276,7 @@ function init_gear_sets()
     sets.idle.Town = {sub="Beveler's shield",
         head="Turms cap +1",neck="Tanner's torque",
         body="Tanner's apron",hands="Tanner's gloves",ring1="Orvail Ring",
-        back="Shadow Mantle",waist="Patentia Sash",legs="Pillager's Culottes +3",feet="Jute boots +1"}
+        back="Shadow Mantle",waist="Reiki Yotai",legs="Pillager's Culottes +3",feet="Jute boots +1"}
 
     sets.idle.Weak = {ammo="Yamarang",
         head="Turms cap +1",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Infused Earring",

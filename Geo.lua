@@ -239,26 +239,26 @@ function init_gear_sets()
  
     -- Idle sets
  
-    sets.idle = {main="Bolelabunga",sub="Genmei shield",Range="Dunna",
+    sets.idle = {main="Daybreak",sub="Genmei shield",Range="Dunna",
         head="Befouled Crown",neck="Loricate Torque +1",ear1="Sanare earring",ear2="Ethereal earring",
         body="Jhakri robe +2",hands="Bagua mitaines",ring1="Defending Ring",ring2="Paguroidea Ring",
-        back="Umbra Cape",waist="Fucho-no-obi",legs="Assiduity pants +1",feet="Geomancy sandals"}
+        back="Umbra Cape",waist="Fucho-no-obi",legs="Volte brais",feet="Geomancy sandals"}
  
     sets.idle.PDT = {main="Mafic cudgel",sub="Genmei shield",Range="Dunna",
         head="Azimuth Hood +1",neck="Loricate Torque +1",ear1="Sanare earring",ear2="ethereal earring",
         body="Jhakri robe +2",hands="Geomancy mitaines +1",ring1="Defending ring",ring2="Patricius Ring",
-        back="Umbra Cape",waist="Fucho-no-obi",legs="Vanya slops",feet="Azimuth gaiters +1"}
+        back="Umbra Cape",waist="Fucho-no-obi",legs="Volte brais",feet="Azimuth gaiters +1"}
  
     -- .Pet sets are for when Luopan is present.
     sets.idle.Pet = {main="Solstice",sub="Genmei shield",Range="Dunna",
         head="Azimuth Hood +1",neck="Loricate Torque +1",ear1="Sanare earring",ear2="Handler's earring +1",
         body="Jhakri robe +2",hands="Geomancy mitaines +1",ring1="Defending Ring",ring2="Patricius Ring",
-        back="Lifestream Cape",waist="Fucho-no-obi",legs="Vanya slops",feet="Geomancy sandals"}
+        back="Lifestream Cape",waist="Fucho-no-obi",legs="Volte brais",feet="Geomancy sandals"}
  
     sets.idle.PDT.Pet = {main="Solstice",sub="Genmei shield",Range="Dunna",
         head="Azimuth Hood +1",neck="Loricate Torque +1",ear1="Sanare earring",ear2="ethereal earring",
         body="Jhakri robe +2",hands="Geomancy mitaines +1",ring1="Defending ring",ring2="Dark Ring",
-        back="Umbra Cape",waist="Fucho-no-obi",legs="Vanya slops",feet="Azimuth gaiters +1"}
+        back="Umbra Cape",waist="Fucho-no-obi",legs="Volte brais",feet="Azimuth gaiters +1"}
  
     -- .Indi sets are for when an Indi-spell is active.
     sets.idle.Indi = set_combine(sets.idle, {})

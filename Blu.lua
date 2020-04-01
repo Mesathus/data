@@ -386,6 +386,11 @@ function init_gear_sets()
         back="Cornflower Cape",legs="Mavi Tayt +2",feet="Luhlaza Charuqs"}
 
     sets.midcast['Blue Magic'].Buff = {}
+	
+	sets.midcast['Enhancing Magic'] = {
+		head = "Inyanga tiara +2", neck = "Voltsurge torque", ear1 = "Etiolation earring", ear2 = "Loquacious earring",
+		body = "Telchine Chasuble", hands = "Telchine gloves", ring1="Kishar ring",
+		waist = "Luminary sash", legs = "Telchine Braconi",feet = "Telchine pigaches"}
     
     sets.midcast.Protect = {ring1="Sheltered Ring"}
     sets.midcast.Protectra = {ring1="Sheltered Ring"}
@@ -414,9 +419,9 @@ function init_gear_sets()
     
     -- Idle sets
     sets.idle = {ammo="Impatiens",
-        head="Ayanmo zucchetto +1",neck="Loricate torque +1",ear1="Infused Earring",ear2="Loquacious Earring",
+        head="Malignance Chapeau",neck="Loricate torque +1",ear1="Infused Earring",ear2="Loquacious Earring",
         body="Jhakri robe +2",hands="Umuthi Gloves",ring1="Defending Ring",ring2="Patricius Ring",
-        back="Moonbeam cape",waist="Flume Belt",legs="Carmine cuisses +1",feet={name="Herculean boots", augments={'Accuracy+24 Attack+24','Damage taken-2%','STR+7','Accuracy+11','Attack+15',}}}
+        back="Moonbeam cape",waist="Flume Belt",legs="Carmine cuisses +1",feet="Malignance boots"}
 
     sets.idle.PDT = {ammo="Impatiens",
         head="Whirlpool Mask",neck="Wiglen Gorget",ear1="Bloodgem Earring",ear2="Loquacious Earring",
