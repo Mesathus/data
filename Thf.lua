@@ -221,8 +221,8 @@ function init_gear_sets()
 
     sets.precast.WS['Last Stand'] = {
         head="Meghanada Visor +2",neck="Fotia gorget",ear1="Enervating earring",ear2="Telos Earring",
-		body="Adhemar jacket +1",hands="Meghanada gloves +2",ring1="Regal Ring",ring2="Cacoethic Ring +1",
-		waist="Fotia belt",legs="Meghanada chausses +2",feet="Meghanada jambeaux +1"}
+		body="Meghanada cuirie +2",hands="Meghanada gloves +2",ring1="Regal Ring",ring2="Cacoethic Ring +1",
+		waist="Fotia belt",legs="Meghanada chausses +2",feet="Meghanada jambeaux +2"}
 		
 	
 
@@ -242,7 +242,7 @@ function init_gear_sets()
     -- Ranged gear
     sets.midcast.RA = {
         head="Malignance chapeau",neck="Iskur Gorget",ear1="Enervating earring",ear2="Telos Earring",
-		body="Meghanada cuirie +2",hands="Meghanada gloves +2",ring1="Regal Ring",ring2="Cacoethic Ring +1",
+		body="Meghanada cuirie +2",hands="Malignance gloves",ring1="Regal Ring",ring2="Cacoethic Ring +1",
 		back="Kayapa cape",waist="Yemaya belt",legs="Meghanada chausses +2",feet="Malignance boots"}
 
 
@@ -265,7 +265,7 @@ function init_gear_sets()
 
     sets.idle = {ammo="Yamarang",
         head="Turms cap +1",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Infused Earring",
-        body="Meghanada cuirie +2",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Sheltered Ring",
+        body="Meghanada cuirie +2",hands="Malignance Gloves",ring1="Defending Ring",ring2="Sheltered Ring",
         back="Moonbeam cape",waist="Flume Belt",legs="Volte hose",feet="Jute boots +1"}
 		
 	sets.idle.Vagary = {
@@ -287,6 +287,14 @@ function init_gear_sets()
         head="Turms cap +1",neck="Ainia collar",ear1="Sherida Earring",ear2="Telos earring",
         body="Herculean vest",hands="Adhemar Wristbands +1",ring1="Rajas Ring",ring2="Ilabrat Ring",
         back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}},waist="Patentia sash",legs="Samnuha tights",feet="Malignance boots"}
+		
+	sets.idle.Evasion = {ammo="Yamarang",
+        head="Malignance Chapeau",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Telos Earring",
+        body="Pillager's vest +3",hands="Turms Mitts +1",ring1="Moonlight Ring",ring2="Moonlight Ring",
+        back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%'}},
+		waist="Reiki Yotai",legs="Pillager's Culottes +3",feet="Turms Leggings +1"
+	
+	}
 
 
     -- Defense sets
@@ -332,14 +340,14 @@ function init_gear_sets()
 		
 	sets.engaged.Hybrid = {ammo="Yamarang",
         head="Malignance chapeau",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Telos Earring",
-        body="Pillager's Vest +3",hands="Adhemar Wristbands +1",ring1="Moonlight Ring",ring2="Moonlight Ring",
+        body="Pillager's Vest +3",hands="Malignance gloves",ring1="Moonlight Ring",ring2="Moonlight Ring",
         back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%'}},waist="Reiki Yotai",legs="Pillager's Culottes +3",feet="Malignance boots"}
 		
 	sets.engaged.Tank = {ammo="Yamarang",
         head="Malignance chapeau",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Telos Earring",
         body="Malignance tabard",hands="Turms mittens +1",ring1="Moonlight Ring",ring2="Moonlight Ring",
         back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%'}},
-		waist="Reiki Yotai",legs="Turms subligar +1",feet="Malignance boots"}
+		waist="Reiki Yotai",legs="Malignance Tights",feet="Turms leggings +1"}
 	
 
     -- Mod set for trivial mobs (Thaumas)
@@ -351,7 +359,7 @@ function init_gear_sets()
     -- Mod set for trivial mobs (CP)   
 
     sets.engaged.Evasion = {ammo="Yamarang",
-        head="Malignance Chapeau",neck="Assassin's gorget +2",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
+        head="Malignance Chapeau",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Telos Earring",
         body="Pillager's vest +3",hands="Turms Mitts +1",ring1="Moonlight Ring",ring2="Moonlight Ring",
         back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%'}},
 		waist="Reiki Yotai",legs="Pillager's Culottes +3",feet="Turms Leggings +1"}

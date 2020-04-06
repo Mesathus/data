@@ -153,7 +153,7 @@ function init_gear_sets()
 	-- Idle sets
 	sets.idle = {
 		head="Malignance Chapeau",neck="Loricate torque +1",ear1="Etiolation earring",ear2="Infused earring",
-		body="Meghanada cuirie +2",hands="Meghanada gloves +2",ring1="Defending Ring",ring2="Paguroidea Ring",
+		body="Meghanada cuirie +2",hands="Malignance gloves",ring1="Defending Ring",ring2="Paguroidea Ring",
 		back="Moonbeam cape",waist="Flume Belt",legs="Carmine cuisses +1",feet="Malignance Boots"}
 		
 	sets.idle.Vagary = {	
@@ -181,14 +181,13 @@ function init_gear_sets()
 
 	sets.engaged = {
 		head="Dampening Tam",neck="Combatant's Torque",ear1="Sherida Earring",ear2="Cessance Earring",
-		body="Adhemar jacket", hands="Adhemar Wristbands +1", ring1="Epona's Ring",ring2="Ilabrat Ring",
-		back="Grounded mantle +1",waist="Patentia sash",legs="Samnuha Tights",feet={ name="Herculean Boots", augments={'Accuracy+26','"Triple Atk."+4','DEX+9','Attack+1',}}}
+		body="Adhemar jacket +1", hands="Adhemar Wristbands +1", ring1="Epona's Ring",ring2="Ilabrat Ring",
+		back="Grounded mantle +1",waist="Patentia sash",legs="Samnuha Tights",feet="Malignance boots"}
 
 	sets.engaged.Acc = {
-		head="Whirlpool Mask",neck="Asperity Necklace",ear1="Steelflash Earring",ear2="Bladeborn Earring",
-		body="Adhemar jacket",hands="Taeon Gloves",ring1="K'ayres Ring",ring2="Rajas Ring",
-		back="Letalis Mantle",waist="Olseni Belt",legs="Manibozho Brais",feet="Taeon Boots"}
-
+		head="Malignance chapeau",neck="Combatant's Torque",ear1="Sherida Earring",ear2="Cessance Earring",
+		body="Adhemar jacket +1", hands="Adhemar Wristbands +1", ring1="Epona's Ring",ring2="Ilabrat Ring",
+		back="Grounded mantle +1",waist="Patentia sash",legs="Samnuha Tights",feet="Malignance boots"}
 	--------------------------------------
 	-- Custom buff sets
 	--------------------------------------

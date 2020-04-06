@@ -286,6 +286,14 @@ function init_gear_sets()
         head="Haruspex Hat",ear1="Etiolation earring",ear2="Loquacious Earring",
         body="Luhlaza Jubbah",hands="Mavi Bazubands +2",ring1="Prolix Ring",
         back="Swith Cape +1",waist="Hurch'lan Sash",legs="Enif Cosciales",feet="Iuitl Gaiters +1"}
+		
+	sets.midcast['Phalanx'] = set_combine(sets.midcast.FastRecast, {
+		head={ name="Taeon Chapeau", augments={'Phalanx +3',}},
+		body={ name="Taeon Tabard", augments={'Attack+23','"Dual Wield"+5','Phalanx +3',}},
+		hands={ name="Taeon Gloves", augments={'Phalanx +3',}},
+		legs={ name="Taeon Tights", augments={'Accuracy+20 Attack+20','"Triple Atk."+2','Phalanx +3',}},
+		feet={ name="Taeon Boots", augments={'Phalanx +3',}}
+		})
         
     sets.midcast['Blue Magic'] = {}
     
@@ -388,7 +396,7 @@ function init_gear_sets()
     sets.midcast['Blue Magic'].Buff = {}
 	
 	sets.midcast['Enhancing Magic'] = {
-		head = "Inyanga tiara +2", neck = "Voltsurge torque", ear1 = "Etiolation earring", ear2 = "Loquacious earring",
+		head = "Telchine Cap", neck = "Voltsurge torque", ear1 = "Etiolation earring", ear2 = "Loquacious earring",
 		body = "Telchine Chasuble", hands = "Telchine gloves", ring1="Kishar ring",
 		waist = "Luminary sash", legs = "Telchine Braconi",feet = "Telchine pigaches"}
     
@@ -420,7 +428,7 @@ function init_gear_sets()
     -- Idle sets
     sets.idle = {ammo="Impatiens",
         head="Malignance Chapeau",neck="Loricate torque +1",ear1="Infused Earring",ear2="Loquacious Earring",
-        body="Jhakri robe +2",hands="Umuthi Gloves",ring1="Defending Ring",ring2="Patricius Ring",
+        body="Jhakri robe +2",hands="Malignance Gloves",ring1="Defending Ring",ring2="Patricius Ring",
         back="Moonbeam cape",waist="Flume Belt",legs="Carmine cuisses +1",feet="Malignance boots"}
 
     sets.idle.PDT = {ammo="Impatiens",
