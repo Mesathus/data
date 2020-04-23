@@ -124,6 +124,14 @@ function init_gear_sets()
 		hands="Leyline Gloves",ring1="Prolix Ring",legs="Rawhide trousers"}
 
     sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads",body="Passion Jacket"})
+	
+	sets.midcast['Phalanx'] = set_combine(sets.midcast.FastRecast, {
+		head={ name="Taeon Chapeau", augments={'Phalanx +3',}},
+		body={ name="Taeon Tabard", augments={'Attack+23','"Dual Wield"+5','Phalanx +3',}},
+		hands={ name="Taeon Gloves", augments={'Phalanx +3',}},
+		legs={ name="Taeon Tights", augments={'Accuracy+20 Attack+20','"Triple Atk."+2','Phalanx +3',}},
+		feet={ name="Taeon Boots", augments={'Phalanx +3',}}
+		})
 
 
     -- Ranged snapshot gear
@@ -157,7 +165,7 @@ function init_gear_sets()
     sets.precast.WS['Dancing Edge'].SATA = set_combine(sets.precast.WS['Dancing Edge'].Mod, {ammo="Qirmiz Tathlum"})
 
     sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {ammo = "Yetshila +1",
-		head="Adhemar bonnet +1",ear1="Sherida Earring",
+		head="Adhemar bonnet +1",ear1="Sherida Earring",ear2="Odr earring",
         body ="Plunderer's vest +3",hands="Mummu wrists +2",
 		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10'}},ring2="Mummu Ring",
 		legs="Pillager's culottes +3",feet="Adhemar Gamashes +1"})

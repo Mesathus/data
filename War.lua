@@ -108,7 +108,7 @@ function init_gear_sets()
     -- Weaponskill sets
     sets.precast.WS = {ammo="Seething Bomblet +1",
         head="Argosy Celata +1",neck="Fotia Gorget",ear1="Brutal Earring",ear2="Moonshade Earring",
-        body="Argosy Hauberk",hands="Argosy Mufflers +1",ring1="Niqmaddu Ring",ring2="Regal Ring",
+        body="Argosy Hauberk +1",hands="Argosy Mufflers +1",ring1="Niqmaddu Ring",ring2="Regal Ring",
         back="Cichol's Mantle",waist="Fotia Belt",legs="Argosy Breeches +1",feet="Argosy Sollerets +1"}
     sets.precast.WS.AccLow = set_combine(sets.precast.WS, {ammo="Seething Bomblet +1",})
     sets.precast.WS.AccHigh = set_combine(sets.precast.WS.AccLow, {})

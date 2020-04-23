@@ -465,14 +465,14 @@ function init_gear_sets()
     -- EG: sets.engaged.Dagger.Accuracy.Evasion
     
     -- Normal melee group
-    sets.engaged = {ammo="Falcon eye",
-        head="Adhemar bonnet",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Suppanomimi",
-        body="Assim. Jubbah +1",hands="Taeon gloves",ring1="Rajas Ring",ring2="Epona's Ring",
-        back="Atheling Mantle",waist="Shetal stone",legs="Samnuha tights",feet="Taeon Boots"}
+    sets.engaged = {ammo="Mantoptera eye",
+        head="Adhemar bonnet +1",neck="Lissome Necklace",ear1="Brutal Earring",ear2="Telos earring",
+        body="Adhemar jacket +1",hands="Adhemar Wristbands +1",ring1="Rajas Ring",ring2="Epona's Ring",
+        back="Bleating Mantle",waist="Chiner's belt +1",legs="Samnuha tights",feet={ name="Herculean Boots", augments={'Accuracy+26','"Triple Atk."+4','DEX+9','Attack+1',}}}
 
     sets.engaged.Acc = {ammo="Falcon eye",
         head="Whirlpool Mask",neck="Ej Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Assim. Jubbah +1",hands="Buremte Gloves",ring1="Rajas Ring",ring2="Epona's Ring",
+        body="Adhemar jacket +1",hands="Buremte Gloves",ring1="Rajas Ring",ring2="Epona's Ring",
         back="Letalis Mantle",waist="Hurch'lan Sash",legs="Manibozho Brais",feet="Qaaxo Leggings"}
 
     sets.engaged.Refresh = {ammo="Falcon eye",
@@ -480,14 +480,14 @@ function init_gear_sets()
         body="Assim. Jubbah +1",hands="Assimilator's Bazubands +1",ring1="Rajas Ring",ring2="Epona's Ring",
         back="Atheling Mantle",waist="Windbuffet Belt",legs="Manibozho Brais",feet="Qaaxo Leggings"}
 
-    sets.engaged.DW = {ammo="Ginsen",
-        head="Adhemar bonnet",neck="Lissome Necklace",ear1="Cessance Earring",ear2="Suppanomimi",
-        body="Adhemar jacket",hands="Adhemar Wristbands +1",ring1="Hetairoi Ring",ring2="Epona's Ring",
+    sets.engaged.DW = {ammo="Mantoptera eye",
+        head="Adhemar bonnet +1",neck="Lissome Necklace",ear1="Cessance Earring",ear2="Suppanomimi",
+        body="Adhemar jacket +1",hands="Adhemar Wristbands +1",ring1="Hetairoi Ring",ring2="Epona's Ring",
         back="Bleating Mantle",waist="Reiki Yotai",legs="Carmine cuisses +1",feet={ name="Herculean Boots", augments={'Accuracy+26','"Triple Atk."+4','DEX+9','Attack+1',}}}
 
     sets.engaged.DW.Acc = {ammo="Falcon eye",
         head="Carmine Mask +1",neck="Combatant's torque",ear1="Dignitary's Earring",ear2="Cessance Earring",
-        body="Adhemar jacket",hands="Adhemar Wristbands +1",ring1="Ilabrat Ring",ring2="Epona's Ring",
+        body="Adhemar jacket +1",hands="Adhemar Wristbands +1",ring1="Ilabrat Ring",ring2="Epona's Ring",
         back="Rosmerta's cape",waist="Reiki Yotai",legs="Carmine cuisses +1",feet={name="Herculean boots", augments={'Accuracy+24 Attack+24','Damage taken-2%','STR+7','Accuracy+11','Attack+15'}}}
 
     sets.engaged.DW.Refresh = {ammo="Ginsen",

@@ -133,7 +133,7 @@ function init_gear_sets()
         feet="Gendewitha Galoshes"}
 
     sets.midcast['Enhancing Magic'] = {sub = "Ammurapi shield",
-		head = "Merlinic hood", neck = "Voltsurge torque", ear1 = "Etiolation earring", ear2 = "Loquacious earring",
+		head = "Inyanga tiara +2", neck = "Voltsurge torque", ear1 = "Etiolation earring", ear2 = "Loquacious earring",
 		body = "Telchine Chasuble", hands = "Telchine gloves", ring1="Kishar ring",
 		back = "Intarabus's cape", waist = "Luminary sash", legs = "Telchine Braconi",feet = "Telchine pigaches" }
 		

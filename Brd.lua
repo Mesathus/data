@@ -134,11 +134,11 @@ function init_gear_sets()
     
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
     sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {neck="Fotia Gorget", ear1="Dignitary's Earring",
-																	ring1="Begrudging Ring",ring2="Ilabrat Ring",waist="Fotia Belt"})
+																	ring1="Ilabrat Ring",ring2="Begrudging Ring",waist="Fotia Belt"})
 
     sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS)
 
-    sets.precast.WS['Mordant Rime'] = set_combine(sets.precast.WS)
+    sets.precast.WS['Mordant Rime'] = set_combine(sets.precast.WS, {neck="Moonbow whistle +1",ring2="Ilabrat Ring"})
     
     
     -- Midcast Sets
@@ -149,7 +149,9 @@ function init_gear_sets()
         body="Vanir Cotehardie",hands="Leyline gloves",ring1="Prolix Ring",
         back="Swith Cape +1",waist="Goading Belt",legs="Lengo Pants",feet="Telchine pigaches"}
 		
-	sets.midcast['Haste'] = set_combine(sets.midcast.FastRecast, {body = "Telchine Chasuble", hands = "Telchine gloves", legs = "Telchine Braconi"}) 
+	sets.midcast['Haste'] = set_combine(sets.midcast.FastRecast, {head="Telchine cap", 
+		body = "Telchine Chasuble", hands = "Telchine gloves",
+		legs = "Telchine Braconi",feet="Telchine pigaches"}) 
 	sets.midcast['Dispelga'] = set_combine(sets.midcast.FastRecast, {main="Daybreak"})
 		
 		
@@ -163,8 +165,8 @@ function init_gear_sets()
     sets.midcast.Paeon = {head="Brioso Roundlet +3"}
     sets.midcast.Carol = {head="Fili Calot +1",
         body="Fili Hongreline +1",hands="Fili Manchettes +1",
-        legs="Fili Rhingrave +1",feet="Fili Cothurnes +1"}
-    sets.midcast["Sentinel's Scherzo"] = {feet="Fili Cothurnes +1"}
+        legs="Inyanga Shalwar +2",feet="Brioso Slippers +3"}
+    sets.midcast["Sentinel's Scherzo"] = {feet="Brioso Slippers +3"}
     sets.midcast['Magic Finale'] = {back="Rhapsode's Cape"}
 	sets.midcast['Honor March'] = {hands="Fili Manchettes +1", range="Marsyas"}
 
@@ -212,7 +214,7 @@ function init_gear_sets()
     -- Other general spells and classes.
     sets.midcast.Cure = {main="Daylight",
         head="Gendewitha Caubeen",
-        body="Emet harness +1",hands="Leyline Gloves",
+        body="Chironic Doublet",hands="Leyline Gloves",
         back="Solemnity cape",legs="Vanya slops",feet="Vanya clogs"}
         
     sets.midcast.Curaga = sets.midcast.Cure
@@ -291,9 +293,9 @@ function init_gear_sets()
     feet="Aya. Gambieras +2",
     neck="Combatant's torque",
     waist="Reiki yotai",
-    left_ear="Digni. Earring",
+    left_ear="Telos Earring",
     right_ear="Suppanomimi",
-    left_ring="Rajas Ring",
+    left_ring="Ilabrat Ring",
     right_ring="Ramuh Ring +1",
     back="Ground. Mantle +1"}
 
@@ -306,26 +308,26 @@ function init_gear_sets()
     feet="Aya. Gambieras +2",
     neck="Combatant's torque",
     waist="Reiki yotai",
-    left_ear="Digni. Earring",
+    left_ear="Telos. Earring",
     right_ear="Suppanomimi",
-    left_ring="Rajas Ring",
+    left_ring="Ramuh Ring +1",
     right_ring="Ilabrat Ring",
     back="Ground. Mantle +1"}
 
     -- Set if dual-wielding
     sets.engaged.DW = {
-    range="Gjallarhorn",
+    range="Nibiru Harp",
     head="Aya. Zucchetto +2",
     body="Ayanmo Corazza +2",
     hands="Aya. Manopolas +2",
-    legs="Jokushu Haidate",
+    legs="Aya. Cosciales +2",
     feet="Aya. Gambieras +2",
-    neck="Clotharius Torque",
-    waist="Shetal Stone",
-    left_ear="Digni. Earring",
+    neck="Combatant's torque",
+    waist="Reiki Yotai",
+    left_ear="Telos Earring",
     right_ear="Suppanomimi",
-    left_ring="Rajas Ring",
-    right_ring="Petrov Ring",
+    left_ring="Ilabrat Ring",
+    right_ring="Ramuh Ring +1",
     back="Ground. Mantle +1",
 }
 end
