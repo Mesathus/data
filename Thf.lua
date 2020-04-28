@@ -337,7 +337,7 @@ function init_gear_sets()
         
     -- Mod set for trivial mobs (Skadi+1)
     sets.engaged.TA = {ammo="Ginsen",
-        head="Plunderer's Bonnet +3",neck="Ainia collar",ear1="Sherida Earring",ear2="Tripudio earring",
+        head="Plunderer's Bonnet +3",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Tripudio earring",
         body="Pillager's vest +3",hands="Adhemar Wristbands +1",ring1="Hetairoi Ring",ring2="Epona's Ring",
         back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%'}},waist="Chiner's Belt +1",legs="Samnuha tights",feet="Plunderer's Poulaines +3"}
 		

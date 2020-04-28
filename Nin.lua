@@ -28,7 +28,7 @@ end
 
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
-    state.OffenseMode:options('Normal', 'Acc')
+    state.OffenseMode:options('Normal', 'Hybrid')
     state.HybridMode:options('Normal', 'Evasion', 'PDT')
     state.WeaponskillMode:options('Normal', 'Acc', 'Mod')
     state.CastingMode:options('Normal', 'Resistant')
@@ -75,7 +75,8 @@ function init_gear_sets()
     -- Fast cast sets for spells
     
     sets.precast.FC = {ammo="Impatiens",head="Herculean Helm",neck="Voltsurge Torque",ear1="Etiolation Earring",ear2="Loquacious Earring"
-		,hands="Leyline Gloves",ring1="Prolix Ring"}
+		,hands="Leyline Gloves",ring1="Prolix Ring"
+		,legs="Rawhide Trousers"}
     sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads",body="Mochizuki Chainmail"})
 
     -- Snapshot for ranged
@@ -83,25 +84,29 @@ function init_gear_sets()
        
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
-    sets.precast.WS = {ammo="Qirmiz Tathlum",
-        head="Adhemar bonnet",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Ishvara Earring",
-        body="Adhemar Jacket",hands="Adhemar Wristbands",ring1="Rajas Ring",ring2="Epona's Ring",
-        back="Yokaze Mantle",waist="Fotia Belt",legs="Samnuha Tights",feet="Herculean Boots"}
-    sets.precast.WS.Acc = set_combine(sets.precast.WS, {ammo="Jukukik Feather",hands="Buremte Gloves",
-        back="Yokaze Mantle"})
+    sets.precast.WS = {ammo="Cath Palug stone",
+        head="Adhemar bonnet +1",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Ishvara Earring",
+        body="Adhemar Jacket +1",hands="Adhemar Wristbands +1",ring1="Regal Ring",ring2="Ilabrat Ring",
+        back="Bleating Mantle",waist="Fotia Belt",legs="Samnuha Tights",feet="Adhemar Gamashes +1"}
+    
+	sets.precast.WS.Acc = set_combine(sets.precast.WS, {})
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
     sets.precast.WS['Blade: Jin'] = set_combine(sets.precast.WS,
         {neck="Rancor Collar",ear1="Brutal Earring",ear2="Moonshade Earring",feet="Daihanshi Habaki"})
 
-    sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS)
+    sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, {ammo="Yetshila +1"
+		,ear2="Odr earring"
+		,hands="Mummu wrists +2",ring1="Mummu ring", ring2="Begrudging Ring"  --TODO mummu body/head here?
+		,legs="Mummu kecks +2"})
 	
 	sets.precast.WS['Blade: Yu'] = {
         head="Herculean helm",neck="Sanctity necklace",ear1="Friomisi Earring",ear2="Moonshade Earring",
         body="Samnuha coat",hands="Leyline gloves",ring1="Acumen Ring",ring2="Demon's Ring",
         back="Izdubar mantle",waist="Eschan stone",legs="Herculean Trousers",feet="Adhemar Gamashes"}
 
-    sets.precast.WS['Blade: Shun'] = set_combine(sets.precast.WS, {feet="Daihanshi Habaki"})
+    sets.precast.WS['Blade: Shun'] = set_combine(sets.precast.WS, {
+		ear2="Odr Earring"})
 
 
     sets.precast.WS['Aeolian Edge'] = {
@@ -151,10 +156,10 @@ function init_gear_sets()
         ring1="Sheltered Ring",ring2="Paguroidea Ring"}
     
     -- Idle sets
-    sets.idle = {
-        head="Whirlpool Mask",neck="Wiglen Gorget",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body="Hachiya Chainmail +1",hands="Otronif Gloves",ring1="Sheltered Ring",ring2="Paguroidea Ring",
-        back="Shadow Mantle",waist="Flume Belt",legs="Hachiya Hakama",feet="Danzo Sune-ate"}
+    sets.idle = {ammo="Yamarang",
+        head="Malignance chapeau",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Infused Earring",
+        body="Emet harness +1",hands="Malignance Gloves",ring1="Defending Ring",ring2="Sheltered Ring",
+        back="Moonbeam cape",waist="Flume Belt",legs="Volte hose",feet="Danzo Sune-ate"}
 
     sets.idle.Town = {main="Raimitsukane",sub="Kaitsuburi",ammo="Qirmiz Tathlum",
         head="Whirlpool Mask",neck="Wiglen Gorget",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
@@ -196,19 +201,16 @@ function init_gear_sets()
     -- EG: sets.engaged.Dagger.Accuracy.Evasion
     
     -- Normal melee group
-    sets.engaged = {
-    head={ name="Adhemar Bonnet", augments={'STR+10','DEX+10','Attack+15',}},
-    body={ name="Adhemar Jacket", augments={'STR+10','DEX+10','Attack+15',}},
-    hands={ name="Adhemar Wristbands +1"},
-    legs={ name="Samnuha Tights", augments={'STR+10','DEX+10','"Dbl.Atk."+3','"Triple Atk."+3',}},
-    feet={ name="Herculean Boots", augments={'Accuracy+28','"Triple Atk."+4',}},
-    neck="Lissome necklace",
-    waist="Kentarch Belt +1",
-    left_ear="Brutal Earring",
-    right_ear="Cessance Earring",
-    left_ring="Ilabrat Ring",
-    right_ring="Epona's Ring",
-    back="Bleating Mantle"}
+    sets.engaged = {ammo="Seething Bomblet +1"
+		,head="Adhemar Bonnet +1", neck="Iskur gorget",left_ear="Brutal Earring",right_ear="Telos Earring"
+		,body="Adhemar Jacket +1", hands="Adhemar Wristbands +1", left_ring="Hetaroi Ring", right_ring="Epona's Ring"
+		,back="Bleating Mantle", waist="Sailfi Belt +1", legs="Samnuha Tights", feet={ name="Herculean Boots", augments={'Accuracy+28','"Triple Atk."+4',}}}
+		
+	sets.engaged.Hybrid = {ammo="Yamarang"
+		,head="Adhemar Bonnet +1", neck="Loricate torque +1",left_ear="Brutal Earring",right_ear="Telos Earring"
+		,body="Adhemar Jacket +1", hands="Malignance gloves", left_ring="Defending Ring", right_ring="Epona's Ring"
+		,back="Bleating Mantle", waist="Sailfi Belt +1", legs="Samnuha Tights", feet="Malignance boots"}
+		
     sets.engaged.Acc = {ammo="Qirmiz Tathlum",
         head="Whirlpool Mask",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
         body="Mochizuki Chainmail",hands="Otronif Gloves",ring1="Rajas Ring",ring2="Epona's Ring",
