@@ -97,9 +97,10 @@ function job_setup()
         'Blastbomb','Blazing Bound','Bomb Toss','Cursed Sphere','Dark Orb','Death Ray',
         'Diffusion Ray','Droning Whirlwind','Embalming Earth','Firespit','Foul Waters',
         'Ice Break','Leafstorm','Maelstrom','Rail Cannon','Regurgitation','Rending Deluge',
-        'Retinal Glare','Subduction','Tem. Upheaval','Water Bomb','Palling Salvo',
+        'Retinal Glare','Subduction','Tem. Upheaval','Water Bomb',
 		'Blinding Fulgor','Searing Tempest','Anvil Lightning','Tem. Upheaval','Spectral Floe',
-		'Entomb','Tenebral Crush','Magic Hammer'
+		'Entomb','Magic Hammer'
+		--,'Palling Salvo','Tenebral Crush'
     }
 
     -- Magical spells with a primary Mnd mod
@@ -134,6 +135,10 @@ function job_setup()
         'Sandspin','Sandspray','Sheep Song','Soporific','Sound Blast','Stinking Gas',
         'Sub-zero Smash','Venom Shell','Voracious Trunk','Yawn'
     }
+	
+	blue_magic_maps.MagicalDark = S{
+		'Palling Salvo','Tenebral Crush'
+	}
         
     -- Breath-based spells
     blue_magic_maps.Breath = S{
@@ -184,7 +189,7 @@ end
 
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
-    state.OffenseMode:options('Normal', 'Refresh', 'Acc')
+    state.OffenseMode:options('Normal', 'Refresh', 'Acc','Hybrid')
     state.WeaponskillMode:options('Normal', 'Acc')
     state.CastingMode:options('Normal', 'Burst')
     state.IdleMode:options('Normal', 'PDT', 'Learning')
@@ -257,7 +262,7 @@ function init_gear_sets()
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {ammo="Falcon eye",
-        head="Adhemar bonnet",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Ishvara Earring",
+        head="Adhemar bonnet +1",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Ishvara Earring",
         body="Herculean Vest",hands="Adhemar Wristbands +1",ring1="Ilabrat Ring",ring2="Epona's Ring",
         back="Rosmerta's cape",waist="Fotia Belt",legs="Samnuha tights",feet="Herculean boots"}
     
@@ -268,18 +273,18 @@ function init_gear_sets()
 
     sets.precast.WS['Sanguine Blade'] = {ammo="Pemphredo tathlum",
         head="Pixie hairpin +1",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Regal Earring",
-        body="Amalric doublet",hands="Jhakri cuffs +2",ring1="Archon Ring",ring2="Shiva Ring +1",
+        body="Jhakri robe +2",hands="Jhakri cuffs +2",ring1="Archon Ring",ring2="Shiva Ring +1",
         back="Cornflower Cape",waist="Yamabuki-no-obi",legs="Jhakri Slops +2",feet="Amalric nails"}
     
     sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {ammo="Mantoptera eye",
-	neck="Caro necklace",ear1="Moonshade Earring",
+		neck="Caro necklace",ear1="Moonshade Earring",
 		hands="Jhakri cuffs +2",ring1="Epaminondas's ring",ring2="Rufescent ring",
 		waist="Grunfeld rope",feet="Carmine greaves +1"})
 
     sets.precast.WS['Chant du Cygne'] = set_combine(sets.precast.WS, {
-		head="Adhemar bonnet",ear2="Brutal earring",
+		head="Adhemar bonnet +1",ear1="Odr earring", ear2="Mache earring +1",
 		body="Abnoba kaftan",ring2="Begrudging ring",
-		back="Rosmerta's Cape",feet="Ayanmo gambieras +1"})    
+		back="Rosmerta's Cape",feet="Adhemar gamashes +1"})    
 
     -- Midcast Sets
     sets.midcast.FastRecast = {
@@ -300,7 +305,7 @@ function init_gear_sets()
     -- Physical Spells --
     
     sets.midcast['Blue Magic'].Physical = {ammo="Mavi Tathlum",
-        head="Adhemar bonnet",neck="Incantor's torque",ear1="Suppanomimi",ear2="Cessance Earring",
+        head="Adhemar bonnet +1",neck="Incantor's torque",ear1="Suppanomimi",ear2="Cessance Earring",
         body="Assim. Jubbah +1",hands="Adhemar Wristbands +1",ring1="Rajas Ring",ring2="Ilabrat Ring",
         back="Cornflower Cape",waist="Grunfeld rope",legs="Samnuha tights",feet="Luhlaza charuqs +1"}
 
@@ -348,8 +353,13 @@ function init_gear_sets()
     sets.midcast['Blue Magic'].Magical.Burst = set_combine(sets.midcast['Blue Magic'].Magical,
         {hands="Amalric gages",ring1="Locus Ring",ring2="Mujin Band",
 		 back="Seshaw Cape"})
+		 
+	sets.midcast['Blue Magic'].MagicalDark = set_combine(sets.midcast['Blue Magic'].Magical, {
+		head = "Pixie hairpin +1", ring1="Archon Ring"
+	})
     
-	sets.midcast['Palling Salvo'] = set_combine(sets.midcast['Blue Magic'].Magical.Burst, {head = "Pixie hairpin +1"})
+	sets.midcast['Subduction'] = set_combine(sets.midcast['Blue Magic'].Magical.Burst, {waist = "Chaac Belt"})
+	--sets.midcast['Palling Salvo'] = set_combine(sets.midcast['Blue Magic'].Magical.Burst, {head = "Pixie hairpin +1"})
 	
     -- sets.midcast['Blue Magic'].MagicalMnd = set_combine(sets.midcast['Blue Magic'].Magical,
         -- {ring1="Aquasoul Ring"})
@@ -486,9 +496,14 @@ function init_gear_sets()
         back="Bleating Mantle",waist="Reiki Yotai",legs="Carmine cuisses +1",feet={ name="Herculean Boots", augments={'Accuracy+26','"Triple Atk."+4','DEX+9','Attack+1',}}}
 
     sets.engaged.DW.Acc = {ammo="Falcon eye",
-        head="Carmine Mask +1",neck="Combatant's torque",ear1="Dignitary's Earring",ear2="Cessance Earring",
+        head="Carmine Mask +1",neck="Combatant's torque",ear1="Telos Earring",ear2="Cessance Earring",
         body="Adhemar jacket +1",hands="Adhemar Wristbands +1",ring1="Ilabrat Ring",ring2="Epona's Ring",
         back="Rosmerta's cape",waist="Reiki Yotai",legs="Carmine cuisses +1",feet={name="Herculean boots", augments={'Accuracy+24 Attack+24','Damage taken-2%','STR+7','Accuracy+11','Attack+15'}}}
+		
+	sets.engaged.DW.Hybrid = set_combine(sets.engaged.DW.Acc, {
+		head="Malignance chapeau", neck="Loricate torque +1", ear2="Suppanomimi",
+		ring1="Defending Ring",
+		legs="Malignance tights", feet="Malignance boots"})
 
     sets.engaged.DW.Refresh = {ammo="Ginsen",
         head="Rawhide Mask",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Suppanomimi",

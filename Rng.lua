@@ -90,21 +90,19 @@ function init_gear_sets()
 
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {ring1="Cacoethic Ring +1"
 		})
+		
+	sets.precast.WS['Coronach'] = set_combine(sets.precast.WS, {})
+	
+	sets.precast.WS["Jishnu's Radiance"] = set_combine(sets.precast.WS, {})
 
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
 	
-	sets.precast.WS['Trueflight'] = {head="Orion beret +3",
-    body={ name="Samnuha Coat", augments={'Mag. Acc.+14','"Mag.Atk.Bns."+13','"Fast Cast"+4','"Dual Wield"+3',}},
-    hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}},
-    legs={ name="Herculean Trousers", augments={'"Mag.Atk.Bns."+24','Weapon skill damage +3%','INT+4','Mag. Acc.+1',}},
-    feet={ name="Adhemar Gamashes", augments={'AGI+10','Rng.Acc.+15','Rng.Atk.+15',}},
-    neck="Sanctity Necklace",
-    waist="Eschan Stone",
-    left_ear="Ishvara Earring",
-    right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +25',}},
-    left_ring="Shiva Ring +1",
-    right_ring="Dingir Ring",
-    back="Belenus's cape"}
+	sets.precast.WS['Trueflight'] = {
+    neck="Sanctity Necklace", left_ear="Ishvara Earring",right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +25',}},
+	body= "Cohort Cloak +1", hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}},left_ring="Shiva Ring +1",right_ring="Dingir Ring",
+    back="Belenus's cape", waist="Eschan Stone",legs={ name="Herculean Trousers", augments={'"Mag.Atk.Bns."+24','Weapon skill damage +3%','INT+4','Mag. Acc.+1',}},
+	feet={ name="Adhemar Gamashes", augments={'AGI+10','Rng.Acc.+15','Rng.Atk.+15',}}
+    }
 
 	sets.precast.WS['Wildfire'] = set_combine(sets.precast.WS['Trueflight'])
 
@@ -124,17 +122,16 @@ function init_gear_sets()
 	-- Ranged sets
 
 	sets.midcast.RA = {
-		head="Arcadian beret +2",neck="Iskur Gorget",ear1="Enervating earring",ear2="Telos Earring",
-		body="Amini Caban +1",hands="Carmine finger gauntlets +1",ring1="Rajas Ring",ring2="Regal Ring",
-		back="Belenus's Cape",waist="Yemaya Belt",legs="Amini Brague +1",feet="Malignance boots"}
+		head="Arcadian beret +3",neck="Iskur Gorget",ear1="Enervating earring",ear2="Telos Earring",
+		body="Amini Caban +1",hands="Malignance gloves",ring1="Rajas Ring",ring2="Regal Ring",
+		back="Belenus's Cape",waist="Yemaya Belt",legs="Malignance tights",feet="Malignance boots"}
 	
 	sets.midcast.RA.Acc = set_combine(sets.midcast.RA,{
-		head="Orion beret +3",
-		body ="Orion jerkin +3",hands="Meghanada gloves +2",ring1="Cacoethic Ring +1"})
+		body ="Orion jerkin +3",ring1="Cacoethic Ring +1"})
 
-	sets.midcast.RA.Annihilator = set_combine(sets.midcast.RA, {hands="Carmine finger gauntlets +1"})
+	sets.midcast.RA.Annihilator = set_combine(sets.midcast.RA, {})
 
-	sets.midcast.RA.Annihilator.Acc = set_combine(sets.midcast.RA.Acc, {hands="Carmine finger gauntlets +1"})
+	sets.midcast.RA.Annihilator.Acc = set_combine(sets.midcast.RA.Acc, {})
 
 	sets.midcast.RA.Yoichinoyumi = set_combine(sets.midcast.RA, {})
 
@@ -153,19 +150,19 @@ function init_gear_sets()
 	-- Idle sets
 	sets.idle = {
 		head="Malignance Chapeau",neck="Loricate torque +1",ear1="Etiolation earring",ear2="Infused earring",
-		body="Meghanada cuirie +2",hands="Malignance gloves",ring1="Defending Ring",ring2="Paguroidea Ring",
+		body="Malignance tabard",hands="Malignance gloves",ring1="Defending Ring",ring2="Sheltered Ring",
 		back="Moonbeam cape",waist="Flume Belt",legs="Carmine cuisses +1",feet="Malignance Boots"}
 		
 	sets.idle.Vagary = {	
-		head="Arcadian Beret +1",neck="Iskur Gorget",ear1="Enervating earring",ear2="Tripudio Earring",
+		head="Arcadian Beret +3",neck="Iskur Gorget",ear1="Enervating earring",ear2="Tripudio Earring",
 		body="Amini Caban +1",hands="Amini glovelettes +1",ring1="Rajas Ring",ring2="Cacoethic Ring +1",
 		back="Lutian Cape",waist="Eschan stone",legs="Amini Brague +1",feet="Adhemar Gamashes"}
 	
 	-- Defense sets
 	sets.defense.PDT = {
         head="Malignance Chapeau",neck="Loricate torque +1",
-        body="Meghanada cuirie +2",hands="Meghanada gloves +2",ring1="Defending Ring",ring2="Patricius Ring",
-        back="Moonbeam Cape",waist="Sailfi belt +1",legs="Meghanada chausses +2",feet="Malignance boots"}
+        body="Malignance tabard",hands="Malignance gloves",ring1="Defending Ring",ring2="Patricius Ring",
+        back="Moonbeam Cape",waist="Sailfi belt +1",legs="Malignance tights",feet="Malignance boots"}
 
 	sets.defense.MDT = {
 		head="Orion Beret +2",neck="Loricate torque +1",
@@ -194,7 +191,7 @@ function init_gear_sets()
 
 	sets.buff.Barrage = set_combine(sets.midcast.RA.Acc, {hands="Orion Bracers +2"})
 	sets.buff.Camouflage = {body="Orion Jerkin +3"}
-	sets.buff['Double Shot'] = set_combine(sets.midcast.RA.Acc, {head="Arcadian beret +2",
+	sets.buff['Double Shot'] = set_combine(sets.midcast.RA.Acc, {head="Arcadian beret +3",
 																body = "Arcadian jerkin +3", hands="Oshosi gloves +1",
 																legs="Oshosi trousers +1",feet="Oshosi leggings +1"})
 end

@@ -36,7 +36,7 @@ end
 
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
-    state.OffenseMode:options('Ranged', 'Normal', 'Acc')
+    state.OffenseMode:options('Ranged', 'Normal', 'Acc', 'Hybrid')
     state.RangedMode:options('Normal', 'Acc')
     state.WeaponskillMode:options('Normal', 'Acc', 'Att', 'Mod')
     state.CastingMode:options('Normal', 'Resistant')
@@ -163,8 +163,8 @@ function init_gear_sets()
     sets.precast.WS['Leaden Salute'] = {head="Pixie Hairpin +1",
 		body={ name="Herculean Vest", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Crit.hit rate+2','STR+5','Mag. Acc.+12','"Mag.Atk.Bns."+15',}},
 		hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}},
-		legs={ name="Herculean Trousers", augments={'"Mag.Atk.Bns."+24','Weapon skill damage +3%','INT+4','Mag. Acc.+1',}},
-		feet="Adhemar gamashes",
+		legs={ name="Herculean Trousers", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Weapon skill damage +4%','Mag. Acc.+15','"Mag.Atk.Bns."+1',}},
+		feet="Adhemar gamashes +1",
 		neck="Sanctity Necklace",
 		waist="Eschan Stone",
 		left_ear="Friomisi Earring",
@@ -176,7 +176,7 @@ function init_gear_sets()
 		
 	sets.precast.WS['Savage Blade'] = 
     {
-        head="Adhemar bonnet",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Ishvara Earring",
+        head="Adhemar bonnet +1",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Ishvara Earring",
         body={name="Herculean Vest", augments={'Accuracy+21 Attack+21','Weapon skill damage +5%','DEX+10','Accuracy+14','Attack+5',}},
 		hands="Adhemar Wristbands +1",ring1="Rajas Ring",ring2="Rufescent ring",
         back="Bleating Mantle",waist="Fotia Belt",legs="Samnuha tights",feet="Carmine greaves +1"}
@@ -238,9 +238,9 @@ function init_gear_sets()
 
     -- Idle sets
     sets.idle = {ammo=gear.RAbullet,
-        head="Whirlpool Mask",neck="Wiglen Gorget",ear1="Clearview Earring",ear2="Volley Earring",
-        body="Iuitl Vest",hands="Iuitl Wristbands",ring1="Sheltered Ring",ring2="Paguroidea Ring",
-        back="Shadow Mantle",waist="Flume Belt",legs="Nahtirah Trousers",feet="Skadi's Jambeaux +1"}
+        head="Malignance chapeau",neck="Wiglen Gorget",ear1="Clearview Earring",ear2="Volley Earring",
+        body="Iuitl Vest",hands="Malignance gloves",ring1="Sheltered Ring",ring2="Defending Ring",
+        back="Shadow Mantle",waist="Flume Belt",legs="Carmine cuisses +1",feet="Skadi's Jambeaux +1"}
 
     sets.idle.Town = {main="Surcouf's Jambiya",range="Eminent Gun",ammo=gear.RAbullet,
         head="Laksamana's Hat",neck="Wiglen Gorget",ear1="Clearview Earring",ear2="Volley Earring",
@@ -270,8 +270,8 @@ function init_gear_sets()
     
     -- Normal melee group
     sets.engaged = {ammo=gear.RAbullet,
-        head="Adhemar bonnet",neck="Lissome Necklace",ear1="Brutal Earring",ear2="Tripudio Earring",
-        body="Adhemar jacket",hands="Adhemar Wristbands +1",ring1="Rajas Ring",ring2="Epona's Ring",
+        head="Adhemar bonnet +1",neck="Lissome Necklace",ear1="Brutal Earring",ear2="Tripudio Earring",
+        body="Adhemar jacket +1",hands="Adhemar Wristbands +1",ring1="Rajas Ring",ring2="Epona's Ring",
         back="Kayapa cape",waist="Patentia Sash",legs="Taeon tights",feet="Taeon boots",augments={'Accuracy+20 Attack+20','"Dual Wield"+4','Crit. hit damage +2%'}}
     
     sets.engaged.Acc = {ammo=gear.RAbullet,
@@ -280,22 +280,22 @@ function init_gear_sets()
         back="Atheling Mantle",waist="Hurch'lan Sash",legs="Manibozho Brais",feet="Iuitl Gaiters +1"}
 
     sets.engaged.DW = {ammo=gear.RAbullet,
-        head={ name="Dampening Tam", augments={'DEX+10','Accuracy+15','Mag. Acc.+15','Quadruple Attack +3',}},
-    body={ name="Adhemar Jacket", augments={'STR+10','DEX+10','Attack+15',}},
+        head="Adhemar Bonnet +1",
+    body={ name="Adhemar Jacket +1", augments={'STR+10','DEX+10','Attack+15',}},
     hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
     legs={ name="Samnuha Tights", augments={'STR+10','DEX+10','"Dbl.Atk."+3','"Triple Atk."+3',}},
     feet={ name="Herculean Boots", augments={'Accuracy+24 Attack+24','Damage taken-2%','STR+7','Accuracy+11','Attack+15',}},
     neck="Combatant's Torque",
     waist="Reiki Yotai",
     left_ear="Cessance Earring",
-    right_ear="Digni. Earring",
+    right_ear="Telos Earring",
     left_ring="Ilabrat Ring",
     right_ring="Epona's Ring",
     back="Kayapa Cape"}
     
     sets.engaged.DW.Acc = {ammo=gear.RAbullet,
         head="Carmine Mask +1",
-    body={ name="Adhemar Jacket", augments={'STR+10','DEX+10','Attack+15',}},
+    body={ name="Adhemar Jacket +1"},
     hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
     legs="Carmine cuisses +1",
     feet={ name="Herculean Boots", augments={'Accuracy+24 Attack+24','Damage taken-2%','STR+7','Accuracy+11','Attack+15',}},
@@ -306,6 +306,8 @@ function init_gear_sets()
     left_ring="Ilabrat Ring",
     right_ring="Regal Ring",
     back="Kayapa Cape"}
+	
+	sets.engaged.DW.Hybrid = set_combine(sets.engaged.DW.Acc, {head="Malignance chapeau", hands="Malignance gloves", feet="Malignance boots"})
 
 
     sets.engaged.Ranged = {ammo=gear.RAbullet,
