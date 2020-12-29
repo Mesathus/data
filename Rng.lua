@@ -77,8 +77,8 @@ function init_gear_sets()
 	
 	sets.precast.RA = {
 		head="Amini gapette +1",
-		body="Amini Caban +1",hands="Oshosi gloves +1",
-		back="Lutian Cape",waist="Yemaya Belt",legs="Oshosi trousers +1",feet="Meghanada jambeaux +2"}
+		body="Amini Caban +1",hands="Carmine finger gauntlets +1",
+		back="Lutian Cape",waist="Yemaya Belt",legs="Adhemar kecks +1",feet="Meghanada jambeaux +2"}
 
 
 	-- Weaponskill sets
@@ -122,11 +122,12 @@ function init_gear_sets()
 	-- Ranged sets
 
 	sets.midcast.RA = {
-		head="Arcadian beret +3",neck="Iskur Gorget",ear1="Enervating earring",ear2="Telos Earring",
-		body="Amini Caban +1",hands="Malignance gloves",ring1="Rajas Ring",ring2="Regal Ring",
+		head="Arcadian beret +3",neck="Iskur Gorget",ear1="Dedition earring",ear2="Telos Earring",
+		body="Orion jerkin +3",hands="Malignance gloves",ring1="Illabrat Ring",ring2="Regal Ring",
 		back="Belenus's Cape",waist="Yemaya Belt",legs="Malignance tights",feet="Malignance boots"}
 	
 	sets.midcast.RA.Acc = set_combine(sets.midcast.RA,{
+		ear1="Enervating earring",
 		body ="Orion jerkin +3",ring1="Cacoethic Ring +1"})
 
 	sets.midcast.RA.Annihilator = set_combine(sets.midcast.RA, {})

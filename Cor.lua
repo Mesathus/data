@@ -75,8 +75,8 @@ function init_gear_sets()
     
     sets.precast.JA['Triple Shot'] = {body="Navarch's Frac +2"}
     sets.precast.JA['Snake Eye'] = {legs="Lanun Culottes"}
-    sets.precast.JA['Wild Card'] = {feet="Lanun Bottes"}
-    sets.precast.JA['Random Deal'] = {body="Lanun Frac"}
+    sets.precast.JA['Wild Card'] = {feet="Lanun Bottes +3"}
+    sets.precast.JA['Random Deal'] = {body="Lanun Frac +3"}
 
     
     sets.precast.CorsairRoll = {head="Lanun Tricorne",neck="Regal Necklace",hands="Navarch's Gants +2"}
@@ -112,7 +112,7 @@ function init_gear_sets()
     sets.precast.RA = {ammo=gear.RAbullet,
         head="Navarch's Tricorne +2",
         body="Laksamana's Frac",hands="Carmine finger gauntlets +1",
-        back="Navarch's Mantle",waist="Impulse Belt",legs="Nahtirah Trousers",feet="Meghanada jambeaux +2"}
+        back="Navarch's Mantle",waist="Impulse Belt",legs="Adhemar kecks +1",feet="Meghanada jambeaux +2"}
 
        
     -- Weaponskill sets
@@ -142,10 +142,10 @@ function init_gear_sets()
 
 
     sets.precast.WS['Wildfire'] = {head={ name="Herculean Helm", augments={'"Mag.Atk.Bns."+24','"Fast Cast"+6','STR+7','Mag. Acc.+14',}},
-		body={ name="Herculean Vest", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Crit.hit rate+2','STR+5','Mag. Acc.+12','"Mag.Atk.Bns."+15',}},
+		body="Lanun Frac +3",
 		hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}},
 		legs={ name="Herculean Trousers", augments={'"Mag.Atk.Bns."+24','Weapon skill damage +3%','INT+4','Mag. Acc.+1',}},
-		feet="Adhemar gamashes",
+		feet="Lanun Bottes +3",
 		neck="Sanctity Necklace",
 		waist="Eschan Stone",
 		left_ear="Ishvara Earring",
@@ -161,10 +161,10 @@ function init_gear_sets()
         back="Toro Cape",waist=gear.ElementalBelt,legs="Iuitl Tights",feet="Iuitl Gaiters +1"}
     
     sets.precast.WS['Leaden Salute'] = {head="Pixie Hairpin +1",
-		body={ name="Herculean Vest", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Crit.hit rate+2','STR+5','Mag. Acc.+12','"Mag.Atk.Bns."+15',}},
+		body="Lanun Frac +3",
 		hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}},
 		legs={ name="Herculean Trousers", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Weapon skill damage +4%','Mag. Acc.+15','"Mag.Atk.Bns."+1',}},
-		feet="Adhemar gamashes +1",
+		feet="Lanun Bottes +3",
 		neck="Sanctity Necklace",
 		waist="Eschan Stone",
 		left_ear="Friomisi Earring",
@@ -179,7 +179,7 @@ function init_gear_sets()
         head="Adhemar bonnet +1",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Ishvara Earring",
         body={name="Herculean Vest", augments={'Accuracy+21 Attack+21','Weapon skill damage +5%','DEX+10','Accuracy+14','Attack+5',}},
 		hands="Adhemar Wristbands +1",ring1="Rajas Ring",ring2="Rufescent ring",
-        back="Bleating Mantle",waist="Fotia Belt",legs="Samnuha tights",feet="Carmine greaves +1"}
+        back="Bleating Mantle",waist="Kentarch Belt +1",legs="Samnuha tights",feet="Lanun Bottes +3"}
     
     -- Midcast Sets
     sets.midcast.FastRecast = {
@@ -220,9 +220,9 @@ function init_gear_sets()
 
     -- Ranged gear
     sets.midcast.RA = {ammo=gear.RAbullet,
-        head="Meghanada Visor +2",neck="Iskur Gorget",ear1="Enervating Earring",ear2="Tripudio Earring",
-        body="Meghanada cuirie +2",hands="Carmine finger gauntlets +1",ring1="Regal Ring",ring2="Illabrat Ring",
-        back="Camulus's Mantle",waist="Yemaya Belt",legs="Meghanada chausses +2",feet="Meghanada jambeaux +1"}
+        head="Malignance chapeau",neck="Iskur Gorget",ear1="Enervating Earring",ear2="Telos Earring",
+        body="Malignance tabard",hands="Malignance gloves",ring1="Regal Ring",ring2="Illabrat Ring",
+        back="Camulus's Mantle",waist="Yemaya Belt",legs="Malignance tights",feet="Malignance boots"}
 
     sets.midcast.RA.Acc = {ammo=gear.RAbullet,
         head="Meghanada Visor +2",neck="Iskur Gorget",ear1="Enervating Earring",ear2="Tripudio Earring",
@@ -272,7 +272,7 @@ function init_gear_sets()
     sets.engaged = {ammo=gear.RAbullet,
         head="Adhemar bonnet +1",neck="Lissome Necklace",ear1="Brutal Earring",ear2="Tripudio Earring",
         body="Adhemar jacket +1",hands="Adhemar Wristbands +1",ring1="Rajas Ring",ring2="Epona's Ring",
-        back="Kayapa cape",waist="Patentia Sash",legs="Taeon tights",feet="Taeon boots",augments={'Accuracy+20 Attack+20','"Dual Wield"+4','Crit. hit damage +2%'}}
+        back="Kayapa cape",waist="Kentarch belt +1",legs="Malignance tights",feet="Malignance boots"}
     
     sets.engaged.Acc = {ammo=gear.RAbullet,
         head="Whirlpool Mask",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Tripudio Earring",
@@ -281,39 +281,41 @@ function init_gear_sets()
 
     sets.engaged.DW = {ammo=gear.RAbullet,
         head="Adhemar Bonnet +1",
-    body={ name="Adhemar Jacket +1", augments={'STR+10','DEX+10','Attack+15',}},
-    hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
-    legs={ name="Samnuha Tights", augments={'STR+10','DEX+10','"Dbl.Atk."+3','"Triple Atk."+3',}},
-    feet={ name="Herculean Boots", augments={'Accuracy+24 Attack+24','Damage taken-2%','STR+7','Accuracy+11','Attack+15',}},
-    neck="Combatant's Torque",
-    waist="Reiki Yotai",
-    left_ear="Cessance Earring",
-    right_ear="Telos Earring",
-    left_ring="Ilabrat Ring",
-    right_ring="Epona's Ring",
-    back="Kayapa Cape"}
+		body={ name="Adhemar Jacket +1", augments={'STR+10','DEX+10','Attack+15',}},
+		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
+		legs={ name="Samnuha Tights", augments={'STR+10','DEX+10','"Dbl.Atk."+3','"Triple Atk."+3',}},
+		feet={ name="Herculean Boots", augments={'Accuracy+24 Attack+24','Damage taken-2%','STR+7','Accuracy+11','Attack+15',}},
+		neck="Combatant's Torque",
+		waist="Reiki Yotai",
+		left_ear="Cessance Earring",
+		right_ear="Telos Earring",
+		left_ring="Ilabrat Ring",
+		right_ring="Epona's Ring",
+		back="Kayapa Cape"}
     
     sets.engaged.DW.Acc = {ammo=gear.RAbullet,
         head="Carmine Mask +1",
-    body={ name="Adhemar Jacket +1"},
-    hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
-    legs="Carmine cuisses +1",
-    feet={ name="Herculean Boots", augments={'Accuracy+24 Attack+24','Damage taken-2%','STR+7','Accuracy+11','Attack+15',}},
-    neck="Combatant's Torque",
-    waist="Reiki Yotai",
-    left_ear="Cessance Earring",
-    right_ear="Digni. Earring",
-    left_ring="Ilabrat Ring",
-    right_ring="Regal Ring",
-    back="Kayapa Cape"}
+		body={ name="Adhemar Jacket +1"},
+		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
+		legs="Carmine cuisses +1",
+		feet={ name="Herculean Boots", augments={'Accuracy+24 Attack+24','Damage taken-2%','STR+7','Accuracy+11','Attack+15',}},
+		neck="Combatant's Torque",
+		waist="Reiki Yotai",
+		left_ear="Cessance Earring",
+		right_ear="Digni. Earring",
+		left_ring="Ilabrat Ring",
+		right_ring="Regal Ring",
+		back="Kayapa Cape"}
 	
-	sets.engaged.DW.Hybrid = set_combine(sets.engaged.DW.Acc, {head="Malignance chapeau", hands="Malignance gloves", feet="Malignance boots"})
+	sets.engaged.DW.Hybrid = set_combine(sets.engaged.DW.Acc, {head="Malignance chapeau", 
+		body="Malignance tabard", hands="Malignance gloves", 
+		legs="Malignance tights", feet="Malignance boots"})
 
 
-    sets.engaged.Ranged = {ammo=gear.RAbullet,
-        head="Whirlpool Mask",neck="Twilight Torque",ear1="Clearview Earring",ear2="Volley Earring",
-        body="Iuitl Vest",hands="Iuitl Wristbands",ring1="Defending Ring",ring2=gear.DarkRing.physical,
-        back="Shadow Mantle",waist="Flume Belt",legs="Nahtirah Trousers",feet="Iuitl Gaiters +1"}
+    --sets.engaged.Ranged = {ammo=gear.RAbullet,
+    --    head="Whirlpool Mask",neck="Twilight Torque",ear1="Clearview Earring",ear2="Volley Earring",
+    --    body="Iuitl Vest",hands="Iuitl Wristbands",ring1="Defending Ring",ring2=gear.DarkRing.physical,
+    --    back="Shadow Mantle",waist="Flume Belt",legs="Nahtirah Trousers",feet="Iuitl Gaiters +1"}
 end
 
 -------------------------------------------------------------------------------------------------------------------

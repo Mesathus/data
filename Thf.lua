@@ -225,7 +225,7 @@ function init_gear_sets()
     left_ear="Friomisi Earring",
     right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +25',}},
     left_ring="Dingir Ring",
-    right_ring="Shiva Ring +1",
+    right_ring="Epaminondas Ring",
     back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}}}
 	
 	sets.precast.WS['Gust Slash'] = set_combine(sets.precast.WS['Aeolian Edge'])
@@ -257,8 +257,8 @@ function init_gear_sets()
     -- Ranged gear
     sets.midcast.RA = {
         head="Malignance chapeau",neck="Iskur Gorget",ear1="Enervating earring",ear2="Telos Earring",
-		body="Meghanada cuirie +2",hands="Malignance gloves",ring1="Regal Ring",ring2="Cacoethic Ring +1",
-		back="Kayapa cape",waist="Yemaya belt",legs="Meghanada chausses +2",feet="Malignance boots"}
+		body="Malignance tabard",hands="Malignance gloves",ring1="Regal Ring",ring2="Cacoethic Ring +1",
+		back="Kayapa cape",waist="Yemaya belt",legs="Malignance tights",feet="Malignance boots"}
 
 
     sets.midcast.RA.Acc = {

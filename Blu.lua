@@ -502,7 +502,7 @@ function init_gear_sets()
 		
 	sets.engaged.DW.Hybrid = set_combine(sets.engaged.DW.Acc, {
 		head="Malignance chapeau", neck="Loricate torque +1", ear2="Suppanomimi",
-		ring1="Defending Ring",
+		body="Malignance tabard", ring1="Defending Ring",
 		legs="Malignance tights", feet="Malignance boots"})
 
     sets.engaged.DW.Refresh = {ammo="Ginsen",

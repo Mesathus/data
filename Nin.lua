@@ -158,8 +158,8 @@ function init_gear_sets()
     -- Idle sets
     sets.idle = {ammo="Yamarang",
         head="Malignance chapeau",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Infused Earring",
-        body="Emet harness +1",hands="Malignance Gloves",ring1="Defending Ring",ring2="Sheltered Ring",
-        back="Moonbeam cape",waist="Flume Belt",legs="Volte hose",feet="Danzo Sune-ate"}
+        body="Malignance tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Sheltered Ring",
+        back="Moonbeam cape",waist="Flume Belt",legs="Malignance tights",feet="Danzo Sune-ate"}
 
     sets.idle.Town = {main="Raimitsukane",sub="Kaitsuburi",ammo="Qirmiz Tathlum",
         head="Whirlpool Mask",neck="Wiglen Gorget",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
@@ -207,9 +207,9 @@ function init_gear_sets()
 		,back="Bleating Mantle", waist="Sailfi Belt +1", legs="Samnuha Tights", feet={ name="Herculean Boots", augments={'Accuracy+28','"Triple Atk."+4',}}}
 		
 	sets.engaged.Hybrid = {ammo="Yamarang"
-		,head="Adhemar Bonnet +1", neck="Loricate torque +1",left_ear="Brutal Earring",right_ear="Telos Earring"
-		,body="Adhemar Jacket +1", hands="Malignance gloves", left_ring="Defending Ring", right_ring="Epona's Ring"
-		,back="Bleating Mantle", waist="Sailfi Belt +1", legs="Samnuha Tights", feet="Malignance boots"}
+		,head="Malignance chapeau", neck="Loricate torque +1",left_ear="Brutal Earring",right_ear="Telos Earring"
+		,body="Malignance tabard", hands="Malignance gloves", left_ring="Defending Ring", right_ring="Epona's Ring"
+		,back="Bleating Mantle", waist="Sailfi Belt +1", legs="Malignance Tights", feet="Malignance boots"}
 		
     sets.engaged.Acc = {ammo="Qirmiz Tathlum",
         head="Whirlpool Mask",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",

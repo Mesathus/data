@@ -91,8 +91,8 @@ function init_gear_sets()
 
     sets.precast.FC = {ammo="Sapience orb",
         head="Haruspex Hat +1",neck="Voltsurge torque",ear1="Etiolation Earring",ear2="Loquacious Earring",
-        body="Helios Jacket",hands="Gendewitha Gages",ring1="Prolix Ring",ring2="Kishar Ring",
-        back="Swith Cape +1",waist="Witful Belt",legs="Lengo Pants",feet="Regal Pumps +1"}
+        body="Helios Jacket",hands="Volte gloves",ring1="Prolix Ring",ring2="Kishar Ring",
+        back="Swith Cape +1",waist="Witful Belt",legs="Volte brais",feet="Regal Pumps +1"}
 
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash"})
 
@@ -133,7 +133,7 @@ function init_gear_sets()
         feet="Gendewitha Galoshes"}
 
     sets.midcast['Enhancing Magic'] = {sub = "Ammurapi shield",
-		head = "Inyanga tiara +2", neck = "Voltsurge torque", ear1 = "Etiolation earring", ear2 = "Loquacious earring",
+		head = "Telchine cap", neck = "Voltsurge torque", ear1 = "Etiolation earring", ear2 = "Loquacious earring",
 		body = "Telchine Chasuble", hands = "Telchine gloves", ring1="Kishar ring",
 		back = "Intarabus's cape", waist = "Luminary sash", legs = "Telchine Braconi",feet = "Telchine pigaches" }
 		
