@@ -153,17 +153,17 @@ function init_gear_sets()
 	-- Elemental Magic sets are default for handling low-tier nukes.
     sets.midcast['Elemental Magic'] = {main="Solstice",sub="Culminus",
         head="Merlinic hood",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Friomisi Earring",
-        body="Amalric doublet",hands="Amalric gages",ring1="Sangoma Ring",ring2="Shiva ring +1",
+        body="Amalric doublet +1",hands="Amalric gages +1",ring1="Sangoma Ring",ring2="Shiva ring +1",
         back="Seshaw Cape",waist="Eschan stone",legs="Merlinic shalwar",feet="Merlinic crackows"}
 		
     sets.midcast['Elemental Magic'].Resistant = {main="Solstice",sub="Culminus",
         head="Merlinic hood",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Friomisi Earring",
-        body="Psycloth vest",hands="Amalric gages",ring1="Sangoma Ring",ring2="Shiva Ring +1",
+        body="Psycloth vest",hands="Amalric gages +1",ring1="Sangoma Ring",ring2="Shiva Ring +1",
         back="Seshaw Cape",waist="Eschan stone",legs="Merlinic shalwar",feet="Merlinic crackows"}
 		
 	sets.midcast['Elemental Magic'].Burst = {main="Solstice",sub="Culminus",
         head="Merlinic hood",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Friomisi Earring",
-        body="Amalric doublet",hands="Amalric gages",ring1="Mujin band",ring2="Locus Ring",
+        body="Amalric doublet +1",hands="Amalric gages +1",ring1="Mujin band",ring2="Locus Ring",
         back="Seshaw Cape",waist="Eschan stone",legs="Merlinic shalwar",feet="Merlinic crackows"}
  
     -- Custom refinements for certain nuke tiers
@@ -183,8 +183,8 @@ function init_gear_sets()
     main={ name="Solstice", augments={'Mag. Acc.+19','Pet: Damage taken -3%','"Fast Cast"+4',}},
     sub="Culminus", range="Dunna",
     head={ name="Merlinic Hood", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Magic burst mdg.+11%','CHR+1','Mag. Acc.+15','"Mag.Atk.Bns."+6',}},
-    body={ name="Amalric Doublet", augments={'MP+60','Mag. Acc.+15','"Mag.Atk.Bns."+15',}},
-    hands={ name="Amalric Gages", augments={'INT+10','Mag. Acc.+15','"Mag.Atk.Bns."+15',}},
+    body={ name="Amalric doublet +1", augments={'MP+60','Mag. Acc.+15','"Mag.Atk.Bns."+15',}},
+    hands={ name="Amalric gages +1", augments={'INT+10','Mag. Acc.+15','"Mag.Atk.Bns."+15',}},
     legs={ name="Vanya Slops", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
     feet={ name="Merlinic Crackows", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Magic burst mdg.+7%','"Mag.Atk.Bns."+11',}},
     neck="Loricate Torque +1", waist="Eschan Stone", left_ear="Barkaro. Earring", right_ear="Digni. Earring", left_ring="Defending Ring",
@@ -195,8 +195,8 @@ function init_gear_sets()
     sets.midcast.IntEnfeebles = {
     main={ name="Solstice", augments={'Mag. Acc.+19','Pet: Damage taken -3%','"Fast Cast"+4',}}, sub="Culminus",
     range="Dunna",head={ name="Merlinic Hood", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Magic burst mdg.+11%','CHR+1','Mag. Acc.+15','"Mag.Atk.Bns."+6',}},
-    body={ name="Amalric Doublet", augments={'MP+60','Mag. Acc.+15','"Mag.Atk.Bns."+15',}},
-    hands={ name="Amalric Gages", augments={'INT+10','Mag. Acc.+15','"Mag.Atk.Bns."+15',}},
+    body={ name="Amalric doublet +1", augments={'MP+60','Mag. Acc.+15','"Mag.Atk.Bns."+15',}},
+    hands={ name="Amalric gages +1", augments={'INT+10','Mag. Acc.+15','"Mag.Atk.Bns."+15',}},
     legs={ name="Vanya Slops", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
     feet={ name="Merlinic Crackows", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Magic burst mdg.+7%','"Mag.Atk.Bns."+11',}},
     neck="Loricate Torque +1", waist="Eschan Stone", left_ear="Barkaro. Earring", right_ear="Digni. Earring",
@@ -241,23 +241,23 @@ function init_gear_sets()
  
     sets.idle = {main="Daybreak",sub="Genmei shield",Range="Dunna",
         head="Befouled Crown",neck="Loricate Torque +1",ear1="Sanare earring",ear2="Ethereal earring",
-        body="Jhakri robe +2",hands="Bagua mitaines",ring1="Defending Ring",ring2="Paguroidea Ring",
+        body="Amalric doublet +1",hands="Bagua mitaines",ring1="Defending Ring",ring2="Paguroidea Ring",
         back="Umbra Cape",waist="Fucho-no-obi",legs="Volte brais",feet="Geomancy sandals"}
  
     sets.idle.PDT = {main="Mafic cudgel",sub="Genmei shield",Range="Dunna",
         head="Azimuth Hood +1",neck="Loricate Torque +1",ear1="Sanare earring",ear2="ethereal earring",
-        body="Jhakri robe +2",hands="Geomancy mitaines +1",ring1="Defending ring",ring2="Patricius Ring",
+        body="Amalric doublet +1",hands="Geomancy mitaines +1",ring1="Defending ring",ring2="Patricius Ring",
         back="Umbra Cape",waist="Fucho-no-obi",legs="Volte brais",feet="Azimuth gaiters +1"}
  
     -- .Pet sets are for when Luopan is present.
     sets.idle.Pet = {main="Solstice",sub="Genmei shield",Range="Dunna",
         head="Azimuth Hood +1",neck="Loricate Torque +1",ear1="Sanare earring",ear2="Handler's earring +1",
-        body="Jhakri robe +2",hands="Geomancy mitaines +1",ring1="Defending Ring",ring2="Patricius Ring",
+        body="Amalric doublet +1",hands="Geomancy mitaines +1",ring1="Defending Ring",ring2="Patricius Ring",
         back="Lifestream Cape",waist="Fucho-no-obi",legs="Volte brais",feet="Geomancy sandals"}
  
     sets.idle.PDT.Pet = {main="Solstice",sub="Genmei shield",Range="Dunna",
         head="Azimuth Hood +1",neck="Loricate Torque +1",ear1="Sanare earring",ear2="ethereal earring",
-        body="Jhakri robe +2",hands="Geomancy mitaines +1",ring1="Defending ring",ring2="Dark Ring",
+        body="Amalric doublet +1",hands="Geomancy mitaines +1",ring1="Defending ring",ring2="Dark Ring",
         back="Umbra Cape",waist="Fucho-no-obi",legs="Volte brais",feet="Azimuth gaiters +1"}
  
     -- .Indi sets are for when an Indi-spell is active.
@@ -282,7 +282,7 @@ function init_gear_sets()
  
     sets.defense.MDT = {main="Terra's staff",sub="Oneiros grip",Range="Dunna",
         head="Azimuth hood",neck="Loricate Torque +1",ear1="Sanare earring",ear2="Etiolation earring",
-        body="Amalric doublet",hands="Geomancy mitaines +1",ring1="Defending Ring",ring2="Fortified Ring",
+        body="Amalric doublet +1",hands="Geomancy mitaines +1",ring1="Defending Ring",ring2="Fortified Ring",
         back="Solemnity Cape",waist="Fucho-no-obi",legs="Assiduity pants +1",feet="Azimuth gaiters +1"}
  
     sets.Kiting = {}

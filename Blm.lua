@@ -155,22 +155,22 @@ function init_gear_sets()
     
     sets.midcast['Elemental Magic'] = {main="Lathi",sub="Niobid strap",ammo="Seraphic ampulla",
         head="Merlinic hood",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Regal Earring",
-        body="Spaekona's Coat +1",hands="Amalric gages",ring1="Sangoma Ring",ring2="Shiva Ring +1",
+        body="Spaekona's Coat +1",hands="Amalric gages +1",ring1="Sangoma Ring",ring2="Shiva Ring +1",
         back="Bane Cape",waist="Refoccilation stone",legs="Merlinic shalwar",feet="Merlinic crackows"}
 
     sets.midcast['Elemental Magic'].Resistant = {main="Lathi",sub="Enki strap",ammo="Pemphredo Tathlum",
         head="Merlinic hood",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Regal Earring",
-        body="Amalric doublet",hands="Amalric gages",ring1="Sangoma Ring",ring2="Shiva Ring +1",
+        body="Amalric doublet +1",hands="Amalric gages +1",ring1="Sangoma Ring",ring2="Shiva Ring +1",
         back="Bane Cape",waist="Refoccilation stone",legs="Merlinic shalwar",feet="Merlinic crackows"}
 		
 	sets.midcast['Elemental Magic'].Burst = {main="Lathi",sub="Niobid strap",ammo="Seraphic ampulla",
         head="Merlinic hood",neck="Mizukage-no-Kubikazari",ear1="Barkarole Earring",ear2="Regal Earring",
-        body="Spaekona's Coat +1",hands="Amalric gages",ring1="Mujin band",ring2="Locus Ring",
+        body="Spaekona's Coat +1",hands="Amalric gages +1",ring1="Mujin band",ring2="Locus Ring",
         back="Seshaw Cape",waist="Refoccilation stone",legs="Merlinic shalwar",feet="Merlinic crackows"}
 		
 	sets.midcast['Elemental Magic'].Burst2 = {main="Lathi",sub="Niobid strap",ammo="Pemphredo Tathlum",
         head="Merlinic hood",neck="Mizukage-no-Kubikazari",ear1="Barkarole Earring",ear2="Regal Earring",
-        body="Amalric doublet",hands="Amalric gages",ring1="Mujin band",ring2="Locus Ring",
+        body="Amalric doublet +1",hands="Amalric gages +1",ring1="Mujin band",ring2="Locus Ring",
         back="Seshaw Cape",waist="Refoccilation stone",legs="Merlinic shalwar",feet="Merlinic crackows"}
 
     sets.midcast['Elemental Magic'].HighTierNuke = set_combine(sets.midcast['Elemental Magic'], {sub="Wizzan Grip"})
@@ -199,12 +199,12 @@ function init_gear_sets()
     -- Normal refresh idle set
     sets.idle = {ammo="Impatiens",
         head="Befouled crown",neck="Loricate torque +1",ear1="Infused Earring",ear2="Loquacious Earring",
-        body="Jhakri robe +2",hands="Volte gloves",ring1="Sheltered Ring",ring2="Defending Ring",
+        body="Amalric doublet +1",hands="Volte gloves",ring1="Sheltered Ring",ring2="Defending Ring",
         back="Moonbeam cape",waist="Hierarch Belt",legs="Volte Brais",feet="Herald's Gaiters"}
 		
 	sets.idle.Vagary = {main="Lathi",sub="Niobid strap",ammo="Pemphredo Tathlum",
         head="Merlinic hood",neck="Mizukage-no-Kubikazari",ear1="Barkarole Earring",ear2="Regal Earring",
-        body="Amalric doublet",hands="Amalric gages",ring1="Mujin band",ring2="Locus Ring",
+        body="Amalric doublet +1",hands="Amalric gages +1",ring1="Mujin band",ring2="Locus Ring",
         back="Seshaw Cape",waist="Eschan stone",legs="Merlinic shalwar",feet="Merlinic crackows"}
 
     -- Idle mode that keeps PDT gear on, but doesn't prevent normal gear swaps for precast/etc.

@@ -84,27 +84,37 @@ function init_gear_sets()
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
 	sets.precast.WS = {
-		head="Orion beret +3",neck="Fotia gorget",ear1="Enervating earring",ear2="Moonshade Earring",
-		body="Amini Caban +1",hands="Meghanada gloves +2",ring1="Illabrat Ring",ring2="Regal Ring",
-		back="Belenus's cape",waist="Fotia belt",legs="Meghanada chausses +2",feet="Meghanada jambeaux +2" }
+		head="Orion beret +3",neck="Scout's gorget +2",ear1="Enervating earring",ear2="Moonshade Earring",
+		body="Amini Caban +1",hands="Meghanada gloves +2",ring1="Ilabrat Ring",ring2="Regal Ring",
+		back="Belenus's cape",waist="Fotia belt",legs="Arcadian braccae +3",feet="Arcadian Socks +3" }
 
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {ring1="Cacoethic Ring +1"
 		})
 		
-	sets.precast.WS['Coronach'] = set_combine(sets.precast.WS, {})
+	sets.precast.WS['Coronach'] = set_combine(sets.precast.WS, {ear1="Ishvara earring", ear2="Sherida earring",
+		ring1="Epaminondas's Ring"})
 	
-	sets.precast.WS["Jishnu's Radiance"] = set_combine(sets.precast.WS, {})
+	sets.precast.WS['Last Stand'] = set_combine(sets.precast.WS, {ear1 = "Ishvara earring", 
+		body="Arcadian jerkin +3", ring1="Epaminondas's Ring"})
+	
+	sets.precast.WS["Jishnu's Radiance"] = set_combine(sets.precast.WS, {
+		head="Adhemar Bonnet +1", ear1="Odr earring", ear2="Sherida earring",
+		body="Meghanada cuirie +2", hands="Mummu wrists +2", ring1="Regal ring",
+		legs="Jokushu Haidate", feet="Thereoid Greaves"})
 
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
 	
 	sets.precast.WS['Trueflight'] = {
-    neck="Sanctity Necklace", left_ear="Ishvara Earring",right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +25',}},
-	body= "Cohort Cloak +1", hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}},left_ring="Shiva Ring +1",right_ring="Dingir Ring",
-    back="Belenus's cape", waist="Eschan Stone",legs={ name="Herculean Trousers", augments={'"Mag.Atk.Bns."+24','Weapon skill damage +3%','INT+4','Mag. Acc.+1',}},
+    neck= "Scout's Gorget +2", left_ear="Friomisi Earring", right_ear="Moonshade Earring" ,
+	body= "Cohort Cloak +1", hands= "Carmine Fin. Ga. +1", left_ring="Epaminondas's Ring", right_ring="Dingir Ring",
+    back= "Belenus's cape", waist="Eschan Stone", 
+	legs={ name="Herculean Trousers", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Weapon skill damage +4%','Mag. Acc.+15','"Mag.Atk.Bns."+1',}},
 	feet={ name="Adhemar Gamashes", augments={'AGI+10','Rng.Acc.+15','Rng.Atk.+15',}}
     }
 
 	sets.precast.WS['Wildfire'] = set_combine(sets.precast.WS['Trueflight'])
+	
+	sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {})
 
 	--------------------------------------
 	-- Midcast sets
@@ -115,7 +125,7 @@ function init_gear_sets()
 	sets.midcast.FastRecast = {
 		head="Orion Beret +3",ear1="Loquacious Earring",
 		ring1="Prolix Ring",
-		waist="Pya'ekue Belt +1",legs="Orion Braccae +1",feet="Orion Socks +1"}
+		waist="Pya'ekue Belt +1",legs="Orion Braccae +2",feet="Orion Socks +1"}
 
 	sets.midcast.Utsusemi = {}
 
@@ -123,7 +133,7 @@ function init_gear_sets()
 
 	sets.midcast.RA = {
 		head="Arcadian beret +3",neck="Iskur Gorget",ear1="Dedition earring",ear2="Telos Earring",
-		body="Orion jerkin +3",hands="Malignance gloves",ring1="Illabrat Ring",ring2="Regal Ring",
+		body="Arcadian jerkin +3",hands="Malignance gloves",ring1="Ilabrat Ring",ring2="Regal Ring",
 		back="Belenus's Cape",waist="Yemaya Belt",legs="Malignance tights",feet="Malignance boots"}
 	
 	sets.midcast.RA.Acc = set_combine(sets.midcast.RA,{
@@ -190,7 +200,10 @@ function init_gear_sets()
 	-- Custom buff sets
 	--------------------------------------
 
-	sets.buff.Barrage = set_combine(sets.midcast.RA.Acc, {hands="Orion Bracers +2"})
+	sets.buff.Barrage = set_combine(sets.midcast.RA.Acc, {
+		head="Orion beret +3", ear1="Enervating earring", ear2="Telos earring",
+		body="Orion jerkin +3",	hands="Orion Bracers +2"
+		})
 	sets.buff.Camouflage = {body="Orion Jerkin +3"}
 	sets.buff['Double Shot'] = set_combine(sets.midcast.RA.Acc, {head="Arcadian beret +3",
 																body = "Arcadian jerkin +3", hands="Oshosi gloves +1",

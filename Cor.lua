@@ -23,7 +23,7 @@ end
 -- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
 function job_setup()
     -- Whether to use Luzaf's Ring
-    state.LuzafRing = M(false, "Luzaf's Ring")
+    state.LuzafRing = M(true, "Luzaf's Ring")
     -- Whether a warning has been given for low ammo
     state.warned = M(false)
 
@@ -73,7 +73,7 @@ function init_gear_sets()
 
     -- Precast sets to enhance JAs
     
-    sets.precast.JA['Triple Shot'] = {body="Navarch's Frac +2"}
+    sets.precast.JA['Triple Shot'] = {body="Chasseur's Frac +1"}
     sets.precast.JA['Snake Eye'] = {legs="Lanun Culottes"}
     sets.precast.JA['Wild Card'] = {feet="Lanun Bottes +3"}
     sets.precast.JA['Random Deal'] = {body="Lanun Frac +3"}
@@ -84,7 +84,7 @@ function init_gear_sets()
     sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Navarch's Culottes +2"})
     sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Navarch's Bottes +2"})
     sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {head="Navarch's Tricorne +2"})
-    sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {body="Navarch's Frac +2"})
+    sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {body="Chasseur's Frac +1"})
     sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {hands="Navarch's Gants +2"})
     
     sets.precast.LuzafRing = {ring2="Luzaf's Ring"}
@@ -155,31 +155,25 @@ function init_gear_sets()
 		back="Camulus's Mantle",
 		}
 
-    sets.precast.WS['Wildfire'].Brew = {ammo=gear.MAbullet,
-        head="Wayfarer Circlet",neck="Stoicheion Medal",ear1="Friomisi Earring",ear2="Hecate's Earring",
-        body="Manibozho Jerkin",hands="Iuitl Wristbands",ring1="Stormsoul Ring",ring2="Demon's Ring",
-        back="Toro Cape",waist=gear.ElementalBelt,legs="Iuitl Tights",feet="Iuitl Gaiters +1"}
+    --sets.precast.WS['Wildfire'].Brew = {ammo=gear.MAbullet,
+    --    head="Wayfarer Circlet",neck="Stoicheion Medal",ear1="Friomisi Earring",ear2="Hecate's Earring",
+    --    body="Manibozho Jerkin",hands="Iuitl Wristbands",ring1="Stormsoul Ring",ring2="Demon's Ring",
+    --    back="Toro Cape",waist=gear.ElementalBelt,legs="Iuitl Tights",feet="Iuitl Gaiters +1"}
     
-    sets.precast.WS['Leaden Salute'] = {head="Pixie Hairpin +1",
-		body="Lanun Frac +3",
-		hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}},
-		legs={ name="Herculean Trousers", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Weapon skill damage +4%','Mag. Acc.+15','"Mag.Atk.Bns."+1',}},
-		feet="Lanun Bottes +3",
-		neck="Sanctity Necklace",
-		waist="Eschan Stone",
-		left_ear="Friomisi Earring",
-		right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
-		left_ring="Dingir Ring",
-		right_ring="Archon Ring",
+    sets.precast.WS['Leaden Salute'] = {
+		head="Pixie Hairpin +1", neck="Commodore charm +2", left_ear="Friomisi Earring", right_ear="Moonshade Earring",
+		body="Lanun Frac +3", hands="Carmine Fin. Ga. +1", left_ring="Dingir Ring", right_ring="Archon Ring",
 		back="Camulus's Mantle",
+		legs={ name="Herculean Trousers", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Weapon skill damage +4%','Mag. Acc.+15','"Mag.Atk.Bns."+1',}},
+		waist="Eschan Stone", feet="Lanun Bottes +3"
 		}
 		
 	sets.precast.WS['Savage Blade'] = 
     {
         head="Adhemar bonnet +1",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Ishvara Earring",
         body={name="Herculean Vest", augments={'Accuracy+21 Attack+21','Weapon skill damage +5%','DEX+10','Accuracy+14','Attack+5',}},
-		hands="Adhemar Wristbands +1",ring1="Rajas Ring",ring2="Rufescent ring",
-        back="Bleating Mantle",waist="Kentarch Belt +1",legs="Samnuha tights",feet="Lanun Bottes +3"}
+		hands="Meghanada gloves +2",ring1="Regal Ring",ring2="Epaminondas's ring",
+        back="Camulus's Mantle",waist="Kentarch Belt +1",legs="Samnuha tights",feet="Lanun Bottes +3"}
     
     -- Midcast Sets
     sets.midcast.FastRecast = {
@@ -188,31 +182,28 @@ function init_gear_sets()
         legs="Manibozho Brais",feet="Iuitl Gaiters +1"}
         
     -- Specific spells
-    sets.midcast.Utsusemi = sets.midcast.FastRecast
+    sets.midcast.Utsusemi = set_combine(sets.midcast.FastRecast)
 
     sets.midcast.CorsairShot = {ammo=gear.QDbullet,
-        head="Blood Mask",
-		body={ name="Herculean Vest", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Crit.hit rate+2','STR+5','Mag. Acc.+12','"Mag.Atk.Bns."+15',}},
+        head={ name="Herculean Helm", augments={'"Mag.Atk.Bns."+24','"Fast Cast"+6','STR+7','Mag. Acc.+14',}},
+		body="Lanun Frac +3",
 		hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}},
 		legs={ name="Herculean Trousers", augments={'"Mag.Atk.Bns."+24','Weapon skill damage +3%','INT+4','Mag. Acc.+1',}},
-		feet="Adhemar gamashes",
+		feet="Lanun bottes +3",
 		neck="Sanctity Necklace",
 		waist="Eschan Stone",
-		left_ear="Ishvara Earring",
-		right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
+		left_ear="Friomisi Earring",
+		right_ear="Crematio Earring",
 		left_ring="Dingir Ring",
 		right_ring="Regal Ring",
 		back="Camulus's Mantle",
 		}
 
-    sets.midcast.CorsairShot.Acc = {ammo=gear.QDbullet,
-        head="Laksamana's Hat",neck="Stoicheion Medal",ear1="Lifestorm Earring",ear2="Psystorm Earring",
-        body="Lanun Frac",hands="Schutzen Mittens",ring1="Stormsoul Ring",ring2="Sangoma Ring",
-        back="Navarch's Mantle",waist="Aquiline Belt",legs="Iuitl Tights",feet="Iuitl Gaiters +1"}
+    sets.midcast.CorsairShot.Acc = set_combine(sets.midcast.CorsairShot)
 
     sets.midcast.CorsairShot['Light Shot'] = {ammo=gear.QDbullet,
         head="Laksamana's Hat",neck="Stoicheion Medal",ear1="Lifestorm Earring",ear2="Psystorm Earring",
-        body="Lanun Frac",hands="Schutzen Mittens",ring1="Stormsoul Ring",ring2="Sangoma Ring",
+        body="Lanun Frac +3",hands="Schutzen Mittens",ring1="Stormsoul Ring",ring2="Sangoma Ring",
         back="Navarch's Mantle",waist="Aquiline Belt",legs="Iuitl Tights",feet="Iuitl Gaiters +1"}
 
     sets.midcast.CorsairShot['Dark Shot'] = sets.midcast.CorsairShot['Light Shot']
@@ -238,14 +229,11 @@ function init_gear_sets()
 
     -- Idle sets
     sets.idle = {ammo=gear.RAbullet,
-        head="Malignance chapeau",neck="Wiglen Gorget",ear1="Clearview Earring",ear2="Volley Earring",
-        body="Iuitl Vest",hands="Malignance gloves",ring1="Sheltered Ring",ring2="Defending Ring",
-        back="Shadow Mantle",waist="Flume Belt",legs="Carmine cuisses +1",feet="Skadi's Jambeaux +1"}
+        head="Malignance chapeau",neck="Commodore charm +2",ear1="Etiolation Earring",ear2="Infused Earring",
+        body="Malignance tabard",hands="Malignance gloves",ring1="Sheltered Ring",ring2="Defending Ring",
+        back="Moonbeam cape",waist="Flume Belt",legs="Carmine cuisses +1",feet="Malignance boots"}
 
-    sets.idle.Town = {main="Surcouf's Jambiya",range="Eminent Gun",ammo=gear.RAbullet,
-        head="Laksamana's Hat",neck="Wiglen Gorget",ear1="Clearview Earring",ear2="Volley Earring",
-        body="Laksamana's Frac",hands="Iuitl Wristbands",ring1="Sheltered Ring",ring2="Paguroidea Ring",
-        back="Shadow Mantle",waist="Flume Belt",legs="Nahtirah Trousers",feet="Skadi's Jambeaux +1"}
+    sets.idle.Town = {sets.idle}
     
     -- Defense sets
     sets.defense.PDT = {
@@ -281,7 +269,7 @@ function init_gear_sets()
 
     sets.engaged.DW = {ammo=gear.RAbullet,
         head="Adhemar Bonnet +1",
-		body={ name="Adhemar Jacket +1", augments={'STR+10','DEX+10','Attack+15',}},
+		body="Adhemar Jacket +1",
 		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
 		legs={ name="Samnuha Tights", augments={'STR+10','DEX+10','"Dbl.Atk."+3','"Triple Atk."+3',}},
 		feet={ name="Herculean Boots", augments={'Accuracy+24 Attack+24','Damage taken-2%','STR+7','Accuracy+11','Attack+15',}},
@@ -301,8 +289,8 @@ function init_gear_sets()
 		feet={ name="Herculean Boots", augments={'Accuracy+24 Attack+24','Damage taken-2%','STR+7','Accuracy+11','Attack+15',}},
 		neck="Combatant's Torque",
 		waist="Reiki Yotai",
-		left_ear="Cessance Earring",
-		right_ear="Digni. Earring",
+		left_ear="Telos Earring",
+		right_ear="Mache Earring +1",
 		left_ring="Ilabrat Ring",
 		right_ring="Regal Ring",
 		back="Kayapa Cape"}

@@ -42,7 +42,7 @@ end
 
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
-    state.OffenseMode:options('Normal', 'TA', 'Hybrid', 'TAcc', 'Crit')
+    state.OffenseMode:options('Normal', 'TA', 'Hybrid', 'TAcc', 'Crit', 'Farm')
     state.HybridMode:options('Normal', 'Evasion', 'PDT')
     state.RangedMode:options('Normal', 'Acc')
     state.WeaponskillMode:options('Normal', 'Acc', 'Mod')
@@ -55,6 +55,7 @@ function user_setup()
     gear.AugQuiahuiz = {name="Quiahuiz Trousers", augments={'Haste+2','"Snapshot"+2','STR+8'}}
 	gear.WSDCape = {name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}}
 	gear.FCHat =  {name="Herculean Helm", augments={'"Mag.Atk.Bns."+24','"Fast Cast"+6','STR+7','Mag. Acc.+14'}}
+	gear.CapeCrit = {name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10'}}
 
     -- Additional local binds
     send_command('bind ^` input /ja "Flee" <me>')
@@ -290,7 +291,7 @@ function init_gear_sets()
 
     sets.idle.Town = {
         head="Turms cap +1",neck="Tanner's torque",
-        body="Tanner's apron",hands="Tanner's gloves",ring1="Orvail Ring",
+        body="Tanner's smock",hands="Tanner's gloves",ring1="Orvail Ring",
         back="Shadow Mantle",waist="Reiki Yotai",legs="Pillager's Culottes +3",feet="Pillager's Poulaines +3"}
 
     sets.idle.Weak = {ammo="Yamarang",
@@ -300,8 +301,8 @@ function init_gear_sets()
 		
 	sets.idle.STP = {ammo="Yamarang",
         head="Turms cap +1",neck="Ainia collar",ear1="Sherida Earring",ear2="Telos earring",
-        body="Herculean vest",hands="Adhemar Wristbands +1",ring1="Rajas Ring",ring2="Ilabrat Ring",
-        back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}},waist="Patentia sash",legs="Samnuha tights",feet="Malignance boots"}
+        body="Malignance tabard",hands="Malignance gloves",ring1="Rajas Ring",ring2="Ilabrat Ring",
+        back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}},waist="Patentia sash",legs="Malignance tights",feet="Malignance boots"}
 		
 	sets.idle.Evasion = {ammo="Yamarang",
         head="Malignance Chapeau",neck="Assassin's gorget +2",ear1="Infused Earring",ear2="Eabani Earring",
@@ -332,24 +333,21 @@ function init_gear_sets()
     -- Normal melee group
     sets.engaged = {ammo="Seething Bomblet +1",
         head="Adhemar bonnet +1",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Suppanomimi",
-        body="Adhemar jacket +1",hands="Adhemar Wristbands +1",ring1="Rajas Ring",ring2="Epona's Ring",
+        body="Adhemar jacket +1",hands="Adhemar Wristbands +1",ring1="Rajas Ring",ring2="Gere Ring",
         back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}},waist="Reiki Yotai",legs="Pillager's Culottes +3",feet={name="Taeon boots",augments={'Accuracy+20 Attack+20','"Dual Wield"+4','Crit. hit damage +2%'}}}
     sets.engaged.Acc = {ammo="Yamarang",
         head="Pillager's Bonnet +3",neck="Loricate torque +1",ear1="Dignitary's Earring",ear2="Telos earring",
-        body="Meghanada cuirie +2",hands="Adhemar Wristbands +1",ring1="Regal Ring",ring2="Defending Ring",
+        body="Meghanada cuirie +2",hands="Adhemar Wristbands +1",ring1="Regal Ring",ring2="Gere Ring",
         back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}},waist="Reiki Yotai",legs="Pillager's Culottes +3",feet={name="Herculean boots", augments={'Accuracy+24 Attack+24','Damage taken-2%','STR+7','Accuracy+11','Attack+15',}}}
         
     -- Mod set for trivial mobs (Skadi+1)
     sets.engaged.TA = {ammo="Ginsen",
         head="Adhemar bonnet +1",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Telos earring",
-        body="Adhemar jacket +1",hands="Adhemar Wristbands +1",ring1="Hetairoi Ring",ring2="Epona's Ring",
+        body="Adhemar jacket +1",hands="Adhemar Wristbands +1",ring1="Hetairoi Ring",ring2="Gere Ring",
         back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%'}},waist="Chiner's Belt +1",legs="Samnuha tights",feet="Plunderer's Poulaines +3"}
 		
-	sets.engaged.Farm = {ammo = "Yamarang",
-		head="Skulker's bonnet +1", neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Brutal earring",
-        body="Pillager's vest +3",hands="Herculean gloves",ring1="Defending Ring",ring2="Epona's Ring",
-        back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%'}},
-		waist="Sailfi Belt +1",legs="Pillager's Culottes +3",feet={ name="Herculean Boots", augments={'Accuracy+26','"Triple Atk."+4','DEX+9','Attack+1',}}}
+	sets.engaged.Farm = set_combine(sets.engaged.TA, {ammo = "Yetshila +1", body="Malignance Tabard", hands="Plunderer's Armlets +3", 
+		back = {name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10'}}, waist="Reiki Yotai", legs="Malignance tights"})
 		
 	sets.engaged.Hybrid = {ammo="Yamarang",
         head="Malignance chapeau",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Telos Earring",

@@ -253,7 +253,7 @@ function init_gear_sets()
     
     sets.precast.FC = {ammo="Sapience orb",
         head="Carmine mask +1",neck="Voltsurge Torque",ear1="Etiolation Earring",ear2="Loquacious Earring",
-        body="Helios jacket",hands="Leyline Gloves",ring1="Kishar Ring",
+        body="Dread jupon",hands="Leyline Gloves",ring1="Kishar Ring", ring2="Prolix Ring",
         back="Perimede cape",waist="Witful Belt",legs="Lengo pants",feet="Telchine Pigaches"}
         
     sets.precast.FC['Blue Magic'] = set_combine(sets.precast.FC, {body="Hashishin Mintan"})
@@ -273,8 +273,8 @@ function init_gear_sets()
 
     sets.precast.WS['Sanguine Blade'] = {ammo="Pemphredo tathlum",
         head="Pixie hairpin +1",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Regal Earring",
-        body="Jhakri robe +2",hands="Jhakri cuffs +2",ring1="Archon Ring",ring2="Shiva Ring +1",
-        back="Cornflower Cape",waist="Yamabuki-no-obi",legs="Jhakri Slops +2",feet="Amalric nails"}
+        body="Amalric doublet +1",hands="Jhakri cuffs +2",ring1="Archon Ring",ring2="Epaminondas's Ring",
+        back="Cornflower Cape",waist="Yamabuki-no-obi",legs="Amalric slops +1",feet="Amalric nails +1"}
     
     sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {ammo="Mantoptera eye",
 		neck="Caro necklace",ear1="Moonshade Earring",
@@ -289,7 +289,7 @@ function init_gear_sets()
     -- Midcast Sets
     sets.midcast.FastRecast = {
         head="Haruspex Hat",ear1="Etiolation earring",ear2="Loquacious Earring",
-        body="Luhlaza Jubbah",hands="Mavi Bazubands +2",ring1="Prolix Ring",
+        body="Dread jupon",hands="Mavi Bazubands +2",ring1="Prolix Ring",
         back="Swith Cape +1",waist="Hurch'lan Sash",legs="Enif Cosciales",feet="Iuitl Gaiters +1"}
 		
 	sets.midcast['Phalanx'] = set_combine(sets.midcast.FastRecast, {
@@ -346,16 +346,16 @@ function init_gear_sets()
     -- Magical Spells --
     
     sets.midcast['Blue Magic'].Magical = {ammo="Pemphredo Tathlum",
-        head="Jhakri coronal +2",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Regal Earring",
-        body="Jhakri robe +2",hands="Jhakri cuffs +2",ring1="Strendu Ring",ring2="Shiva Ring +1",
-        back="Cornflower Cape",waist="Yamabuki-no-obi",legs="Jhakri Slops +2",feet="Amalric nails"}
+        neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Regal Earring",
+        body="Cohort cloak +1",hands="Amalric gages +1",ring1="Strendu Ring",ring2="Shiva Ring +1",
+        back="Cornflower Cape",waist="Yamabuki-no-obi",legs="Amalric slops +1",feet="Amalric nails +1"}
 
     sets.midcast['Blue Magic'].Magical.Burst = set_combine(sets.midcast['Blue Magic'].Magical,
-        {hands="Amalric gages",ring1="Locus Ring",ring2="Mujin Band",
+        {hands="Amalric gages +1",ring1="Locus Ring",ring2="Mujin Band",
 		 back="Seshaw Cape"})
 		 
 	sets.midcast['Blue Magic'].MagicalDark = set_combine(sets.midcast['Blue Magic'].Magical, {
-		head = "Pixie hairpin +1", ring1="Archon Ring"
+		head = "Pixie hairpin +1", body="Amalric doublet +1", ring1="Archon Ring"
 	})
     
 	sets.midcast['Subduction'] = set_combine(sets.midcast['Blue Magic'].Magical.Burst, {waist = "Chaac Belt"})
@@ -373,8 +373,8 @@ function init_gear_sets()
 
     sets.midcast['Blue Magic'].MagicAccuracy = {ammo="Pemphredo Tathlum",
         head="Helios band",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Regal Earring",
-        body="Amalric doublet",hands="Amalric gages",ring1="Sangoma Ring",ring2="Shiva Ring +1",
-        back="Cornflower Cape",waist="Yamabuki-no-obi",legs="Jhakri Slops +2",feet="Amalric nails"}
+        body="Amalric doublet +1",hands="Amalric gages +1",ring1="Sangoma Ring",ring2="Shiva Ring +1",
+        back="Cornflower Cape",waist="Yamabuki-no-obi",legs="Amalric slops +1",feet="Amalric nails +1"}
 
     -- Breath Spells --
     
@@ -438,7 +438,7 @@ function init_gear_sets()
     -- Idle sets
     sets.idle = {ammo="Impatiens",
         head="Malignance Chapeau",neck="Loricate torque +1",ear1="Infused Earring",ear2="Loquacious Earring",
-        body="Jhakri robe +2",hands="Malignance Gloves",ring1="Defending Ring",ring2="Patricius Ring",
+        body="Amalric doublet +1",hands="Malignance Gloves",ring1="Defending Ring",ring2="Patricius Ring",
         back="Moonbeam cape",waist="Flume Belt",legs="Carmine cuisses +1",feet="Malignance boots"}
 
     sets.idle.PDT = {ammo="Impatiens",
