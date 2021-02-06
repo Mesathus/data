@@ -254,7 +254,7 @@ function init_gear_sets()
     sets.precast.FC = {ammo="Sapience orb",
         head="Carmine mask +1",neck="Voltsurge Torque",ear1="Etiolation Earring",ear2="Loquacious Earring",
         body="Dread jupon",hands="Leyline Gloves",ring1="Kishar Ring", ring2="Prolix Ring",
-        back="Perimede cape",waist="Witful Belt",legs="Lengo pants",feet="Telchine Pigaches"}
+        back="Perimede cape",waist="Witful Belt",legs="Lengo pants",feet="Carmine greaves +1"}
         
     sets.precast.FC['Blue Magic'] = set_combine(sets.precast.FC, {body="Hashishin Mintan"})
 
@@ -279,7 +279,7 @@ function init_gear_sets()
     sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {ammo="Mantoptera eye",
 		neck="Caro necklace",ear1="Moonshade Earring",
 		hands="Jhakri cuffs +2",ring1="Epaminondas's ring",ring2="Rufescent ring",
-		waist="Grunfeld rope",feet="Carmine greaves +1"})
+		waist="Kentarch belt +1",feet="Carmine greaves +1"})
 
     sets.precast.WS['Chant du Cygne'] = set_combine(sets.precast.WS, {
 		head="Adhemar bonnet +1",ear1="Odr earring", ear2="Mache earring +1",
@@ -385,8 +385,10 @@ function init_gear_sets()
 
     -- Other Types --
     
-    sets.midcast['Blue Magic'].Stun = set_combine(sets.midcast['Blue Magic'].MagicAccuracy,
-        {waist="Chaac Belt"})
+    sets.midcast['Blue Magic'].Stun = set_combine(sets.midcast['Blue Magic'].MagicAccuracy, {
+		head="Carmine mask +1", ear1="Dignitary's earring",
+		ring1="Stikini Ring +1", ring2="Stikini Ring +1"
+		})
         
     sets.midcast['Blue Magic']['White Wind'] = {
         head="Whirlpool Mask",neck="Lavalier +1",ear1="Bloodgem Earring",ear2="Loquacious Earring",

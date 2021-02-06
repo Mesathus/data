@@ -104,7 +104,7 @@ function init_gear_sets()
 
     -- Fast cast sets for spells
     
-    sets.precast.FC = {head="Haruspex Hat",ear2="Loquacious Earring",hands="Thaumas Gloves",ring1="Prolix Ring"}
+    sets.precast.FC = {head="Carmine Mask +1",ear2="Loquacious Earring",hands="Thaumas Gloves",ring1="Prolix Ring", feet="Carmine greaves +1"}
 
     sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads"})
 
@@ -144,7 +144,7 @@ function init_gear_sets()
     sets.precast.WS['Wildfire'] = {head={ name="Herculean Helm", augments={'"Mag.Atk.Bns."+24','"Fast Cast"+6','STR+7','Mag. Acc.+14',}},
 		body="Lanun Frac +3",
 		hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}},
-		legs={ name="Herculean Trousers", augments={'"Mag.Atk.Bns."+24','Weapon skill damage +3%','INT+4','Mag. Acc.+1',}},
+		legs={ name="Herculean Trousers", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Weapon skill damage +4%','Mag. Acc.+15','"Mag.Atk.Bns."+1',}},
 		feet="Lanun Bottes +3",
 		neck="Sanctity Necklace",
 		waist="Eschan Stone",
@@ -170,7 +170,7 @@ function init_gear_sets()
 		
 	sets.precast.WS['Savage Blade'] = 
     {
-        head="Adhemar bonnet +1",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Ishvara Earring",
+        head="Adhemar bonnet +1",neck="Commodore charm +2",ear1="Moonshade Earring",ear2="Ishvara Earring",
         body={name="Herculean Vest", augments={'Accuracy+21 Attack+21','Weapon skill damage +5%','DEX+10','Accuracy+14','Attack+5',}},
 		hands="Meghanada gloves +2",ring1="Regal Ring",ring2="Epaminondas's ring",
         back="Camulus's Mantle",waist="Kentarch Belt +1",legs="Samnuha tights",feet="Lanun Bottes +3"}
@@ -190,7 +190,7 @@ function init_gear_sets()
 		hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}},
 		legs={ name="Herculean Trousers", augments={'"Mag.Atk.Bns."+24','Weapon skill damage +3%','INT+4','Mag. Acc.+1',}},
 		feet="Lanun bottes +3",
-		neck="Sanctity Necklace",
+		neck="Commodore charm +2",
 		waist="Eschan Stone",
 		left_ear="Friomisi Earring",
 		right_ear="Crematio Earring",
@@ -287,7 +287,7 @@ function init_gear_sets()
 		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
 		legs="Carmine cuisses +1",
 		feet={ name="Herculean Boots", augments={'Accuracy+24 Attack+24','Damage taken-2%','STR+7','Accuracy+11','Attack+15',}},
-		neck="Combatant's Torque",
+		neck="Commodore charm +2",
 		waist="Reiki Yotai",
 		left_ear="Telos Earring",
 		right_ear="Mache Earring +1",

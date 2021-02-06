@@ -62,6 +62,7 @@ function init_gear_sets()
 	sets.precast.JA['Shadowbind'] = {hands="Orion Bracers +2"}
 	sets.precast.JA['Sharpshot'] = {legs="Orion Braccae +2"}
 	sets.precast.JA['Velocity Shot'] = {body="Amini Caban +1"}
+	sets.precast.JA['Eagle Eye Shot'] = {}
 
 
 	-- Fast cast sets for spells
@@ -99,7 +100,7 @@ function init_gear_sets()
 	
 	sets.precast.WS["Jishnu's Radiance"] = set_combine(sets.precast.WS, {
 		head="Adhemar Bonnet +1", ear1="Odr earring", ear2="Sherida earring",
-		body="Meghanada cuirie +2", hands="Mummu wrists +2", ring1="Regal ring",
+		body="Meghanada cuirie +2", hands="Mummu wrists +2", ring1="Begrudging ring",
 		legs="Jokushu Haidate", feet="Thereoid Greaves"})
 
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
@@ -165,9 +166,9 @@ function init_gear_sets()
 		back="Moonbeam cape",waist="Flume Belt",legs="Carmine cuisses +1",feet="Malignance Boots"}
 		
 	sets.idle.Vagary = {	
-		head="Arcadian Beret +3",neck="Iskur Gorget",ear1="Enervating earring",ear2="Tripudio Earring",
-		body="Amini Caban +1",hands="Amini glovelettes +1",ring1="Rajas Ring",ring2="Cacoethic Ring +1",
-		back="Lutian Cape",waist="Eschan stone",legs="Amini Brague +1",feet="Adhemar Gamashes"}
+		head="Arcadian beret +3",neck="Iskur Gorget",ear1="Dedition earring",ear2="Telos Earring",
+		body="Arcadian jerkin +3",hands="Malignance gloves",ring1="Ilabrat Ring",ring2="Regal Ring",
+		back="Belenus's Cape",waist="Yemaya Belt",legs="Malignance tights",feet="Malignance boots"}
 	
 	-- Defense sets
 	sets.defense.PDT = {
@@ -205,7 +206,7 @@ function init_gear_sets()
 		body="Orion jerkin +3",	hands="Orion Bracers +2"
 		})
 	sets.buff.Camouflage = {body="Orion Jerkin +3"}
-	sets.buff['Double Shot'] = set_combine(sets.midcast.RA.Acc, {head="Arcadian beret +3",
+	sets.buff['Double Shot'] = set_combine(sets.midcast.RA, {head="Arcadian beret +3",
 																body = "Arcadian jerkin +3", hands="Oshosi gloves +1",
 																legs="Oshosi trousers +1",feet="Oshosi leggings +1"})
 end

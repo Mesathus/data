@@ -143,7 +143,7 @@ function init_gear_sets()
 
     -- Ranged snapshot gear
     sets.precast.RA = {head="Volte tiara",hands="Mrigavyadha gloves",
-	waist="Yemaya belt",legs="Volte tights",feet="Meghanada jambeaux +2"}
+	waist="Yemaya belt",legs="Adhemar kecks +1",feet="Meghanada jambeaux +2"}
 
 
     -- Weaponskill sets
@@ -182,7 +182,8 @@ function init_gear_sets()
     sets.precast.WS['Evisceration'].TA = set_combine(sets.precast.WS['Evisceration'].Mod, {head = "Pillager's Bonnet +3"})
     sets.precast.WS['Evisceration'].SATA = set_combine(sets.precast.WS['Evisceration'].Mod, {head = "Pillager's Bonnet +3"})
 
-    sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {head="Pillager's Bonnet +3",neck="Assassin's gorget +2",ring2="Epaminondas's Ring",waist="Kentarch belt +1"})
+    sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {head="Pillager's Bonnet +3",neck="Assassin's gorget +2", ear1="Odr earring",
+		ring2="Epaminondas's Ring",waist="Kentarch belt +1"})
     sets.precast.WS["Rudra's Storm"].Acc = set_combine(sets.precast.WS["Rudra's Storm"], {})
     sets.precast.WS["Rudra's Storm"].Mod = set_combine(sets.precast.WS["Rudra's Storm"], {})
     sets.precast.WS["Rudra's Storm"].SA = set_combine(sets.precast.WS["Rudra's Storm"].Mod, {ammo = "Yetshila +1",body="Plunderer's vest +3"})
@@ -300,9 +301,10 @@ function init_gear_sets()
         back="Moonbeam cape",waist="Flume Belt",legs="Meghanada chausses +2",feet="Turms leggings +1"}
 		
 	sets.idle.STP = {ammo="Yamarang",
-        head="Turms cap +1",neck="Ainia collar",ear1="Sherida Earring",ear2="Telos earring",
+        head="Turms cap +1",neck="Ainia collar",ear1="Sherida Earring",ear2="Dedition earring",
         body="Malignance tabard",hands="Malignance gloves",ring1="Rajas Ring",ring2="Ilabrat Ring",
-        back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}},waist="Patentia sash",legs="Malignance tights",feet="Malignance boots"}
+        back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}},
+		waist="Patentia sash",legs="Malignance tights",feet="Malignance boots"}
 		
 	sets.idle.Evasion = {ammo="Yamarang",
         head="Malignance Chapeau",neck="Assassin's gorget +2",ear1="Infused Earring",ear2="Eabani Earring",
