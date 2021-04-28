@@ -104,7 +104,7 @@ function init_gear_sets()
 
     sets.midcast.FastRecast = {
         head="Haruspex hat +1",ear1="Etiolation Earring",ear2="Loquacious Earring",
-        body="Helios Jacket",hands="Bokwus Gloves",ring1="Prolix Ring",
+        body="Merlinic jubbah",hands="Bokwus Gloves",ring1="Prolix Ring",
         back="Swith Cape +1",waist="Goading Belt",legs="Hagondes Pants",feet="Merlinic crackows"}
 
     sets.midcast.Cure = {
@@ -200,7 +200,7 @@ function init_gear_sets()
     sets.idle = {ammo="Impatiens",
         head="Befouled crown",neck="Loricate torque +1",ear1="Infused Earring",ear2="Loquacious Earring",
         body="Amalric doublet +1",hands="Volte gloves",ring1="Sheltered Ring",ring2="Defending Ring",
-        back="Moonbeam cape",waist="Hierarch Belt",legs="Volte Brais",feet="Herald's Gaiters"}
+        back="Moonlight cape",waist="Hierarch Belt",legs="Volte Brais",feet="Herald's Gaiters"}
 		
 	sets.idle.Vagary = {main="Lathi",sub="Niobid strap",ammo="Pemphredo Tathlum",
         head="Merlinic hood",neck="Mizukage-no-Kubikazari",ear1="Barkarole Earring",ear2="Regal Earring",

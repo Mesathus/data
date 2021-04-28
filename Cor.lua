@@ -74,21 +74,24 @@ function init_gear_sets()
     -- Precast sets to enhance JAs
     
     sets.precast.JA['Triple Shot'] = {body="Chasseur's Frac +1"}
-    sets.precast.JA['Snake Eye'] = {legs="Lanun Culottes"}
+    sets.precast.JA['Snake Eye'] = {legs="Lanun Trews"}
     sets.precast.JA['Wild Card'] = {feet="Lanun Bottes +3"}
     sets.precast.JA['Random Deal'] = {body="Lanun Frac +3"}
+	--sets.precast.JA['Fold'] = {hands="Lanun Gants +3"}
 
     
-    sets.precast.CorsairRoll = {head="Lanun Tricorne",neck="Regal Necklace",hands="Navarch's Gants +2"}
+    sets.precast.CorsairRoll = {head="Lanun Tricorne +3",neck="Regal Necklace",
+		body="Malignance tabard",hands="Chasseur's Gants +1",ring2="Defending Ring",
+		waist="Flume belt",legs="Desultor tassets",feet="Malignance boots"}
     
-    sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Navarch's Culottes +2"})
+    sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Chasseur's Culottes"})
     sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Navarch's Bottes +2"})
-    sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {head="Navarch's Tricorne +2"})
+    sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {head="Chasseur's Tricorne"})
     sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {body="Chasseur's Frac +1"})
-    sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {hands="Navarch's Gants +2"})
+    sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {hands="Chasseur's Gants +1"})
     
     sets.precast.LuzafRing = {ring2="Luzaf's Ring"}
-    sets.precast.FoldDoubleBust = {hands="Lanun Gants"}
+    sets.precast.FoldDoubleBust = {hands="Lanun Gants +3"}
     
     sets.precast.CorsairShot = {head="Blood Mask"}
     
@@ -106,23 +109,23 @@ function init_gear_sets()
     
     sets.precast.FC = {head="Carmine Mask +1",ear2="Loquacious Earring",hands="Thaumas Gloves",ring1="Prolix Ring", feet="Carmine greaves +1"}
 
-    sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads"})
+    sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads",body="Passion jacket"})
 
 
     sets.precast.RA = {ammo=gear.RAbullet,
-        head="Navarch's Tricorne +2",
-        body="Laksamana's Frac",hands="Carmine finger gauntlets +1",
+        head="Chasseur's Tricorne",
+        body="Laksamana's Frac +3",hands="Lanun gants +3",
         back="Navarch's Mantle",waist="Impulse Belt",legs="Adhemar kecks +1",feet="Meghanada jambeaux +2"}
 
        
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
-        head="Whirlpool Mask",neck=gear.ElementalGorget,ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Manibozho Jerkin",hands="Iuitl Wristbands",ring1="Rajas Ring",ring2="Epona's Ring",
-        back="Atheling Mantle",waist=gear.ElementalBelt,legs="Manibozho Brais",feet="Iuitl Gaiters +1"}
+        head="Adhemar bonnet +1",neck="Commodore charm +2",ear1="Moonshade Earring",ear2="Ishvara Earring",
+        body="Laksamana's Frac +3",	hands="Meghanada gloves +2",ring1="Regal Ring",ring2="Epaminondas's ring",
+        back="Camulus's Mantle",waist="Kentarch Belt +1",legs="Samnuha tights",feet="Lanun Bottes +3"}
 
-
+	
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
     sets.precast.WS['Evisceration'] = sets.precast.WS
 
@@ -131,14 +134,14 @@ function init_gear_sets()
     sets.precast.WS['Requiescat'] = set_combine(sets.precast.WS, {legs="Nahtirah Trousers"})
 
     sets.precast.WS['Last Stand'] = {
-		head="Meghanada Visor +2",neck="Fotia gorget",ear1="Enervating earring",ear2="Moonshade Earring",
-		body="Meghanada cuirie +2",hands="Meghanada gloves +2",ring1="Illabrat Ring",ring2="Regal Ring",
-		back="Camulus's cape",waist="Fotia belt",legs="Meghanada chausses +2",feet="Meghanada jambeaux +2" }
+		head="Lanun Tricorne +3",neck="Fotia gorget",ear1="Enervating earring",ear2="Moonshade Earring",
+		body="Laksamana's Frac +3",hands="Meghanada gloves +2",ring1="Ilabrat Ring",ring2="Regal Ring",
+		back="Camulus's Mantle",waist="Fotia belt",legs="Meghanada chausses +2",feet="Lanun bottes +3" }
 
     sets.precast.WS['Last Stand'].Acc = {
         head="Meghanada Visor +2",neck="Fotia gorget",ear1="Enervating earring",ear2="Moonshade Earring",
-		body="Meghanada cuirie +2",hands="Meghanada gloves +2",ring1="Illabrat Ring",ring2="Regal Ring",
-		back="Camulus's cape",waist="Fotia belt",legs="Meghanada chausses +2",feet="Meghanada jambeaux +2" }
+		body="Laksamana's Frac +3",hands="Meghanada gloves +2",ring1="Ilabrat Ring",ring2="Regal Ring",
+		back="Camulus's Mantle",waist="Fotia belt",legs="Meghanada chausses +2",feet="Meghanada jambeaux +2" }
 
 
     sets.precast.WS['Wildfire'] = {head={ name="Herculean Helm", augments={'"Mag.Atk.Bns."+24','"Fast Cast"+6','STR+7','Mag. Acc.+14',}},
@@ -168,11 +171,9 @@ function init_gear_sets()
 		waist="Eschan Stone", feet="Lanun Bottes +3"
 		}
 		
-	sets.precast.WS['Savage Blade'] = 
-    {
+	sets.precast.WS['Savage Blade'] = {
         head="Adhemar bonnet +1",neck="Commodore charm +2",ear1="Moonshade Earring",ear2="Ishvara Earring",
-        body={name="Herculean Vest", augments={'Accuracy+21 Attack+21','Weapon skill damage +5%','DEX+10','Accuracy+14','Attack+5',}},
-		hands="Meghanada gloves +2",ring1="Regal Ring",ring2="Epaminondas's ring",
+        body="Laksamana's Frac +3",	hands="Meghanada gloves +2",ring1="Regal Ring",ring2="Epaminondas's ring",
         back="Camulus's Mantle",waist="Kentarch Belt +1",legs="Samnuha tights",feet="Lanun Bottes +3"}
     
     -- Midcast Sets
@@ -201,10 +202,7 @@ function init_gear_sets()
 
     sets.midcast.CorsairShot.Acc = set_combine(sets.midcast.CorsairShot)
 
-    sets.midcast.CorsairShot['Light Shot'] = {ammo=gear.QDbullet,
-        head="Laksamana's Hat",neck="Stoicheion Medal",ear1="Lifestorm Earring",ear2="Psystorm Earring",
-        body="Lanun Frac +3",hands="Schutzen Mittens",ring1="Stormsoul Ring",ring2="Sangoma Ring",
-        back="Navarch's Mantle",waist="Aquiline Belt",legs="Iuitl Tights",feet="Iuitl Gaiters +1"}
+    sets.midcast.CorsairShot['Light Shot'] = set_combine(sets.midcast.CorsairShot)
 
     sets.midcast.CorsairShot['Dark Shot'] = sets.midcast.CorsairShot['Light Shot']
 
@@ -212,13 +210,22 @@ function init_gear_sets()
     -- Ranged gear
     sets.midcast.RA = {ammo=gear.RAbullet,
         head="Malignance chapeau",neck="Iskur Gorget",ear1="Enervating Earring",ear2="Telos Earring",
-        body="Malignance tabard",hands="Malignance gloves",ring1="Regal Ring",ring2="Illabrat Ring",
+        body="Malignance tabard",hands="Malignance gloves",ring1="Regal Ring",ring2="Ilabrat Ring",
         back="Camulus's Mantle",waist="Yemaya Belt",legs="Malignance tights",feet="Malignance boots"}
 
     sets.midcast.RA.Acc = {ammo=gear.RAbullet,
-        head="Meghanada Visor +2",neck="Iskur Gorget",ear1="Enervating Earring",ear2="Tripudio Earring",
-        body="Meghanada cuirie +2",hands="Meghanada gloves +2",ring1="Regal Ring",ring2="Illabrat Ring",
+        head="Meghanada Visor +2",neck="Iskur Gorget",ear1="Enervating Earring",ear2="Telos Earring",
+        body="Meghanada cuirie +2",hands="Meghanada gloves +2",ring1="Regal Ring",ring2="Ilabrat Ring",
         back="Camulus's Mantle",waist="Yemaya Belt",legs="Meghanada chausses +2",feet="Meghanada jambeaux +1"}
+		
+	sets.TripleShot = set_combine(sets.midcast.RA, {
+        --head="Oshosi Mask +1", --4
+        body="Chasseur's Frac +1", --12
+        hands="Lanun gants +3", -- 3 relic hands
+		back="Camulus's Mantle",
+        legs="Oshosi Trousers +1", --5
+        feet="Oshosi Leggings +1", --2
+        }) --27
 
     
     -- Sets to return to when not performing an action.
@@ -229,17 +236,17 @@ function init_gear_sets()
 
     -- Idle sets
     sets.idle = {ammo=gear.RAbullet,
-        head="Malignance chapeau",neck="Commodore charm +2",ear1="Etiolation Earring",ear2="Infused Earring",
+        head="Malignance chapeau",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Infused Earring",
         body="Malignance tabard",hands="Malignance gloves",ring1="Sheltered Ring",ring2="Defending Ring",
-        back="Moonbeam cape",waist="Flume Belt",legs="Carmine cuisses +1",feet="Malignance boots"}
+        back="Moonlight cape",waist="Flume Belt",legs="Carmine cuisses +1",feet="Malignance boots"}
 
-    sets.idle.Town = {sets.idle}
+    sets.idle.Town = set_combine(sets.idle, {})
     
     -- Defense sets
     sets.defense.PDT = {
-        head="Whirlpool Mask",neck="Twilight Torque",ear1="Clearview Earring",ear2="Volley Earring",
-        body="Iuitl Vest",hands="Iuitl Wristbands",ring1="Defending Ring",ring2=gear.DarkRing.physical,
-        back="Shadow Mantle",waist="Flume Belt",legs="Nahtirah Trousers",feet="Iuitl Gaiters +1"}
+        head="Malignance chapeau",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Infused Earring",
+        body="Malignance tabard",hands="Malignance gloves",ring1="Sheltered Ring",ring2="Defending Ring",
+        back="Moonlight cape",waist="Flume Belt",legs="Carmine cuisses +1",feet="Malignance boots"}
 
     sets.defense.MDT = {
         head="Whirlpool Mask",neck="Twilight Torque",ear1="Clearview Earring",ear2="Volley Earring",
@@ -247,7 +254,7 @@ function init_gear_sets()
         back="Engulfer Cape",waist="Flume Belt",legs="Nahtirah Trousers",feet="Iuitl Gaiters +1"}
     
 
-    sets.Kiting = {feet="Skadi's Jambeaux +1"}
+    sets.Kiting = {legs="Carmine cuisses +1"}
 
     -- Engaged sets
 
@@ -263,9 +270,9 @@ function init_gear_sets()
         back="Kayapa cape",waist="Kentarch belt +1",legs="Malignance tights",feet="Malignance boots"}
     
     sets.engaged.Acc = {ammo=gear.RAbullet,
-        head="Whirlpool Mask",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Tripudio Earring",
-        body="Iuitl Vest",hands="Iuitl Wristbands",ring1="Rajas Ring",ring2="Epona's Ring",
-        back="Atheling Mantle",waist="Hurch'lan Sash",legs="Manibozho Brais",feet="Iuitl Gaiters +1"}
+        head="Adhemar bonnet +1",neck="Lissome Necklace",ear1="Brutal Earring",ear2="Tripudio Earring",
+        body="Adhemar jacket +1",hands="Adhemar Wristbands +1",ring1="Rajas Ring",ring2="Epona's Ring",
+        back="Kayapa cape",waist="Kentarch belt +1",legs="Malignance tights",feet="Malignance boots"}
 
     sets.engaged.DW = {ammo=gear.RAbullet,
         head="Adhemar Bonnet +1",
@@ -360,6 +367,16 @@ function job_update(cmdParams, eventArgs)
     end
 end
 
+function job_post_midcast(spell, action, spellMap, eventArgs)
+    if spell.action_type == 'Ranged Attack' and buffactive['Triple Shot'] then
+        equip(sets.TripleShot)
+    end
+    if spell.type == 'CorsairShot' then
+        if spell.english ~= "Light Shot" and spell.english ~= "Dark Shot" then
+            equip(sets.Obi)
+        end
+    end
+end
 
 -- Set eventArgs.handled to true if we don't want the automatic display to be run.
 function display_current_job_state(eventArgs)

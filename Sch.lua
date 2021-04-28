@@ -91,7 +91,7 @@ function init_gear_sets()
 
     sets.precast.FC = {ammo="Sapience orb",
         head="Haruspex Hat +1",neck="Voltsurge torque",ear1="Etiolation Earring",ear2="Loquacious Earring",
-        body="Helios Jacket",hands="Volte gloves",ring1="Prolix Ring",ring2="Kishar Ring",
+        body="Merlinic jubbah",hands="Volte gloves",ring1="Prolix Ring",ring2="Kishar Ring",
         back="Swith Cape +1",waist="Witful Belt",legs="Volte brais",feet="Regal Pumps +1"}
 
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash"})
@@ -234,17 +234,17 @@ function init_gear_sets()
 	sets.idle = {main="Akademos",sub="Niobid strap",ammo="Incantor Stone",
         head="Befouled crown",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Loquacious Earring",
         body="Amalric doublet +1",hands="Volte gloves",ring1="Sheltered Ring",ring2="Defending Ring",
-        back="Moonbeam Cape",waist="Hierarch Belt",legs="Volte brais",feet="Herald's Gaiters"}	
+        back="Moonlight cape",waist="Hierarch Belt",legs="Volte brais",feet="Herald's Gaiters"}	
 	
     sets.idle.Town = {main="Akademos",sub="Niobid strap",ammo="Incantor Stone",
         head="Befouled crown",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Loquacious Earring",
         body="Amalric doublet +1",hands="Volte gloves",ring1="Sheltered Ring",ring2="Defending Ring",
-        back="Moonbeam Cape",waist="Hierarch Belt",legs="Volte brais",feet="Herald's Gaiters"}
+        back="Moonlight cape",waist="Hierarch Belt",legs="Volte brais",feet="Herald's Gaiters"}
 
     sets.idle.Field = {main="Daybreak",sub="Genmei shield",ammo="Incantor Stone",
         head="Befouled crown",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Loquacious Earring",
         body="Amalric doublet +1",hands="Volte gloves",ring1="Sheltered Ring",ring2="Defending Ring",
-        back="Moonbeam Cape",waist="Hierarch Belt",legs="Volte brais",feet="Chironic slippers"}
+        back="Moonlight cape",waist="Hierarch Belt",legs="Volte brais",feet="Herald's Gaiters"}
 
     sets.idle.Field.PDT = {ammo="Incantor Stone",
         head="Nahtirah Hat",neck="Wiglen Gorget",ear1="Bloodgem Earring",ear2="Loquacious Earring",

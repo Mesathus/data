@@ -68,11 +68,11 @@ function init_gear_sets()
  
     sets.precast.FC = {main="Marin staff",range="Dunna",
         head="Haruspex Hat +1",neck="Voltsurge torque",ear1="Etiolation Earring",ear2="Loquacious Earring",
-        body="Helios Jacket",ring1="Prolix Ring",
-        back="Lifestream cape",waist="Witful Belt",legs="Geomancy Pants +1",feet="Regal Pumps +1"}
+        body="Helios Jacket",hands="Volte gloves",ring1="Prolix Ring",ring2="Kishar ring",
+        back="Lifestream cape",waist="Witful Belt",legs="Volte brais",feet="Regal Pumps +1"}
  
     sets.precast.FC.Cure = set_combine(sets.precast.FC, {
-		main="Tamaxchi",sub="Genmei Shield",
+		main="Daybreak",sub="Genmei Shield",
 		body="Heka's Kalasiris",
 		back="Pahtli Cape"})
 		
@@ -95,9 +95,9 @@ function init_gear_sets()
  
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
     sets.precast.WS['Flash Nova'] = {
-        head=gear.HeliosHeadMAB,neck="Eddy necklace",ear1="Friomisi earring",ear2="Crematio earring",
-        body="Count's garb",hands=gear.HeliosHandsMAB,ring1="Strendu ring",ring2="Acumen ring",
-        back=gear.ElementalCape,waist=gear.ElementalObi,legs="Hagondes pants +1",feet=gear.HeliosFeetMAB}
+        head=gear.HeliosHeadMAB,neck="Sanctity necklace",ear1="Friomisi earring",ear2="Crematio earring",
+        body="Amalric doublet +1",hands="Amalric gages +1",ring1="Strendu ring",ring2="Shiva ring +1",
+        back="Izdubar mantle",waist="Eschan stone",legs="Amalric slops +1",feet="Amalric nail +1"}
  
     sets.precast.WS['Starlight'] = {ear2="Moonshade Earring"}
  
@@ -158,7 +158,7 @@ function init_gear_sets()
 		
     sets.midcast['Elemental Magic'].Resistant = {main="Solstice",sub="Culminus",
         head="Merlinic hood",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Friomisi Earring",
-        body="Psycloth vest",hands="Amalric gages +1",ring1="Sangoma Ring",ring2="Shiva Ring +1",
+        body="Amalric doublet +1",hands="Amalric gages +1",ring1="Sangoma Ring",ring2="Shiva Ring +1",
         back="Seshaw Cape",waist="Eschan stone",legs="Merlinic shalwar",feet="Merlinic crackows"}
 		
 	sets.midcast['Elemental Magic'].Burst = {main="Solstice",sub="Culminus",

@@ -154,8 +154,8 @@ function init_gear_sets()
   sets.idle = {
     ammo="Automat. Oil +3",
     head="Pitre Taj +1",neck="Bathy choker",ear1="Infused Earring",ear2="Burana Earring",
-    body="Malignance tabard",hands="Malignance gloves",ring1="Sheltered Ring",ring2="Defending Ring",
-    back="Kumbira Cape",waist="Lycopodium Sash",legs="Malignance tights",feet="Hermes' Sandals"}
+    body="Gyve Doublet",hands="Count's Cuffs",ring1="Sheltered Ring",ring2="Paguroidea Ring",
+    back="Kumbira Cape",waist="Lycopodium Sash",legs="Rao Haidate +1",feet="Hermes' Sandals"}
 	
   sets.idle.Auto = {ammo="Automat. Oil +3",
     head="Anwig salade",neck="Shepherd's chain",ear1="Rimeice Earring",ear2="Domesticator's Earring",
@@ -171,8 +171,8 @@ function init_gear_sets()
   -- Idle sets to wear while pet is engaged
   sets.idle.Pet.Engaged = {
     ammo="Automat. Oil +3",
-    head="Anwig Salade",neck="Shulmanu collar",ear1="Rimeice Earring",ear2="Enmerkar Earring",
-    body="Rao Togi",hands="Rao Kote +1",ring1="Defending Ring",ring2="Cath Palug Ring",
+    head="Anwig Salade",neck="Shepherd's chain",ear1="Rimeice Earring",ear2="Domesticator's Earring",
+    body="Rao Togi",hands="Rao Kote +1",ring1="Defending Ring",ring2="Fortified Ring",
     back="Visucius's mantle",waist="Isa Belt",legs="Rao Haidate +1",feet="Rao Sune-Ate"}
 
   sets.idle.Pet.Engaged.Ranged = set_combine(sets.idle.Pet.Engaged, {main="Nibiru Sainti",feet="Punchinellos"})
@@ -180,9 +180,9 @@ function init_gear_sets()
   sets.idle.Pet.Engaged.Magic = set_combine(sets.idle.Pet.Engaged, {main="Denouements"})
   sets.idle.Pet.Engaged.Heal = sets.idle.Pet.Engaged.Magic
 
- 	sets.idle.Pet.Engaged.Tank = set_combine(sets.idle.Pet.Engaged, {ammo="Automat. Oil +3",
-		head="Anwig Salade",neck="Shulmanu collar",ear1="Rimeice Earring",ear2="Enmerkar Earring",
-		body="Rao Togi",hands="Rao Kote +1",ring1="Defending Ring",ring2="Cath Palug Ring",
+ 	sets.idle.Pet.Engaged.Tank = set_combine(sets.idle.Pet.Engaged, {main="Midnights",ammo="Automat. Oil +3",
+		head="Anwig Salade",neck="Shepherd's chain",ear1="Rimeice Earring",ear2="Domesticator's Earring",
+		body="Rao Togi",hands="Rao Kote +1",ring1="Defending Ring",ring2="Fortified Ring",
 		back="Visucius's mantle",waist="Isa Belt",legs="Rao Haidate +1",feet="Rao Sune-Ate"})
   -- Engaged sets
 
@@ -203,13 +203,6 @@ function init_gear_sets()
     body="Pitre Tobe +1",hands=gear.taeon_hands_ta,ring2="Oneiros Annulet",
     waist="Hurch'lan Sash",legs=gear.taeon_legs_ta,feet="Karagoz Scarpe +1"
   })
-  
-  sets.defense.PDT = {ammo="Yamarang",
-        head="Malignance chapeau",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Telos Earring",
-        body="Malignance tabard",hands="Malignance gloves",ring1="Moonlight Ring",ring2="Moonlight Ring",
-        back={ name="Toutatis's Cape", augments={'AGI+20','Eva.+20 /Mag. Eva.+20','Evasion+10','"Store TP"+10','Phys. dmg. taken-10%'}},
-		waist="Reiki Yotai",legs="Malignance tights",feet="Malignance boots"}
-
 
 end
 
@@ -218,21 +211,21 @@ end
 -- Job-specific hooks that are called to process player actions at specific points in time.
 -------------------------------------------------------------------------------------------------------------------
 
--- Called when player is about to perform an action
-function job_precast(spell, action, spellMap, eventArgs)
-  custom_aftermath_timers_precast(spell)
-end
+-- -- Called when player is about to perform an action
+-- function job_precast(spell, action, spellMap, eventArgs)
+  -- custom_aftermath_timers_precast(spell)
+-- end
 
-function job_aftercast(spell, action, spellMap, eventArgs)
-  custom_aftermath_timers_aftercast(spell)
-end
+-- function job_aftercast(spell, action, spellMap, eventArgs)
+  -- custom_aftermath_timers_aftercast(spell)
+-- end
 
--- Called when pet is about to perform an action
-function job_pet_midcast(spell, action, spellMap, eventArgs)
-  if petWeaponskills:contains(spell.english) then
-    classes.CustomClass = "Weaponskill"
-  end
-end
+-- -- Called when pet is about to perform an action
+-- function job_pet_midcast(spell, action, spellMap, eventArgs)
+  -- if petWeaponskills:contains(spell.english) then
+    -- classes.CustomClass = "Weaponskill"
+  -- end
+-- end
 
 
 -------------------------------------------------------------------------------------------------------------------
@@ -242,144 +235,144 @@ end
 -- Called when a player gains or loses a buff.
 -- buff == buff gained or lost
 -- gain == true if the buff was gained, false if it was lost.
-function job_buff_change(buff, gain)
-  if buff == 'Wind Maneuver' then
-    handle_equipping_gear(player.status)
-  end
-end
+-- function job_buff_change(buff, gain)
+  -- if buff == 'Wind Maneuver' then
+    -- handle_equipping_gear(player.status)
+  -- end
+-- end
 
--- Called when a player gains or loses a pet.
--- pet == pet gained or lost
--- gain == true if the pet was gained, false if it was lost.
-function job_pet_change(pet, gain)
-  update_pet_mode()
-end
+-- -- Called when a player gains or loses a pet.
+-- -- pet == pet gained or lost
+-- -- gain == true if the pet was gained, false if it was lost.
+-- function job_pet_change(pet, gain)
+  -- update_pet_mode()
+-- end
 
--- Called when the pet's status changes.
-function job_pet_status_change(newStatus, oldStatus)
-  if newStatus == 'Engaged' then
-    display_pet_status()
-  end
-end
-
-
--------------------------------------------------------------------------------------------------------------------
--- User code that supplements self-commands.
--------------------------------------------------------------------------------------------------------------------
-
--- Called for custom player commands.
-function job_self_command(cmdParams, eventArgs)
-  if cmdParams[1] == 'maneuver' then
-    if pet.isvalid then
-      local man = defaultManeuvers[state.PetMode]
-      if man and tonumber(cmdParams[2]) then
-        man = man[tonumber(cmdParams[2])]
-      end
-
-      if man then
-        send_command('input /pet "'..man..'" <me>')
-      end
-    else
-      add_to_chat(123,'No valid pet.')
-    end
-  end
-end
+-- -- Called when the pet's status changes.
+-- function job_pet_status_change(newStatus, oldStatus)
+  -- if newStatus == 'Engaged' then
+    -- display_pet_status()
+  -- end
+-- end
 
 
--- Called by the 'update' self-command, for common needs.
--- Set eventArgs.handled to true if we don't want automatic equipping of gear.
-function job_update(cmdParams, eventArgs)
-  update_pet_mode()
-  --engage_pet(eventArgs)
-end
+-- -------------------------------------------------------------------------------------------------------------------
+-- -- User code that supplements self-commands.
+-- -------------------------------------------------------------------------------------------------------------------
+
+-- -- Called for custom player commands.
+-- function job_self_command(cmdParams, eventArgs)
+  -- if cmdParams[1] == 'maneuver' then
+    -- if pet.isvalid then
+      -- local man = defaultManeuvers[state.PetMode]
+      -- if man and tonumber(cmdParams[2]) then
+        -- man = man[tonumber(cmdParams[2])]
+      -- end
+
+      -- if man then
+        -- send_command('input /pet "'..man..'" <me>')
+      -- end
+    -- else
+      -- add_to_chat(123,'No valid pet.')
+    -- end
+  -- end
+-- end
 
 
--- Set eventArgs.handled to true if we don't want the automatic display to be run.
-function display_current_job_state(eventArgs)
-  local defenseString = ''
-  if state.Defense.Active then
-    local defMode = state.Defense.PhysicalMode
-    if state.Defense.Type == 'Magical' then
-      defMode = state.Defense.MagicalMode
-    end
-
-    defenseString = 'Defense: '..state.Defense.Type..' '..defMode..', '
-  end
-
-  add_to_chat(122,'Melee: '..state.OffenseMode..'/'..state.DefenseMode..', WS: '..state.WeaponskillMode..', '..defenseString..
-    'Kiting: '..on_off_names[state.Kiting])
-
-  display_pet_status()
-
-  eventArgs.handled = true
-end
+-- -- Called by the 'update' self-command, for common needs.
+-- -- Set eventArgs.handled to true if we don't want automatic equipping of gear.
+-- function job_update(cmdParams, eventArgs)
+  -- update_pet_mode()
+  -- --engage_pet(eventArgs)
+-- end
 
 
--------------------------------------------------------------------------------------------------------------------
--- Utility functions specific to this job.
--------------------------------------------------------------------------------------------------------------------
+-- -- Set eventArgs.handled to true if we don't want the automatic display to be run.
+-- -- function display_current_job_state(eventArgs)
+  -- -- local defenseString = ''
+  -- -- if state.Defense.Active then
+    -- -- local defMode = state.Defense.PhysicalMode
+    -- -- if state.Defense.Type == 'Magical' then
+      -- -- defMode = state.Defense.MagicalMode
+    -- -- end
 
--- Get the pet mode value based on the equipped head of the automaton.
--- Returns nil if pet is not valid.
-function get_pet_mode()
-  if pet.isvalid then
-    return petModes[pet.head] or 'None'
-  else
-    return 'None'
-  end
-end
+    -- -- defenseString = 'Defense: '..state.Defense.Type..' '..defMode..', '
+  -- -- end
 
--- Update state.PetMode, as well as functions that use it for set determination.
-function update_pet_mode()
-  state.PetMode:set(get_pet_mode())
-  update_custom_groups()
-end
+  -- -- add_to_chat(122,'Melee: '..state.OffenseMode..'/'..state.DefenseMode..', WS: '..state.WeaponskillMode..', '..defenseString..
+    -- -- 'Kiting: '..on_off_names[state.Kiting])
 
--- Update custom groups based on the current pet.
-function update_custom_groups()
-  classes.CustomIdleGroups:clear()
-  if pet.isvalid then
-    classes.CustomIdleGroups:append(state.PetMode.value)
-  end
-end
+  -- -- display_pet_status()
 
--- Display current pet status.
-function display_pet_status()
-  if pet.isvalid then
-    local petInfoString = pet.name..' ['..pet.head..']: '..tostring(pet.status)..'  TP='..tostring(pet.tp)..'  HP%='..tostring(pet.hpp)
+  -- -- eventArgs.handled = true
+-- -- end
 
-    if magicPetModes:contains(state.PetMode) then
-      petInfoString = petInfoString..'  MP%='..tostring(pet.mpp)
-    end
 
-    add_to_chat(122,petInfoString)
-  end
-end
+-- -------------------------------------------------------------------------------------------------------------------
+-- -- Utility functions specific to this job.
+-- -------------------------------------------------------------------------------------------------------------------
 
---function engage_pet(eventArgs)
---	if player.status == 'Engaged' then
---		if pet.isvalid then
---			send_command('input /pet Deploy <t>')
---		end
---	else if player.status == 'Idle' then
---		if pet.isvalid then
---			send_command('input /pet Retrieve <me>')
---		end
---	end
---end
---end
+-- -- Get the pet mode value based on the equipped head of the automaton.
+-- -- Returns nil if pet is not valid.
+-- function get_pet_mode()
+  -- if pet.isvalid then
+    -- return petModes[pet.head] or 'None'
+  -- else
+    -- return 'None'
+  -- end
+-- end
 
--- Select default macro book on initial load or subjob change.
-function select_default_macro_book()
-  -- Default macro set/book
-  if player.sub_job == 'DNC' then
-    set_macro_page(2, 6)
-  elseif player.sub_job == 'NIN' then
-    set_macro_page(2, 6)
-  elseif player.sub_job == 'THF' then
-    set_macro_page(2, 6)
-  else
-    set_macro_page(2, 6)
-  end
-end
+-- -- Update state.PetMode, as well as functions that use it for set determination.
+-- function update_pet_mode()
+  -- state.PetMode:set(get_pet_mode())
+  -- update_custom_groups()
+-- end
+
+-- -- Update custom groups based on the current pet.
+-- function update_custom_groups()
+  -- classes.CustomIdleGroups:clear()
+  -- if pet.isvalid then
+    -- classes.CustomIdleGroups:append(state.PetMode.value)
+  -- end
+-- end
+
+-- -- Display current pet status.
+-- function display_pet_status()
+  -- if pet.isvalid then
+    -- local petInfoString = pet.name..' ['..pet.head..']: '..tostring(pet.status)..'  TP='..tostring(pet.tp)..'  HP%='..tostring(pet.hpp)
+
+    -- if magicPetModes:contains(state.PetMode) then
+      -- petInfoString = petInfoString..'  MP%='..tostring(pet.mpp)
+    -- end
+
+    -- add_to_chat(122,petInfoString)
+  -- end
+-- end
+
+-- --function engage_pet(eventArgs)
+-- --	if player.status == 'Engaged' then
+-- --		if pet.isvalid then
+-- --			send_command('input /pet Deploy <t>')
+-- --		end
+-- --	else if player.status == 'Idle' then
+-- --		if pet.isvalid then
+-- --			send_command('input /pet Retrieve <me>')
+-- --		end
+-- --	end
+-- --end
+-- --end
+
+-- -- Select default macro book on initial load or subjob change.
+-- function select_default_macro_book()
+  -- -- Default macro set/book
+  -- if player.sub_job == 'DNC' then
+    -- set_macro_page(2, 6)
+  -- elseif player.sub_job == 'NIN' then
+    -- set_macro_page(2, 6)
+  -- elseif player.sub_job == 'THF' then
+    -- set_macro_page(2, 6)
+  -- else
+    -- set_macro_page(2, 6)
+  -- end
+-- end
 

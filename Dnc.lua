@@ -58,7 +58,7 @@ end
 
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
-    state.OffenseMode:options('Normal', 'Acc', 'Fodder')
+    state.OffenseMode:options('Normal', 'Hybrid')
     state.HybridMode:options('Normal', 'Evasion', 'PDT')
     state.WeaponskillMode:options('Normal', 'Acc', 'Fodder')
     state.PhysicalDefenseMode:options('Evasion', 'PDT')
@@ -119,7 +119,10 @@ function init_gear_sets()
 
     sets.precast.Jig = {legs="Horos Tights", feet="Maxixi Toe Shoes"}
 
-    sets.precast.Step = {head="White rarab cap +1",waist="Chaac Belt",legs={ name="Herculean Trousers", augments={'"Mag.Atk.Bns."+30','Accuracy+24','"Treasure Hunter"+1','Mag. Acc.+6 "Mag.Atk.Bns."+6',}}}
+    sets.precast.Step = {ammo="Yamarang",
+        head="Malignance chapeau",neck="Combatant's torque",ear1="Mache Earring +1",ear2="Telos Earring",
+        body="Malignance tabard",hands="Malignance gloves",ring1="Chirich Ring +1",ring2="Chirich Ring +1",
+        back="Grounded mantle +1", waist="Kentarch belt +1",legs="Malignance tights",feet="Malignance boots"}
     sets.precast.Step['Feather Step'] = {feet="Charis Shoes +2"}
 
     sets.precast.Flourish1 = {}
@@ -147,15 +150,15 @@ function init_gear_sets()
        
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
-    sets.precast.WS = {ammo="Falcon Eye",
+    sets.precast.WS = {ammo="Cath palug stone",
     head="Meghanada Visor +2",
-    body={ name="Herculean Vest", augments={'Accuracy+29','Weapon skill damage +4%','DEX+12','Attack+11',}},
+    body="Herculean Vest",
     hands="Meg. Gloves +2",
     legs={ name="Lustr. Subligar +1", augments={'Accuracy+20','DEX+8','Crit. hit rate+3%',}},
     feet={ name="Lustra. Leggings +1", augments={'HP+65','STR+15','DEX+15',}},
     neck="Caro Necklace",
     waist="Grunfeld Rope",
-    left_ear="Ishvara Earring",
+    left_ear="Sherida Earring",
     right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +25',}},
     left_ring="Ilabrat Ring",
     right_ring="Regal Ring",
@@ -173,10 +176,16 @@ function init_gear_sets()
     sets.precast.WS['Pyrrhic Kleos'] = set_combine(sets.precast.WS )
     sets.precast.WS['Pyrrhic Kleos'].Acc = set_combine(sets.precast.WS.Acc )
 
-    sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {right_ring="Begrudging ring"})
-    sets.precast.WS['Evisceration'].Acc = set_combine(sets.precast.WS['Evisceration'], {ammo="Honed Tathlum", back="Toetapper Mantle"})
+    sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
+		head="Adhemar bonnet +1", neck="Fotia gorget", left_ear="Sherida earring", right_ear="Odr earring",
+		body="Abnoba kaftan", hands="Mummu wrists +2", left_ring="Mummu ring", right_ring="Begrudging ring",
+		waist="Fotia belt", legs="Meghanada chausses +2", feet="Adhemar gamashes +1"})
+    sets.precast.WS['Evisceration'].Acc = set_combine(sets.precast.WS['Evisceration'], {})
 
-    sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS), {head={ name="Herculean Helm", augments={'Accuracy+28','Weapon skill damage +3%','DEX+9','Attack+15',}}}
+    sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS), {
+	head={ name="Herculean Helm", augments={'Accuracy+28','Weapon skill damage +3%','DEX+9','Attack+15',}}, left_ear="Odr earring"
+	
+	}
     sets.precast.WS["Rudra's Storm"].Acc = set_combine(sets.precast.WS["Rudra's Storm"])
 
     sets.precast.WS['Aeolian Edge'] = {ammo="Charis Feather",
@@ -212,9 +221,9 @@ function init_gear_sets()
     -- Idle sets
 
     sets.idle = {ammo="Yamarang",
-        head="Turms cap",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Infused Earring",
-        body="Meghanada cuirie +2",hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Sheltered Ring",
-        back="Moonbeam cape",waist="Flume Belt",legs="Volte hose",feet="Jute boots +1"}
+        head="Malignance chapeau",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Infused Earring",
+        body="Malignance tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Sheltered Ring",
+        back="Moonlight cape",waist="Flume Belt",legs="Malignance tights",feet="Malignance boots"}
 		
     sets.idle.Town = {main="Izhiikoh", sub="Sabebus",ammo="Charis Feather",
         head="Whirlpool Mask",neck="Charis Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
@@ -290,6 +299,13 @@ function init_gear_sets()
     left_ring="Ilabrat Ring",
     right_ring="Regal Ring",
     back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}}
+	
+	sets.engaged.Hybrid ={
+		ammo="Yamarang",
+        head="Malignance chapeau",neck="Combatant's torque",ear1="Sherida Earring",ear2="Telos Earring",
+        body="Malignance tabard",hands="Malignance gloves",ring1="Hetairoi Ring",ring2="Gere Ring",
+        back="Bleating mantle", waist="Reiki Yotai",legs="Malignance tights",feet="Malignance boots"
+	}
 	
     sets.engaged.Evasion = {ammo="Charis Feather",
         head="Felistris Mask",neck="Ej Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",

@@ -145,13 +145,13 @@ function init_gear_sets()
 
     sets.precast.WS['Mordant Rime'] = set_combine(sets.precast.WS, {
 					head="Bihu roundlet +3", neck="Moonbow whistle +1", ear2="Regal earring",
-					hands="Bihu cuffs +3", ring2="Ilabrat Ring",
+					hands="Bihu cuffs +3", ring1="Ilabrat Ring",
 					waist="Kentarch belt +1", legs="Bihu cannions +3", feet="Bihu slippers +3"})
 					
 	sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
-					head="Bihu roundlet +3", 
-					hands="Bihu cuffs +3", ring2="Ilabrat Ring",
-					waist="Sailfi belt +1", legs="Bihu cannions +3", feet="Bihu slippers +3"})
+					head="Lustratio cap +1", 
+					hands="Bihu cuffs +3", ring1="Rufescent Ring",
+					waist="Kentarch belt +1", legs="Bihu cannions +3", feet="Lustratio leggings +1"})
     
     
     -- Midcast Sets
@@ -165,7 +165,14 @@ function init_gear_sets()
 	sets.midcast['Haste'] = set_combine(sets.midcast.FastRecast, {sub="Ammurapi shield",
 		head="Telchine cap", 
 		body="Telchine Chasuble", hands="Telchine gloves",
-		waist="Embla sash", legs = "Telchine Braconi", feet="Telchine pigaches"}) 
+		waist="Embla sash", legs = "Telchine Braconi", feet="Telchine pigaches"})
+	
+	sets.midcast['Flurry'] = set_combine(sets.midcast.FastRecast, {sub="Ammurapi shield",
+		head="Telchine cap", 
+		body="Telchine Chasuble", hands="Telchine gloves",
+		waist="Embla sash", legs = "Telchine Braconi", feet="Telchine pigaches"})	
+		
+	
 	sets.midcast['Dispelga'] = set_combine(sets.midcast.FastRecast, {main="Daybreak"})
 		
 		
@@ -258,13 +265,13 @@ function init_gear_sets()
     sets.idle = {main="Daybreak", sub="Genmei Shield",range="Nibiru Harp",
         head=gear.RefreshHead,neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Infused Earring",
         body="Inyanga Jubbah +2",hands="Volte gloves",ring1="Defending Ring",ring2="Moonlight Ring",
-        back="Moonbeam Cape",waist="Flume Belt",legs="Inyanga shalwar +2",feet="Fili Cothurnes +1"}
+        back="Moonlight cape",waist="Flume Belt",legs="Inyanga shalwar +2",feet="Fili Cothurnes +1"}
 
 
     sets.idle.PDT = {main="Mafic cudgel", sub="Genmei shield",range="Gjallarhorn",
         head="Bihu roundlet +3",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Infused Earring",
         body="Bihu justaucorps +3",hands="Umuthi gloves",ring1="Defending Ring",ring2="Fortified Ring",
-        back="Moonbeam Cape",waist="Flume Belt",legs="Vanya slops",feet="Fili Cothurnes +1"}
+        back="Moonlight cape",waist="Flume Belt",legs="Vanya slops",feet="Fili Cothurnes +1"}
 
 
     -- --sets.idle.Weak = {main=gear.Staff.PDT,sub="Mephitis Grip",range="Oneiros Harp",
@@ -278,7 +285,7 @@ function init_gear_sets()
     sets.defense.PDT = {
         neck="Loricate torque +1",
         ring1="Defending Ring",ring2="Moonlight Ring",
-        back="Moonbeam Cape"}
+        back="Moonlight cape"}
 
     sets.defense.MDT = {main=gear.Staff.PDT,sub="Mephitis Grip",
         head="Nahtirah Hat",neck="Loricate torque +1",
@@ -536,6 +543,7 @@ function calculate_duration(spellName, spellMap)
     local mult = 1
     if player.equipment.range == 'Daurdabla' then mult = mult + 0.3 end -- change to 0.25 with 90 Daur
     if player.equipment.range == "Gjallarhorn" then mult = mult + 0.4 end -- change to 0.3 with 95 Gjall
+	if player.equipment.range == 'Marsyas' then mult = mult + 0.5 end 
     
     if player.equipment.main == "Carnwenhan" then mult = mult + 0.5 end -- 0.1 for 75, 0.4 for 95, 0.5 for 99/119
     if player.equipment.main == "Legato Dagger" then mult = mult + 0.05 end
