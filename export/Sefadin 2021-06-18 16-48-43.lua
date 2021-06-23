@@ -1,0 +1,17 @@
+sets.exported={
+    main="Naegling",
+    sub="Maxentius",
+    ammo="Mantoptera Eye",
+    head={ name="Herculean Helm", augments={'Accuracy+28','Weapon skill damage +3%','DEX+9','Attack+15',}},
+    body="Assim. Jubbah +3",
+    hands="Jhakri Cuffs +2",
+    legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}},
+    feet={ name="Carmine Greaves +1", augments={'Accuracy+12','DEX+12','MND+20',}},
+    neck="Caro Necklace",
+    waist="Flume Belt",
+    left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
+    right_ear="Loquac. Earring",
+    left_ring="Sheltered Ring",
+    right_ring="Warp Ring",
+    back={ name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Crit.hit rate+10','Phys. dmg. taken-10%',}},
+}

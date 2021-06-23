@@ -136,7 +136,7 @@ function init_gear_sets()
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
     sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
 					neck="Fotia Gorget", ear1="Mache Earring +1",
-					body="Ayanmo corazza +2", ring1="Begrudging Ring", waist="Fotia Belt"})
+					body="Ayanmo corazza +2", ring2="Begrudging Ring", waist="Fotia Belt"})
 
     sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {
 					head="Bihu roundlet +3", neck="Fotia Gorget", ear1="Brutal earring", ear2="Mache earring +1",
@@ -159,8 +159,8 @@ function init_gear_sets()
     -- General set for recast times.
     sets.midcast.FastRecast = {
         head="Haruspex Hat +1",neck="Voltsurge torque",ear1="Etiolation earring",ear2="Loquacious Earring",
-        body="Vanir Cotehardie",hands="Leyline gloves",ring1="Prolix Ring",
-        back="Swith Cape +1",waist="Embla sash",legs="Lengo Pants",feet="Telchine pigaches"}
+        body="Inyanga jubbah +2",hands="Leyline gloves",ring1="Prolix Ring",ring2="Kishar ring",
+        back="Intarabus's Cape",waist="Embla sash",legs="Volte brais",feet="Telchine pigaches"}
 		
 	sets.midcast['Haste'] = set_combine(sets.midcast.FastRecast, {sub="Ammurapi shield",
 		head="Telchine cap", 
@@ -178,7 +178,7 @@ function init_gear_sets()
 		
     -- Gear to enhance certain classes of songs.  No instruments added here since Gjallarhorn is being used.
     sets.midcast.Ballad = {legs="Fili Rhingrave +1"}
-    sets.midcast.Lullaby = {range="Daurdabla",hands="Brioso cuffs +3"}
+    sets.midcast.Lullaby = {range="Blurred Harp +1",hands="Brioso cuffs +3"}
     sets.midcast.Madrigal = {head="Fili Calot +1"}
     sets.midcast.March = {hands="Fili Manchettes +1"}
     sets.midcast.Minuet = {body="Fili Hongreline +1"}
@@ -232,9 +232,9 @@ function init_gear_sets()
 
     -- Other general spells and classes.
     sets.midcast.Cure = {main="Daylight",
-        head="Gendewitha Caubeen",
-        body="Chironic Doublet",hands="Leyline Gloves",
-        back="Solemnity cape",legs="Vanya slops",feet="Vanya clogs"}
+        head="Inyanga tiara +2",neck="Incanter's torque",ear2="Regal earring",
+        body="Chironic Doublet",hands="Kaykaus cuffs +1",ring1="Stikini ring +1", ring2="Stikini ring +1",
+        back="Solemnity cape",waist ="Luminary sash", legs="Vanya slops",feet="Kaykaus boots +1"}
         
     sets.midcast.Curaga = sets.midcast.Cure
 	
@@ -243,10 +243,10 @@ function init_gear_sets()
 		body = "Telchine Chasuble", hands = "Telchine gloves", ring1="Kishar ring",
 		back = "Intarabus's cape", waist = "Embla sash", legs = "Telchine Braconi",feet = "Telchine pigaches" }
         
-    sets.midcast.Stoneskin = {
-        head="Nahtirah Hat",
-        body="Gendewitha Bliaut",hands="Gendewitha Gages",
-        legs="Gendewitha Spats",feet="Gendewitha Galoshes"}
+    sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {
+        head="Telchine cap",neck ="Nodens gorget",
+        body="Telchine Chasuble",hands="Telchine gloves",ring1="Stikini ring +1",
+        back="Moonlight cape",legs="Shedir Seraweels",feet="Telchine pigaches"})
         
     sets.midcast.Cursna = {
         neck="Malison Medallion",
@@ -307,7 +307,7 @@ function init_gear_sets()
     sets.engaged = {
         range="Linos",
 		head="Aya. Zucchetto +2", neck="Combatant's torque", left_ear="Telos Earring", right_ear="Mache earring +1",
-		body="Ayanmo corazza +2", hands="Bihu cuffs +3", left_ring="Ilabrat Ring", right_ring="Moonlight Ring",
+		body="Ayanmo corazza +2", hands="Volte mittens", left_ring="Ilabrat Ring", right_ring="Moonlight Ring",
 		back="Ground. Mantle +1", waist="Sailfi belt +1", legs="Volte tights", feet="Volte spats"
 	}
 
@@ -315,7 +315,7 @@ function init_gear_sets()
     sets.engaged.Dagger = {
         range="Linos",
 		head="Aya. Zucchetto +2", neck="Combatant's torque", left_ear="Telos Earring", right_ear="Mache earring +1",
-		body="Ayanmo corazza +2", hands="Bihu cuffs +3", left_ring="Ilabrat Ring", right_ring="Moonlight Ring",
+		body="Ayanmo corazza +2", hands="Volte mittens", left_ring="Ilabrat Ring", right_ring="Moonlight Ring",
 		back="Ground. Mantle +1", waist="Sailfi belt +1", legs="Volte tights", feet="Volte spats"
 	}
 
@@ -323,7 +323,7 @@ function init_gear_sets()
     sets.engaged.DW = {
 		range="Linos",
 		head="Aya. Zucchetto +2", neck="Combatant's torque", left_ear="Telos Earring", right_ear="Suppanomimi",
-		body="Ayanmo corazza +2", hands="Bihu cuffs +3", left_ring="Ilabrat Ring", right_ring="Moonlight Ring",
+		body="Ayanmo corazza +2", hands="Volte mittens", left_ring="Ilabrat Ring", right_ring="Moonlight Ring",
 		back="Ground. Mantle +1", waist="Reiki Yotai", legs="Volte tights", feet="Volte spats"
 	}
 end
@@ -543,7 +543,7 @@ function calculate_duration(spellName, spellMap)
     local mult = 1
     if player.equipment.range == 'Daurdabla' then mult = mult + 0.3 end -- change to 0.25 with 90 Daur
     if player.equipment.range == "Gjallarhorn" then mult = mult + 0.4 end -- change to 0.3 with 95 Gjall
-	if player.equipment.range == 'Marsyas' then mult = mult + 0.5 end 
+	if player.equipment.range == 'Marsyas' then mult = mult + 0.5 end
     
     if player.equipment.main == "Carnwenhan" then mult = mult + 0.5 end -- 0.1 for 75, 0.4 for 95, 0.5 for 99/119
     if player.equipment.main == "Legato Dagger" then mult = mult + 0.05 end
@@ -551,6 +551,7 @@ function calculate_duration(spellName, spellMap)
     if player.equipment.neck == "Aoidos' Matinee" then mult = mult + 0.1 end
 	if player.equipment.neck == "Moonbow Whistle +1" then mult = mult + 0.3 end
     if player.equipment.body == "Aoidos' Hngrln. +2" then mult = mult + 0.1 end
+	if player.equipment.body == "Fili Hongreline +1" then mult = mult + 0.12 end
     if player.equipment.legs == "Mdk. Shalwar +1" then mult = mult + 0.1 end
     if player.equipment.feet == "Brioso Slippers" then mult = mult + 0.1 end
     if player.equipment.feet == "Brioso Slippers +1" then mult = mult + 0.11 end

@@ -156,7 +156,7 @@ function init_gear_sets()
     sets.midcast['Elemental Magic'] = {main="Lathi",sub="Niobid strap",ammo="Seraphic ampulla",
         head="Merlinic hood",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Regal Earring",
         body="Spaekona's Coat +1",hands="Amalric gages +1",ring1="Sangoma Ring",ring2="Shiva Ring +1",
-        back="Bane Cape",waist="Refoccilation stone",legs="Merlinic shalwar",feet="Merlinic crackows"}
+        back="Bane Cape",waist="Orpheus's sash",legs="Merlinic shalwar",feet="Merlinic crackows"}
 
     sets.midcast['Elemental Magic'].Resistant = {main="Lathi",sub="Enki strap",ammo="Pemphredo Tathlum",
         head="Merlinic hood",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Regal Earring",
@@ -166,16 +166,16 @@ function init_gear_sets()
 	sets.midcast['Elemental Magic'].Burst = {main="Lathi",sub="Niobid strap",ammo="Seraphic ampulla",
         head="Merlinic hood",neck="Mizukage-no-Kubikazari",ear1="Barkarole Earring",ear2="Regal Earring",
         body="Spaekona's Coat +1",hands="Amalric gages +1",ring1="Mujin band",ring2="Locus Ring",
-        back="Seshaw Cape",waist="Refoccilation stone",legs="Merlinic shalwar",feet="Merlinic crackows"}
+        back="Seshaw Cape",waist="Orpheus's sash",legs="Merlinic shalwar",feet="Merlinic crackows"}
 		
 	sets.midcast['Elemental Magic'].Burst2 = {main="Lathi",sub="Niobid strap",ammo="Pemphredo Tathlum",
         head="Merlinic hood",neck="Mizukage-no-Kubikazari",ear1="Barkarole Earring",ear2="Regal Earring",
         body="Amalric doublet +1",hands="Amalric gages +1",ring1="Mujin band",ring2="Locus Ring",
-        back="Seshaw Cape",waist="Refoccilation stone",legs="Merlinic shalwar",feet="Merlinic crackows"}
+        back="Seshaw Cape",waist="Orpheus's sash",legs="Merlinic shalwar",feet="Merlinic crackows"}
 
-    sets.midcast['Elemental Magic'].HighTierNuke = set_combine(sets.midcast['Elemental Magic'], {sub="Wizzan Grip"})
-    sets.midcast['Elemental Magic'].HighTierNuke.Resistant = set_combine(sets.midcast['Elemental Magic'], {sub="Wizzan Grip"})
-	sets.midcast['Elemental Magic'].HighTierNuke.Burst = set_combine(sets.midcast['Elemental Magic'], {sub="Wizzan Grip"})
+    sets.midcast['Elemental Magic'].HighTierNuke = set_combine(sets.midcast['Elemental Magic'], {})
+    sets.midcast['Elemental Magic'].HighTierNuke.Resistant = set_combine(sets.midcast['Elemental Magic'], {})
+	sets.midcast['Elemental Magic'].HighTierNuke.Burst = set_combine(sets.midcast['Elemental Magic'], {})
 
     -- Minimal damage gear for procs.
     sets.midcast['Elemental Magic'].Proc = {main="Earth Staff", sub="Mephitis Grip",ammo="Impatiens",

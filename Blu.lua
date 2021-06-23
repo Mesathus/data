@@ -189,13 +189,16 @@ end
 
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
-    state.OffenseMode:options('Normal', 'Refresh', 'Acc','Hybrid')
+    state.OffenseMode:options('Normal', 'Acc','Hybrid')
     state.WeaponskillMode:options('Normal', 'Acc')
     state.CastingMode:options('Normal', 'Burst')
     state.IdleMode:options('Normal', 'PDT', 'Learning')
 
     gear.macc_hagondes = {name="Hagondes Cuffs", augments={'Phys. dmg. taken -3%','Mag. Acc.+29'}}
 	gear.WSDHead = { name="Herculean Helm", augments={'Accuracy+28','Weapon skill damage +3%','DEX+9','Attack+15'}}
+	gear.CritCape = {name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Crit.hit rate+10','Phys. dmg. taken-10%'}}
+	gear.WSDCape = {name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%'}}
+	gear.NukeCape = {name="Rosmerta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Mag.Atk.Bns."+10'}}
 
     -- Additional local binds
     send_command('bind ^` input /ja "Chain Affinity" <me>')
@@ -222,7 +225,7 @@ function init_gear_sets()
     --------------------------------------
 	
 	
-	sets.TreasureHunter = {waist ='Chaac belt', legs = {name="Herculean Trousers", augments={'"Mag.Atk.Bns."+30','Accuracy+24','"Treasure Hunter"+1','Mag. Acc.+6 "Mag.Atk.Bns."+6',}},}
+	sets.TreasureHunter = {ammo="Perfect lucky egg", legs = {name="Herculean Trousers", augments={'"Mag.Atk.Bns."+30','Accuracy+24','"Treasure Hunter"+1','Mag. Acc.+6 "Mag.Atk.Bns."+6',}},}
 
     sets.buff['Burst Affinity'] = {}
     sets.buff['Chain Affinity'] = {}
@@ -265,7 +268,7 @@ function init_gear_sets()
     sets.precast.WS = {ammo="Falcon eye",
         head="Adhemar bonnet +1",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Ishvara Earring",
         body="Assimilator's Jubbah +3",hands="Adhemar Wristbands +1",ring1="Ilabrat Ring",ring2="Epona's Ring",
-        back="Rosmerta's cape",waist="Fotia Belt",legs="Samnuha tights",feet="Herculean boots"}
+        back=gear.WSDCape,waist="Fotia Belt",legs="Samnuha tights",feet="Herculean boots"}
     
     -- sets.precast.WS.acc = set_combine(sets.precast.WS, {hands="Buremte Gloves"})
 
@@ -275,17 +278,17 @@ function init_gear_sets()
     sets.precast.WS['Sanguine Blade'] = {ammo="Pemphredo tathlum",
         head="Pixie hairpin +1",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Regal Earring",
         body="Amalric doublet +1",hands="Jhakri cuffs +2",ring1="Archon Ring",ring2="Epaminondas's Ring",
-        back="Cornflower Cape",waist="Yamabuki-no-obi",legs="Amalric slops +1",feet="Amalric nails +1"}
+        back=gear.NukeCape,waist="Orpheus's sash",legs="Luhlaza Shalwar +3",feet="Amalric nails +1"}
     
     sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {ammo="Mantoptera eye",
 		head=gear.WSDHead,neck="Caro necklace",ear1="Moonshade Earring",
 		hands="Jhakri cuffs +2",ring1="Epaminondas's ring",ring2="Rufescent ring",
-		waist="Kentarch belt +1",feet="Carmine greaves +1"})
+		waist="Kentarch belt +1",legs="Luhlaza Shalwar +3",feet="Carmine greaves +1"})
 
     sets.precast.WS['Chant du Cygne'] = set_combine(sets.precast.WS, {
 		head="Adhemar bonnet +1",ear1="Odr earring", ear2="Mache earring +1",
 		body="Abnoba kaftan",ring2="Begrudging ring",
-		back="Rosmerta's Cape",feet="Adhemar gamashes +1"})    
+		back=gear.CritCape,feet="Adhemar gamashes +1"})    
 
     -- Midcast Sets
     sets.midcast.FastRecast = {ammo="Sapience orb",
@@ -349,7 +352,7 @@ function init_gear_sets()
     sets.midcast['Blue Magic'].Magical = {ammo="Pemphredo Tathlum",
         neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Regal Earring",
         body="Cohort cloak +1",hands="Amalric gages +1",ring1="Strendu Ring",ring2="Shiva Ring +1",
-        back="Cornflower Cape",waist="Yamabuki-no-obi",legs="Amalric slops +1",feet="Amalric nails +1"}
+        back=gear.NukeCape,waist="Orpheus's sash",legs="Amalric slops +1",feet="Amalric nails +1"}
 
     sets.midcast['Blue Magic'].Magical.Burst = set_combine(sets.midcast['Blue Magic'].Magical,
         {hands="Amalric gages +1",ring1="Locus Ring",ring2="Mujin Band",
@@ -359,7 +362,7 @@ function init_gear_sets()
 		head = "Pixie hairpin +1", body="Amalric doublet +1", ring1="Archon Ring"
 	})
     
-	sets.midcast['Subduction'] = set_combine(sets.midcast['Blue Magic'].Magical, {waist = "Chaac Belt"})
+	sets.midcast['Subduction'] = set_combine(sets.midcast['Blue Magic'].Magical, sets.TreasureHunter)
 	--sets.midcast['Palling Salvo'] = set_combine(sets.midcast['Blue Magic'].Magical.Burst, {head = "Pixie hairpin +1"})
 	
     -- sets.midcast['Blue Magic'].MagicalMnd = set_combine(sets.midcast['Blue Magic'].Magical,
@@ -375,7 +378,7 @@ function init_gear_sets()
     sets.midcast['Blue Magic'].MagicAccuracy = {ammo="Pemphredo Tathlum",
         neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Regal Earring",
         body="Cohort cloak +1",hands="Amalric gages +1",ring1="Sangoma Ring",ring2="Shiva Ring +1",
-        back="Cornflower Cape",waist="Yamabuki-no-obi",legs="Amalric slops +1",feet="Amalric nails +1"}
+        back=gear.NukeCape,waist="Yamabuki-no-obi",legs="Amalric slops +1",feet="Amalric nails +1"}
 
     -- Breath Spells --
     
@@ -410,7 +413,7 @@ function init_gear_sets()
 	
 	sets.midcast['Enhancing Magic'] = {
 		head = "Telchine Cap", neck = "Voltsurge torque", ear1 = "Etiolation earring", ear2 = "Loquacious earring",
-		body = "Telchine Chasuble", hands = "Telchine gloves", ring1="Kishar ring",
+		body = "Telchine Chasuble", hands = "Telchine gloves", ring1="Kishar ring", ring2="Prolix Ring",
 		waist = "Luminary sash", legs = "Telchine Braconi",feet = "Telchine pigaches"}
     
     sets.midcast.Protect = {ring1="Sheltered Ring"}
@@ -460,8 +463,8 @@ function init_gear_sets()
     -- Defense sets
     sets.defense.PDT = {
         neck="Loricate torque +1",
-        body="Emet Harness +1",hands="Umuthi gloves",ring1="Defending Ring",ring2="Patricius Ring",
-        back="Solemnity Cape"}
+        body="Malignance tabard",hands="Malignance gloves",ring1="Defending Ring",ring2="Patricius Ring",
+        back="Solemnity Cape", legs="Malignance tights"}
 
     sets.defense.MDT = {
         neck="Loricate torque +1",
@@ -496,12 +499,12 @@ function init_gear_sets()
     sets.engaged.DW = {ammo="Mantoptera eye",
         head="Adhemar bonnet +1",neck="Lissome Necklace",ear1="Cessance Earring",ear2="Suppanomimi",
         body="Adhemar jacket +1",hands="Adhemar Wristbands +1",ring1="Hetairoi Ring",ring2="Epona's Ring",
-        back="Bleating Mantle",waist="Reiki Yotai",legs="Carmine cuisses +1",feet={ name="Herculean Boots", augments={'Accuracy+26','"Triple Atk."+4','DEX+9','Attack+1',}}}
+        back=gear.CritCape,waist="Reiki Yotai",legs="Carmine cuisses +1",feet={ name="Herculean Boots", augments={'Accuracy+26','"Triple Atk."+4','DEX+9','Attack+1',}}}
 
     sets.engaged.DW.Acc = {ammo="Falcon eye",
         head="Carmine Mask +1",neck="Combatant's torque",ear1="Telos Earring",ear2="Cessance Earring",
         body="Adhemar jacket +1",hands="Adhemar Wristbands +1",ring1="Ilabrat Ring",ring2="Epona's Ring",
-        back="Rosmerta's cape",waist="Reiki Yotai",legs="Carmine cuisses +1",feet={name="Herculean boots", augments={'Accuracy+24 Attack+24','Damage taken-2%','STR+7','Accuracy+11','Attack+15'}}}
+        back=gear.CritCape,waist="Reiki Yotai",legs="Carmine cuisses +1",feet={name="Herculean boots", augments={'Accuracy+24 Attack+24','Damage taken-2%','STR+7','Accuracy+11','Attack+15'}}}
 		
 	sets.engaged.DW.Hybrid = set_combine(sets.engaged.DW.Acc, {
 		head="Malignance chapeau", ear2="Cessance Earring",

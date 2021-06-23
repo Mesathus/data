@@ -150,7 +150,7 @@ function init_gear_sets()
 		legs={ name="Herculean Trousers", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Weapon skill damage +4%','Mag. Acc.+15','"Mag.Atk.Bns."+1',}},
 		feet="Lanun Bottes +3",
 		neck="Sanctity Necklace",
-		waist="Eschan Stone",
+		waist="Orpheus's sash",
 		left_ear="Ishvara Earring",
 		right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
 		left_ring="Dingir Ring",
@@ -168,13 +168,15 @@ function init_gear_sets()
 		body="Lanun Frac +3", hands="Carmine Fin. Ga. +1", left_ring="Dingir Ring", right_ring="Archon Ring",
 		back="Camulus's Mantle",
 		legs={ name="Herculean Trousers", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Weapon skill damage +4%','Mag. Acc.+15','"Mag.Atk.Bns."+1',}},
-		waist="Eschan Stone", feet="Lanun Bottes +3"
+		waist="Orpheus's sash", feet="Lanun Bottes +3"
 		}
 		
 	sets.precast.WS['Savage Blade'] = {
         head="Adhemar bonnet +1",neck="Commodore charm +2",ear1="Moonshade Earring",ear2="Ishvara Earring",
         body="Laksamana's Frac +3",	hands="Meghanada gloves +2",ring1="Regal Ring",ring2="Epaminondas's ring",
         back="Camulus's Mantle",waist="Kentarch Belt +1",legs="Samnuha tights",feet="Lanun Bottes +3"}
+		
+	sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS['Wildfire'], {})
     
     -- Midcast Sets
     sets.midcast.FastRecast = {
@@ -192,7 +194,7 @@ function init_gear_sets()
 		legs={ name="Herculean Trousers", augments={'"Mag.Atk.Bns."+24','Weapon skill damage +3%','INT+4','Mag. Acc.+1',}},
 		feet="Lanun bottes +3",
 		neck="Commodore charm +2",
-		waist="Eschan Stone",
+		waist="Orpheus's sash",
 		left_ear="Friomisi Earring",
 		right_ear="Crematio Earring",
 		left_ring="Dingir Ring",

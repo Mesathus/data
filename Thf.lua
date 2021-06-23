@@ -42,7 +42,7 @@ end
 
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
-    state.OffenseMode:options('Normal', 'TA', 'Hybrid', 'TAcc', 'Farm', 'HybridSB')
+    state.OffenseMode:options('Normal', 'TA', 'Hybrid', 'TAcc', 'Farm', 'DT')
     state.HybridMode:options('Normal', 'Evasion', 'PDT')
     state.RangedMode:options('Normal', 'Acc')
     state.WeaponskillMode:options('Normal', 'Acc', 'Mod')
@@ -79,7 +79,7 @@ function init_gear_sets()
     -- Special sets (required by rules)
     --------------------------------------
 
-    sets.TreasureHunter = {hands="Plunderer's Armlets +3", feet="Skulker's Poulaines +1"}
+    sets.TreasureHunter = {hands="Plunderer's Armlets +3", feet="Skulker's Poulaines +1", ammo="Perfect lucky egg"}
     sets.ExtraRegen = {head="Turms cap +1"}
     sets.Kiting = {feet="Pillager's Poulaines +3"}
 
@@ -177,7 +177,7 @@ function init_gear_sets()
     sets.precast.WS['Evisceration'].SATA = set_combine(sets.precast.WS['Evisceration'].Mod, {head = "Pillager's Bonnet +3"})
 
     sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {head="Pillager's Bonnet +3",neck="Assassin's gorget +2", ear1="Odr earring",
-		ring2="Epaminondas's Ring",waist="Kentarch belt +1"})
+																	ring2="Epaminondas's Ring",waist="Kentarch belt +1"})
     sets.precast.WS["Rudra's Storm"].Acc = set_combine(sets.precast.WS["Rudra's Storm"], {})
     sets.precast.WS["Rudra's Storm"].Mod = set_combine(sets.precast.WS["Rudra's Storm"], {})
     sets.precast.WS["Rudra's Storm"].SA = set_combine(sets.precast.WS["Rudra's Storm"].Mod, {ammo = "Yetshila +1"})
@@ -191,7 +191,8 @@ function init_gear_sets()
     sets.precast.WS['Shark Bite'].TA = set_combine(sets.precast.WS['Shark Bite'].Mod, {ammo = "Yetshila +1",body="Plunderer's vest +3"})
     sets.precast.WS['Shark Bite'].SATA = set_combine(sets.precast.WS['Shark Bite'].Mod, {ammo = "Yetshila +1",body="Plunderer's vest +3"})
 
-    sets.precast.WS['Mandalic Stab'] = set_combine(sets.precast.WS, {head="Pillager's Bonnet +3",neck="Assassin's gorget +2",ring2="Epaminondas's Ring",waist="Kentarch belt +1"})
+    sets.precast.WS['Mandalic Stab'] = set_combine(sets.precast.WS, {head="Pillager's Bonnet +3",neck="Assassin's gorget +2", 
+																	ear1="Odr earring",ring2="Epaminondas's Ring",waist="Kentarch belt +1"})
     sets.precast.WS['Mandalic Stab'].Acc = set_combine(sets.precast.WS['Mandalic Stab'], {})
     sets.precast.WS['Mandalic Stab'].Mod = set_combine(sets.precast.WS['Mandalic Stab'], {})
     sets.precast.WS['Mandalic Stab'].SA = set_combine(sets.precast.WS['Mandalic Stab'].Mod, {ammo = "Yetshila +1"})
@@ -225,7 +226,7 @@ function init_gear_sets()
 		legs={ name="Herculean Trousers", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Weapon skill damage +4%','Mag. Acc.+15','"Mag.Atk.Bns."+1',}},
 		feet="Adhemar Gamashes +1",
 		neck="Sanctity Necklace",
-		waist="Eschan Stone",
+		waist="Orpheus's sash",
 		left_ear="Friomisi Earring",
 		right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +25',}},
 		left_ring="Dingir Ring",
@@ -311,8 +312,10 @@ function init_gear_sets()
 
     sets.idle.Town = {
         head="Turms cap +1",neck="Tanner's torque",
-        body="Tanner's smock",hands="Tanner's gloves",ring1="Orvail Ring",ring2="Artificer's ring",
-        back="Shadow Mantle",waist="Reiki Yotai",legs="Pillager's Culottes +3",feet="Pillager's Poulaines +3"}
+        body="Tanner's smock",hands="Tanner's gloves",ring1="Orvail Ring +1",
+        back="Shadow Mantle",waist="Tanner's belt",legs="Pillager's Culottes +3",feet="Pillager's Poulaines +3"}
+		
+	sets.idle.Town.STP = set_combine(sets.idle.Town, {hands="Tanner's cuffs"})
 
     sets.idle.Weak = {ammo="Yamarang",
         head="Turms cap +1",neck="Bathy choker",ear1="Etiolation Earring",ear2="Infused Earring",
@@ -381,6 +384,14 @@ function init_gear_sets()
         back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%'}},
 		waist="Reiki Yotai",legs="Malignance tights",feet="Malignance boots"}
 		
+	sets.engaged.DT = {ammo="Yamarang",
+        head="Malignance chapeau",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Telos Earring",
+        body="Malignance tabard",hands="Malignance gloves",ring1="Moonlight Ring",ring2="Moonlight Ring",
+        back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%'}},
+		waist="Reiki Yotai",legs="Malignance tights",feet="Malignance boots"}
+		
+	
+		
 	sets.engaged.Farm = set_combine(sets.engaged.Hybrid, {hands="Plunderer's Armlets +3", ring1="Hetairoi Ring",ring2="Gere ring"})
 		
 	sets.engaged.Tank = {ammo="Yamarang",
@@ -433,6 +444,7 @@ end
 -- Run after the general midcast() set is constructed.
 function job_post_midcast(spell, action, spellMap, eventArgs)
     if state.TreasureMode.value ~= 'None' and spell.action_type == 'Ranged Attack' then
+		check_range_lock()
         equip(sets.TreasureHunter)
     end
 end

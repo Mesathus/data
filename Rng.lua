@@ -110,7 +110,7 @@ function init_gear_sets()
 	sets.precast.WS['Trueflight'] = {
 		neck= "Sanctity necklace", left_ear="Friomisi Earring", right_ear="Moonshade Earring" ,
 		body= "Cohort Cloak +1", hands= "Carmine Fin. Ga. +1", left_ring="Epaminondas's Ring", right_ring="Dingir Ring",
-		back= "Belenus's cape", waist="Eschan Stone", 
+		back= "Belenus's cape", waist="Orpheus's sash", 
 		legs={ name="Herculean Trousers", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Weapon skill damage +4%','Mag. Acc.+15','"Mag.Atk.Bns."+1',}},
 		feet="Adhemar Gamashes +1"
     }
