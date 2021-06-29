@@ -47,6 +47,8 @@ function user_setup()
     gear.MAbullet = "Chrono Bullet"
     gear.QDbullet = "Chrono Bullet"
     options.ammo_warning_limit = 15
+	
+	corOffhands = S {'Blurred Knife +1', 'Tauret'}
 
     -- Additional local binds
     send_command('bind ^` input /ja "Double-up" <me>')
@@ -113,7 +115,7 @@ function init_gear_sets()
 
 
     sets.precast.RA = {ammo=gear.RAbullet,
-        head="Chasseur's Tricorne",
+        head="Chasseur's Tricorne",neck="Commodore charm +2",
         body="Laksamana's Frac +3",hands="Lanun gants +3",
         back="Navarch's Mantle",waist="Impulse Belt",legs="Adhemar kecks +1",feet="Meghanada jambeaux +2"}
 
@@ -540,7 +542,7 @@ end
 
 function update_combat_form()
     -- Check for H2H or single-wielding
-    if player.equipment.sub ==  'empty' then
+    if player.equipment.sub in corOffhands then
         state.CombatForm:reset()
     else
         state.CombatForm:set('DW')

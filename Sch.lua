@@ -230,6 +230,8 @@ function init_gear_sets()
     sets.midcast['Elemental Magic'].HighTierNuke = set_combine(sets.midcast['Elemental Magic'], {})
 
     sets.midcast['Elemental Magic'].HighTierNuke.Resistant = set_combine(sets.midcast['Elemental Magic'].Resistant, {})
+	
+	sets.midcast['Elemental Magic'].HighTierNuke.Burst = set_combine(sets.midcast['Elemental Magic'].Burst, {})
 
     sets.midcast.Impact = set_combine(sets.midcast['Elemental Magic'].Resistant, {})
 

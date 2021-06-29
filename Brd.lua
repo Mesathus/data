@@ -129,7 +129,7 @@ function init_gear_sets()
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {range="Linos",
-        head="Lustratio cap +1",neck="Caro necklace",ear1="Ishvara Earring",ear2="Moonshade Earring",
+        head="Lustratio cap +1",neck="Bard's charm +2",ear1="Ishvara Earring",ear2="Moonshade Earring",
         body="Bihu justaucorps +3",hands="Lustratio mittens +1",ring1="Ilabrat Ring",ring2="Epaminondas's Ring",
         back="Ground. Mantle +1",waist="Grunfeld rope",legs="Lustratio subligar +1",feet="Lustratio leggings +1"}
     
@@ -144,7 +144,7 @@ function init_gear_sets()
 					waist="Fotia Belt", legs="Bihu cannions +3", feet="Bihu slippers +3"})
 
     sets.precast.WS['Mordant Rime'] = set_combine(sets.precast.WS, {
-					head="Bihu roundlet +3", neck="Moonbow whistle +1", ear2="Regal earring",
+					head="Bihu roundlet +3", ear2="Regal earring",
 					hands="Bihu cuffs +3", ring1="Ilabrat Ring",
 					waist="Kentarch belt +1", legs="Bihu cannions +3", feet="Bihu slippers +3"})
 					
@@ -263,7 +263,7 @@ function init_gear_sets()
     
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
     sets.idle = {main="Daybreak", sub="Genmei Shield",range="Nibiru Harp",
-        head=gear.RefreshHead,neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Infused Earring",
+        head=gear.RefreshHead,neck="Bard's charm +2",ear1="Etiolation Earring",ear2="Infused Earring",
         body="Inyanga Jubbah +2",hands="Volte gloves",ring1="Defending Ring",ring2="Moonlight Ring",
         back="Moonlight cape",waist="Flume Belt",legs="Inyanga shalwar +2",feet="Fili Cothurnes +1"}
 
@@ -306,7 +306,7 @@ function init_gear_sets()
     -- Basic set for if no TP weapon is defined.
     sets.engaged = {
         range="Linos",
-		head="Aya. Zucchetto +2", neck="Combatant's torque", left_ear="Telos Earring", right_ear="Mache earring +1",
+		head="Aya. Zucchetto +2", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Mache earring +1",
 		body="Ayanmo corazza +2", hands="Volte mittens", left_ring="Ilabrat Ring", right_ring="Moonlight Ring",
 		back="Ground. Mantle +1", waist="Sailfi belt +1", legs="Volte tights", feet="Volte spats"
 	}
@@ -314,7 +314,7 @@ function init_gear_sets()
     -- Sets with weapons defined.
     sets.engaged.Dagger = {
         range="Linos",
-		head="Aya. Zucchetto +2", neck="Combatant's torque", left_ear="Telos Earring", right_ear="Mache earring +1",
+		head="Aya. Zucchetto +2", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Mache earring +1",
 		body="Ayanmo corazza +2", hands="Volte mittens", left_ring="Ilabrat Ring", right_ring="Moonlight Ring",
 		back="Ground. Mantle +1", waist="Sailfi belt +1", legs="Volte tights", feet="Volte spats"
 	}
@@ -322,7 +322,7 @@ function init_gear_sets()
     -- Set if dual-wielding
     sets.engaged.DW = {
 		range="Linos",
-		head="Aya. Zucchetto +2", neck="Combatant's torque", left_ear="Telos Earring", right_ear="Suppanomimi",
+		head="Aya. Zucchetto +2", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Suppanomimi",
 		body="Ayanmo corazza +2", hands="Volte mittens", left_ring="Ilabrat Ring", right_ring="Moonlight Ring",
 		back="Ground. Mantle +1", waist="Reiki Yotai", legs="Volte tights", feet="Volte spats"
 	}
