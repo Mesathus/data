@@ -277,16 +277,16 @@ function init_gear_sets()
 
     sets.precast.WS['Sanguine Blade'] = {ammo="Pemphredo tathlum",
         head="Pixie hairpin +1",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Regal Earring",
-        body="Amalric doublet +1",hands="Jhakri cuffs +2",ring1="Archon Ring",ring2="Epaminondas's Ring",
+        body="Nyame mail",hands="Jhakri cuffs +2",ring1="Archon Ring",ring2="Epaminondas's Ring",
         back=gear.NukeCape,waist="Orpheus's sash",legs="Luhlaza Shalwar +3",feet="Amalric nails +1"}
     
     sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {ammo="Mantoptera eye",
-		head=gear.WSDHead,neck="Caro necklace",ear1="Moonshade Earring",
+		head="Nyame helm",neck="Mirage stole +2",ear1="Moonshade Earring",
 		hands="Jhakri cuffs +2",ring1="Epaminondas's ring",ring2="Rufescent ring",
-		waist="Kentarch belt +1",legs="Luhlaza Shalwar +3",feet="Carmine greaves +1"})
+		waist="Kentarch belt +1",legs="Nyame Flanchard",feet="Nyame Sollerets"})
 
     sets.precast.WS['Chant du Cygne'] = set_combine(sets.precast.WS, {
-		head="Adhemar bonnet +1",ear1="Odr earring", ear2="Mache earring +1",
+		head="Adhemar bonnet +1",neck="Mirage stole +2",ear1="Odr earring", ear2="Mache earring +1",
 		body="Abnoba kaftan",ring2="Begrudging ring",
 		back=gear.CritCape,feet="Adhemar gamashes +1"})    
 
@@ -452,10 +452,10 @@ function init_gear_sets()
         body="Hagondes Coat",hands="Iuitl Wristbands",ring1="Defending Ring",ring2="Paguroidea Ring",
         back="Mecisto. Mantle",waist="Flume Belt",legs="Carmine cuisses +1",feet="Iuitl Gaiters +1"}
 
-    sets.idle.Town = {main="Buramenk'ah",ammo="Impatiens",
-        head="Mavi Kavuk +2",neck="Wiglen Gorget",ear1="Bloodgem Earring",ear2="Loquacious Earring",
-        body="Luhlaza Jubbah",hands="Assimilator's Bazubands +1",ring1="Sheltered Ring",ring2="Paguroidea Ring",
-        back="Atheling Mantle",waist="Flume Belt",legs="Carmine cuisses +1",feet="Luhlaza Charuqs"}
+    -- sets.idle.Town = {main="Buramenk'ah",ammo="Impatiens",
+        -- head="Mavi Kavuk +2",neck="Wiglen Gorget",ear1="Bloodgem Earring",ear2="Loquacious Earring",
+        -- body="Luhlaza Jubbah",hands="Assimilator's Bazubands +1",ring1="Sheltered Ring",ring2="Paguroidea Ring",
+        -- back="Atheling Mantle",waist="Flume Belt",legs="Carmine cuisses +1",feet="Luhlaza Charuqs"}
 
     sets.idle.Learning = set_combine(sets.idle, sets.Learning)
 
@@ -502,14 +502,19 @@ function init_gear_sets()
         back=gear.CritCape,waist="Reiki Yotai",legs="Carmine cuisses +1",feet={ name="Herculean Boots", augments={'Accuracy+26','"Triple Atk."+4','DEX+9','Attack+1',}}}
 
     sets.engaged.DW.Acc = {ammo="Falcon eye",
-        head="Carmine Mask +1",neck="Combatant's torque",ear1="Telos Earring",ear2="Cessance Earring",
+        head="Carmine Mask +1",neck="Mirage stole +2",ear1="Telos Earring",ear2="Cessance Earring",
         body="Adhemar jacket +1",hands="Adhemar Wristbands +1",ring1="Ilabrat Ring",ring2="Epona's Ring",
         back=gear.CritCape,waist="Reiki Yotai",legs="Carmine cuisses +1",feet={name="Herculean boots", augments={'Accuracy+24 Attack+24','Damage taken-2%','STR+7','Accuracy+11','Attack+15'}}}
 		
 	sets.engaged.DW.Hybrid = set_combine(sets.engaged.DW.Acc, {
-		head="Malignance chapeau", ear2="Cessance Earring",
+		head="Malignance chapeau",
 		body="Malignance tabard", hands="Malignance gloves", ring1="Hetairoi Ring",
 		legs="Malignance tights", feet="Malignance boots"})
+		
+	-- sets.engaged.DW.Hybrid = set_combine(sets.engaged.DW.Acc, {
+		-- head="Malignance chapeau", ear2="Cessance Earring",
+		-- body="Malignance tabard", hands="Malignance gloves", ring1="Chirich Ring +1", ring2 = "Chirich Ring +1",
+		-- legs="Malignance tights", feet="Malignance boots"})
 
     sets.engaged.DW.Refresh = {ammo="Ginsen",
         head="Rawhide Mask",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Suppanomimi",

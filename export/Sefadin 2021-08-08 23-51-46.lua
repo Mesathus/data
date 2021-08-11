@@ -1,0 +1,18 @@
+sets.exported={
+    main={ name="Perun +1", augments={'Path: A',}},
+    sub="Nusku Shield",
+    range="Yoichinoyumi",
+    ammo="Chrono Arrow",
+    head={ name="Nyame Helm", augments={'Path: B',}},
+    body={ name="Nyame Mail", augments={'Path: B',}},
+    hands="Meg. Gloves +2",
+    legs={ name="Nyame Flanchard", augments={'Path: B',}},
+    feet={ name="Nyame Sollerets", augments={'Path: B',}},
+    neck={ name="Scout's Gorget +2", augments={'Path: A',}},
+    waist={ name="Kentarch Belt +1", augments={'Path: A',}},
+    left_ear="Sherida Earring",
+    right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
+    left_ring="Epaminondas's Ring",
+    right_ring="Regal Ring",
+    back={ name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%',}},
+}

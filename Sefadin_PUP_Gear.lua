@@ -42,7 +42,7 @@ end
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
   -- Options: Override default values
-  state.OffenseMode:options('Normal', 'Acc', 'Fodder')
+  state.OffenseMode:options('Normal', 'Acc', 'Hybrid', 'HybMpaca')
   state.WeaponskillMode:options('Normal', 'Acc', 'Fodder')
   state.PhysicalDefenseMode:options('PDT', 'Evasion')
   state.MagicalDefenseMode:options('MDT')
@@ -110,18 +110,19 @@ function init_gear_sets()
   -- Weaponskill sets
   -- Default set for any weaponskill that isn't any more specifically defined
   sets.precast.WS = {
-    head="Hizamaru somen +1",neck="Fotia Gorget",ear1="Ishvara Earring",ear2="Moonshade Earring",
-    body="Hizamaru Haramaki +1",hands="Hizamaru Kote +1",ring1="Rajas Ring",ring2="Epona's Ring",
-    back="Dispersal mantle",waist="Fotia Belt",legs="Hizamaru Hizayoroi +1",feet="Herculean boots"}
+    head="Mpaca's cap",neck="Fotia Gorget",ear1="Mache Earring +1",ear2="Moonshade Earring",
+    body="Mpaca's doublet",hands="Mpaca's gloves",ring1="Rajas Ring",ring2="Epona's Ring",
+    back="Visucius's mantle",waist="Fotia Belt",legs="Mpaca's hose",feet="Mpaca's boots"}
 
   -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
   sets.precast.WS['Stringing Pummel'] = set_combine(sets.precast.WS, {
-    ear1="Cessance Earring",ear2="Moonshade Earring",
-    ring1="Spiral Ring"})
+    ear2="Moonshade Earring",
+	ring1="Niqmaddu ring", ring2="Gere ring"})
 
-  sets.precast.WS['Victory Smite'] = set_combine(sets.precast.WS, {
-    ear1="Cessance Earring",ear2="Moonshade Earring",
-    ring1="Pyrosoul Ring"})
+  sets.precast.WS['Victory Smite'] = set_combine(sets.precast.WS['Stringing Pummel'], {})
+  
+  sets.precast.WS['Howling Fist'] = set_combine(sets.precast.WS, {
+  waist="Moonbow belt +1"})
 
   -- Midcast Sets
 
@@ -203,6 +204,18 @@ function init_gear_sets()
     body="Pitre Tobe +1",hands=gear.taeon_hands_ta,ring2="Oneiros Annulet",
     waist="Hurch'lan Sash",legs=gear.taeon_legs_ta,feet="Karagoz Scarpe +1"
   })
+  
+  sets.engaged.Hybrid = {
+        head="Malignance chapeau",neck="Shulmanu collar",ear1="Mache Earring +1",ear2="Telos Earring",
+        body="Malignance tabard",hands="Malignance gloves",ring1="Niqmaddu Ring",ring2="Gere Ring",
+        back="Visucius's mantle",waist="Moonbow belt +1",legs="Malignance tights",feet="Malignance boots"}
+  
+  sets.engaged.HybMpaca = {
+		head="Mpaca's cap",neck="Bathy choker +1",ear1="Mache Earring +1",ear2="Telos Earring",
+        body="Mpaca's doublet",hands="Mpaca's gloves",ring1="Niqmaddu Ring",ring2="Gere Ring",
+        back="Visucius's mantle",waist="Moonbow belt +1",legs="Mpaca's hose",feet="Mpaca's boots"
+  }
+  
 
 end
 

@@ -33,8 +33,10 @@ function user_setup()
 	gear.default.weaponskill_neck = "Fotia Gorget"
 	gear.default.weaponskill_waist = "Fotia Belt"
 	gear.TAFeet = { name="Herculean Boots", augments={'Accuracy+26','"Triple Atk."+4','DEX+9','Attack+1',}}
+	gear.AgiWSDCape = {name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%'}}
+	gear.StrWSDCape = {name="Belenus's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%'}}
 	
-	DefaultAmmo = {['Yoichinoyumi'] = "Chrono arrow", ['Annihilator'] = "Chrono bullet"}
+	DefaultAmmo = {['Yoichinoyumi'] = "Yoichi's arrow", ['Annihilator'] = "Chrono bullet"}
 	U_Shot_Ammo = {['Yoichinoyumi'] = "Chrono arrow", ['Annihilator'] = "Chrono bullet"}
 
 	select_default_macro_book()
@@ -87,18 +89,25 @@ function init_gear_sets()
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
 	sets.precast.WS = {
-		head="Orion beret +3",neck="Iskur gorget",ear1="Enervating earring",ear2="Moonshade Earring",
+		head="Orion beret +3",neck="Scout's gorget +2",ear1="Enervating earring",ear2="Moonshade Earring",
 		body="Amini Caban +1",hands="Meghanada gloves +2",ring1="Ilabrat Ring",ring2="Regal Ring",
 		back="Belenus's cape",waist="Fotia belt",legs="Arcadian braccae +3",feet="Arcadian Socks +3" }
 
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {ring1="Cacoethic Ring +1"
 		})
 		
-	sets.precast.WS['Coronach'] = set_combine(sets.precast.WS, {ear1="Ishvara earring", ear2="Sherida earring",
-		ring1="Epaminondas's Ring"})
+	sets.precast.WS['Coronach'] = set_combine(sets.precast.WS, {
+		ear1="Ishvara earring", ear2="Sherida earring",
+		body="Nyame mail", ring1="Epaminondas's Ring",
+		feet="Nyame Sollerets"})
+		
+	sets.precast.WS['Namas Arrow'] = set_combine(sets.precast.WS, {
+		ear1="Ishvara earring", ear2="Sherida earring",
+		body="Nyame mail", ring1="Epaminondas's Ring",
+		feet="Nyame Sollerets"})
 	
 	sets.precast.WS['Last Stand'] = set_combine(sets.precast.WS, {ear1 = "Ishvara earring", 
-		body="Arcadian jerkin +3", ring1="Epaminondas's Ring"})
+		body="Nyame mail", ring1="Epaminondas's Ring", feet="Nyame sollerets"})
 	
 	sets.precast.WS["Jishnu's Radiance"] = set_combine(sets.precast.WS, {ammo="Chrono arrow",
 		head="Adhemar Bonnet +1", ear1="Odr earring", ear2="Sherida earring",
@@ -108,19 +117,17 @@ function init_gear_sets()
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
 	
 	sets.precast.WS['Trueflight'] = {
-		neck= "Sanctity necklace", left_ear="Friomisi Earring", right_ear="Moonshade Earring" ,
-		body= "Cohort Cloak +1", hands= "Carmine Fin. Ga. +1", left_ring="Epaminondas's Ring", right_ring="Dingir Ring",
-		back= "Belenus's cape", waist="Orpheus's sash", 
-		legs={ name="Herculean Trousers", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Weapon skill damage +4%','Mag. Acc.+15','"Mag.Atk.Bns."+1',}},
-		feet="Adhemar Gamashes +1"
+		head="Nyame helm",neck= "Scout's gorget +2", left_ear="Friomisi Earring", right_ear="Moonshade Earring" ,
+		body= "Nyame mail", hands= "Nyame gauntlets", left_ring="Epaminondas's Ring", right_ring="Dingir Ring",
+		back= "Belenus's cape", waist="Orpheus's sash", legs="Nyame Flanchard", feet="Nyame Sollerets"
     }
 
 	sets.precast.WS['Wildfire'] = set_combine(sets.precast.WS['Trueflight'])
 	
 	sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {ammo="Hauksbok arrow",
-		ear1="Sherida Earring",
-		body="Adhemar jacket +1", ring1="Epaminondas's Ring",
-		waist="Kentarch belt +1"
+		head="Nyame helm",neck="Scout's gorget +2",ear1="Sherida Earring",
+		body="Nyame mail", ring1="Epaminondas's Ring",
+		waist="Kentarch belt +1", legs="Nyame Flanchard", feet="Nyame Sollerets"
 		})
 
 	--------------------------------------

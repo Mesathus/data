@@ -1,0 +1,17 @@
+sets.exported={
+    main="Naegling",
+    sub={ name="Fusetto +3", augments={'TP Bonus +1000',}},
+    range={ name="Linos", augments={'Accuracy+14','Weapon skill damage +3%','Quadruple Attack +3',}},
+    head="Aya. Zucchetto +2",
+    body="Ayanmo Corazza +2",
+    hands="Volte Mittens",
+    legs="Volte Tights",
+    feet="Volte Spats",
+    neck={ name="Bard's Charm +2", augments={'Path: A',}},
+    waist="Reiki Yotai",
+    left_ear="Telos Earring",
+    right_ear="Suppanomimi",
+    left_ring="Moonlight Ring",
+    right_ring="Moonlight Ring",
+    back={ name="Intarabus's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}},
+}

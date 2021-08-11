@@ -47,7 +47,7 @@ end
 function user_setup()
     state.OffenseMode:options('None', 'Normal')
     state.CastingMode:options('Resistant','Burst')
-    state.IdleMode:options('Normal', 'PDT','Vagary')
+    state.IdleMode:options('Normal', 'PDT','Vagary', 'Myrkr')
 
 
     info.low_nukes = S{"Stone", "Water", "Aero", "Fire", "Blizzard", "Thunder"}
@@ -92,13 +92,13 @@ function init_gear_sets()
     sets.precast.FC = {ammo="Sapience orb",
         head="Haruspex Hat +1",neck="Voltsurge torque",ear1="Etiolation Earring",ear2="Loquacious Earring",
         body="Merlinic jubbah",hands="Academic's bracers +2",ring1="Prolix Ring",ring2="Kishar Ring",
-        back="Swith Cape +1",waist="Witful Belt",legs="Volte brais",feet="Academic's loafers +2"}
+        back="Perimede cape",waist="Embla sash",legs="Volte brais",feet="Academic's loafers +2"}
 
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash"})
 
     sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, {})
 
-    sets.precast.FC.Cure = set_combine(sets.precast.FC, {body="Heka's Kalasiris",back="Pahtli Cape",
+    sets.precast.FC.Cure = set_combine(sets.precast.FC, {
 		legs="Vanya slops",feet="Vanya clogs"})
 
     sets.precast.FC.Curaga = sets.precast.FC.Cure
@@ -113,19 +113,16 @@ function init_gear_sets()
         body="Vanir Cotehardie",hands="Gendewitha Gages",ring1="Prolix Ring",
         back="Swith Cape +1",waist="Goading Belt",legs="",feet="Academic's Loafers"}
 
-    sets.midcast.Cure = {main="Daybreak",sub="Ammurapi shield",ammo="Pemphredo tathlum",
-        head="Inyanga tiara +2",neck="Voltsurge Torque",ear1="Etiolation Earring",ear2="Regal Earring",
-        body="Amalric doublet +1",hands="Kaykaus cuffs +1",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
-        back="Solemnity Cape",waist="Embla sash",legs="Vanya slops",feet="Vanya clogs"}
+    sets.midcast.Cure = {main="Grioavolr",sub="Enki strap",
+        head="Kaykaus mitra +1",neck="Incanter's torque",ear2="Regal earring",
+        body="Kaykaus Bliaut +1",hands="Kaykaus cuffs +1",ring1="Stikini ring +1", ring2="Stikini ring +1",
+        back="Solemnity cape",waist ="Luminary sash", legs="Kaykaus tights +1",feet="Kaykaus boots +1"}
 
-    sets.midcast.CureWithLightWeather = set_combine(sets.midcast.Cure, {main="Chatoyant Staff",sub="Achaq Grip",ammo="Incantor Stone",
-        head="Gendewitha Caubeen",neck="Colossus's Torque",ear1="Lifestorm Earring",ear2="Loquacious Earring",
-        body="Heka's Kalasiris",hands="Bokwus Gloves",ring1="Prolix Ring",ring2="Sirona's Ring",
-        back="Twilight Cape",waist="Korin Obi",legs="Nares Trews",feet="Academic's Loafers"})
+    sets.midcast.CureWithLightWeather = set_combine(sets.midcast.Cure, {main="Chatoyant Staff"})
 
     sets.midcast.Curaga = sets.midcast.Cure
 
-    sets.midcast.Regen = {main="Bolelabunga",head="Savant's Bonnet +2", back="Lugh's cape"}
+    sets.midcast.Regen = {main="Bolelabunga",head="Savant's Bonnet +1", back="Lugh's cape"}
 
     sets.midcast.Cursna = {
         neck="Malison Medallion",
@@ -135,7 +132,7 @@ function init_gear_sets()
     sets.midcast['Enhancing Magic'] = {sub = "Ammurapi shield",
 		head = "Telchine cap", neck = "Voltsurge torque", ear1 = "Etiolation earring", ear2 = "Loquacious earring",
 		body = "Telchine Chasuble", hands = "Telchine gloves", ring1="Kishar ring", ring2="Stikini ring +1",
-		back = "Intarabus's cape", waist = "Luminary sash", legs = "Telchine Braconi",feet = "Telchine pigaches" }
+		back = "Intarabus's cape", waist = "Embla sash", legs = "Telchine Braconi",feet = "Telchine pigaches" }
 		
 	sets.midcast.Haste = set_combine(sets.midcast['Enhancing Magic'])
 
@@ -163,20 +160,20 @@ function init_gear_sets()
 
     sets.midcast.ElementalEnfeeble = sets.midcast.IntEnfeebles
 
-    sets.midcast['Dark Magic'] = {main="Lehbrailg +2",sub="Mephitis Grip",ammo="Incantor Stone",
-        head="Nahtirah Hat",neck="Aesir Torque",ear1="Psystorm Earring",ear2="Lifestorm Earring",
-        body="Vanir Cotehardie",hands="Yaoyotl Gloves",ring1="Strendu Ring",ring2="Sangoma Ring",
-        back="Refraction Cape",waist="Goading Belt",legs="Bokwus Slops",feet="Bokwus Boots"}
+    sets.midcast['Dark Magic'] = {main="Akademos",sub="Enki strap",ammo="Seraphic ampulla",
+        head="Merlinic hood",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Friomisi Earring",
+        body="Amalric doublet +1",hands="Amalric gages +1",ring1="Sangoma Ring",ring2="Shiva Ring +1",
+        back="Lugh's cape",waist="Orpheus's sash",legs="Merlinic shalwar",feet="Merlinic crackows"}
 
-    sets.midcast.Kaustra = {main="Lehbrailg +2",sub="Wizzan Grip",ammo="Witchstone",
-        head="Hagondes Hat",neck="Eddy Necklace",ear1="Hecate's Earring",ear2="Friomisi Earring",
-        body="Hagondes Coat",hands="Yaoyotl Gloves",ring1="Icesoul Ring",ring2="Strendu Ring",
-        back="Toro Cape",waist="Cognition Belt",legs="Hagondes Pants",feet="Hagondes Sabots"}
+    sets.midcast.Kaustra = {main="Akademos",sub="Enki strap",ammo="Seraphic ampulla",
+        head="Merlinic hood",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Friomisi Earring",
+        body="Amalric doublet +1",hands="Amalric gages +1",ring1="Sangoma Ring",ring2="Shiva Ring +1",
+        back="Lugh's cape",waist="Orpheus's sash",legs="Merlinic shalwar",feet="Merlinic crackows"}
 
-    sets.midcast.Drain = {main="Lehbrailg +2",sub="Mephitis Grip",ammo="Incantor Stone",
-        head="Nahtirah Hat",neck="Aesir Torque",ear1="Psystorm Earring",ear2="Lifestorm Earring",
-        body="Vanir Cotehardie",hands="Gendewitha Gages",ring1="Excelsis Ring",ring2="Sangoma Ring",
-        back="Refraction Cape",waist="Goading Belt",legs="Pedagogy Pants",feet="Academic's Loafers"}
+    sets.midcast.Drain = {main="Akademos",sub="Enki strap",ammo="Seraphic ampulla",
+        head="Merlinic hood",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Friomisi Earring",
+        body="Amalric doublet +1",hands="Amalric gages +1",ring1="Sangoma Ring",ring2="Shiva Ring +1",
+        back="Lugh's cape",waist="Orpheus's sash",legs="Merlinic shalwar",feet="Merlinic crackows"}
 
     sets.midcast.Aspir = sets.midcast.Drain
 
@@ -200,17 +197,17 @@ function init_gear_sets()
         back="Lugh's cape",waist="Orpheus's sash",legs="Merlinic shalwar",feet="Merlinic crackows"}
 				
 	sets.midcast['Elemental Magic'].Burst = {main="Akademos",sub="Enki strap",ammo="Pemphredo tathlum",
-        head="Merlinic hood",neck="Mizukage-no-kubikazari",ear1="Barkarole Earring",ear2="Regal Earring",
+        head="Merlinic hood",neck="Argute stole +2",ear1="Barkarole Earring",ear2="Regal Earring",
         body="Amalric doublet +1",hands="Amalric gages +1",ring1="Mujin band",ring2="Shiva Ring +1",
         back="Lugh's cape",waist="Orpheus's sash",legs="Merlinic shalwar",feet="Merlinic crackows"}
 		
 	sets.midcast['Elemental Magic'].Helix = {main="Akademos",sub="Enki strap",ammo="Pemphredo tathlum",
-        head="Merlinic hood",neck="Sanctity Necklace",ear1="Malignance Earring",ear2="Regal Earring",
+        head="Merlinic hood",neck="Argute stole +2",ear1="Malignance Earring",ear2="Regal Earring",
         body="Amalric doublet +1",hands="Amalric gages +1",ring1="Freke Ring",ring2="Shiva Ring +1",
         back="Lugh's cape",waist="Orpheus's sash",legs="Amalric slops +1",feet="Amalric Nails +1"}
 		
 	sets.midcast['Elemental Magic'].Helix.Burst = {main="Akademos",sub="Enki strap",ammo="Pemphredo tathlum",
-        head="Merlinic hood",neck="Sanctity Necklace",ear1="Malignance Earring",ear2="Regal Earring",
+        head="Merlinic hood",neck="Argute stole +2",ear1="Malignance Earring",ear2="Regal Earring",
         body="Merlinic jubbah",hands="Amalric gages +1",ring1="Freke Ring",ring2="Mujin band",
         back="Lugh's cape",waist="Orpheus's sash",legs="Amalric slops +1",feet="Amalric Nails +1"}
 		
@@ -248,7 +245,7 @@ function init_gear_sets()
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 
 	sets.idle = {main="Akademos",sub="Niobid strap",ammo="Incantor Stone",
-        head="Befouled crown",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Loquacious Earring",
+        head="Befouled crown",neck="Argute stole +2",ear1="Etiolation Earring",ear2="Loquacious Earring",
         body="Amalric doublet +1",hands="Volte gloves",ring1="Sheltered Ring",ring2="Defending Ring",
         back="Moonlight cape",waist="Hierarch Belt",legs="Volte brais",feet="Herald's Gaiters"}	
 	
@@ -257,25 +254,30 @@ function init_gear_sets()
         body="Amalric doublet +1",hands="Volte gloves",ring1="Sheltered Ring",ring2="Defending Ring",
         back="Moonlight cape",waist="Hierarch Belt",legs="Volte brais",feet="Herald's Gaiters"}
 
-    sets.idle.Field = {main="Daybreak",sub="Genmei shield",ammo="Incantor Stone",
-        head="Befouled crown",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Loquacious Earring",
+    -- sets.idle.Field = {main="Daybreak",sub="Genmei shield",ammo="Incantor Stone",
+        -- head="Befouled crown",neck="Argute stole +2",ear1="Etiolation Earring",ear2="Loquacious Earring",
+        -- body="Amalric doublet +1",hands="Volte gloves",ring1="Sheltered Ring",ring2="Defending Ring",
+        -- back="Moonlight cape",waist="Hierarch Belt",legs="Volte brais",feet="Herald's Gaiters"}
+		
+	sets.idle.Myrkr = {ammo="Incantor Stone",
+        head="Befouled crown",neck="Argute stole +2",ear1="Etiolation Earring",ear2="Loquacious Earring",
         body="Amalric doublet +1",hands="Volte gloves",ring1="Sheltered Ring",ring2="Defending Ring",
         back="Moonlight cape",waist="Hierarch Belt",legs="Volte brais",feet="Herald's Gaiters"}
 
-    sets.idle.Field.PDT = {ammo="Incantor Stone",
-        head="Nahtirah Hat",neck="Wiglen Gorget",ear1="Bloodgem Earring",ear2="Loquacious Earring",
-        body="Hagondes Coat",hands="Yaoyotl Gloves",ring1="Defending Ring",ring2="Paguroidea Ring",
-        back="Umbra Cape",waist="Hierarch Belt",legs="Nares Trews",feet="Herald's Gaiters"}
+    -- sets.idle.Field.PDT = {ammo="Incantor Stone",
+        -- head="Nahtirah Hat",neck="Wiglen Gorget",ear1="Bloodgem Earring",ear2="Loquacious Earring",
+        -- body="Hagondes Coat",hands="Yaoyotl Gloves",ring1="Defending Ring",ring2="Paguroidea Ring",
+        -- back="Umbra Cape",waist="Hierarch Belt",legs="Nares Trews",feet="Herald's Gaiters"}
 
-    sets.idle.Field.Stun = {main="Apamajas II",sub="Mephitis Grip",ammo="Incantor Stone",
-        head="Nahtirah Hat",neck="Aesir Torque",ear1="Psystorm Earring",ear2="Lifestorm Earring",
-        body="Vanir Cotehardie",hands="Gendewitha Gages",ring1="Prolix Ring",ring2="Sangoma Ring",
-        back="Swith Cape +1",waist="Goading Belt",legs="Bokwus Slops",feet="Academic's Loafers"}
+    -- sets.idle.Field.Stun = {main="Apamajas II",sub="Mephitis Grip",ammo="Incantor Stone",
+        -- head="Nahtirah Hat",neck="Aesir Torque",ear1="Psystorm Earring",ear2="Lifestorm Earring",
+        -- body="Vanir Cotehardie",hands="Gendewitha Gages",ring1="Prolix Ring",ring2="Sangoma Ring",
+        -- back="Swith Cape +1",waist="Goading Belt",legs="Bokwus Slops",feet="Academic's Loafers"}
 
-    sets.idle.Weak = {ammo="Incantor Stone",
-        head="Nahtirah Hat",neck="Wiglen Gorget",ear1="Bloodgem Earring",ear2="Loquacious Earring",
-        body="Hagondes Coat",hands="Yaoyotl Gloves",ring1="Sheltered Ring",ring2="Meridian Ring",
-        back="Umbra Cape",waist="Hierarch Belt",legs="Nares Trews",feet="Herald's Gaiters"}
+    -- sets.idle.Weak = {ammo="Incantor Stone",
+        -- head="Nahtirah Hat",neck="Wiglen Gorget",ear1="Bloodgem Earring",ear2="Loquacious Earring",
+        -- body="Hagondes Coat",hands="Yaoyotl Gloves",ring1="Sheltered Ring",ring2="Meridian Ring",
+        -- back="Umbra Cape",waist="Hierarch Belt",legs="Nares Trews",feet="Herald's Gaiters"}
 		
 	sets.idle.Vagary = {ammo="Pemphredo tathlum",
         head="Merlinic hood",neck="Mizukage-no-kubikazari",ear1="Barkarole Earring",ear2="Friomisi Earring",

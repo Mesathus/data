@@ -42,7 +42,7 @@ end
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
   -- Options: Override default values
-  state.OffenseMode:options('Normal', 'Acc', 'Fodder')
+  state.OffenseMode:options('Normal', 'Acc', 'Hybrid')
   state.WeaponskillMode:options('Normal', 'Acc', 'Fodder')
   state.PhysicalDefenseMode:options('PDT', 'Evasion')
   state.MagicalDefenseMode:options('MDT')
@@ -153,7 +153,7 @@ function init_gear_sets()
   -- Idle sets
   sets.idle = {
     ammo="Automat. Oil +3",
-    head="Pitre Taj +1",neck="Bathy choker",ear1="Infused Earring",ear2="Burana Earring",
+    head="Pitre Taj +1",neck="Bathy choker +1",ear1="Infused Earring",ear2="Burana Earring",
     body="Malignance tabard",hands="Malignance gloves",ring1="Sheltered Ring",ring2="Defending Ring",
     back="Kumbira Cape",waist="Lycopodium Sash",legs="Malignance tights",feet="Hermes' Sandals"}
 	
@@ -203,6 +203,11 @@ function init_gear_sets()
     body="Pitre Tobe +1",hands=gear.taeon_hands_ta,ring2="Oneiros Annulet",
     waist="Hurch'lan Sash",legs=gear.taeon_legs_ta,feet="Karagoz Scarpe +1"
   })
+  
+  sets.engaged.Hybrid = {
+        head="Malignance chapeau",neck="Shulmanu collar",ear1="Mache Earring +1",ear2="Telos Earring",
+        body="Malignance tabard",hands="Malignance gloves",ring1="Niqmaddu Ring",ring2="Gere Ring",
+        back="Visucius's mantle",waist="Moonbow belt +1",legs="Malignance tights",feet="Malignance boots"}
   
   sets.defense.PDT = {ammo="Yamarang",
         head="Malignance chapeau",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Telos Earring",
@@ -297,17 +302,17 @@ end
 -- Set eventArgs.handled to true if we don't want the automatic display to be run.
 function display_current_job_state(eventArgs)
   local defenseString = ''
-  if state.Defense.Active then
-    local defMode = state.Defense.PhysicalMode
-    if state.Defense.Type == 'Magical' then
-      defMode = state.Defense.MagicalMode
+  if state.DefenseMode.Active then
+    local defMode = state.DefenseMode.PhysicalMode
+    if state.DefenseMode.Type == 'Magical' then
+      defMode = state.DefenseMode.MagicalMode
     end
 
-    defenseString = 'Defense: '..state.Defense.Type..' '..defMode..', '
+    defenseString = 'Defense: '..state.DefenseMode.Type..' '..defMode..', '
   end
 
-  add_to_chat(122,'Melee: '..state.OffenseMode..'/'..state.DefenseMode..', WS: '..state.WeaponskillMode..', '..defenseString..
-    'Kiting: '..on_off_names[state.Kiting])
+  --add_to_chat(122,'Melee: '..state.OffenseMode..'/'..state.DefenseMode..', WS: '..state.WeaponSkillMode..', '..defenseString)
+    -- 'Kiting: '..on_off_names[state.Kiting])
 
   display_pet_status()
 
