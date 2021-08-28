@@ -42,7 +42,7 @@ end
 
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
-    state.OffenseMode:options('Normal', 'TA', 'Hybrid', 'TAcc', 'Farm', 'DT')
+    state.OffenseMode:options('Normal', 'TA', 'Hybrid', 'TAcc', 'Farm', 'DT', 'Evasion')
     state.HybridMode:options('Normal', 'Evasion', 'PDT')
     state.RangedMode:options('Normal', 'Acc')
     state.WeaponskillMode:options('Normal', 'Acc', 'Mod')
@@ -79,7 +79,7 @@ function init_gear_sets()
     -- Special sets (required by rules)
     --------------------------------------
 
-    sets.TreasureHunter = {hands="Plunderer's Armlets +3", feet="Skulker's Poulaines +1", ammo="Perfect lucky egg"}
+    sets.TreasureHunter = {hands="Plunderer's Armlets +3", ammo="Perfect lucky egg"}
     sets.ExtraRegen = {head="Turms cap +1"}
     sets.Kiting = {feet="Pillager's Poulaines +3"}
 
@@ -201,7 +201,7 @@ function init_gear_sets()
 	
 	sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {ammo="Seething bomblet +1",
 																	head="Nyame Helm",neck="Caro necklace",
-																	body="Nyame mail", ring2="Epaminondas's Ring",
+																	body="Nyame mail", ring1="Gere Ring", ring2="Epaminondas's Ring",
 																	back={ name="Toutatis's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%'}},
 																	waist="Kentarch belt +1", legs="Nyame Flanchard"})
 	sets.precast.WS['Savage Blade'].Mod = set_combine(sets.precast.WS['Savage Blade'], {ear1="Sherida earring"})
@@ -275,6 +275,20 @@ function init_gear_sets()
 		back="Merciful Cape",
 		})
 		
+	sets.midcast['Elemental Magic'] = {ammo="Pemphredo Tathlum",
+		head="Nyame helm",
+		body="Nyame mail",
+		hands="Nyame gauntlets",
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets",
+		neck="Sanctity Necklace",
+		waist="Orpheus's sash",
+		left_ear="Friomisi Earring",
+		right_ear="Crematio earring",
+		left_ring="Dingir Ring",
+		ring2="Shiva Ring +1",
+		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}}}
+		
 	
 
     -- Ranged gear
@@ -330,10 +344,10 @@ function init_gear_sets()
 		waist="Patentia sash",legs="Malignance tights",feet="Malignance boots"}
 		
 	sets.idle.Evasion = {ammo="Yamarang",
-        head="Malignance Chapeau",neck="Assassin's gorget +2",ear1="Infused Earring",ear2="Eabani Earring",
-        body="Malignance tabard",hands="Turms Mittens +1",ring1="Moonlight Ring",ring2="Moonlight Ring",
+        head="Nyame helm",neck="Assassin's gorget +2",ear1="Infused Earring",ear2="Eabani Earring",
+        body="Nyame mail",hands="Turms Mittens +1",ring1="Moonlight Ring",ring2="Moonlight Ring",
         back={ name="Toutatis's Cape", augments={'AGI+20','Eva.+20 /Mag. Eva.+20','Evasion+10','"Store TP"+10','Phys. dmg. taken-10%'}},
-		waist="Flume belt",legs="Malignance tights",feet="Pillager's Poulaines +3"}
+		waist="Flume belt",legs="Nyame flanchard",feet="Pillager's Poulaines +3"}
 
     -- Defense sets
 
@@ -418,7 +432,7 @@ function init_gear_sets()
 
     sets.engaged.Evasion = {ammo="Yamarang",
         head="Malignance Chapeau",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Telos Earring",
-        body="Pillager's vest +3",hands="Turms Mitts +1",ring1="Moonlight Ring",ring2="Moonlight Ring",
+        body="Pillager's vest +3",hands="Turms Mittens +1",ring1="Moonlight Ring",ring2="Moonlight Ring",
         back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%'}},
 		waist="Reiki Yotai",legs="Pillager's Culottes +3",feet="Turms Leggings +1"}
     
@@ -430,6 +444,19 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- Job-specific hooks for standard casting events.
 -------------------------------------------------------------------------------------------------------------------
+
+function job_precast(spell, action, spellMap, eventArgs)
+         
+-- Used to overwrite Moonshade Earring if TP is more than 2750.
+    if spell.type == 'WeaponSkill' then
+		if player.tp > 1750 and player.equipment.sub == "Fusetto +3" then
+			equip({ear2 = "Mache Earring +1"})
+        elseif player.tp > 2750 then
+			equip({ear2 = "Mache Earring +1"})
+        end
+    end
+     
+end
 
 -- Run after the general precast() is done.
 function job_post_precast(spell, action, spellMap, eventArgs)

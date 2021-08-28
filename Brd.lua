@@ -70,9 +70,9 @@ function user_setup()
     state.UseCustomTimers = M(true, 'Use Custom Timers')
     
     -- Additional local binds
-    send_command('bind f9 gs c cycle ExtraSongsMode')
+    send_command('bind !f9 gs c cycle ExtraSongsMode')
     send_command('bind != input /ma "Chocobo Mazurka" <me>')
-	send_command('bind !f9 gs c cycle OffenseMode')
+	send_command('bind f9 gs c cycle OffenseMode')
 
     select_default_macro_book()
 end

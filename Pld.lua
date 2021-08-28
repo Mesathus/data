@@ -31,7 +31,7 @@ function user_setup()
     state.OffenseMode:options('Damage', 'Acc', 'Normal')
     state.HybridMode:options('Normal', 'PDT', 'Reraise')
     state.WeaponskillMode:options('Normal', 'Acc')
-    state.CastingMode:options('Normal', 'Resistant')
+    state.CastingMode:options('Normal', 'SIRD', 'HPBAL')
     state.PhysicalDefenseMode:options('PDT', 'HP', 'Reraise', 'Charm')
     state.MagicalDefenseMode:options('MDT', 'HP', 'Reraise', 'Charm')
     
@@ -303,7 +303,7 @@ function init_gear_sets()
     --------------------------------------
 
     sets.buff.Doom = {ring2="Saida Ring"}
-    sets.buff.Cover = {head="Reverence Coronet +1", body="Caballarius Surcoat"}
+    sets.buff.Cover = {head="Reverence Coronet +1", body="Caballarius Surcoat +1"}
 end
 
 
@@ -311,15 +311,15 @@ end
 -- Job-specific hooks for standard casting events.
 -------------------------------------------------------------------------------------------------------------------
 
-function job_get_spell_map(spell, default_spell_map)
-    if spell.skill == 'Blue Magic' then
-        for category,spell_list in pairs(blue_magic_maps) do
-            if spell_list:contains(spell.english) then
-                return category
-            end
-        end
-    end
-end
+-- function job_get_spell_map(spell, default_spell_map)
+    -- if spell.skill == 'Blue Magic' then
+        -- for category,spell_list in pairs(blue_magic_maps) do
+            -- if spell_list:contains(spell.english) then
+                -- return category
+            -- end
+        -- end
+    -- end
+-- end
 
 function job_midcast(spell, action, spellMap, eventArgs)
     -- If DefenseMode is active, apply that gear over midcast
@@ -341,14 +341,14 @@ end
 
 -- Called when the player's status changes.
 function job_state_change(field, new_value, old_value)
-    classes.CustomDefenseGroups:clear()
-    classes.CustomDefenseGroups:append(state.ExtraDefenseMode.current)
-    if state.EquipShield.value == true then
-        classes.CustomDefenseGroups:append(state.DefenseMode.current .. 'Shield')
-    end
+    -- classes.CustomDefenseGroups:clear()
+    -- classes.CustomDefenseGroups:append(state.ExtraDefenseMode.current)
+    -- if state.EquipShield.value == true then
+        -- classes.CustomDefenseGroups:append(state.DefenseMode.current .. 'Shield')
+    -- end
 
-    classes.CustomMeleeGroups:clear()
-    classes.CustomMeleeGroups:append(state.ExtraDefenseMode.current)
+    -- classes.CustomMeleeGroups:clear()
+    -- classes.CustomMeleeGroups:append(state.ExtraDefenseMode.current)
 end
 
 -------------------------------------------------------------------------------------------------------------------
