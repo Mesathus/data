@@ -129,7 +129,7 @@ function init_gear_sets()
         hands="Hieros Mittens",ring1="Ephedra Ring",
         legs="Academic's pants +2", feet="Gendewitha Galoshes"}
 
-    sets.midcast['Enhancing Magic'] = {sub = "Ammurapi shield",
+    sets.midcast['Enhancing Magic'] = {main="Daybreak", sub = "Ammurapi shield",
 		head = "Telchine cap", neck = "Voltsurge torque", ear1 = "Etiolation earring", ear2 = "Loquacious earring",
 		body = "Telchine Chasuble", hands = "Telchine gloves", ring1="Kishar ring", ring2="Stikini ring +1",
 		back = "Intarabus's cape", waist = "Embla sash", legs = "Telchine Braconi",feet = "Telchine pigaches" }
@@ -244,7 +244,7 @@ function init_gear_sets()
 
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 
-	sets.idle = {main="Akademos",sub="Niobid strap",ammo="Incantor Stone",
+	sets.idle = {main="Akademos",sub="Niobid strap",ammo="Homiliary",
         head="Befouled crown",neck="Argute stole +2",ear1="Etiolation Earring",ear2="Loquacious Earring",
         body="Amalric doublet +1",hands="Volte gloves",ring1="Sheltered Ring",ring2="Defending Ring",
         back="Moonlight cape",waist="Hierarch Belt",legs="Volte brais",feet="Herald's Gaiters"}	
@@ -259,7 +259,7 @@ function init_gear_sets()
         -- body="Amalric doublet +1",hands="Volte gloves",ring1="Sheltered Ring",ring2="Defending Ring",
         -- back="Moonlight cape",waist="Hierarch Belt",legs="Volte brais",feet="Herald's Gaiters"}
 		
-	sets.idle.Myrkr = {ammo="Incantor Stone",
+	sets.idle.Myrkr = {ammo="Homiliary",
         head="Befouled crown",neck="Argute stole +2",ear1="Etiolation Earring",ear2="Loquacious Earring",
         body="Amalric doublet +1",hands="Volte gloves",ring1="Sheltered Ring",ring2="Defending Ring",
         back="Moonlight cape",waist="Hierarch Belt",legs="Volte brais",feet="Herald's Gaiters"}
@@ -331,7 +331,7 @@ function init_gear_sets()
     sets.buff['Celerity'] = {feet="Pedagogy Loafers"}
     sets.buff['Alacrity'] = {feet="Pedagogy Loafers"}
 
-    sets.buff['Klimaform'] = {feet="Savant's Loafers +2"}
+    sets.buff['Klimaform'] = {feet="Arbatel Loafers +1"}
 
     sets.buff.FullSublimation = {head="Academic's Mortarboard +2",ear1="Savant's Earring",waist="Embla Sash"}
     sets.buff.PDTSublimation = {head="Academic's Mortarboard +2",ear1="Savant's Earring"}

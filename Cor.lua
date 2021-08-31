@@ -152,9 +152,9 @@ function init_gear_sets()
 		back=gear.CorLeadenCape,waist="Fotia belt",legs="Meghanada chausses +2",feet="Lanun bottes +3" }
 
 
-    sets.precast.WS['Wildfire'] = {head={ name="Herculean Helm", augments={'"Mag.Atk.Bns."+24','"Fast Cast"+6','STR+7','Mag. Acc.+14',}},
+    sets.precast.WS['Wildfire'] = {head="Nyame helm",
 		body="Lanun Frac +3",
-		hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}},
+		hands="Nyame gauntlets",
 		legs="Nyame flanchard",
 		feet="Lanun Bottes +3",
 		neck="Sanctity Necklace",
@@ -173,7 +173,7 @@ function init_gear_sets()
     
     sets.precast.WS['Leaden Salute'] = {
 		head="Pixie Hairpin +1", neck="Commodore charm +2", left_ear="Friomisi Earring", right_ear="Moonshade Earring",
-		body="Lanun Frac +3", hands="Carmine Fin. Ga. +1", left_ring="Dingir Ring", right_ring="Archon Ring",
+		body="Lanun Frac +3", hands="Nyame gauntlets", left_ring="Dingir Ring", right_ring="Archon Ring",
 		back=gear.CorLeadenCape,
 		legs="Nyame flanchard",
 		waist="Orpheus's sash", feet="Lanun Bottes +3"
@@ -181,7 +181,7 @@ function init_gear_sets()
 		
 	sets.precast.WS['Savage Blade'] = {
         head="Nyame helm",neck="Commodore charm +2",ear2="Moonshade Earring",ear1="Ishvara Earring",
-        body="Nyame mail",	hands="Meghanada gloves +2",ring1="Regal Ring",ring2="Epaminondas's ring",
+        body="Nyame mail",	hands="Nyame gauntlets",ring1="Regal Ring",ring2="Epaminondas's ring",
         back=gear.CorSavageCape,waist="Kentarch Belt +1",legs="Nyame Flanchard",feet="Lanun Bottes +3"}
 		
 	sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS['Wildfire'], {})

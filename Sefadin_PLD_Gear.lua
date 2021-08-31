@@ -278,8 +278,21 @@ function init_gear_sets()
     } --115SIRD
  
  
-    sets.precast.FC.SIRD = set_combine(precast.FC, {
-    }) --115SIRD
+    sets.precast.FC.SIRD = {Main="Sakpata's Sword", --10
+        Ammo="Impatiens", --2QM
+        Head="Carmine Mask +1", --14
+        Neck="Voltsurge Torque", --4       
+        Ear1="Loquacious Earring", --2
+        Ear2="Etiolation Earring", --1
+        Body="Reverence Surcoat +2", --5 -- +3=10
+        Hands="Leyline Gloves", --8
+        Ring1="Prolix Ring", -- 3
+        Legs="Arjuna Breeches", --4
+        Feet="Carmine Greaves +1", --5 + AUG
+        Waist="Creed Baudrier", --40HP
+        back={ name="Rudianos's Mantle", augments={'"Fast Cast"+10',}}, --10FC
+        Ring2="Kishar Ring", --  4FC --70HP 
+		}--115SIRD
  
     sets.midcast.Flash.SIRD = {--Merits 10SIRD
         Main="Brilliance", --14 Enm
@@ -389,7 +402,7 @@ function init_gear_sets()
         Ring1="Defending Ring",
         Ring2="Moonlight Ring",
         Back="Moonlight Cape",
-        Waist="Flume Belt +1",
+        Waist="Flume Belt",
         Legs="Carmine Cuisses +1",
         Feet="Souveran Schuhs +1",
     }
@@ -406,7 +419,7 @@ function init_gear_sets()
         Ring1="Defending Ring",
         Ring2="Moonlight Ring",
         Back="Moonlight Cape",
-        Waist="Flume Belt +1",
+        Waist="Flume Belt",
         Legs="Souveran diechlings +1",
         Feet="Souveran Schuhs +1",
 	}
@@ -449,7 +462,7 @@ function init_gear_sets()
         Ring1="Defending Ring",
         Ring2="Moonlight Ring",
         Back="Moonlight Cape",
-        Waist="Flume Belt +1",
+        Waist="Flume Belt",
         Legs="Carmine Cuisses +1",
         Feet="Souveran Schuhs +1",
     }
@@ -688,7 +701,7 @@ function init_gear_sets()
     sets.buff.Doom = {ring1="Purity Ring",riing2="Eshmun's Ring",waist="Gishdubar sash"}
     sets.Warp = {ring1="Dim. Ring (Holla)",ring2="Warp Ring"}
     sets.CP = {back="Mecisto. Mantle"}
-    sets.MP = {back="Rudianos's Mantle",Ear1="Ethereal Earring",Waist="Flume Belt +1",Ammo="Homiliary",}
+    sets.MP = {back="Rudianos's Mantle",Ear1="Ethereal Earring",Waist="Flume Belt",Ammo="Homiliary",}
     sets.Weapon = {}
     sets.Neck = {Neck=""} --Locks Dynamis Neck for Rank Point Farming
 	sets.Aegis = {sub="Aegis"}
