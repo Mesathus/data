@@ -75,9 +75,9 @@ function init_gear_sets()
 
   -- Fast cast sets for spells
   sets.precast.FC = {
-    head="Rawhide Mask",neck="Orunmila's Torque",ear1="Loquacious Earring",
+    head="Rawhide Mask",neck="Voltsurge Torque",ear1="Loquacious Earring", ear2="Etiolation earring",
     body="Anhur Robe",hands=gear.taeon_hands_ta,ring1="Veneficium Ring",ring2="Prolix Ring",
-    back="Swith Cape",waist="Hurch'lan Sash",legs=gear.taeon_legs_ta,feet="Regal Pumps +1"
+    back="Fi follet cape +1",waist="Hurch'lan Sash",legs=gear.taeon_legs_ta,feet="Regal Pumps +1"
   }
 
   sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads"})
@@ -182,7 +182,7 @@ function init_gear_sets()
   sets.idle.Pet.Engaged.Heal = sets.idle.Pet.Engaged.Magic
 
  	sets.idle.Pet.Engaged.Tank = set_combine(sets.idle.Pet.Engaged, {main="Midnights",ammo="Automat. Oil +3",
-		head="Anwig Salade",neck="Shepherd's chain",ear1="Rimeice Earring",ear2="Domesticator's Earring",
+		head="Anwig Salade",neck="Shulmanu collar",ear1="Rimeice Earring",ear2="Domesticator's Earring",
 		body="Rao Togi",hands="Rao Kote +1",ring1="Defending Ring",ring2="Fortified Ring",
 		back="Visucius's mantle",waist="Isa Belt",legs="Rao Haidate +1",feet="Rao Sune-Ate"})
   -- Engaged sets
@@ -195,9 +195,9 @@ function init_gear_sets()
   -- Normal melee group
   sets.engaged = {
     ammo="Automat. Oil +3",
-    head="Hizamaru Somen +1", body="Hiza. Haramaki +1", hands="Hizamaru Kote +1",
-    legs="Hiza. Hizayoroi +1", feet="Herculean boots", neck="Clotharius Torque", waist="Olseni belt", back="Visucius's mantle",
-    left_ear="Digni. Earring", right_ear="Cessance Earring", left_ring="Rajas Ring", right_ring="Ramuh Ring +1"}
+    head="Mpaca's cap",neck="Bathy choker +1",ear1="Mache Earring +1",ear2="Telos Earring",
+        body="Mpaca's doublet",hands="Mpaca's gloves",ring1="Niqmaddu Ring",ring2="Gere Ring",
+        back="Visucius's mantle",waist="Moonbow belt +1",legs="Mpaca's hose",feet="Mpaca's boots"}
 
   sets.engaged.Acc = set_combine(sets.engaged, {
     head="Ptica Headgear",neck="Subtlety Spectacles",ear1="Zennaroi Earring",

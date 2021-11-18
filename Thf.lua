@@ -57,11 +57,14 @@ function user_setup()
 	gear.FCHat =  {name="Herculean Helm", augments={'"Mag.Atk.Bns."+24','"Fast Cast"+6','STR+7','Mag. Acc.+14'}}
 	gear.CapeCrit = {name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10'}}
 	gear.CapeSTP = {name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}}
+	gear.CapeStr = { name="Toutatis's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%'}}
 
     -- Additional local binds
     send_command('bind ^` input /ja "Flee" <me>')
     send_command('bind ^= gs c cycle treasuremode')
     send_command('bind !- gs c cycle targetmode')
+	send_command('bind !f9 gs c cycle WeaponskillMode') --Alt + F9
+	send_command('bind @f9 gs c cycle RangedMode') --Windows + F9
 
     select_default_macro_book()
 end
@@ -70,6 +73,8 @@ end
 function user_unload()
     send_command('unbind ^`')
     send_command('unbind !-')
+	send_command('unbind !f9')
+	send_command('unbind @f9')
 end
 
 
@@ -110,7 +115,7 @@ function init_gear_sets()
 	sets.precast.JA['Mug'] = {ammo="C. Palug Stone",
 		head="Mummu Bonnet +2", neck="Asn. Gorget +2", ear1="Odr Earring", ear2="Mache Earring +1",
 		body="Mummu Jacket +2", hands="Mummu Wrists +2", ring1="Ilabrat Ring", ring2="Regal Ring",
-		back= gear.CapeWSD, waist="Chaac Belt", legs="Mummu Kecks +2", feet="Mummu Gamash. +2"}
+		back="Sacro Mantle", waist="Chaac Belt", legs="Mummu Kecks +2", feet="Mummu Gamash. +2"}
 
     sets.precast.JA['Sneak Attack'] = sets.buff['Sneak Attack']
     sets.precast.JA['Trick Attack'] = sets.buff['Trick Attack']
@@ -127,8 +132,8 @@ function init_gear_sets()
 
 
     -- Fast cast sets for spells
-    sets.precast.FC = {ammo="Sapience orb",head = gear.FCHat,
-		neck="Voltsurge torque",ear1="Etiolation earring",ear2="Loquacious Earring",
+    sets.precast.FC = {ammo="Sapience orb",
+		head = gear.FCHat,neck="Voltsurge torque",ear1="Etiolation earring",ear2="Loquacious Earring",
 		body="Dread Jupon",hands="Leyline Gloves",ring1="Prolix Ring",
 		legs="Rawhide trousers"}
 
@@ -145,7 +150,7 @@ function init_gear_sets()
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {ammo="Cath Palug stone",
         head="Pillager's Bonnet +3",neck="Fotia Gorget",ear1="Ishvara Earring",ear2="Moonshade Earring",
-        body="Herculean vest",hands="Meghanada gloves +2",ring1="Regal Ring",ring2="Ilabrat Ring",
+        body="Nyame mail",hands="Meghanada gloves +2",ring1="Regal Ring",ring2="Ilabrat Ring",
         back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}},waist="Fotia Belt",
 		legs="Plunderer's culottes +3",feet="Nyame Sollerets"}
     sets.precast.WS.Acc = set_combine(sets.precast.WS, {ammo="Honed Tathlum"})
@@ -170,7 +175,7 @@ function init_gear_sets()
         body ="Plunderer's vest +3",hands="Mummu wrists +2",
 		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10'}},ring2="Mummu Ring",
 		legs="Pillager's culottes +3",feet="Adhemar Gamashes +1"})
-    sets.precast.WS['Evisceration'].Acc = set_combine(sets.precast.WS['Evisceration'])
+    sets.precast.WS['Evisceration'].Acc = set_combine(sets.precast.WS['Evisceration'], {body="Gleti's Cuirass", legs="Gleti's breeches"})
     sets.precast.WS['Evisceration'].Mod = set_combine(sets.precast.WS['Evisceration'])
     sets.precast.WS['Evisceration'].SA = set_combine(sets.precast.WS['Evisceration'].Mod, {head = "Pillager's Bonnet +3"})
     sets.precast.WS['Evisceration'].TA = set_combine(sets.precast.WS['Evisceration'].Mod, {head = "Pillager's Bonnet +3"})
@@ -220,7 +225,7 @@ function init_gear_sets()
 		back={ name="Toutatis's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%'}},		
 		})
 
-    sets.precast.WS['Aeolian Edge'] = {ammo="Pemphredo Tathlum",
+    sets.precast.WS['Aeolian Edge'] = {ammo="Ghastly Tathlum +1",
 		head="Nyame helm",
 		body="Nyame mail",
 		hands="Nyame gauntlets",
@@ -241,6 +246,8 @@ function init_gear_sets()
 	sets.precast.WS['Cyclone'] = set_combine(sets.precast.WS['Aeolian Edge'])
 
     sets.precast.WS['Aeolian Edge'].TH = set_combine(sets.precast.WS['Aeolian Edge'], sets.TreasureHunter)
+	
+	sets.precast.WS['Shining Strike'] = set_combine(sets.precast.WS['Aeolian Edge'], {back=gear.CapeStr})
 
     sets.precast.WS['Last Stand'] = {
         head="Nyame helm",neck="Fotia gorget",ear1="Enervating earring",ear2="Telos Earring",
@@ -259,7 +266,7 @@ function init_gear_sets()
 
     -- Specific spells
     sets.midcast.Utsusemi = {ammo="Sapience orb",{ name="Herculean Helm", augments={'"Mag.Atk.Bns."+24','"Fast Cast"+6','STR+7','Mag. Acc.+14',}},
-		neck="Voltsurge torque",ear1="Etiolation earring",ear2="Loquacious Earring",body="Samnuha coat",
+		neck="Voltsurge torque",ear1="Etiolation earring",ear2="Loquacious Earring",body="Dread jupon",
 		hands="Leyline Gloves",ring1="Prolix Ring",legs="Rawhide trousers"}
 		
 	sets.midcast['Phalanx'] = set_combine(sets.midcast.FastRecast, {
@@ -268,6 +275,8 @@ function init_gear_sets()
 		hands={ name="Taeon Gloves", augments={'Phalanx +3',}},left_ring="Stikini Ring +1",right_ring="Stikini Ring +1",
 		waist="Olympus Sash",back="Merciful Cape",legs={ name="Taeon Tights", augments={'Accuracy+20 Attack+20','"Triple Atk."+2','Phalanx +3',}},
 		feet={ name="Taeon Boots", augments={'Phalanx +3',}}})
+		
+	sets.midcast['Stoneskin'] = set_combine(sets.midcast.FastRecast, {neck="Stone Gorget"})
 		
 	sets.midcast['Dark Magic'] = set_combine(sets.midcast.FastRecast, {
 		neck="Incanter's Torque",
@@ -390,14 +399,13 @@ function init_gear_sets()
 	sets.engaged.Hybrid = {ammo="Yamarang",
         head="Malignance chapeau",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Telos Earring",
         body="Malignance tabard",hands="Malignance gloves",ring1="Hetairoi Ring",ring2="Gere Ring",
-        back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%'}},
-		waist="Reiki Yotai",legs="Malignance tights",feet="Malignance boots"}
+        back=gear.CapeSTP,waist="Reiki Yotai",legs="Malignance tights",feet="Malignance boots"}
 		
-	sets.engaged.HybridSB = {ammo="Yamarang",
-        head="Adhemar bonnet +1",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Dignitary's Earring",
-        body="Malignance tabard",hands="Malignance gloves",ring1="Chirich Ring +1",ring2="Chirich Ring +1",
+	sets.engaged.HybridSB = {ammo="Expeditious pinion",  --7 SB
+        head="Malignance chapeau",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Dignitary's Earring",  --5 SB 5 SB2
+        body="Malignance tabard",hands="Malignance gloves",ring1="Chirich Ring +1",ring2="Chirich Ring +1",  --20 SB
         back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%'}},
-		waist="Reiki Yotai",legs="Volte tights",feet="Volte spats"}
+		waist="Reiki Yotai",legs="Gleti's breeches",feet="Volte spats"}  --16 SB
 		
 	sets.engaged.DT = {ammo="Yamarang",
         head="Malignance chapeau",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Telos Earring",
@@ -447,14 +455,7 @@ end
 
 function job_precast(spell, action, spellMap, eventArgs)
          
--- Used to overwrite Moonshade Earring if TP is more than 2750.
-    if spell.type == 'WeaponSkill' then
-		if player.tp > 1750 and player.equipment.sub == "Fusetto +3" then
-			equip({ear2 = "Mache Earring +1"})
-        elseif player.tp > 2750 then
-			equip({ear2 = "Mache Earring +1"})
-        end
-    end
+
      
 end
 
@@ -465,6 +466,15 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     elseif spell.english=='Sneak Attack' or spell.english=='Trick Attack' or spell.type == 'WeaponSkill' then
         if state.TreasureMode.value == 'SATA' or state.TreasureMode.value == 'Fulltime' then
             equip(sets.TreasureHunter)
+        end
+    end
+	
+	-- Used to overwrite Moonshade Earring if TP is more than 2750.
+    if spell.type == 'WeaponSkill' then	
+		if player.tp > 1750  and player.equipment.sub == "Fusetto +3" then
+			equip({ear2 = "Mache Earring +1"})
+        elseif player.tp > 2750 then
+			equip({ear2 = "Mache Earring +1"})
         end
     end
 end
@@ -636,9 +646,9 @@ end
 -- Function to lock the ranged slot if we have a ranged weapon equipped.
 function check_range_lock()
     if player.equipment.range ~= 'empty' then
-        disable('range', 'ammo')
+        disable('ranged', 'ammo')
     else
-        enable('range', 'ammo')
+        enable('ranged', 'ammo')
     end
 end
 

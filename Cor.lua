@@ -42,10 +42,10 @@ function user_setup()
     state.CastingMode:options('Normal', 'Resistant')
     state.IdleMode:options('Normal', 'PDT', 'Refresh')
 
-    gear.RAbullet = "Chrono Bullet"
-    gear.WSbullet = "Chrono Bullet"
+    gear.RAbullet = "Decimating Bullet"
+    gear.WSbullet = "Decimating Bullet"
     gear.MAbullet = "Chrono Bullet"
-    gear.QDbullet = "Chrono Bullet"
+    gear.QDbullet = "Decimating Bullet"
 	gear.TrialBullet = "Bronze Bullet"
 	gear.CorLeadenCape = {name="Camulus's Mantle", augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+10','Weapon skill damage +10%',}}
 	gear.CorSavageCape = {name="Camulus's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+5','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
@@ -275,12 +275,12 @@ function init_gear_sets()
     
     -- Normal melee group
     sets.engaged = {ammo=gear.RAbullet,
-        head="Adhemar bonnet +1",neck="Iskur gorget",ear1="Brutal Earring",ear2="Tripudio Earring",
+        head="Adhemar bonnet +1",neck="Iskur gorget",ear1="Brutal Earring",ear2="Telos Earring",
         body="Adhemar jacket +1",hands="Adhemar Wristbands +1",ring1="Rajas Ring",ring2="Epona's Ring",
         back=gear.CorMeleeCape,waist="Kentarch belt +1",legs="Malignance tights",feet="Malignance boots"}
     
     sets.engaged.Acc = {ammo=gear.RAbullet,
-        head="Adhemar bonnet +1",neck="Lissome Necklace",ear1="Brutal Earring",ear2="Tripudio Earring",
+        head="Adhemar bonnet +1",neck="Lissome Necklace",ear1="Brutal Earring",ear2="Telos Earring",
         body="Adhemar jacket +1",hands="Adhemar Wristbands +1",ring1="Rajas Ring",ring2="Epona's Ring",
         back=gear.CorMeleeCape,waist="Kentarch belt +1",legs="Malignance tights",feet="Malignance boots"}
 
@@ -516,11 +516,11 @@ function do_bullet_checks(spell, spellMap, eventArgs)
     end
     
     -- Don't allow shooting or weaponskilling with ammo reserved for quick draw.
-    if spell.type ~= 'CorsairShot' and bullet_name == gear.QDbullet and available_bullets.count <= bullet_min_count then
-        add_to_chat(104, 'No ammo will be left for Quick Draw.  Cancelling.')
-        eventArgs.cancel = true
-        return
-    end
+    -- if spell.type ~= 'CorsairShot' and bullet_name == gear.QDbullet and available_bullets.count <= bullet_min_count then
+        -- add_to_chat(104, 'No ammo will be left for Quick Draw.  Cancelling.')
+        -- eventArgs.cancel = true
+        -- return
+    -- end
     
     -- Low ammo warning.
     if spell.type ~= 'CorsairShot' and state.warned.value == false

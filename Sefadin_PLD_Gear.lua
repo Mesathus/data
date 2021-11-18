@@ -118,10 +118,11 @@ function init_gear_sets()
      
     sets.precast.FC = {
         Main="Sakpata's Sword", --10
+		sub="Srivatsa",
         Ammo="Impatiens", --2QM
         Head="Carmine Mask +1", --14
         Neck="Voltsurge Torque", --4       
-        Ear1="Loquacious Earring", --2
+        Ear1="Tuisto Earring", --2
         Ear2="Etiolation Earring", --1
         Body="Reverence Surcoat +2", --5 -- +3=10
         Hands="Leyline Gloves", --8
@@ -187,8 +188,8 @@ function init_gear_sets()
         feet="Nyame Sollerets",
         neck="Caro Necklace",
         waist="Sailfi Belt +1",
-        ear1="Moonshade Earring",
-        ear2="Thrud Earring",
+        left_ear="Moonshade Earring",
+        right_ear="Thrud Earring",
         Ring1="Epaminondas's Ring",
         Ring2="Rufescent Ring",
         back={ name="Rudianos's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}},
@@ -327,7 +328,7 @@ function init_gear_sets()
         Ammo="Sapience Orb", --2FC, 0SIRD, 0DT
         Head="Carmine Mask +1", --14FC
         Neck="Voltsurge Torque", --5FC, 0SIRD, 0DT
-        Ear1="Odnowa Earring",
+        Ear1="Tuisto Earring",
         Ear2="Odnowa Earring +1",
         Body="Reverence Surcoat +2", --5FC, 0SIRD, 10DT
         Hands="Leyline Gloves", --8FC
@@ -362,7 +363,7 @@ function init_gear_sets()
         Ammo="Sapience Orb", --2
         Head="Loess Barbuta +1", --9~14
         Neck="Moonlight Necklace", --15
-        Ear1="Odnowa Earring",
+        Ear1="Tuisto Earring",
         Ear2="Odnowa Earring +1",
         Body="Souveran Cuirass +1", --20
         Hands="Yorium Gauntlets", --12
@@ -395,7 +396,7 @@ function init_gear_sets()
         Ammo="Homiliary",
         Head="Souveran Schaller +1",
         Neck="Loricate Torque +1",
-        ear1="Cryptic Earring",
+        ear1="Tuisto Earring",
         ear2="Odnowa Earring +1",
         Body="Souveran Cuirass +1",
         Hands="Souveran Handschuhs +1",
@@ -412,7 +413,7 @@ function init_gear_sets()
         Ammo="Homiliary",
         Head="Souveran Schaller +1",
         Neck="Loricate Torque +1",
-        ear1="Cryptic Earring",
+        ear1="Tuisto Earring",
         ear2="Odnowa Earring +1",
         Body="Souveran Cuirass +1",
         Hands="Souveran Handschuhs +1",
@@ -429,7 +430,7 @@ function init_gear_sets()
 		ammo="Eluder's Sachet",
 		head="Sakpata's Helm",
 		neck="Unmoving Collar +1",
-		ear1="Cryptic Earring",
+		ear1="Tuisto Earring",
 		ear2="Odnowa Earring +1",
 		body="Sakpata's Plate",
 		hands="Sakpata's Gauntlets",
@@ -455,7 +456,7 @@ function init_gear_sets()
         Ammo="Homiliary",
         Head="Souveran Schaller +1",
         Neck="Loricate Torque +1",
-        ear1="Cryptic Earring",
+        ear1="Tuisto Earring",
         ear2="Odnowa Earring +1",
         Body="Souveran Cuirass +1",
         Hands="Souveran Handschuhs +1",
@@ -472,21 +473,23 @@ function init_gear_sets()
     ------------------------------------------------------------------------------------------------
 -- This is a Set that would only be used when you are NOT Dual Wielding.
 -- There are no haste parameters set for this build, because you wouldn't be juggling DW gear, you would always use the same gear, other than Damage Taken and Accuracy sets which ARE included below.
-    sets.engaged = {
-        ammo="Aurgelmir Orb +1",
-        Head="Sakpata's Helm", --7
-        Body="Sakpata's Breastplate", --10
-        Hands="Sakpata's Gauntlets", --8
-        Legs="Sakpata's Cuisses", --9
-        Feet="Sakpata's Leggings", --6
-        neck="Combatant's Torque",
-        waist="Sailfi Belt +1",
-        ear1="Cessance Earring",
-        ear2="Brutal Earring",
-        Ring1="Moonlight Ring",
-        Ring2="Hetairoi Ring",
-        back={ name="Rudianos's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10',}},
-    }
+    sets.engaged = sets.idle.Pulling
+	
+	-- sets.engaged = {
+        -- ammo="Aurgelmir Orb +1",
+        -- Head="Sakpata's Helm", --7
+        -- Body="Sakpata's Breastplate", --10
+        -- Hands="Sakpata's Gauntlets", --8
+        -- Legs="Sakpata's Cuisses", --9
+        -- Feet="Sakpata's Leggings", --6
+        -- neck="Combatant's Torque",
+        -- waist="Sailfi Belt +1",
+        -- ear1="Cessance Earring",
+        -- ear2="Brutal Earring",
+        -- Ring1="Moonlight Ring",
+        -- Ring2="Hetairoi Ring",
+        -- back={ name="Rudianos's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10',}},
+    -- }
  
     ------------------------------------------------------------------------------------------------
     -------------------------------------- Dual Wield Sets -----------------------------------------
@@ -523,7 +526,7 @@ function init_gear_sets()
     --------------------------------------- Accuracy Sets ------------------------------------------
     ------------------------------------------------------------------------------------------------
 -- Define three tiers of Accuracy.  These sets are cycled with the F9 Button to increase accuracy in stages as desired.
-    sets.engaged.Acc1 = {Ammo="Amar Cluster",Neck="Decimus Torque",Waist="Eschan Stone"} --1118
+    sets.engaged.Acc1 = {} --1118
     sets.engaged.Acc2 = {} --1151
     sets.engaged.Acc3 = {} --1203
 -- Base Shield
@@ -727,12 +730,13 @@ function job_precast(spell, action, spellMap, eventArgs)
         end
     end
      
--- Used to overwrite Moonshade Earring if TP is more than 2750.
-    if spell.type == 'WeaponSkill' then
-        if player.tp > 2750 then
-        equip({ear2 = "Telos Earring"})
-        end
-    end
+-- Used to overwrite Moonshade Earring if TP is more than 2750.  Moved to post_precast
+    -- if spell.type == 'WeaponSkill' then
+        -- if player.tp > 275 then
+			-- add_to_chat('Using Telos')
+			-- equip({left_ear = "Telos Earring"})
+        -- end
+    -- end
      
 end
  
@@ -740,6 +744,13 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     if spell.type=='Waltz' and spell.target.type == 'SELF' then
         equip(sets.precast.WaltzSelf)
     end
+	
+	if spell.type == 'WeaponSkill' then
+        if player.tp > 2750 then
+			equip({left_ear = "Telos Earring"})
+        end
+    end
+	
 end
  
 -------------------------------------------------------------------------------------------------------------------
@@ -896,32 +907,52 @@ end
 -- Function to display the current relevant user state when doing an update.
 -- Set eventArgs.handled to true if display was handled, and you don't want the default info shown.
 function display_current_job_state(eventArgs)
-    local msg = '[ Melee'
+    
+	local msg = '[ '
+	-- local msg = '[ Melee'
  
-    if state.CombatForm.has_value then
-        msg = msg .. ' (' .. state.CombatForm.value .. ')'
-    end
+    -- if state.CombatForm.has_value then
+        -- msg = msg .. ' (' .. state.CombatForm.value .. ')'
+    -- end
  
-    msg = msg .. ': '
+    -- msg = msg .. ': '
  
-    msg = msg .. state.OffenseMode.value
-    if state.HybridMode.value ~= 'Normal' then
-        msg = msg .. '/' .. state.HybridMode.value
-    end
-    msg = msg .. ' ][ WS: ' .. state.WeaponskillMode.value .. ' ]'
+    -- msg = msg .. state.OffenseMode.value
+    -- if state.HybridMode.value ~= 'Normal' then
+        -- msg = msg .. '/' .. state.HybridMode.value
+    -- end
+    -- msg = msg .. ' ][ WS: ' .. state.WeaponskillMode.value .. ' ]'
  
-    if state.DefenseMode.value ~= 'None' then
-        msg = msg .. '[ Defense: ' .. state.DefenseMode.value .. state[state.DefenseMode.value .. 'DefenseMode'].value .. ' ]'
-    end
+    -- if state.DefenseMode.value ~= 'None' then
+        -- msg = msg .. '[ Defense: ' .. state.DefenseMode.value .. state[state.DefenseMode.value .. 'DefenseMode'].value .. ' ]'
+    -- end
  
     if state.Kiting.value then
         msg = msg .. '[ Kiting Mode: ON ]'
     end
 	
-	if state.ShieldMode.value == 'Aegis' then
-		msg = msg .. '[ Shield: Aegis ] ' 
+	if state.IdleMode.value == 'DT' then
+		msg = msg .. '[ Idle: DT ] '
+	elseif state.IdleMode.value == 'Pulling' then
+		msg = msg .. '[ Idle: Pulling ] '
 	else
-		msg = msg .. '[ Shield: Ochain ] ' 
+		msg = msg .. '[ Idle: Normal ] '
+	end
+	
+	if state.ShieldMode.value == 'Aegis' then
+		msg = msg .. '[ Shield: Aegis ] '
+	elseif state.ShieldMode.value == 'Ochain' then
+		msg = msg .. '[ Shield: Ochain ] '
+	else
+		msg = msg .. '[ Shield: Srivatsa ] '
+	end
+	
+	if state.CastingMode.value == 'SIRD' then
+		msg = msg .. '[ Casting: SIRD ]'
+	elseif state.CastingMode.value == 'HPBAL' then
+		msg = msg .. '[ Casting: HPBAL ]'
+	else
+		msg = msg .. '[ Casting: Normal ]'
 	end
 	
     msg = msg .. ' ]'

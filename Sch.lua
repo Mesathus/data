@@ -126,8 +126,8 @@ function init_gear_sets()
 
     sets.midcast.Cursna = {
         neck="Malison Medallion",
-        hands="Hieros Mittens",ring1="Ephedra Ring",
-        legs="Academic's pants +2", feet="Gendewitha Galoshes"}
+        hands="Hieros Mittens", ring1="Stikini Ring +1", ring2="Stikini Ring +1",--ring1="Ephedra Ring",
+        legs="Academic's pants +2", feet="Vanya clogs"}
 
     sets.midcast['Enhancing Magic'] = {main="Daybreak", sub = "Ammurapi shield",
 		head = "Telchine cap", neck = "Voltsurge torque", ear1 = "Etiolation earring", ear2 = "Loquacious earring",
@@ -136,7 +136,7 @@ function init_gear_sets()
 		
 	sets.midcast.Haste = set_combine(sets.midcast['Enhancing Magic'])
 
-    sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {waist="Siegel Sash"})
+    sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {neck="Stone Gorget",waist="Siegel Sash", legs="Shedir Seraweels"})
 
     sets.midcast.Storm = set_combine(sets.midcast['Enhancing Magic'], {})
 
@@ -149,64 +149,64 @@ function init_gear_sets()
 
     -- Custom spell classes
     sets.midcast.MndEnfeebles = {ammo="Pemphredo tathlum",
-        neck="Incanter's Torque",ear1="Regal Earring",ear2="Malignance Earring",
+        neck="Argute Stole +2",ear1="Regal Earring",ear2="Malignance Earring",
         body="Cohort cloak +1",hands="Academic's Gloves +2",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
         back="Lugh's cape",waist="Luminary Sash",legs="Academic's pants +2",feet="Academic's loafers +2"}
 
     sets.midcast.IntEnfeebles = {ammo="Pemphredo tathlum",
-        head="Academic's mortarboard +2",neck="Incanter's Torque",ear1="Regal Earring",ear2="Malignance Earring",
+        head="Academic's mortarboard +2",neck="Argute Stole +2",ear1="Regal Earring",ear2="Malignance Earring",
         body="Academic's gown +2",hands="Academic's Gloves +2",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
         back="Lugh's cape",waist="Luminary Sash",legs="Academic's pants +2",feet="Academic's loafers +2"}
 
     sets.midcast.ElementalEnfeeble = sets.midcast.IntEnfeebles
 
     sets.midcast['Dark Magic'] = {main="Akademos",sub="Enki strap",ammo="Seraphic ampulla",
-        head="Merlinic hood",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Friomisi Earring",
-        body="Amalric doublet +1",hands="Amalric gages +1",ring1="Sangoma Ring",ring2="Shiva Ring +1",
+        head="Merlinic hood",neck="Argute Stole +2",ear1="Regal Earring",ear2="Malignance Earring",
+        body="Amalric doublet +1",hands="Amalric gages +1",ring1="Freke Ring",ring2="Shiva Ring +1",
         back="Lugh's cape",waist="Orpheus's sash",legs="Merlinic shalwar",feet="Merlinic crackows"}
 
     sets.midcast.Kaustra = {main="Akademos",sub="Enki strap",ammo="Seraphic ampulla",
-        head="Merlinic hood",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Friomisi Earring",
-        body="Amalric doublet +1",hands="Amalric gages +1",ring1="Sangoma Ring",ring2="Shiva Ring +1",
+        head="Pixie hairpin +1",neck="Argute Stole +2",ear1="Regal Earring",ear2="Malignance Earring",
+        body="Amalric doublet +1",hands="Amalric gages +1",ring1="Freke Ring",ring2="Archon Ring",
         back="Lugh's cape",waist="Orpheus's sash",legs="Merlinic shalwar",feet="Merlinic crackows"}
 
     sets.midcast.Drain = {main="Akademos",sub="Enki strap",ammo="Seraphic ampulla",
-        head="Merlinic hood",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Friomisi Earring",
-        body="Amalric doublet +1",hands="Amalric gages +1",ring1="Sangoma Ring",ring2="Shiva Ring +1",
+        head="Pixie hairpin +1",neck="Erra pendant",ear1="Regal Earring",ear2="Malignance Earring",
+        body="Amalric doublet +1",hands="Amalric gages +1",ring1="Freke Ring",ring2="Archon Ring",
         back="Lugh's cape",waist="Orpheus's sash",legs="Merlinic shalwar",feet="Merlinic crackows"}
 
     sets.midcast.Aspir = sets.midcast.Drain
 
-    sets.midcast.Stun = {main="Daybreak",sub="Culminus",ammo="Pemphredo tathlum",
-        head="Merlinic hood",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Dignitary's Earring",
-        body="Amalric doublet +1",hands="Jhakri cuffs +2",ring1="Sangoma Ring",ring2="Kishar Ring",
-        back="Bookworm's Cape",waist="Refoccilation stone",legs="Merlinic shalwar",feet="Merlinic crackows"}
+    sets.midcast.Stun = {main="Bunzi's rod",sub="Ammurapi Shield",ammo="Pemphredo tathlum",
+        head="Merlinic hood",neck="Argute Stole +2",ear1="Regal Earring",ear2="Malignance Earring",
+        body="Academic's gown +2",hands="Academic's Gloves +2",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
+        back="Lugh's cape",waist="Luminary Sash",legs="Academic's pants +2",feet="Academic's loafers +2"}
 
     sets.midcast.Stun.Resistant = set_combine(sets.midcast.Stun, {main="Lehbrailg +2"})
 
 
     -- Elemental Magic sets are default for handling low-tier nukes.
-    sets.midcast['Elemental Magic'] = {main="Akademos",sub="Enki strap",ammo="Seraphic ampulla",
-        head="Merlinic hood",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Friomisi Earring",
-        body="Amalric doublet +1",hands="Amalric gages +1",ring1="Sangoma Ring",ring2="Shiva Ring +1",
+    sets.midcast['Elemental Magic'] = {main="Akademos",sub="Enki strap",ammo="Pemphredo tathlum",
+        head="Merlinic hood",neck="Argute Stole +2",ear1="Regal Earring",ear2="Malignance Earring",
+        body="Amalric doublet +1",hands="Amalric gages +1",ring1="Freke Ring",ring2="Shiva Ring +1",
         back="Lugh's cape",waist="Orpheus's sash",legs="Merlinic shalwar",feet="Merlinic crackows"}
 
-    sets.midcast['Elemental Magic'].Resistant = {main="Akademos",sub="Enki strap",ammo="Seraphic ampulla",
-        head="Merlinic hood",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Friomisi Earring",
-        body="Amalric doublet +1",hands="Amalric gages +1",ring1="Sangoma Ring",ring2="Shiva Ring +1",
+    sets.midcast['Elemental Magic'].Resistant = {main="Akademos",sub="Enki strap",ammo="Pemphredo tathlum",
+        head="Merlinic hood",neck="Argute Stole +2",ear1="Regal Earring",ear2="Malignance Earring",
+        body="Amalric doublet +1",hands="Amalric gages +1",ring1="Freke Ring",ring2="Shiva Ring +1",
         back="Lugh's cape",waist="Orpheus's sash",legs="Merlinic shalwar",feet="Merlinic crackows"}
 				
 	sets.midcast['Elemental Magic'].Burst = {main="Akademos",sub="Enki strap",ammo="Pemphredo tathlum",
-        head="Merlinic hood",neck="Argute stole +2",ear1="Barkarole Earring",ear2="Regal Earring",
-        body="Amalric doublet +1",hands="Amalric gages +1",ring1="Mujin band",ring2="Shiva Ring +1",
+        head="Merlinic hood",neck="Argute stole +2",ear1="Regal Earring",ear2="Malignance Earring",
+        body="Amalric doublet +1",hands="Amalric gages +1",ring1="Freke Ring",ring2="Mujin band",
         back="Lugh's cape",waist="Orpheus's sash",legs="Merlinic shalwar",feet="Merlinic crackows"}
 		
-	sets.midcast['Elemental Magic'].Helix = {main="Akademos",sub="Enki strap",ammo="Pemphredo tathlum",
-        head="Merlinic hood",neck="Argute stole +2",ear1="Malignance Earring",ear2="Regal Earring",
+	sets.midcast['Elemental Magic'].Helix = {main="Akademos",sub="Enki strap",ammo="Ghastly tathlum +1",
+        head="Merlinic hood",neck="Argute stole +2",ear1="Regal Earring",ear2="Malignance Earring",
         body="Amalric doublet +1",hands="Amalric gages +1",ring1="Freke Ring",ring2="Shiva Ring +1",
         back="Lugh's cape",waist="Orpheus's sash",legs="Amalric slops +1",feet="Amalric Nails +1"}
 		
-	sets.midcast['Elemental Magic'].Helix.Burst = {main="Akademos",sub="Enki strap",ammo="Pemphredo tathlum",
+	sets.midcast['Elemental Magic'].Helix.Burst = {main="Akademos",sub="Enki strap",ammo="Ghastly tathlum +1",
         head="Merlinic hood",neck="Argute stole +2",ear1="Malignance Earring",ear2="Regal Earring",
         body="Merlinic jubbah",hands="Amalric gages +1",ring1="Freke Ring",ring2="Mujin band",
         back="Lugh's cape",waist="Orpheus's sash",legs="Amalric slops +1",feet="Amalric Nails +1"}
@@ -236,23 +236,23 @@ function init_gear_sets()
     -- Sets to return to when not performing an action.
 
     -- Resting sets
-    sets.resting = {main="Chatoyant Staff",sub="Mephitis Grip",
-        head="Nefer Khat +1",neck="Wiglen Gorget",
-        body="Amalric doublet +1",hands="Serpentes Cuffs",ring1="Sheltered Ring",ring2="Paguroidea Ring",
-        waist="Austerity Belt",legs="Nares Trews",feet="Serpentes Sabots"}
+    sets.resting = {main="Chatoyant Staff",sub="Enki strap",ammo="Homiliary",
+        head="Befouled crown",neck="Argute stole +2",ear1="Etiolation Earring",ear2="Loquacious Earring",
+        body="Amalric doublet +1",hands="Volte gloves",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
+        back="Moonlight cape",waist="Luminary sash",legs="Volte brais",feet="Nyame sollerets"}
 
 
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 
-	sets.idle = {main="Akademos",sub="Niobid strap",ammo="Homiliary",
-        head="Befouled crown",neck="Argute stole +2",ear1="Etiolation Earring",ear2="Loquacious Earring",
-        body="Amalric doublet +1",hands="Volte gloves",ring1="Sheltered Ring",ring2="Defending Ring",
-        back="Moonlight cape",waist="Hierarch Belt",legs="Volte brais",feet="Herald's Gaiters"}	
-	
-    sets.idle.Town = {main="Akademos",sub="Niobid strap",ammo="Incantor Stone",
+	sets.idle = {main="Akademos",sub="Enki strap",ammo="Homiliary",
         head="Befouled crown",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Loquacious Earring",
         body="Amalric doublet +1",hands="Volte gloves",ring1="Sheltered Ring",ring2="Defending Ring",
-        back="Moonlight cape",waist="Hierarch Belt",legs="Volte brais",feet="Herald's Gaiters"}
+        back="Moonlight cape",waist="Luminary sash",legs="Volte brais",feet="Herald's Gaiters"}	
+	
+    sets.idle.Town = {main="Akademos",sub="Enki strap",ammo="Incantor Stone",
+        head="Befouled crown",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Loquacious Earring",
+        body="Amalric doublet +1",hands="Volte gloves",ring1="Sheltered Ring",ring2="Defending Ring",
+        back="Moonlight cape",waist="Luminary sash",legs="Volte brais",feet="Herald's Gaiters"}
 
     -- sets.idle.Field = {main="Daybreak",sub="Genmei shield",ammo="Incantor Stone",
         -- head="Befouled crown",neck="Argute stole +2",ear1="Etiolation Earring",ear2="Loquacious Earring",
@@ -262,7 +262,7 @@ function init_gear_sets()
 	sets.idle.Myrkr = {ammo="Homiliary",
         head="Befouled crown",neck="Argute stole +2",ear1="Etiolation Earring",ear2="Loquacious Earring",
         body="Amalric doublet +1",hands="Volte gloves",ring1="Sheltered Ring",ring2="Defending Ring",
-        back="Moonlight cape",waist="Hierarch Belt",legs="Volte brais",feet="Herald's Gaiters"}
+        back="Moonlight cape",waist="Luminary sash",legs="Volte brais",feet="Herald's Gaiters"}
 
     -- sets.idle.Field.PDT = {ammo="Incantor Stone",
         -- head="Nahtirah Hat",neck="Wiglen Gorget",ear1="Bloodgem Earring",ear2="Loquacious Earring",

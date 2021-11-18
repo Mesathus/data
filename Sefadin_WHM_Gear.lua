@@ -42,7 +42,7 @@ function init_gear_sets()
     sets.precast.FC = {ammo="Sapience orb",
         head="Haruspex Hat +1",neck="Voltsurge torque",ear1="Etiolation Earring",ear2="Loquacious Earring",
         body="Inyanga jubbah +2",hands="Volte gloves",ring1="Prolix Ring",ring2="Kishar Ring",
-        back="Perimede cape",waist="Embla sash",legs="Volte brais",feet="Regal pumps +1"}
+        back="Fi follet cape +1",waist="Embla sash",legs="Volte brais",feet="Regal pumps +1"}
         
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash"})
 
@@ -52,7 +52,7 @@ function init_gear_sets()
 
     sets.precast.FC.StatusRemoval = sets.precast.FC['Healing Magic']
 
-    sets.precast.FC.Cure = set_combine(sets.precast.FC['Healing Magic'], {main="Tamaxchi",sub="Genbu's Shield",ammo="Impatiens"})
+    sets.precast.FC.Cure = set_combine(sets.precast.FC['Healing Magic'], {sub="Genbu's Shield",ammo="Impatiens"})
     sets.precast.FC.Curaga = sets.precast.FC.Cure
     sets.precast.FC.CureSolace = sets.precast.FC.Cure
     -- CureMelee spell map should default back to Healing Magic.
@@ -116,7 +116,7 @@ function init_gear_sets()
 
     sets.midcast.Cursna = {main="Beneficus",sub="Genbu's Shield",
         head="Orison Cap +2",neck="Malison Medallion",
-        body="Orison Bliaud +2",hands="Hieros Mittens",ring1="Stikini ring +1", ring2="Stikini ring +1",
+        body="Orison Bliaud +2",hands="Fanatic gloves",ring1="Stikini ring +1", ring2="Stikini ring +1",
         back="Mending Cape",waist="Goading Belt",legs="Vanya slops",feet="Vanya clogs"}
 
     sets.midcast.StatusRemoval = {
@@ -129,7 +129,7 @@ function init_gear_sets()
 		waist="Embla sash", legs = "Telchine Braconi", feet="Telchine pigaches"}
 
     sets.midcast.Stoneskin = {
-        head="Nahtirah Hat",neck="Nodens gorget",ear2="Loquacious Earring",
+        head="Nahtirah Hat",neck="Stone Gorget",ear2="Loquacious Earring",
         body="Vanir Cotehardie",hands="Dynasty Mitts",
         back="Swith Cape +1",waist="Siegel Sash",legs="Shedir seraweels",feet="Gendewitha Galoshes"}
 
