@@ -263,7 +263,7 @@ function init_gear_sets()
         neck="Malison Medallion",
         hands="Hieros Mittens",ring1="Ephedra Ring"}
 		
-	sets.midcast['Enfeebling Magic'] = {main="Carnwenhan", sub="Ammurapi shield", range="Gjallarhorn",
+	sets.midcast['Enfeebling Magic'] = {main="Daybreak", sub="Ammurapi shield", range="Gjallarhorn",
         head="Brioso Roundlet +3",neck="Moonbow whistle +1",ear1="Regal Earring",ear2="Dignitary's Earring",
         body="Brioso justaucorps +3",hands="Brioso cuffs +3",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
         back=gear.MAccCape,waist="Eschan Stone",legs="Inyanga Shalwar +2",feet="Brioso Slippers +3"}
