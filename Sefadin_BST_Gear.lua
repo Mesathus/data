@@ -232,12 +232,15 @@ function init_gear_sets()
 
     sets.idle.Reraise = set_combine(sets.idle, {head="Twilight Helm",body="Twilight Mail"})
 
-    sets.idle.Pet = sets.idle
+    sets.idle.Pet = {
+        head="Anwig Salade",neck="Shulmanu collar",ear1="Domesticator's Earring",ear2="Rimeice Earring",
+        body="Nyame mail",hands="Totemic Gloves +2",ring1="Defending Ring",ring2="Moonlight Ring",
+        back="Moonlight cape",waist="Isa belt",legs="Nyame Flanchard",feet="Nyame Sollerets"}
 
-    sets.idle.Pet.Engaged = {ammo="Demonry Core",
-        head="Anwig Salade",neck="Ferine Necklace",ear1="Domesticator's Earring",ear2="Sabong Earring",
-        body="Ankusa Jackcoat +1",hands="Totemic Gloves +2",ring1="Angel's Ring",ring2="Angel's Ring",
-        back="Ferine Mantle",waist="Hurch'lan Sash",legs="Ankusa Trousers +1",feet="Armada Sollerets"}
+    sets.idle.Pet.Engaged = {
+        head="Anwig Salade",neck="Shulmanu collar",ear1="Domesticator's Earring",ear2="Rimeice Earring",  --enmerkar earring
+        body="Nyame mail",hands="Totemic Gloves +2",ring1="Defending Ring",ring2="Moonlight Ring",  --gleti hands/AF body
+        back="Moonlight cape",waist="Isa belt",legs="Nyame Flanchard",feet="Nyame Sollerets"}  --tali'ah legs
 
     -- DEFENSE SETS
     sets.defense.PDT = {ammo="Jukukik Feather",
@@ -248,7 +251,7 @@ function init_gear_sets()
     sets.defense.Hybrid = set_combine(sets.defense.PDT, {head="Iuitl Headgear +1",
         back="Mollusca Mantle",waist="Hurch'lan Sash",legs="Iuitl Tights +1",feet="Iuitl Gaiters +1"})
 
-    sets.defense.Killer = set_combine(sets.defense.Hybrid, {body="Ferine Gausape +2"})
+    sets.defense.Killer = set_combine(sets.defense.Hybrid, {})
 
     sets.defense.MDT = set_combine(sets.defense.PDT, {ammo="Sihirik",
         head="Ogier's Helm",ear1="Flashward Earring",ear2="Spellbreaker Earring",
@@ -306,7 +309,7 @@ function init_gear_sets()
     -- Custom buff sets
     --------------------------------------
 
-    sets.buff['Killer Instinct'] = {body="Ferine Gausape +2"}
+    sets.buff['Killer Instinct'] = {}
     
 end
 

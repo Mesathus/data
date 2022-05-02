@@ -81,7 +81,7 @@ function init_gear_sets()
 	-- Ranged sets (snapshot)
 	
 	sets.precast.RA = {
-		head="Amini gapette +1",
+		head="Amini gapette +1", neck="Scout's gorget +2",
 		body="Amini Caban +1",hands="Carmine finger gauntlets +1",
 		back="Lutian Cape",waist="Yemaya Belt",legs="Adhemar kecks +1",feet="Meghanada jambeaux +2"}
 
@@ -89,25 +89,27 @@ function init_gear_sets()
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
 	sets.precast.WS = {
-		head="Orion beret +3",neck="Scout's gorget +2",ear1="Enervating earring",ear2="Moonshade Earring",
-		body="Amini Caban +1",hands="Meghanada gloves +2",ring1="Ilabrat Ring",ring2="Regal Ring",
-		back="Belenus's cape",waist="Fotia belt",legs="Arcadian braccae +3",feet="Arcadian Socks +3" }
+		head="Orion beret +3",neck="Scout's gorget +2",ear1="Enervating earring",ear2="Moonshade Earring",	-- 0,7,4,0
+		body="Amini Caban +1",hands="Meghanada gloves +2",ring1="Ilabrat Ring",ring2="Regal Ring",			-- 0,0,5,0
+		back=gear.AgiWSDCape,waist="Fotia belt",legs="Arcadian braccae +3",feet="Arcadian Socks +3" }		-- 0,0,0,0
 
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {ring1="Cacoethic Ring +1"
 		})
 		
 	sets.precast.WS['Coronach'] = set_combine(sets.precast.WS, {
-		ear1="Ishvara earring", ear2="Sherida earring",
-		body="Nyame mail", ring1="Epaminondas's Ring",
-		feet="Nyame Sollerets"})
+		ear1="Ishvara earring", ear2="Sherida earring",			--0,7,0,5
+		body="Nyame mail", ring1="Epaminondas's Ring",			--0,0,-5,0
+		feet="Nyame Sollerets"})								--0,0,0,0
 		
 	sets.precast.WS['Namas Arrow'] = set_combine(sets.precast.WS, {
 		ear1="Ishvara earring", ear2="Sherida earring",
 		body="Nyame mail", ring1="Epaminondas's Ring",
 		feet="Nyame Sollerets"})
 	
-	sets.precast.WS['Last Stand'] = set_combine(sets.precast.WS, {ear1 = "Ishvara earring", 
-		body="Nyame mail", ring1="Epaminondas's Ring", feet="Nyame sollerets"})
+	sets.precast.WS['Last Stand'] = set_combine(sets.precast.WS, {
+		ear1 = "Ishvara earring", 													-- 0,7,0,0
+		body="Ikenga's vest", ring1="Dingir Ring", 									-- 11,0,0,0
+		feet="Nyame sollerets"})													-- 0,0,0,0
 	
 	sets.precast.WS["Jishnu's Radiance"] = set_combine(sets.precast.WS, {ammo="Chrono arrow",
 		head="Adhemar Bonnet +1", ear1="Odr earring", ear2="Sherida earring",
@@ -117,9 +119,9 @@ function init_gear_sets()
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
 	
 	sets.precast.WS['Trueflight'] = {
-		head="Nyame helm",neck= "Scout's gorget +2", left_ear="Friomisi Earring", right_ear="Moonshade Earring" ,
+		head= "Nyame helm",neck= "Scout's gorget +2", left_ear="Friomisi Earring", right_ear="Moonshade Earring" ,
 		body= "Nyame mail", hands= "Nyame gauntlets", left_ring="Epaminondas's Ring", right_ring="Dingir Ring",
-		back= "Belenus's cape", waist="Orpheus's sash", legs="Nyame Flanchard", feet="Nyame Sollerets"
+		back=gear.AgiWSDCape,waist="Orpheus's sash", legs="Nyame Flanchard", feet="Nyame Sollerets"
     }
 
 	sets.precast.WS['Wildfire'] = set_combine(sets.precast.WS['Trueflight'])
@@ -127,7 +129,7 @@ function init_gear_sets()
 	sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {ammo="Hauksbok arrow",
 		head="Nyame helm",neck="Scout's gorget +2",ear1="Sherida Earring",
 		body="Nyame mail", ring1="Epaminondas's Ring",
-		waist="Kentarch belt +1", legs="Nyame Flanchard", feet="Nyame Sollerets"
+		back=gear.StrWSDCape,waist="Kentarch belt +1", legs="Nyame Flanchard", feet="Nyame Sollerets"
 		})
 
 	--------------------------------------
@@ -145,14 +147,22 @@ function init_gear_sets()
 
 	-- Ranged sets
 
-	sets.midcast.RA = {
-		head="Arcadian beret +3",neck="Iskur Gorget",ear1="Dedition earring",ear2="Telos Earring",
-		body="Arcadian jerkin +3",hands="Malignance gloves",ring1="Ilabrat Ring",ring2="Regal Ring",
-		back="Belenus's Cape",waist="Yemaya Belt",legs="Malignance tights",feet="Malignance boots"}
+	sets.midcast.RA = {    																				-- 3
+		head="Arcadian beret +3",neck="Iskur Gorget",ear1="Dedition earring",ear2="Telos Earring",   	-- ,8,8,5       21
+		body="Arcadian jerkin +3",hands="Malignance gloves",ring1="Ilabrat Ring",ring2="Regal Ring",  	-- 0,12,5,0    17
+		back=gear.AgiWSDCape,waist="Yemaya Belt",legs="Malignance tights",feet="Malignance boots"} 		-- 10,4,10,9     33
+		--54/64 STP
+		-- 66 STP or 36 w/ relic proc for 3 hit assuming 0 STP in WS set
+		-- 148 STP or 119 w/ relic proc for 2 hit
 	
 	sets.midcast.RA.Acc = set_combine(sets.midcast.RA,{
 		ear1="Enervating earring",
 		body ="Orion jerkin +3",ring1="Cacoethic Ring +1"})
+		
+	sets.midcast.RA.Crit = {
+		head="Arcadian beret +3",neck="Scout's gorget +2",ear1="Dedition earring",ear2="Telos Earring",   -- 0, 7,8,5
+		body="Arcadian jerkin +3",hands="Malignance gloves",ring1="Ilabrat Ring",ring2="Regal Ring",  -- 
+		back=gear.AgiWSDCape,waist="Yemaya Belt",legs="Malignance tights",feet="Malignance boots"}
 
 	sets.midcast.RA.Annihilator = set_combine(sets.midcast.RA, {})
 
@@ -160,7 +170,7 @@ function init_gear_sets()
 
 	sets.midcast.RA.Yoichinoyumi = set_combine(sets.midcast.RA, {ammo="Chrono arrow"})
 
-	sets.midcast.RA.Yoichinoyumi.Acc = set_combine(sets.midcast.RA.Acc, {})
+	sets.midcast.RA.Yoichinoyumi.Acc = set_combine(sets.midcast.RA.Acc, {ammo="Chrono arrow"})
 	
 	--------------------------------------
 	-- Idle/resting/defense/etc sets
@@ -192,7 +202,7 @@ function init_gear_sets()
 	sets.defense.MDT = {
 		head="Orion Beret +2",neck="Loricate torque +1",
 		body="Orion Jerkin +2",hands="Orion Bracers +2",ring1="Defending Ring",ring2="Fortified Ring",
-		back="Solemnity Cape",waist="Flume Belt",legs="Nahtirah Trousers",feet="Orion Socks +1"}
+		back="Moonlight Cape",waist="Flume Belt",legs="Nahtirah Trousers",feet="Orion Socks +1"}
 
 	sets.Kiting = {feet="Fajin Boots"}
 

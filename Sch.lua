@@ -116,7 +116,7 @@ function init_gear_sets()
     sets.midcast.Cure = {main="Grioavolr",sub="Enki strap",
         head="Kaykaus mitra +1",neck="Incanter's torque",ear2="Regal earring",
         body="Kaykaus Bliaut +1",hands="Kaykaus cuffs +1",ring1="Stikini ring +1", ring2="Stikini ring +1",
-        back="Solemnity cape",waist ="Luminary sash", legs="Kaykaus tights +1",feet="Kaykaus boots +1"}
+        back="Aurist's cape +1",waist ="Luminary sash", legs="Kaykaus tights +1",feet="Kaykaus boots +1"}
 
     sets.midcast.CureWithLightWeather = set_combine(sets.midcast.Cure, {main="Chatoyant Staff", waist="Hachirin-no-obi"})
 
@@ -264,10 +264,10 @@ function init_gear_sets()
         body="Amalric doublet +1",hands="Volte gloves",ring1="Sheltered Ring",ring2="Defending Ring",
         back="Moonlight cape",waist="Luminary sash",legs="Volte brais",feet="Herald's Gaiters"}
 
-    -- sets.idle.Field.PDT = {ammo="Incantor Stone",
-        -- head="Nahtirah Hat",neck="Wiglen Gorget",ear1="Bloodgem Earring",ear2="Loquacious Earring",
-        -- body="Hagondes Coat",hands="Yaoyotl Gloves",ring1="Defending Ring",ring2="Paguroidea Ring",
-        -- back="Umbra Cape",waist="Hierarch Belt",legs="Nares Trews",feet="Herald's Gaiters"}
+    sets.idle.PDT = {ammo="Incantor Stone",
+        head="Nyame helm",neck="Bathy choker +1",ear1="Etiolation Earring",ear2="Infused Earring",
+        body="Nyame mail",hands="Nyame gauntlets",ring1="Sheltered Ring",ring2="Defending Ring",
+        back="Moonlight cape",waist="Flume Belt",legs="Nyame flanchard",feet="Nyame sollerets"}
 
     -- sets.idle.Field.Stun = {main="Apamajas II",sub="Mephitis Grip",ammo="Incantor Stone",
         -- head="Nahtirah Hat",neck="Aesir Torque",ear1="Psystorm Earring",ear2="Lifestorm Earring",
@@ -282,7 +282,7 @@ function init_gear_sets()
 	sets.idle.Vagary = {ammo="Pemphredo tathlum",
         head="Merlinic hood",neck="Mizukage-no-kubikazari",ear1="Barkarole Earring",ear2="Friomisi Earring",
         body="Amalric doublet +1",hands="Amalric gages +1",ring1="Mujin band",ring2="Locus Ring",
-        back="Seshaw Cape",waist="Refoccilation stone",legs="Merlinic shalwar",feet="Merlinic crackows"}
+        back="Aurist's Cape +1",waist="Refoccilation stone",legs="Merlinic shalwar",feet="Merlinic crackows"}
 
     -- Defense sets
 

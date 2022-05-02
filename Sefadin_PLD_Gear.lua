@@ -124,7 +124,7 @@ function init_gear_sets()
         Neck="Voltsurge Torque", --4       
         Ear1="Tuisto Earring", --2
         Ear2="Etiolation Earring", --1
-        Body="Reverence Surcoat +2", --5 -- +3=10
+        Body="Reverence Surcoat +3", --5 -- +3=10
         Hands="Leyline Gloves", --8
         Ring1="Prolix Ring", -- 3
         Legs="Arjuna Breeches", --4
@@ -240,6 +240,7 @@ function init_gear_sets()
         Hands="Macabre Gauntlets +1",
         Ear1="Nourishing Earring", --6
         Ear2="Mendicant's Earring", --5
+		ring1="Defending Ring",
         Body="Souveran cuirass +1", --15
         Feet="Odyssean Greaves", --7 --20SIRD
     }) --60SIRD, 10Merits, 37/30CurePot
@@ -285,7 +286,7 @@ function init_gear_sets()
         Neck="Voltsurge Torque", --4       
         Ear1="Loquacious Earring", --2
         Ear2="Etiolation Earring", --1
-        Body="Reverence Surcoat +2", --5 -- +3=10
+        Body="Reverence Surcoat +3", --5 -- +3=10
         Hands="Leyline Gloves", --8
         Ring1="Prolix Ring", -- 3
         Legs="Arjuna Breeches", --4
@@ -330,7 +331,7 @@ function init_gear_sets()
         Neck="Voltsurge Torque", --5FC, 0SIRD, 0DT
         Ear1="Tuisto Earring",
         Ear2="Odnowa Earring +1",
-        Body="Reverence Surcoat +2", --5FC, 0SIRD, 10DT
+        Body="Reverence Surcoat +3", --5FC, 0SIRD, 10DT
         Hands="Leyline Gloves", --8FC
         Ring1="Moonlight Ring", --110HP
         Ring2="Moonlight Ring", --110HP
@@ -378,7 +379,7 @@ function init_gear_sets()
      
     sets.midcast.Shell.HPBAL = set_combine(sets.midcast, sets.midcast.HPBAL)
     sets.midcast.Protect.HPBAL = set_combine(sets.midcast, sets.midcast.HPBAL)
-    sets.midcast.Cure.HPBAL = set_combine(sets.midcast.Cure, sets.midcast.HPBAL)
+    sets.midcast.Cure.HPBAL = set_combine(sets.midcast.Cure, sets.midcast.HPBAL, {sub="Aegis"})
     sets.midcast.Phalanx.HPBAL = set_combine(sets.midcast.Phalanx, sets.midcast.HPBAL)
     sets.midcast.Reprisal.HPBAL = set_combine(sets.midcast.Reprisal, sets.midcast.HPBAL)
     sets.midcast.Crusade.HPBAL = set_combine(sets.midcast.Crusade, sets.midcast.HPBAL)

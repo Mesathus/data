@@ -287,8 +287,8 @@ function init_gear_sets()
 
     sets.precast.WS['Chant du Cygne'] = set_combine(sets.precast.WS, {
 		head="Adhemar bonnet +1",neck="Mirage stole +2",ear1="Odr earring", ear2="Mache earring +1",
-		body="Abnoba kaftan",ring2="Begrudging ring",
-		back=gear.CritCape,feet="Adhemar gamashes +1"})    
+		body="Gleti's cuirass",ring2="Begrudging ring",
+		back=gear.CritCape,legs="Gleti's breeches",feet="Adhemar gamashes +1"})    
 
     -- Midcast Sets
     sets.midcast.FastRecast = {ammo="Sapience orb",
@@ -464,12 +464,12 @@ function init_gear_sets()
     sets.defense.PDT = {
         neck="Loricate torque +1",
         body="Malignance tabard",hands="Malignance gloves",ring1="Defending Ring",ring2="Patricius Ring",
-        back="Solemnity Cape", legs="Malignance tights"}
+        back="Moonlight Cape", legs="Malignance tights"}
 
     sets.defense.MDT = {
         neck="Loricate torque +1",
         ring1="Defending Ring",ring2="Fortified Ring",
-        back="Solemnity Cape"}
+        back="Moonlight Cape"}
 
     sets.Kiting = {legs="Carmine cuisses +1"}
 

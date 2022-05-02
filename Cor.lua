@@ -42,10 +42,10 @@ function user_setup()
     state.CastingMode:options('Normal', 'Resistant')
     state.IdleMode:options('Normal', 'PDT', 'Refresh')
 
-    gear.RAbullet = "Decimating Bullet"
-    gear.WSbullet = "Decimating Bullet"
+    gear.RAbullet = "Chrono Bullet"
+    gear.WSbullet = "Chrono Bullet"
     gear.MAbullet = "Chrono Bullet"
-    gear.QDbullet = "Decimating Bullet"
+    gear.QDbullet = "Chrono Bullet"
 	gear.TrialBullet = "Bronze Bullet"
 	gear.CorLeadenCape = {name="Camulus's Mantle", augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+10','Weapon skill damage +10%',}}
 	gear.CorSavageCape = {name="Camulus's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+5','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
@@ -283,6 +283,10 @@ function init_gear_sets()
         head="Adhemar bonnet +1",neck="Lissome Necklace",ear1="Brutal Earring",ear2="Telos Earring",
         body="Adhemar jacket +1",hands="Adhemar Wristbands +1",ring1="Rajas Ring",ring2="Epona's Ring",
         back=gear.CorMeleeCape,waist="Kentarch belt +1",legs="Malignance tights",feet="Malignance boots"}
+		
+	sets.engaged.Hybrid = set_combine(sets.engaged.Acc, {head="Malignance chapeau", 
+		body="Malignance tabard", hands="Malignance gloves", 
+		legs="Malignance tights", feet="Malignance boots"})
 
     sets.engaged.DW = {ammo=gear.RAbullet,
         head="Adhemar Bonnet +1",
