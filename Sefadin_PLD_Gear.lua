@@ -55,6 +55,7 @@ function user_setup()
 	gear.PhalanxHead = {name="Valorous Mask", augments={'Magic dmg. taken -2%','Pet: DEX+15','Phalanx +4','Accuracy+3 Attack+3',}}
 	gear.PhalanxBody = {name="Odyss. Chestplate", augments={'"Mag.Atk.Bns."+21','MND+6','Phalanx +3',}}
 	gear.PDTCape = {name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Enmity+10','Phys. dmg. taken-10%',}}
+	gear.FCCape = { name="Rudianos's Mantle", augments={'"Fast Cast"+10',}}
  
     Haste = 0
     DW_needed = 0
@@ -130,7 +131,7 @@ function init_gear_sets()
         Legs="Arjuna Breeches", --4
         Feet="Carmine Greaves +1", --5 + AUG
         Waist="Creed Baudrier", --40HP
-        back={ name="Rudianos's Mantle", augments={'"Fast Cast"+10',}}, --10FC
+        back=gear.FCCape, --10FC
         Ring2="Kishar Ring", --  4FC --70HP
     } --75FC 2QM
      
@@ -335,13 +336,14 @@ function init_gear_sets()
         Hands="Leyline Gloves", --8FC
         Ring1="Moonlight Ring", --110HP
         Ring2="Moonlight Ring", --110HP
-        Back="Moonlight Cape", --0FC, 0SIRD, 5DT --Rudios??
+        Back=gear.FCCape, --0FC, 0SIRD, 5DT --Rudios??
         Waist="Creed Baudrier", --40HP
         Legs="Souveran Diechlings +1", --0FC, 0SIRD, 4DT
         Feet="Souveran Schuhs +1", --0FC, 0SIRD, 5DT
     } --42FC, 10SIRD, 38DT
      
     sets.midcast.HPBAL = { --10SIRD Merits --4DT Set Bonus
+		sub="Aegis",
         Ammo="Staunch tathlum +1", --0FC, 11SIRD, 3DT
         Head="Souveran Schaller +1", --0FC, 20SIRD, 0DT, 9Enm
         Neck="Moonlight Necklace", --0FC, 15SIRD, 0DT
@@ -361,6 +363,7 @@ function init_gear_sets()
      
     sets.midcast.Flash.HPBAL = {
         Main="Brilliance", --14
+		sub="Aegis",
         Ammo="Sapience Orb", --2
         Head="Loess Barbuta +1", --9~14
         Neck="Moonlight Necklace", --15
@@ -379,8 +382,12 @@ function init_gear_sets()
      
     sets.midcast.Shell.HPBAL = set_combine(sets.midcast, sets.midcast.HPBAL)
     sets.midcast.Protect.HPBAL = set_combine(sets.midcast, sets.midcast.HPBAL)
-    sets.midcast.Cure.HPBAL = set_combine(sets.midcast.Cure, sets.midcast.HPBAL, {sub="Aegis"})
-    sets.midcast.Phalanx.HPBAL = set_combine(sets.midcast.Phalanx, sets.midcast.HPBAL)
+    sets.midcast.Cure.HPBAL = set_combine(sets.midcast.Cure, sets.midcast.HPBAL, {sub="Aegis",
+										  neck="Phalaina locket",ear1="Mendicant's earring",
+										  hands="Macabre gauntlets +1",
+										  legs="Souveran Diechlings +1"})
+    sets.midcast.Phalanx.HPBAL = set_combine(sets.midcast.Phalanx, sets.midcast.HPBAL, {Head=gear.PhalanxHead, body=gear.PhalanxBody, 
+																						back="Weard mantle",legs="Sakpata's cuisses", feet="Souveran schuhs +1"})
     sets.midcast.Reprisal.HPBAL = set_combine(sets.midcast.Reprisal, sets.midcast.HPBAL)
     sets.midcast.Crusade.HPBAL = set_combine(sets.midcast.Crusade, sets.midcast.HPBAL)
     sets.midcast.Utsusemi.HPBAL = set_combine(sets.midcast.Utsusemi, sets.midcast.HPBAL)
