@@ -497,7 +497,7 @@ function init_gear_sets()
         back="Atheling Mantle",waist="Windbuffet Belt",legs="Manibozho Brais",feet="Qaaxo Leggings"}
 
     sets.engaged.DW = {ammo="Mantoptera eye",
-        head="Adhemar bonnet +1",neck="Lissome Necklace",ear1="Cessance Earring",ear2="Suppanomimi",
+        head="Adhemar bonnet +1",neck="Mirage stole +2",ear1="Cessance Earring",ear2="Suppanomimi",
         body="Adhemar jacket +1",hands="Adhemar Wristbands +1",ring1="Hetairoi Ring",ring2="Epona's Ring",
         back=gear.CritCape,waist="Reiki Yotai",legs="Carmine cuisses +1",feet={ name="Herculean Boots", augments={'Accuracy+26','"Triple Atk."+4','DEX+9','Attack+1',}}}
 

@@ -196,6 +196,7 @@ function init_gear_sets()
     sets.midcast.Minuet = {body="Fili Hongreline +1"}
     sets.midcast.Minne = {}
     sets.midcast.Paeon = {head="Brioso Roundlet +3"}
+	sets.midcast.Etude = {head="Mousai Turban +1"}
     sets.midcast.Carol = {head="Fili Calot +1",
         body="Fili Hongreline +1",hands="Fili Manchettes +1",
         legs="Inyanga Shalwar +2",feet="Brioso Slippers +3"}
@@ -334,7 +335,7 @@ function init_gear_sets()
     sets.engaged = {
         range="Linos",
 		head="Aya. Zucchetto +2", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Mache earring +1",
-		body="Ayanmo corazza +2", hands="Volte mittens", left_ring="Ilabrat Ring", right_ring="Moonlight Ring",
+		body="Ayanmo corazza +2", hands="Nyame gauntlets", left_ring="Ilabrat Ring", right_ring="Moonlight Ring",
 		back=gear.BrdSTPCape, waist="Sailfi belt +1", legs="Nyame Flanchard", feet="Nyame Sollerets"
 	}
 
@@ -350,7 +351,7 @@ function init_gear_sets()
     sets.engaged.DW = {
 		range="Linos",
 		head="Aya. Zucchetto +2", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Suppanomimi",
-		body="Ayanmo corazza +2", hands="Volte mittens", left_ring="Moonlight Ring", right_ring="Moonlight Ring",
+		body="Ayanmo corazza +2", hands="Nyame gauntlets", left_ring="Moonlight Ring", right_ring="Moonlight Ring",
 		back=gear.BrdSTPCape, waist="Reiki Yotai", legs="Nyame Flanchard", feet="Nyame Sollerets"
 	}
 	

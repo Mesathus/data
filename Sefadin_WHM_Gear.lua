@@ -127,6 +127,8 @@ function init_gear_sets()
 		head="Telchine cap", 
 		body="Telchine Chasuble", hands="Telchine gloves",
 		waist="Embla sash", legs = "Telchine Braconi", feet="Telchine pigaches"}
+		
+	sets.midcast['Haste'] = sets.midcast['Enhancing Magic']
 
     sets.midcast.Stoneskin = {
         head="Nahtirah Hat",neck="Stone Gorget",ear2="Loquacious Earring",
