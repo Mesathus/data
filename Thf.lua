@@ -103,8 +103,8 @@ function init_gear_sets()
     --------------------------------------
 
     -- Precast sets to enhance JAs
-    sets.precast.JA['Collaborator'] = {head="Skulker's Bonnet +1"}
-    sets.precast.JA['Accomplice'] = {head="Skulker's Bonnet +1"}
+    sets.precast.JA['Collaborator'] = {head="Skulker's Bonnet +2"}
+    sets.precast.JA['Accomplice'] = {head="Skulker's Bonnet +2"}
     sets.precast.JA['Flee'] = {feet="Pillager's Poulaines +3"}
     sets.precast.JA['Hide'] = {body="Pillager's Vest +3"}
     sets.precast.JA['Conspirator'] = {} -- {body="Skulker's Vest +1"}
@@ -150,7 +150,7 @@ function init_gear_sets()
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {ammo="Cath Palug stone",
         head="Pillager's Bonnet +3",neck="Fotia Gorget",ear1="Ishvara Earring",ear2="Moonshade Earring",
-        body="Nyame mail",hands="Meghanada gloves +2",ring1="Regal Ring",ring2="Ilabrat Ring",
+        body="Skulker's Vest +2",hands="Meghanada gloves +2",ring1="Regal Ring",ring2="Ilabrat Ring",
         back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}},
 		waist="Fotia Belt",legs="Plunderer's culottes +3",feet="Nyame Sollerets"}
     sets.precast.WS.Acc = set_combine(sets.precast.WS, {})
@@ -166,16 +166,17 @@ function init_gear_sets()
     sets.precast.WS['Dancing Edge'] = set_combine(sets.precast.WS, {})
     sets.precast.WS['Dancing Edge'].Acc = set_combine(sets.precast.WS['Dancing Edge'], {})
     sets.precast.WS['Dancing Edge'].Mod = set_combine(sets.precast.WS['Dancing Edge'], {})
-    sets.precast.WS['Dancing Edge'].SA = set_combine(sets.precast.WS['Dancing Edge'].Mod, {ammo="Qirmiz Tathlum"})
-    sets.precast.WS['Dancing Edge'].TA = set_combine(sets.precast.WS['Dancing Edge'].Mod, {ammo="Qirmiz Tathlum"})
-    sets.precast.WS['Dancing Edge'].SATA = set_combine(sets.precast.WS['Dancing Edge'].Mod, {ammo="Qirmiz Tathlum"})
+    sets.precast.WS['Dancing Edge'].SA = set_combine(sets.precast.WS['Dancing Edge'].Mod, {})
+    sets.precast.WS['Dancing Edge'].TA = set_combine(sets.precast.WS['Dancing Edge'].Mod, {})
+    sets.precast.WS['Dancing Edge'].SATA = set_combine(sets.precast.WS['Dancing Edge'].Mod, {})
 
     sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {ammo = "Yetshila +1",
 		head="Adhemar bonnet +1",ear1="Sherida Earring",ear2="Odr earring",
         body ="Plunderer's vest +3",hands="Mummu wrists +2",
 		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10'}},ring2="Mummu Ring",
 		legs="Pillager's culottes +3",feet="Adhemar Gamashes +1"})
-    sets.precast.WS['Evisceration'].Acc = set_combine(sets.precast.WS['Evisceration'], {body="Gleti's Cuirass", legs="Gleti's breeches"})
+    sets.precast.WS['Evisceration'].Acc = set_combine(sets.precast.WS['Evisceration'], {body="Gleti's Cuirass", hands="Gleti's Gauntlets",
+																						legs="Gleti's breeches", feet="Gleti's Boots"})
     sets.precast.WS['Evisceration'].Mod = set_combine(sets.precast.WS['Evisceration'])
     sets.precast.WS['Evisceration'].SA = set_combine(sets.precast.WS['Evisceration'].Mod, {head = "Pillager's Bonnet +3"})
     sets.precast.WS['Evisceration'].TA = set_combine(sets.precast.WS['Evisceration'].Mod, {head = "Pillager's Bonnet +3"})
@@ -183,14 +184,14 @@ function init_gear_sets()
 
     sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {head="Pillager's Bonnet +3",neck="Assassin's gorget +2", ear1="Odr earring",
 																	ring2="Epaminondas's Ring",waist="Kentarch belt +1"})
-    sets.precast.WS["Rudra's Storm"].Acc = set_combine(sets.precast.WS["Rudra's Storm"], {})
+    sets.precast.WS["Rudra's Storm"].Acc = set_combine(sets.precast.WS["Rudra's Storm"], {body="Gleti's Cuirass", legs="Gleti's breeches"})
     sets.precast.WS["Rudra's Storm"].Mod = set_combine(sets.precast.WS["Rudra's Storm"], {})
     sets.precast.WS["Rudra's Storm"].SA = set_combine(sets.precast.WS["Rudra's Storm"].Mod, {ammo = "Yetshila +1"})
     sets.precast.WS["Rudra's Storm"].TA = set_combine(sets.precast.WS["Rudra's Storm"].Mod, {ammo = "Yetshila +1",body="Plunderer's vest +3"})
     sets.precast.WS["Rudra's Storm"].SATA = set_combine(sets.precast.WS["Rudra's Storm"].Mod, {ammo = "Yetshila +1",body="Plunderer's vest +3"})
 
     sets.precast.WS["Shark Bite"] = set_combine(sets.precast.WS, {head="Pillager's Bonnet +3",neck="Assassin's gorget +2",ring2="Epaminondas's Ring",waist="Kentarch belt +1"})
-    sets.precast.WS['Shark Bite'].Acc = set_combine(sets.precast.WS['Shark Bite'], {})
+    sets.precast.WS['Shark Bite'].Acc = set_combine(sets.precast.WS['Shark Bite'], {body="Gleti's Cuirass", legs="Gleti's breeches"})
     sets.precast.WS['Shark Bite'].Mod = set_combine(sets.precast.WS['Shark Bite'], {})
     sets.precast.WS['Shark Bite'].SA = set_combine(sets.precast.WS['Shark Bite'].Mod, {ammo = "Yetshila +1"})
     sets.precast.WS['Shark Bite'].TA = set_combine(sets.precast.WS['Shark Bite'].Mod, {ammo = "Yetshila +1",body="Plunderer's vest +3"})
@@ -198,7 +199,7 @@ function init_gear_sets()
 
     sets.precast.WS['Mandalic Stab'] = set_combine(sets.precast.WS, {head="Pillager's Bonnet +3",neck="Assassin's gorget +2", 
 																	ear1="Odr earring",ring2="Epaminondas's Ring",waist="Kentarch belt +1"})
-    sets.precast.WS['Mandalic Stab'].Acc = set_combine(sets.precast.WS['Mandalic Stab'], {})
+    sets.precast.WS['Mandalic Stab'].Acc = set_combine(sets.precast.WS['Mandalic Stab'], {body="Gleti's Cuirass", legs="Gleti's breeches"})
     sets.precast.WS['Mandalic Stab'].Mod = set_combine(sets.precast.WS['Mandalic Stab'], {})
     sets.precast.WS['Mandalic Stab'].SA = set_combine(sets.precast.WS['Mandalic Stab'].Mod, {ammo = "Yetshila +1"})
     sets.precast.WS['Mandalic Stab'].TA = set_combine(sets.precast.WS['Mandalic Stab'].Mod, {ammo = "Yetshila +1",body="Plunderer's vest +3"})
@@ -209,6 +210,7 @@ function init_gear_sets()
 																	body="Nyame mail", ring1="Gere Ring", ring2="Epaminondas's Ring",
 																	back={ name="Toutatis's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%'}},
 																	waist="Kentarch belt +1", legs="Nyame Flanchard"})
+	sets.precast.WS['Savage Blade'].Acc = set_combine(sets.precast.WS['Savage Blade'], {body="Gleti's Cuirass", legs="Gleti's breeches"})
 	sets.precast.WS['Savage Blade'].Mod = set_combine(sets.precast.WS['Savage Blade'], {ear1="Sherida earring"})
 	sets.precast.WS['Savage Blade'].SA = set_combine(sets.precast.WS['Savage Blade'].Mod, {ammo = "Yetshila +1",body="Plunderer's vest +3"})
     sets.precast.WS['Savage Blade'].TA = set_combine(sets.precast.WS['Savage Blade'].Mod, {ammo = "Yetshila +1",body="Plunderer's vest +3"})
@@ -220,7 +222,7 @@ function init_gear_sets()
 
 	
 	sets.precast.WS['Asuran Fists'] = set_combine(sets.precast.WS, {ammo="Seething bomblet +1",
-		head="Plunderer's Bonnet +3", ear1="Sherida Earring", ear2="Odnowa Earring +1",
+		head="Skulker's Bonnet +2", ear1="Sherida Earring", ear2="Odnowa Earring +1",
 		body="Gleti's Cuirass", hands="Meghanada gloves +2", ring2="Gere ring",
 		back={ name="Toutatis's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%'}},
 		legs="Gleti's breeches",
@@ -241,14 +243,14 @@ function init_gear_sets()
 		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}}}
 	
 	sets.precast.WS['Raging Fists'] = {ammo="Seething bomblet +1",
-		head="Plunderer's Bonnet +3", neck="Assassin's gorget +2", ear1="Sherida Earring", ear2="Moonshade Earring",
+		head="Skulker's Bonnet +2", neck="Assassin's gorget +2", ear1="Sherida Earring", ear2="Moonshade Earring",
 		body="Gleti's Cuirass", hands="Adhemar wristbands +1", ring1="Regal Ring", ring2="Gere ring",
 		back={ name="Toutatis's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%'}},
 		legs="Pillager's culottes +3", feet="Plunderer's poulaines +3"
 		}
 		
 	sets.precast.WS['Tornado Kick'] = {ammo="Seething bomblet +1",
-		head="Plunderer's Bonnet +3", neck="Assassin's gorget +2", ear1="Sherida Earring", ear2="Moonshade Earring",
+		head="Skulker's Bonnet +2", neck="Assassin's gorget +2", ear1="Sherida Earring", ear2="Moonshade Earring",
 		body="Gleti's Cuirass", hands="Adhemar wristbands +1", ring1="Regal Ring", ring2="Gere ring",
 		back={ name="Toutatis's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%'}},
 		legs="Pillager's culottes +3", feet="Plunderer's poulaines +3"
@@ -282,7 +284,7 @@ function init_gear_sets()
 		waist="Fotia belt",legs="Nyame flanchard",feet="Nyame sollerets"}
 		
 	sets.precast.WS['Empyreal Arrow'] = {ammo="Beryllium arrow",
-        head="Nyame helm",neck="Assassin's Gorget +2",ear1="Ishvara Earring",ear2="Moonshade Earring",
+        head="Nyame helm",neck="Assassin's Gorget +2",ear1="Ishvara Earring",ear2="Telos Earring",
         body="Nyame mail",hands="Meghanada gloves +2",ring1="Regal Ring",ring2="Epaminondas's Ring",
         back=gear.CapeStr,waist="Yemaya Belt",legs="Nyame Flanchard",feet="Nyame Sollerets"}
 		
@@ -340,13 +342,13 @@ function init_gear_sets()
     sets.midcast.RA = {
         head="Malignance chapeau",neck="Iskur Gorget",ear1="Enervating earring",ear2="Telos Earring",
 		body="Malignance tabard",hands="Malignance gloves",ring1="Regal Ring",ring2="Dingir Ring",
-		back="Kayapa cape",waist="Yemaya belt",legs="Malignance tights",feet="Malignance boots"}
+		back="Sacro mantle",waist="Yemaya belt",legs="Malignance tights",feet="Malignance boots"}
 
 
     sets.midcast.RA.Acc = {
         head="Malignance chapeau",neck="Iskur Gorget",ear1="Enervating earring",ear2="Telos Earring",
 		body="Malignance tabard",hands="Malignance gloves",ring1="Regal Ring",ring2="Cacoethic Ring +1",
-		back="Kayapa cape",waist="Yemaya belt",legs="Malignance tights",feet="Malignance boots"}
+		back="Sacro mantle",waist="Yemaya belt",legs="Malignance tights",feet="Malignance boots"}
 
 
     --------------------------------------
@@ -427,9 +429,9 @@ function init_gear_sets()
         
     -- Mod set for trivial mobs (Skadi+1)
     sets.engaged.TA = {ammo="Yetshila +1",
-        head="Adhemar bonnet +1",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Odr earring",
+        head="Skulker's Bonnet +2",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Odr earring",
         body="Adhemar jacket +1",hands="Adhemar Wristbands +1",ring1="Hetairoi Ring",ring2="Gere Ring",
-        back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%'}},
+        back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10','Phys. dmg. taken-10%'}},
 		waist="Chiner's Belt +1",legs="Pillager's culottes +3",feet="Plunderer's Poulaines +3"}
 		
 	sets.engaged.Hybrid = {ammo="Yamarang",
@@ -473,8 +475,8 @@ function init_gear_sets()
 
     -- Mod set for trivial mobs (Thaumas)
     sets.engaged.TAcc = set_combine(sets.engaged.TA, {ammo="Yamarang",
-		head="Plunderer's Bonnet +3",neck="Assassin's gorget +2",ear2="Telos Earring",
-		body="Pillager's vest +3", ring1="Regal Ring",ring2="Hetairoi Ring",
+		head="Skulker's Bonnet +2",neck="Assassin's gorget +2",ear2="Telos Earring",
+		body="Pillager's vest +3", ring1="Gere Ring",ring2="Hetairoi Ring",
 		waist="Reiki Yotai", legs="Pillager's Culottes +3",feet="Plunderer's Poulaines +3"})
 
     -- Mod set for trivial mobs (CP)   

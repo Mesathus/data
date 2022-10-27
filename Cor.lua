@@ -81,7 +81,7 @@ function init_gear_sets()
 
     -- Precast sets to enhance JAs
     
-    sets.precast.JA['Triple Shot'] = {body="Chasseur's Frac +1"}
+    sets.precast.JA['Triple Shot'] = {body="Chasseur's Frac +2"}
     sets.precast.JA['Snake Eye'] = {legs="Lanun Trews"}
     sets.precast.JA['Wild Card'] = {feet="Lanun Bottes +3"}
     sets.precast.JA['Random Deal'] = {body="Lanun Frac +3"}
@@ -89,14 +89,14 @@ function init_gear_sets()
 
     
     sets.precast.CorsairRoll = {head="Lanun Tricorne +3",neck="Regal Necklace",
-		body="Malignance tabard",hands="Chasseur's Gants +1",ring2="Defending Ring",
+		body="Malignance tabard",hands="Chasseur's Gants +2",ring2="Defending Ring",
 		waist="Flume belt",legs="Desultor tassets",feet="Malignance boots"}
     
     sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Chasseur's Culottes"})
     sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Navarch's Bottes +2"})
     sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {head="Chasseur's Tricorne"})
-    sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {body="Chasseur's Frac +1"})
-    sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {hands="Chasseur's Gants +1"})
+    sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {body="Chasseur's Frac +2"})
+    sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {hands="Chasseur's Gants +2"})
     
     sets.precast.LuzafRing = {ring2="Luzaf's Ring"}
     sets.precast.FoldDoubleBust = {hands="Lanun Gants +3"}
@@ -165,6 +165,20 @@ function init_gear_sets()
 		right_ring="Regal Ring",
 		back=gear.CorLeadenCape,
 		}
+		
+	sets.precast.WS['Aeolian Edge'] = {
+		head="Nyame helm",
+		body="Lanun frac +3",
+		hands="Nyame gauntlets",
+		legs="Nyame Flanchard",
+		feet="Lanun Bottes +3",
+		neck="Sanctity Necklace",
+		waist="Orpheus's sash",
+		left_ear="Friomisi Earring",
+		right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +25',}},
+		left_ring="Dingir Ring",
+		ring2="Epaminondas's Ring",
+		back=gear.CorLeadenCape}
 
     --sets.precast.WS['Wildfire'].Brew = {ammo=gear.MAbullet,
     --    head="Wayfarer Circlet",neck="Stoicheion Medal",ear1="Friomisi Earring",ear2="Hecate's Earring",
@@ -181,7 +195,7 @@ function init_gear_sets()
 		
 	sets.precast.WS['Savage Blade'] = {
         head="Nyame helm",neck="Commodore charm +2",ear2="Moonshade Earring",ear1="Ishvara Earring",
-        body="Nyame mail",	hands="Nyame gauntlets",ring1="Regal Ring",ring2="Epaminondas's ring",
+        body="Nyame mail",	hands="Chasseur's Gants +2",ring1="Regal Ring",ring2="Epaminondas's ring",
         back=gear.CorSavageCape,waist="Kentarch Belt +1",legs="Nyame Flanchard",feet="Lanun Bottes +3"}
 		
 	sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS['Wildfire'], {})
@@ -230,7 +244,7 @@ function init_gear_sets()
 		
 	sets.TripleShot = set_combine(sets.midcast.RA, {
         --head="Oshosi Mask +1", --4
-        body="Chasseur's Frac +1", --12
+        body="Chasseur's Frac +2", --12
         hands="Lanun gants +3", -- 3 relic hands
 		back="Camulus's Mantle",
         legs="Oshosi Trousers +1", --5

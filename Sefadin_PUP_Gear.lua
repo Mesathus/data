@@ -42,11 +42,11 @@ end
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
   -- Options: Override default values
-  state.OffenseMode:options('Normal', 'Acc', 'Hybrid', 'HybMpaca')
+  state.OffenseMode:options('Normal', 'Acc', 'Hybrid', 'HybMpaca','Sixty')
   state.WeaponskillMode:options('Normal', 'Acc', 'Fodder')
   state.PhysicalDefenseMode:options('PDT', 'Evasion')
   state.MagicalDefenseMode:options('MDT')
-  state.IdleMode:options('Normal','Auto')
+  state.IdleMode:options('Normal','Refresh')
 
   gear.taeon_head_ta   = { name = "Taeon Chapeau", augments = {'STR+5 DEX+5', 'Accuracy+19 Attack+19', '"Triple Atk."+2'}}
   gear.taeon_body_ta   = { name = "Taeon Tabard", augments = {'STR+6 AGI+6', 'Accuracy+12 Attack+12', '"Triple Atk."+2'}}
@@ -59,6 +59,8 @@ function user_setup()
   gear.taeon_hands_pet = { name = "Taeon Gloves", augments = {'"Repair" potency +5%', 'Pet: Haste+5%', 'Pet: "Mag. Atk. Bns."+24'}}
   gear.taeon_legs_pet  = { name = "Taeon Tights", augments = {'Pet: Damage taken -3%', 'Pet: Accuracy+18 Pet: Rng.Acc.+18', 'Pet: "Dbl. Atk."+4'}}
   gear.taeon_feet_pet  = { name = "Taeon Boots", augments = {'Pet: Damage taken -3%', 'Pet: Accuracy+24 Pet: Rng.Acc.+24', 'Pet: "Dbl. Atk."+4'}}
+  
+  gear.FCHat =  {name="Herculean Helm", augments={'"Mag.Atk.Bns."+24','"Fast Cast"+6','STR+7','Mag. Acc.+14'}}
 
   send_command('bind ^= gs c cycle treasuremode')
 
@@ -75,12 +77,12 @@ function init_gear_sets()
 
   -- Fast cast sets for spells
   sets.precast.FC = {
-    head="Rawhide Mask",neck="Voltsurge Torque",ear1="Loquacious Earring", ear2="Etiolation earring",
-    body="Anhur Robe",hands=gear.taeon_hands_ta,ring1="Veneficium Ring",ring2="Prolix Ring",
-    back="Fi follet cape +1",waist="Hurch'lan Sash",legs=gear.taeon_legs_ta,feet="Regal Pumps +1"
+    head=gear.FCHat,neck="Voltsurge Torque",ear1="Loquacious Earring", ear2="Etiolation earring",
+    body="Taeon tabard",hands=gear.taeon_hands_ta,ring1="Prolix Ring",
+    back="Fi follet cape +1",waist="Hurch'lan Sash",legs="Rawhide trousers",feet="Regal Pumps +1"
   }
 
-  sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads"})
+  sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads",body="Passion Jacket"})
 
 
   -- Precast sets to enhance JAs
@@ -121,7 +123,7 @@ function init_gear_sets()
 
   sets.precast.WS['Victory Smite'] = set_combine(sets.precast.WS['Stringing Pummel'], {})
   
-  sets.precast.WS['Howling Fist'] = set_combine(sets.precast.WS, {
+  sets.precast.WS['Howling Fist'] = set_combine(sets.precast.WS, {ring1="Niqmaddu ring",
   waist="Moonbow belt +1"})
 
   -- Midcast Sets
@@ -154,9 +156,14 @@ function init_gear_sets()
   -- Idle sets
   sets.idle = {
     ammo="Automat. Oil +3",
-    head="Pitre Taj +1",neck="Bathy choker",ear1="Infused Earring",ear2="Burana Earring",
-    body="Gyve Doublet",hands="Count's Cuffs",ring1="Sheltered Ring",ring2="Paguroidea Ring",
-    back="Kumbira Cape",waist="Lycopodium Sash",legs="Rao Haidate +1",feet="Hermes' Sandals"}
+    head="Malignance chapeau",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Infused Earring",
+	body="Malignance tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Sheltered Ring",
+	back="Moonlight cape",waist="Flume Belt",legs="Malignance tights",feet="Hermes' Sandals"}
+	
+  sets.idle.Refresh = set_combine(sets.idle, {
+	ammo="Automat. Oil +2",
+	head="Rawhide Mask",
+	ring1="Stikini Ring +1",ring2="Stikini Ring +1"})
 	
   sets.idle.Auto = {ammo="Automat. Oil +3",
     head="Anwig salade",neck="Shepherd's chain",ear1="Rimeice Earring",ear2="Domesticator's Earring",
@@ -171,7 +178,7 @@ function init_gear_sets()
 
   -- Idle sets to wear while pet is engaged
   sets.idle.Pet.Engaged = {
-    ammo="Automat. Oil +3",
+    main="Nibiru Sainti",ammo="Automat. Oil +2",
     head="Anwig Salade",neck="Shepherd's chain",ear1="Rimeice Earring",ear2="Domesticator's Earring",
     body="Rao Togi",hands="Rao Kote +1",ring1="Defending Ring",ring2="Fortified Ring",
     back="Visucius's mantle",waist="Isa Belt",legs="Rao Haidate +1",feet="Rao Sune-Ate"}
@@ -213,7 +220,7 @@ function init_gear_sets()
   sets.engaged.HybMpaca = {
 		head="Mpaca's cap",neck="Bathy choker +1",ear1="Mache Earring +1",ear2="Telos Earring",
         body="Mpaca's doublet",hands="Mpaca's gloves",ring1="Niqmaddu Ring",ring2="Gere Ring",
-        back="Visucius's mantle",waist="Moonbow belt +1",legs="Mpaca's hose",feet="Mpaca's boots"
+        back="Moonlight Cape",waist="Moonbow belt +1",legs="Mpaca's hose",feet="Mpaca's boots"
   }
   
 

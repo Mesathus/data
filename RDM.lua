@@ -66,9 +66,17 @@ include('Modes.lua')
 -- to define sets for idle if you add more modes, name them: sets.me.idle.mymode and add 'mymode' in the group.
 -- Same idea for nuke modes. 
 idleModes = M('refresh', 'dt', 'mdt')
-meleeModes = M('normal', 'acc', 'dt', 'mdt')
+meleeModes = M('normal', 'acc', 'hybrid')
 nukeModes = M('normal', 'acc')
 savageMode = M('ammo', 'bowlock')
+--[
+--AF     :  head, body, hands, legs 
+--Relic  :  head, body, hands, legs, feet
+--Emp    :  head, body, hands, legs, feet
+
+
+--]
+
 
 ------------------------------------------------------------------------------------------------------
 -- Important to read!
@@ -81,7 +89,7 @@ savageMode = M('ammo', 'bowlock')
 -- Defaults are the first in each list
 
 mainWeapon = M('Crocea Mors', 'Naegling', 'Maxentius', 'Daybreak', 'Sequence')
-subWeapon = M('Ammurapi Shield', 'Sacro Bulwark', 'Tauret','Naegling','Daybreak')
+subWeapon = M('Ammurapi Shield', 'Genmei shield','Sacro Bulwark', 'Tauret','Machaera +2','Daybreak')
 ------------------------------------------------------------------------------------------------------
 
 ----------------------------------------------------------
@@ -94,7 +102,7 @@ CP_CAPE = "Mecisto. Mantle" -- Put your CP cape here
 -- Setting this to true will stop the text spam, and instead display modes in a UI.
 -- Currently in construction.
 use_UI = true
-hud_x_pos = 500    --important to update these if you have a smaller screen
+hud_x_pos = 700    --important to update these if you have a smaller screen
 hud_y_pos = 200     --important to update these if you have a smaller screen
 hud_draggable = true
 hud_font_size = 10
@@ -222,7 +230,7 @@ function get_sets()
         ammo="Staunch tathlum +1",
         head="Viti. Chapeau +3",
         neck="Bathy Choker +1",
-        ear1="Genmei Earring",
+        ear1="Infused Earring",
         ear2="Etiolation Earring",
         body="Jhakri Robe +2",
         hands="Malignance Gloves",
@@ -231,7 +239,7 @@ function get_sets()
         back= RDMCape.TP,
         waist="Fucho-no-obi",
         legs="Carmine Cuisses +1",
-        feet="Ayanmo gambieras +2"
+        feet="Nyame sollerets"
 
     }
 
@@ -243,7 +251,7 @@ function get_sets()
         ammo="Staunch Tathlum +1",          
         head="Malignance Chapeau",         
         neck="Warder's Charm +1",          
-        ear1="Genmei Earring",             
+        ear1="Infused Earring",             
         ear2="Etiolation Earring",             
         body="Malignance Tabard",               
         hands="Malignance Gloves",          
@@ -329,19 +337,19 @@ function get_sets()
     ------------------------------------------------------------------------------------------------------
     sets.me["Savage Blade"] = {
 
-        head="Viti. Chapeau +3",
-        body="Vitiation Tabard +3",
-        neck="Duelist's torque +2",
-        hands ="Jhakri Cuffs +2",
-        ear1="Regal Earring",
-        ear2="Moonshade Earring",
-        body="Vitiation Tabard +3",
-        legs="Jhakri Slops +2",
-        ring1="Rufescent Ring",
-        ring2="Ilabrat Ring",
-        waist="Sailfi Belt +1",
-        feet="Jhakri Pigaches +1",
-        back= RDMCape.STRWS
+        ammo="Staunch Tathlum +1",
+		head={ name="Nyame Helm", augments={'Path: B',}},
+		body={ name="Nyame Mail", augments={'Path: B',}},
+		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+		legs={ name="Nyame Flanchard", augments={'Path: B',}},
+		feet={ name="Nyame Sollerets", augments={'Path: B',}},
+		neck="Caro Necklace",
+		waist={ name="Kentarch Belt +1", augments={'Path: A',}},
+		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
+		right_ear="Regal Earring",
+		left_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
+		right_ring="Epaminondas's Ring",
+		back={ name="Aurist's Cape +1", augments={'Path: A',}}
 
     }
     sets.me["Black Halo"] = {
@@ -512,7 +520,7 @@ function get_sets()
         waist="Hachirin-no-Obi",
     }
     sets.midcast.Orpheus = {
-        --waist="Orpheus's Sash", -- Commented cause I dont have one yet
+        waist="Orpheus's Sash", -- Commented cause I dont have one yet
     }  
     -----------------------------------------------------------------------------------------------
     -- Helix sets automatically derives from casting sets. SO DONT PUT ANYTHING IN THEM other than:
@@ -552,11 +560,11 @@ function get_sets()
         sub         =   "Ammurapi Shield",
         left_ring   =   "Shiva Ring",    
         ammo        =   "Pemphredo Tathlum",
-        --head      =   Merl.Head.ACC,
-        --body      =   Amal.Body.A,
-        --hands     =   Amal.Hands.D,
-        --legs      =   Amal.Legs.A,
-        --feet      =   Amal.Feet.A,
+        head        =   "Merlinic Hood",
+        body        =   "Amalric doublet +1",
+        hands       =   "Amalric gages +1",
+        legs        =   "Amalric slops +1",
+        feet        =   "Amalric Nails +1",
         neck        =   "Dls. Torque +2",
         waist       =   "Refoccilation Stone",
         left_ear    =   "Friomisi Earring",
@@ -568,8 +576,8 @@ function get_sets()
     -- Pieces to swap from freen nuke to Magic Burst
     sets.midcast.MB.normal = set_combine(sets.midcast.nuking.normal, {
         left_ring   =   "Mujin Band",    
-        --head      =   Merl.Head.MB,
-        --body      =   Merl.Body.MB,
+        head        =   "Merlinic Hood",
+        body        =   "Amalric doublet +1",
         neck        =   "Mizu. Kubikazari",
         right_ring  =   "Locus Ring",
     })
@@ -580,7 +588,7 @@ function get_sets()
         left_ring   =   "Shiva Ring",    
         ammo        =   "Pemphredo Tathlum",
         --head      =   Merl.Head.ACC,
-        --body      =   Amal.Body.A,
+        --body      =   "Amalric doublet +1",
         --hands     =   Amal.Hands.D,
         --legs      =   Amal.Legs.A,
         --feet      =   Amal.Feet.A,
@@ -610,9 +618,9 @@ function get_sets()
         sub         =   "Ammurapi Shield",
         ammo        =   "Regal Gem",
         head        =   RELIC.Head,
-        --body      =   Amal.Body.A,
-        --hands     =   Kayk.Hands.A,
-        --legs      =   Chiro.Legs.Acc,
+        body        =   "Amalric doublet +1",
+        --hands       =   Kayk.Hands.A,
+        --legs        =   Chiro.Legs.Acc,
         feet        =   RELIC.Feet,
         neck        =   "Dls. Torque +2",
         waist       =   "Porous Rope",
@@ -722,20 +730,23 @@ function get_sets()
     sets.midcast.enhancing.duration = {
 
         sub="Ammurapi Shield",
-        head="Telchine cap",
-        neck="Duelist's torque +2",
-        body="Vitiation Tabard +3",
-        hands="Atrophy gloves +3",
+        head={ name="Telchine Cap"},
+		body={ name="Telchine Chas."},
+		hands={ name="Telchine Gloves"},
+		legs={ name="Telchine Braconi"},
+		feet={ name="Telchine Pigaches"},
+		neck="Incanter's Torque",
+		left_ear="Mimir Earring",
+		right_ear="Augment. Earring",
+		left_ring="Stikini Ring +1",
+		right_ring="Stikini Ring +1",
         back="Ghostfyre Cape",
-        legs="Telchine Braconi",
-        waist="Embla sash",
-        feet="Lethargy Houseaux +1"
-
+        waist="Embla sash"
     }
     -- For Potency spells like Temper and Enspells
     sets.midcast.enhancing.potency = set_combine(sets.midcast.enhancing.duration, {
         main        =   "Secespita",
-        sub     =   "Ammurapi Shield",
+        sub     	=   "Ammurapi Shield",
         ammo        =   "Homiliary",
         --head      =   Carm.Head.D,
         body        =   RELIC.Body,
@@ -762,11 +773,19 @@ function get_sets()
 
     -- Phalanx
     sets.midcast.phalanx =  set_combine(sets.midcast.enhancing.duration, {
-        --head      =   Taeon.Head.Phalanx,
-        --body      =   Taeon.Body.Phalanx,
-        --hands     =   Taeon.Hands.Phalanx,
-        --legs      =   Taeon.Legs.Phalanx,
-        --feet      =   Taeon.Feet.Phalanx,
+        ammo="Staunch Tathlum +1",
+    head={ name="Taeon Chapeau", augments={'"Repair" potency +5%','Phalanx +3',}},
+    body={ name="Taeon Tabard", augments={'Attack+23','"Dual Wield"+5','Phalanx +3',}},
+    hands={ name="Taeon Gloves", augments={'Phalanx +3',}},
+    legs={ name="Taeon Tights", augments={'Accuracy+20 Attack+20','"Triple Atk."+2','Phalanx +3',}},
+    feet={ name="Taeon Boots", augments={'Phalanx +3',}},
+    neck="Incanter's Torque",
+    waist="Embla Sash",
+    left_ear="Mimir Earring",
+    right_ear="Augment. Earring",
+    left_ring="Stikini Ring +1",
+    right_ring="Stikini Ring +1",
+    back={ name="Fi Follet Cape +1", augments={'Path: A',}}
     })
 
     -- Stoneskin

@@ -192,7 +192,7 @@ function user_setup()
     state.OffenseMode:options('Normal', 'Acc','Hybrid')
     state.WeaponskillMode:options('Normal', 'Acc')
     state.CastingMode:options('Normal', 'Burst')
-    state.IdleMode:options('Normal', 'PDT', 'Learning')
+    state.IdleMode:options('Normal', 'PDT', 'Refresh')
 
     gear.macc_hagondes = {name="Hagondes Cuffs", augments={'Phys. dmg. taken -3%','Mag. Acc.+29'}}
 	gear.WSDHead = { name="Herculean Helm", augments={'Accuracy+28','Weapon skill damage +3%','DEX+9','Attack+15'}}
@@ -227,8 +227,8 @@ function init_gear_sets()
 	
 	sets.TreasureHunter = {ammo="Perfect lucky egg", legs = {name="Herculean Trousers", augments={'"Mag.Atk.Bns."+30','Accuracy+24','"Treasure Hunter"+1','Mag. Acc.+6 "Mag.Atk.Bns."+6',}},}
 
-    sets.buff['Burst Affinity'] = {}
-    sets.buff['Chain Affinity'] = {}
+    sets.buff['Burst Affinity'] = {"Hashishin Basmak +2"}
+    sets.buff['Chain Affinity'] = {"Hashishin Kavuk +2"}
     sets.buff.Convergence = {head="Luhlaza Keffiyeh"}
     sets.buff.Diffusion = {feet="Luhlaza Charuqs +1"}
     sets.buff.Enchainment = {body="Luhlaza Jubbah"}
@@ -284,6 +284,25 @@ function init_gear_sets()
 		head="Nyame helm",neck="Mirage stole +2",ear1="Moonshade Earring",
 		hands="Jhakri cuffs +2",ring1="Epaminondas's ring",ring2="Rufescent ring",
 		waist="Kentarch belt +1",legs="Nyame Flanchard",feet="Nyame Sollerets"})
+		
+	sets.precast.WS['Black Halo'] = set_combine(sets.precast.WS, {ammo="Mantoptera eye",
+		head="Nyame helm",neck="Mirage stole +2",ear1="Moonshade Earring",
+		hands="Jhakri cuffs +2",ring1="Epaminondas's ring",ring2="Rufescent ring",
+		waist="Kentarch belt +1",legs="Nyame Flanchard",feet="Nyame Sollerets"})
+		
+	sets.precast.WS['Flash Nova'] = {ammo="Pemphredo tathlum",
+        head="Nyame helm",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Regal Earring",
+        body="Nyame mail",hands="Jhakri cuffs +2",ring1="Rufescent ring",ring2="Epaminondas's Ring",
+        back=gear.NukeCape,waist="Orpheus's sash",legs="Luhlaza Shalwar +3",feet="Amalric nails +1"}
+		
+	sets.precast.WS['Seraph Blade'] = {ammo="Pemphredo tathlum",
+        head="Nyame helm",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Regal Earring",
+        body="Nyame mail",hands="Jhakri cuffs +2",ring1="Rufescent ring",ring2="Epaminondas's Ring",
+        back=gear.NukeCape,waist="Orpheus's sash",legs="Luhlaza Shalwar +3",feet="Amalric nails +1"}
+		
+	sets.precast.WS['Realmrazer'] = set_combine(sets.precast.WS, {
+		head="Adhemar bonnet +1",ear2="Regal Earring",
+		body="Gleti's cuirass",ring2="Metamorph ring +1",legs="Gleti's breeches"}) 	
 
     sets.precast.WS['Chant du Cygne'] = set_combine(sets.precast.WS, {
 		head="Adhemar bonnet +1",neck="Mirage stole +2",ear1="Odr earring", ear2="Mache earring +1",
@@ -349,14 +368,14 @@ function init_gear_sets()
 
     -- Magical Spells --
     
-    sets.midcast['Blue Magic'].Magical = {ammo="Pemphredo Tathlum",
+    sets.midcast['Blue Magic'].Magical = {ammo="Ghastly Tathlum +1",
         neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Regal Earring",
-        body="Cohort cloak +1",hands="Amalric gages +1",ring1="Strendu Ring",ring2="Shiva Ring +1",
+        body="Cohort cloak +1",hands="Amalric gages +1",ring1="Metamorph Ring +1",ring2="Shiva Ring +1",
         back=gear.NukeCape,waist="Orpheus's sash",legs="Amalric slops +1",feet="Amalric nails +1"}
 
     sets.midcast['Blue Magic'].Magical.Burst = set_combine(sets.midcast['Blue Magic'].Magical,
         {hands="Amalric gages +1",ring1="Locus Ring",ring2="Mujin Band",
-		 back="Seshaw Cape"})
+		 back="Seshaw Cape",feet="Hashishin Basmak +2"})
 		 
 	sets.midcast['Blue Magic'].MagicalDark = set_combine(sets.midcast['Blue Magic'].Magical, {
 		head = "Pixie hairpin +1", body="Amalric doublet +1", ring1="Archon Ring"
@@ -376,9 +395,9 @@ function init_gear_sets()
     -- sets.midcast['Blue Magic'].MagicalDex = set_combine(sets.midcast['Blue Magic'].Magical)
 
     sets.midcast['Blue Magic'].MagicAccuracy = {ammo="Pemphredo Tathlum",
-        neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Regal Earring",
-        body="Cohort cloak +1",hands="Amalric gages +1",ring1="Sangoma Ring",ring2="Shiva Ring +1",
-        back=gear.NukeCape,waist="Yamabuki-no-obi",legs="Amalric slops +1",feet="Amalric nails +1"}
+        neck="Mirage stole +2",ear1="Dignitary's Earring",ear2="Regal Earring",
+        body="Cohort cloak +1",hands="Nyame Gauntlets",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
+        back="Aurist's cape +1",waist="Luminary sash",legs="Ayanmo cosciales +2",feet="Nyame sollerets"}
 
     -- Breath Spells --
     
@@ -406,7 +425,7 @@ function init_gear_sets()
 
     sets.midcast['Blue Magic'].SkillBasedBuff = {ammo="Mavi Tathlum",
         head="Luhlaza Keffiyeh",
-        body="Assimilator's Jubbah +3",
+        body="Assimilator's Jubbah +3",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
         back="Cornflower Cape",legs="Mavi Tayt +2",feet="Luhlaza Charuqs"}
 
     sets.midcast['Blue Magic'].Buff = {}
@@ -444,13 +463,18 @@ function init_gear_sets()
     -- Idle sets
     sets.idle = {ammo="Staunch tathlum +1",
         head="Malignance Chapeau",neck="Loricate torque +1",ear1="Infused Earring",ear2="Loquacious Earring",
-        body="Amalric doublet +1",hands="Malignance Gloves",ring1="Defending Ring",ring2="Patricius Ring",
+        body="Hashishin mintan +2",hands="Malignance Gloves",ring1="Defending Ring",ring2="Patricius Ring",
         back="Moonlight cape",waist="Flume Belt",legs="Carmine cuisses +1",feet="Malignance boots"}
 
     sets.idle.PDT = {ammo="Staunch tathlum +1",
-        head="Whirlpool Mask",neck="Wiglen Gorget",ear1="Bloodgem Earring",ear2="Loquacious Earring",
-        body="Hagondes Coat",hands="Iuitl Wristbands",ring1="Defending Ring",ring2="Paguroidea Ring",
-        back="Mecisto. Mantle",waist="Flume Belt",legs="Carmine cuisses +1",feet="Iuitl Gaiters +1"}
+        head="Malignance Chapeau",neck="Loricate torque +1",ear1="Infused Earring",ear2="Loquacious Earring",
+        body="Hashishin mintan +2",hands="Malignance Gloves",ring1="Defending Ring",ring2="Patricius Ring",
+        back="Moonlight cape",waist="Flume Belt",legs="Malignance tights",feet="Malignance boots"}
+		
+	sets.idle.Refresh = {ammo="Staunch tathlum +1",
+        head="Rawhide mask",neck="Loricate torque +1",ear1="Infused Earring",ear2="Loquacious Earring",
+        body="Hashishin mintan +2",hands="Malignance Gloves",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
+        back="Moonlight cape",waist="Flume Belt",legs="Lengo pants",feet="Malignance boots"}
 
     -- sets.idle.Town = {main="Buramenk'ah",ammo="Impatiens",
         -- head="Mavi Kavuk +2",neck="Wiglen Gorget",ear1="Bloodgem Earring",ear2="Loquacious Earring",

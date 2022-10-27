@@ -226,7 +226,7 @@ function init_gear_sets()
      
     sets.midcast.FastRecast = sets.precast.FC
     sets.midcast.Utsusemi = sets.Enmity
-    sets.midcast['Flash'] = sets.Enmity
+    sets.midcast.Flash = sets.Enmity
     sets.midcast['Enhancing Magic'] = sets.Enmity
     sets.midcast.Reprisal = sets.Enmity
     sets.midcast.Crusade = sets.Enmity
@@ -247,20 +247,20 @@ function init_gear_sets()
     }) --60SIRD, 10Merits, 37/30CurePot
      
     sets.midcast.Phalanx = {
-	Main="Sakpata's Sword", --5
-	sub="Priwen", --2
-	ammo="Staunch Tathlum +1",
-	Head=gear.PhalanxHead, --4
-	ear1="Mimir earring",
-	neck="Incanter's Torque",
-	Body=gear.PhalanxBody, --3
-    Hands="Souveran Handschuhs +1", --5
-	left_ring="Stikini Ring +1",
-    right_ring="Stikini Ring +1",	
-    waist="Flume Belt",
-    Feet="Souveran Schuhs +1", --5
-    Back="Weard Mantle", --4
-    Legs="Sakpata's Cuisses", --5
+		Main="Sakpata's Sword", --5
+		sub="Priwen", --2
+		ammo="Staunch Tathlum +1",
+		Head=gear.PhalanxHead, --4
+		ear1="Mimir earring",
+		neck="Incanter's Torque",
+		Body=gear.PhalanxBody, --3
+		Hands="Souveran Handschuhs +1", --5
+		left_ring="Stikini Ring +1",
+		right_ring="Stikini Ring +1",	
+		waist="Flume Belt",
+		Feet="Souveran Schuhs +1", --5
+		Back="Weard Mantle", --4
+		Legs="Sakpata's Cuisses", --5
     } --20 Need to DarkMatter Ody Head and Body!
      
     sets.midcast.Protect = {sub="Srivatsa",ring1="Sheltered Ring"}
@@ -271,20 +271,21 @@ function init_gear_sets()
     ------------------------------------------------------------------------------------------------    
     sets.midcast.SIRD = {--Merits 10SIRD
 		Main={name="Sakpata's Sword",priority=100}, --10FC
-		sub={name="Srivatsa",priority=150},
-        Ammo="Staunch tathlum +1", --10SIRD
-        Head="Souveran Schaller +1", --20SIRD
-        Neck="Moonlight Necklace", --15SIRD
-		Hands="Eschite Gauntlets", --15SIRD
+		sub={name="Srivatsa",priority=150},   --15enm
+        Ammo="Staunch tathlum +1", --10SIRD    
+        Head="Souveran Schaller +1", --20SIRD  --9
+        Neck="Moonlight Necklace", --15SIRD    --15
+		Hands="Eschite Gauntlets", --15SIRD    --7
 		Ring1={name="Moonlight Ring",priority=110,bag="wardrobe1"}, --110HP
         Ring2={name="Moonlight Ring",priority=110,bag="wardrobe3"}, --110HP
         -- Waist="Rumination Sash", --10SIRD
-        Legs="Founder's Hose", --30SIRD
+        Legs="Founder's Hose", --30SIRD     
         Feet="Odyssean Greaves", --20SIRD
         back=gear.PDTCape, --10SIRD
-    } --115SIRD
+    } --115SIRD   --56 enm  +20body  +4 cryptic +5 waist
  
- 
+	
+	
     sets.precast.FC.SIRD = {
 		Main={name="Sakpata's Sword",priority=100}, --10FC
 		sub={name="Srivatsa",priority=150},
@@ -301,10 +302,9 @@ function init_gear_sets()
         Feet="Carmine Greaves +1", --5 + AUG
         Waist={name="Creed Baudrier",priority=40}, --40HP
         back={ name="Rudianos's Mantle", augments={'"Fast Cast"+10',}}, --10FC
-        
-		}--115SIRD
+    }--115SIRD
  
-    sets.midcast['Flash'].SIRD = set_combine(sets.midcast.SIRD,{
+    sets.midcast.Flash.SIRD = {
         Main="Brilliance", --14 Enm
         Ammo="Impatiens", --10SIRD Neg2Enm
         Head="Souveran Schaller +1", --20SIRD Neg9~14Enm
@@ -320,7 +320,7 @@ function init_gear_sets()
         Legs="Carmine Cuisses +1", --20SIRD Neg9Enm
         Feet="Odyssean Greaves", --20SIRD Neg15Enm
         -- Sub="Ajax +1",
-    }) --80~88, 105SIRD
+    } --80~88, 105SIRD
      
     sets.midcast.Cure.SIRD = set_combine(sets.midcast.Cure, sets.midcast.SIRD)
     sets.midcast.Phalanx.SIRD = set_combine(sets.midcast.Phalanx, sets.midcast.SIRD)
@@ -349,7 +349,11 @@ function init_gear_sets()
         Legs={name="Souveran Diechlings +1",priority=162}, --0FC, 0SIRD, 4DT
         Feet={name="Souveran Schuhs +1",priority=227}, --0FC, 0SIRD, 5DT
     } --42FC, 10SIRD, 38DT
-     
+	
+	
+    
+	
+	
     sets.midcast.HPBAL = { --10SIRD Merits --4DT Set Bonus
 		sub={name="Srivatsa",priority=150},
         Ammo="Staunch tathlum +1", --0FC, 11SIRD, 3DT
@@ -369,7 +373,7 @@ function init_gear_sets()
 		Feet="Odyssean greaves", --20 SIRD, 5FC, 6Enm aug
     } --0FC, 105SIRD, 44DT, 62~70Enm
      
-    sets.midcast['Flash'].HPBAL = {
+    sets.midcast.Flash.HPBAL = {
         Main="Brilliance", --14
 		sub={name="Srivatsa",priority=150},
         Ammo="Sapience Orb", --2
@@ -386,7 +390,7 @@ function init_gear_sets()
         Legs={name="Souveran Diechlings +1",priority=162}, --9
         Feet="Eschite Greaves", --15
         -- Sub="Ajax +1", --11
-    } --115~128
+    } --115~128 
      
     sets.midcast.Shell.HPBAL = set_combine(sets.midcast, sets.midcast.HPBAL)
     sets.midcast.Protect.HPBAL = set_combine(sets.midcast, sets.midcast.HPBAL)
@@ -394,7 +398,8 @@ function init_gear_sets()
 										  neck="Phalaina locket",ear1="Mendicant's earring",
 										  hands="Macabre gauntlets +1",
 										  legs={name="Souveran Diechlings +1",priority=162}})
-    sets.midcast.Phalanx.HPBAL = set_combine(sets.midcast.Phalanx, sets.midcast.HPBAL, {Head=gear.PhalanxHead, body=gear.PhalanxBody, 
+    sets.midcast.Phalanx.HPBAL = set_combine(sets.midcast.Phalanx, sets.midcast.HPBAL, {sub="Priwen",
+																						Head=gear.PhalanxHead, body=gear.PhalanxBody, 
 																						back="Weard mantle",legs="Sakpata's cuisses", 
 																						feet={name="Souveran Schuhs +1",priority=227}})
     sets.midcast.Reprisal.HPBAL = set_combine(sets.midcast.Reprisal, sets.midcast.HPBAL)
@@ -443,7 +448,7 @@ function init_gear_sets()
 	}
 	
 	sets.idle.Pulling = {
-		Main={name="Sakpata's sword",priority=1},
+		Main={name="Sakpata's sword",priority=100},
 		ammo="Eluder's Sachet",
 		head="Sakpata's Helm",
 		neck={name="Unmoving Collar +1",priority=200},

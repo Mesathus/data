@@ -98,6 +98,11 @@ function init_gear_sets()
         head="Hagondes Hat",neck="Eddy Necklace",ear1="Regal Earring",ear2="Hecate's Earring",
         body="Hagondes Coat",hands="Yaoyotl Gloves",ring1="Icesoul Ring",ring2="Acumen Ring",
         back="Toro Cape",waist="Thunder Belt",legs="Hagondes Pants",feet="Hagondes Sabots"}
+		
+	sets.precast.WS['Cataclysm'] = {ammo="Pempredo tathlum",
+        head="Pixie hairpin +1",neck="Sanctity Necklace",ear1="Moonshade Earring",ear2="Regal Earring",
+        body="Nyame mail",hands="Nyame gauntlets",ring1="Metamorph Ring +1",ring2="Archon Ring",
+        back="Aurist's Cape +1",waist="Orpheus's sash",legs="Nyame Flanchard",feet="Nyame Sollerets"}
     
     
     ---- Midcast Sets ----
@@ -256,10 +261,20 @@ function init_gear_sets()
     -- EG: sets.engaged.Dagger.Accuracy.Evasion
     
     -- Normal melee group
-    sets.engaged = {
-        head="Zelus Tiara",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Hagondes Coat",hands="Bokwus Gloves",ring1="Rajas Ring",ring2="K'ayres Ring",
-        back="Umbra Cape",waist="Goading Belt",legs="Hagondes Pants",feet="Hagondes Sabots"}
+    sets.engaged ={
+    ammo="Staunch Tathlum +1",
+    head={ name="Nyame Helm", augments={'Path: B',}},
+    body={ name="Nyame Mail", augments={'Path: B',}},
+    hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+    legs={ name="Nyame Flanchard", augments={'Path: B',}},
+    feet={ name="Nyame Sollerets", augments={'Path: B',}},
+    neck="Combatant's Torque",
+    waist="Goading Belt",
+    left_ear="Brutal Earring",
+    right_ear="Telos Earring",
+    left_ring="Chirich Ring +1",
+    right_ring="Chirich Ring +1",
+    back={ name="Aurist's Cape +1", augments={'Path: A',}}}
 end
 
 -------------------------------------------------------------------------------------------------------------------

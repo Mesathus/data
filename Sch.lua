@@ -324,14 +324,14 @@ function init_gear_sets()
     -- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
     sets.buff['Ebullience'] = {head="Savant's Bonnet +2"}
     sets.buff['Rapture'] = {head="Savant's Bonnet +2"}
-    sets.buff['Perpetuance'] = {hands="Arbatel Bracers +1"}
-    sets.buff['Immanence'] = {hands="Arbatel Bracers +1"}
+    sets.buff['Perpetuance'] = {hands="Arbatel Bracers +2"}
+    sets.buff['Immanence'] = {hands="Arbatel Bracers +2"}
     sets.buff['Penury'] = {legs="Savant's Pants +2"}
     sets.buff['Parsimony'] = {legs="Savant's Pants +2"}
     sets.buff['Celerity'] = {feet="Pedagogy Loafers"}
     sets.buff['Alacrity'] = {feet="Pedagogy Loafers"}
 
-    sets.buff['Klimaform'] = {feet="Arbatel Loafers +1"}
+    sets.buff['Klimaform'] = {feet="Arbatel Loafers +2"}
 
     sets.buff.FullSublimation = {head="Academic's Mortarboard +2",ear1="Savant's Earring",waist="Embla Sash"}
     sets.buff.PDTSublimation = {head="Academic's Mortarboard +2",ear1="Savant's Earring"}
