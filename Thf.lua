@@ -512,6 +512,11 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         end
     end
 	
+	if spell.type == 'WeaponSkill' then
+		if spell.element == world.weather_element and data.weaponskills.elemental:contains(spell.name) then			
+			equip(sets.buff.Weather)
+		end
+	end
 	-- Used to overwrite Moonshade Earring if TP is more than 2750.
     if spell.type == 'WeaponSkill' then	
 		if player.tp > 1750  and player.equipment.sub == "Fusetto +3" then

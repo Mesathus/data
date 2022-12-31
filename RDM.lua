@@ -97,6 +97,11 @@ function init_gear_sets()
         
     sets.midcast.Curaga = sets.midcast.Cure
     sets.midcast.CureSelf = {ring1="Kunaji Ring",ring2="Asklepian Ring"}
+	
+	sets.midcast.Cursna = {
+        head="Kaykaus Mitra +1",neck="Malison Medallion",
+        hands="Hieros Mittens",ring1="Stikini Ring +1", ring2="Menelaus's ring",
+		feet="Vanya clogs"}
 
     sets.midcast['Enhancing Magic'] = {main="Sakpata's sword", sub = "Ammurapi shield",
 		head = "Telchine cap", neck = "Voltsurge torque", ear1 = "Etiolation earring", ear2 = "Lethargy earring",

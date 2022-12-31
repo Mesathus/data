@@ -261,6 +261,8 @@ function init_gear_sets()
 	sets.buff['Double Shot'] = set_combine(sets.midcast.RA, {head="Arcadian beret +3",
 																body = "Arcadian jerkin +3", hands="Oshosi gloves +1",
 																legs="Oshosi trousers +1",feet="Oshosi leggings +1"})
+																
+	sets.buff.Weather = {waist="Hachirin-no-obi"}
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -281,8 +283,28 @@ function job_precast(spell, action, spellMap, eventArgs)
 	
 	if state.DefenseMode.value ~= 'None' and spell.type == 'WeaponSkill' then
 		-- Don't gearswap for weaponskills when Defense is active.
+		
 		eventArgs.handled = true
+	end	
+end
+
+function job_post_precast(spell, action, spellMap, eventArgs)
+    if spell.type == 'WeaponSkill' then
+		if spell.element == world.weather_element and data.weaponskills.elemental:contains(spell.name) then			
+			equip(sets.buff.Weather)
+		end
 	end
+	
+	if spell.type == 'WeaponSkill' then
+        if player.tp > 2750 then
+			if data.weaponskills.elemental:contains(spell.name) then
+			
+			else
+				equip({ear2 = "Telos Earring"})
+			end
+        end
+    end
+	
 end
 
 
@@ -293,8 +315,12 @@ function job_midcast(spell, action, spellMap, eventArgs)
 		eventArgs.handled = true
 	elseif spell.action_type == 'Ranged Attack' and state.Buff['Double Shot'] then
 		equip(sets.buff['Double Shot'])
-		eventArgs.handled = true
+		eventArgs.handled = true			
 	end
+end
+
+function job_post_midcast(spell, action, spellMap, eventArgs)	
+	
 end
 
 -------------------------------------------------------------------------------------------------------------------

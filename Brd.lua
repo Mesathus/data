@@ -52,7 +52,7 @@ function user_setup()
     state.CastingMode:options('Resistant' , 'Normal', 'Enmity')
     state.IdleMode:options('Normal', 'PDT', 'DD')
 
-    brd_daggers = S{'Carnwenhan','Tauret','Twashtar','Aeneas','Fusetto +3','Centovente','Ternion Dagger +1'}
+    brd_daggers = S{'Carnwenhan','Tauret','Twashtar','Aeneas','Fusetto +3','Centovente','Ternion Dagger +1','Naegling','Daybreak'}
     pick_tp_weapon()
     
 	gear.RefreshHead = { name="Chironic Hat", augments={'"Dual Wield"+1','INT+2','"Refresh"+1','Accuracy+19 Attack+19','Mag. Acc.+20 "Mag.Atk.Bns."+20',}}
@@ -373,47 +373,52 @@ function init_gear_sets()
 	
 	sets.engaged.Savage = {main="Naegling", range="Linos",
 		head="Aya. Zucchetto +2", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Mache Earring +1",
-		body="Ayanmo corazza +2", hands="Nyame gauntlets", left_ring="Moonlight Ring", right_ring="Moonlight Ring",
+		body="Ayanmo corazza +2", hands="Bunzi's gloves", left_ring="Moonlight Ring", right_ring="Moonlight Ring",
 		back=gear.BrdSTPCape, waist="Sailfi Belt +1", legs="Nyame Flanchard", feet="Nyame Sollerets"}
 		
-	sets.engaged.Savage.DW = {main="Naegling", sub="Fusetto +3", range="Linos",
+	--sets.engaged.Savage.DW = {main="Naegling", sub="Fusetto +3", range="Linos",
+	--	head="Aya. Zucchetto +2", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Suppanomimi",
+	--	body="Ayanmo corazza +2", hands="Nyame gauntlets", left_ring="Moonlight Ring", right_ring="Moonlight Ring",
+	--	back=gear.BrdSTPCape, waist="Sailfi Belt +1", legs="Nyame Flanchard", feet="Nyame Sollerets"}
+		
+	sets.engaged.DW.Savage = {main="Naegling", sub="Fusetto +3", range="Linos",
 		head="Aya. Zucchetto +2", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Suppanomimi",
-		body="Ayanmo corazza +2", hands="Nyame gauntlets", left_ring="Moonlight Ring", right_ring="Moonlight Ring",
+		body="Ayanmo corazza +2", hands="Bunzi's gloves", left_ring="Moonlight Ring", right_ring="Moonlight Ring",
 		back=gear.BrdSTPCape, waist="Sailfi Belt +1", legs="Nyame Flanchard", feet="Nyame Sollerets"}
 		
 	sets.engaged.Carn = {main="Carnwenhan", range="Linos",
 		head="Aya. Zucchetto +2", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Mache Earring +1",
-		body="Ayanmo corazza +2", hands="Nyame gauntlets", left_ring="Moonlight Ring", right_ring="Moonlight Ring",
+		body="Ayanmo corazza +2", hands="Bunzi's gloves", left_ring="Moonlight Ring", right_ring="Moonlight Ring",
 		back=gear.BrdSTPCape, waist="Sailfi Belt +1", legs="Nyame Flanchard", feet="Nyame Sollerets"}
 		
-	sets.engaged.Carn.DW = {main="Carnwenhan", sub="Fusetto +3", range="Linos",
+	sets.engaged.DW.Carn = {main="Carnwenhan", sub="Fusetto +3", range="Linos",
 		head="Aya. Zucchetto +2", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Suppanomimi",
-		body="Ayanmo corazza +2", hands="Nyame gauntlets", left_ring="Moonlight Ring", right_ring="Moonlight Ring",
+		body="Ayanmo corazza +2", hands="Bunzi's gloves", left_ring="Moonlight Ring", right_ring="Moonlight Ring",
 		back=gear.BrdSTPCape, waist="Sailfi Belt +1", legs="Nyame Flanchard", feet="Nyame Sollerets"}
 		
 	sets.engaged.Rudra = {main="Twashtar", range="Linos",
 		head="Aya. Zucchetto +2", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Mache Earring +1",
-		body="Ayanmo corazza +2", hands="Nyame gauntlets", left_ring="Moonlight Ring", right_ring="Moonlight Ring",
+		body="Ayanmo corazza +2", hands="Bunzi's gloves", left_ring="Moonlight Ring", right_ring="Moonlight Ring",
 		back=gear.BrdSTPCape, waist="Sailfi Belt +1", legs="Nyame Flanchard", feet="Nyame Sollerets"}
 		
-	sets.engaged.Rudra.DW = {main="Twashtar", sub="Fusetto +3", range="Linos",
+	sets.engaged.DW.Rudra = {main="Twashtar", sub="Fusetto +3", range="Linos",
 		head="Aya. Zucchetto +2", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Suppanomimi",
-		body="Ayanmo corazza +2", hands="Nyame gauntlets", left_ring="Moonlight Ring", right_ring="Moonlight Ring",
+		body="Ayanmo corazza +2", hands="Bunzi's gloves", left_ring="Moonlight Ring", right_ring="Moonlight Ring",
 		back=gear.BrdSTPCape, waist="Sailfi Belt +1", legs="Nyame Flanchard", feet="Nyame Sollerets"}
 		
 	sets.engaged.Daybreak = {main="Daybreak", sub="Genmei shield", range="Linos",
 		head="Aya. Zucchetto +2", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Mache Earring +1",
-		body="Ayanmo corazza +2", hands="Nyame gauntlets", left_ring="Moonlight Ring", right_ring="Moonlight Ring",
+		body="Ayanmo corazza +2", hands="Bunzi's gloves", left_ring="Moonlight Ring", right_ring="Moonlight Ring",
 		back=gear.BrdSTPCape, waist="Sailfi Belt +1", legs="Nyame Flanchard", feet="Nyame Sollerets"}
 	
-	sets.engaged.Daybreak.DW = {main="Daybreak", sub="Fusetto +3", range="Linos",
+	sets.engaged.DW.Daybreak = {main="Daybreak", sub="Fusetto +3", range="Linos",
 		head="Aya. Zucchetto +2", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Suppanomimi",
-		body="Ayanmo corazza +2", hands="Nyame gauntlets", left_ring="Moonlight Ring", right_ring="Moonlight Ring",
+		body="Ayanmo corazza +2", hands="Bunzi's gloves", left_ring="Moonlight Ring", right_ring="Moonlight Ring",
 		back=gear.BrdSTPCape, waist="Sailfi Belt +1", legs="Nyame Flanchard", feet="Nyame Sollerets"}
 		
 	sets.engaged.Arebati = {main="Tauret",range="Linos",
         head="Nyame Helm",neck="Bard's charm +2",ear1="Mache Earring +1",ear2="Telos Earring",
-        body="Nyame mail",hands="Nyame gauntlets",ring1="Moonlight Ring",ring2="Moonlight Ring",
+        body="Nyame mail",hands="Bunzi's gloves",ring1="Moonlight Ring",ring2="Moonlight Ring",
         back=gear.BrdSTPCape,waist="Sailfi Belt +1",legs="Nyame Flanchard",feet="Nyame Sollerets"}
 		
 		
@@ -441,6 +446,25 @@ function job_precast(spell, action, spellMap, eventArgs)
             end
         end
     end
+end
+
+function job_post_precast(spell, action, spellMap, eventArgs)
+    if spell.type == 'WeaponSkill' then
+		if spell.element == world.weather_element and data.weaponskills.elemental:contains(spell.name) then			
+			equip(sets.buff.Weather)
+		end
+	end
+	
+	if spell.type == 'WeaponSkill' then
+        if player.tp > 2750 then
+			if data.weaponskills.elemental:contains(spell.name) then
+			
+			else
+				equip({ear2 = "Telos Earring"})
+			end
+        end
+    end
+	
 end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.

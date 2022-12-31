@@ -565,6 +565,25 @@ function job_precast(spell, action, spellMap, eventArgs)
     end
 end
 
+function job_post_precast(spell, action, spellMap, eventArgs)
+    if spell.type == 'WeaponSkill' then
+		if spell.element == world.weather_element and data.weaponskills.elemental:contains(spell.name) then			
+			equip(sets.buff.Weather)
+		end
+	end
+	
+	if spell.type == 'WeaponSkill' then
+        if player.tp > 2750 then
+			if data.weaponskills.elemental:contains(spell.name) then
+			
+			else
+				equip({ear2 = "Telos Earring"})
+			end
+        end
+    end
+	
+end
+
 -- Run after the default midcast() is done.
 -- eventArgs is the same one used in job_midcast, in case information needs to be persisted.
 function job_post_midcast(spell, action, spellMap, eventArgs)
