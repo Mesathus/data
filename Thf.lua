@@ -420,12 +420,11 @@ function init_gear_sets()
     sets.engaged = {ammo="Seething Bomblet +1",
         head="Adhemar bonnet +1",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Suppanomimi",
         body="Adhemar jacket +1",hands="Adhemar Wristbands +1",ring1="Rajas Ring",ring2="Gere Ring",
-        back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}},waist="Reiki Yotai",legs="Pillager's Culottes +3",feet={name="Taeon boots",augments={'Accuracy+20 Attack+20','"Dual Wield"+4','Crit. hit damage +2%'}}}
+        back=gear.CapeSTP, waist="Reiki Yotai",legs="Pillager's Culottes +3",feet={name="Taeon boots",augments={'Accuracy+20 Attack+20','"Dual Wield"+4','Crit. hit damage +2%'}}}
     sets.engaged.Acc = {ammo="Yamarang",
         head="Pillager's Bonnet +3",neck="Loricate torque +1",ear1="Dignitary's Earring",ear2="Telos earring",
         body="Meghanada cuirie +2",hands="Adhemar Wristbands +1",ring1="Regal Ring",ring2="Gere Ring",
-        back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}},
-		waist="Reiki Yotai",legs="Pillager's Culottes +3",feet={name="Herculean boots", augments={'Accuracy+24 Attack+24','Damage taken-2%','STR+7','Accuracy+11','Attack+15',}}}
+        back=gear.CapeSTP,waist="Reiki Yotai",legs="Pillager's Culottes +3",feet={name="Herculean boots", augments={'Accuracy+24 Attack+24','Damage taken-2%','STR+7','Accuracy+11','Attack+15',}}}
         
     -- Mod set for trivial mobs (Skadi+1)
     sets.engaged.TA = {ammo="Yetshila +1",
@@ -440,16 +439,14 @@ function init_gear_sets()
         back=gear.CapeSTP,waist="Reiki Yotai",legs="Malignance tights",feet="Malignance boots"}
 		
 	sets.engaged.HybridSB = {ammo="Expeditious pinion",  --7 SB
-        head="Malignance chapeau",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Dignitary's Earring",  --5 SB 5 SB2
+        head="Malignance chapeau",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Skulker's Earring",  --5 SB 5 SB2
         body="Malignance tabard",hands="Malignance gloves",ring1="Chirich Ring +1",ring2="Chirich Ring +1",  --20 SB
-        back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%'}},
-		waist="Reiki Yotai",legs="Gleti's breeches",feet="Volte spats"}  --16/21 SB
+        back=gear.CapeSTP,waist="Reiki Yotai",legs="Gleti's breeches",feet="Volte spats"}  --16/21 SB
 		
 	sets.engaged.DT = {ammo="Yamarang",
         head="Malignance chapeau",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Telos Earring",
         body="Malignance tabard",hands="Malignance gloves",ring1="Moonlight Ring",ring2="Moonlight Ring",
-        back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%'}},
-		waist="Reiki Yotai",legs="Malignance tights",feet="Malignance boots"}
+        back=gear.CapeSTP,waist="Reiki Yotai",legs="Malignance tights",feet="Malignance boots"}
 		
 	sets.engaged.H2H = {ammo="Yamarang",
         head="Malignance chapeau",neck="Assassin's gorget +2",ear1="Mache Earring +1",ear2="Telos Earring",
@@ -513,7 +510,7 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     end
 	
 	if spell.type == 'WeaponSkill' then
-		if spell.element == world.weather_element and data.weaponskills.elemental:contains(spell.name) then			
+		if get_obi_bonus(spell) > 0 and data.weaponskills.elemental:contains(spell.name) then			
 			equip(sets.buff.Weather)
 		end
 	end

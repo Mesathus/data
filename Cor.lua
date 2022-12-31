@@ -370,7 +370,7 @@ end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
     if spell.type == 'WeaponSkill' then
-		if spell.element == world.weather_element and data.weaponskills.elemental:contains(spell.name) then			
+		if get_obi_bonus(spell) > 0 and data.weaponskills.elemental:contains(spell.name) then			
 			equip(sets.buff.Weather)
 		end
 	end

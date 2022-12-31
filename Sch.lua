@@ -345,6 +345,11 @@ function init_gear_sets()
         head="Pixie hairpin +1",neck="Argute Stole +2",ear1="Regal Earring",ear2="Moonshade Earring",
         body="Agwu's robe",hands="Agwu's gages",ring1="Epaminondas's Ring",ring2="Archon Ring",
         back="Lugh's cape",waist="Orpheus's sash",legs="Agwu's slops",feet="Arbatel loafers +3"}
+		
+	sets.precast.WS['Aeolian Edge'] = {ammo="Ghastly tathlum +1",
+        head="Merlinic hood",neck="Argute Stole +2",ear1="Regal Earring",ear2="Moonshade Earring",
+        body="Agwu's robe",hands="Agwu's gages",ring1="Freke Ring",ring2="Metamorph Ring +1",
+        back="Lugh's cape",waist="Orpheus's sash",legs="Agwu's slops",feet="Arbatel loafers +3"}
 
 
 
@@ -371,11 +376,31 @@ end
 -- Job-specific hooks for standard casting events.
 -------------------------------------------------------------------------------------------------------------------
 
+function job_post_precast(spell, action, spellMap, eventArgs)
+    if spell.type == 'WeaponSkill' then
+		if get_obi_bonus(spell) > 0 and data.weaponskills.elemental:contains(spell.name) then			
+			equip(sets.buff.Weather)
+		end
+	end
+	
+	if spell.type == 'WeaponSkill' then
+        if player.tp > 2750 then
+			if data.weaponskills.elemental:contains(spell.name) then
+			
+			else
+				equip({ear2 = "Telos Earring"})
+			end
+        end
+    end
+	
+end
+
 -- Run after the general midcast() is done.
 function job_post_midcast(spell, action, spellMap, eventArgs)
     if spell.action_type == 'Magic' then
         apply_grimoire_bonuses(spell, action, spellMap, eventArgs)
     end
+	get_obi_bonus(spell)
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -523,7 +548,7 @@ function apply_grimoire_bonuses(spell, action, spellMap)
         if state.Buff.Klimaform and spell.element == world.weather_element then
             equip(sets.buff['Klimaform'])
         end
-		if spell.element == world.weather_element then
+		if get_obi_bonus(spell) > 0 then
 			equip(sets.buff['Weather'])
 		end
     end
@@ -628,6 +653,7 @@ function get_current_strategem_count()
 
     return currentCharges
 end
+
 
 
 -- Select default macro book on initial load or subjob change.
