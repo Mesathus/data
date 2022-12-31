@@ -198,6 +198,8 @@ function init_gear_sets()
         body="Nyame mail",	hands="Chasseur's Gants +2",ring1="Regal Ring",ring2="Epaminondas's ring",
         back=gear.CorSavageCape,waist="Kentarch Belt +1",legs="Nyame Flanchard",feet="Lanun Bottes +3"}
 		
+	sets.precast.WS['Viper Bite'] = set_combine(sets.precast.WS['Savage Blade'],{})
+		
 	sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS['Wildfire'], {})
     
     -- Midcast Sets

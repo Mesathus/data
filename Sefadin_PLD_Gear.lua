@@ -30,7 +30,7 @@ function user_setup()
     state.WeaponskillMode:options('Normal', 'Acc')
     state.CastingMode:options('Normal', 'SIRD', 'HPBAL')    
     state.IdleMode:options('DT', 'Normal', 'Pulling')
-	state.ShieldMode = M{'Ochain','Aegis', 'Srivatsa'}
+	state.ShieldMode = M{'Srivatsa', 'Duban','Aegis'}
      
 -- Allows the use of Ctrl + ~ and Alt + ~ for 2 more macros of your choice.
     -- send_command('bind ^` input /ja "Cover" <stal>') --Ctrl'~'
@@ -730,7 +730,7 @@ function init_gear_sets()
     sets.Weapon = {}
     sets.Neck = {Neck=""} --Locks Dynamis Neck for Rank Point Farming
 	sets.Aegis = {sub="Aegis"}
-	sets.Ochain = {sub="Ochain"}
+	sets.Duban = {sub="Duban"}
 	sets.Srivatsa = {sub="Srivatsa"}
 	sets.Kiting = {legs="Carmine Cuisses", feet="Hippomenes socks +1"}
 end
@@ -860,8 +860,8 @@ function customize_idle_set(idleSet)
 		equip(sets.Aegis)
 	end
 	
-	if state.ShieldMode.value == 'Ochain' then
-		equip(sets.Ochain)
+	if state.ShieldMode.value == 'Duban' then
+		equip(sets.Duban)
 	end
 	
 	if state.ShieldMode.value == 'Srivatsa' then
@@ -916,8 +916,8 @@ function customize_melee_set(meleeSet)
 		equip(sets.Aegis)
 	end
 	
-	if state.ShieldMode.value == 'Ochain' then
-		equip(sets.Ochain)
+	if state.ShieldMode.value == 'Duban' then
+		equip(sets.Duban)
 	end
 	
 	if state.ShieldMode.value == 'Srivatsa' then
@@ -964,8 +964,8 @@ function display_current_job_state(eventArgs)
 	
 	if state.ShieldMode.value == 'Aegis' then
 		msg = msg .. '[ Shield: Aegis ] '
-	elseif state.ShieldMode.value == 'Ochain' then
-		msg = msg .. '[ Shield: Ochain ] '
+	elseif state.ShieldMode.value == 'Duban' then
+		msg = msg .. '[ Shield: Duban ] '
 	else
 		msg = msg .. '[ Shield: Srivatsa ] '
 	end

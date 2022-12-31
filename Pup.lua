@@ -205,12 +205,12 @@ function init_gear_sets()
   })
   
   sets.engaged.Hybrid = {
-        head="Malignance chapeau",neck="Shulmanu collar",ear1="Mache Earring +1",ear2="Telos Earring",
+        head="Malignance chapeau",neck="Shulmanu collar",ear1="Mache Earring +1",ear2="Karagoz Earring +1",
         body="Malignance tabard",hands="Malignance gloves",ring1="Niqmaddu Ring",ring2="Gere Ring",
         back="Visucius's mantle",waist="Moonbow belt +1",legs="Malignance tights",feet="Malignance boots"}
   
   sets.defense.PDT = {ammo="Yamarang",
-        head="Malignance chapeau",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Telos Earring",
+        head="Malignance chapeau",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Karagoz Earring +1",
         body="Malignance tabard",hands="Malignance gloves",ring1="Moonlight Ring",ring2="Moonlight Ring",
         back={ name="Toutatis's Cape", augments={'AGI+20','Eva.+20 /Mag. Eva.+20','Evasion+10','"Store TP"+10','Phys. dmg. taken-10%'}},
 		waist="Reiki Yotai",legs="Malignance tights",feet="Malignance boots"}

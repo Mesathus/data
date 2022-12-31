@@ -206,7 +206,7 @@ function init_gear_sets()
     sets.precast.WS['Mandalic Stab'].SATA = set_combine(sets.precast.WS['Mandalic Stab'].Mod, {ammo = "Yetshila +1",body="Plunderer's vest +3"})
 	
 	sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {ammo="Seething bomblet +1",
-																	head="Nyame Helm",neck="Caro necklace",
+																	head="Nyame Helm",neck="Republican Platinum Medal",
 																	body="Nyame mail", ring1="Gere Ring", ring2="Epaminondas's Ring",
 																	back={ name="Toutatis's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%'}},
 																	waist="Kentarch belt +1", legs="Nyame Flanchard"})

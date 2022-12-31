@@ -42,7 +42,7 @@ end
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
   -- Options: Override default values
-  state.OffenseMode:options('Normal', 'Acc', 'Hybrid', 'HybMpaca','Sixty')
+  state.OffenseMode:options('Normal', 'Hybrid', 'HybMpaca','Sixty')
   state.WeaponskillMode:options('Normal', 'Acc', 'Fodder')
   state.PhysicalDefenseMode:options('PDT', 'Evasion')
   state.MagicalDefenseMode:options('MDT')
@@ -162,7 +162,7 @@ function init_gear_sets()
 	
   sets.idle.Refresh = set_combine(sets.idle, {
 	ammo="Automat. Oil +2",
-	head="Rawhide Mask",
+	head="Rawhide Mask",neck="Shepherd's chain",
 	ring1="Stikini Ring +1",ring2="Stikini Ring +1"})
 	
   sets.idle.Auto = {ammo="Automat. Oil +3",
@@ -202,23 +202,23 @@ function init_gear_sets()
   -- Normal melee group
   sets.engaged = {
     ammo="Automat. Oil +3",
-    head="Mpaca's cap",neck="Bathy choker +1",ear1="Mache Earring +1",ear2="Telos Earring",
+    head="Mpaca's cap",neck="Bathy choker +1",ear1="Mache Earring +1",ear2="Karagoz Earring +1",
         body="Mpaca's doublet",hands="Mpaca's gloves",ring1="Niqmaddu Ring",ring2="Gere Ring",
         back="Visucius's mantle",waist="Moonbow belt +1",legs="Mpaca's hose",feet="Mpaca's boots"}
 
   sets.engaged.Acc = set_combine(sets.engaged, {
-    head="Ptica Headgear",neck="Subtlety Spectacles",ear1="Zennaroi Earring",
+    head="Ptica Headgear",neck="Subtlety Spectacles",ear1="Mache Earring +1",
     body="Pitre Tobe +1",hands=gear.taeon_hands_ta,ring2="Oneiros Annulet",
     waist="Hurch'lan Sash",legs=gear.taeon_legs_ta,feet="Karagoz Scarpe +1"
   })
   
   sets.engaged.Hybrid = {
-        head="Malignance chapeau",neck="Shulmanu collar",ear1="Mache Earring +1",ear2="Telos Earring",
+        head="Malignance chapeau",neck="Shulmanu collar",ear1="Mache Earring +1",ear2="Karagoz Earring +1",
         body="Malignance tabard",hands="Malignance gloves",ring1="Niqmaddu Ring",ring2="Gere Ring",
         back="Visucius's mantle",waist="Moonbow belt +1",legs="Malignance tights",feet="Malignance boots"}
   
   sets.engaged.HybMpaca = {
-		head="Mpaca's cap",neck="Bathy choker +1",ear1="Mache Earring +1",ear2="Telos Earring",
+		head="Mpaca's cap",neck="Bathy choker +1",ear1="Mache Earring +1",ear2="Karagoz Earring +1",
         body="Mpaca's doublet",hands="Mpaca's gloves",ring1="Niqmaddu Ring",ring2="Gere Ring",
         back="Moonlight Cape",waist="Moonbow belt +1",legs="Mpaca's hose",feet="Mpaca's boots"
   }

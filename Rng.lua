@@ -60,7 +60,7 @@ function init_gear_sets()
 	--------------------------------------
 
 	-- Precast sets to enhance JAs
-	sets.precast.JA['Bounty Shot'] = {hands="Amini Glovelettes +1",waist="Chaac Belt"}
+	sets.precast.JA['Bounty Shot'] = {hands="Amini Glovelettes +2",waist="Chaac Belt"}
 	sets.precast.JA['Camouflage'] = {body="Orion Jerkin +3"}
 	sets.precast.JA['Scavenge'] = {feet="Orion Socks +2"}
 	sets.precast.JA['Shadowbind'] = {hands="Orion Bracers +2"}
@@ -81,9 +81,9 @@ function init_gear_sets()
 	-- Ranged sets (snapshot)
 	
 	sets.precast.RA = {
-		head="Amini gapette +1", neck="Scout's gorget +2",
-		body="Amini Caban +2",hands="Carmine finger gauntlets +1",
-		back="Lutian Cape",waist="Yemaya Belt",legs="Adhemar kecks +1",feet="Meghanada jambeaux +2"}
+		head="Amini gapette +2", neck="Scout's gorget +2",   --8, 4
+		body="Amini Caban +2",hands="Carmine finger gauntlets +1",   --8
+		back="Lutian Cape",waist="Yemaya Belt",legs="Adhemar kecks +1",feet="Meghanada jambeaux +2"}   --2, 10, 10
 
 
 	-- Weaponskill sets
@@ -199,6 +199,13 @@ function init_gear_sets()
 		head="Arcadian beret +3",neck="Iskur Gorget",ear1="Dedition earring",ear2="Telos Earring",
 		body="Arcadian jerkin +3",hands="Malignance gloves",ring1="Ilabrat Ring",ring2="Regal Ring",
 		back="Belenus's Cape",waist="Yemaya Belt",legs="Malignance tights",feet="Malignance boots"}
+	
+	sets.idle.Gastra = set_combine(sets.idle, {ranged = "Gastraphetes", ammo = "Quelling bolt"})
+	sets.idle.Yoichi = set_combine(sets.idle, {ranged = "Yoichinoyumi", ammo = "Chrono arrow"})
+	sets.idle.Annihilator = set_combine(sets.idle, {ranged = "Annihilator", ammo = "Chrono bullet"})
+	sets.idle.Fomalhaut = set_combine(sets.idle, {ranged = "Fomalhaut", ammo = "Chrono bullet"})
+	sets.idle.Savage = set_combine(sets.idle, {ranged = "Sparrowhawk +2", ammo = ""})
+	
 	
 	-- Defense sets
 	sets.defense.PDT = {ammo="",
