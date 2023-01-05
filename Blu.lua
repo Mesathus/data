@@ -21,6 +21,7 @@ function job_setup()
     state.Buff.Convergence = buffactive.Convergence or false
     state.Buff.Diffusion = buffactive.Diffusion or false
     state.Buff.Efflux = buffactive.Efflux or false
+
     
     state.Buff['Unbridled Learning'] = buffactive['Unbridled Learning'] or false
 
@@ -233,6 +234,7 @@ function init_gear_sets()
     sets.buff.Diffusion = {feet="Luhlaza Charuqs +1"}
     sets.buff.Enchainment = {body="Luhlaza Jubbah"}
     sets.buff.Efflux = {legs="Hashishin Tayt"}
+	sets.buff['Weather'] = {waist='Hachirin-no-obi'}
 
     
     -- Precast Sets
@@ -581,7 +583,6 @@ function job_post_precast(spell, action, spellMap, eventArgs)
 			end
         end
     end
-	
 end
 
 -- Run after the default midcast() is done.
@@ -597,6 +598,12 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
         if spellMap == 'Healing' and spell.target.type == 'SELF' and sets.self_healing then
             equip(sets.self_healing)
         end
+		if buffactive['Burst Affinity'] then
+			equip(sets.midcast['Blue Magic'].Magical.Burst)
+		end
+		if get_obi_bonus(spell) > 0 then
+			equip(sets.buff['Weather'])
+		end
     end
 
     -- If in learning mode, keep on gear intended to help with that, regardless of action.
