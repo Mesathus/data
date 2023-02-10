@@ -336,7 +336,7 @@ function init_gear_sets()
 		body="Malignance tabard", hands="Malignance gloves", 
 		legs="Malignance tights", feet="Malignance boots"})
 
-
+	sets.buff['Weather'] = {waist="Hachirin-no-obi"}
     --sets.engaged.Ranged = {ammo=gear.RAbullet,
     --    head="Whirlpool Mask",neck="Twilight Torque",ear1="Clearview Earring",ear2="Volley Earring",
     --    body="Iuitl Vest",hands="Iuitl Wristbands",ring1="Defending Ring",ring2=gear.DarkRing.physical,
@@ -371,7 +371,7 @@ end
 function job_post_precast(spell, action, spellMap, eventArgs)
     if spell.type == 'WeaponSkill' then
 		if get_obi_bonus(spell) > 0 and data.weaponskills.elemental:contains(spell.name) then			
-			equip(sets.buff.Weather)
+			equip(sets.buff['Weather'])
 		end
 	end
 	

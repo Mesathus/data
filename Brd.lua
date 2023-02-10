@@ -303,7 +303,7 @@ function init_gear_sets()
     sets.idle.PDT = {main="Daybreak", sub="Genmei shield",range="Nibiru Harp",
         head="Nyame helm",neck="Bathy choker +1",ear1="Etiolation Earring",ear2="Infused Earring",
         body="Nyame mail",hands="Nyame gauntlets",ring1="Moonlight Ring",ring2="Moonlight Ring",
-        back="Moonlight cape",waist="Flume Belt",legs="Nyame flanchard",feet="Nyame sollerets"}
+        back="Moonlight cape",waist="Carrier's sash",legs="Nyame flanchard",feet="Nyame sollerets"}
 		
 	sets.idle.DD = {range="Nibiru Harp",
         head="Bihu roundlet +3",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Infused Earring",
@@ -421,7 +421,7 @@ function init_gear_sets()
         body="Nyame mail",hands="Bunzi's gloves",ring1="Moonlight Ring",ring2="Moonlight Ring",
         back=gear.BrdSTPCape,waist="Sailfi Belt +1",legs="Nyame Flanchard",feet="Nyame Sollerets"}
 		
-		
+	sets.buff['Weather'] = {waist="Hachirin-no-obi"}	
 	
 end
 
@@ -451,7 +451,7 @@ end
 function job_post_precast(spell, action, spellMap, eventArgs)
     if spell.type == 'WeaponSkill' then
 		if get_obi_bonus(spell) > 0 and data.weaponskills.elemental:contains(spell.name) then			
-			equip(sets.buff.Weather)
+			equip(sets.buff['Weather'])
 		end
 	end
 	

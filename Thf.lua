@@ -484,7 +484,7 @@ function init_gear_sets()
         back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%'}},
 		waist="Reiki Yotai",legs="Pillager's Culottes +3",feet="Turms Leggings +1"}
     
-    
+    sets.buff['Weather'] = {waist="Hachirin-no-obi"}
 
 end
 
@@ -511,7 +511,7 @@ function job_post_precast(spell, action, spellMap, eventArgs)
 	
 	if spell.type == 'WeaponSkill' then
 		if get_obi_bonus(spell) > 0 and data.weaponskills.elemental:contains(spell.name) then			
-			equip(sets.buff.Weather)
+			equip(sets.buff['Weather'])
 		end
 	end
 	-- Used to overwrite Moonshade Earring if TP is more than 2750.

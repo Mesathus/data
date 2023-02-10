@@ -464,17 +464,17 @@ function init_gear_sets()
     
     -- Idle sets
     sets.idle = {ammo="Staunch tathlum +1",
-        head="Malignance Chapeau",neck="Loricate torque +1",ear1="Infused Earring",ear2="Loquacious Earring",
-        body="Hashishin mintan +2",hands="Malignance Gloves",ring1="Defending Ring",ring2="Patricius Ring",
-        back="Moonlight cape",waist="Flume Belt",legs="Carmine cuisses +1",feet="Malignance boots"}
+        head="Malignance Chapeau",neck="Loricate torque +1",ear1="Infused Earring",ear2="Etiolation Earring",
+        body="Hashishin mintan +2",hands="Malignance Gloves",ring1="Defending Ring",ring2="Fortified Ring",
+        back="Moonlight cape",waist="Carrier's sash",legs="Carmine cuisses +1",feet="Malignance boots"}
 
     sets.idle.PDT = {ammo="Staunch tathlum +1",
-        head="Malignance Chapeau",neck="Loricate torque +1",ear1="Infused Earring",ear2="Loquacious Earring",
-        body="Hashishin mintan +2",hands="Malignance Gloves",ring1="Defending Ring",ring2="Patricius Ring",
-        back="Moonlight cape",waist="Flume Belt",legs="Malignance tights",feet="Malignance boots"}
+        head="Malignance Chapeau",neck="Loricate torque +1",ear1="Infused Earring",ear2="Etiolation Earring",
+        body="Hashishin mintan +2",hands="Malignance Gloves",ring1="Defending Ring",ring2="Fortified Ring",
+        back="Moonlight cape",waist="Carrier's sash",legs="Malignance tights",feet="Malignance boots"}
 		
 	sets.idle.Refresh = {ammo="Staunch tathlum +1",
-        head="Rawhide mask",neck="Loricate torque +1",ear1="Infused Earring",ear2="Loquacious Earring",
+        head="Rawhide mask",neck="Loricate torque +1",ear1="Infused Earring",ear2="Etiolation Earring",
         body="Hashishin mintan +2",hands="Malignance Gloves",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
         back="Moonlight cape",waist="Flume Belt",legs="Lengo pants",feet="Malignance boots"}
 

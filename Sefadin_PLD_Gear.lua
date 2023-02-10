@@ -111,7 +111,7 @@ function init_gear_sets()
     sets.precast.JA['Cover'] = set_combine(sets.Enmity, {head="Reverence coronet +1"})
     sets.precast.JA['Rampart'] = set_combine(sets.Enmity, {head="Caballarius coronet +2"})
     sets.precast.JA['Fealty'] = set_combine(sets.Enmity, {head="Caballarius surcoat +3"})
-    sets.precast.JA['Chivalry'] = set_combine(sets.Enmity, {hands="Caballarius gauntlets +1"})
+    sets.precast.JA['Chivalry'] = {hands="Caballarius gauntlets +1"}
     sets.precast.JA['Divine Emblem'] = set_combine(sets.Enmity, {hands="Chevalier's sabatons +1"})
     sets.precast.JA['Sepulcher'] = set_combine(sets.Enmity, {})
     sets.precast.JA['Palisade'] = set_combine(sets.Enmity, {})
@@ -129,7 +129,7 @@ function init_gear_sets()
         Hands="Leyline Gloves", --8
         Ring1="Prolix Ring", -- 3
         Legs="Arjuna Breeches", --4
-        Feet="Carmine Greaves +1", --5 + AUG
+        Feet="Caballarius leggings +2", --10 + AUG
         Waist="Creed Baudrier", --40HP
         back=gear.FCCape, --10FC
         Ring2="Kishar Ring", --  4FC --70HP
@@ -228,7 +228,7 @@ function init_gear_sets()
     sets.midcast.Utsusemi = sets.Enmity
     sets.midcast.Flash = sets.Enmity
     sets.midcast['Enhancing Magic'] = sets.Enmity
-    sets.midcast.Reprisal = sets.Enmity
+    sets.midcast.Reprisal = sets.precast.FC
     sets.midcast.Crusade = sets.Enmity
     sets.midcast.Enlight = sets.Enmity
     sets.midcast['Blue Magic'] = sets.Enmity

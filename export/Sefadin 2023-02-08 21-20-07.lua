@@ -1,0 +1,18 @@
+sets.exported={
+    main={ name="Perun +1", augments={'Path: A',}},
+    sub={ name="Kustawi +1", augments={'Path: A',}},
+    range={ name="Gastraphetes", augments={'Path: A',}},
+    ammo="Quelling Bolt",
+    head={ name="Arcadian Beret +3", augments={'Enhances "Recycle" effect',}},
+    body="Amini Caban +3",
+    hands="Malignance Gloves",
+    legs="Amini Bragues +3",
+    feet="Malignance Boots",
+    neck={ name="Scout's Gorget +2", augments={'Path: A',}},
+    waist="Yemaya Belt",
+    left_ear="Dedition Earring",
+    right_ear="Telos Earring",
+    left_ring="Ilabrat Ring",
+    right_ring="Regal Ring",
+    back={ name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','"Store TP"+10',}},
+}

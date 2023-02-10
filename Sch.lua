@@ -136,7 +136,7 @@ function init_gear_sets()
 		body = "Pedagogy gown +3", hands = "Telchine gloves", ring1="Kishar ring", ring2="Stikini ring +1",
 		back = "Fi Follet Cape +1", waist = "Embla sash", legs = "Telchine Braconi",feet = "Telchine pigaches" }
 		
-	sets.midcast.Regen = set_combine(sets.midcast['Enhancing Magic'], {main="Bolelabunga",head="Arbatel Bonnet +2", body="Telchine chasuble",back="Lugh's cape"})
+	sets.midcast.Regen = set_combine(sets.midcast['Enhancing Magic'], {main="Bolelabunga",head="Arbatel Bonnet +3", body="Telchine chasuble",back="Lugh's cape"})
 		
 	sets.midcast.Haste = set_combine(sets.midcast['Enhancing Magic'], {ring2="Prolix ring"})
 
@@ -250,7 +250,7 @@ function init_gear_sets()
     -- Resting sets
     sets.resting = {main="Chatoyant Staff",sub="Enki strap",ammo="Homiliary",
         head="Befouled crown",neck="Argute stole +2",ear1="Etiolation Earring",ear2="Loquacious Earring",
-        body="Amalric doublet +1",hands="Volte gloves",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
+        body="Agwu's robe",hands="Volte gloves",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
         back="Moonlight cape",waist="Luminary sash",legs="Volte brais",feet="Nyame sollerets"}
 
 
@@ -354,8 +354,8 @@ function init_gear_sets()
 
 
     -- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
-    sets.buff['Ebullience'] = {head="Arbatel's Bonnet +3"}
-    sets.buff['Rapture'] = {head="Arbatel's Bonnet +3"}
+    sets.buff['Ebullience'] = {head="Arbatel Bonnet +3"}
+    sets.buff['Rapture'] = {head="Arbatel Bonnet +3"}
     sets.buff['Perpetuance'] = {hands="Arbatel Bracers +3"}
     sets.buff['Immanence'] = {hands="Arbatel Bracers +3"}
     sets.buff['Penury'] = {legs="Arbatel Pants"}
@@ -379,7 +379,7 @@ end
 function job_post_precast(spell, action, spellMap, eventArgs)
     if spell.type == 'WeaponSkill' then
 		if get_obi_bonus(spell) > 0 and data.weaponskills.elemental:contains(spell.name) then			
-			equip(sets.buff.Weather)
+			equip(sets.buff['Weather'])
 		end
 	end
 	
