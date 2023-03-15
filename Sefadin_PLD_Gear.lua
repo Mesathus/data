@@ -112,7 +112,7 @@ function init_gear_sets()
     sets.precast.JA['Rampart'] = set_combine(sets.Enmity, {head="Caballarius coronet +2"})
     sets.precast.JA['Fealty'] = set_combine(sets.Enmity, {head="Caballarius surcoat +3"})
     sets.precast.JA['Chivalry'] = {hands="Caballarius gauntlets +1"}
-    sets.precast.JA['Divine Emblem'] = set_combine(sets.Enmity, {hands="Chevalier's sabatons +1"})
+    sets.precast.JA['Divine Emblem'] = set_combine(sets.Enmity, {hands="Chevalier's sabatons +2"})
     sets.precast.JA['Sepulcher'] = set_combine(sets.Enmity, {})
     sets.precast.JA['Palisade'] = set_combine(sets.Enmity, {})
     sets.precast.JA['Intervene'] = set_combine(sets.Enmity, {})
@@ -123,13 +123,13 @@ function init_gear_sets()
         Ammo="Impatiens", --2QM
         Head="Carmine Mask +1", --14
         Neck="Voltsurge Torque", --4       
-        Ear1="Tuisto Earring", --2
+        Ear1="Tuisto Earring", 
         Ear2="Etiolation Earring", --1
-        Body="Reverence Surcoat +3", --5 -- +3=10
+        Body="Reverence Surcoat +3", --10
         Hands="Leyline Gloves", --8
         Ring1="Prolix Ring", -- 3
         Legs="Arjuna Breeches", --4
-        Feet="Caballarius leggings +2", --10 + AUG
+        Feet="Chevalier's sabatons +2", --10 + AUG
         Waist="Creed Baudrier", --40HP
         back=gear.FCCape, --10FC
         Ring2="Kishar Ring", --  4FC --70HP

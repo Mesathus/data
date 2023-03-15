@@ -38,10 +38,10 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function user_setup()
-    state.OffenseMode:options('Normal', 'Acc', 'DT')
+    state.OffenseMode:options('Tank', 'Normal', 'Hybrid')
     state.WeaponskillMode:options('Normal', 'Acc')
     state.PhysicalDefenseMode:options('PDT')
-    state.IdleMode:options('Regen', 'Refresh')
+    state.IdleMode:options('Normal','Regen', 'Refresh')
 
 	select_default_macro_book()
 end
@@ -60,9 +60,9 @@ function init_gear_sets()
     sets.precast.JA['Pflug'] = {feet="Runeist bottes +1"}
     sets.precast.JA['Battuta'] = {head="Futhark Bandeau +1"}
     sets.precast.JA['Liement'] = {body="Futhark Coat +1"}
-    sets.precast.JA['Lunge'] = {head="Thaumas Hat", neck="Eddy Necklace", ear1="Hecate's Earring", ear2="Friomisi Earring",
-            body="Vanir Cotehardie", ring1="Acumen Ring", ring2="Omega Ring",
-            back="Evasionist's Cape", waist="Yamabuki-no-obi", legs="Iuitl Tights +1", feet="Qaaxo Leggings"}
+    sets.precast.JA['Lunge'] = {head="Nyame helm", neck="Sibyl scarf", ear1="Crematio Earring", ear2="Friomisi Earring",
+            body="Agwu's robe", hands="Agwu's gages",ring1="Defending Ring", ring2="Metamorph Ring +1",
+            back="Evasionist's Cape", waist="Orpheus's sash", legs="Agwu's slops", feet="Nyame sollerets"}
     sets.precast.JA['Swipe'] = sets.precast.JA['Lunge']
     sets.precast.JA['Gambit'] = {hands="Runeist Mitons +1"}
     sets.precast.JA['Rayke'] = {feet="Futhark Bottes +1"}
@@ -75,29 +75,29 @@ function init_gear_sets()
 
 
 	-- Fast cast sets for spells
-    sets.precast.FC = {
-            head="Runeist bandeau +1", neck="Voltsurge Torque", ear1="Loquacious Earring",
-            body="Taeon tabard", hands="Thaumas gloves", ring2="Prolix Ring",
-            legs="Orvail Pants +1"}
-    sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash", legs="Futhark Trousers +1"})
-    sets.precast.FC['Utsusemi: Ichi'] = set_combine(sets.precast.FC, {neck='Magoraga beads', body="Passion jacket", back="Mujin Mantle"})
+    sets.precast.FC = {ammo="Sapience orb",
+            head="Carmine mask +1", neck="Voltsurge Torque", ear1="Tuisto Earring", ear2="Odnowa earring +1",
+            body="Agwu's robe", hands="Leyline gloves", ring1="Prolix Ring", ring2="Kishar ring",
+            back="Moonlight cape",waist="Flume belt",legs="Agwu's slops", feet="Carmine greaves +1"}
+    sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash"})
+    sets.precast.FC['Utsusemi: Ichi'] = set_combine(sets.precast.FC, {neck='Magoraga beads', body="Passion jacket"})
     sets.precast.FC['Utsusemi: Ni'] = set_combine(sets.precast.FC['Utsusemi: Ichi'], {})
 
 
 	-- Weaponskill sets
 	
-	sets.precast.WS = {ammo="Mantoptera Eye",
-        head="Dampening Tam",neck="Fotia Gorget",ear1="Sherida Earring",ear2="Moonshade Earring",
-        body="Adhemar jacket",hands="Meghanada gloves +2",ring1="Rajas Ring",ring2="Epona's Ring",
-        back="Bleating Mantle", waist="Fotia Belt",legs="Lustratio subligar +1",feet="Lustratio leggings +1"}
+	sets.precast.WS = {ammo="Seething bomblet +1",
+        head="Nyame Helm",neck="Fotia gorget", left_ear="Sherida Earring",right_ear="Odnowa Earring +1",
+		body="Nyame Mail",hands="Nyame gauntlets",left_ring="Regal Ring",right_ring="Epaminondas's Ring",
+		back="Bleating mantle",waist="Fotia belt", legs="Nyame Flanchard", feet="Nyame sollerets"}
 	
 	
 	
-    sets.precast.WS['Resolution'] = set_combine(sets.precast.WS)
+    sets.precast.WS['Resolution'] = set_combine(sets.precast.WS, {ear2="Telos Earring"})
     sets.precast.WS['Resolution'].Acc = set_combine(sets.precast.WS['Resolution'].Normal)
-    sets.precast.WS['Dimidiation'] = set_combine(sets.precast.WS, {ammo="Falcon eye",ring2="Ramuh Ring +1"})
+    sets.precast.WS['Dimidiation'] = set_combine(sets.precast.WS, {ammo="Falcon eye",ear2="Mache earring +1",ring2="Ilabrat Ring"})
     sets.precast.WS['Dimidiation'].Acc = set_combine(sets.precast.WS['Dimidiation'].Normal)
-    sets.precast.WS['Herculean Slash'] = set_combine(sets.precast['Lunge'], {hands="Umuthi Gloves"})
+    sets.precast.WS['Herculean Slash'] = set_combine(sets.precast['Lunge'], {})
     sets.precast.WS['Herculean Slash'].Acc = set_combine(sets.precast.WS['Herculean Slash'].Normal, {})
 
 
@@ -106,9 +106,19 @@ function init_gear_sets()
 	--------------------------------------
 	
     sets.midcast.FastRecast = {}
-    sets.midcast['Enhancing Magic'] = {neck="Colossus's torque", ear1="Andoaa Earring", hands="Runeist mitons +1", waist="Olympus Sash", legs="Futhark Trousers +1"}
-    sets.midcast['Phalanx'] = set_combine(sets.midcast['Enhancing Magic'], {head="Futhark Bandeau +1"})
-    sets.midcast['Regen'] = {head="Runeist Bandeau +1", legs="Futhark Trousers +1"}
+    sets.midcast['Enhancing Magic'] = {neck="Incanter's Torque", left_ear="Mimir Earring",right_ear="Augment. Earring",
+		hands="Runeist mitons +1", waist="Olympus Sash", legs="Futhark Trousers +1"}
+	
+    sets.midcast['Phalanx'] = set_combine(sets.midcast['Enhancing Magic'], 
+		{
+			head={ name="Taeon Chapeau", augments={'Phalanx +3',}},
+			body={ name="Taeon Tabard", augments={'Attack+23','"Dual Wield"+5','Phalanx +3',}},
+			hands={ name="Taeon Gloves", augments={'Phalanx +3',}},left_ring="Stikini Ring +1",right_ring="Stikini Ring +1",
+			back="Merciful Cape",
+			legs={ name="Taeon Tights", augments={'Accuracy+20 Attack+20','"Triple Atk."+2','Phalanx +3',}},
+			feet={ name="Taeon Boots", augments={'Phalanx +3',}}})
+		
+    sets.midcast['Regen'] = {}
     sets.midcast['Stoneskin'] = {waist="Siegel Sash"}
     sets.midcast.Cure = {neck="Colossus's Torque", hands="Buremte Gloves", ring1="Ephedra Ring", feet="Futhark Boots +1"}
 
@@ -116,11 +126,17 @@ function init_gear_sets()
 	-- Idle/resting/defense/etc sets
 	--------------------------------------
 
-    sets.idle = {ammo='Inlamvuyeso',
-            head="Turms cap", neck="Bathy choker", ear1="Ethereal earring", ear2="Moonshade earring",
-            body="Mekosu. Harness", hands="Umuthi Gloves", ring1="Sheltered Ring", ring2="Paguroidea ring",
-            back="Evasionist's Cape", waist="Flume Belt", legs="Carmine cuisses +1", feet="Hermes' sandals"}
-    sets.idle.Refresh = set_combine(sets.idle, {body="Runeist Coat +1", waist="Fucho-no-obi"})
+    sets.idle = {ammo="Staunch Tathlum +1",
+		head="Nyame Helm",neck="Loricate Torque +1", left_ear="Cryptic Earring",right_ear="Eabani Earring",
+		body="Nyame Mail",hands="Nyame gauntlets",left_ring="Sheltered Ring",right_ring="Moonlight Ring",
+		back="Moonlight Cape",waist="Carrier's sash", legs="Carmine cuisses +1", feet="Nyame sollerets"}
+			
+			
+			
+    sets.idle.Refresh = set_combine(sets.idle, {ammo="Homiliary",
+		body="Agwu's robe", ring1="Defending ring"})
+	
+	
            
 	sets.defense.PDT = {ammo="Iron Gobbet",
         head="Iuitl Headgear +1",neck="Twilight Torque",
@@ -132,34 +148,50 @@ function init_gear_sets()
         body="Emet Harness",hands="Umuthi gloves",ring1="Defending Ring",ring2="Shadow Ring",
         back="Engulfer Cape",waist="Flume Belt",legs="Taeon tights",feet="Iuitl Gaiters +1"}
 
-	sets.Kiting = {feet="Skadi's Jambeaux +1"}
+	sets.Kiting = {feet="Hippomenes socks +1"}
 
 
 	--------------------------------------
 	-- Engaged sets
 	--------------------------------------
 
-    sets.engaged = {ammo="Ginsen",
-        head="Dampening tam",neck="Ainia collar",ear1="Sherida Earring",ear2="Tripudio earring",
-        body="Adhemar jacket",hands="Adhemar Wristbands +1",ring1="Hetairoi Ring",ring2="Epona's Ring",
-        back="Bleating mantle",waist="Chiner's Belt +1",legs="Samnuha tights",feet={ name="Herculean Boots", augments={'Accuracy+26','"Triple Atk."+4','DEX+9','Attack+1',}}}
-    sets.engaged.DD = {ammo="Ginsen",
-            head="Skormoth mask", neck="Asperity Necklace", ear1="Bladeborn Earring", ear2="Steelflash Earring",
-            body="Adhemar jacket", hands="Taeon gloves", ring1="Epona's Ring", ring2="Rajas Ring",
-            back="Lupine cape", waist="Windbuffet Belt +1", legs="Taeon tights", feet="Taeon Boots"}
-    sets.engaged.DW = {ammo="Ginsen",
-            head="Taeon Chapeau", neck="Asperity Necklace", ear1="Brutal Earring", ear2="Suppanomimi",
-            body="Adhemar jacket", hands="Taeon gloves", ring2="Epona's Ring", ring1="Rajas Ring",
-            back="Atheling Mantle", waist="Shetal stone", legs="Taeon tights", feet="Taeon boots"}
+    sets.engaged = {ammo="Seeth. Bomblet +1",
+		head="Adhemar Bonnet +1",neck="Ainia Collar",left_ear="Sherida Earring", right_ear="Brutal Earring",
+		body="Adhemar Jacket +1", hands="Adhemar Wrist. +1",left_ring="Epona's Ring", right_ring="Hetairoi Ring",
+		back="Bleating Mantle",	legs="Samnuha Tights",waist="Sailfi Belt +1",
+		feet={ name="Herculean Boots", augments={'Accuracy+26','"Triple Atk."+4','DEX+9','Attack+1',}} 
+    }
+    
+	sets.engaged.Tank = {ammo="Staunch Tathlum +1",
+		head="Nyame Helm",neck="Loricate Torque +1", left_ear="Sherida Earring",right_ear="Brutal Earring",
+		body="Nyame Mail",hands="Turms Mittens +1",left_ring="Moonlight Ring",right_ring="Moonlight Ring",
+		back="Moonlight Cape",waist="Sailfi Belt +1", legs="Nyame Flanchard", feet="Turms Leggings +1"}
+		
+	sets.engaged.Hybrid = {ammo="Seeth. Bomblet +1",
+		head="Adhemar Bonnet +1",neck="Loricate torque +1",left_ear="Sherida Earring", right_ear="Brutal Earring",
+		body="Adhemar Jacket +1", hands="Adhemar Wrist. +1",left_ring="Defending Ring", right_ring="Hetairoi Ring",
+		back="Moonlight cape",	legs="Samnuha Tights",waist="Sailfi Belt +1",
+		feet={ name="Herculean Boots", augments={'Accuracy+26','"Triple Atk."+4','DEX+9','Attack+1',}} 
+    }
+			
+    sets.engaged.DW = {ammo="Seeth. Bomblet +1",
+		head="Adhemar Bonnet +1",neck="Ainia Collar",left_ear="Sherida Earring", right_ear="Suppanomimi",
+		body="Adhemar Jacket +1", hands="Adhemar Wrist. +1",left_ring="Epona's Ring", right_ring="Hetairoi Ring",
+		back="Bleating Mantle",	legs="Samnuha Tights",waist="Sailfi Belt +1",
+		feet={ name="Herculean Boots", augments={'Accuracy+26','"Triple Atk."+4','DEX+9','Attack+1',}} 
+    }
+			
     --sets.engaged.Acc = set_combine(sets.engaged, {neck="Subtlety Spec.",waist="Olseni Belt"})
     sets.engaged.PDT = {ammo="Aqreqaq Bomblet",
             head="Futhark Bandeau +1", neck="Twilight Torque", ear1="Ethereal Earring", ear2="Colossus's earring",
             body="Futhark Coat +1", hands="Umuthi Gloves", ring1="Dark Ring", ring2="Dark Ring",
             back="Mollusca Mantle", waist="Flume Belt", legs="Runeist Trousers +1", feet="Iuitl Gaiters +1"}
+			
     sets.engaged.MDT = {
             head="Futhark Bandeau +1", neck="Twilight Torque", ear1="Ethereal Earring", ear2="Sanare Earring",
             body="Runeist Coat +1", hands="Umuthi Gloves", ring1="Dark Ring", ring2="Dark Ring",
             back="Mubvumbamiri mantle", waist="Flume Belt", legs="Runeist Trousers +1", feet="Iuitl Gaiters +1"}
+			
     sets.engaged.repulse = {back="Repulse Mantle"}
 
 end

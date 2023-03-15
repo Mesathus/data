@@ -169,10 +169,10 @@ function init_gear_sets()
         body="Amalric doublet +1",hands="Amalric gages +1",ring1="Freke Ring",ring2="Shiva Ring +1",
         back="Lugh's cape",waist="Orpheus's sash",legs="Merlinic shalwar",feet="Merlinic crackows"}
 
-    sets.midcast.Kaustra = {main="Bunzi's rod",sub="Culminus",ammo="Ghastly tathlum +1",
-        head="Pixie hairpin +1",neck="Argute Stole +2",ear1="Regal Earring",ear2="Malignance Earring",
-        body="Agwu's robe",hands="Amalric gages +1",ring1="Freke Ring",ring2="Archon Ring",
-        back="Lugh's cape",waist="Orpheus's sash",legs="Amalric slops +1",feet="Arbatel loafers +3"}
+    sets.midcast.Kaustra = {main="Bunzi's rod",sub="Ammurapi shield",ammo="Ghastly tathlum +1",
+        head="Arbatel bonnet +3",neck="Argute Stole +2",ear1="Regal Earring",ear2="Malignance Earring",
+        body="Agwu's robe",hands="Agwu's gages",ring1="Freke Ring",ring2="Metamorph Ring +1",
+        back="Lugh's cape",waist="Orpheus's sash",legs="Agwu's slops",feet="Arbatel loafers +3"}
 
     sets.midcast.Drain = {main="Bunzi's rod",sub="Culminus",ammo="Ghastly tathlum +1",
         head="Pixie hairpin +1",neck="Erra pendant",ear1="Regal Earring",ear2="Malignance Earring",
@@ -548,7 +548,7 @@ function apply_grimoire_bonuses(spell, action, spellMap)
         if state.Buff.Klimaform and spell.element == world.weather_element then
             equip(sets.buff['Klimaform'])
         end
-		if get_obi_bonus(spell) > 0 then
+		if get_obi_bonus(spell) > 0 and not info.helix:contains(spell.english) then
 			equip(sets.buff['Weather'])
 		end
     end

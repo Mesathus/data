@@ -226,10 +226,10 @@ function init_gear_sets()
     -- EG: sets.engaged.Dagger.Accuracy.Evasion
     
     -- Basic set for if no TP weapon is defined.
-    sets.engaged = {
-        head="Nahtirah Hat",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Vanir Cotehardie",hands="Dynasty Mitts",ring1="Rajas Ring",ring2="K'ayres Ring",
-        back="Umbra Cape",waist="Goading Belt",legs="Gendewitha Spats",feet="Gendewitha Galoshes"}
+    sets.engaged = {ammo="Amar cluster",
+        head="Nyame helm", neck="Combatant's torque", left_ear="Telos Earring", right_ear="Mache earring +1",
+		body="Nyame mail", hands="Nyame gauntlets", left_ring="Chirich Ring +1", right_ring="Chirich Ring +1",
+		back="Aurist's cape +1", waist="Goading belt", legs="Nyame Flanchard", feet="Nyame Sollerets"}
 
 
     -- Buff sets: Gear that needs to be worn to actively enhance a current player buff.

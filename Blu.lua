@@ -262,7 +262,7 @@ function init_gear_sets()
         body="Dread jupon",hands="Leyline Gloves",ring1="Kishar Ring", ring2="Prolix Ring",
         back="Fi follet cape +1",waist="Witful Belt",legs="Ayanmo cosciales +2",feet="Carmine greaves +1"}
         
-    sets.precast.FC['Blue Magic'] = set_combine(sets.precast.FC, {body="Hashishin Mintan"})
+    sets.precast.FC['Blue Magic'] = set_combine(sets.precast.FC, {body="Hashishin Mintan +2"})
 
        
     -- Weaponskill sets
