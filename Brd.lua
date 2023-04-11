@@ -48,7 +48,7 @@ end
 
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
-    state.OffenseMode:options('None', 'Savage', 'Rudra', 'Daybreak')
+    state.OffenseMode:options('None', 'Savage', 'Rudra', 'Daybreak', 'Carn')
     state.CastingMode:options('Resistant' , 'Normal', 'Enmity')
     state.IdleMode:options('Normal', 'PDT', 'DD')
 
@@ -306,9 +306,9 @@ function init_gear_sets()
         back="Moonlight cape",waist="Carrier's sash",legs="Nyame flanchard",feet="Nyame sollerets"}
 		
 	sets.idle.DD = {range="Nibiru Harp",
-        head="Bihu roundlet +3",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Infused Earring",
-        body="Bihu justaucorps +3",hands="Bihu cuffs +3",ring1="Defending Ring",ring2="Moonlight Ring",
-        back="Moonlight cape",waist="Flume Belt",legs="Inyanga shalwar +2",feet="Fili Cothurnes +2"}				
+        head="Nyame helm",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Infused Earring",
+        body="Nyame mail",hands="Nyame gauntlets",ring1="Defending Ring",ring2="Moonlight Ring",
+        back="Moonlight cape",waist="Flume Belt",legs="Nyame flanchard",feet="Fili Cothurnes +2"}				
 
 
     -- --sets.idle.Weak = {main=gear.Staff.PDT,sub="Mephitis Grip",range="Oneiros Harp",

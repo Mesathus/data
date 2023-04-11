@@ -278,7 +278,7 @@ function init_gear_sets()
     sets.precast.WS['Requiescat'] = set_combine(sets.precast.WS, {ring1="Rufescent Ring"})
 
     sets.precast.WS['Sanguine Blade'] = {ammo="Pemphredo tathlum",
-        head="Pixie hairpin +1",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Regal Earring",
+        head="Pixie hairpin +1",neck="Sibyl scarf",ear1="Friomisi Earring",ear2="Regal Earring",
         body="Nyame mail",hands="Jhakri cuffs +2",ring1="Archon Ring",ring2="Epaminondas's Ring",
         back=gear.NukeCape,waist="Orpheus's sash",legs="Luhlaza Shalwar +3",feet="Amalric nails +1"}
     
@@ -431,6 +431,8 @@ function init_gear_sets()
         back="Cornflower Cape",legs="Mavi Tayt +2",feet="Luhlaza Charuqs"}
 
     sets.midcast['Blue Magic'].Buff = {}
+	
+	sets.midcast['Blue Magic']['Battery Charge'] = {head="Amalric coif +1"}
 	
 	sets.midcast['Enhancing Magic'] = {
 		head = "Telchine Cap", neck = "Voltsurge torque", ear1 = "Etiolation earring", ear2 = "Loquacious earring",

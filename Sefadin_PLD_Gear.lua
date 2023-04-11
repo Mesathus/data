@@ -129,7 +129,7 @@ function init_gear_sets()
         Hands="Leyline Gloves", --8
         Ring1="Prolix Ring", -- 3
         Legs="Arjuna Breeches", --4
-        Feet="Chevalier's sabatons +2", --10 + AUG
+        Feet="Chevalier's sabatons +2", --10
         Waist="Creed Baudrier", --40HP
         back=gear.FCCape, --10FC
         Ring2="Kishar Ring", --  4FC --70HP
@@ -178,7 +178,22 @@ function init_gear_sets()
     sets.precast.WS['Atonement'] = {}
     sets.precast.WS['Requiescat'] = {}
     sets.precast.WS['Chant du Cygne'] = {}
-    sets.precast.WS['Sanguine Blade'] = {}  
+	
+    sets.precast.WS['Sanguine Blade'] = {
+		ammo="Ghastly Tathlum +1",
+        head="Nyame Helm", --30
+        body="Nyame Mail", --30
+        hands="Nyame Gauntlets", --30
+        legs="Nyame Flanchard", --30
+        feet="Nyame Sollerets", --30
+        neck="Sanctity Necklace",
+        waist="Orpheus's Sash",
+        ear1="Friomisi Earring",
+        ear2="Crematio Earring",
+        left_ring="Shiva Ring +1",
+        right_ring="Epaminondas's Ring",
+        back={ name="Rudianos's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}},
+	}  
      
     sets.precast.WS['Savage Blade'] = {
         ammo="Aurgelmir Orb +1",
@@ -187,7 +202,7 @@ function init_gear_sets()
         Hands="Nyame Gauntlets", --8
         Legs="Nyame Flanchard", --9
         feet="Nyame Sollerets",
-        neck="Caro Necklace",
+        neck="Republican Platinum Medal",
         waist="Sailfi Belt +1",
         left_ear="Moonshade Earring",
         right_ear="Thrud Earring",
@@ -197,7 +212,7 @@ function init_gear_sets()
     }
  
     sets.precast.WS['Aeolian Edge'] = {
-        ammo="Pemphredo Tathlum",
+        ammo="Ghastly Tathlum +1",
         head="Nyame Helm", --30
         body="Nyame Mail", --30
         hands="Nyame Gauntlets", --30
@@ -272,7 +287,7 @@ function init_gear_sets()
     sets.midcast.SIRD = {--Merits 10SIRD
 		Main={name="Sakpata's Sword",priority=100}, --10FC
 		sub={name="Srivatsa",priority=150},   --15enm
-        Ammo="Staunch tathlum +1", --10SIRD    
+        Ammo="Staunch tathlum +1", --11SIRD    
         Head="Souveran Schaller +1", --20SIRD  --9
         Neck="Moonlight Necklace", --15SIRD    --15
 		Hands="Eschite Gauntlets", --15SIRD    --7

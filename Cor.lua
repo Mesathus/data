@@ -216,7 +216,7 @@ function init_gear_sets()
 		body="Lanun Frac +3",
 		hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}},
 		legs="Nyame flanchard",
-		feet="Lanun bottes +3",
+		feet="Chasseur's bottes +3",
 		neck="Commodore charm +2",
 		waist="Orpheus's sash",
 		left_ear="Friomisi Earring",
@@ -507,6 +507,7 @@ function display_roll_info(spell)
         add_to_chat(104, 'Lucky roll is '..tostring(rollinfo.lucky)..', Unlucky roll is '..tostring(rollinfo.unlucky)..'.')
     end
 end
+
 
 
 -- Determine whether we have sufficient ammo for the action being attempted.

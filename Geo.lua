@@ -71,15 +71,13 @@ function init_gear_sets()
  
     -- Fast cast sets for spells
  
-    sets.precast.FC = {main="Marin staff",range="Dunna",
-        head="Haruspex Hat +1",neck="Voltsurge torque",ear1="Etiolation Earring",ear2="Loquacious Earring",
-        body="Helios Jacket",hands="Volte gloves",ring1="Prolix Ring",ring2="Kishar ring",
-        back="Lifestream cape",waist="Witful Belt",legs="Volte brais",feet="Regal Pumps +1"}
+    sets.precast.FC = {range="Dunna",
+        head="Haruspex Hat +1",neck="Voltsurge torque",ear1="Etiolation Earring",ear2="Malignance Earring",   --9,4,1,4
+        body="Agwu's robe",hands="Volte gloves",ring1="Prolix Ring",ring2="Kishar ring",                      --8,6,2,4
+        back="Fi follet cape +1",waist="Embla sash",legs="Geomancy pants +1",feet="Amalric nails +1"}         --10,5,11,6
+		--70%
  
-    sets.precast.FC.Cure = set_combine(sets.precast.FC, {
-		main="Daybreak",sub="Genmei Shield",
-		body="Heka's Kalasiris",
-		back="Pahtli Cape"})
+    sets.precast.FC.Cure = set_combine(sets.precast.FC, {})
 		
 	sets.precast.Geomancy = set_combine(sets.precast.FC, {range="Dunna"})
 	sets.precast.Geomancy.Indi = set_combine(sets.precast.FC, {range="Dunna"})
@@ -120,14 +118,14 @@ function init_gear_sets()
         back="Lifestream cape",waist="Witful Belt",legs="Geomancy Pants +1",feet="Regal pumps +1"}
  
     sets.midcast.Geomancy = set_combine(sets.midcast.FastRecast, {main="Idris",range="Dunna",
-		head="Azimuth hood +1",neck="Incanter's torque"
-		body="Azimuth coat",hands="Geomancy mitaines +1",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
-		back="Lifestream cape",legs="Azimuth tights",feet="Azimuth gaiters"})
+		head="Azimuth hood +2",neck="Incanter's torque",
+		body="Bagua tunic",hands="Geomancy mitaines +1",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
+		back="Lifestream cape",legs="Azimuth tights",feet="Azimuth gaiters +2"})
 		
     sets.midcast.Geomancy.Indi = set_combine(sets.midcast.FastRecast, {main="Idris",range="Dunna",
-		head="Azimuth hood +1",
+		head="Azimuth hood +2",
 		body="Azimuth coat",hands="Geomancy mitaines +1",
-		back="Lifestream cape",legs="Bagua Pants",feet="Azimuth gaiters"})
+		back="Lifestream cape",legs="Bagua Pants",feet="Azimuth gaiters +2"})
  
     sets.midcast.Cure = {main="Daybreak",sub="Genmei shield",
         head="Nahtirah hat",neck="Phalaina locket",ear1="Novia earring",ear2="Domesticator's earring",
@@ -314,7 +312,9 @@ function init_gear_sets()
     --------------------------------------
     -- Custom buff sets
     --------------------------------------
- 
+	
+	sets.buff['Weather'] = {waist="Hachirin-no-obi"}
+	
 end
  
 -------------------------------------------------------------------------------------------------------------------
@@ -368,6 +368,16 @@ function job_get_spell_map(spell, default_spell_map)
                 return 'Indi'
             end
         end
+    end
+end
+
+function job_post_midcast(spell, action, spellMap, eventArgs)
+    if spell.action_type == 'Magic' then
+        if spell.skill == 'Elemental Magic' and spellMap ~= 'ElementalEnfeeble' then        
+			if get_obi_bonus(spell) > 0 and not info.helix:contains(spell.english) then
+				equip(sets.buff['Weather'])
+			end
+		end
     end
 end
  

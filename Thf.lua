@@ -109,7 +109,7 @@ function init_gear_sets()
     sets.precast.JA['Hide'] = {body="Pillager's Vest +3"}
     sets.precast.JA['Conspirator'] = {body="Skulker's Vest +3"}
     sets.precast.JA['Steal'] = {head="Plunderer's Bonnet +3",hands="Pillager's Armlets +3",legs="Pillager's Culottes +3",feet="Pillager's Poulaines +3"}
-    sets.precast.JA['Despoil'] = {legs="Skulker's Culottes",feet="Skulker's Poulaines +3"}
+    sets.precast.JA['Despoil'] = {legs="Skulker's Culottes +3",feet="Skulker's Poulaines +3"}
     sets.precast.JA['Perfect Dodge'] = {hands="Plunderer's Armlets +3"}
     sets.precast.JA['Feint'] = {legs="Plunderer's Culottes +3"}
 	sets.precast.JA['Mug'] = {ammo="C. Palug Stone",
@@ -434,14 +434,21 @@ function init_gear_sets()
 		waist="Chiner's Belt +1",legs="Pillager's culottes +3",feet="Plunderer's Poulaines +3"}
 		
 	sets.engaged.Hybrid = {ammo="Yamarang",
+        head="Skulker's Bonnet +3",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Telos Earring",
+        body="Malignance tabard",hands="Malignance gloves",ring1="Hetairoi Ring",ring2="Gere Ring",
+        back=gear.CapeSTP,waist="Reiki Yotai",legs="Skulker's Culottes +3",feet="Malignance boots"}
+		
+	sets.engaged.OldHybrid = {ammo="Yamarang",
         head="Malignance chapeau",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Telos Earring",
         body="Malignance tabard",hands="Malignance gloves",ring1="Hetairoi Ring",ring2="Gere Ring",
         back=gear.CapeSTP,waist="Reiki Yotai",legs="Malignance tights",feet="Malignance boots"}
 		
-	sets.engaged.HybridSB = {ammo="Expeditious pinion",  --7 SB
-        head="Malignance chapeau",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Skulker's Earring",  --5 SB 5 SB2
-        body="Malignance tabard",hands="Malignance gloves",ring1="Chirich Ring +1",ring2="Chirich Ring +1",  --20 SB
-        back=gear.CapeSTP,waist="Reiki Yotai",legs="Gleti's breeches",feet="Volte spats"}  --16/21 SB
+	sets.engaged.HybridSB = {ammo="Expeditious pinion",  														--7
+        head="Malignance chapeau",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Skulker's Earring",  --0,0,5|2,5
+        body="Malignance tabard",hands="Malignance gloves",ring1="Chirich Ring +1",ring2="Chirich Ring +1",     --0,0,10,10
+        back=gear.CapeSTP,waist="Reiki Yotai",legs="Gleti's breeches",feet="Volte spats"}  						--0,0,10,6  Mummu feet would be 9 SB 5 crit, less Str/Dex more Acc
+		--48 SB1 + 5 SB2    38 PDT     R30 Gleti's legs +5 SB, can drop ammo and be at 49 w/ Mummu
+		
 		
 	sets.engaged.DT = {ammo="Yamarang",
         head="Malignance chapeau",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Telos Earring",
@@ -467,7 +474,7 @@ function init_gear_sets()
 		head="Adhemar Bonnet +1", neck="Assassin's Gorget +2", left_ear="Sherida Earring", right_ear="Odr Earring",
 		body="Plunderer's Vest +3", hands="Mummu Wrists +2", left_ring="Regal Ring", right_ring="Mummu Ring",
 		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10',}},
-		waist="Kentarch Belt +1", legs="Pill. Culottes +3",feet="Adhe. Gamashes +1"}
+		waist="Kentarch Belt +1", legs="Skulker's Culottes +3",feet="Adhe. Gamashes +1"}
 	
 
     -- Mod set for trivial mobs (Thaumas)

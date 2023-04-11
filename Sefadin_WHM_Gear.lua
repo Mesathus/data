@@ -116,7 +116,7 @@ function init_gear_sets()
 
     sets.midcast.Cursna = {main="Beneficus",sub="Genbu's Shield",
         head="Orison Cap +2",neck="Malison Medallion",
-        body="Orison Bliaud +2",hands="Fanatic gloves",ring1="Stikini ring +1", ring2="Stikini ring +1",
+        body="Orison Bliaud +2",hands="Fanatic gloves",ring1="Stikini ring +1", ring2="Menelaus's ring",
         back="Mending Cape",waist="Goading Belt",legs="Vanya slops",feet="Vanya clogs"}
 
     sets.midcast.StatusRemoval = {

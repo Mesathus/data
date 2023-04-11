@@ -1,0 +1,17 @@
+sets.exported={
+    main="Daybreak",
+    sub="Ammurapi Shield",
+    ammo="Homiliary",
+    head={ name="Viti. Chapeau +2", augments={'Enfeebling Magic duration','Magic Accuracy',}},
+    body="Lethargy Sayon +2",
+    hands="Malignance Gloves",
+    legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}},
+    feet="Malignance Boots",
+    neck="Voltsurge Torque",
+    waist="Flume Belt",
+    left_ear="Infused Earring",
+    right_ear="Loquac. Earring",
+    left_ring="Sheltered Ring",
+    right_ring="Defending Ring",
+    back={ name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20',}},
+}
