@@ -266,17 +266,17 @@ function init_gear_sets()
 		sub="Priwen", --2
 		ammo="Staunch Tathlum +1",
 		Head=gear.PhalanxHead, --4
-		ear1="Mimir earring",
-		neck="Incanter's Torque",
+		ear1="Mimir earring",   			--10 skill
+		neck="Incanter's Torque",			--10 skill
 		Body=gear.PhalanxBody, --3
 		Hands="Souveran Handschuhs +1", --5
-		left_ring="Stikini Ring +1",
-		right_ring="Stikini Ring +1",	
+		left_ring="Stikini Ring +1",		--8 skill
+		right_ring="Stikini Ring +1",		--8 skill
 		waist="Flume Belt",
 		Feet="Souveran Schuhs +1", --5
 		Back="Weard Mantle", --4
 		Legs="Sakpata's Cuisses", --5
-    } --20 Need to DarkMatter Ody Head and Body!
+    } -- +33 Need to DarkMatter Ody Head and Body   +36 skill
      
     sets.midcast.Protect = {sub="Srivatsa",ring1="Sheltered Ring"}
     sets.midcast.Shell = {ring1="Sheltered Ring"}
@@ -284,7 +284,7 @@ function init_gear_sets()
     ------------------------------------------------------------------------------------------------
     ----------------------------------------- SIRD Sets --------------------------------------------
     ------------------------------------------------------------------------------------------------    
-    sets.midcast.SIRD = {--Merits 10SIRD
+    sets.midcast.SIRD = {
 		Main={name="Sakpata's Sword",priority=100}, --10FC
 		sub={name="Srivatsa",priority=150},   --15enm
         Ammo="Staunch tathlum +1", --11SIRD    
@@ -296,8 +296,8 @@ function init_gear_sets()
         -- Waist="Rumination Sash", --10SIRD
         Legs="Founder's Hose", --30SIRD     
         Feet="Odyssean Greaves", --20SIRD
-        back=gear.PDTCape, --10SIRD
-    } --115SIRD   --56 enm  +20body  +4 cryptic +5 waist
+        back=gear.PDTCape, --0SIRD
+    } --111SIRD   --56 enm  +20body  +4 cryptic +5 waist
  
 	
 	

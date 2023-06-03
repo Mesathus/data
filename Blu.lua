@@ -257,10 +257,11 @@ function init_gear_sets()
 
     -- Fast cast sets for spells
     
-    sets.precast.FC = {ammo="Sapience orb",
-        head="Carmine mask +1",neck="Voltsurge Torque",ear1="Etiolation Earring",ear2="Loquacious Earring",
-        body="Dread jupon",hands="Leyline Gloves",ring1="Kishar Ring", ring2="Prolix Ring",
-        back="Fi follet cape +1",waist="Witful Belt",legs="Ayanmo cosciales +2",feet="Carmine greaves +1"}
+    sets.precast.FC = {ammo="Sapience orb",																		-- 2
+        head="Carmine mask +1",neck="Voltsurge Torque",ear1="Etiolation Earring",ear2="Loquacious Earring",		-- 14, 4, 1, 1
+        body="Dread jupon",hands="Leyline Gloves",ring1="Kishar Ring", ring2="Prolix Ring",						-- 7, 8, 4, 2
+        back="Fi follet cape +1",waist="Witful Belt",legs="Ayanmo cosciales +2",feet="Carmine greaves +1"}		-- 10, 3, 6, 8
+		-- 70% FC
         
     sets.precast.FC['Blue Magic'] = set_combine(sets.precast.FC, {body="Hashishin Mintan +2"})
 

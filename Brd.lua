@@ -265,14 +265,18 @@ function init_gear_sets()
     sets.midcast.Curaga = sets.midcast.Cure
 	
 	sets.midcast['Enhancing Magic'] = {sub = "Ammurapi shield",
-		head = "Inyanga tiara +2", neck = "Voltsurge torque", ear1 = "Etiolation earring", ear2 = "Loquacious earring",
+		head = "Telchine cap", neck = "Voltsurge torque", ear1 = "Etiolation earring", ear2 = "Loquacious earring",
 		body = "Telchine Chasuble", hands = "Telchine gloves", ring1="Kishar ring",
 		back = gear.MAccCape, waist = "Embla sash", legs = "Telchine Braconi",feet = "Telchine pigaches" }
+		
+	sets.midcast.Regen = set_combine(sets.midcast['Enhancing Magic'], {head = "Inyanga tiara +2"})
         
     sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {
         head="Telchine cap",neck ="Stone Gorget",
         body="Telchine Chasuble",hands="Telchine gloves",ring1="Stikini ring +1",
         back="Moonlight cape",waist="Siegel sash",legs="Shedir Seraweels",feet="Telchine pigaches"})
+		
+	sets.midcast['Aquaveil'] = {}
         
     sets.midcast.Cursna = {
         head="Kaykaus Mitra +1",neck="Malison Medallion",
@@ -305,10 +309,11 @@ function init_gear_sets()
         body="Nyame mail",hands="Nyame gauntlets",ring1="Moonlight Ring",ring2="Moonlight Ring",
         back="Moonlight cape",waist="Carrier's sash",legs="Nyame flanchard",feet="Nyame sollerets"}
 		
-	sets.idle.DD = {range="Nibiru Harp",
-        head="Nyame helm",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Infused Earring",
-        body="Nyame mail",hands="Nyame gauntlets",ring1="Defending Ring",ring2="Moonlight Ring",
-        back="Moonlight cape",waist="Flume Belt",legs="Nyame flanchard",feet="Fili Cothurnes +2"}				
+	sets.idle.DD = {range="Nibiru Harp",																--3
+        head="Nyame helm",neck="Warder's charm +1",ear1="Etiolation Earring",ear2="Infused Earring",		--7, 0, 0, 0
+        body="Nyame mail",hands="Nyame gauntlets",ring1="Defending Ring",ring2="Moonlight Ring",		--9, 7, 10, 5
+        back="Moonlight cape",waist="Carrier's sash",legs="Nyame flanchard",feet="Fili Cothurnes +2"}	--6, 0, 8, 0
+		-- 55%
 
 
     -- --sets.idle.Weak = {main=gear.Staff.PDT,sub="Mephitis Grip",range="Oneiros Harp",

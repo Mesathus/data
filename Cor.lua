@@ -54,7 +54,7 @@ function user_setup()
 	
     options.ammo_warning_limit = 15
 	
-	corOffhands = S{'Blurred Knife +1', 'Tauret', 'Chicken Knife II'}
+	corOffhands = S{'Blurred Knife +1', 'Tauret', 'Chicken Knife II', "Gleti's Knife"}
 
     -- Additional local binds
     send_command('bind ^` input /ja "Double-up" <me>')
@@ -152,19 +152,10 @@ function init_gear_sets()
 		back=gear.CorLeadenCape,waist="Fotia belt",legs="Meghanada chausses +2",feet="Lanun bottes +3" }
 
 
-    sets.precast.WS['Wildfire'] = {head="Nyame helm",
-		body="Lanun Frac +3",
-		hands="Nyame gauntlets",
-		legs="Nyame flanchard",
-		feet="Lanun Bottes +3",
-		neck="Sanctity Necklace",
-		waist="Orpheus's sash",
-		left_ear="Ishvara Earring",
-		right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
-		left_ring="Dingir Ring",
-		right_ring="Regal Ring",
-		back=gear.CorLeadenCape,
-		}
+    sets.precast.WS['Wildfire'] = {
+		head="Nyame helm", neck="Commodore charm +2", left_ear="Friomisi Earring", right_ear="Crematio Earring",
+		body="Lanun Frac +3", hands="Nyame gauntlets", left_ring="Dingir Ring", right_ring="Regal Ring",
+		back=gear.CorLeadenCape, waist="Orpheus's sash", legs="Nyame flanchard",feet="Lanun Bottes +3",}
 		
 	sets.precast.WS['Aeolian Edge'] = {
 		head="Nyame helm",
@@ -188,9 +179,7 @@ function init_gear_sets()
     sets.precast.WS['Leaden Salute'] = {
 		head="Pixie Hairpin +1", neck="Commodore charm +2", left_ear="Friomisi Earring", right_ear="Moonshade Earring",
 		body="Lanun Frac +3", hands="Nyame gauntlets", left_ring="Dingir Ring", right_ring="Archon Ring",
-		back=gear.CorLeadenCape,
-		legs="Nyame flanchard",
-		waist="Orpheus's sash", feet="Lanun Bottes +3"
+		back=gear.CorLeadenCape, waist="Orpheus's sash", legs="Nyame flanchard", feet="Lanun Bottes +3"
 		}
 		
 	sets.precast.WS['Savage Blade'] = {
@@ -413,6 +402,7 @@ function job_update(cmdParams, eventArgs)
     if newStatus == 'Engaged' and player.equipment.main == 'Chatoyant Staff' then
         state.OffenseMode:set('Ranged')
     end
+	update_combat_form()
 end
 
 function job_post_midcast(spell, action, spellMap, eventArgs)
@@ -581,16 +571,12 @@ function do_bullet_checks(spell, spellMap, eventArgs)
     end
 end
 
-function job_update(cmdParams, eventArgs)
-    update_combat_form()
-end
-
 function update_combat_form()
     -- Check for H2H or single-wielding
-    if not corOffhands:contains(player.equipment.sub) then -- == 'Nusku Shield' then
-        state.CombatForm:reset()
+    if corOffhands:contains(player.equipment.sub) then -- == 'Nusku Shield' then
+        state.CombatForm:set('DW')		
     else
-        state.CombatForm:set('DW')
+        state.CombatForm:reset()
     end
 end
 

@@ -15,6 +15,8 @@ function job_setup()
     state.Buff['Afflatus Solace'] = buffactive['Afflatus Solace'] or false
     state.Buff['Afflatus Misery'] = buffactive['Afflatus Misery'] or false
 	gear.ElementalObi = {name = "Hachirin-no-obi"}
+	gear.ElementalGorget = "Fotia gorget"
+	gear.ElementalBelt "Fotia belt"
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -39,20 +41,21 @@ function init_gear_sets()
     -- Precast Sets
 
     -- Fast cast sets for spells
-    sets.precast.FC = {ammo="Sapience orb",
-        head="Haruspex Hat +1",neck="Voltsurge torque",ear1="Etiolation Earring",ear2="Loquacious Earring",
-        body="Inyanga jubbah +2",hands="Volte gloves",ring1="Prolix Ring",ring2="Kishar Ring",
-        back="Fi follet cape +1",waist="Embla sash",legs="Volte brais",feet="Regal pumps +1"}
+    sets.precast.FC = {ammo="Sapience orb",																		-- 2
+        head="Haruspex Hat +1",neck="Voltsurge torque",ear1="Etiolation Earring",ear2="Loquacious Earring",		-- 9, 4, 1, 1
+        body="Inyanga jubbah +2",hands="Volte gloves",ring1="Prolix Ring",ring2="Kishar Ring",					-- 14, 6, 2, 4
+        back="Fi follet cape +1",waist="Embla sash",legs="Volte brais",feet="Regal pumps +1"}					-- 10, 5, 8, 5~7
+		-- 69~71 FC
         
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash"})
 
-    sets.precast.FC.Stoneskin = set_combine(sets.precast.FC['Enhancing Magic'], {head="Umuthi Hat"})
+    sets.precast.FC.Stoneskin = set_combine(sets.precast.FC['Enhancing Magic'], {})
 
     sets.precast.FC['Healing Magic'] = set_combine(sets.precast.FC, {legs="Orison Pantaloons +2"})
 
     sets.precast.FC.StatusRemoval = sets.precast.FC['Healing Magic']
 
-    sets.precast.FC.Cure = set_combine(sets.precast.FC['Healing Magic'], {sub="Genbu's Shield",ammo="Impatiens"})
+    sets.precast.FC.Cure = set_combine(sets.precast.FC['Healing Magic'], {ammo="Impatiens"})
     sets.precast.FC.Curaga = sets.precast.FC.Cure
     sets.precast.FC.CureSolace = sets.precast.FC.Cure
     -- CureMelee spell map should default back to Healing Magic.
@@ -144,7 +147,11 @@ function init_gear_sets()
 
     sets.midcast.Regen = {main="Bolelabunga",sub="Genbu's Shield",
         body="Piety Briault",hands="Orison Mitts +2",
-        legs="Theophany Pantaloons"}
+        legs="Theophany Pantaloons +1"}
+
+	sets.midcast.SIRD = {
+		
+		}
 
     sets.midcast.Protectra = set_combine(sets.midcast['Enhancing Magic'], {ring1="Sheltered Ring",feet="Piety Duckbills +1"})
 

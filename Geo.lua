@@ -82,7 +82,7 @@ function init_gear_sets()
 	sets.precast.Geomancy = set_combine(sets.precast.FC, {range="Dunna"})
 	sets.precast.Geomancy.Indi = set_combine(sets.precast.FC, {range="Dunna"})
 		
-	sets.precast.FC['Stoneskin'] = set_combine(sets.precast.FC, {head="Umuthi hat"})
+	sets.precast.FC['Stoneskin'] = set_combine(sets.precast.FC, {neck ="Stone Gorget",waist="Siegel sash",legs="Shedir Seraweels"})
     sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, {hands="Bagua mitaines"})
 	sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash"})	
 	sets.precast.FC.Impact = set_combine(sets.precast.FC['Elemental Magic'], 
@@ -117,14 +117,15 @@ function init_gear_sets()
         body="Vrikodara jupon",hands="Hagondes cuffs +1",ring1="Defending ring",ring2="Lebeche ring",
         back="Lifestream cape",waist="Witful Belt",legs="Geomancy Pants +1",feet="Regal pumps +1"}
  
-    sets.midcast.Geomancy = set_combine(sets.midcast.FastRecast, {main="Idris",range="Dunna",
-		head="Azimuth hood +2",neck="Incanter's torque",
-		body="Bagua tunic",hands="Geomancy mitaines +1",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
-		back="Lifestream cape",legs="Azimuth tights",feet="Azimuth gaiters +2"})
+    sets.midcast.Geomancy = set_combine(sets.midcast.FastRecast, {main="Idris",range="Dunna",                --0, 18
+		head="Azimuth hood +2",neck="Incanter's torque",													 --20, 20, 0, 0
+		body="Bagua tunic",hands="Geomancy mitaines +1",ring2="Stikini Ring +1",     						 --10, 15, 0, 16
+		back="Lifestream cape",legs="Azimuth tights",feet="Azimuth gaiters +2"})							 --5, 0, 0, 0
+		--900 to cap, 788 from merits, 860 at master														 --104
 		
     sets.midcast.Geomancy.Indi = set_combine(sets.midcast.FastRecast, {main="Idris",range="Dunna",
-		head="Azimuth hood +2",
-		body="Azimuth coat",hands="Geomancy mitaines +1",
+		head="Azimuth hood +2",neck="Incanter's torque",
+		body="Azimuth coat",hands="Geomancy mitaines +1",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
 		back="Lifestream cape",legs="Bagua Pants",feet="Azimuth gaiters +2"})
  
     sets.midcast.Cure = {main="Daybreak",sub="Genmei shield",
@@ -146,7 +147,7 @@ function init_gear_sets()
 	sets.midcast['Enhancing Magic'] = {sub="Ammurapi shield",
         head=gear.EnhHead,
 		body=gear.EnhBody,hands=gear.EnhHands,ring1="Stikini Ring +1",ring2="Stikini Ring +1",
-        back="Merciful cape",waist="Olympus sash",legs=gear.EnhLegs,feet=gear.EnhFeet}
+        back="Merciful cape",waist="Embla sash",legs=gear.EnhLegs,feet=gear.EnhFeet}
 		
 	sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {
 		neck="Stone gorget",legs="Shedir seraweels",waist="Siegel Sash"})
@@ -157,12 +158,12 @@ function init_gear_sets()
 	-- Elemental Magic sets are default for handling low-tier nukes.
     sets.midcast['Elemental Magic'] = {main="Solstice",sub="Culminus",
         head="Merlinic hood",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Friomisi Earring",
-        body="Amalric doublet +1",hands="Amalric gages +1",ring1="Sangoma Ring",ring2="Shiva ring +1",
+        body="Amalric doublet +1",hands="Amalric gages +1",ring1="Freke Ring",ring2="Shiva ring +1",
         back="Seshaw Cape",waist="Orpheus's sash",legs="Merlinic shalwar",feet="Merlinic crackows"}
 		
     sets.midcast['Elemental Magic'].Resistant = {main="Solstice",sub="Culminus",
         head="Merlinic hood",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Friomisi Earring",
-        body="Amalric doublet +1",hands="Amalric gages +1",ring1="Sangoma Ring",ring2="Shiva Ring +1",
+        body="Amalric doublet +1",hands="Amalric gages +1",ring1="Freke Ring",ring2="Shiva Ring +1",
         back="Seshaw Cape",waist="Orpheus's sash",legs="Merlinic shalwar",feet="Merlinic crackows"}
 		
 	sets.midcast['Elemental Magic'].Burst = {main="Solstice",sub="Culminus",

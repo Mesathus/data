@@ -29,8 +29,8 @@ end
 
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
-    state.OffenseMode:options('Normal', 'SomeAcc', 'Acc', 'Kick', 'PDT', 'Hybrid')
-    state.WeaponskillMode:options('Normal', 'SomeAcc', 'Acc', 'Fodder')
+    state.OffenseMode:options('Normal', 'Acc', 'Hybrid')
+    state.WeaponskillMode:options('Normal', 'Acc')
     state.HybridMode:options('Normal', 'PDT', 'Counter')
     state.PhysicalDefenseMode:options('PDT', 'HP')
 
@@ -95,12 +95,12 @@ function init_gear_sets()
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {ammo="Tantra Tathlum",
-        head="Whirlpool Mask",neck=gear.ElementalGorget,ear1="Brutal Earring",ear2="Moonshade Earring",
-        body="Qaaxo Harness",hands="Hesychast's Gloves +1",ring1="Rajas Ring",ring2="Epona's Ring",
-        back="Atheling Mantle",waist="Caudata Belt",legs="Ighwa Trousers",feet="Manibozho Boots"}
+        head="Kendatsbua Jinpachi +1",neck="Fotia gorget",ear1="Sherida Earring",ear2="Moonshade Earring",
+        body="Mpaca's doublet",hands="Mpaca's Gloves",ring1="Gere Ring",ring2="Niqmaddu Ring",
+        back="Sacro Mantle",waist="Moonbow Belt +1",legs="Mpaca's hose",feet="Mpaca's boots"}
     sets.precast.WSAcc = {ammo="Honed Tathlum",body="Manibozho Jerkin",back="Letalis Mantle",feet="Qaaxo Leggings"}
-    sets.precast.WSMod = {ammo="Tantra Tathlum",head="Felistris Mask",legs="Ighwa Trousers",feet="Qaaxo Leggings"}
-    sets.precast.MaxTP = {ear1="Bladeborn Earring",ear2="Steelflash Earring"}
+    sets.precast.WSMod = {}
+    sets.precast.MaxTP = {}
     sets.precast.WS.Acc = set_combine(sets.precast.WS, sets.precast.WSAcc)
     sets.precast.WS.Mod = set_combine(sets.precast.WS, sets.precast.WSMod)
 
@@ -109,20 +109,14 @@ function init_gear_sets()
     -- legs={name="Quiahuiz Trousers", augments={'Phys. dmg. taken -2%','Magic dmg. taken -2%','STR+8'}}}
 
     sets.precast.WS['Raging Fists']    = set_combine(sets.precast.WS, {})
-    sets.precast.WS['Howling Fist']    = set_combine(sets.precast.WS, {legs="Manibozho Brais",feet="Daihanshi Habaki"})
-    sets.precast.WS['Asuran Fists']    = set_combine(sets.precast.WS, {
-        ear1="Bladeborn Earring",ear2="Moonshade Earring",ring2="Spiral Ring",back="Buquwik Cape"})
-    sets.precast.WS["Ascetic's Fury"]  = set_combine(sets.precast.WS, {
-        ammo="Tantra Tathlum",ring1="Spiral Ring",back="Buquwik Cape",feet="Qaaxo Leggings"})
-    sets.precast.WS["Victory Smite"]   = set_combine(sets.precast.WS, {
-		head="Uk'uxkaj Cap", neck="Rancor Collar",hands="Otronif Gloves +1",ring1="Pyrosoul Ring",
-		back="Buquwik Cape",legs="Otronif Brais +1",feet="Qaaxo Leggings"})
-    sets.precast.WS['Shijin Spiral']   = set_combine(sets.precast.WS, {ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        legs="Manibozho Brais",feet="Daihanshi Habaki"})
-    sets.precast.WS['Dragon Kick']     = set_combine(sets.precast.WS, {feet="Daihanshi Habaki"})
-    sets.precast.WS['Tornado Kick']    = set_combine(sets.precast.WS, {ammo="Tantra Tathlum",ring1="Spiral Ring"})
-    sets.precast.WS['Spinning Attack'] = set_combine(sets.precast.WS, {
-        head="Felistris Mask",ear1="Bladeborn Earring",ear2="Steelflash Earring"})
+    sets.precast.WS['Howling Fist']    = set_combine(sets.precast.WS, {})
+    sets.precast.WS['Asuran Fists']    = set_combine(sets.precast.WS, {})
+    sets.precast.WS["Ascetic's Fury"]  = set_combine(sets.precast.WS, {})
+    sets.precast.WS["Victory Smite"]   = set_combine(sets.precast.WS, {})
+    sets.precast.WS['Shijin Spiral']   = set_combine(sets.precast.WS, {})
+    sets.precast.WS['Dragon Kick']     = set_combine(sets.precast.WS, {})
+    sets.precast.WS['Tornado Kick']    = set_combine(sets.precast.WS, {})
+    sets.precast.WS['Spinning Attack'] = set_combine(sets.precast.WS, {})
 
     sets.precast.WS["Raging Fists"].Acc = set_combine(sets.precast.WS["Raging Fists"], sets.precast.WSAcc)
     sets.precast.WS["Howling Fist"].Acc = set_combine(sets.precast.WS["Howling Fist"], sets.precast.WSAcc)
@@ -213,22 +207,22 @@ function init_gear_sets()
     -- EG: sets.engaged.Dagger.Accuracy.Evasion
     
     -- Normal melee sets
-    sets.engaged = {ammo="Hagneia Stone",
-		head="Felistris Mask",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-		body="Thaumas Coat",hands="Otronif Gloves +1",ring1="Oneiros Ring",ring2="Epona's Ring",
-		back="Atheling Mantle",waist="Windbuffet Belt",legs="Otronif Brais +1",feet="Anchorite's Gaiters +1"}
-    sets.engaged.SomeAcc = {ammo="Honed Tathlum",
-		head="Felistris Mask",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-		body="Qaaxo Harness",hands="Otronif Gloves +1",ring1="Oneiros Ring",ring2="Epona's Ring",
-		back="Letalis Mantle",waist="Windbuffet Belt",legs="Ighwa Trousers",feet="Qaaxo Leggings"}
+    sets.engaged = {
+		head="Adhemar Bonnet +1", neck="Mnk. Nodowa +2", ear1="Sherida Earring", ear2="Mache Earring +1",
+		body="Tatena. Harama. +1", hands="Adhemar Wrist. +1", ring1="Gere Ring", ring2="Niqmaddu Ring",
+		back="Segomo's Mantle", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's gaiters +2"}
     sets.engaged.Acc = {ammo="Honed Tathlum",
 		head="Whirlpool Mask",neck="Iqabi Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
 		body="Manibozho Jerkin",hands="Hesychast's Gloves +1",ring1="Patricius Ring",ring2="Epona's Ring",
 		back="Letalis Mantle",waist="Anguinus Belt",legs="Ighwa Trousers",feet="Qaaxo Leggings"}
-    sets.engaged.Mod = {ammo="Honed Tathlum",
-		head="Felistris Mask",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-		body="Qaaxo Harness",hands="Otronif Gloves +1",ring1="Oneiros Ring",ring2="Epona's Ring",
-		back="Letalis Mantle",waist="Windbuffet Belt",legs="Ighwa Trousers",feet="Qaaxo Leggings"}
+    sets.engaged.Hybrid = {
+		head="Kendatsuba Jinpachi +1", neck="Mnk. Nodowa +2", ear1="Sherida Earring", ear2="Mache Earring +1",   --0, 0, 0, 0
+		body="Mpaca's Doublet",	hands="Malignance Gloves", ring1="Gere Ring", ring2="Niqmaddu Ring",			 --10, 5, 0, 0
+		back="Segomo's Mantle",	waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's gaiters +2"}		 --10, 6, 13, 0
+		-- 44 PDT  28 MDT
+	sets.engaged.Impetus = set_combine(sets.engaged, {body="Bhikku Cyclas +2"})
+	sets.engaged.Hybrid.Impetus = set_combine(sets.engaged.Hybrid, {head="Mpaca's cap", body="Bhikku Cyclas +2"})
+		-- 41 PDT  28 MDT
 
     -- Defensive melee hybrid sets
     sets.engaged.PDT = {ammo="Iron Gobbet",
@@ -255,13 +249,13 @@ function init_gear_sets()
 
     -- Hundred Fists/Impetus melee set mods
     sets.engaged.HF = set_combine(sets.engaged)
-    sets.engaged.HF.Impetus = set_combine(sets.engaged, {body="Tantra Cyclas +2"})
+    sets.engaged.HF.Impetus = set_combine(sets.engaged, {body="Bhikku Cyclas +2"})
     sets.engaged.Acc.HF = set_combine(sets.engaged.Acc)
-    sets.engaged.Acc.HF.Impetus = set_combine(sets.engaged.Acc, {body="Tantra Cyclas +2"})
+    sets.engaged.Acc.HF.Impetus = set_combine(sets.engaged.Acc, {body="Bhikku Cyclas +2"})
     sets.engaged.Counter.HF = set_combine(sets.engaged.Counter)
-    sets.engaged.Counter.HF.Impetus = set_combine(sets.engaged.Counter, {body="Tantra Cyclas +2"})
+    sets.engaged.Counter.HF.Impetus = set_combine(sets.engaged.Counter, {body="Bhikku Cyclas +2"})
     sets.engaged.Acc.Counter.HF = set_combine(sets.engaged.Acc.Counter)
-    sets.engaged.Acc.Counter.HF.Impetus = set_combine(sets.engaged.Acc.Counter, {body="Tantra Cyclas +2"})
+    sets.engaged.Acc.Counter.HF.Impetus = set_combine(sets.engaged.Acc.Counter, {body="Bhikku Cyclas +2"})
 
 
     -- Footwork combat form
@@ -275,7 +269,7 @@ function init_gear_sets()
         back="Letalis Mantle",waist="Anguinus Belt",legs="Hesychast's Hose +1",feet="Anchorite's Gaiters +1"}
         
     -- Quick sets for post-precast adjustments, listed here so that the gear can be Validated.
-    sets.impetus_body = {body="Tantra Cyclas +2"}
+    sets.impetus_body = {body="Bhikku Cyclas +2"}
     sets.footwork_kick_feet = {feet="Anchorite's Gaiters +1"}
 end
 
@@ -318,7 +312,6 @@ end
 
 function job_aftercast(spell, action, spellMap, eventArgs)
     if spell.type == 'WeaponSkill' and not spell.interrupted and state.FootworkWS and state.Buff.Footwork then
-        send_command('cancel Footwork')
     end
 end
 
