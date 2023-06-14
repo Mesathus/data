@@ -93,7 +93,7 @@ function init_gear_sets()
 		waist="Flume belt",legs="Desultor tassets",feet="Malignance boots"}
     
     sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Chasseur's Culottes"})
-    sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Navarch's Bottes +2"})
+    sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Chasseur's bottes +2"})
     sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {head="Chasseur's Tricorne"})
     sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {body="Chasseur's Frac +2"})
     sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {hands="Chasseur's Gants +2"})
@@ -135,7 +135,7 @@ function init_gear_sets()
 
 	
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
-    sets.precast.WS['Evisceration'] = sets.precast.WS
+    sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {ring2="Lehko Habhoka's ring"})
 
     sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {legs="Nahtirah Trousers"})
 
@@ -205,7 +205,7 @@ function init_gear_sets()
 		body="Lanun Frac +3",
 		hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}},
 		legs="Nyame flanchard",
-		feet="Chasseur's bottes +3",
+		feet="Chasseur's bottes +2",
 		neck="Commodore charm +2",
 		waist="Orpheus's sash",
 		left_ear="Friomisi Earring",
@@ -232,6 +232,10 @@ function init_gear_sets()
         head="Malignance chapeau",neck="Iskur Gorget",ear1="Enervating Earring",ear2="Telos Earring",
         body="Malignance tabard",hands="Malignance gloves",ring1="Regal Ring",ring2="Ilabrat Ring",
         back=gear.CorMeleeCape,waist="Yemaya Belt",legs="Malignance tights",feet="Malignance boots"}
+		
+	sets.midcast.RA.AM = {
+		
+		}
 		
 	sets.TripleShot = set_combine(sets.midcast.RA, {
         --head="Oshosi Mask +1", --4
@@ -411,7 +415,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     end
     if spell.type == 'CorsairShot' then
         if spell.english ~= "Light Shot" and spell.english ~= "Dark Shot" then
-            equip(sets.Obi)
+            equip(sets.buff['Weather'])
         end
     end
 end

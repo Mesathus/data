@@ -27,18 +27,18 @@ function init_gear_sets()
 
     sets.precast.JA['Chi Blast'] = {
         head="Hesychast's Crown +3",
-        body="Otronif Harness +1",hands="Hesychast's Gloves +1",
-        back="Tuilha Cape",legs="Hesychast's Hose +3",feet="Anchorite's Gaiters +1"}
+        body="Otronif Harness +1",hands="Hesychast's Gloves +3",
+        back="Tuilha Cape",legs="Hesychast's Hose +3",feet="Anchorite's Gaiters +2"}
 
     sets.precast.JA['Chakra'] = {ammo="Iron Gobbet",
         head="Genmei Kabuto",neck="Unmoving Collar +1",
-        body="Anchorite's Cyclas +3",hands="Hesychast's Gloves +2",ring1="Niqmaddu Ring",ring2="Regal Ring",
+        body="Anchorite's Cyclas +3",hands="Hesychast's Gloves +3",ring1="Niqmaddu Ring",ring2="Regal Ring",
         back="Moonbeam Cape",waist="Caudata Belt",legs="Kendatsuba Hakama +1",feet="Rao Sune-Ate +1"}
 
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {ammo="Sonia's Plectrum",
         head="Felistris Mask",
-        body="Otronif Harness +1",hands="Hesychast's Gloves +1",ring1="Spiral Ring",
+        body="Otronif Harness +1",hands="Hesychast's Gloves +3",ring1="Spiral Ring",
         back="Iximulew Cape",waist="Caudata Belt",legs="Ighwa Trousers",feet="Rao Sune-Ate +1"}
         
     -- Don't need any special gear for Healing Waltz.
@@ -82,18 +82,9 @@ function init_gear_sets()
 
 	-- 30% STR 30% DEX
     sets.precast.WS['Raging Fists']    = set_combine(sets.precast.WS, {
-		head="Hesychast's Crown +3",
-		neck="Fotia Gorget",
-		ear1="Sherida Earring",
-		ear2="Moonshade Earring",
-        body="Adhemar Jacket +1",
-		hands="Adhemar Wristbands +1",
-		ring1="Niqmaddu Ring",
-		ring2="Regal Ring",
-        back=STR_WSD,
-		waist="Moonbow Belt +1",
-		legs="Hizamaru Hizayoroi +2",
-		feet="Kendatsuba Sune-Ate +1"
+		head="Mpaca's Cap",	neck="Fotia Gorget", ear1="Moonshade Earring", ear2="Schere Earring",
+        body="Mpaca's doublet",	hands="Mpaca's Gloves",	ring1="Niqmaddu Ring", ring2="Gere Ring",
+        back="Sacro Mantle", waist="Moonbow Belt +1", legs="Mpaca's hose", feet="Mpaca's boots"
 	})
 	
 	--20% STR 50% DEX
@@ -111,35 +102,26 @@ function init_gear_sets()
 	sets.precast.WS["Ascetic's Fury"]  = set_combine(sets.precast.WS, {
         ammo="Knobkierrie",
 		head="Adhemar Bonnet +1",
-		neck="Caro Necklace",
+		neck="Fotia gorget",
 		body="Adhemar Jacket +1",
-		hands="Ryuo Tekko +1",
+		hands="Bhikku Gloves +2",
 		ring1="Niqmaddu Ring",
 		ring2="Regal Ring",
 		back=STR_DA,
-		waist="Moonbow Belt +1",
-		legs="Hizamaru Hizayoroi +2",
-		feet="Rao Sune-Ate +1"})
+		waist="Fotia belt",
+		legs="Mpaca's Hose",
+		feet="Mpaca's Boots"})
     
 	-- STR MOD
-	sets.precast.WS["Victory Smite"]   = set_combine(sets.precast.WS, {
-		ammo="Knobkierrie",
-		head="Adhemar Bonnet +1",
-		neck="Fotia Gorget",
-		ear2="Brutal Earring",
-		body="Abnoba kaftan",
-		hands="Mummu wrists +2",
-		ring1="Niqmaddu Ring",
-		ring2="Regal Ring",
-		back="Bleating mantle",
-		waist="Grunfeld Rope",
-		legs="Kendatsuba Hakama +1",
-		feet="Adhemar gamashes +1"})
+	sets.precast.WS["Victory Smite"]   = set_combine(sets.precast.WS, {ammo="Knobkierrie",
+		head="Mpaca's Cap",	neck="Fotia Gorget", ear1="Sherida Earring", ear2="Schere Earring",		
+		body="Mpaca's Doublet", hands="Mummu wrists +2", ring1="Niqmaddu Ring",	ring2="Gere Ring",
+		back="Sacro Mantle", waist="Moonbow Belt +1", legs="Kendatsuba Hakama +1", feet="Adhemar gamashes +1"})
     
 	-- DEX MOD
 	sets.precast.WS['Shijin Spiral']   = set_combine(sets.precast.WS, {	ammo="Knobkierrie",
-		head="Mpaca's Cap",	neck="Fotia Gorget", ear1="Sherida Earring", ear2="Odr Earring",
-		body="Bhikku Cyclas +2", hands="Bhikku Gloves +2", ring1="Gere Ring", ring2="Niqmaddu Ring",
+		head="Mpaca's Cap",	neck="Fotia Gorget", ear1="Sherida Earring", ear2="Schere Earring",
+		body="Mpaca's Doublet", hands="Bhikku Gloves +2", ring1="Gere Ring", ring2="Niqmaddu Ring",
 		back="Sacro Mantle", waist="Moonbow Belt +1", legs="Mpaca's hose", feet="Mpaca's Boots"})
 	
 	-- 80% VIT
@@ -149,18 +131,9 @@ function init_gear_sets()
     
 
     sets.precast.WS['Tornado Kick']    = set_combine(sets.precast.WS, {
-		head="Hesychast's Crown +3",
-		neck="Fotia Gorget",
-		ear1="Sherida Earring",
-		ear2="Moonshade Earring",
-        body="Kendatsuba Samue +1",
-		hands="Anchorite's Gloves +3",
-		ring1="Niqmaddu Ring",
-		ring2="Regal Ring",
-        back=STR_WSD,
-		waist="Moonbow Belt +1",
-		legs="Kendatsuba Hakama +1",
-		feet="Anchorite's Gaiters +3"
+		head="Mpaca's Cap", neck="Fotia Gorget", ear1="Moonshade Earring",	ear2="Schere Earring",
+        body="Mpaca's Doublet",	hands="Mpaca's Gloves", ring1="Niqmaddu Ring", ring2="Gere Ring",
+        back="Sacro Mantle", waist="Moonbow Belt +1", legs="Mpaca's hose", feet="Anchorite's Gaiters +2"
 		})
 		
 	sets.precast.WS['Dragon Kick']     = set_combine(sets.precast.WS['Tornado Kick'], {})
@@ -236,7 +209,7 @@ function init_gear_sets()
 
     sets.idle.Town = {ammo="Iron Gobbet",
         head="Hesychast's Crown +3",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Infused Earring",
-        body="Councilor's Garb",hands="Hesychast's Gloves +1",ring1="Sheltered Ring",ring2="Paguroidea Ring",
+        body="Councilor's Garb",hands="Hesychast's Gloves +3",ring1="Sheltered Ring",ring2="Paguroidea Ring",
         back="Moonbeam Cape",waist="Moonbow Belt +1",legs="Malignance Tights",feet="Hermes' Sandals"}
     
     sets.idle.Weak = {ammo="Iron Gobbet",
@@ -252,7 +225,7 @@ function init_gear_sets()
 
     sets.defense.HP = {ammo="Iron Gobbet",
         head="Otronif Mask +1",neck="Loricate Torque +1",ear1="Brutal Earring",ear2="Bloodgem Earring",
-        body="Hesychast's Cyclas +1",hands="Hesychast's Gloves +1",ring1="K'ayres Ring",ring2="Defending Ring",
+        body="Hesychast's Cyclas +1",hands="Hesychast's Gloves +3",ring1="K'ayres Ring",ring2="Defending Ring",
         back="Moonbeam Cape",waist="Moonbow Belt +1",legs="Malignance Tights",feet="Hesychast's Gaiters +1"}
 
     sets.defense.MDT = {ammo="Staunch Tathlum",
@@ -431,8 +404,8 @@ function init_gear_sets()
 		
 	sets.engaged.Hybrid = {ammo="Mantoptera eye",
 		head="Kendatsuba Jinpachi +1", neck="Mnk. Nodowa +2", ear1="Sherida Earring", ear2="Mache Earring +1",   --0, 0, 0, 0
-		body="Mpaca's Doublet",	hands="Malignance Gloves", ring1="Gere Ring", ring2="Niqmaddu Ring",			 --10, 5, 0, 0
-		back="Segomo's Mantle",	waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's gaiters +1"		
+		body="Mpaca's Doublet",	hands="Malignance Gloves", ring1="Niqmaddu Ring", ring2="Gere Ring",			 --10, 5, 0, 0
+		back="Sacro Mantle",	waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's gaiters +2"		
 	}
 
 
@@ -464,8 +437,8 @@ function init_gear_sets()
 		ring1="Niqmaddu Ring",ring2="Epona's Ring",
 		back=DEX_DA,
 		waist="Moonbow Belt +1",
-		legs="Hesychast's Hose +3",
-		feet="Anchorite's Gaiters +3"
+		legs="Bhikku Hose +2",
+		feet="Anchorite's Gaiters +2"
 		}
     sets.engaged.Footwork.Acc = {ammo="Ginsen",
 		head="Adhemar Bonnet +1",
@@ -476,14 +449,14 @@ function init_gear_sets()
 		ring1="Niqmaddu Ring",ring2="Epona's Ring",
 		back=DEX_DA,
 		waist="Moonbow Belt +1",
-		legs="Hesychast's Hose +3",
-		feet="Anchorite's Gaiters +3"
+		legs="Bhikku Hose +2",
+		feet="Anchorite's Gaiters +2"
 		}    
     
 	-- Quick sets for post-precast adjustments, listed here so that the gear can be Validated.
     sets.impetus_body = {body="Bhikku Cyclas +2"}
 	sets.boost = {waist="Ask Sash"}
-	--sets.footwork_kick_feet = {feet="Anchorite's Gaiters +3"}
+	sets.footwork_kick_feet = {feet="Anchorite's Gaiters +2"}
 
 end
 

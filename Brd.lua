@@ -140,7 +140,7 @@ function init_gear_sets()
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
     sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
 					neck="Fotia Gorget", ear1="Mache Earring +1",
-					body="Ayanmo corazza +2", ring2="Begrudging Ring", 
+					body="Ayanmo corazza +2", ring1="Lehko Habhoka's ring", ring2="Begrudging Ring", 
 					back=gear.BrdSTPCape,waist="Fotia Belt", feet="Ayanmo Gambieras +2"})
 
     sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {
@@ -227,10 +227,11 @@ function init_gear_sets()
         body="Fili Hongreline +2",hands="Fili Manchettes +2",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
         back=gear.MAccCape,waist="Eschan stone",legs="Inyanga Shalwar +2",feet="Brioso Slippers +3"}
 		
-	sets.midcast.SongEnmity = {main="Ungeri staff", sub="Alber strap", range="Gjallarhorn",
-        head="Halitus Helm",neck="Unmoving collar +1",ear1="Trux Earring",ear2="Cryptic Earring",
-        body="Emet harness +1",hands="Nyame gauntlets",ring1="Defending Ring",ring2="Begrudging Ring",
-        back=gear.BrdSTPCape,waist="Goading Belt",legs="Nyame flanchard",feet="Nyame sollerets"}
+	sets.midcast.SongEnmity = {main="Ungeri staff", sub="Alber strap", range="Gjallarhorn",					--5, 5, 0
+        head="Halitus Helm",neck="Unmoving collar +1",ear1="Trux Earring",ear2="Cryptic Earring",			--8, 10, 5, 4
+        body="Emet harness +1",hands="Nyame gauntlets",ring1="Defending Ring",ring2="Begrudging Ring",		--10, 0, 0, 5
+        back=gear.BrdSTPCape,waist="Goading Belt",legs="Nyame flanchard",feet="Nyame sollerets"}			--0, 5, 0, 0
+		-- +57 enmity   
 
     -- For song debuffs (accuracy primary, duration secondary)
     sets.midcast.ResistantSongDebuff = {main="Carnwenhan", sub="Ammurapi shield", range="Gjallarhorn",
@@ -379,12 +380,7 @@ function init_gear_sets()
 	sets.engaged.Savage = {main="Naegling", range="Linos",
 		head="Aya. Zucchetto +2", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Mache Earring +1",
 		body="Ayanmo corazza +2", hands="Bunzi's gloves", left_ring="Moonlight Ring", right_ring="Moonlight Ring",
-		back=gear.BrdSTPCape, waist="Sailfi Belt +1", legs="Nyame Flanchard", feet="Nyame Sollerets"}
-		
-	--sets.engaged.Savage.DW = {main="Naegling", sub="Fusetto +3", range="Linos",
-	--	head="Aya. Zucchetto +2", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Suppanomimi",
-	--	body="Ayanmo corazza +2", hands="Nyame gauntlets", left_ring="Moonlight Ring", right_ring="Moonlight Ring",
-	--	back=gear.BrdSTPCape, waist="Sailfi Belt +1", legs="Nyame Flanchard", feet="Nyame Sollerets"}
+		back=gear.BrdSTPCape, waist="Sailfi Belt +1", legs="Nyame Flanchard", feet="Nyame Sollerets"}		
 		
 	sets.engaged.DW.Savage = {main="Naegling", sub="Fusetto +3", range="Linos",
 		head="Aya. Zucchetto +2", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Suppanomimi",
@@ -396,7 +392,7 @@ function init_gear_sets()
 		body="Ayanmo corazza +2", hands="Bunzi's gloves", left_ring="Moonlight Ring", right_ring="Moonlight Ring",
 		back=gear.BrdSTPCape, waist="Sailfi Belt +1", legs="Nyame Flanchard", feet="Nyame Sollerets"}
 		
-	sets.engaged.DW.Carn = {main="Carnwenhan", sub="Fusetto +3", range="Linos",
+	sets.engaged.DW.Carn = {main="Carnwenhan", sub="Gleti's Knife", range="Linos",
 		head="Aya. Zucchetto +2", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Suppanomimi",
 		body="Ayanmo corazza +2", hands="Bunzi's gloves", left_ring="Moonlight Ring", right_ring="Moonlight Ring",
 		back=gear.BrdSTPCape, waist="Sailfi Belt +1", legs="Nyame Flanchard", feet="Nyame Sollerets"}

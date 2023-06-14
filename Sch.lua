@@ -197,12 +197,12 @@ function init_gear_sets()
     -- Elemental Magic sets are default for handling low-tier nukes.
     sets.midcast['Elemental Magic'] = {main="Bunzi's rod",sub="Ammurapi Shield",ammo="Ghastly tathlum +1",
         head="Merlinic hood",neck="Argute Stole +2",ear1="Regal Earring",ear2="Malignance Earring",
-        body="Arbatel gown +2",hands="Agwu's gages",ring1="Freke Ring",ring2="Metamorph Ring +1",
+        body="Arbatel gown +3",hands="Agwu's gages",ring1="Freke Ring",ring2="Metamorph Ring +1",
         back="Lugh's cape",waist="Orpheus's sash",legs="Agwu's slops",feet="Arbatel loafers +3"}
 
     sets.midcast['Elemental Magic'].Resistant = {main="Bunzi's rod",sub="Ammurapi Shield",ammo="Ghastly tathlum +1",
         head="Merlinic hood",neck="Argute Stole +2",ear1="Regal Earring",ear2="Malignance Earring",
-        body="Arbatel gown +2",hands="Agwu's gages",ring1="Freke Ring",ring2="Metamorph Ring +1",
+        body="Arbatel gown +3",hands="Agwu's gages",ring1="Freke Ring",ring2="Metamorph Ring +1",
         back="Lugh's cape",waist="Orpheus's sash",legs="Agwu's slops",feet="Arbatel loafers +3"}
 				
 	sets.midcast['Elemental Magic'].Burst = {main="Bunzi's rod",sub="Ammurapi Shield",ammo="Ghastly tathlum +1",
@@ -263,7 +263,7 @@ function init_gear_sets()
 
 	sets.idle = {main="Daybreak",sub="Genmei shield",ammo="Homiliary",
         head="Befouled crown",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Loquacious Earring",
-        body="Arbatel gown +2",hands="Volte gloves",ring1="Sheltered Ring",ring2="Defending Ring",
+        body="Arbatel gown +3",hands="Volte gloves",ring1="Sheltered Ring",ring2="Defending Ring",
         back="Moonlight cape",waist="Carrier's sash",legs="Volte brais",feet="Herald's Gaiters"}	
 	
     sets.idle.Town = {main="Daybreak",sub="Genmei shield",ammo="Incantor Stone",
@@ -278,12 +278,12 @@ function init_gear_sets()
 		
 	sets.idle.Myrkr = {ammo="Homiliary",
         head="Befouled crown",neck="Argute stole +2",ear1="Etiolation Earring",ear2="Loquacious Earring",
-        body="Arbatel gown +2",hands="Volte gloves",ring1="Sheltered Ring",ring2="Defending Ring",
+        body="Arbatel gown +3",hands="Volte gloves",ring1="Sheltered Ring",ring2="Defending Ring",
         back="Moonlight cape",waist="Luminary sash",legs="Volte brais",feet="Herald's Gaiters"}
 
     sets.idle.PDT = {main="Daybreak",sub="Genmei shield",ammo="Homiliary",
         head="Nyame helm",neck="Bathy choker +1",ear1="Etiolation Earring",ear2="Infused Earring",
-        body="Arbatel gown +2",hands="Nyame gauntlets",ring1="Sheltered Ring",ring2="Defending Ring",
+        body="Arbatel gown +3",hands="Nyame gauntlets",ring1="Sheltered Ring",ring2="Defending Ring",
         back="Moonlight cape",waist="Carrier's sash",legs="Nyame flanchard",feet="Nyame sollerets"}
 
     -- sets.idle.Field.Stun = {main="Apamajas II",sub="Mephitis Grip",ammo="Incantor Stone",

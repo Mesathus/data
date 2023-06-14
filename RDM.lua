@@ -88,7 +88,7 @@ function init_gear_sets()
 		
 	sets.precast.WS['Chant du Cygne'] = set_combine(sets.precast.WS,{ammo="Yetshila +1",
         head="Blistering sallet +1",neck="Fotia gorget",ear1="Mache earring +1",
-		ring2="Begrudging Ring",
+		ring1="Lehko Habhoka's ring", ring2="Begrudging Ring",
 		waist="Fotia belt"})
 		
 	sets.precast.WS['Evisceration'] = sets.precast.WS['Chant du Cygne']

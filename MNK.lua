@@ -289,12 +289,12 @@ end
 -- Run after the general precast() is done.
 function job_post_precast(spell, action, spellMap, eventArgs)
     if spell.type == 'WeaponSkill' and state.DefenseMode.current ~= 'None' then
-        if state.Buff.Impetus and (spell.english == "Ascetic's Fury" or spell.english == "Victory Smite") then
+        if state.Buff.Impetus then --and (spell.english == "Ascetic's Fury" or spell.english == "Victory Smite") then
             -- Need 6 hits at capped dDex, or 9 hits if dDex is uncapped, for Tantra to tie or win.
-            if (state.OffenseMode.current == 'Fodder' and info.impetus_hit_count > 5) or (info.impetus_hit_count > 8) then
+            --if (state.OffenseMode.current == 'Fodder' and info.impetus_hit_count > 5) or (info.impetus_hit_count > 8) then
                 equip(sets.impetus_body)
-            end
-        elseif state.Buff.Footwork and (spell.english == "Dragon's Kick" or spell.english == "Tornado Kick") then
+            --end
+        elseif state.Buff.Footwork then --and (spell.english == "Dragon's Kick" or spell.english == "Tornado Kick") then
             equip(sets.footwork_kick_feet)
         end
         
@@ -400,15 +400,15 @@ end
 function select_default_macro_book()
     -- Default macro set/book
     if player.sub_job == 'DNC' then
-        set_macro_page(4, 19)
+        set_macro_page(2, 9)
     elseif player.sub_job == 'NIN' then
-        set_macro_page(4, 19)
+        set_macro_page(2, 9)
     elseif player.sub_job == 'THF' then
-        set_macro_page(4, 19)
+        set_macro_page(2, 9)
     elseif player.sub_job == 'RUN' then
-        set_macro_page(4, 19)
+        set_macro_page(2, 9)
     else
-        set_macro_page(4, 19)
+        set_macro_page(2, 9)
     end
 end
 

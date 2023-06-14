@@ -309,7 +309,7 @@ function init_gear_sets()
 
     sets.precast.WS['Chant du Cygne'] = set_combine(sets.precast.WS, {
 		head="Adhemar bonnet +1",neck="Mirage stole +2",ear1="Odr earring", ear2="Mache earring +1",
-		body="Gleti's cuirass",ring2="Begrudging ring",
+		body="Gleti's cuirass",ring1="Lehko Habhoka's ring",ring2="Begrudging ring",
 		back=gear.CritCape,legs="Gleti's breeches",feet="Adhemar gamashes +1"})    
 
     -- Midcast Sets

@@ -120,6 +120,11 @@ function init_gear_sets()
     sets.precast.JA['Sneak Attack'] = sets.buff['Sneak Attack']
     sets.precast.JA['Trick Attack'] = sets.buff['Trick Attack']
 
+	sets.Enmity = {
+	head="Halitus helm", neck="Unmoving collar +1", ear1="Trux earring", ear2="Cryptic earring",
+	body="Emet Harness +1", hands="Kurys gloves",
+	legs="Obatala subligar", feet="Ahosi leggings"
+	}
 
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {ammo="Sonia's Plectrum",
@@ -172,8 +177,8 @@ function init_gear_sets()
 
     sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {ammo = "Yetshila +1",
 		head="Adhemar bonnet +1",ear1="Sherida Earring",ear2="Odr earring",
-        body ="Plunderer's vest +3",hands="Mummu wrists +2",
-		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10'}},ring2="Mummu Ring",
+        body ="Plunderer's vest +3",hands="Mummu wrists +2",ring1="Lehko Habhoka's ring",ring2="Mummu Ring",
+		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10'}},
 		legs="Pillager's culottes +3",feet="Adhemar Gamashes +1"})
     sets.precast.WS['Evisceration'].Acc = set_combine(sets.precast.WS['Evisceration'], {head="Skulker's bonnet +3",hands="Gleti's Gauntlets",
 																						legs="Gleti's breeches", feet="Gleti's Boots"})
@@ -428,7 +433,7 @@ function init_gear_sets()
         
     -- Mod set for trivial mobs (Skadi+1)
     sets.engaged.TA = {ammo="Yetshila +1",
-        head="Skulker's Bonnet +3",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Odr earring",
+        head="Skulker's Bonnet +3",neck="Assassin's gorget +2",ear1="Odr Earring",ear2="Skulker's earring",
         body="Adhemar jacket +1",hands="Adhemar Wristbands +1",ring1="Hetairoi Ring",ring2="Gere Ring",
         back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10','Phys. dmg. taken-10%'}},
 		waist="Chiner's Belt +1",legs="Pillager's culottes +3",feet="Plunderer's Poulaines +3"}
@@ -472,7 +477,7 @@ function init_gear_sets()
 		
 	sets.engaged.Crit = {ammo="Yetshila +1",
 		head="Adhemar Bonnet +1", neck="Assassin's Gorget +2", left_ear="Sherida Earring", right_ear="Odr Earring",
-		body="Plunderer's Vest +3", hands="Mummu Wrists +2", left_ring="Regal Ring", right_ring="Mummu Ring",
+		body="Plunderer's Vest +3", hands="Mummu Wrists +2", left_ring="Lehko Habhoka's ring", right_ring="Mummu Ring",
 		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10',}},
 		waist="Kentarch Belt +1", legs="Skulker's Culottes +3",feet="Adhe. Gamashes +1"}
 	
