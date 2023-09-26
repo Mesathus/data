@@ -19,6 +19,7 @@ function get_sets()
     
     -- Load and initialize the include file.
     include('Mote-Include.lua')
+	include('Sef-Utility.lua')
 end
 
 -- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
@@ -42,7 +43,7 @@ end
 
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
-    state.OffenseMode:options('Normal', 'TA', 'Hybrid', 'TAcc', 'H2H', 'DT', 'Evasion')
+    state.OffenseMode:options('Normal', 'TA', 'Hybrid', 'TAcc', 'H2H', 'DT', 'Evasion', 'HybridCrit')
     state.HybridMode:options('Normal', 'Evasion', 'PDT')
     state.RangedMode:options('Normal', 'Acc')
     state.WeaponskillMode:options('Normal', 'Acc', 'Mod')
@@ -116,6 +117,11 @@ function init_gear_sets()
 		head="Mummu Bonnet +2", neck="Asn. Gorget +2", ear1="Odr Earring", ear2="Mache Earring +1",
 		body="Mummu Jacket +2", hands="Mummu Wrists +2", ring1="Ilabrat Ring", ring2="Regal Ring",
 		back="Sacro Mantle", waist="Chaac Belt", legs="Mummu Kecks +2", feet="Mummu Gamash. +2"}
+		
+		-- {ammo="C. Palug Stone",
+		-- head="Skulker's Bonnet +3", neck="Asn. Gorget +2", ear1="Odr Earring", ear2="Mache Earring +1",
+		-- body="Skulker's Vest +3", hands="Mummu Wrists +2", ring1="Ilabrat Ring", ring2="Regal Ring",
+		-- back="Sacro Mantle", waist="Chaac Belt", legs="Mummu Kecks +2", feet="Skulker's Poulaines +3"}
 
     sets.precast.JA['Sneak Attack'] = sets.buff['Sneak Attack']
     sets.precast.JA['Trick Attack'] = sets.buff['Trick Attack']
@@ -175,12 +181,13 @@ function init_gear_sets()
     sets.precast.WS['Dancing Edge'].TA = set_combine(sets.precast.WS['Dancing Edge'].Mod, {})
     sets.precast.WS['Dancing Edge'].SATA = set_combine(sets.precast.WS['Dancing Edge'].Mod, {})
 
-    sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {ammo = "Yetshila +1",
-		head="Adhemar bonnet +1",ear1="Sherida Earring",ear2="Odr earring",
-        body ="Plunderer's vest +3",hands="Mummu wrists +2",ring1="Lehko Habhoka's ring",ring2="Mummu Ring",
-		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10'}},
-		legs="Pillager's culottes +3",feet="Adhemar Gamashes +1"})
-    sets.precast.WS['Evisceration'].Acc = set_combine(sets.precast.WS['Evisceration'], {head="Skulker's bonnet +3",hands="Gleti's Gauntlets",
+    sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {ammo = "Yetshila +1",								--2
+		head="Skulker's bonnet +3",ear1="Sherida Earring",ear2="Odr earring",											--0, 0, 0, 5
+        body ="Plunderer's vest +3",hands="Gleti's Gauntlets",ring1="Lehko Habhoka's ring",ring2="Mummu Ring",			--5, 6, 10, 3
+		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10'}},		--10, 0, 7, 4
+		legs="Gleti's breeches",feet="Gleti's Boots"})																	--52%
+    sets.precast.WS['Evisceration'].Acc = set_combine(sets.precast.WS['Evisceration'], {head="Skulker's bonnet +3",
+																						hands="Gleti's Gauntlets", ring2="Begrudging Ring",
 																						legs="Gleti's breeches", feet="Gleti's Boots"})
     sets.precast.WS['Evisceration'].Mod = set_combine(sets.precast.WS['Evisceration'])
     sets.precast.WS['Evisceration'].SA = set_combine(sets.precast.WS['Evisceration'].Mod, {head = "Pillager's Bonnet +3"})
@@ -391,7 +398,7 @@ function init_gear_sets()
 		
 	sets.idle.STP = {ammo="Yamarang",
         head="Turms cap +1",neck="Ainia collar",ear1="Sherida Earring",ear2="Dedition earring",
-        body="Malignance tabard",hands="Malignance gloves",ring1="Rajas Ring",ring2="Ilabrat Ring",
+        body="Malignance tabard",hands="Malignance gloves",ring1="Lehko Habhoka's ring",ring2="Ilabrat Ring",
         back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}},
 		waist="Patentia sash",legs="Malignance tights",feet="Malignance boots"}
 		
@@ -422,10 +429,21 @@ function init_gear_sets()
     --------------------------------------
 
     -- Normal melee group
+	-- Max DW 44%
     sets.engaged = {ammo="Seething Bomblet +1",
         head="Adhemar bonnet +1",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Suppanomimi",
-        body="Adhemar jacket +1",hands="Adhemar Wristbands +1",ring1="Rajas Ring",ring2="Gere Ring",
-        back=gear.CapeSTP, waist="Reiki Yotai",legs="Pillager's Culottes +3",feet={name="Taeon boots",augments={'Accuracy+20 Attack+20','"Dual Wield"+4','Crit. hit damage +2%'}}}
+        body="Adhemar jacket +1",hands="Adhemar Wristbands +1",ring1="Lehko Habhoka's ring",ring2="Gere Ring",
+        back=gear.CapeSTP, waist="Reiki Yotai",legs="Pillager's Culottes +3",
+		feet={name="Taeon boots",augments={'Accuracy+20 Attack+20','"Dual Wield"+4','Crit. hit damage +2%'}}}
+	
+	-- Blurred Knife 37%	
+	sets.engaged.DW2 = {ammo="Seething Bomblet +1",
+        head="Adhemar bonnet +1",neck="Assassin's gorget +2",ear1="Eabani Earring",ear2="Suppanomimi",			--0, 0, 4, 5
+        body="Adhemar jacket +1",hands="Pillager's armlets +3",ring1="Lehko Habhoka's ring",ring2="Gere Ring",	--6, 5, 0, 0
+        back=gear.CapeSTP, waist="Reiki Yotai",legs="Pillager's Culottes +3",									--0, 7, 0
+		feet={name="Taeon boots",augments={'Accuracy+20 Attack+20','"Dual Wield"+4','Crit. hit damage +2%'}}}	--8
+		-- 35% DW  taeon boots aug 1%
+		
     sets.engaged.Acc = {ammo="Yamarang",
         head="Pillager's Bonnet +3",neck="Loricate torque +1",ear1="Dignitary's Earring",ear2="Telos earring",
         body="Meghanada cuirie +2",hands="Adhemar Wristbands +1",ring1="Regal Ring",ring2="Gere Ring",
@@ -433,10 +451,11 @@ function init_gear_sets()
         
     -- Mod set for trivial mobs (Skadi+1)
     sets.engaged.TA = {ammo="Yetshila +1",
-        head="Skulker's Bonnet +3",neck="Assassin's gorget +2",ear1="Odr Earring",ear2="Skulker's earring",
-        body="Adhemar jacket +1",hands="Adhemar Wristbands +1",ring1="Hetairoi Ring",ring2="Gere Ring",
-        back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10','Phys. dmg. taken-10%'}},
-		waist="Chiner's Belt +1",legs="Pillager's culottes +3",feet="Plunderer's Poulaines +3"}
+        head="Skulker's Bonnet +3",neck="Assassin's gorget +2",ear1="Odr Earring",ear2="Skulker's earring +1",									--6, 4, 0, 3
+        body="Adhemar jacket +1",hands="Adhemar Wristbands +1",ring1="Hetairoi Ring",ring2="Gere Ring",											--4, 4, 2, 5
+        back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10','Phys. dmg. taken-10%'}},			--0
+		waist="Chiner's Belt +1",legs="Pillager's culottes +3",feet="Plunderer's Poulaines +3"}													--2, 5, 5
+		-- 19% base + 40% gear    41% TA damage    22% crit rate    22% base + 11% gear crit damage
 		
 	sets.engaged.Hybrid = {ammo="Yamarang",
         head="Skulker's Bonnet +3",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Telos Earring",
@@ -448,11 +467,13 @@ function init_gear_sets()
         body="Malignance tabard",hands="Malignance gloves",ring1="Hetairoi Ring",ring2="Gere Ring",
         back=gear.CapeSTP,waist="Reiki Yotai",legs="Malignance tights",feet="Malignance boots"}
 		
-	sets.engaged.HybridSB = {ammo="Expeditious pinion",  														--7
-        head="Malignance chapeau",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Skulker's Earring",  --0,0,5|2,5
-        body="Malignance tabard",hands="Malignance gloves",ring1="Chirich Ring +1",ring2="Chirich Ring +1",     --0,0,10,10
-        back=gear.CapeSTP,waist="Reiki Yotai",legs="Gleti's breeches",feet="Volte spats"}  						--0,0,10,6  Mummu feet would be 9 SB 5 crit, less Str/Dex more Acc
+	sets.engaged.HybridSB = {ammo="Expeditious pinion",  															--7
+        head="Malignance chapeau",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Skulker's earring +1",  --0,0,0|5,5
+        body="Malignance tabard",hands="Malignance gloves",ring1="Chirich Ring +1",ring2="Chirich Ring +1",  	   --0,0,10,10
+        back=gear.CapeSTP,waist="Reiki Yotai",legs="Gleti's breeches",feet="Volte spats"}  							--0,0,10,6  Mummu feet would be 9 SB 5 crit, less Str/Dex more Acc
 		--48 SB1 + 5 SB2    38 PDT     R30 Gleti's legs +5 SB, can drop ammo and be at 49 w/ Mummu
+		
+	sets.engaged.HybridCrit = set_combine(sets.engaged.Hybrid, {ring1="Lehko Habhoka's ring", back=gear.CapeCrit})
 		
 		
 	sets.engaged.DT = {ammo="Yamarang",
@@ -473,13 +494,14 @@ function init_gear_sets()
         head="Malignance chapeau",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Telos Earring",
         body="Malignance tabard",hands="Turms mittens +1",ring1="Moonlight Ring",ring2="Moonlight Ring",
         back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%'}},
-		waist="Reiki Yotai",legs="Malignance Tights",feet="Turms leggings +1"}
+		waist="Reiki Yotai",legs="Skulker's Culottes +3",feet="Turms leggings +1"}
 		
-	sets.engaged.Crit = {ammo="Yetshila +1",
-		head="Adhemar Bonnet +1", neck="Assassin's Gorget +2", left_ear="Sherida Earring", right_ear="Odr Earring",
-		body="Plunderer's Vest +3", hands="Mummu Wrists +2", left_ring="Lehko Habhoka's ring", right_ring="Mummu Ring",
-		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10',}},
-		waist="Kentarch Belt +1", legs="Skulker's Culottes +3",feet="Adhe. Gamashes +1"}
+	sets.engaged.Crit = {ammo="Yetshila +1",																				--2
+		head="Adhemar Bonnet +1", neck="Assassin's Gorget +2", left_ear="Sherida Earring", right_ear="Odr Earring",			--2, 0, 0, 5
+		body="Plunderer's Vest +3", hands="Mummu Wrists +2", left_ring="Lehko Habhoka's ring", right_ring="Mummu Ring",		--5, 6, 10, 3
+		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10',}},			--10
+		waist="Kentarch Belt +1", legs="Skulker's Culottes +3",feet="Adhe. Gamashes +1"}									--0, 7, 6
+		-- 56% crit  Gleti's knife is 5 more, plus up to 25% base gives 81/86% crit  Gleti's head/feet 5/4    Gleti hands same as Mummu, swap ring to Hetaroi
 	
 
     -- Mod set for trivial mobs (Thaumas)
@@ -528,10 +550,18 @@ function job_post_precast(spell, action, spellMap, eventArgs)
 	end
 	-- Used to overwrite Moonshade Earring if TP is more than 2750.
     if spell.type == 'WeaponSkill' then	
-		if player.tp > 1750  and player.equipment.sub == "Fusetto +3" then
-			equip({ear2 = "Mache Earring +1"})
+		if player.tp > 1750  and tp_bonus_weapons:contains(player.equipment.sub) then-- (player.equipment.sub == "Fusetto +3" or player.equipment.sub == "Fusetto +2" or player.equipment.sub == "Centovente") then
+			if data.weaponskills.elemental:contains(spell.name) then
+				equip({ear2 = "Crematio Earring"})
+			else
+				equip({ear2 = "Mache Earring +1"})
+			end
         elseif player.tp > 2750 then
-			equip({ear2 = "Mache Earring +1"})
+			if data.weaponskills.elemental:contains(spell.name) then
+				equip({ear2 = "Crematio Earring"})
+			else
+				equip({ear2 = "Mache Earring +1"})
+			end
         end
     end
 end

@@ -9,6 +9,7 @@ function init_gear_sets()
     --------------------------------------
     -- include('yer_augmented-items.lua')
     -- Precast Sets
+	include('Sef-Utility.lua')
     
 	DEX_DA = { name="Segomo's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
 	STR_DA = { name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}}
@@ -138,8 +139,7 @@ function init_gear_sets()
 		
 	sets.precast.WS['Dragon Kick']     = set_combine(sets.precast.WS['Tornado Kick'], {})
 		
-    sets.precast.WS['Spinning Attack'] = set_combine(sets.precast.WS, {
-        head="Felistris Mask",ear1="Bladeborn Earring",ear2="Steelflash Earring"})
+    sets.precast.WS['Spinning Attack'] = set_combine(sets.precast.WS, {})
 
     sets.precast.WS["Raging Fists"].Acc = set_combine(sets.precast.WS["Raging Fists"], sets.precast.WSAcc)
     sets.precast.WS["Howling Fist"].Acc = set_combine(sets.precast.WS["Howling Fist"], sets.precast.WSAcc)
@@ -160,10 +160,10 @@ function init_gear_sets()
     sets.precast.WS["Tornado Kick"].Mod = set_combine(sets.precast.WS["Tornado Kick"], sets.precast.WSMod)
 
 
-    sets.precast.WS['Cataclysm'] = {
-        head=HercHelmMAB,neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Crematio Earring",
-        body="Samnuha Coat",hands=HercGlovesMAB,ring1="Acumen Ring",ring2="Demon's Ring",
-        back="Toro Cape",waist="Eschan Stone",legs=HercPants_MAB,feet=HercBoots_MAB}
+    sets.precast.WS['Cataclysm'] = {ammo="Ghastly Tathlum +1",
+		head="Pixie Hairpin +1",neck="Sibyl scarf",left_ear="Friomisi Earring",right_ear= "Moonshade Earring",
+		body="Nyame mail",hands="Nyame gauntlets",left_ring="Archon Ring",ring2="Epaminondas's Ring",
+		waist="Orpheus's sash",legs="Nyame Flanchard",feet="Nyame Sollerets",}
     
     sets.precast.WS["Shell Crusher"]   = set_combine(sets.precast.WS, {
 		ammo="Pemphredo Tathlum",
@@ -251,7 +251,7 @@ function init_gear_sets()
 		
     sets.engaged.SomeAcc = {ammo="Ginsen",
 		head="Kendatsuba Jinpachi +1",
-		neck="Moonlight Nodowa",
+		neck="Monk's Nodowa +2",
 		ear1="Sherida Earring",ear2="Brutal Earring",
 		body="Kendatsuba Samue +1",
 		hands="Adhemar Wristbands +1",
@@ -264,7 +264,7 @@ function init_gear_sets()
 		
     sets.engaged.Acc = {ammo="Ginsen",
 		head="Kendatsuba Jinpachi +1",
-		neck="Moonlight Nodowa",
+		neck="Monk's Nodowa +2",
 		ear1="Dignitary's Earring",ear2="Telos Earring",
 		body="Kendatsuba Samue +1",
 		hands="Kendatsuba Tekko +1",
@@ -278,7 +278,7 @@ function init_gear_sets()
     -- Defensive melee hybrid sets
     sets.engaged.PDT = {ammo="Ginsen",
 		head="Malignance Chapeau",
-		neck="Moonlight Nodowa",
+		neck="Monk's Nodowa +2",
 		ear1="Sherida Earring",
 		ear2="Brutal Earring",
 		body="Malignance Tabard",
@@ -292,7 +292,7 @@ function init_gear_sets()
 		
     sets.engaged.SomeAcc.PDT = {ammo="Ginsen",
         head="Malignance Chapeau",
-		neck="Moonlight Nodowa",
+		neck="Monk's Nodowa +2",
 		ear1="Sherida Earring",
 		ear2="Telos Earring",
 		body="Malignance Tabard",
@@ -306,7 +306,7 @@ function init_gear_sets()
 		
     sets.engaged.Acc.PDT = {ammo="Ginsen",
         head="Malignance Chapeau",
-		neck="Moonlight Nodowa",
+		neck="Monk's Nodowa +2",
 		ear1="Sherida Earring",
 		ear2="Telos Earring",
 		body="Malignance Tabard",
@@ -320,7 +320,7 @@ function init_gear_sets()
 		
 	sets.engaged.MEVA = {ammo="Ginsen",
 		head="Kendatsuba Jinpachi +1",
-		neck="Moonlight Nodowa",
+		neck="Monk's Nodowa +2",
 		ear1="Sherida Earring",
 		ear2="Brutal Earring",
 		body="Kendatsuba Samue +1",
@@ -334,7 +334,7 @@ function init_gear_sets()
 		
     sets.engaged.SomeAcc.MEVA = {ammo="Ginsen",
         head="Kendatsuba Jinpachi +1",
-		neck="Moonlight Nodowa",
+		neck="Monk's Nodowa +2",
 		ear1="Sherida Earring",
 		ear2="Telos Earring",
 		body="Kendatsuba Samue +1",
@@ -348,7 +348,7 @@ function init_gear_sets()
 		
     sets.engaged.Acc.MEVA = {ammo="Ginsen",
         head="Kendatsuba Jinpachi +1",
-		neck="Moonlight Nodowa",
+		neck="Monk's Nodowa +2",
 		ear1="Dignitary's Earring",
 		ear2="Telos Earring",
 		body="Kendatsuba Samue +1",
@@ -362,7 +362,7 @@ function init_gear_sets()
 		
     sets.engaged.Counter = {ammo="Ginsen",
         head="Malignance Chapeau",
-		neck="Moonlight Nodowa",
+		neck="Monk's Nodowa +2",
 		ear1="Sherida Earring",
 		ear2="Brutal Earring",
 		body="Malignance Tabard",
@@ -376,7 +376,7 @@ function init_gear_sets()
 		
     sets.engaged.SomeAcc.Counter = {ammo="Staunch Tathlum",
         head="Malignance Chapeau",
-		neck="Moonlight Nodowa",
+		neck="Monk's Nodowa +2",
 		ear1="Sherida Earring",
 		ear2="Telos Earring",
 		body="Malignance Tabard",
@@ -390,7 +390,7 @@ function init_gear_sets()
 	
 	sets.engaged.Acc.Counter = {ammo="Staunch Tathlum",
         head="Malignance Chapeau",
-		neck="Moonlight Nodowa",
+		neck="Monk's Nodowa +2",
 		ear1="Sherida Earring",
 		ear2="Telos Earring",
 		body="Malignance Tabard",
@@ -430,7 +430,7 @@ function init_gear_sets()
     -- Footwork combat form
     sets.engaged.Footwork = {ammo="Ginsen",
 		head="Adhemar Bonnet +1",
-		neck="Moonlight Nodowa",
+		neck="Monk's Nodowa +2",
 		ear1="Sherida Earring",ear2="Telos Earring",
 		body="Kendatsuba Samue +1",
 		hands="Adhemar Wristbands +1",
@@ -442,7 +442,7 @@ function init_gear_sets()
 		}
     sets.engaged.Footwork.Acc = {ammo="Ginsen",
 		head="Adhemar Bonnet +1",
-		neck="Moonlight Nodowa",
+		neck="Monk's Nodowa +2",
 		ear1="Sherida Earring",ear2="Telos Earring",
 		body="Kendatsuba Samue +1",
 		hands="Adhemar Wristbands +1",

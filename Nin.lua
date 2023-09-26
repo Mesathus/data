@@ -170,6 +170,12 @@ function init_gear_sets()
         head="Whirlpool Mask",neck="Wiglen Gorget",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
         body="Hachiya Chainmail +1",hands="Otronif Gloves",ring1="Sheltered Ring",ring2="Paguroidea Ring",
         back="Shadow Mantle",waist="Flume Belt",legs="Hachiya Hakama",feet=gear.MovementFeet}
+		
+	sets.idle.MaxDW = {ammo="Staunch tathlum +1",																--0
+        head="Hattori Zukin +3",neck="Loricate torque +1",ear1="Suppanomimi",ear2="Eabani Earring",				--7, 0, 5, 4
+        body="Hachiya Chainmail +3",hands="Herculean gloves",ring1="Defending Ring",ring2="Sheltered Ring",		--10, 5, 0, 0
+        back="Ankou mantle",waist="Reiki Yotai",legs="Mochizuki Hakama +3",feet="Hizamaru Sune-ate +2"			--10, 7, 10, 8
+	}	--66 DW
     
     -- Defense sets
     sets.defense.Evasion = {

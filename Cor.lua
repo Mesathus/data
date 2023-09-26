@@ -18,6 +18,7 @@ function get_sets()
     
     -- Load and initialize the include file.
     include('Mote-Include.lua')
+	include('Sef-Utility.lua')
 end
 
 -- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
@@ -187,9 +188,7 @@ function init_gear_sets()
         body="Nyame mail",	hands="Chasseur's Gants +2",ring1="Regal Ring",ring2="Epaminondas's ring",
         back=gear.CorSavageCape,waist="Kentarch Belt +1",legs="Nyame Flanchard",feet="Lanun Bottes +3"}
 		
-	sets.precast.WS['Viper Bite'] = set_combine(sets.precast.WS['Savage Blade'],{})
-		
-	sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS['Wildfire'], {})
+	sets.precast.WS['Viper Bite'] = set_combine(sets.precast.WS['Savage Blade'],{})		
     
     -- Midcast Sets
     sets.midcast.FastRecast = {
@@ -289,7 +288,7 @@ function init_gear_sets()
         back=gear.CorMeleeCape,waist="Kentarch belt +1",legs="Malignance tights",feet="Malignance boots"}
     
     sets.engaged.Acc = {ammo=gear.RAbullet,
-        head="Adhemar bonnet +1",neck="Lissome Necklace",ear1="Brutal Earring",ear2="Telos Earring",
+        head="Adhemar bonnet +1",neck="Combatant's Torque",ear1="Brutal Earring",ear2="Telos Earring",
         body="Adhemar jacket +1",hands="Adhemar Wristbands +1",ring1="Rajas Ring",ring2="Epona's Ring",
         back=gear.CorMeleeCape,waist="Kentarch belt +1",legs="Malignance tights",feet="Malignance boots"}
 		
@@ -320,13 +319,14 @@ function init_gear_sets()
 		neck="Combatant's Torque",
 		waist="Reiki Yotai",
 		left_ear="Telos Earring",
-		right_ear="Mache Earring +1",
+		right_ear="Odr Earring",
 		left_ring="Ilabrat Ring",
 		right_ring="Regal Ring",
 		back=gear.CorMeleeCape}
 	
-	sets.engaged.DW.Hybrid = set_combine(sets.engaged.DW.Acc, {head="Malignance chapeau", 
-		body="Malignance tabard", hands="Malignance gloves", 
+	sets.engaged.DW.Hybrid = set_combine(sets.engaged.DW.Acc, {
+		head="Malignance chapeau", 
+		body="Malignance tabard", hands="Malignance gloves", right_ring = "Lehko Habhoka's ring",
 		legs="Malignance tights", feet="Malignance boots"})
 
 	sets.buff['Weather'] = {waist="Hachirin-no-obi"}

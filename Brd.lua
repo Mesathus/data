@@ -29,6 +29,7 @@ function get_sets()
     
     -- Load and initialize the include file.
     include('Mote-Include.lua')
+	include('Sef-Utility.lua')
 end
 
 
@@ -60,6 +61,8 @@ function user_setup()
 	gear.BrdSTPCape = { name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}}
 	gear.BrdStrWSDCape = { name="Intarabus's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
 	gear.BrdChrWSDCape = {}
+	gear.FeetCurse = {name="Vanya Clogs", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3'}}
+	gear.FeetSIRD = {name="Vanya Clogs", augments={'MND+10','Spell interruption rate down +15%','"Conserve MP"+6'}}
 	
     -- Adjust this if using the Terpander (new +song instrument)
     info.ExtraSongInstrument = 'Daurdabla'
@@ -93,12 +96,16 @@ function init_gear_sets()
     --------------------------------------
     
     -- Precast Sets
+	sets.TreasureHunter = {head="White rarab cap +1",waist="Chaac belt"}
+	sets.precast.Step = sets.TreasureHunter
 
     -- Fast cast sets for spells
     sets.precast.FC = {main="Vampirism",sub="Ammurapi shield",                                            --7             7
-		head="Haruspex Hat +1",neck="Voltsurge torque",ear1="Etiolation earring",ear2="Loquac. Earring",  --9, 4, 1, 1    22
-        body="Inyanga Jubbah +2",hands="Leyline gloves",ring1="Defending Ring",ring2="Kishar Ring",       --14, 8, 0, 4   48
-        back=gear.MAccCape,waist="Embla Sash",legs="Volte brais",feet="Fili Cothurnes +2"}                --10, 5, 8, 10  81
+		head="Haruspex Hat +1",neck="Voltsurge torque",ear1="Etiolation earring",ear2="Loquac. Earring",  --9, 4, 1, 2    23
+        body="Inyanga Jubbah +2",hands="Leyline gloves",ring1="Defending Ring",ring2="Kishar Ring",       --14, 8, 0, 4   49
+        back=gear.MAccCape,waist="Embla Sash",legs="Volte brais",feet="Fili Cothurnes +2"}                --10, 5, 8, 10  82
+		-- emp boots 13% need 2 more to drop vampirism  bunzi hat 10
+		
 
     sets.precast.FC.Cure = set_combine(sets.precast.FC, {})--legs="Vanya slops",feet = "Vanya clogs"})
 
@@ -106,15 +113,17 @@ function init_gear_sets()
 
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {})
 
-    sets.precast.FC.BardSong = {main="Vampirism",range="Gjallarhorn",
-        head="Fili Calot +2",neck="Voltsurge torque",ear1="Etiolation Earring",ear2="Loquac. Earring",
-        body="Brioso justaucorps +3",hands="Leyline gloves",ring1="Prolix Ring",ring2="Kishar Ring",    
-        back=gear.MAccCape,waist="Embla Sash",legs="Volte brais",feet="Bihu slippers +3"}
+    sets.precast.FC.BardSong = {range="Gjallarhorn",
+        head="Fili Calot +2",neck="Voltsurge torque",ear1="Etiolation Earring",ear2="Loquac. Earring",		-- 15, 4, 1, 1
+        body="Brioso justaucorps +3",hands="Leyline gloves",ring1="Defending Ring",ring2="Kishar Ring",    	-- 15, 8, 0, 4
+        back=gear.MAccCape,waist="Embla Sash",legs="Volte brais",feet="Bihu slippers +3"}					-- 10, 5, 8, 10
+		-- 81%
 
     sets.precast.FC.Daurdabla = set_combine(sets.precast.FC.BardSong, {range= "Daurdabla"})
 	
 	sets.precast.FC['Honor March'] = set_combine(sets.precast.FC, {range = "Marsyas"})
 	sets.precast.FC['Dispelga'] = set_combine(sets.precast.FC, {main="Daybreak"})
+	sets.precast.FC['Aria of Passion'] = set_combine(sets.precast.FC, {range = "Loughnashade"})
         
     
     -- Precast sets to enhance JAs
@@ -175,9 +184,10 @@ function init_gear_sets()
 
     -- General set for recast times.
     sets.midcast.FastRecast = {
-        head="Haruspex Hat +1",neck="Voltsurge torque",ear1="Etiolation earring",ear2="Loquacious Earring",
-        body="Inyanga jubbah +2",hands="Leyline gloves",ring1="Prolix Ring",ring2="Kishar ring",
-        back="Fi follet cape +1",waist="Embla sash",legs="Volte brais",feet="Telchine pigaches"}
+        head="Haruspex Hat +1",neck="Voltsurge torque",ear1="Etiolation earring",ear2="Loquacious Earring",   	-- 9, 4, 1, 1
+        body="Inyanga jubbah +2",hands="Leyline gloves",ring1="Prolix Ring",ring2="Kishar ring", 				-- 14, 8, 2, 4
+        back="Fi follet cape +1",waist="Embla sash",legs="Volte brais",feet="Fili Cothurnes +2"}				-- 10, 5, 8, 10
+		-- 76%
 		
 	sets.midcast['Haste'] = set_combine(sets.midcast.FastRecast, {sub="Ammurapi shield",
 		head="Telchine cap", 
@@ -211,6 +221,7 @@ function init_gear_sets()
     sets.midcast["Sentinel's Scherzo"] = {feet="Fili Cothurnes +2"}
     sets.midcast['Magic Finale'] = {back=gear.MAccCape}
 	sets.midcast['Honor March'] = {hands="Fili Manchettes +2", range="Marsyas"}
+	sets.midcast['Aria of Passion'] = {range = "Loughnashade"}
 
     sets.midcast.Mazurka = {range=info.ExtraSongInstrument}
     
@@ -277,17 +288,21 @@ function init_gear_sets()
         body="Telchine Chasuble",hands="Telchine gloves",ring1="Stikini ring +1",
         back="Moonlight cape",waist="Siegel sash",legs="Shedir Seraweels",feet="Telchine pigaches"})
 		
-	sets.midcast['Aquaveil'] = {}
+	sets.midcast['Aquaveil'] = {main="Mafic cudgel",sub="Genmei shield",ammo="Staunch tathlum +1",         		--0, 0, 11
+        head="Chironic hat",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Odnowa Earring +1",  		--0, 5, 0, 0
+        body="Rosette jaseran +1",hands="Chironic gloves",ring1="Moonlight Ring",ring2="Defending Ring",   	  	--25, 20+10, 0, 0
+        back="Fi follet cape +1",waist="Emphatikos rope",legs="Shedir Seraweels",feet=gear.FeetSIRD}	  		--5, 12, 0, 15
+		-- 103%      Evanescence ring 5%     53% PDT
         
     sets.midcast.Cursna = {
         head="Kaykaus Mitra +1",neck="Malison Medallion",
         hands="Hieros Mittens",ring1="Stikini Ring +1", ring2="Menelaus's ring",
-		feet="Vanya clogs"}
+		feet=gear.FeetCurse}
 		
 	sets.midcast['Enfeebling Magic'] = {main="Daybreak", sub="Ammurapi shield", range="Nibiru Harp",
         head="Brioso Roundlet +3",neck="Moonbow whistle +1",ear1="Regal Earring",ear2="Dignitary's Earring",
-        body="Brioso justaucorps +3",hands="Brioso cuffs +3",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
-        back=gear.MAccCape,waist="Luminary sash",legs="Inyanga Shalwar +2",feet="Brioso Slippers +3"}
+        body="Brioso justaucorps +3",hands="Brioso cuffs +3",ring1="Stikini Ring +1",ring2="Kishar Ring",
+        back=gear.MAccCape,waist="Rumination sash",legs="Inyanga Shalwar +2",feet="Brioso Slippers +3"}
 
     
     -- Sets to return to when not performing an action.
@@ -311,7 +326,7 @@ function init_gear_sets()
         back="Moonlight cape",waist="Carrier's sash",legs="Nyame flanchard",feet="Nyame sollerets"}
 		
 	sets.idle.DD = {range="Nibiru Harp",																--3
-        head="Nyame helm",neck="Warder's charm +1",ear1="Etiolation Earring",ear2="Infused Earring",		--7, 0, 0, 0
+        head="Nyame helm",neck="Warder's charm +1",ear1="Etiolation Earring",ear2="Infused Earring",	--7, 0, 0, 0
         body="Nyame mail",hands="Nyame gauntlets",ring1="Defending Ring",ring2="Moonlight Ring",		--9, 7, 10, 5
         back="Moonlight cape",waist="Carrier's sash",legs="Nyame flanchard",feet="Fili Cothurnes +2"}	--6, 0, 8, 0
 		-- 55%
@@ -377,17 +392,17 @@ function init_gear_sets()
 		-- back=gear.BrdSTPCape, waist="Reiki Yotai", legs="Volte tights", feet="Volte spats"
 	-- }
 	
-	sets.engaged.Savage = {main="Naegling", range="Linos",
+	sets.engaged.Savage = {main="Naegling", sub="Genmei shield", range="Linos",
 		head="Aya. Zucchetto +2", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Mache Earring +1",
 		body="Ayanmo corazza +2", hands="Bunzi's gloves", left_ring="Moonlight Ring", right_ring="Moonlight Ring",
 		back=gear.BrdSTPCape, waist="Sailfi Belt +1", legs="Nyame Flanchard", feet="Nyame Sollerets"}		
 		
-	sets.engaged.DW.Savage = {main="Naegling", sub="Fusetto +3", range="Linos",
+	sets.engaged.DW.Savage = {main="Naegling", sub="Centovente", range="Linos",
 		head="Aya. Zucchetto +2", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Suppanomimi",
 		body="Ayanmo corazza +2", hands="Bunzi's gloves", left_ring="Moonlight Ring", right_ring="Moonlight Ring",
 		back=gear.BrdSTPCape, waist="Sailfi Belt +1", legs="Nyame Flanchard", feet="Nyame Sollerets"}
 		
-	sets.engaged.Carn = {main="Carnwenhan", range="Linos",
+	sets.engaged.Carn = {main="Carnwenhan",sub="Genmei shield",range="Linos",
 		head="Aya. Zucchetto +2", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Mache Earring +1",
 		body="Ayanmo corazza +2", hands="Bunzi's gloves", left_ring="Moonlight Ring", right_ring="Moonlight Ring",
 		back=gear.BrdSTPCape, waist="Sailfi Belt +1", legs="Nyame Flanchard", feet="Nyame Sollerets"}
@@ -397,12 +412,12 @@ function init_gear_sets()
 		body="Ayanmo corazza +2", hands="Bunzi's gloves", left_ring="Moonlight Ring", right_ring="Moonlight Ring",
 		back=gear.BrdSTPCape, waist="Sailfi Belt +1", legs="Nyame Flanchard", feet="Nyame Sollerets"}
 		
-	sets.engaged.Rudra = {main="Twashtar", range="Linos",
+	sets.engaged.Rudra = {main="Twashtar", sub="Genmei shield",range="Linos",
 		head="Aya. Zucchetto +2", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Mache Earring +1",
 		body="Ayanmo corazza +2", hands="Bunzi's gloves", left_ring="Moonlight Ring", right_ring="Moonlight Ring",
 		back=gear.BrdSTPCape, waist="Sailfi Belt +1", legs="Nyame Flanchard", feet="Nyame Sollerets"}
 		
-	sets.engaged.DW.Rudra = {main="Twashtar", sub="Fusetto +3", range="Linos",
+	sets.engaged.DW.Rudra = {main="Twashtar", sub="Centovente", range="Linos",
 		head="Aya. Zucchetto +2", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Suppanomimi",
 		body="Ayanmo corazza +2", hands="Bunzi's gloves", left_ring="Moonlight Ring", right_ring="Moonlight Ring",
 		back=gear.BrdSTPCape, waist="Sailfi Belt +1", legs="Nyame Flanchard", feet="Nyame Sollerets"}
@@ -412,12 +427,12 @@ function init_gear_sets()
 		body="Ayanmo corazza +2", hands="Bunzi's gloves", left_ring="Moonlight Ring", right_ring="Moonlight Ring",
 		back=gear.BrdSTPCape, waist="Sailfi Belt +1", legs="Nyame Flanchard", feet="Nyame Sollerets"}
 	
-	sets.engaged.DW.Daybreak = {main="Daybreak", sub="Fusetto +3", range="Linos",
+	sets.engaged.DW.Daybreak = {main="Daybreak", sub="Centovente", range="Linos",
 		head="Aya. Zucchetto +2", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Suppanomimi",
 		body="Ayanmo corazza +2", hands="Bunzi's gloves", left_ring="Moonlight Ring", right_ring="Moonlight Ring",
 		back=gear.BrdSTPCape, waist="Sailfi Belt +1", legs="Nyame Flanchard", feet="Nyame Sollerets"}
 		
-	sets.engaged.Arebati = {main="Tauret",range="Linos",
+	sets.engaged.Arebati = {main="Tauret",sub="Genmei shield",range="Linos",
         head="Nyame Helm",neck="Bard's charm +2",ear1="Mache Earring +1",ear2="Telos Earring",
         body="Nyame mail",hands="Bunzi's gloves",ring1="Moonlight Ring",ring2="Moonlight Ring",
         back=gear.BrdSTPCape,waist="Sailfi Belt +1",legs="Nyame Flanchard",feet="Nyame Sollerets"}
@@ -712,15 +727,16 @@ function pick_tp_weapon()
     if brd_daggers:contains(player.equipment.main) then
         state.CombatWeapon:set('Dagger')
         
-        if S{'NIN','DNC'}:contains(player.sub_job) then  --and brd_daggers:contains(player.equipment.sub)
-            state.CombatForm:set('DW')
-        else
-            state.CombatForm:reset()
-        end
     else
         state.CombatWeapon:reset()
         state.CombatForm:reset()
     end
+	
+	if S{'NIN','DNC'}:contains(player.sub_job) then  --and brd_daggers:contains(player.equipment.sub)
+		state.CombatForm:set('DW')
+	else
+		state.CombatForm:reset()
+	end
 end
 
 -- Function to reset timers.
@@ -736,6 +752,8 @@ end
 function select_default_macro_book()
 	if player.sub_job == "NIN" then
 		set_macro_page(3,2)
+	elseif 	player.sub_job == "DNC" then
+		set_macro_page(5,2)		
 	else
 		set_macro_page(1, 2)
 	end

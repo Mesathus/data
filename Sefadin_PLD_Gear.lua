@@ -4,6 +4,7 @@ function get_sets()
  
     -- Load and initialize the include file.
     include('Mote-Include.lua')
+	include('Sef-Utility.lua')
 end
  
 -- Setup variables that are user-independent.  state.Buff vars initialized here will automatically be tracked.
@@ -30,7 +31,7 @@ function user_setup()
     state.WeaponskillMode:options('Normal', 'Acc')
     state.CastingMode:options('Normal', 'SIRD', 'HPBAL')    
     state.IdleMode:options('DT', 'Normal', 'Pulling')
-	state.ShieldMode = M{'Srivatsa', 'Duban','Aegis'}
+	state.ShieldMode = M{'Duban','Aegis','Ochain','Srivatsa'}
      
 -- Allows the use of Ctrl + ~ and Alt + ~ for 2 more macros of your choice.
     -- send_command('bind ^` input /ja "Cover" <stal>') --Ctrl'~'
@@ -747,6 +748,7 @@ function init_gear_sets()
 	sets.Aegis = {sub="Aegis"}
 	sets.Duban = {sub="Duban"}
 	sets.Srivatsa = {sub="Srivatsa"}
+	sets.Ochain = {sub="Ochain"}
 	sets.Kiting = {legs="Carmine Cuisses", feet="Hippomenes socks +1"}
 end
  

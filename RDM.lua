@@ -8,6 +8,7 @@ function get_sets()
 
     -- Load and initialize the include file.
     include('Mote-Include.lua')
+	include('Sef-Utility.lua')
 end
 
 
@@ -176,9 +177,11 @@ function init_gear_sets()
 		--102/102 SIRD     HQ body + Khun earring or Fi Follet OR cape to cap, both is 1 short of dropping hands for Regal for +2
     
     sets.midcast['Enfeebling Magic'] = {ammo="Regal gem",
-        head="Vitiation chapeau +3",neck="Duelist's torque +2",ear1="Regal Earring",ear2="Malignance Earring",
-        body="Atrophy tabard +2",hands="Lethargy Gantherots +3",ring1="Metamorph ring +1",ring2="Stikini ring +1",
-        back=gear.CapeEnf,waist="Rumination sash",legs="Lethargy fuseau +3",feet="Vitiation boots +3"}
+        head="Vitiation chapeau +3",neck="Duelist's torque +2",ear1="Regal Earring",ear2="Malignance Earring",	--26, 0, 0, 0
+        body="Atrophy tabard +2",hands="Lethargy Gantherots +3",ring1="Metamorph ring +1",ring2="Kishar ring",	--19, 29, 0, 0
+        back=gear.CapeEnf,waist="Rumination sash",legs="Lethargy fuseau +3",feet="Vitiation boots +3"}			--0, 7, 0 , 16
+		-- 610/625 to cap     base 440 merits 476 master														--97=573
+		-- need 37 with master, earring 10, af body 2, obstinate sash 8 short 17 w/o MLs  15 more for Frazzle
 		
 	sets.midcast['Enfeebling Magic'].Burst = sets.midcast['Enfeebling Magic']
 		
@@ -194,10 +197,12 @@ function init_gear_sets()
     sets.midcast['Slow II'] = set_combine(sets.midcast['Enfeebling Magic'], {head="Vitiation chapeau +3"})
 	
 	sets.midcast['Dispel'] = {neck="Duelist's torque +2"}
+	
+	sets.midcast['Dispelga'] = {main="Daybreak", neck="Duelist's torque +2"}
     
     sets.midcast['Elemental Magic'] = {main="Bunzi's rod",sub="Ammurapi Shield",ammo="Ghastly tathlum +1",
         head="Lethargy chappel +3",neck="Sibyl scarf",ear1="Regal Earring",ear2="Malignance Earring",
-        body="Amalric doublet +1",hands="Amalric gages +1",ring1="Freke Ring",ring2="Shiva Ring +1",
+        body="Amalric doublet +1",hands="Amalric gages +1",ring1="Freke Ring",ring2="Metamorph Ring +1",
         back="Aurist's cape +1",waist="Orpheus's sash",legs="Amalric slops +1",feet="Amalric nails +1"}
 		
 	sets.midcast['Elemental Magic'].Resistant = {main="Bunzi's rod",sub="Ammurapi Shield",ammo="Ghastly tathlum +1",
@@ -205,15 +210,17 @@ function init_gear_sets()
         body="Amalric doublet +1",hands="Amalric gages +1",ring1="Freke Ring",ring2="Metamorph Ring +1",
         back="Aurist's cape +1",waist="Orpheus's sash",legs="Amalric slops +1",feet="Lethargy houseaux +3"}
 		
-	sets.midcast['Elemental Magic'].Burst = {main="Bunzi's rod",sub="Ammurapi Shield",ammo="Ghastly tathlum +1",
-        head="Lethargy chappel +3",neck="Sibyl scarf",ear1="Regal Earring",ear2="Malignance Earring",
-        body="Amalric doublet +1",hands="Amalric gages +1",ring1="Freke Ring",ring2="Mujin band",
-        back="Aurist's cape +1",waist="Orpheus's sash",legs="Lethargy fuseau +3",feet="Lethargy houseaux +3"}
+	sets.midcast['Elemental Magic'].Burst = {main="Bunzi's rod",sub="Ammurapi Shield",ammo="Ghastly tathlum +1",		--10, 0, 0
+        head="Ea Hat +1",neck="Sibyl scarf",ear1="Regal Earring",ear2="Malignance Earring",								--7|7, 0, 0, 0
+        body="Ea houppelande +1",hands="Amalric gages +1",ring1="Freke Ring",ring2="Mujin band",						--9|9, |5, 0, |5
+        back="Aurist's cape +1",waist="Orpheus's sash",legs="Lethargy fuseau +3",feet="Lethargy houseaux +3"}			--0, 0, 15, 0
+		--41 MBB1   26 MBB2
 		
 	sets.midcast['Elemental Magic'].BurstResistant = {main="Bunzi's rod",sub="Ammurapi Shield",ammo="Ghastly tathlum +1",
-        head="Lethargy chappel +3",neck="Sibyl scarf",ear1="Regal Earring",ear2="Malignance Earring",
-        body="Amalric doublet +1",hands="Bunzi's gloves",ring1="Freke Ring",ring2="Metamorph Ring +1",
+        head="Ea Hat +1",neck="Sibyl scarf",ear1="Regal Earring",ear2="Malignance Earring",
+        body="Ea houppelande +1",hands="Bunzi's gloves",ring1="Freke Ring",ring2="Metamorph Ring +1",
         back="Aurist's cape +1",waist="Orpheus's sash",legs="Lethargy fuseau +3",feet="Lethargy houseaux +3"}
+		--41 MBB1   16 MBB2
         
     sets.midcast.Impact = set_combine(sets.midcast['Elemental Magic'], {head=empty,body="Twilight Cloak"})
 

@@ -8,6 +8,7 @@ function get_sets()
 
 	-- Load and initialize the include file.
 	include('Mote-Include.lua')
+	include('Sef-Utility.lua')
 end
 
 
@@ -218,7 +219,7 @@ function init_gear_sets()
 	-- Defense sets
 	sets.defense.PDT = {ammo="",
         head="Malignance Chapeau",neck="Loricate torque +1",
-        body="Malignance tabard",hands="Malignance gloves",ring1="Defending Ring",ring2="Patricius Ring",
+        body="Malignance tabard",hands="Malignance gloves",ring1="Defending Ring",ring2="Gelatinous ring +1",
         back="Moonlight cape",waist="Sailfi belt +1",legs="Malignance tights",feet="Malignance boots"}
 
 	sets.defense.MDT = {ammo="",

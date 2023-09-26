@@ -21,8 +21,8 @@ function job_setup()
 	state.Stance = M{['description']='Stance','Hasso','Seigan','None'}
 	state.DrainSwapWeaponMode = M{'Never','300','1000','Always'}
 	
-	autows = 'Resolution'
-	autofood = 'Soy Ramen'
+	--autows = 'Resolution'
+	--autofood = 'Soy Ramen'
 	
 	update_melee_groups()
 

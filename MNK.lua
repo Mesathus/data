@@ -8,6 +8,7 @@ function get_sets()
     
     -- Load and initialize the include file.
     include('Mote-Include.lua')
+	include('Sef-Utility.lua')
 end
 
 
@@ -98,7 +99,7 @@ function init_gear_sets()
         head="Kendatsbua Jinpachi +1",neck="Fotia gorget",ear1="Sherida Earring",ear2="Moonshade Earring",
         body="Mpaca's doublet",hands="Mpaca's Gloves",ring1="Gere Ring",ring2="Niqmaddu Ring",
         back="Sacro Mantle",waist="Moonbow Belt +1",legs="Mpaca's hose",feet="Mpaca's boots"}
-    sets.precast.WSAcc = {ammo="Honed Tathlum",body="Manibozho Jerkin",back="Letalis Mantle",feet="Qaaxo Leggings"}
+    sets.precast.WSAcc = {}
     sets.precast.WSMod = {}
     sets.precast.MaxTP = {}
     sets.precast.WS.Acc = set_combine(sets.precast.WS, sets.precast.WSAcc)
@@ -213,7 +214,7 @@ function init_gear_sets()
 		back="Segomo's Mantle", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's gaiters +2"}
     sets.engaged.Acc = {ammo="Honed Tathlum",
 		head="Whirlpool Mask",neck="Iqabi Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-		body="Manibozho Jerkin",hands="Hesychast's Gloves +1",ring1="Patricius Ring",ring2="Epona's Ring",
+		body="Manibozho Jerkin",hands="Hesychast's Gloves +1",ring1="Gelatinous ring +1",ring2="Epona's Ring",
 		back="Letalis Mantle",waist="Anguinus Belt",legs="Ighwa Trousers",feet="Qaaxo Leggings"}
     sets.engaged.Hybrid = {
 		head="Kendatsuba Jinpachi +1", neck="Mnk. Nodowa +2", ear1="Sherida Earring", ear2="Mache Earring +1",   --0, 0, 0, 0
@@ -227,15 +228,15 @@ function init_gear_sets()
     -- Defensive melee hybrid sets
     sets.engaged.PDT = {ammo="Iron Gobbet",
 		head="Otronif Mask",neck="Twilight Torque",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-		body="Otronif Harness +1",hands="Otronif Gloves +1",ring1="Patricius Ring",ring2="Epona's Ring",
+		body="Otronif Harness +1",hands="Otronif Gloves +1",ring1="Gelatinous ring +1",ring2="Epona's Ring",
 		back="Iximulew Cape",waist="Black Belt",legs="Otronif Brais +1",feet="Otronif Boots +1"}
     sets.engaged.SomeAcc.PDT = {ammo="Honed Tathlum",
         head="Whirlpool Mask",neck="Ej Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Qaaxo Harness",hands="Hesychast's Gloves +1",ring1="Patricius Ring",ring2="Epona's Ring",
+        body="Qaaxo Harness",hands="Hesychast's Gloves +1",ring1="Gelatinous ring +1",ring2="Epona's Ring",
         back="Atheling Mantle",waist="Anguinus Belt",legs="Hesychast's Hose +1",feet="Anchorite's Gaiters +1"}
     sets.engaged.Acc.PDT = {ammo="Honed Tathlum",
         head="Whirlpool Mask",neck="Twilight Torque",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Otronif Harness +1",hands="Otronif Gloves",ring1="Patricius Ring",ring2="Epona's Ring",
+        body="Otronif Harness +1",hands="Otronif Gloves",ring1="Gelatinous ring +1",ring2="Epona's Ring",
         back="Letalis Mantle",waist="Anguinus Belt",legs="Qaaxo Tights",feet="Qaaxo Leggings"}
     sets.engaged.Counter = {ammo="Thew Bomblet",
         head="Whirlpool Mask",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
@@ -243,7 +244,7 @@ function init_gear_sets()
         back="Atheling Mantle",waist="Windbuffet Belt",legs="Anchorite's Hose",feet="Otronif Boots +1"}
     sets.engaged.Acc.Counter = {ammo="Honed Tathlum",
         head="Whirlpool Mask",neck="Ej Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Otronif Harness +1",hands="Hesychast's Gloves +1",ring1="Patricius Ring",ring2="Epona's Ring",
+        body="Otronif Harness +1",hands="Hesychast's Gloves +1",ring1="Gelatinous ring +1",ring2="Epona's Ring",
         back="Letalis Mantle",waist="Anguinus Belt",legs="Anchorite's Hose",feet="Otronif Boots +1"}
 
 

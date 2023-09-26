@@ -8,6 +8,7 @@ function get_sets()
     
     -- Load and initialize the include file.
     include('Mote-Include.lua')
+	include('Sef-Utility.lua')
 end
 
 -- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
@@ -16,7 +17,7 @@ function job_setup()
     state.Buff['Afflatus Misery'] = buffactive['Afflatus Misery'] or false
 	gear.ElementalObi = {name = "Hachirin-no-obi"}
 	gear.ElementalGorget = "Fotia gorget"
-	gear.ElementalBelt "Fotia belt"
+	gear.ElementalBelt = "Fotia belt"
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -42,10 +43,10 @@ function init_gear_sets()
 
     -- Fast cast sets for spells
     sets.precast.FC = {ammo="Sapience orb",																		-- 2
-        head="Haruspex Hat +1",neck="Voltsurge torque",ear1="Etiolation Earring",ear2="Loquacious Earring",		-- 9, 4, 1, 1
-        body="Inyanga jubbah +2",hands="Volte gloves",ring1="Prolix Ring",ring2="Kishar Ring",					-- 14, 6, 2, 4
+        head="Ebers Cap +2",neck="Voltsurge torque",ear1="Etiolation Earring",ear2="Malignance Earring",		-- 10, 4, 1, 4
+        body="Pinga tunic +1",hands="Volte gloves",ring1="Prolix Ring",ring2="Kishar Ring",						-- 15, 6, 2, 4
         back="Fi follet cape +1",waist="Embla sash",legs="Volte brais",feet="Regal pumps +1"}					-- 10, 5, 8, 5~7
-		-- 69~71 FC
+		-- 74~76 FC   Pinga legs/Ebers +3 swap to DRing
         
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash"})
 
@@ -73,8 +74,8 @@ function init_gear_sets()
     -- Weaponskill sets
 
     -- Default set for any weaponskill that isn't any more specifically defined
-    gear.default.weaponskill_neck = "Asperity Necklace"
-    gear.default.weaponskill_waist = ""
+    gear.default.weaponskill_neck = "Fotia gorget"
+    gear.default.weaponskill_waist = "Fotia belt"
     sets.precast.WS = {
         head="Nahtirah Hat",neck=gear.ElementalGorget,ear1="Bladeborn Earring",ear2="Steelflash Earring",
         body="Vanir Cotehardie",hands="Yaoyotl Gloves",ring1="Rajas Ring",ring2="K'ayres Ring",
@@ -82,7 +83,7 @@ function init_gear_sets()
     
     sets.precast.WS['Flash Nova'] = {
         head="Nahtirah Hat",neck="Stoicheion Medal",ear1="Friomisi Earring",ear2="Hecate's Earring",
-        body="Vanir Cotehardie",hands="Yaoyotl Gloves",ring1="Rajas Ring",ring2="Strendu Ring",
+        body="Vanir Cotehardie",hands="Yaoyotl Gloves",ring1="Rajas Ring",ring2="Metamorph Ring +1",
         back="Toro Cape",waist="Thunder Belt",legs="Gendewitha Spats",feet="Gendewitha Galoshes"}
     
 
@@ -117,12 +118,12 @@ function init_gear_sets()
         body="Kaykaus Bliaut +1",hands="Kaykaus cuffs +1",ring1="Stikini ring +1", ring2="Stikini ring +1",
         back="Solemnity cape",waist ="Luminary sash", legs="Kaykaus tights +1",feet="Kaykaus boots +1"}
 
-    sets.midcast.Cursna = {main="Beneficus",sub="Genbu's Shield",
+    sets.midcast.Cursna = {main="Yagrush",sub="Genbu's Shield",
         head="Orison Cap +2",neck="Malison Medallion",
         body="Orison Bliaud +2",hands="Fanatic gloves",ring1="Stikini ring +1", ring2="Menelaus's ring",
         back="Mending Cape",waist="Goading Belt",legs="Vanya slops",feet="Vanya clogs"}
 
-    sets.midcast.StatusRemoval = {
+    sets.midcast.StatusRemoval = {main="Yagrush",sub="Genbu's Shield",
         head="Orison Cap +2",legs="Orison Pantaloons +2"}
 
     -- 110 total Enhancing Magic Skill; caps even without Light Arts
@@ -149,9 +150,12 @@ function init_gear_sets()
         body="Piety Briault",hands="Orison Mitts +2",
         legs="Theophany Pantaloons +1"}
 
-	sets.midcast.SIRD = {
+	sets.midcast.SIRD = {ammo="Staunch tathlum +1",         													--11
+        head="Chironic hat",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Odnowa Earring +1",  		--0, 5, 0, 0
+        body="Rosette jaseran +1",hands="Chironic gloves",ring1="Gelatinous ring +1",ring2="Defending Ring",   	--25, 20+10, 0, 0
+        back="Fi follet cape +1",waist="Emphatikos rope",legs="Shedir Seraweels",feet="Vanya clogs"}	  		--5, 12, 0, 15
 		
-		}
+	sets.midcast['Aquaveil'] = set_combine(sets.midcast.SIRD, {main="Vadose rod", sub="Genmei shield"})
 
     sets.midcast.Protectra = set_combine(sets.midcast['Enhancing Magic'], {ring1="Sheltered Ring",feet="Piety Duckbills +1"})
 
@@ -165,19 +169,19 @@ function init_gear_sets()
 
     sets.midcast['Dark Magic'] = {main="Bolelabunga", sub="Genbu's Shield",
         head="Nahtirah Hat",neck="Aesir Torque",ear1="Psystorm Earring",ear2="Lifestorm Earring",
-        body="Vanir Cotehardie",hands="Yaoyotl Gloves",ring1="Strendu Ring",ring2="Sangoma Ring",
+        body="Vanir Cotehardie",hands="Yaoyotl Gloves",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
         back="Refraction Cape",waist="Demonry Sash",legs="Bokwus Slops",feet="Piety Duckbills +1"}
 
     -- Custom spell classes
     sets.midcast.MndEnfeebles = {main="Daybreak", sub="Ammurapi shield",ammo="Pemphredo tathlum",
         neck="Incanter's Torque",ear1="Regal Earring",ear2="Malignance Earring",
         body="Cohort cloak +1",hands="Volte gloves",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
-        back="Lugh's cape",waist="Luminary Sash",legs="Volte brais",feet="Nyame sollerets"}
+        back="Aurist's Cape +1",waist="Luminary Sash",legs="Volte brais",feet="Nyame sollerets"}
 
     sets.midcast.IntEnfeebles = {ammo="Pemphredo tathlum",
         neck="Incanter's Torque",ear1="Regal Earring",ear2="Malignance Earring",
         body="Cohort cloak +1",hands="Volte gloves",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
-        back="Lugh's cape",waist="Luminary Sash",legs="Volte brais",feet="Nyame sollerets"}
+        back="Aurist's Cape +1",waist="Luminary Sash",legs="Volte brais",feet="Nyame sollerets"}
 
     
     -- Sets to return to when not performing an action.
