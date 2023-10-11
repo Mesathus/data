@@ -371,7 +371,13 @@ function job_post_precast(spell, action, spellMap, eventArgs)
 	if spell.type == 'WeaponSkill' then
         if player.tp > 2750 then
 			if data.weaponskills.elemental:contains(spell.name) then
-			
+				equip({ear2 = "Crematio Earring"})
+			else
+				equip({ear2 = "Telos Earring"})
+			end
+		elseif player.tp > 1750 and tp_bonus_weapons:contains(player.equipment.ranged) then
+			if data.weaponskills.elemental:contains(spell.name) then
+				equip({ear2 = "Crematio Earring"})
 			else
 				equip({ear2 = "Telos Earring"})
 			end
