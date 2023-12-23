@@ -115,6 +115,8 @@ function init_gear_sets()
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash"})
 
     sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, {})
+	
+	sets.precast.FC['Dispelga'] = set_combine(sets.precast.FC, {main="Daybreak"})
 
     sets.precast.FC.Cure = set_combine(sets.precast.FC, {
 		legs="Vanya slops",feet="Vanya clogs"})
@@ -160,6 +162,7 @@ function init_gear_sets()
         back="Fi follet cape +1",waist="Emphatikos rope",legs="Shedir Seraweels",feet="Vanya clogs"}	  		--5, 12, 0, 15
 	
 	sets.midcast['Aquaveil'] = set_combine(sets.midcast.SIRD, {main="Vadose rod", sub="Genmei shield",head="Amalric coif +1",legs="Shedir Seraweels"})
+	sets.midcast['Dispelga'] = set_combine(sets.midcast.FastRecast, {main="Daybreak"})
 		
 	sets.midcast.Haste = set_combine(sets.midcast['Enhancing Magic'], {ring2="Prolix ring"})
 
@@ -706,5 +709,6 @@ end
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
     set_macro_page(1, 5)
+	send_command('wait 3; input /lockstyleset 017')
 end
 

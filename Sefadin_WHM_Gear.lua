@@ -45,16 +45,18 @@ function init_gear_sets()
     sets.precast.FC = {ammo="Sapience orb",																		-- 2
         head="Ebers Cap +2",neck="Voltsurge torque",ear1="Etiolation Earring",ear2="Malignance Earring",		-- 10, 4, 1, 4
         body="Pinga tunic +1",hands="Volte gloves",ring1="Prolix Ring",ring2="Kishar Ring",						-- 15, 6, 2, 4
-        back="Fi follet cape +1",waist="Embla sash",legs="Volte brais",feet="Regal pumps +1"}					-- 10, 5, 8, 5~7
-		-- 74~76 FC   Pinga legs/Ebers +3 swap to DRing
+        back="Fi follet cape +1",waist="Embla sash",legs="Pinga pants +1",feet="Regal pumps +1"}				-- 10, 5, 13, 5~7
+		-- 79~81 FC   Pinga legs/Ebers +3 swap to DRing
         
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash"})
 
     sets.precast.FC.Stoneskin = set_combine(sets.precast.FC['Enhancing Magic'], {})
 
-    sets.precast.FC['Healing Magic'] = set_combine(sets.precast.FC, {legs="Orison Pantaloons +2"})
+    sets.precast.FC['Healing Magic'] = set_combine(sets.precast.FC, {legs="Ebers Pantaloons +2"})
 
     sets.precast.FC.StatusRemoval = sets.precast.FC['Healing Magic']
+	
+	sets.precast.FC['Dispelga'] = set_combine(sets.precast.FC, {main="Daybreak"})
 
     sets.precast.FC.Cure = set_combine(sets.precast.FC['Healing Magic'], {ammo="Impatiens"})
     sets.precast.FC.Curaga = sets.precast.FC.Cure
@@ -119,12 +121,12 @@ function init_gear_sets()
         back="Solemnity cape",waist ="Luminary sash", legs="Kaykaus tights +1",feet="Kaykaus boots +1"}
 
     sets.midcast.Cursna = {main="Yagrush",sub="Genbu's Shield",
-        head="Orison Cap +2",neck="Malison Medallion",
-        body="Orison Bliaud +2",hands="Fanatic gloves",ring1="Stikini ring +1", ring2="Menelaus's ring",
+        head="Ebers Cap +2",neck="Malison Medallion",
+        body="Ebers Bliaud +2",hands="Fanatic gloves",ring1="Stikini ring +1", ring2="Menelaus's ring",
         back="Mending Cape",waist="Goading Belt",legs="Vanya slops",feet="Vanya clogs"}
 
     sets.midcast.StatusRemoval = {main="Yagrush",sub="Genbu's Shield",
-        head="Orison Cap +2",legs="Orison Pantaloons +2"}
+        head="Ebers Cap +2",legs="Ebers Pantaloons +2"}
 
     -- 110 total Enhancing Magic Skill; caps even without Light Arts
     sets.midcast['Enhancing Magic'] = {sub="Ammurapi shield",
@@ -139,15 +141,15 @@ function init_gear_sets()
         body="Vanir Cotehardie",hands="Dynasty Mitts",
         back="Swith Cape +1",waist="Siegel Sash",legs="Shedir seraweels",feet="Gendewitha Galoshes"}
 
-    sets.midcast.Auspice = {hands="Dynasty Mitts",feet="Orison Duckbills +2"}
+    sets.midcast.Auspice = {hands="Dynasty Mitts",feet="Ebers Duckbills +2"}
 
     sets.midcast.BarElement = {main="Beneficus",sub="Genbu's Shield",
-        head="Orison Cap +2",neck="Colossus's Torque",
-        body="Orison Bliaud +2",hands="Orison Mitts +2",
-        back="Mending Cape",waist="Olympus Sash",legs="Piety Pantaloons",feet="Orison Duckbills +2"}
+        head="Ebers Cap +2",neck="Colossus's Torque",
+        body="Ebers Bliaud +2",hands="Ebers Mitts +2",
+        back="Mending Cape",waist="Olympus Sash",legs="Piety Pantaloons",feet="Ebers Duckbills +2"}
 
     sets.midcast.Regen = {main="Bolelabunga",sub="Genbu's Shield",
-        body="Piety Briault",hands="Orison Mitts +2",
+        body="Piety Briault",hands="Ebers Mitts +2",
         legs="Theophany Pantaloons +1"}
 
 	sets.midcast.SIRD = {ammo="Staunch tathlum +1",         													--11
@@ -160,7 +162,8 @@ function init_gear_sets()
     sets.midcast.Protectra = set_combine(sets.midcast['Enhancing Magic'], {ring1="Sheltered Ring",feet="Piety Duckbills +1"})
 
     sets.midcast.Shellra = sets.midcast.Protectra
-
+	
+	sets.midcast['Dispelga'] = set_combine(sets.midcast.FastRecast, {main="Daybreak"})
 
     sets.midcast['Divine Magic'] = {main="Bolelabunga",sub="Genbu's Shield",
         head="Nahtirah Hat",neck="Colossus's Torque",ear1="Psystorm Earring",ear2="Lifestorm Earring",
@@ -244,7 +247,7 @@ function init_gear_sets()
 
 
     -- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
-    sets.buff['Divine Caress'] = {hands="Orison Mitts +2",back="Mending Cape"}
+    sets.buff['Divine Caress'] = {hands="Ebers Mitts +2",back="Mending Cape"}
 end
 
 -------------------------------------------------------------------------------------------------------------------

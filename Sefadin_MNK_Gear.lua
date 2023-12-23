@@ -15,6 +15,8 @@ function init_gear_sets()
 	STR_DA = { name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}}
 	STR_WSD = { name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
 	gear.TAFeet = { name="Herculean Boots", augments={'Accuracy+26','"Triple Atk."+4','DEX+9','Attack+1',}}
+	gear.HercHatFC =  {name="Herculean Helm", augments={'"Mag.Atk.Bns."+24','"Fast Cast"+6','STR+7','Mag. Acc.+14'}}
+	gear.HercFeetFC = { name="Herculean Boots", augments={'Mag. Acc.+15','"Fast Cast"+5','MND+6','"Mag.Atk.Bns."+15',}}
 	
     -- Precast sets to enhance JAs on use
     sets.precast.JA['Hundred Fists'] = {legs="Hesychast's Hose +3"}
@@ -52,7 +54,7 @@ function init_gear_sets()
     -- Fast cast sets for spells
     
     sets.precast.FC = {ammo="Sapience Orb",
-		head=HercHelmFC,
+		head=gear.HercHatFC,
 		neck="Voltsurge Torque",
 		ear1="Etiolation Earring",ear2="Loquacious Earring",
 		body="Adhemar Jacket",
@@ -171,7 +173,7 @@ function init_gear_sets()
 		neck="Sanctity Necklace",
 		ear1="Telos Earring",
 		ear2="Dignitary's Earring",
-		body="Samnuha Coat",
+		body="Malignance tabard",
 		hands="Malignance Gloves",
 		ring1="Niqmaddu Ring",
 		ring2="Regal Ring",

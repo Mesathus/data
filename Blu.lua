@@ -286,12 +286,12 @@ function init_gear_sets()
     
     sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {ammo="Mantoptera eye",
 		head="Nyame helm",neck="Mirage stole +2",ear1="Moonshade Earring",
-		hands="Jhakri cuffs +2",ring1="Epaminondas's ring",ring2="Rufescent ring",
+		hands="Jhakri cuffs +2",ring1="Epaminondas's ring",ring2="Sroda ring",
 		waist="Kentarch belt +1",legs="Nyame Flanchard",feet="Nyame Sollerets"})
 		
 	sets.precast.WS['Black Halo'] = set_combine(sets.precast.WS, {ammo="Mantoptera eye",
 		head="Nyame helm",neck="Mirage stole +2",ear1="Moonshade Earring",
-		hands="Jhakri cuffs +2",ring1="Epaminondas's ring",ring2="Rufescent ring",
+		hands="Jhakri cuffs +2",ring1="Epaminondas's ring",ring2="Sroda ring",
 		waist="Kentarch belt +1",legs="Nyame Flanchard",feet="Nyame Sollerets"})
 		
 	sets.precast.WS['Flash Nova'] = {ammo="Pemphredo tathlum",
@@ -535,7 +535,7 @@ function init_gear_sets()
     sets.engaged.DW.Acc = {ammo="Mantoptera eye",
         head="Carmine Mask +1",neck="Mirage stole +2",ear1="Telos Earring",ear2="Cessance Earring",
         body="Adhemar jacket +1",hands="Adhemar Wristbands +1",ring1="Ilabrat Ring",ring2="Epona's Ring",
-        back=gear.CritCape,waist="Reiki Yotai",legs="Carmine cuisses +1",feet={name="Herculean boots", augments={'Accuracy+24 Attack+24','Damage taken-2%','STR+7','Accuracy+11','Attack+15'}}}
+        back=gear.CritCape,waist="Reiki Yotai",legs="Carmine cuisses +1",feet={name="Herculean boots", augments={'Accuracy+26','"Triple Atk."+4','DEX+9','Attack+1'}}}
 		
 	sets.engaged.DW.Hybrid = set_combine(sets.engaged.DW.Acc, {
 		head="Malignance chapeau",
@@ -687,4 +687,5 @@ function select_default_macro_book()
 	else
         set_macro_page(1, 4)
     end
+	send_command('wait 3; input /lockstyleset 010')
 end

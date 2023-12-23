@@ -86,10 +86,10 @@ function init_gear_sets()
 	-- Ranged sets (snapshot)
 	
 	sets.precast.RA = {
-		head="Amini gapette +2", neck="Scout's gorget +2",   --8, 4
-		body="Amini Caban +3",hands="Carmine finger gauntlets +1",ring1="Crepuscular ring",   --8
-		back=gear.SnapCape,waist="Yemaya Belt",legs="Adhemar kecks +1",feet="Meghanada jambeaux +2"}   --2, 10, 10
-
+		head="Amini gapette +2", neck="Scout's gorget +2",   											--8, 4
+		body="Amini Caban +3",hands="Carmine finger gauntlets +1",ring1="Crepuscular ring",   			--0, 8, 3
+		back=gear.SnapCape,waist="Yemaya Belt",legs="Adhemar kecks +1",feet="Meghanada jambeaux +2"}	--10, 5r, 10, 10
+	-- 53 +10 traits
 
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
@@ -114,10 +114,10 @@ function init_gear_sets()
 	sets.precast.WS['Last Stand'] = set_combine(sets.precast.WS, {
 		ear1 = "Ishvara earring", 													-- 0,7,0,0
 		body="Ikenga's vest", ring1="Dingir Ring", 									-- 11,0,0,0
-		feet="Amini Bottillons +3"})													-- 0,0,0,0
+		feet="Amini Bottillons +3"})												-- 0,0,0,0
 	
 	sets.precast.WS["Jishnu's Radiance"] = set_combine(sets.precast.WS, {ammo="Chrono arrow",
-		head="Blistering sallet +1", ear1="Odr earring", ear2="Sherida earring",
+		head="Blistering sallet +1", ear1="Odr earring", ear2="Amini earring +1",
 		hands="Mummu wrists +2", ring1="Mummu ring", ring2="Lehko Habhoka's ring",
 		legs="Amini bragues +3"})
 
@@ -133,7 +133,7 @@ function init_gear_sets()
 	
 	sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {ammo="Hauksbok arrow",
 		head="Nyame helm",neck="Scout's gorget +2",ear1="Sherida Earring",
-		body="Nyame mail", ring1="Epaminondas's Ring",
+		body="Nyame mail", ring1="Epaminondas's Ring", ring2="Sroda Ring",
 		back=gear.StrWSDCape,waist="Kentarch belt +1", legs="Nyame Flanchard", feet="Nyame Sollerets"
 		})
 		
@@ -160,12 +160,12 @@ function init_gear_sets()
 	-- Ranged sets
 
 	sets.midcast.RA = {    																				-- 3
-		head="Arcadian beret +3",neck="Scout's gorget +2",ear1="Dedition earring",ear2="Telos Earring", -- 0,7,8,5      21
+		head="Arcadian beret +3",neck="Scout's gorget +2",ear1="Dedition earring",ear2="Telos Earring", -- 0,7,8,5      20
 		body="Amini Caban +3",hands="Amini Glovelettes +3",ring1="Ilabrat Ring",ring2="Regal Ring",  	-- 0,11,5,0    	16
 		back=gear.MidshotCape,waist="Yemaya Belt",legs="Amini bragues +3",feet="Malignance boots"} 		-- 10,4,12,9    35
-		-- 72 STP
+		-- 71 STP
 		-- 66 STP or 36 w/ relic proc for 3 hit assuming 0 STP in WS set
-		-- 148 STP or 119 w/ relic proc for 2 hit
+		-- 148 STP or 119 w/ relic proc for 2 hit     11+8 Sam roll is 72 total of 143, need 5 sTP on weapons or 9 sTP with +7 roll or job bonus
 	
 	sets.midcast.RA.Acc = set_combine(sets.midcast.RA,{
 		ear1="Enervating earring",
@@ -173,10 +173,10 @@ function init_gear_sets()
 		waist="Kwahu Kachina belt +1"})
 		
 	sets.midcast.RA.Crit = {
-		head="Meghanada visor +2",neck="Scout's gorget +2",ear1="Odr earring",ear2="Telos Earring",             -- 0,0,5,0
+		head="Meghanada visor +2",neck="Scout's gorget +2",ear1="Odr earring",ear2="Amini Earring +1",          -- 0,0,5,3
 		body="Amini Caban +3",hands="Mummu wrists +2",ring1="Mummu Ring",ring2="Lehko Habhoka's ring",          -- 0,6,3,10
 		back=gear.MidshotCape,waist="Kwahu Kachina belt +1",legs="Amini bragues +3",feet="Arcadian socks +3"}   -- 0,5,6,8
-		-- 43% crit
+		-- 46% crit
 		
 	sets.midcast.RA.AM3 = sets.midcast.RA.Crit
 
@@ -416,4 +416,5 @@ end
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
 	set_macro_page(10, 20)
+	send_command('wait 3; input /lockstyleset 001')
 end

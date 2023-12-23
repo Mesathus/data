@@ -26,7 +26,7 @@ end
  
 -- Gear Modes
 function user_setup()
-    state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
+    state.OffenseMode:options('Tank', 'Normal', 'LowAcc', 'MidAcc', 'HighAcc')
     state.HybridMode:options('Normal', 'HIGH', 'MID', 'LOW')
     state.WeaponskillMode:options('Normal', 'Acc')
     state.CastingMode:options('Normal', 'SIRD', 'HPBAL')    
@@ -121,7 +121,7 @@ function init_gear_sets()
     sets.precast.FC = {
         Main="Sakpata's Sword", --10
 		sub="Srivatsa",
-        Ammo="Impatiens", --2QM
+        Ammo="Sapience orb", --2
         Head="Carmine Mask +1", --14
         Neck="Voltsurge Torque", --4       
         Ear1="Tuisto Earring", 
@@ -134,7 +134,8 @@ function init_gear_sets()
         Waist="Creed Baudrier", --40HP
         back=gear.FCCape, --10FC
         Ring2="Kishar Ring", --  4FC --70HP
-    } --75FC 2QM
+    } 	-- 77FC 2QM
+		-- Enif legs 8%, Emp feet +3 13%, 
      
     sets.precast.Cure = set_combine(sets.precast.FC, {
         --Body="Jumalik Mail", --10
@@ -268,16 +269,17 @@ function init_gear_sets()
 		ammo="Staunch Tathlum +1",
 		Head=gear.PhalanxHead, --4
 		ear1="Mimir earring",   			--10 skill
+		ear2="Andoaa earring",				--5 skill
 		neck="Incanter's Torque",			--10 skill
 		Body=gear.PhalanxBody, --3
 		Hands="Souveran Handschuhs +1", --5
-		left_ring="Stikini Ring +1",		--8 skill
+		left_ring="Defending Ring",			
 		right_ring="Stikini Ring +1",		--8 skill
 		waist="Flume Belt",
 		Feet="Souveran Schuhs +1", --5
 		Back="Weard Mantle", --4
 		Legs="Sakpata's Cuisses", --5
-    } -- +33 Need to DarkMatter Ody Head and Body   +36 skill
+    } -- +33 Need to DarkMatter Ody Head and Body   418 skill @ML35   tiers: 415 -32 / 443 -33
      
     sets.midcast.Protect = {sub="Srivatsa",ring1="Sheltered Ring"}
     sets.midcast.Shell = {ring1="Sheltered Ring"}
@@ -511,7 +513,23 @@ function init_gear_sets()
     ------------------------------------------------------------------------------------------------
 -- This is a Set that would only be used when you are NOT Dual Wielding.
 -- There are no haste parameters set for this build, because you wouldn't be juggling DW gear, you would always use the same gear, other than Damage Taken and Accuracy sets which ARE included below.
-    sets.engaged = sets.idle.Pulling
+    sets.engaged.Tank =  sets.idle.Pulling
+	
+	sets.engaged = {
+		ammo="Staunch tathlum +1",
+        Head="Sakpata's Helm", --7
+        Body="Sakpata's Breastplate", --10
+        Hands="Sakpata's Gauntlets", --8
+        Legs="Sakpata's Cuisses", --9
+        Feet="Sakpata's Leggings", --6
+        neck="Ainia collar",
+        waist="Sailfi Belt +1",
+        ear1="Cessance Earring",
+        ear2="Brutal Earring",
+        Ring1="Lehko Habhoka's Ring",
+        Ring2="Hetairoi Ring",
+        back={ name="Rudianos's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10',}}
+	}
 	
 	-- sets.engaged = {
         -- ammo="Aurgelmir Orb +1",
@@ -1077,6 +1095,7 @@ function select_default_macro_book()
     else
         set_macro_page(1, 8)
     end
+	send_command('wait 3; input /lockstyleset 018')
 end
  
 function set_lockstyle()

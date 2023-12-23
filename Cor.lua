@@ -122,9 +122,10 @@ function init_gear_sets()
 
 
     sets.precast.RA = {ammo=gear.RAbullet,
-        head="Chasseur's Tricorne",neck="Commodore charm +2",
-        body="Laksamana's Frac +3",hands="Lanun gants +3",
-        back="Navarch's Mantle",waist="Impulse Belt",legs="Adhemar kecks +1",feet="Meghanada jambeaux +2"}
+        head="Chasseur's Tricorne",neck="Commodore charm +2",												--16r, 4
+        body="Laksamana's Frac +3",hands="Lanun gants +3",ring1="Crepuscular ring",							--20r, 13, 3
+        back="Navarch's Mantle",waist="Impulse Belt",legs="Adhemar kecks +1",feet="Meghanada jambeaux +2"}	--10, 3, 10, 10
+		-- 53 +10 gifts
 
        
     -- Weaponskill sets
@@ -185,7 +186,7 @@ function init_gear_sets()
 		
 	sets.precast.WS['Savage Blade'] = {
         head="Nyame helm",neck="Commodore charm +2",ear2="Moonshade Earring",ear1="Ishvara Earring",
-        body="Nyame mail",	hands="Chasseur's Gants +2",ring1="Regal Ring",ring2="Epaminondas's ring",
+        body="Nyame mail",	hands="Chasseur's Gants +2",ring1="Sroda Ring",ring2="Epaminondas's ring",
         back=gear.CorSavageCape,waist="Kentarch Belt +1",legs="Nyame Flanchard",feet="Lanun Bottes +3"}
 		
 	sets.precast.WS['Viper Bite'] = set_combine(sets.precast.WS['Savage Blade'],{})		
@@ -237,13 +238,13 @@ function init_gear_sets()
 		}
 		
 	sets.TripleShot = set_combine(sets.midcast.RA, {
-        --head="Oshosi Mask +1", --4
-        body="Chasseur's Frac +2", --12
-        hands="Lanun gants +3", -- 3 relic hands
-		back="Camulus's Mantle",
-        legs="Oshosi Trousers +1", --5
-        feet="Oshosi Leggings +1", --2
-        }) --27
+        head="Oshosi Mask +1", --5
+        body="Chasseur's Frac +2", --13
+        hands="Lanun gants +3", -- relic hands
+		back="Camulus's Mantle", --5
+        legs="Oshosi Trousers +1", --6
+        feet="Oshosi Leggings +1", --3
+        }) --32   +40 base +20 job points
 
     
     -- Sets to return to when not performing an action.
@@ -301,7 +302,7 @@ function init_gear_sets()
 		body="Adhemar Jacket +1",
 		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
 		legs={ name="Samnuha Tights", augments={'STR+10','DEX+10','"Dbl.Atk."+3','"Triple Atk."+3',}},
-		feet={ name="Herculean Boots", augments={'Accuracy+24 Attack+24','Damage taken-2%','STR+7','Accuracy+11','Attack+15',}},
+		feet={ name="Herculean Boots", augments={'Accuracy+26','"Triple Atk."+4','DEX+9','Attack+1'}},
 		neck="Combatant's Torque",
 		waist="Reiki Yotai",
 		left_ear="Cessance Earring",
@@ -315,7 +316,7 @@ function init_gear_sets()
 		body={ name="Adhemar Jacket +1"},
 		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
 		legs="Carmine cuisses +1",
-		feet={ name="Herculean Boots", augments={'Accuracy+24 Attack+24','Damage taken-2%','STR+7','Accuracy+11','Attack+15',}},
+		feet={ name="Herculean Boots", augments={'Accuracy+26','"Triple Atk."+4','DEX+9','Attack+1'}},
 		neck="Combatant's Torque",
 		waist="Reiki Yotai",
 		left_ear="Telos Earring",
@@ -593,4 +594,5 @@ end
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
     set_macro_page(10, 10)
+	send_command('wait 3; input /lockstyleset 002')
 end

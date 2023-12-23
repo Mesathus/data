@@ -59,7 +59,10 @@ function user_setup()
   gear.taeon_hands_pet = { name = "Taeon Gloves", augments = {'"Repair" potency +5%', 'Pet: Haste+5%', 'Pet: "Mag. Atk. Bns."+24'}}
   gear.taeon_legs_pet  = { name = "Taeon Tights", augments = {'Pet: Damage taken -3%', 'Pet: Accuracy+18 Pet: Rng.Acc.+18', 'Pet: "Dbl. Atk."+4'}}
   gear.taeon_feet_pet  = { name = "Taeon Boots", augments = {'Pet: Damage taken -3%', 'Pet: Accuracy+24 Pet: Rng.Acc.+24', 'Pet: "Dbl. Atk."+4'}}
-
+  
+  gear.HercHatFC =  {name="Herculean Helm", augments={'"Mag.Atk.Bns."+24','"Fast Cast"+6','STR+7','Mag. Acc.+14'}}
+  gear.HercFeetFC = { name="Herculean Boots", augments={'Mag. Acc.+15','"Fast Cast"+5','MND+6','"Mag.Atk.Bns."+15',}}
+	
   send_command('bind ^= gs c cycle treasuremode')
 
   update_pet_mode()

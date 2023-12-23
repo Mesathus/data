@@ -121,9 +121,9 @@ function init_gear_sets()
 
     sets.precast.FC.Daurdabla = set_combine(sets.precast.FC.BardSong, {range= "Daurdabla"})
 	
-	sets.precast.FC['Honor March'] = set_combine(sets.precast.FC, {range = "Marsyas"})
+	sets.precast.FC['Honor March'] = set_combine(sets.precast.FC.BardSong, {range = "Marsyas"})
 	sets.precast.FC['Dispelga'] = set_combine(sets.precast.FC, {main="Daybreak"})
-	sets.precast.FC['Aria of Passion'] = set_combine(sets.precast.FC, {range = "Loughnashade"})
+	sets.precast.FC['Aria of Passion'] = set_combine(sets.precast.FC.BardSong, {range = "Loughnashade"})
         
     
     -- Precast sets to enhance JAs
@@ -163,7 +163,7 @@ function init_gear_sets()
 					waist="Kentarch belt +1", legs="Bihu cannions +3", feet="Bihu slippers +3"})
 					
 	sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
-					ring1="Rufescent Ring",
+					ring1="Sroda Ring",
 					waist="Kentarch belt +1"})
     
 	sets.precast.WS['Shining Strike'] = set_combine(sets.precast.WS, {
@@ -176,7 +176,7 @@ function init_gear_sets()
 	
 	sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
 					neck="Sanctity necklace", ear1="Regal Earring",
-					body="Nyame mail", ring1="Rufescent Ring",
+					body="Nyame mail", ring1="Shiva Ring +1",
 					back="Seshaw cape",waist="Orpheus's sash"
 					})
     
@@ -242,7 +242,7 @@ function init_gear_sets()
         head="Halitus Helm",neck="Unmoving collar +1",ear1="Trux Earring",ear2="Cryptic Earring",			--8, 10, 5, 4
         body="Emet harness +1",hands="Nyame gauntlets",ring1="Defending Ring",ring2="Begrudging Ring",		--10, 0, 0, 5
         back=gear.BrdSTPCape,waist="Goading Belt",legs="Nyame flanchard",feet="Nyame sollerets"}			--0, 5, 0, 0
-		-- +57 enmity   
+		-- +57 enmity
 
     -- For song debuffs (accuracy primary, duration secondary)
     sets.midcast.ResistantSongDebuff = {main="Carnwenhan", sub="Ammurapi shield", range="Gjallarhorn",
@@ -266,7 +266,7 @@ function init_gear_sets()
     sets.midcast.Daurdabla = {range=info.ExtraSongInstrument}
 
     -- Dummy song with Daurdabla; minimize duration to make it easy to overwrite.
-    sets.midcast.DaurdablaDummy = set_combine(sets.midcast.FastRecast, {main="Vampirism",range="Daurdabla"})
+    sets.midcast.DaurdablaDummy = set_combine(sets.midcast.FastRecast, {main="Vampirism",range=info.ExtraSongInstrument})
 
     -- Other general spells and classes.
     sets.midcast.Cure = {main="Grioavolr",sub="Enki strap",
@@ -295,9 +295,9 @@ function init_gear_sets()
 		-- 103%      Evanescence ring 5%     53% PDT
         
     sets.midcast.Cursna = {
-        head="Kaykaus Mitra +1",neck="Malison Medallion",
+        head="Kaykaus Mitra +1",neck="Incanter's torque", --"Debilis Medallion",
         hands="Hieros Mittens",ring1="Stikini Ring +1", ring2="Menelaus's ring",
-		feet=gear.FeetCurse}
+		back="Oretania's cape +1",legs="Vanya slops",feet=gear.FeetCurse}
 		
 	sets.midcast['Enfeebling Magic'] = {main="Daybreak", sub="Ammurapi shield", range="Nibiru Harp",
         head="Brioso Roundlet +3",neck="Moonbow whistle +1",ear1="Regal Earring",ear2="Dignitary's Earring",
@@ -365,7 +365,7 @@ function init_gear_sets()
     sets.engaged = {
         range="Linos",
 		head="Aya. Zucchetto +2", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Mache earring +1",
-		body="Ayanmo corazza +2", hands="Nyame gauntlets", left_ring="Ilabrat Ring", right_ring="Moonlight Ring",
+		body="Ayanmo corazza +2", hands="Bunzi's gloves", left_ring="Lehko's Ring", right_ring="Moonlight Ring",
 		back=gear.BrdSTPCape, waist="Sailfi belt +1", legs="Nyame Flanchard", feet="Nyame Sollerets"
 	}
 
@@ -381,7 +381,7 @@ function init_gear_sets()
     sets.engaged.DW = {
 		range="Linos",
 		head="Aya. Zucchetto +2", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Suppanomimi",
-		body="Ayanmo corazza +2", hands="Nyame gauntlets", left_ring="Moonlight Ring", right_ring="Moonlight Ring",
+		body="Ayanmo corazza +2", hands="Bunzi's gloves", left_ring="Lehko's Ring", right_ring="Moonlight Ring",
 		back=gear.BrdSTPCape, waist="Reiki Yotai", legs="Nyame Flanchard", feet="Nyame Sollerets"
 	}
 	
@@ -399,8 +399,8 @@ function init_gear_sets()
 		
 	sets.engaged.DW.Savage = {main="Naegling", sub="Centovente", range="Linos",
 		head="Aya. Zucchetto +2", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Suppanomimi",
-		body="Ayanmo corazza +2", hands="Bunzi's gloves", left_ring="Moonlight Ring", right_ring="Moonlight Ring",
-		back=gear.BrdSTPCape, waist="Sailfi Belt +1", legs="Nyame Flanchard", feet="Nyame Sollerets"}
+		body="Ayanmo corazza +2", hands="Bunzi's gloves", left_ring="Lehko's Ring", right_ring="Moonlight Ring",
+		back=gear.BrdSTPCape, waist="Reiki yotai", legs="Nyame Flanchard", feet="Nyame Sollerets"}
 		
 	sets.engaged.Carn = {main="Carnwenhan",sub="Genmei shield",range="Linos",
 		head="Aya. Zucchetto +2", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Mache Earring +1",
@@ -409,8 +409,8 @@ function init_gear_sets()
 		
 	sets.engaged.DW.Carn = {main="Carnwenhan", sub="Gleti's Knife", range="Linos",
 		head="Aya. Zucchetto +2", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Suppanomimi",
-		body="Ayanmo corazza +2", hands="Bunzi's gloves", left_ring="Moonlight Ring", right_ring="Moonlight Ring",
-		back=gear.BrdSTPCape, waist="Sailfi Belt +1", legs="Nyame Flanchard", feet="Nyame Sollerets"}
+		body="Ayanmo corazza +2", hands="Bunzi's gloves", left_ring="Lehko's Ring", right_ring="Moonlight Ring",
+		back=gear.BrdSTPCape, waist="Reiki yotai", legs="Nyame Flanchard", feet="Nyame Sollerets"}
 		
 	sets.engaged.Rudra = {main="Twashtar", sub="Genmei shield",range="Linos",
 		head="Aya. Zucchetto +2", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Mache Earring +1",
@@ -419,8 +419,8 @@ function init_gear_sets()
 		
 	sets.engaged.DW.Rudra = {main="Twashtar", sub="Centovente", range="Linos",
 		head="Aya. Zucchetto +2", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Suppanomimi",
-		body="Ayanmo corazza +2", hands="Bunzi's gloves", left_ring="Moonlight Ring", right_ring="Moonlight Ring",
-		back=gear.BrdSTPCape, waist="Sailfi Belt +1", legs="Nyame Flanchard", feet="Nyame Sollerets"}
+		body="Ayanmo corazza +2", hands="Bunzi's gloves", left_ring="Lehko's Ring", right_ring="Moonlight Ring",
+		back=gear.BrdSTPCape, waist="Reiki yotai", legs="Nyame Flanchard", feet="Nyame Sollerets"}
 		
 	sets.engaged.Daybreak = {main="Daybreak", sub="Genmei shield", range="Linos",
 		head="Aya. Zucchetto +2", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Mache Earring +1",
@@ -429,8 +429,8 @@ function init_gear_sets()
 	
 	sets.engaged.DW.Daybreak = {main="Daybreak", sub="Centovente", range="Linos",
 		head="Aya. Zucchetto +2", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Suppanomimi",
-		body="Ayanmo corazza +2", hands="Bunzi's gloves", left_ring="Moonlight Ring", right_ring="Moonlight Ring",
-		back=gear.BrdSTPCape, waist="Sailfi Belt +1", legs="Nyame Flanchard", feet="Nyame Sollerets"}
+		body="Ayanmo corazza +2", hands="Bunzi's gloves", left_ring="Lehko's Ring", right_ring="Moonlight Ring",
+		back=gear.BrdSTPCape, waist="Reiki yotai", legs="Nyame Flanchard", feet="Nyame Sollerets"}
 		
 	sets.engaged.Arebati = {main="Tauret",sub="Genmei shield",range="Linos",
         head="Nyame Helm",neck="Bard's charm +2",ear1="Mache Earring +1",ear2="Telos Earring",
@@ -757,6 +757,7 @@ function select_default_macro_book()
 	else
 		set_macro_page(1, 2)
 	end
+	send_command('wait 3; input /lockstyleset 007')
 end
 
 

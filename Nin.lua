@@ -35,8 +35,10 @@ function user_setup()
     state.PhysicalDefenseMode:options('PDT', 'Evasion')
 
     gear.MovementFeet = {name="Danzo Sune-ate"}
-    gear.DayFeet = "Danzo Sune-ate"
-    gear.NightFeet = "Hachiya Kyahan"
+    gear.DayFeet = {name="Danzo Sune-ate"}
+    gear.NightFeet = {name="Hachiya Kyahan"}
+	gear.HercHatFC =  {name="Herculean Helm", augments={'"Mag.Atk.Bns."+24','"Fast Cast"+6','STR+7','Mag. Acc.+14'}}
+	gear.HercFeetFC = { name="Herculean Boots", augments={'Mag. Acc.+15','"Fast Cast"+5','MND+6','"Mag.Atk.Bns."+15',}}
     
     select_movement_feet()
     select_default_macro_book()

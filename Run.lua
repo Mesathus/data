@@ -42,6 +42,15 @@ function user_setup()
     state.WeaponskillMode:options('Normal', 'Acc')
     state.PhysicalDefenseMode:options('PDT')
     state.IdleMode:options('Normal','Regen', 'Refresh')
+	
+	gear.CapeIdle = {}
+	gear.CapeTank = {}
+	gear.CapeDD = {}
+	gear.CapeStrDA = {}
+	gear.CapeDexWSD = {}
+	gear.CapeFC = {}
+	
+	
 
 	select_default_macro_book()
 end
@@ -75,10 +84,11 @@ function init_gear_sets()
 
 
 	-- Fast cast sets for spells
-    sets.precast.FC = {ammo="Sapience orb",
-            head="Carmine mask +1", neck="Voltsurge Torque", ear1="Tuisto Earring", ear2="Odnowa earring +1",
-            body="Agwu's robe", hands="Leyline gloves", ring1="Prolix Ring", ring2="Kishar ring",
-            back="Moonlight cape",waist="Flume belt",legs="Agwu's slops", feet="Carmine greaves +1"}
+    sets.precast.FC = {ammo="Sapience orb",																		--2
+            head="Carmine mask +1", neck="Voltsurge Torque", ear1="Tuisto Earring", ear2="Odnowa earring +1",	--14, 4, 0, 0
+            body="Agwu's robe", hands="Leyline gloves", ring1="Prolix Ring", ring2="Kishar ring",				--8, 8, 2, 4
+            back="Moonlight cape",waist="Flume belt",legs="Agwu's slops", feet="Carmine greaves +1"}			--0, 0, 7, 8
+			-- 57% FC   cape 10  body 5 witful 3
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash"})
     sets.precast.FC['Utsusemi: Ichi'] = set_combine(sets.precast.FC, {neck='Magoraga beads', body="Passion jacket"})
     sets.precast.FC['Utsusemi: Ni'] = set_combine(sets.precast.FC['Utsusemi: Ichi'], {})
@@ -95,7 +105,7 @@ function init_gear_sets()
 	
     sets.precast.WS['Resolution'] = set_combine(sets.precast.WS, {ear2="Telos Earring"})
     sets.precast.WS['Resolution'].Acc = set_combine(sets.precast.WS['Resolution'].Normal)
-    sets.precast.WS['Dimidiation'] = set_combine(sets.precast.WS, {ammo="Falcon eye",ear2="Mache earring +1",ring2="Ilabrat Ring"})
+    sets.precast.WS['Dimidiation'] = set_combine(sets.precast.WS, {ammo="Knobkierrie",ear2="Mache earring +1",ring2="Ilabrat Ring"})
     sets.precast.WS['Dimidiation'].Acc = set_combine(sets.precast.WS['Dimidiation'].Normal)
     sets.precast.WS['Herculean Slash'] = set_combine(sets.precast['Lunge'], {})
     sets.precast.WS['Herculean Slash'].Acc = set_combine(sets.precast.WS['Herculean Slash'].Normal, {})
@@ -106,12 +116,12 @@ function init_gear_sets()
 	--------------------------------------
 	
     sets.midcast.FastRecast = {}
-    sets.midcast['Enhancing Magic'] = {neck="Incanter's Torque", left_ear="Mimir Earring",right_ear="Augment. Earring",
+    sets.midcast['Enhancing Magic'] = {neck="Incanter's Torque", left_ear="Mimir Earring",right_ear="Andoaa Earring",
 		hands="Runeist mitons +1", waist="Olympus Sash", legs="Futhark Trousers +1"}
 	
     sets.midcast['Phalanx'] = set_combine(sets.midcast['Enhancing Magic'], 
 		{
-			head={ name="Taeon Chapeau", augments={'Phalanx +3',}},
+			head="Futhark Bandeau +1",
 			body={ name="Taeon Tabard", augments={'Attack+23','"Dual Wield"+5','Phalanx +3',}},
 			hands={ name="Taeon Gloves", augments={'Phalanx +3',}},left_ring="Stikini Ring +1",right_ring="Stikini Ring +1",
 			back="Merciful Cape",
@@ -129,7 +139,7 @@ function init_gear_sets()
     sets.idle = {ammo="Staunch Tathlum +1",
 		head="Nyame Helm",neck="Loricate Torque +1", left_ear="Cryptic Earring",right_ear="Eabani Earring",
 		body="Nyame Mail",hands="Nyame gauntlets",left_ring="Sheltered Ring",right_ring="Moonlight Ring",
-		back="Moonlight Cape",waist="Carrier's sash", legs="Carmine cuisses +1", feet="Nyame sollerets"}
+		back="Moonlight Cape",waist="Engraved Belt", legs="Carmine cuisses +1", feet="Nyame sollerets"}
 			
 			
 			
@@ -162,10 +172,11 @@ function init_gear_sets()
 		feet={ name="Herculean Boots", augments={'Accuracy+26','"Triple Atk."+4','DEX+9','Attack+1',}} 
     }
     
-	sets.engaged.Tank = {ammo="Staunch Tathlum +1",
-		head="Nyame Helm",neck="Loricate Torque +1", left_ear="Sherida Earring",right_ear="Brutal Earring",
-		body="Nyame Mail",hands="Turms Mittens +1",left_ring="Moonlight Ring",right_ring="Moonlight Ring",
-		back="Moonlight Cape",waist="Sailfi Belt +1", legs="Nyame Flanchard", feet="Turms Leggings +1"}
+	sets.engaged.Tank = {ammo="Staunch Tathlum +1",																--3
+		head="Nyame Helm",neck="Loricate Torque +1", left_ear="Sherida Earring",right_ear="Brutal Earring",		--7, 6, 0, 0
+		body="Nyame Mail",hands="Turms Mittens +1",left_ring="Moonlight Ring",right_ring="Moonlight Ring",		--9, 0, 5, 5
+		back="Moonlight Cape",waist="Sailfi Belt +1", legs="Nyame Flanchard", feet="Turms Leggings +1"}			--6, 0, 8, 0
+		-- 49 DT
 		
 	sets.engaged.Hybrid = {ammo="Seeth. Bomblet +1",
 		head="Adhemar Bonnet +1",neck="Loricate torque +1",left_ear="Sherida Earring", right_ear="Brutal Earring",

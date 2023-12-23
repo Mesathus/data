@@ -67,6 +67,8 @@ function user_setup()
     gear.default.weaponskill_neck = "Asperity Necklace"
     gear.default.weaponskill_waist = "Caudata Belt"
     gear.AugQuiahuiz = {name="Quiahuiz Trousers", augments={'Haste+2','"Snapshot"+2','STR+8'}}
+	gear.HercHatFC =  {name="Herculean Helm", augments={'"Mag.Atk.Bns."+24','"Fast Cast"+6','STR+7','Mag. Acc.+14'}}
+	gear.HercFeetFC = { name="Herculean Boots", augments={'Mag. Acc.+15','"Fast Cast"+5','MND+6','"Mag.Atk.Bns."+15',}}
 
     -- Additional local binds
     send_command('bind ^= gs c cycle mainstep')
@@ -107,7 +109,7 @@ function init_gear_sets()
     
 
     -- Waltz set (chr and vit)
-    sets.precast.Waltz = {ammo="Sonia's Plectrum",
+    sets.precast.Waltz = {ammo="Yamarang",
         head="Horos Tiara",ear1="Roundel Earring",
         body="Maxixi Casaque",hands="Buremte Gloves",ring1="Asklepian Ring",
         back="Toetapper Mantle",waist="Caudata Belt",legs="Nahtirah Trousers",feet="Maxixi Toe Shoes"}

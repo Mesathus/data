@@ -51,14 +51,22 @@ function user_setup()
 	state.IdleMode:options('Normal', 'STP', 'Evasion')
 
 
-    gear.default.weaponskill_neck = "Asperity Necklace"
-    gear.default.weaponskill_waist = "ElementalBelt"
+    gear.default.weaponskill_neck = "Fotia gorget"
+    gear.default.weaponskill_waist = "Fotia belt"
     gear.AugQuiahuiz = {name="Quiahuiz Trousers", augments={'Haste+2','"Snapshot"+2','STR+8'}}
 	gear.CapeWSD = {name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}}
-	gear.FCHat =  {name="Herculean Helm", augments={'"Mag.Atk.Bns."+24','"Fast Cast"+6','STR+7','Mag. Acc.+14'}}
+	gear.HercHatFC =  {name="Herculean Helm", augments={'"Mag.Atk.Bns."+24','"Fast Cast"+6','STR+7','Mag. Acc.+14'}}
+	gear.HercFeetFC = { name="Herculean Boots", augments={'Mag. Acc.+15','"Fast Cast"+5','MND+6','"Mag.Atk.Bns."+15',}}
 	gear.CapeCrit = {name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10'}}
 	gear.CapeSTP = {name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}}
 	gear.CapeStr = { name="Toutatis's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%'}}
+	gear.CapeFC = {name="Toutatis's Cape", augments={'"Fast Cast"+10','Phys. dmg. taken-10%'}}
+	gear.CapeEva = {name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%'}}
+	gear.HeadPhalanx = { name="Taeon Chapeau", augments={'"Repair" potency +5%','Phalanx +3',}}
+    gear.BodyPhalanx = { name="Taeon Tabard", augments={'Attack+23','"Cure" potency +5%','Phalanx +3',}}
+    gear.HandsPhalanx = { name="Taeon Gloves", augments={'"Cure" potency +4%','Phalanx +3',}}
+    gear.LegsPhalanx = { name="Taeon Tights", augments={'Accuracy+20 Attack+20','"Cure" potency +5%','Phalanx +3',}}
+    gear.FeetPhalanx = { name="Taeon Boots", augments={'"Cure" potency +4%','Phalanx +3',}}
 
     -- Additional local binds
     send_command('bind ^` input /ja "Flee" <me>')
@@ -126,34 +134,42 @@ function init_gear_sets()
     sets.precast.JA['Sneak Attack'] = sets.buff['Sneak Attack']
     sets.precast.JA['Trick Attack'] = sets.buff['Trick Attack']
 
-	sets.Enmity = {
+	sets.Enmity = {ammo="Sapience orb",
 	head="Halitus helm", neck="Unmoving collar +1", ear1="Trux earring", ear2="Cryptic earring",
-	body="Emet Harness +1", hands="Kurys gloves",
-	legs="Obatala subligar", feet="Ahosi leggings"
+	body="Emet Harness +1", hands="Kurys gloves", ring2="Begrudging Ring",
+	waist="Goading belt", legs="Obatala subligar", feet="Ahosi leggings"
 	}
 
     -- Waltz set (chr and vit)
-    sets.precast.Waltz = {ammo="Sonia's Plectrum",
-        head="Whirlpool Mask",
-        body="Pillager's Vest +3",hands="Pillager's Armlets +1",ring1="Asklepian Ring",
-        back="Iximulew Cape",waist="Caudata Belt",legs="Pillager's Culottes +3",feet="Plunderer's Poulaines +3"}
+    sets.precast.Waltz = {ammo="Yamarang",																					--5
+        head="Mummu Bonnet +2",neck="Unmoving collar +1",ear1="Tuisto earring",ear2="Odnowa earring +1",					--9r, 0, 0, 0
+        body="Passion jacket",hands="Pillager's Armlets +1",ring1="Gelatinous Ring +1",ring2="Metamorph Ring +1",			--13, 0, 0, 0
+        back="Moonlight Cape",waist="Platinum moogle Belt",legs="Dashing subligar",feet="Plunderer's Poulaines +3"}			--0, 0, 10, 0
+		-- Dashing subligar, herc hands/feet to cap
 
     -- Don't need any special gear for Healing Waltz.
     sets.precast.Waltz['Healing Waltz'] = {}
 
 
     -- Fast cast sets for spells
-    sets.precast.FC = {ammo="Sapience orb",
-		head = gear.FCHat,neck="Voltsurge torque",ear1="Etiolation earring",ear2="Loquacious Earring",
-		body="Dread Jupon",hands="Leyline Gloves",ring1="Prolix Ring",
-		legs="Rawhide trousers"}
+    sets.precast.FC = {ammo="Sapience orb",																		--2
+		head = gear.HercHatFC,neck="Voltsurge torque",ear1="Etiolation earring",ear2="Loquacious Earring",		--13, 4, 1, 2
+		body="Dread Jupon",hands="Leyline Gloves",ring1="Prolix Ring",											--7, 8, 2
+		back=gear.CapeFC,legs="Rawhide trousers",feet=gear.HercFeetFC}											--10, 5, 5
+		-- 59%   
+		--Rahab ring 2, herc feet 6, second adhemar jacket 10
 
     sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads",body="Passion Jacket"})
 	
+	sets.precast.FC.Cure = set_combine(sets.precast.FC, {ear1="Mendicant's earring"})
+	
+	
+	
 	
     -- Ranged snapshot gear
-    sets.precast.RA = {head="Volte tiara",hands="Mrigavyadha gloves",
+    sets.precast.RA = {head="Volte tiara",hands="Mrigavyadha gloves",ring1="Crepuscular ring",
 	waist="Yemaya belt",legs="Adhemar kecks +1",feet="Meghanada jambeaux +2"}
+	-- Taeon head/body
 
 
     -- Weaponskill sets
@@ -219,7 +235,7 @@ function init_gear_sets()
 	
 	sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {ammo="Seething bomblet +1",
 																	head="Nyame Helm",neck="Republican Platinum Medal",
-																	body="Skulker's Vest +3", ring1="Gere Ring", ring2="Epaminondas's Ring",
+																	body="Skulker's Vest +3", ring1="Sroda Ring", ring2="Epaminondas's Ring",
 																	back={ name="Toutatis's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%'}},
 																	waist="Kentarch belt +1", legs="Nyame Flanchard"})
 	sets.precast.WS['Savage Blade'].Acc = set_combine(sets.precast.WS['Savage Blade'], {body="Gleti's Cuirass", legs="Gleti's breeches"})
@@ -235,7 +251,7 @@ function init_gear_sets()
 	
 	sets.precast.WS['Asuran Fists'] = set_combine(sets.precast.WS, {ammo="Seething bomblet +1",
 		head="Skulker's Bonnet +3", ear1="Sherida Earring", ear2="Odnowa Earring +1",
-		body="Gleti's Cuirass", hands="Meghanada gloves +2", ring2="Gere ring",
+		body="Gleti's Cuirass", hands="Meghanada gloves +2", ring2="Sroda ring",
 		back={ name="Toutatis's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%'}},
 		legs="Gleti's breeches",
 		})
@@ -320,11 +336,9 @@ function init_gear_sets()
 		hands="Leyline Gloves",ring1="Prolix Ring",legs="Rawhide trousers"}
 		
 	sets.midcast['Phalanx'] = set_combine(sets.midcast.FastRecast, {
-		head={ name="Taeon Chapeau", augments={'Phalanx +3',}},neck="Incanter's Torque",left_ear="Mimir Earring",right_ear="Augment. Earring",
-		body={ name="Taeon Tabard", augments={'Attack+23','"Dual Wield"+5','Phalanx +3',}},
-		hands={ name="Taeon Gloves", augments={'Phalanx +3',}},left_ring="Stikini Ring +1",right_ring="Stikini Ring +1",
-		waist="Olympus Sash",back="Merciful Cape",legs={ name="Taeon Tights", augments={'Accuracy+20 Attack+20','"Triple Atk."+2','Phalanx +3',}},
-		feet={ name="Taeon Boots", augments={'Phalanx +3',}}})
+		head=gear.HeadPhalanx, neck="Incanter's Torque", left_ear="Mimir Earring", right_ear="Andoaa Earring",
+		body=gear.BodyPhalanx, hands=gear.HandsPhalanx, left_ring="Stikini Ring +1", right_ring="Stikini Ring +1",
+		back="Merciful Cape", waist="Olympus Sash", legs=gear.LegsPhalanx, feet=gear.FeetPhalanx})
 		
 	sets.midcast['Stoneskin'] = set_combine(sets.midcast.FastRecast, {neck="Stone Gorget"})
 		
@@ -348,18 +362,28 @@ function init_gear_sets()
 		ring2="Shiva Ring +1",
 		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}}}
 		
+	sets.midcast.Cure = {
+		neck="Phalaina locket",ear1="Mendicant's earring",														--4|4, 5
+		body=gear.BodyPhalanx, hands=gear.HandsPhalanx,	ring1="Menelaus's ring", ring2="Defending ring",		--5, 4, 5
+		back="Solemnity cape", legs=gear.LegsPhalanx, feet=gear.FeetPhalanx}									--7, 5, 4
+		-- 39%
+		-- Naji's, Lebeche, Taeon head
+	
+	sets.midcast.CureSelf = set_combine(sets.midcast.Cure, {waist="Gishdubar sash"})
+		-- 14% received  buremte bloves 13% kunaji ring 5%
+		
 	
 
     -- Ranged gear
     sets.midcast.RA = {
         head="Malignance chapeau",neck="Iskur Gorget",ear1="Enervating earring",ear2="Telos Earring",
-		body="Malignance tabard",hands="Malignance gloves",ring1="Regal Ring",ring2="Dingir Ring",
+		body="Malignance tabard",hands="Malignance gloves",ring1="Crepuscular Ring",ring2="Dingir Ring",
 		back="Sacro mantle",waist="Yemaya belt",legs="Malignance tights",feet="Malignance boots"}
 
 
     sets.midcast.RA.Acc = {
         head="Malignance chapeau",neck="Iskur Gorget",ear1="Enervating earring",ear2="Telos Earring",
-		body="Malignance tabard",hands="Malignance gloves",ring1="Regal Ring",ring2="Cacoethic Ring +1",
+		body="Malignance tabard",hands="Malignance gloves",ring1="Crepuscular Ring",ring2="Cacoethic Ring +1",
 		back="Sacro mantle",waist="Yemaya belt",legs="Malignance tights",feet="Malignance boots"}
 
 
@@ -447,7 +471,7 @@ function init_gear_sets()
     sets.engaged.Acc = {ammo="Yamarang",
         head="Pillager's Bonnet +3",neck="Loricate torque +1",ear1="Dignitary's Earring",ear2="Telos earring",
         body="Meghanada cuirie +2",hands="Adhemar Wristbands +1",ring1="Regal Ring",ring2="Gere Ring",
-        back=gear.CapeSTP,waist="Reiki Yotai",legs="Pillager's Culottes +3",feet={name="Herculean boots", augments={'Accuracy+24 Attack+24','Damage taken-2%','STR+7','Accuracy+11','Attack+15',}}}
+        back=gear.CapeSTP,waist="Reiki Yotai",legs="Pillager's Culottes +3",feet="Plunderer's Poulaines +3"}
         
     -- Mod set for trivial mobs (Skadi+1)
     sets.engaged.TA = {ammo="Yetshila +1",
@@ -468,8 +492,8 @@ function init_gear_sets()
         back=gear.CapeSTP,waist="Reiki Yotai",legs="Malignance tights",feet="Malignance boots"}
 		
 	sets.engaged.HybridSB = {ammo="Expeditious pinion",  															--7
-        head="Malignance chapeau",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Skulker's earring +1",  --0,0,0|5,5
-        body="Malignance tabard",hands="Malignance gloves",ring1="Chirich Ring +1",ring2="Chirich Ring +1",  	   --0,0,10,10
+        head="Malignance chapeau",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Skulker's earring +1",  	--0,0,0|5,5
+        body="Malignance tabard",hands="Malignance gloves",ring1="Chirich Ring +1",ring2="Chirich Ring +1",  	   	--0,0,10,10
         back=gear.CapeSTP,waist="Reiki Yotai",legs="Gleti's breeches",feet="Volte spats"}  							--0,0,10,6  Mummu feet would be 9 SB 5 crit, less Str/Dex more Acc
 		--48 SB1 + 5 SB2    38 PDT     R30 Gleti's legs +5 SB, can drop ammo and be at 49 w/ Mummu
 		
@@ -572,6 +596,9 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
 		check_range_lock()
         equip(sets.TreasureHunter)
     end
+	if spellMap == 'Cure' and spell.target.type == 'SELF' then
+        equip(sets.midcast.CureSelf)
+	end
 end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
@@ -758,4 +785,5 @@ function select_default_macro_book()
     else
         set_macro_page(10, 1)
     end
+	send_command('wait 3; input /lockstyleset 009')
 end
