@@ -174,7 +174,7 @@ function init_gear_sets()
     sets.midcast['Enhancing Magic'] = {sub = "Ammurapi shield", ammo="Staunch tathlum +1",
 		head = "Telchine cap", neck = "Duelist's torque +2", ear1 = "Mimir earring", ear2 = "Lethargy earring +1",
 		body = "Vitiation tabard +3", hands = "Atrophy gloves +2", ring1="Kishar ring", ring2="Stikini ring +1",
-		back = gear.CapeEnf, waist = "Embla sash", legs = "Telchine Braconi",feet = "Lethargy houseaux +3" }
+		back = "Ghostfyre Cape", waist = "Embla sash", legs = "Telchine Braconi",feet = "Lethargy houseaux +3" }
 		
 	sets.midcast.Phalanx = set_combine(sets.midcast['Enhancing Magic'], {main="Sakpata's sword", 
 		head=gear.HeadPhalanx,
@@ -295,10 +295,10 @@ function init_gear_sets()
         body="Atrophy Tabard +2",hands="Atrophy Gloves +2",ring1="Sheltered Ring",ring2="Paguroidea Ring",
         back="Shadow Mantle",waist="Flume Belt",legs="Carmine Cuisses +1",feet="Malignance boots"}
     
-    sets.idle.Weak = {main="Bolelabunga",sub="Genbu's Shield",ammo="Impatiens",
-        head="Vitiation chapeau +3",neck="Wiglen Gorget",ear1="Bloodgem Earring",ear2="Loquacious Earring",
-        body="Atrophy Tabard +2",hands="Serpentes Cuffs",ring1="Sheltered Ring",ring2="Paguroidea Ring",
-        back="Shadow Mantle",waist="Flume Belt",legs="Crimson Cuisses",feet="Hagondes Sabots"}
+    sets.idle.Weak = {main="Daybreak",sub="Sacro Bulwark",ammo="Homiliary",
+        head="Vitiation chapeau +3",neck="Loricate torque +1",ear1="Infused Earring",ear2="Etiolation Earring",
+        body="Lethargy Sayon +3",hands="Malignance Gloves",ring1="Sheltered Ring",ring2="Defending Ring",
+        back="Moonlight cape",waist="Flume Belt",legs="Carmine Cuisses +1",feet="Malignance boots"}
 		
 	sets.idle.Refresh = {main="Daybreak",sub="Sacro Bulwark",ammo="Homiliary",
         head="Vitiation chapeau +3",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Odnowa Earring +1",
@@ -346,7 +346,7 @@ function init_gear_sets()
 		
 	sets.engaged.Enspell1 = {main="Vitiation Sword",ammo="Sroda tathlum",
 		head="Malignance Chapeau", neck="Sanctity Necklace", ear1="Sherida Earring", ear2="Hollow Earring",
-		body="Malignance Tabard", hands="Aya. Manopolas +2", ring1="Chirich Ring +1", ring2="Chirich Ring +1",
+		body="Malignance Tabard", hands="Aya. Manopolas +2", ring1="Hetairoi Ring", ring2="Chirich Ring +1",
 		back=gear.CapeDW, waist="Orpheus's Sash", legs="Carmine Cuisses +1", feet="Malignance Boots"}
 
     sets.engaged.Defense = {ammo="Demonry Stone",

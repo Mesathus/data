@@ -32,6 +32,7 @@ function user_setup()
     state.CastingMode:options('Normal', 'SIRD', 'HPBAL')    
     state.IdleMode:options('DT', 'Normal', 'Pulling')
 	state.ShieldMode = M{'Duban','Aegis','Ochain','Srivatsa'}
+	state.WeaponMode = M{'Burtgang', 'Naegling'}
      
 -- Allows the use of Ctrl + ~ and Alt + ~ for 2 more macros of your choice.
     -- send_command('bind ^` input /ja "Cover" <stal>') --Ctrl'~'
@@ -41,6 +42,7 @@ function user_setup()
     send_command('bind f10 gs c cycle HybridMode') --F10
     send_command('bind f11 gs c cycle CastingMode') --F11
 	send_command('bind !f9 gs c cycle ShieldMode') --Alt 'F9'
+	send_command('bind !f10 gs c cycle WeaponMode') --Alt 'F10'
     send_command('bind @c gs c toggle CP') --WindowKey'C'
     send_command('bind @r gs c toggle Warp') --Windowkey'R'
     send_command('bind @m gs c toggle MP') --Windowkey'M'
@@ -56,7 +58,9 @@ function user_setup()
 	gear.PhalanxHead = {name="Valorous Mask", augments={'Magic dmg. taken -2%','Pet: DEX+15','Phalanx +4','Accuracy+3 Attack+3',}}
 	gear.PhalanxBody = {name="Odyss. Chestplate", augments={'"Mag.Atk.Bns."+21','MND+6','Phalanx +3',}}
 	gear.PDTCape = {name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Enmity+10','Phys. dmg. taken-10%',}}
-	gear.FCCape = { name="Rudianos's Mantle", augments={'"Fast Cast"+10',}}
+	gear.FCCape = { name="Rudianos's Mantle", augments={'"Fast Cast"+10','Phys. dmg. taken-10%',}}
+	gear.WSCape = {name="Rudianos's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
+	gear.TPCape = {name="Rudianos's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
  
     Haste = 0
     DW_needed = 0
@@ -89,7 +93,7 @@ function init_gear_sets()
     ------------------------------------------------------------------------------------------------
      
     sets.Enmity = {
-        Main="Brilliance", --14
+        Main="Burtgang", --18
         Ammo="Sapience Orb", --2
         Head="Loess Barbuta +1", --9~14
         Neck="Moonlight Necklace", --15
@@ -103,16 +107,16 @@ function init_gear_sets()
         Waist="Creed Baudrier", --5
         Legs={name="Souveran Diechlings +1",priority=162}, --9
         Feet="Eschite Greaves", --15
-    } --121~134
+    } --129~142
      
     sets.precast.JA['Invincible'] = set_combine(sets.Enmity, {legs="Caballarius breeches +1"})
-    sets.precast.JA['Shield Bash'] = set_combine(sets.Enmity, {sub="Aegis", ear1="Knightly earring"})   
+    sets.precast.JA['Shield Bash'] = set_combine(sets.Enmity, {sub="Aegis", ear1="Knightly earring", hands="Caballarius gauntlets +2"})   
     sets.precast.JA['Holy Circle'] = set_combine(sets.Enmity, {feet="Reverence leggings +1"})
     sets.precast.JA['Sentinel'] = set_combine(sets.Enmity, {feet="Caballarius leggings +2"})
     sets.precast.JA['Cover'] = set_combine(sets.Enmity, {head="Reverence coronet +1"})
     sets.precast.JA['Rampart'] = set_combine(sets.Enmity, {head="Caballarius coronet +2"})
     sets.precast.JA['Fealty'] = set_combine(sets.Enmity, {head="Caballarius surcoat +3"})
-    sets.precast.JA['Chivalry'] = {hands="Caballarius gauntlets +1"}
+    sets.precast.JA['Chivalry'] = {hands="Caballarius gauntlets +2"}
     sets.precast.JA['Divine Emblem'] = set_combine(sets.Enmity, {hands="Chevalier's sabatons +2"})
     sets.precast.JA['Sepulcher'] = set_combine(sets.Enmity, {})
     sets.precast.JA['Palisade'] = set_combine(sets.Enmity, {})
@@ -131,7 +135,7 @@ function init_gear_sets()
         Ring1="Prolix Ring", -- 3
         Legs="Arjuna Breeches", --4
         Feet="Chevalier's sabatons +2", --10
-        Waist="Creed Baudrier", --40HP
+        Waist="Platinum moogle belt", --10% HP
         back=gear.FCCape, --10FC
         Ring2="Kishar Ring", --  4FC --70HP
     } 	-- 77FC 2QM
@@ -174,10 +178,14 @@ function init_gear_sets()
         ear2="Thrud Earring",
         Ring1="Epaminondas's Ring",
         Ring2="Hetairoi Ring",
-        back={ name="Rudianos's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}},
+        back= gear.WSCape
     }
      
-    sets.precast.WS['Atonement'] = {}
+    sets.precast.WS['Atonement'] = {ammo="Oshasha's treatise",
+		head="Nyame Helm",neck="Loricate torque +1",ear1="Ishvara Earring",ear2="Moonshade Earring",
+        body="Nyame mail",hands="Nyame gauntlets",ring1="Defending Ring",ring2="Epaminondas's Ring",
+        back=gear.WSCape,waist="Grunfeld rope",legs="Nyame Flanchard",feet="Nyame Sollerets"}
+		
     sets.precast.WS['Requiescat'] = {}
     sets.precast.WS['Chant du Cygne'] = {}
 	
@@ -194,11 +202,11 @@ function init_gear_sets()
         ear2="Crematio Earring",
         left_ring="Shiva Ring +1",
         right_ring="Epaminondas's Ring",
-        back={ name="Rudianos's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}},
+        back=gear.WSCape
 	}  
      
     sets.precast.WS['Savage Blade'] = {
-        ammo="Aurgelmir Orb +1",
+        ammo="Aurgelmir Orb +1",			--coiste, crep, oshasha's,
         Head="Nyame Helm", --7
         Body="Nyame Mail", --10
         Hands="Nyame Gauntlets", --8
@@ -210,7 +218,7 @@ function init_gear_sets()
         right_ear="Thrud Earring",
         Ring1="Epaminondas's Ring",
         Ring2="Rufescent Ring",
-        back={ name="Rudianos's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}},
+        back=gear.WSCape
     }
  
     sets.precast.WS['Aeolian Edge'] = {
@@ -226,7 +234,7 @@ function init_gear_sets()
         ear2="Crematio Earring",
         left_ring="Shiva Ring +1",
         right_ring="Epaminondas's Ring",
-        back={ name="Rudianos's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}},
+        back=gear.WSCape
         }
  
     --------------------------------------- Accuracy Mode ------------------------------------------
@@ -290,14 +298,14 @@ function init_gear_sets()
     sets.midcast.SIRD = {
 		Main={name="Sakpata's Sword",priority=100}, --10FC
 		sub={name="Srivatsa",priority=150},   --15enm
-        Ammo="Staunch tathlum +1", --11SIRD    
+        Ammo="Staunch tathlum +1", --11SIRD
         Head="Souveran Schaller +1", --20SIRD  --9
         Neck="Moonlight Necklace", --15SIRD    --15
 		Hands="Eschite Gauntlets", --15SIRD    --7
 		Ring1={name="Moonlight Ring",priority=110,bag="wardrobe1"}, --110HP
         Ring2={name="Moonlight Ring",priority=110,bag="wardrobe3"}, --110HP
         -- Waist="Rumination Sash", --10SIRD
-        Legs="Founder's Hose", --30SIRD     
+        Legs="Founder's Hose", --30SIRD
         Feet="Odyssean Greaves", --20SIRD
         back=gear.PDTCape, --0SIRD
     } --111SIRD   --56 enm  +20body  +4 cryptic +5 waist
@@ -323,7 +331,7 @@ function init_gear_sets()
     }--115SIRD
  
     sets.midcast.Flash.SIRD = {
-        Main="Brilliance", --14 Enm
+        Main="Burtgang", --18 Enm
         Ammo="Impatiens", --10SIRD Neg2Enm
         Head="Souveran Schaller +1", --20SIRD Neg9~14Enm
         Neck="Moonlight Necklace", --15SIRD
@@ -338,7 +346,7 @@ function init_gear_sets()
         Legs="Carmine Cuisses +1", --20SIRD Neg9Enm
         Feet="Odyssean Greaves", --20SIRD Neg15Enm
         -- Sub="Ajax +1",
-    } --80~88, 105SIRD
+    } --84~92, 105SIRD
      
     sets.midcast.Cure.SIRD = set_combine(sets.midcast.Cure, sets.midcast.SIRD)
     sets.midcast.Phalanx.SIRD = set_combine(sets.midcast.Phalanx, sets.midcast.SIRD)
@@ -392,7 +400,7 @@ function init_gear_sets()
     } --0FC, 105SIRD, 44DT, 62~70Enm
      
     sets.midcast.Flash.HPBAL = {
-        Main="Brilliance", --14
+        Main="Burtgang", --18
 		sub={name="Srivatsa",priority=150},
         Ammo="Sapience Orb", --2
         Head={name="Loess Barbuta +1",priority=105}, --9~14
@@ -408,7 +416,7 @@ function init_gear_sets()
         Legs={name="Souveran Diechlings +1",priority=162}, --9
         Feet="Eschite Greaves", --15
         -- Sub="Ajax +1", --11
-    } --115~128 
+    } --119~132 
      
     sets.midcast.Shell.HPBAL = set_combine(sets.midcast, sets.midcast.HPBAL)
     sets.midcast.Protect.HPBAL = set_combine(sets.midcast, sets.midcast.HPBAL)
@@ -432,7 +440,7 @@ function init_gear_sets()
     ------------------------------------------------------------------------------------------------
  
     sets.idle = {
-		Main="Sakpata's sword",
+		Main="Burtgang",
         Ammo="Homiliary",
         Head="Souveran Schaller +1",
         Neck="Loricate Torque +1",
@@ -442,14 +450,14 @@ function init_gear_sets()
         Hands="Souveran Handschuhs +1",
         Ring1="Defending Ring",
         Ring2="Moonlight Ring",
-        Back="Moonlight Cape",
+        Back=gear.PDTCape,
         Waist="Flume Belt",
         Legs="Carmine Cuisses +1",
         Feet="Souveran Schuhs +1",
     }
  
     sets.idle.DT = {
-		Main="Sakpata's sword",
+		Main="Burtgang",
         Ammo="Homiliary",
         Head="Souveran Schaller +1",
         Neck="Loricate Torque +1",
@@ -459,14 +467,14 @@ function init_gear_sets()
         Hands="Souveran Handschuhs +1",
         Ring1="Defending Ring",
         Ring2="Moonlight Ring",
-        Back="Moonlight Cape",
+        Back=gear.PDTCape,
         Waist="Flume Belt",
         Legs="Souveran diechlings +1",
         Feet="Souveran Schuhs +1",
 	}
 	
 	sets.idle.Pulling = {
-		Main={name="Sakpata's sword",priority=100},
+		Main={name="Burtgang",priority=1},
 		ammo="Eluder's Sachet",
 		head="Sakpata's Helm",
 		neck={name="Unmoving Collar +1",priority=200},
@@ -477,7 +485,7 @@ function init_gear_sets()
 		ring1="Warden's Ring",
 		ring2="Fortified Ring",
 		-- ring2="Gelatinous Ring +1",
-		back={name="Moonlight Cape",priority=275},
+		back=gear.PDTCape,
 		waist="Carrier's Sash",
 		legs="Sakpata's Cuisses",
 		feet="Sakpata's Leggings"
@@ -527,7 +535,7 @@ function init_gear_sets()
         ear1="Cessance Earring",
         ear2="Brutal Earring",
         Ring1="Lehko Habhoka's Ring",
-        Ring2="Hetairoi Ring",
+        Ring2="Chirich Ring +1",
         back={ name="Rudianos's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10',}}
 	}
 	
@@ -555,8 +563,20 @@ function init_gear_sets()
  
     -- No Magic Haste (??% DW to cap)
     sets.engaged.DW = {
- 
-        } -- ??% ??Acc
+		ammo="Staunch tathlum +1",
+        Head="Sakpata's Helm", --7
+        Body="Sakpata's Breastplate", --10
+        Hands="Sakpata's Gauntlets", --8
+        Legs="Sakpata's Cuisses", --9
+        Feet="Sakpata's Leggings", --6
+        neck="Ainia collar",
+        waist="Reiki Yotai",
+        ear1="Cessance Earring",
+        ear2="Brutal Earring",
+        Ring1="Lehko Habhoka's Ring",
+        Ring2="Hetairoi Ring",
+        back=gear.TPCape
+    } -- ??% ??Acc
  
     -- 15% Magic Haste (??% DW to cap)
     sets.engaged.DW.LowHaste = {
@@ -627,7 +647,7 @@ function init_gear_sets()
         ear2="Brutal Earring",
         Ring1="Petrov Ring",
         Ring2="Hetairoi Ring",      
-        back={ name="Rudianos's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10',}},
+        back=gear.TPCape
     } --40 
      
     sets.engaged.DT2 = {
@@ -637,7 +657,7 @@ function init_gear_sets()
         ear2="Brutal Earring",
         Ring1="Defending Ring", --10
         Ring2="Hetairoi Ring",
-        back={ name="Rudianos's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10',}},
+        back=gear.TPCape,
         Waist="Sailfi Belt +1", 
         Head="Sakpata's Helm", --7
         Body="Sakpata's Breastplate", --10
@@ -656,7 +676,7 @@ function init_gear_sets()
         Hands="Souveran Handschuhs +1", --4DT
         Ring1="Defending Ring", --10DT
         Ring2="Vocane Ring", --7DT Moonlight?
-        back={ name="Rudianos's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10',}},
+        back=gear.TPCape,
         Waist="Sarissaphoroi Belt",
         Legs="Souveran Diechlings +1", --4DT
         Feet="Souveran Schuhs +1", --5DT
@@ -757,7 +777,7 @@ function init_gear_sets()
     ---------------------------------------- Special Sets ------------------------------------------
     ------------------------------------------------------------------------------------------------
  
-    sets.buff.Doom = {ring1="Purity Ring",riing2="Eshmun's Ring",waist="Gishdubar sash"}
+    sets.buff.Doom = {ring1="Purity Ring",ring2="Eshmun's Ring",waist="Gishdubar sash"}
     sets.Warp = {ring1="Dim. Ring (Holla)",ring2="Warp Ring"}
     sets.CP = {back="Mecisto. Mantle"}
     sets.MP = {back="Rudianos's Mantle",Ear1="Ethereal Earring",Waist="Flume Belt",Ammo="Homiliary",}
@@ -767,7 +787,9 @@ function init_gear_sets()
 	sets.Duban = {sub="Duban"}
 	sets.Srivatsa = {sub="Srivatsa"}
 	sets.Ochain = {sub="Ochain"}
-	sets.Kiting = {legs="Carmine Cuisses", feet="Hippomenes socks +1"}
+	sets.Burtgang = {main="Burtgang"}
+	sets.Naegling = {main="Naegling"}
+	sets.Kiting = {legs="Carmine Cuisses +1", feet="Hippomenes socks +1"}
 end
  
 -------------------------------------------------------------------------------------------------------------------
@@ -876,13 +898,13 @@ function customize_idle_set(idleSet)
         enable('back')
     end
      
-    if state.Weapon.current == 'on' then
-        disable('Main')
-        disable('Sub')
-    else
-        enable('Main')
-        enable('Sub')
-    end 
+    -- if state.Weapon.current == 'on' then
+        -- disable('Main')
+        -- disable('Sub')
+    -- else
+        -- enable('Main')
+        -- enable('Sub')
+    -- end 
      
     if state.Neck.current == 'on' then
         equip(sets.Neck)    
@@ -892,16 +914,14 @@ function customize_idle_set(idleSet)
     end
 	
 	if state.ShieldMode.value == 'Aegis' then
-		equip(sets.Aegis)
-	end
-	
-	if state.ShieldMode.value == 'Duban' then
-		equip(sets.Duban)
-	end
-	
-	if state.ShieldMode.value == 'Srivatsa' then
-		equip(sets.Srivatsa)
-	end
+		equip(sets.Aegis)	
+	elseif state.ShieldMode.value == 'Duban' then
+		equip(sets.Duban)	
+	elseif state.ShieldMode.value == 'Srivatsa' then
+		equip(sets.Srivatsa)	
+	elseif state.ShieldMode.value == 'Ochain' then
+		equip(sets.Ochain)
+	end	
  
     return idleSet
 end
@@ -948,15 +968,20 @@ function customize_melee_set(meleeSet)
     end 
 	
 	if state.ShieldMode.value == 'Aegis' then
-		equip(sets.Aegis)
-	end
+		equip(sets.Aegis)	
+	elseif state.ShieldMode.value == 'Duban' then
+		equip(sets.Duban)	
+	elseif state.ShieldMode.value == 'Srivatsa' then
+		equip(sets.Srivatsa)	
+	elseif state.ShieldMode.value == 'Ochain' then
+		equip(sets.Ochain)
+	end	
 	
-	if state.ShieldMode.value == 'Duban' then
-		equip(sets.Duban)
-	end
 	
-	if state.ShieldMode.value == 'Srivatsa' then
-		equip(sets.Srivatsa)
+	if state.WeaponMode.value == 'Burtgang' then
+		equip(sets.Burtgang)
+	elseif state.WeaponMode.value == 'Naegling' then
+		equip(sets.Naegling)
 	end
  
     return meleeSet
@@ -1001,6 +1026,8 @@ function display_current_job_state(eventArgs)
 		msg = msg .. '[ Shield: Aegis ] '
 	elseif state.ShieldMode.value == 'Duban' then
 		msg = msg .. '[ Shield: Duban ] '
+	elseif state.ShieldMode.value == 'Ochain' then
+		msg = msg .. '[ Shield: Ochain ] '
 	else
 		msg = msg .. '[ Shield: Srivatsa ] '
 	end

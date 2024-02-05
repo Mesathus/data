@@ -157,7 +157,7 @@ function init_gear_sets()
 		body="Dread Jupon",hands="Leyline Gloves",ring1="Prolix Ring",											--7, 8, 2
 		back=gear.CapeFC,legs="Rawhide trousers",feet=gear.HercFeetFC}											--10, 5, 5
 		-- 59%   
-		--Rahab ring 2, herc feet 6, second adhemar jacket 10
+		--Rahab ring 2, herc feet 6, second adhemar jacket 10, Enchanters 2  66%
 
     sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads",body="Passion Jacket"})
 	
@@ -167,9 +167,10 @@ function init_gear_sets()
 	
 	
     -- Ranged snapshot gear
-    sets.precast.RA = {head="Volte tiara",hands="Mrigavyadha gloves",ring1="Crepuscular ring",
-	waist="Yemaya belt",legs="Adhemar kecks +1",feet="Meghanada jambeaux +2"}
-	-- Taeon head/body
+    sets.precast.RA = {
+		head="Volte tiara",hands="Mrigavyadha gloves",ring1="Crepuscular ring",				--3, 0|15, 3
+		waist="Yemaya belt",legs="Adhemar kecks +1",feet="Meghanada jambeaux +2"}			--0|5, 10|13, 10
+	-- 26%  Taeon head/body/hands, JSE cape
 
 
     -- Weaponskill sets
@@ -363,8 +364,8 @@ function init_gear_sets()
 		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}}}
 		
 	sets.midcast.Cure = {
-		neck="Phalaina locket",ear1="Mendicant's earring",														--4|4, 5
-		body=gear.BodyPhalanx, hands=gear.HandsPhalanx,	ring1="Menelaus's ring", ring2="Defending ring",		--5, 4, 5
+		neck="Phalaina locket", ear1="Mendicant's earring",														--4|4, 5
+		body=gear.BodyPhalanx, hands=gear.HandsPhalanx,	ring1="Menelaus's ring", ring2="Defending ring",		--5, 4, 5, 0
 		back="Solemnity cape", legs=gear.LegsPhalanx, feet=gear.FeetPhalanx}									--7, 5, 4
 		-- 39%
 		-- Naji's, Lebeche, Taeon head
@@ -475,16 +476,17 @@ function init_gear_sets()
         
     -- Mod set for trivial mobs (Skadi+1)
     sets.engaged.TA = {ammo="Yetshila +1",
-        head="Skulker's Bonnet +3",neck="Assassin's gorget +2",ear1="Odr Earring",ear2="Skulker's earring +1",									--6, 4, 0, 3
-        body="Adhemar jacket +1",hands="Adhemar Wristbands +1",ring1="Hetairoi Ring",ring2="Gere Ring",											--4, 4, 2, 5
+        head="Skulker's Bonnet +3",neck="Assassin's gorget +2",ear1="Odr Earring",ear2="Skulker's earring +1",									--6, 4, 0, 4
+        body="Adhemar jacket +1",hands="Adhemar Wristbands +1",ring1="Lehko Habhoka's ring",ring2="Gere Ring",									--4, 4, 0, 5
         back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10','Phys. dmg. taken-10%'}},			--0
 		waist="Chiner's Belt +1",legs="Pillager's culottes +3",feet="Plunderer's Poulaines +3"}													--2, 5, 5
-		-- 19% base + 40% gear    41% TA damage    22% crit rate    22% base + 11% gear crit damage
+		-- 19% base + 39% gear    41% TA damage    22% crit rate    22% base + 11% gear crit damage
 		
 	sets.engaged.Hybrid = {ammo="Yamarang",
-        head="Skulker's Bonnet +3",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Telos Earring",
-        body="Malignance tabard",hands="Malignance gloves",ring1="Hetairoi Ring",ring2="Gere Ring",
-        back=gear.CapeSTP,waist="Reiki Yotai",legs="Skulker's Culottes +3",feet="Malignance boots"}
+        head="Skulker's Bonnet +3",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Telos Earring",		--0, 0, 0, 0
+        body="Malignance tabard",hands="Malignance gloves",ring1="Hetairoi Ring",ring2="Gere Ring",				--9, 5, 0, 0
+        back=gear.CapeSTP,waist="Reiki Yotai",legs="Skulker's Culottes +3",feet="Malignance boots"}				--10, 0, 13, 4
+		-- 41% PDT
 		
 	sets.engaged.OldHybrid = {ammo="Yamarang",
         head="Malignance chapeau",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Telos Earring",
@@ -492,7 +494,7 @@ function init_gear_sets()
         back=gear.CapeSTP,waist="Reiki Yotai",legs="Malignance tights",feet="Malignance boots"}
 		
 	sets.engaged.HybridSB = {ammo="Expeditious pinion",  															--7
-        head="Malignance chapeau",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Skulker's earring +1",  	--0,0,0|5,5
+        head="Malignance chapeau",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Skulker's earring +1",  	--0,0,0|5,6
         body="Malignance tabard",hands="Malignance gloves",ring1="Chirich Ring +1",ring2="Chirich Ring +1",  	   	--0,0,10,10
         back=gear.CapeSTP,waist="Reiki Yotai",legs="Gleti's breeches",feet="Volte spats"}  							--0,0,10,6  Mummu feet would be 9 SB 5 crit, less Str/Dex more Acc
 		--48 SB1 + 5 SB2    38 PDT     R30 Gleti's legs +5 SB, can drop ammo and be at 49 w/ Mummu
@@ -598,6 +600,11 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     end
 	if spellMap == 'Cure' and spell.target.type == 'SELF' then
         equip(sets.midcast.CureSelf)
+	end
+	if spell.skill == 'Elemental Magic' then
+		if get_obi_bonus(spell) > 0 then
+			equip(sets.buff['Weather'])
+		end
 	end
 end
 

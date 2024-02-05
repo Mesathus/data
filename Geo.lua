@@ -141,10 +141,10 @@ function init_gear_sets()
  
     -- Base fast recast for spells
     sets.midcast.FastRecast = {main="Solstice",range="Dunna",													--5, 2
-        head="Amalric coif +1",neck="Voltsurge torque",ear1="Etiolation Earring",ear2="Malignance Earring",		--11,4,1,4
+        head="Amalric coif +1",neck="Voltsurge torque",ear1="Loquacious Earring",ear2="Malignance Earring",		--11,4,2,4
         body="Agwu's robe",hands="Volte gloves",ring1="Prolix Ring",ring2="Kishar ring",						--8,6,2,4
         back="Fi follet cape +1",waist="Embla sash",legs="Geomancy pants +1",feet="Amalric nails +1"}			--10,5,11,6
-		--79%
+		--80%
  
     sets.midcast.Geomancy = set_combine(sets.midcast.FastRecast, {main="Idris",range="Dunna",               --0, 18
 		head="Azimuth hood +2",neck="Incanter's torque",													--20, 20, 0, 0

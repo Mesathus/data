@@ -57,29 +57,32 @@ end
 
 
 function init_gear_sets()
-    sets.enmity = {ammo="Aqreqaq Bomblet", hands="Futhark Gloves +1", back="Mubvumbamiri mantle", waist="Warwolf Belt"}
+    sets.enmity = {ammo="Sapience orb", 
+		head="Halitus helm", neck="Moonlight necklace", Ear1="Cryptic Earring", Ear2={name="Odnowa Earring +1",priority=110}, 
+		body="Emet harness +1", hands="Futhark Gloves +1", 
+		back=gear.CapeTank, waist="Warwolf Belt", legs="Erilaz legguards", feet="Erilaz greaves"}
 
 	--------------------------------------
 	-- Precast sets
 	--------------------------------------
 
 	-- Precast sets to enhance JAs
-    sets.precast.JA['Vallation'] = {body="Runeist coat +1", legs="Futhark trousers +1"}
+    sets.precast.JA['Vallation'] = set_combine(sets.enmity, {body="Runeist coat +1", legs="Futhark trousers +1"})
     sets.precast.JA['Valiance'] = sets.precast.JA['Vallation']
-    sets.precast.JA['Pflug'] = {feet="Runeist bottes +1"}
-    sets.precast.JA['Battuta'] = {head="Futhark Bandeau +1"}
-    sets.precast.JA['Liement'] = {body="Futhark Coat +1"}
+    sets.precast.JA['Pflug'] = set_combine(sets.enmity, {feet="Runeist bottes +1"})
+    sets.precast.JA['Battuta'] = set_combine(sets.enmity, {head="Futhark Bandeau +1"})
+    sets.precast.JA['Liement'] = set_combine(sets.enmity, {body="Futhark Coat +1"})
     sets.precast.JA['Lunge'] = {head="Nyame helm", neck="Sibyl scarf", ear1="Crematio Earring", ear2="Friomisi Earring",
             body="Agwu's robe", hands="Agwu's gages",ring1="Defending Ring", ring2="Metamorph Ring +1",
             back="Evasionist's Cape", waist="Orpheus's sash", legs="Agwu's slops", feet="Nyame sollerets"}
     sets.precast.JA['Swipe'] = sets.precast.JA['Lunge']
-    sets.precast.JA['Gambit'] = {hands="Runeist Mitons +1"}
-    sets.precast.JA['Rayke'] = {feet="Futhark Bottes +1"}
-    sets.precast.JA['Elemental Sforzo'] = {body="Futhark Coat 1"}
-    sets.precast.JA['Swordplay'] = {hands="Futhark Mitons +1"}
-    sets.precast.JA['Embolden'] = {}
-    sets.precast.JA['Vivacious Pulse'] = {}
-    sets.precast.JA['One For All'] = {}
+    sets.precast.JA['Gambit'] = set_combine(sets.enmity, {hands="Runeist Mitons +1"})
+    sets.precast.JA['Rayke'] = set_combine(sets.enmity, {feet="Futhark Bottes +1"})
+    sets.precast.JA['Elemental Sforzo'] = set_combine(sets.enmity, {body="Futhark Coat 1"})
+    sets.precast.JA['Swordplay'] = set_combine(sets.enmity, {hands="Futhark Mitons +1"})
+    sets.precast.JA['Embolden'] = set_combine(sets.enmity, {})
+    sets.precast.JA['Vivacious Pulse'] = set_combine(sets.enmity, {})
+    sets.precast.JA['One For All'] = set_combine(sets.enmity, {})
     sets.precast.JA['Provoke'] = sets.enmity
 
 
@@ -115,6 +118,12 @@ function init_gear_sets()
 	-- Midcast sets
 	--------------------------------------
 	
+	sets.midcast.SIRD = {ammo="Staunch tathlum +1",						--11
+		head="Erilza galea +2",neck="Moonlight necklace",				--15, 15
+		ring1="Evanescence ring", 										--5
+		legs="Carmine cuisses +1"										--20
+	}
+	-- 66/102  rawhide gloves 15, cape 10, agwu feet 10, halasz earring 5, audumbla/rumination 10, erilaz hat +3 20
     sets.midcast.FastRecast = {}
     sets.midcast['Enhancing Magic'] = {neck="Incanter's Torque", left_ear="Mimir Earring",right_ear="Andoaa Earring",
 		hands="Runeist mitons +1", waist="Olympus Sash", legs="Futhark Trousers +1"}
@@ -126,7 +135,9 @@ function init_gear_sets()
 			hands={ name="Taeon Gloves", augments={'Phalanx +3',}},left_ring="Stikini Ring +1",right_ring="Stikini Ring +1",
 			back="Merciful Cape",
 			legs={ name="Taeon Tights", augments={'Accuracy+20 Attack+20','"Triple Atk."+2','Phalanx +3',}},
-			feet={ name="Taeon Boots", augments={'Phalanx +3',}}})
+			feet={ name="Taeon Boots", augments={'Phalanx +3',}}
+		}
+	)
 		
     sets.midcast['Regen'] = {}
     sets.midcast['Stoneskin'] = {waist="Siegel Sash"}
@@ -150,7 +161,7 @@ function init_gear_sets()
            
 	sets.defense.PDT = {ammo="Iron Gobbet",
         head="Iuitl Headgear +1",neck="Twilight Torque",
-        body="Emet Harness",hands="Umuthi gloves",ring1="Defending Ring",ring2="Patricius Ring",
+        body="Emet Harness +1",hands="Umuthi gloves",ring1="Defending Ring",ring2="Patricius Ring",
         back="Evasionist's Cape",waist="Flume Belt",legs="Taeon tights",feet="Qaaxo leggings"}
 
 	sets.defense.MDT = {ammo="Demonry Stone",
