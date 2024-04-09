@@ -308,7 +308,7 @@ function init_gear_sets()
         Legs="Founder's Hose", --30SIRD
         Feet="Odyssean Greaves", --20SIRD
         back=gear.PDTCape, --0SIRD
-    } --111SIRD   --56 enm  +20body  +4 cryptic +5 waist
+    } --111 SIRD   --56 enm  +20body  +4 cryptic +5 waist
  
 	
 	
@@ -515,6 +515,23 @@ function init_gear_sets()
         Legs="Carmine Cuisses +1",
         Feet="Souveran Schuhs +1",
     }
+	
+	sets.idle.Knockback = {
+		sub="Aegis",
+		ammo="Staunch Tathlum +1",
+		head={ name="Nyame Helm", augments={'Path: A',}},
+		body="Adamantite Armor",
+		hands={ name="Nyame Gauntlets", augments={'Path: A',}},
+		legs="Dashing Subligar",
+		feet={ name="Nyame Sollerets", augments={'Path: A',}},
+		neck="Moonlight Necklace",
+		waist="Carrier's Sash",
+		left_ear="Eabani Earring",
+		right_ear={ name="Chev. Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+15','Mag. Acc.+15','Damage taken-5%',}},
+		left_ring="Defending Ring",
+		right_ring="Shadow Ring",
+		back="Philidor Mantle",
+	}
  
     ------------------------------------------------------------------------------------------------
     ---------------------------------------- Engaged Sets ------------------------------------------
@@ -1119,6 +1136,8 @@ function select_default_macro_book()
         set_macro_page(9, 8)
     elseif player.sub_job == 'NIN' then
         set_macro_page(10, 8)
+	elseif player.sub_job == 'SCH' then
+        set_macro_page(10, 8)		
     else
         set_macro_page(1, 8)
     end

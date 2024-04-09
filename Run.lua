@@ -119,7 +119,7 @@ function init_gear_sets()
 	--------------------------------------
 	
 	sets.midcast.SIRD = {ammo="Staunch tathlum +1",						--11
-		head="Erilza galea +2",neck="Moonlight necklace",				--15, 15
+		head="Erilaz galea +2",neck="Moonlight necklace",				--15, 15
 		ring1="Evanescence ring", 										--5
 		legs="Carmine cuisses +1"										--20
 	}
@@ -127,6 +127,8 @@ function init_gear_sets()
     sets.midcast.FastRecast = {}
     sets.midcast['Enhancing Magic'] = {neck="Incanter's Torque", left_ear="Mimir Earring",right_ear="Andoaa Earring",
 		hands="Runeist mitons +1", waist="Olympus Sash", legs="Futhark Trousers +1"}
+	
+	sets.midcast.EnhancingDuration = {}
 	
     sets.midcast['Phalanx'] = set_combine(sets.midcast['Enhancing Magic'], 
 		{
@@ -138,6 +140,7 @@ function init_gear_sets()
 			feet={ name="Taeon Boots", augments={'Phalanx +3',}}
 		}
 	)
+	--424 base, 36 master, 16 merits 476, 24 to cap
 		
     sets.midcast['Regen'] = {}
     sets.midcast['Stoneskin'] = {waist="Siegel Sash"}

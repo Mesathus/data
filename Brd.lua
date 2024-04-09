@@ -176,7 +176,7 @@ function init_gear_sets()
 	
 	sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
 					neck="Sanctity necklace", ear1="Regal Earring",
-					body="Nyame mail", ring1="Shiva Ring +1",
+					body="Nyame mail", ring1="Metamorph Ring +1",
 					back="Seshaw cape",waist="Orpheus's sash"
 					})
     
@@ -418,6 +418,11 @@ function init_gear_sets()
 		back=gear.BrdSTPCape, waist="Sailfi Belt +1", legs="Nyame Flanchard", feet="Nyame Sollerets"}
 		
 	sets.engaged.DW.Rudra = {main="Twashtar", sub="Centovente", range="Linos",
+		head="Aya. Zucchetto +2", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Suppanomimi",
+		body="Ayanmo corazza +2", hands="Bunzi's gloves", left_ring="Lehko's Ring", right_ring="Moonlight Ring",
+		back=gear.BrdSTPCape, waist="Reiki yotai", legs="Nyame Flanchard", feet="Nyame Sollerets"}
+		
+	sets.engaged.DW.RudraAcc = {main="Twashtar", sub="Gleti's knife", range="Linos",
 		head="Aya. Zucchetto +2", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Suppanomimi",
 		body="Ayanmo corazza +2", hands="Bunzi's gloves", left_ring="Lehko's Ring", right_ring="Moonlight Ring",
 		back=gear.BrdSTPCape, waist="Reiki yotai", legs="Nyame Flanchard", feet="Nyame Sollerets"}

@@ -385,6 +385,10 @@ function init_gear_sets()
 		head = "Pixie hairpin +1", body="Amalric doublet +1", ring1="Archon Ring"
 	})
     
+	sets.midcast['Blue Magic'].MagicalDark.Burst = set_combine(sets.midcast['Blue Magic'].Magical.Burst, {
+		head = "Pixie hairpin +1", body="Amalric doublet +1", ring1="Archon Ring"
+	})
+	
 	sets.midcast['Subduction'] = set_combine(sets.midcast['Blue Magic'].Magical, sets.TreasureHunter)
 	--sets.midcast['Palling Salvo'] = set_combine(sets.midcast['Blue Magic'].Magical.Burst, {head = "Pixie hairpin +1"})
 	
@@ -588,6 +592,11 @@ function job_post_precast(spell, action, spellMap, eventArgs)
 			end
         end
     end
+	if buffactive['Burst Affinity'] then
+			state.CastingMode:set('Burst')
+		else	
+			state.CastingMode:set('Normal')
+	end
 end
 
 -- Run after the default midcast() is done.
@@ -603,9 +612,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
         if spellMap == 'Healing' and spell.target.type == 'SELF' and sets.self_healing then
             equip(sets.self_healing)
         end
-		if buffactive['Burst Affinity'] then
-			equip(sets.midcast['Blue Magic'].Magical.Burst)
-		end
+		
 		if get_obi_bonus(spell) > 0 then
 			equip(sets.buff['Weather'])
 		end
@@ -684,6 +691,8 @@ function select_default_macro_book()
         set_macro_page(2, 4)
     elseif player.sub_job == 'NIN' then
         set_macro_page(4, 4)
+	elseif player.sub_job == 'BLM' then
+        set_macro_page(6, 4)	
 	else
         set_macro_page(1, 4)
     end

@@ -124,9 +124,9 @@ function init_gear_sets()
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
 	
 	sets.precast.WS['Trueflight'] = {
-		head= "Nyame helm",neck= "Scout's gorget +2", left_ear="Friomisi Earring", right_ear="Moonshade Earring" ,
+		head= "Nyame helm", neck= "Scout's gorget +2", left_ear="Friomisi Earring", right_ear="Moonshade Earring" ,
 		body= "Nyame mail", hands= "Nyame gauntlets", left_ring="Epaminondas's Ring", right_ring="Dingir Ring",
-		back=gear.AgiWSDCape,waist="Orpheus's sash", legs="Nyame Flanchard", feet="Nyame Sollerets"
+		back=gear.AgiWSDCape, waist="Orpheus's sash", legs="Nyame Flanchard", feet="Nyame Sollerets"
     }
 
 	sets.precast.WS['Wildfire'] = set_combine(sets.precast.WS['Trueflight'], {ear2="Crematio earring"})
@@ -227,7 +227,7 @@ function init_gear_sets()
 		body="Orion Jerkin +3",hands="Orion Bracers +3",ring1="Defending Ring",ring2="Fortified Ring",
 		back="Moonlight Cape",waist="Flume Belt",legs="Nahtirah Trousers",feet="Orion Socks 21"}
 
-	sets.Kiting = {feet="Fajin Boots"}
+	sets.Kiting = {legs="Carmine cuisses +1",feet="Hippomenes socks +1"}
 
 
 	--------------------------------------

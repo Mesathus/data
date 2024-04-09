@@ -134,11 +134,12 @@ function init_gear_sets()
     sets.precast.JA['Sneak Attack'] = sets.buff['Sneak Attack']
     sets.precast.JA['Trick Attack'] = sets.buff['Trick Attack']
 
-	sets.Enmity = {ammo="Sapience orb",
-	head="Halitus helm", neck="Unmoving collar +1", ear1="Trux earring", ear2="Cryptic earring",
-	body="Emet Harness +1", hands="Kurys gloves", ring2="Begrudging Ring",
-	waist="Goading belt", legs="Obatala subligar", feet="Ahosi leggings"
-	}
+	sets.Enmity = {ammo="Sapience orb",																--2
+	head="Halitus helm", neck="Unmoving collar +1", ear1="Trux earring", ear2="Cryptic earring",	--8, 10, 5, 4
+	body="Plunderer's vest +3", hands="Kurys gloves", ring2="Begrudging Ring",						--30, 9, 5
+	waist="Goading belt", legs="Obatala subligar", feet="Ahosi leggings"							--3, 5, 7
+	} --88 enmity
+	
 
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {ammo="Yamarang",																					--5
@@ -360,7 +361,7 @@ function init_gear_sets()
 		left_ear="Friomisi Earring",
 		right_ear="Crematio earring",
 		left_ring="Dingir Ring",
-		ring2="Shiva Ring +1",
+		ring2="Metamorph Ring +1",
 		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}}}
 		
 	sets.midcast.Cure = {
@@ -499,7 +500,13 @@ function init_gear_sets()
         back=gear.CapeSTP,waist="Reiki Yotai",legs="Gleti's breeches",feet="Volte spats"}  							--0,0,10,6  Mummu feet would be 9 SB 5 crit, less Str/Dex more Acc
 		--48 SB1 + 5 SB2    38 PDT     R30 Gleti's legs +5 SB, can drop ammo and be at 49 w/ Mummu
 		
-	sets.engaged.HybridCrit = set_combine(sets.engaged.Hybrid, {ring1="Lehko Habhoka's ring", back=gear.CapeCrit})		
+	sets.engaged.HybridCrit = set_combine(sets.engaged.Hybrid, {ring1="Lehko Habhoka's ring", back=gear.CapeCrit})
+	
+	sets.engaged.HybridAM = {ammo="Yetshila +1",																	--2
+		head="Skulker's Bonnet +3",neck="Assassin's gorget +2",ear1="Odr Earring",ear2="Skulker's earring +1",  	--0|6, 0|4, 5, 0|4
+        body="Gleti's cuirass",hands="Gleti's gauntlets",ring1="Lehko Habhoka's ring",ring2="Gere Ring",  	   		--8, 6, 10, 0|5
+        back=gear.CapeCrit,waist="Reiki Yotai",legs="Skulker's Culottes +3",feet="Gleti's boots" 					--10, 0, 7, 4
+	} -- 44% PDT    52% crit rate   19% + 19% TA    31% PDL
 		
 		
 	sets.engaged.DT = {ammo="Yamarang",
