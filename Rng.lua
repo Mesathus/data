@@ -63,7 +63,8 @@ function init_gear_sets()
 	--------------------------------------
 	-- Precast sets
 	--------------------------------------
-
+	include('Sef-Gear.lua')
+	
 	-- Precast sets to enhance JAs
 	sets.precast.JA['Bounty Shot'] = {hands="Amini Glovelettes +3",waist="Chaac Belt"}
 	sets.precast.JA['Camouflage'] = {body="Orion Jerkin +3"}

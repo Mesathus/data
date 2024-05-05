@@ -94,7 +94,7 @@ function init_gear_sets()
     --------------------------------------
     -- Start defining the sets
     --------------------------------------
-    
+    include('Sef-Gear.lua')
     -- Precast Sets
 	sets.TreasureHunter = {head="White rarab cap +1",waist="Chaac belt"}
 	sets.precast.Step = sets.TreasureHunter
@@ -303,6 +303,12 @@ function init_gear_sets()
         head="Brioso Roundlet +3",neck="Moonbow whistle +1",ear1="Regal Earring",ear2="Dignitary's Earring",
         body="Brioso justaucorps +3",hands="Brioso cuffs +3",ring1="Stikini Ring +1",ring2="Kishar Ring",
         back=gear.MAccCape,waist="Rumination sash",legs="Inyanga Shalwar +2",feet="Brioso Slippers +3"}
+		
+	sets.midcast['Dark Magic'] = {range=gear.linos_macc,
+		head="Bunzi's Hat",neck="Mnbw. Whistle +1",ear1="Enchntr. Earring +1",ear2="Fili Earring +1",
+		body="Zendik Robe",hands="Fili Manchettes +3",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
+		back=gear.intarabus_macc,waist="Obstin. Sash",legs="Volte Tights",feet="Fili Cothurnes +3"}
+		-- Ayanmo legs
 
     
     -- Sets to return to when not performing an action.

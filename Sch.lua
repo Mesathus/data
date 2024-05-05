@@ -47,7 +47,7 @@ end
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
     state.OffenseMode:options('None', 'Normal')
-    state.CastingMode:options('Resistant','Burst')
+    state.CastingMode:options('Resistant','Burst', 'Skillchain')
     state.IdleMode:options('Normal', 'PDT','Vagary', 'Myrkr')
 
 
@@ -57,7 +57,8 @@ function user_setup()
                        "Stone IV", "Water IV", "Aero IV", "Fire IV", "Blizzard IV", "Thunder IV",}
     info.high_nukes = S{"Stone V", "Water V", "Aero V", "Fire V", "Blizzard V", "Thunder V"}
 	info.helix = S{"Geohelix", "Hydrohelix", "Anemohelix", "Pyrohelix", "Cryohelix", "Ionohelix", "Noctohelix", "Luminohelix",
-					"Geohelix II", "Hydrohelix II", "Anemohelix II", "Pyrohelix II", "Cryohelix II", "Ionohelix II", "Noctohelix II", "Luminohelix II"}
+					--"Geohelix II", "Hydrohelix II", "Anemohelix II", "Pyrohelix II", "Cryohelix II", "Ionohelix II", "Noctohelix II", "Luminohelix II"
+					}
 	info.helix2 = S{"Geohelix II", "Hydrohelix II", "Anemohelix II", "Pyrohelix II", "Cryohelix II", "Ionohelix II", "Noctohelix II", "Luminohelix II"}
 					
 
@@ -84,7 +85,7 @@ function init_gear_sets()
     --------------------------------------
     -- Start defining the sets
     --------------------------------------
-
+	include('Sef-Gear.lua')
     -- Precast Sets
 
     -- Precast sets to enhance JAs
@@ -97,21 +98,21 @@ function init_gear_sets()
 
     sets.precast.FC = {main="Musa",sub="Khonsu",ammo="Sapience orb",											--5,0,2
         head="Amalric coif +1",neck="Voltsurge torque",ear1="Etiolation Earring",ear2="Malignance Earring",		--11,4,1,4
-        body="Pinga tunic +1",hands="Academic's bracers +2",ring1="Defending Ring",ring2="Kishar Ring",			--15,7,0,4
+        body="Pinga tunic +1",hands="Academic's bracers +3",ring1="Defending Ring",ring2="Kishar Ring",			--15,9,0,4
         back="Fi Follet Cape +1",waist="Embla sash",legs="Pinga pants +1",feet="Pedagogy loafers +3"}			--10,5,13,8
-		-- 89%   
+		-- 91%   
 		
 	sets.precast.FC.Grimoire = {main="Musa",sub="Khonsu",ammo="Sapience orb",											--5,0,2
         head="Pedagogy Mortarboard +3",neck="Voltsurge torque",ear1="Etiolation Earring",ear2="Malignance Earring",		--0,4,1,4
-        body="Pinga tunic +1",hands="Academic's bracers +2",ring1="Defending Ring",ring2="Kishar Ring",					--15,7,0,4
+        body="Pinga tunic +1",hands="Academic's bracers +3",ring1="Defending Ring",ring2="Kishar Ring",					--15,9,0,4
         back="Fi Follet Cape +1",waist="Embla sash",legs="Pinga pants +1",feet="Academic's loafers +2"}					--10,5,13,0
-		-- 70%   AF hands +3 2%
+		-- 72%   
 		
 	sets.precast.FC.OffArts = {main="Musa",sub="Khonsu",ammo="Sapience orb",									--5,0,2
         head="Amalric coif +1",neck="Voltsurge torque",ear1="Etiolation Earring",ear2="Malignance Earring",		--11,4,1,4
-        body="Pinga tunic +1",hands="Academic's bracers +2",ring1="Prolix Ring",ring2="Kishar Ring",			--15,7,2,4
+        body="Pinga tunic +1",hands="Academic's bracers +3",ring1="Prolix Ring",ring2="Kishar Ring",			--15,9,2,4
         back="Fi Follet Cape +1",waist="Embla sash",legs="Pinga pants +1",feet="Pedagogy loafers +3"}			--10,5,13,8
-		-- 91%   
+		-- 93%   
 
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash"})
 
@@ -131,7 +132,7 @@ function init_gear_sets()
 
     sets.midcast.FastRecast = {main="Musa",sub="Khonsu",ammo="Sapience orb",
         head="Amalric coif +1",neck="Voltsurge torque",ear1="Etiolation Earring",ear2="Malignance Earring",
-        body="Pinga tunic +1",hands="Academic's bracers +2",ring1="Prolix Ring",ring2="Kishar Ring",
+        body="Pinga tunic +1",hands="Academic's bracers +3",ring1="Prolix Ring",ring2="Kishar Ring",
         back="Fi Follet Cape +1",waist="Goading Belt",legs="Agwu's slops",feet="Pedagogy loafers +3"}
 
     sets.midcast.Cure = {main="Grioavolr",sub="Enki strap",
@@ -153,7 +154,7 @@ function init_gear_sets()
 		body = "Pedagogy gown +3", hands = "Telchine gloves", ring1="Kishar ring", ring2="Stikini ring +1",
 		back = "Fi Follet Cape +1", waist = "Embla sash", legs = "Telchine Braconi",feet = "Telchine pigaches" }
 		
-	sets.midcast.Regen = set_combine(sets.midcast['Enhancing Magic'], {main="Musa",head="Arbatel Bonnet +3", body="Telchine chasuble",back="Lugh's cape"})
+	sets.midcast.Regen = set_combine(sets.midcast['Enhancing Magic'], {main="Musa",sub="Khonsu",head="Arbatel Bonnet +3", body="Telchine chasuble",back="Lugh's cape"})
 	
 	sets.midcast.Refresh = set_combine(sets.midcast['Enhancing Magic'], {head="Amalric coif +1"})
 	
@@ -181,12 +182,12 @@ function init_gear_sets()
     -- Custom spell classes
     sets.midcast.MndEnfeebles = {main="Daybreak",sub="Ammurapi Shield",ammo="Pemphredo tathlum",
         neck="Argute Stole +2",ear1="Regal Earring",ear2="Malignance Earring",
-        body="Cohort cloak +1",hands="Academic's Bracers +2",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
+        body="Cohort cloak +1",hands="Academic's bracers +3",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
         back="Lugh's cape",waist="Rumination Sash",legs="Arbatel pants +3",feet="Academic's loafers +2"}
 
     sets.midcast.IntEnfeebles = {main="Daybreak",sub="Ammurapi Shield",ammo="Pemphredo tathlum",
-        head="Academic's mortarboard +2",neck="Argute Stole +2",ear1="Regal Earring",ear2="Malignance Earring",
-        body="Academic's gown +2",hands="Academic's Bracers +2",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
+        head="Academic's mortarboard +3",neck="Argute Stole +2",ear1="Regal Earring",ear2="Malignance Earring",
+        body="Academic's gown +2",hands="Academic's bracers +3",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
         back="Lugh's cape",waist="Rumination Sash",legs="Arbatel pants +3",feet="Academic's loafers +2"}
 
     sets.midcast.ElementalEnfeeble = sets.midcast.IntEnfeebles
@@ -210,7 +211,7 @@ function init_gear_sets()
 
     sets.midcast.Stun = {main="Bunzi's rod",sub="Ammurapi Shield",ammo="Pemphredo tathlum",
         head="Arbatel bonnet +3",neck="Argute Stole +2",ear1="Regal Earring",ear2="Malignance Earring",
-        body="Academic's gown +2",hands="Academic's Bracers +2",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
+        body="Academic's gown +2",hands="Academic's bracers +3",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
         back="Lugh's cape",waist="Luminary Sash",legs="Academic's pants +2",feet="Academic's loafers +2"}
 
     sets.midcast.Stun.Resistant = set_combine(sets.midcast.Stun, {})
@@ -227,10 +228,11 @@ function init_gear_sets()
         body="Arbatel gown +3",hands="Agwu's gages",ring1="Freke Ring",ring2="Metamorph Ring +1",
         back="Lugh's cape",waist="Orpheus's sash",legs="Agwu's slops",feet="Arbatel loafers +3"}
 				
-	sets.midcast['Elemental Magic'].Burst = {main="Bunzi's rod",sub="Ammurapi Shield",ammo="Ghastly tathlum +1",
-        head="Pedagogy mortarboard +3",neck="Argute stole +2",ear1="Regal Earring",ear2="Malignance Earring",
-        body="Agwu's robe",hands="Agwu's gages",ring1="Freke Ring",ring2="Metamorph ring +1",
-        back="Lugh's cape",waist="Orpheus's sash",legs="Agwu's slops",feet="Arbatel loafers +3"}
+	sets.midcast['Elemental Magic'].Burst = {main="Bunzi's rod",sub="Ammurapi Shield",ammo="Ghastly tathlum +1",		--10
+        head="Pedagogy mortarboard +3",neck="Argute stole +2",ear1="Regal Earring",ear2="Malignance Earring",			--0|4, 10, 0, 0
+        body="Agwu's robe",hands="Agwu's gages",ring1="Freke Ring",ring2="Metamorph ring +1",							--10, 8|3, 0, 0
+        back="Lugh's cape",waist="Orpheus's sash",legs="Agwu's slops",feet="Arbatel loafers +3"}						--0, 0, 9, 0|5
+		-- 47 MBB  12 MBB2
 		
 	sets.midcast['Elemental Magic'].Helix = {main="Bunzi's rod",sub="Culminus",ammo="Ghastly tathlum +1",
         head="Arbatel bonnet +3",neck="Argute stole +2",ear1="Regal Earring",ear2="Malignance Earring",
@@ -242,25 +244,35 @@ function init_gear_sets()
         body="Agwu's robe",hands="Agwu's gages",ring1="Freke Ring",ring2="Metamorph Ring +1",
         back="Lugh's cape",waist="Orpheus's sash",legs="Agwu's slops",feet="Arbatel loafers +3"}
 		
+	sets.midcast['Elemental Magic'].Helix2 = {main="Bunzi's rod",sub="Culminus",ammo="Ghastly tathlum +1",
+        head="Arbatel bonnet +3",neck="Argute stole +2",ear1="Regal Earring",ear2="Malignance Earring",
+        body="Agwu's robe",hands="Agwu's gages",ring1="Freke Ring",ring2="Metamorph Ring +1",
+        back="Lugh's cape",waist="Orpheus's sash",legs="Agwu's slops",feet="Arbatel loafers +3"}
+		
+	sets.midcast['Elemental Magic'].Helix2.Burst = {main="Bunzi's rod",sub="Culminus",ammo="Ghastly tathlum +1",
+        head="Pedagogy mortarboard +3",neck="Argute stole +2",ear1="Malignance Earring",ear2="Regal Earring",
+        body="Agwu's robe",hands="Agwu's gages",ring1="Freke Ring",ring2="Metamorph Ring +1",
+        back="Lugh's cape",waist="Orpheus's sash",legs="Agwu's slops",feet="Arbatel loafers +3"}
+		
 	sets.midcast['Elemental Magic'].Vagary = {neck="Argute stole +2",ear1="Malignance Earring",
 		body="Agwu's robe",ring1="Stikini Ring +1",ring2="Mujin band",
 		back="Lugh's cape",feet="Herald's gaiters"}
 		
 	sets.midcast['Luminohelix'] = set_combine(sets.midcast['Elemental Magic'].Helix, {main="Daybreak",sub="Culminus"})
 	
-	sets.midcast['Luminohelix II'] = set_combine(sets.midcast['Luminohelix'], {})
+	sets.midcast['Luminohelix II'] = set_combine(sets.midcast['Elemental Magic'].Helix2, {main="Daybreak",sub="Culminus"})
 
 	sets.midcast['Luminohelix'].Burst = set_combine(sets.midcast['Elemental Magic'].Helix.Burst, {main="Daybreak",sub="Culminus"})
 	
-	sets.midcast['Luminohelix II'].Burst = set_combine(sets.midcast['Luminohelix'].Burst, {})
+	sets.midcast['Luminohelix II'].Burst = set_combine(sets.midcast['Elemental Magic'].Helix2.Burst, {main="Daybreak",sub="Culminus"})
 	
 	sets.midcast['Noctohelix'] = set_combine(sets.midcast['Elemental Magic'].Helix, {head="Pixie hairpin +1",ring2="Archon Ring"})
 	
-	sets.midcast['Noctohelix II'] = set_combine(sets.midcast['Noctohelix'], {})
+	sets.midcast['Noctohelix II'] = set_combine(sets.midcast['Elemental Magic'].Helix2, {head="Pixie hairpin +1",ring2="Archon Ring"})
 
 	sets.midcast['Noctohelix'].Burst = set_combine(sets.midcast['Elemental Magic'].Helix.Burst, {head="Pixie hairpin +1",ring2="Archon Ring"})
 	
-	sets.midcast['Noctohelix II'].Burst = set_combine(sets.midcast['Noctohelix'].Burst, {})
+	sets.midcast['Noctohelix II'].Burst = set_combine(sets.midcast['Elemental Magic'].Helix2.Burst, {head="Pixie hairpin +1",ring2="Archon Ring"})
 
     -- Custom refinements for certain nuke tiers
     sets.midcast['Elemental Magic'].HighTierNuke = set_combine(sets.midcast['Elemental Magic'], {})
@@ -310,6 +322,11 @@ function init_gear_sets()
         body="Arbatel gown +3",hands="Nyame gauntlets",ring1="Sheltered Ring",ring2="Defending Ring",	--13, 7, 0, 10
         back="Moonlight cape",waist="Carrier's sash",legs="Nyame flanchard",feet="Nyame sollerets"}		--6, 0, 8, 7
 		--64% PDT
+		
+	sets.idle.AA = {main=empty, sub="Genmei shield", ammo="Sroda tathlum",
+		head=empty, neck="Loricate Torque +1", ear1="Etiolation Earring", ear2="Odnowa Earring +1",
+		body="Tanner's smock", hands="Hieros Mittens", ring1="Gelatinous Ring +1", ring2="Defending Ring",
+		back="Moonlight Cape", waist="Gishdubar sash", legs="Shedir seraweels", feet="Herald's gaiters"}
 
     -- sets.idle.Field.Stun = {main="Apamajas II",sub="Mephitis Grip",ammo="Incantor Stone",
         -- head="Nahtirah Hat",neck="Aesir Torque",ear1="Psystorm Earring",ear2="Lifestorm Earring",
@@ -396,8 +413,8 @@ function init_gear_sets()
     sets.buff['Klimaform'] = {feet="Arbatel loafers +3"}
 	sets.buff['Weather'] = {waist="Hachirin-no-obi"}
 
-    sets.buff.FullSublimation = {head="Academic's Mortarboard +2",body="Pedagogy gown +3",ear1="Savant's Earring",waist="Embla Sash"}
-    sets.buff.PDTSublimation = {head="Academic's Mortarboard +2",ear1="Savant's Earring"}
+    sets.buff.FullSublimation = {head="Academic's mortarboard +3",body="Pedagogy gown +3",ear1="Savant's Earring",waist="Embla Sash"}
+    sets.buff.PDTSublimation = {head="Academic's mortarboard +3",ear1="Savant's Earring"}
 
     --sets.buff['Sandstorm'] = {feet="Desert Boots"}
 end
@@ -504,6 +521,8 @@ function job_get_spell_map(spell, default_spell_map)
                 return 'HighTierNuke'
 			elseif info.helix:contains(spell.english) then
 				return 'Helix'
+			elseif info.helix2:contains(spell.english) then
+				return 'Helix2'
             end
         end
     end
@@ -599,7 +618,7 @@ function apply_grimoire_bonuses(spell, action, spellMap)
         if state.Buff.Klimaform and spell.element == world.weather_element then
             equip(sets.buff['Klimaform'])
         end
-		if get_obi_bonus(spell) > 0 and not info.helix:contains(spell.english) then
+		if get_obi_bonus(spell) > 0 and not (info.helix:contains(spell.english) or info.helix2:contains(spell.english))then
 			equip(sets.buff['Weather'])
 		end
     end

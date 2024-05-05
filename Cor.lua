@@ -37,7 +37,7 @@ end
 
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
-    state.OffenseMode:options('Ranged', 'Normal', 'Acc', 'Hybrid')
+    state.OffenseMode:options('Ranged', 'Normal', 'Acc', 'Hybrid','SB')
     state.RangedMode:options('Normal', 'Acc')
     state.WeaponskillMode:options('Normal', 'Acc', 'Att', 'Mod')
     state.CastingMode:options('Normal', 'Resistant')
@@ -81,7 +81,8 @@ function init_gear_sets()
     -- Precast Sets
 
     -- Precast sets to enhance JAs
-    
+    include('Sef-Gear.lua')
+
     sets.precast.JA['Triple Shot'] = {body="Chasseur's Frac +2"}
     sets.precast.JA['Snake Eye'] = {legs="Lanun Trews"}
     sets.precast.JA['Wild Card'] = {feet="Lanun Bottes +3"}
@@ -102,14 +103,14 @@ function init_gear_sets()
     sets.precast.LuzafRing = {ring2="Luzaf's Ring"}
     sets.precast.FoldDoubleBust = {hands="Lanun Gants +3"}
     
-    sets.precast.CorsairShot = {head="Blood Mask"}
+    sets.precast.CorsairShot = {}
     
 
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {
-        head="Whirlpool Mask",
-        body="Iuitl Vest",hands="Iuitl Wristbands",
-        legs="Nahtirah Trousers",feet="Iuitl Gaiters +1"}
+        head="Mummu Bonnet +2",neck="Unmoving collar +1",ear1="Tuisto earring",ear2="Odnowa earring +1",					--9r, 0, 0, 0
+        body="Passion jacket",hands=gear.HercWaltzHands,ring1="Gelatinous Ring +1",ring2="Metamorph Ring +1",				--13, 11, 0, 0
+        back="Moonlight Cape",waist="Platinum moogle Belt",legs="Dashing subligar",feet=gear.HercWaltzFeet}					--0, 0, 10, 11
         
     -- Don't need any special gear for Healing Waltz.
     sets.precast.Waltz['Healing Waltz'] = {}
@@ -285,12 +286,12 @@ function init_gear_sets()
     -- Normal melee group
     sets.engaged = {ammo=gear.RAbullet,
         head="Adhemar bonnet +1",neck="Iskur gorget",ear1="Brutal Earring",ear2="Telos Earring",
-        body="Adhemar jacket +1",hands="Adhemar Wristbands +1",ring1="Rajas Ring",ring2="Epona's Ring",
+        body="Adhemar jacket +1",hands="Adhemar Wristbands +1",ring1="Lehko Habhoka's ring",ring2="Epona's Ring",
         back=gear.CorMeleeCape,waist="Kentarch belt +1",legs="Malignance tights",feet="Malignance boots"}
     
     sets.engaged.Acc = {ammo=gear.RAbullet,
         head="Adhemar bonnet +1",neck="Combatant's Torque",ear1="Brutal Earring",ear2="Telos Earring",
-        body="Adhemar jacket +1",hands="Adhemar Wristbands +1",ring1="Rajas Ring",ring2="Epona's Ring",
+        body="Adhemar jacket +1",hands="Adhemar Wristbands +1",ring1="Lehko Habhoka's ring",ring2="Epona's Ring",
         back=gear.CorMeleeCape,waist="Kentarch belt +1",legs="Malignance tights",feet="Malignance boots"}
 		
 	sets.engaged.Hybrid = set_combine(sets.engaged.Acc, {head="Malignance chapeau", 
@@ -329,6 +330,10 @@ function init_gear_sets()
 		head="Malignance chapeau", 
 		body="Malignance tabard", hands="Malignance gloves", right_ring = "Lehko Habhoka's ring",
 		legs="Malignance tights", feet="Malignance boots"})
+		
+	sets.engaged.DW.SB = set_combine(sets.engaged.DW.Hybrid, {
+		ring1="Chirich Ring +1", ring2="Chirich Ring +1", 
+		})
 
 	sets.buff['Weather'] = {waist="Hachirin-no-obi"}
     --sets.engaged.Ranged = {ammo=gear.RAbullet,

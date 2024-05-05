@@ -54,19 +54,19 @@ function user_setup()
     gear.default.weaponskill_neck = "Fotia gorget"
     gear.default.weaponskill_waist = "Fotia belt"
     gear.AugQuiahuiz = {name="Quiahuiz Trousers", augments={'Haste+2','"Snapshot"+2','STR+8'}}
-	gear.CapeWSD = {name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}}
+	gear.CapeWSD = {name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%'}}
 	gear.HercHatFC =  {name="Herculean Helm", augments={'"Mag.Atk.Bns."+24','"Fast Cast"+6','STR+7','Mag. Acc.+14'}}
-	gear.HercFeetFC = { name="Herculean Boots", augments={'Mag. Acc.+15','"Fast Cast"+5','MND+6','"Mag.Atk.Bns."+15',}}
+	gear.HercFeetFC = { name="Herculean Boots", augments={'Mag. Acc.+15','"Fast Cast"+5','MND+6','"Mag.Atk.Bns."+15'}}
 	gear.CapeCrit = {name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10'}}
 	gear.CapeSTP = {name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}}
 	gear.CapeStr = { name="Toutatis's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%'}}
 	gear.CapeFC = {name="Toutatis's Cape", augments={'"Fast Cast"+10','Phys. dmg. taken-10%'}}
 	gear.CapeEva = {name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%'}}
-	gear.HeadPhalanx = { name="Taeon Chapeau", augments={'"Repair" potency +5%','Phalanx +3',}}
-    gear.BodyPhalanx = { name="Taeon Tabard", augments={'Attack+23','"Cure" potency +5%','Phalanx +3',}}
-    gear.HandsPhalanx = { name="Taeon Gloves", augments={'"Cure" potency +4%','Phalanx +3',}}
-    gear.LegsPhalanx = { name="Taeon Tights", augments={'Accuracy+20 Attack+20','"Cure" potency +5%','Phalanx +3',}}
-    gear.FeetPhalanx = { name="Taeon Boots", augments={'"Cure" potency +4%','Phalanx +3',}}
+	gear.HeadPhalanx = { name="Taeon Chapeau", augments={'"Repair" potency +5%','Phalanx +3'}}
+    gear.BodyPhalanx = { name="Taeon Tabard", augments={'Attack+23','"Cure" potency +5%','Phalanx +3'}}
+    gear.HandsPhalanx = { name="Taeon Gloves", augments={'"Cure" potency +4%','Phalanx +3'}}
+    gear.LegsPhalanx = { name="Taeon Tights", augments={'Accuracy+20 Attack+20','"Cure" potency +5%','Phalanx +3'}}
+    gear.FeetPhalanx = { name="Taeon Boots", augments={'"Cure" potency +4%','Phalanx +3'}}
 
     -- Additional local binds
     send_command('bind ^` input /ja "Flee" <me>')
@@ -92,7 +92,7 @@ function init_gear_sets()
     --------------------------------------
     -- Special sets (required by rules)
     --------------------------------------
-
+	include('Sef-Gear.lua')
     sets.TreasureHunter = {feet="Skulker's poulaines +3"}
     sets.ExtraRegen = {head="Turms cap +1"}
     sets.Kiting = {feet="Pillager's Poulaines +3"}
@@ -144,8 +144,8 @@ function init_gear_sets()
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {ammo="Yamarang",																					--5
         head="Mummu Bonnet +2",neck="Unmoving collar +1",ear1="Tuisto earring",ear2="Odnowa earring +1",					--9r, 0, 0, 0
-        body="Passion jacket",hands="Pillager's Armlets +1",ring1="Gelatinous Ring +1",ring2="Metamorph Ring +1",			--13, 0, 0, 0
-        back="Moonlight Cape",waist="Platinum moogle Belt",legs="Dashing subligar",feet="Plunderer's Poulaines +3"}			--0, 0, 10, 0
+        body="Passion jacket",hands=gear.HercWaltzHands,ring1="Gelatinous Ring +1",ring2="Metamorph Ring +1",				--13, 11, 0, 0
+        back="Moonlight Cape",waist="Platinum moogle Belt",legs="Dashing subligar",feet=gear.HercWaltzFeet}					--0, 0, 10, 11
 		-- Dashing subligar, herc hands/feet to cap
 
     -- Don't need any special gear for Healing Waltz.
@@ -328,14 +328,16 @@ function init_gear_sets()
     -- Midcast sets
     --------------------------------------
 
-    sets.midcast.FastRecast = {ammo="Sapience orb",{ name="Herculean Helm", augments={'"Mag.Atk.Bns."+24','"Fast Cast"+6','STR+7','Mag. Acc.+14',}},
-		neck="Voltsurge torque",ear1="Etiolation earring",ear2="Loquacious Earring",body="Dread Jupon",
-		hands="Leyline Gloves",ring1="Prolix Ring",legs="Rawhide trousers"}
+    sets.midcast.FastRecast = {ammo="Sapience orb",
+		head=HercHatFC, neck="Voltsurge torque", ear1="Etiolation earring", ear2="Loquacious Earring", 
+		body="Dread Jupon",	hands="Leyline Gloves", ring1="Prolix Ring", 
+		back=gear.CapeFC, legs="Rawhide trousers", feet=gear.HercFeetFC}
 
     -- Specific spells
-    sets.midcast.Utsusemi = {ammo="Sapience orb",{ name="Herculean Helm", augments={'"Mag.Atk.Bns."+24','"Fast Cast"+6','STR+7','Mag. Acc.+14',}},
-		neck="Voltsurge torque",ear1="Etiolation earring",ear2="Loquacious Earring",body="Dread jupon",
-		hands="Leyline Gloves",ring1="Prolix Ring",legs="Rawhide trousers"}
+    sets.midcast.Utsusemi = {ammo="Sapience orb",
+		head=HercHatFC,	neck="Voltsurge torque", ear1="Etiolation earring", ear2="Loquacious Earring",
+		body="Dread jupon",	hands="Leyline Gloves", ring1="Prolix Ring",
+		back=gear.CapeFC, legs="Rawhide trousers", feet=gear.HercFeetFC}
 		
 	sets.midcast['Phalanx'] = set_combine(sets.midcast.FastRecast, {
 		head=gear.HeadPhalanx, neck="Incanter's Torque", left_ear="Mimir Earring", right_ear="Andoaa Earring",
@@ -406,7 +408,7 @@ function init_gear_sets()
         back="Moonlight cape",waist="Flume Belt",legs="Malignance tights",feet="Pillager's Poulaines +3"}
 		
 	sets.idle.Vagary = {
-       head="Malignance chapeau",neck="Iskur Gorget",ear1="Enervating earring",ear2="Telos Earring",
+        head="Malignance chapeau",neck="Iskur Gorget",ear1="Enervating earring",ear2="Telos Earring",
 		body="Malignance tabard",hands="Malignance gloves",ring1="Regal Ring",ring2="Cacoethic Ring +1",
 		back="Kayapa cape",waist="Yemaya belt",legs="Malignance tights",feet="Malignance boots"}
 

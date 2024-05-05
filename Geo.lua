@@ -50,7 +50,8 @@ function init_gear_sets()
     --------------------------------------
     -- Precast sets
     --------------------------------------
- 
+	include('Sef-Gear.lua')
+	
     -- Precast sets to enhance JAs
     sets.precast.JA.Bolster = {body="Bagua Tunic +1"}
     sets.precast.JA['Life cycle'] = {body="Geomancy Tunic +1"}
@@ -62,7 +63,7 @@ function init_gear_sets()
     sets.precast.FC = {range="Dunna",																			--2
         head="Amalric coif +1",neck="Voltsurge torque",ear1="Etiolation Earring",ear2="Malignance Earring",		--11,4,1,4
         body="Agwu's robe",hands="Volte gloves",ring1="Prolix Ring",ring2="Kishar ring",						--8,6,2,4
-        back="Fi follet cape +1",waist="Embla sash",legs="Geomancy pants +1",feet="Amalric nails +1"}			--10,5,11,6
+        back="Fi follet cape +1",waist="Embla sash",legs="Geomancy pants +2",feet="Amalric nails +1"}			--10,5,11,6
 		--74%  merlinic feet 5+aug 6(7)  AF legs 15
  
     sets.precast.FC.Cure = set_combine(sets.precast.FC, {})
@@ -143,18 +144,18 @@ function init_gear_sets()
     sets.midcast.FastRecast = {main="Solstice",range="Dunna",													--5, 2
         head="Amalric coif +1",neck="Voltsurge torque",ear1="Loquacious Earring",ear2="Malignance Earring",		--11,4,2,4
         body="Agwu's robe",hands="Volte gloves",ring1="Prolix Ring",ring2="Kishar ring",						--8,6,2,4
-        back="Fi follet cape +1",waist="Embla sash",legs="Geomancy pants +1",feet="Amalric nails +1"}			--10,5,11,6
+        back="Fi follet cape +1",waist="Embla sash",legs="Geomancy pants +2",feet="Amalric nails +1"}			--10,5,11,6
 		--80%
  
     sets.midcast.Geomancy = set_combine(sets.midcast.FastRecast, {main="Idris",range="Dunna",               --0, 18
 		head="Azimuth hood +2",neck="Incanter's torque",													--20, 20, 0, 0
-		body="Bagua Tunic +1",hands="Geomancy mitaines +1",ring1="Stikini Ring +1",     					--10, 15, 16, 0
+		body="Bagua Tunic +1",hands="Geomancy mitaines +2",ring1="Stikini Ring +1",     					--10, 15, 16, 0
 		back="Lifestream cape",legs="Azimuth tights +2",feet="Azimuth gaiters +2"})							--5, 0, 0, 0
 		--900 to cap, 788 from merits, 860 at master														--104
 		
     sets.midcast.Geomancy.Indi = set_combine(sets.midcast.FastRecast, {main="Idris",range="Dunna",
 		head="Azimuth hood +2",neck="Incanter's torque",
-		body="Azimuth coat +2",hands="Geomancy mitaines +1",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
+		body="Azimuth coat +2",hands="Geomancy mitaines +2",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
 		back="Lifestream cape",legs="Bagua Pants +1",feet="Azimuth gaiters +2"})
  
     sets.midcast.Cure = {main="Daybreak",sub="Genmei shield",												--30
@@ -259,7 +260,7 @@ function init_gear_sets()
     sets.resting = {main="Bolelabunga",sub="Genmei Shield",ammo="Dunna",
         head=empty,neck="Wiglen Gorget",ear1="Etiolation earring",ear2="ethereal earring",
         body="Respite cloak",hands="Serpentes cuffs",ring1="Sheltered Ring",ring2="Paguroidea Ring",
-        back="Umbra Cape",waist="Fucho-no-obi",legs="Assiduity pants +1",feet="Geomancy sandals +1"}
+        back="Umbra Cape",waist="Fucho-no-obi",legs="Assiduity pants +1",feet="Geomancy sandals +2"}
  
  
     -- Idle sets
@@ -267,7 +268,7 @@ function init_gear_sets()
     sets.idle = {main="Daybreak",sub="Genmei shield",Range="Dunna",
         head="Befouled Crown",neck="Loricate Torque +1",ear1="Eabani earring",ear2="Etiolation earring",
         body="Azimuth coat +2",hands="Volte gloves",ring1="Defending Ring",ring2="Sheltered Ring",
-        back="Moonlight Cape",waist="Fucho-no-obi",legs="Volte brais",feet="Geomancy sandals +1"}
+        back="Moonlight Cape",waist="Fucho-no-obi",legs="Volte brais",feet="Geomancy sandals +2"}
 		--bagua hands +3
  
     sets.idle.PDT = {main="Daybreak",sub="Genmei shield",Range="Dunna",											-- 0, 10, 0
@@ -279,14 +280,14 @@ function init_gear_sets()
     -- .Pet sets are for when Luopan is present.
     sets.idle.Pet = {main="Idris",sub="Genmei shield",Range="Dunna",
         head="Azimuth Hood +2",neck="Loricate Torque +1",ear1="Eabani earring",ear2="Odnowa earring +1",
-        body="Azimuth coat +2",hands="Geomancy mitaines +1",ring1="Defending Ring",ring2="Gelatinous ring +1",
+        body="Azimuth coat +2",hands="Geomancy mitaines +2",ring1="Defending Ring",ring2="Gelatinous ring +1",
         back=gear.CapePetRegen,waist="Carrier's sash",legs="Volte brais",feet="Bagua sandals +1"}
  
     sets.idle.PDT.Pet = {main="Idris",sub="Genmei shield",Range="Dunna",										-- 0|25, 10, 0|5
         head="Azimuth Hood +2",neck="Loricate Torque +1",ear1="Eabani earring",ear2="Odnowa earring +1",		-- 11, 6, 0, 3
-        body="Azimuth coat +2",hands="Geomancy mitaines +1",ring1="Defending ring",ring2="Gelatinous ring +1",	-- 0, 1|11, 10, 7
+        body="Azimuth coat +2",hands="Geomancy mitaines +2",ring1="Defending ring",ring2="Gelatinous ring +1",	-- 0, 2|12, 10, 7
         back=gear.CapePetRegen,waist="Carrier's sash",legs="Volte brais",feet="Bagua sandals +1"}				-- 10, 0, 0, 0
-		-- 58% PDT     Loricate -> JSE   isa belt?   Odnowa -> Etiolation
+		-- 59% PDT     Loricate -> JSE   isa belt?   Odnowa -> Etiolation
  
     -- .Indi sets are for when an Indi-spell is active.
     sets.idle.Indi = set_combine(sets.idle, {})
@@ -297,7 +298,7 @@ function init_gear_sets()
     sets.idle.Town = {main="Daybreak",sub="Genmei shield",Range="Dunna",
         head="Befouled Crown",neck="Loricate Torque +1",ear1="Eabani earring",ear2="Etiolation earring",
         body="Azimuth coat +2",hands="Volte gloves",ring1="Defending Ring",ring2="Sheltered Ring",
-        back="Moonlight Cape",waist="Fucho-no-obi",legs="Volte brais",feet="Geomancy sandals +1"}
+        back="Moonlight Cape",waist="Fucho-no-obi",legs="Volte brais",feet="Geomancy sandals +2"}
  
     sets.idle.Weak = set_combine(sets.idle,{})
  
@@ -310,7 +311,7 @@ function init_gear_sets()
  
     sets.defense.MDT = {main="Terra's staff",sub="Oneiros grip",Range="Dunna",
         head="Azimuth hood +2",neck="Loricate Torque +1",ear1="Sanare earring",ear2="Etiolation earring",
-        body="Amalric doublet +1",hands="Geomancy mitaines +1",ring1="Defending Ring",ring2="Fortified Ring",
+        body="Amalric doublet +1",hands="Geomancy mitaines +2",ring1="Defending Ring",ring2="Fortified Ring",
         back="Solemnity Cape",waist="Fucho-no-obi",legs="Assiduity pants +1",feet="Azimuth gaiters +2"}
  
     sets.Kiting = {}

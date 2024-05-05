@@ -225,7 +225,7 @@ function init_gear_sets()
     --------------------------------------
     -- Start defining the sets
     --------------------------------------
-	
+	include('Sef-Gear.lua')
 	
 	sets.TreasureHunter = {ammo="Perfect lucky egg", legs = {name="Herculean Trousers", augments={'"Mag.Atk.Bns."+30','Accuracy+24','"Treasure Hunter"+1','Mag. Acc.+6 "Mag.Atk.Bns."+6',}},}
 
@@ -439,7 +439,7 @@ function init_gear_sets()
 
     sets.midcast['Blue Magic'].Buff = {}
 	
-	sets.midcast['Blue Magic']['Battery Charge'] = {head="Amalric coif +1"}
+	sets.midcast['Blue Magic']['Battery Charge'] = {head="Amalric coif +1", waist="Gishdubar sash"}
 	
 	sets.midcast['Enhancing Magic'] = {
 		head = "Telchine Cap", neck = "Voltsurge torque", ear1 = "Etiolation earring", ear2 = "Loquacious earring",
