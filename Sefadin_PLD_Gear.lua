@@ -32,7 +32,7 @@ function user_setup()
     state.CastingMode:options('Normal', 'SIRD', 'HPBAL')    
     state.IdleMode:options('DT', 'Normal', 'Pulling')
 	state.ShieldMode = M{'Duban','Aegis','Ochain','Srivatsa'}
-	state.WeaponMode = M{'Burtgang', 'Naegling'}
+	state.WeaponMode = M{'Burtgang', 'Naegling', 'Malignance'}
      
 -- Allows the use of Ctrl + ~ and Alt + ~ for 2 more macros of your choice.
     -- send_command('bind ^` input /ja "Cover" <stal>') --Ctrl'~'
@@ -49,18 +49,17 @@ function user_setup()
     send_command('bind @w gs c toggle Weapon') --Windowkey'W'
     send_command('bind @t gs c toggle Twilight') --Windowkey'T'
     send_command('bind @n gs c toggle Neck') --Windowkey'N' 
+	send_command('bind @k gs c toggle Knockback') --Windows'K'
     send_command('bind @i input /ja "Invincible" <me>') --Windowkey'I'
     --send_command('lua l gearinfo')
  
     select_default_macro_book()
     --set_lockstyle()
  
-	gear.PhalanxHead = {name="Valorous Mask", augments={'Magic dmg. taken -2%','Pet: DEX+15','Phalanx +4','Accuracy+3 Attack+3',}}
-	gear.PhalanxBody = {name="Odyss. Chestplate", augments={'"Mag.Atk.Bns."+21','MND+6','Phalanx +3',}}
-	gear.PDTCape = {name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Enmity+10','Phys. dmg. taken-10%',}}
-	gear.FCCape = { name="Rudianos's Mantle", augments={'"Fast Cast"+10','Phys. dmg. taken-10%',}}
-	gear.WSCape = {name="Rudianos's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
-	gear.TPCape = {name="Rudianos's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
+	gear.PDTCape = {name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Enmity+10','Phys. dmg. taken-10%'}}
+	gear.FCCape = { name="Rudianos's Mantle", augments={'"Fast Cast"+10','Phys. dmg. taken-10%'}}
+	gear.WSCape = {name="Rudianos's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%'}}
+	gear.TPCape = {name="Rudianos's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}
  
     Haste = 0
     DW_needed = 0
@@ -124,8 +123,8 @@ function init_gear_sets()
     sets.precast.JA['Intervene'] = set_combine(sets.Enmity, {})
      
     sets.precast.FC = {
-        Main="Sakpata's Sword", --10
-		sub="Srivatsa",
+        --Main="Sakpata's Sword", --10
+		--sub="Srivatsa",
         Ammo="Sapience orb", --2
         Head="Carmine Mask +1", --14
         Neck="Voltsurge Torque", --4       
@@ -139,7 +138,7 @@ function init_gear_sets()
         Waist="Platinum moogle belt", --10% HP
         back=gear.FCCape, --10FC
         Ring2="Kishar Ring", --  4FC --70HP
-    } 	-- 77FC 2QM
+    } 	-- 70FC 2QM
 		-- Enif legs 8%, Emp feet +3 13%, 
      
     sets.precast.Cure = set_combine(sets.precast.FC, {
@@ -151,6 +150,10 @@ function init_gear_sets()
     sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads"})
      
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {})
+	
+	sets.precast.FC['Healing Magic'] = set_combine(sets.precast.FC, {})
+
+    sets.precast.FC.StatusRemoval = sets.precast.FC['Healing Magic']
  
     ------------------------------------------------------------------------------------------------
     -------------------------------------- Sub Job Specific ----------------------------------------
@@ -276,11 +279,11 @@ function init_gear_sets()
 		Main="Sakpata's Sword", --5
 		sub="Priwen", --2
 		ammo="Staunch Tathlum +1",
-		Head=gear.PhalanxHead, --4
+		Head=gear.PhalanxHeadPld, --4
 		ear1="Mimir earring",   			--10 skill
 		ear2="Andoaa earring",				--5 skill
 		neck="Incanter's Torque",			--10 skill
-		Body=gear.PhalanxBody, --3
+		Body=gear.PhalanxBodyPld, --3
 		Hands="Souveran Handschuhs +1", --5
 		left_ring="Defending Ring",			
 		right_ring="Stikini Ring +1",		--8 skill
@@ -288,8 +291,15 @@ function init_gear_sets()
 		Feet="Souveran Schuhs +1", --5
 		Back="Weard Mantle", --4
 		Legs="Sakpata's Cuisses", --5
-    } -- +33 Need to DarkMatter Ody Head and Body   418 skill @ML35   tiers: 415 -32 / 443 -33
+    } 	-- +33 Need to DarkMatter Ody Head and Body   418 skill @ML35   tiers: 415 -32 / 443 -33
+		-- 46% DT
      
+	sets.midcast.Stoneskin = {main="Sakpata's sword", ammo="Sapience orb",		
+		head="Carmine mask +1", neck="Stone gorget", ear1="Odnowa earring +1",
+		body="Reverence surcoat", ring1="Defending Ring",
+		back=gear.FCCape, waist="Siegal sash", legs="Sakpata's cuisses"
+	}
+	 
     sets.midcast.Protect = {sub="Srivatsa",ring1="Sheltered Ring"}
     sets.midcast.Shell = {ring1="Sheltered Ring"}
      
@@ -297,8 +307,8 @@ function init_gear_sets()
     ----------------------------------------- SIRD Sets --------------------------------------------
     ------------------------------------------------------------------------------------------------    
     sets.midcast.SIRD = {
-		Main={name="Sakpata's Sword",priority=100}, --10FC
-		sub={name="Srivatsa",priority=150},   --15enm
+		--Main={name="Sakpata's Sword",priority=100}, --10FC
+		--sub={name="Srivatsa",priority=150},   --15enm
         Ammo="Staunch tathlum +1", --11SIRD
         Head="Souveran Schaller +1", --20SIRD  --9
         Neck="Moonlight Necklace", --15SIRD    --15
@@ -314,8 +324,8 @@ function init_gear_sets()
 	
 	
     sets.precast.FC.SIRD = {
-		Main={name="Sakpata's Sword",priority=100}, --10FC
-		sub={name="Srivatsa",priority=150},
+		--Main={name="Sakpata's Sword",priority=100}, --10FC
+		--sub={name="Srivatsa",priority=150},
         Ammo="Impatiens", --2QM
         Head="Carmine Mask +1", --14
         Neck="Voltsurge Torque", --4       
@@ -367,7 +377,7 @@ function init_gear_sets()
         Neck="Voltsurge Torque", --5FC, 0SIRD, 0DT
         Ear1={name="Tuisto Earring",priority=150},
         Ear2={name="Odnowa Earring +1",priority=110},
-        Body={name="Reverence Surcoat +3",priority=254}, --5FC, 0SIRD, 10DT
+        Body={name="Reverence Surcoat +3",priority=254}, --10FC, 0SIRD, 10DT
         Hands="Leyline Gloves", --8FC
         Ring1={name="Moonlight Ring",priority=110,bag="wardrobe1"}, --110HP
         Ring2={name="Moonlight Ring",priority=110,bag="wardrobe3"}, --110HP
@@ -375,7 +385,7 @@ function init_gear_sets()
         Waist="Creed Baudrier", --40HP
         Legs={name="Souveran Diechlings +1",priority=162}, --0FC, 0SIRD, 4DT
         Feet={name="Souveran Schuhs +1",priority=227}, --0FC, 0SIRD, 5DT
-    } --42FC, 10SIRD, 38DT
+    } --49FC, 10SIRD, 38DT
 	
 	
     
@@ -426,7 +436,7 @@ function init_gear_sets()
 										  hands="Macabre gauntlets +1",
 										  legs={name="Souveran Diechlings +1",priority=162}})
     sets.midcast.Phalanx.HPBAL = set_combine(sets.midcast.Phalanx, sets.midcast.HPBAL, {sub="Priwen",
-																						Head=gear.PhalanxHead, body=gear.PhalanxBody, 
+																						Head=gear.PhalanxHeadPld, body=gear.PhalanxBodyPld, 
 																						back="Weard mantle",legs="Sakpata's cuisses", 
 																						feet={name="Souveran Schuhs +1",priority=227}})
     sets.midcast.Reprisal.HPBAL = set_combine(sets.midcast.Reprisal, sets.midcast.HPBAL)
@@ -517,22 +527,41 @@ function init_gear_sets()
         Feet="Souveran Schuhs +1",
     }
 	
+	-- Aminon set
 	sets.idle.Knockback = {
-		sub="Aegis",
 		ammo="Staunch Tathlum +1",
-		head={ name="Nyame Helm", augments={'Path: A',}},
+		head="Nyame Helm",
 		body="Adamantite Armor",
-		hands={ name="Nyame Gauntlets", augments={'Path: A',}},
+		hands="Nyame Gauntlets",
 		legs="Dashing Subligar",
-		feet={ name="Nyame Sollerets", augments={'Path: A',}},
+		feet="Nyame Sollerets",
 		neck="Moonlight Necklace",
 		waist="Carrier's Sash",
 		left_ear="Eabani Earring",
-		right_ear={ name="Chev. Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+15','Mag. Acc.+15','Damage taken-5%',}},
+		right_ear="Chev. Earring +1",
 		left_ring="Defending Ring",
 		right_ring="Shadow Ring",
 		back="Philidor Mantle",
 	}
+
+	-- alternative Aminon set
+	-- sets["PLD Aminion"] = {
+		-- main="Reikiko",
+		-- sub="Aegis",
+		-- ammo="Vanir Battery",
+		-- head="Sakpata's Helm",
+		-- neck="Moonlight Necklace",
+		-- ear1="Pluto's Pearl",
+		-- ear2="Sanare Earring",
+		-- body="Adamantite Armor",
+		-- hands="Sakpata's Gauntlets",
+		-- ring1="Lunette Ring +1",
+		-- ring2="Apeile Ring +1",
+		-- back="Rudianos's Mantle",
+		-- waist="Asklepian Belt",
+		-- legs="Sakpata's Cuisses",
+		-- feet="Sakpata's Leggings"
+	-- }
  
     ------------------------------------------------------------------------------------------------
     ---------------------------------------- Engaged Sets ------------------------------------------
@@ -807,6 +836,7 @@ function init_gear_sets()
 	sets.Ochain = {sub="Ochain"}
 	sets.Burtgang = {main="Burtgang"}
 	sets.Naegling = {main="Naegling"}
+	sets.Malignance = {main="Malignance Sword"}
 	sets.Kiting = {legs="Carmine Cuisses +1", feet="Hippomenes socks +1"}
 end
  
@@ -859,13 +889,17 @@ function job_buff_change(buff,gain)
         if gain then
             equip(sets.buff.Doom)
             send_command('@input /echo Doomed.')
-             disable()
+            disable()
         else
             enable()
             handle_equipping_gear(player.status)
         end
     end
  
+end
+
+function job_post_midcast()
+
 end
  
 -------------------------------------------------------------------------------------------------------------------
@@ -930,6 +964,12 @@ function customize_idle_set(idleSet)
     else
         enable('Neck')
     end
+	
+	--if state.Knockback.current == 'on' then
+	--	equip(sets.Knockback)
+	--	disable('back')
+	--	disable('legs')
+	--end
 	
 	if state.ShieldMode.value == 'Aegis' then
 		equip(sets.Aegis)	
@@ -1000,6 +1040,8 @@ function customize_melee_set(meleeSet)
 		equip(sets.Burtgang)
 	elseif state.WeaponMode.value == 'Naegling' then
 		equip(sets.Naegling)
+	elseif state.WeaponMode.value == 'Malignance' then
+		equip(sets.Malignance)
 	end
  
     return meleeSet
@@ -1142,7 +1184,7 @@ function select_default_macro_book()
     else
         set_macro_page(1, 8)
     end
-	send_command('wait 3; input /lockstyleset 018')
+	send_command('wait 5; input /lockstyleset 018')
 end
  
 function set_lockstyle()

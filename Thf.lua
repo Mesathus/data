@@ -53,20 +53,12 @@ function user_setup()
 
     gear.default.weaponskill_neck = "Fotia gorget"
     gear.default.weaponskill_waist = "Fotia belt"
-    gear.AugQuiahuiz = {name="Quiahuiz Trousers", augments={'Haste+2','"Snapshot"+2','STR+8'}}
 	gear.CapeWSD = {name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%'}}
-	gear.HercHatFC =  {name="Herculean Helm", augments={'"Mag.Atk.Bns."+24','"Fast Cast"+6','STR+7','Mag. Acc.+14'}}
-	gear.HercFeetFC = { name="Herculean Boots", augments={'Mag. Acc.+15','"Fast Cast"+5','MND+6','"Mag.Atk.Bns."+15'}}
 	gear.CapeCrit = {name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10'}}
 	gear.CapeSTP = {name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}}
 	gear.CapeStr = { name="Toutatis's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%'}}
 	gear.CapeFC = {name="Toutatis's Cape", augments={'"Fast Cast"+10','Phys. dmg. taken-10%'}}
 	gear.CapeEva = {name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%'}}
-	gear.HeadPhalanx = { name="Taeon Chapeau", augments={'"Repair" potency +5%','Phalanx +3'}}
-    gear.BodyPhalanx = { name="Taeon Tabard", augments={'Attack+23','"Cure" potency +5%','Phalanx +3'}}
-    gear.HandsPhalanx = { name="Taeon Gloves", augments={'"Cure" potency +4%','Phalanx +3'}}
-    gear.LegsPhalanx = { name="Taeon Tights", augments={'Accuracy+20 Attack+20','"Cure" potency +5%','Phalanx +3'}}
-    gear.FeetPhalanx = { name="Taeon Boots", augments={'"Cure" potency +4%','Phalanx +3'}}
 
     -- Additional local binds
     send_command('bind ^` input /ja "Flee" <me>')
@@ -117,7 +109,7 @@ function init_gear_sets()
     sets.precast.JA['Flee'] = {feet="Pillager's Poulaines +3"}
     sets.precast.JA['Hide'] = {body="Pillager's Vest +3"}
     sets.precast.JA['Conspirator'] = {body="Skulker's Vest +3"}
-    sets.precast.JA['Steal'] = {head="Plunderer's Bonnet +3",hands="Pillager's Armlets +3",legs="Pillager's Culottes +3",feet="Pillager's Poulaines +3"}
+    sets.precast.JA['Steal'] = {ammo="Barathrum",neck="Pentalagus Charm",hands="Thief's Kote",legs="Assassin's Culottes",feet="Pillager's Poulaines +3"}
     sets.precast.JA['Despoil'] = {legs="Skulker's Culottes +3",feet="Skulker's Poulaines +3"}
     sets.precast.JA['Perfect Dodge'] = {hands="Plunderer's Armlets +3"}
     sets.precast.JA['Feint'] = {legs="Plunderer's Culottes +3"}
@@ -340,9 +332,9 @@ function init_gear_sets()
 		back=gear.CapeFC, legs="Rawhide trousers", feet=gear.HercFeetFC}
 		
 	sets.midcast['Phalanx'] = set_combine(sets.midcast.FastRecast, {
-		head=gear.HeadPhalanx, neck="Incanter's Torque", left_ear="Mimir Earring", right_ear="Andoaa Earring",
-		body=gear.BodyPhalanx, hands=gear.HandsPhalanx, left_ring="Stikini Ring +1", right_ring="Stikini Ring +1",
-		back="Merciful Cape", waist="Olympus Sash", legs=gear.LegsPhalanx, feet=gear.FeetPhalanx})
+		head=gear.PhalanxHeadTaeon, neck="Incanter's Torque", left_ear="Mimir Earring", right_ear="Andoaa Earring",
+		body=gear.PhalanxBodyTaeon, hands=gear.PhalanxHandsTaeon, left_ring="Stikini Ring +1", right_ring="Stikini Ring +1",
+		back="Merciful Cape", waist="Olympus Sash", legs=gear.PhalanxLegsTaeon, feet=gear.PhalanxFeetTaeon})
 		
 	sets.midcast['Stoneskin'] = set_combine(sets.midcast.FastRecast, {neck="Stone Gorget"})
 		
@@ -368,8 +360,8 @@ function init_gear_sets()
 		
 	sets.midcast.Cure = {
 		neck="Phalaina locket", ear1="Mendicant's earring",														--4|4, 5
-		body=gear.BodyPhalanx, hands=gear.HandsPhalanx,	ring1="Menelaus's ring", ring2="Defending ring",		--5, 4, 5, 0
-		back="Solemnity cape", legs=gear.LegsPhalanx, feet=gear.FeetPhalanx}									--7, 5, 4
+		body=gear.PhalanxBodyTaeon, hands=gear.PhalanxHandsTaeon,	ring1="Menelaus's ring", ring2="Defending ring",		--5, 4, 5, 0
+		back="Solemnity cape", legs=gear.PhalanxLegsTaeon, feet=gear.PhalanxFeetTaeon}									--7, 5, 4
 		-- 39%
 		-- Naji's, Lebeche, Taeon head
 	
@@ -801,5 +793,5 @@ function select_default_macro_book()
     else
         set_macro_page(10, 1)
     end
-	send_command('wait 3; input /lockstyleset 009')
+	send_command('wait 5; input /lockstyleset 009')
 end

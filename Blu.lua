@@ -320,11 +320,9 @@ function init_gear_sets()
         back="Fi follet cape +1",waist="Witful Belt",legs="Pinga pants +1",feet="Carmine greaves +1"}
 		
 	sets.midcast['Phalanx'] = set_combine(sets.midcast.FastRecast, {
-		head={ name="Taeon Chapeau", augments={'Phalanx +3',}},
-		body={ name="Taeon Tabard", augments={'Attack+23','"Dual Wield"+5','Phalanx +3',}},
-		hands={ name="Taeon Gloves", augments={'Phalanx +3',}},
-		legs={ name="Taeon Tights", augments={'Accuracy+20 Attack+20','"Triple Atk."+2','Phalanx +3',}},
-		feet={ name="Taeon Boots", augments={'Phalanx +3',}}
+		head=gear.PhalanxHeadTaeon, neck="Incanter's Torque", left_ear="Mimir Earring", right_ear="Andoaa Earring",
+		body=gear.PhalanxBodyTaeon, hands=gear.PhalanxHandsTaeon, left_ring="Stikini Ring +1", right_ring="Stikini Ring +1",
+		back="Merciful Cape", waist="Olympus Sash", legs=gear.PhalanxLegsTaeon, feet=gear.PhalanxFeetTaeon
 		})
         
     sets.midcast['Blue Magic'] = {}
@@ -696,5 +694,5 @@ function select_default_macro_book()
 	else
         set_macro_page(1, 4)
     end
-	send_command('wait 3; input /lockstyleset 010')
+	send_command('wait 5; input /lockstyleset 010')
 end

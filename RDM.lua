@@ -468,5 +468,5 @@ function select_default_macro_book()
     else
         set_macro_page(1, 14)
     end
-	send_command('wait 3; input /lockstyleset 022')
+	send_command('wait 5; input /lockstyleset 022')
 end

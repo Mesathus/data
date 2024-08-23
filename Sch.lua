@@ -105,7 +105,7 @@ function init_gear_sets()
 	sets.precast.FC.Grimoire = {main="Musa",sub="Khonsu",ammo="Sapience orb",											--5,0,2
         head="Pedagogy Mortarboard +3",neck="Voltsurge torque",ear1="Etiolation Earring",ear2="Malignance Earring",		--0,4,1,4
         body="Pinga tunic +1",hands="Academic's bracers +3",ring1="Defending Ring",ring2="Kishar Ring",					--15,9,0,4
-        back="Fi Follet Cape +1",waist="Embla sash",legs="Pinga pants +1",feet="Academic's loafers +2"}					--10,5,13,0
+        back="Fi Follet Cape +1",waist="Embla sash",legs="Pinga pants +1",feet="Academic's loafers +3"}					--10,5,13,0
 		-- 72%   
 		
 	sets.precast.FC.OffArts = {main="Musa",sub="Khonsu",ammo="Sapience orb",									--5,0,2
@@ -147,7 +147,7 @@ function init_gear_sets()
     sets.midcast.Cursna = {
         neck="Malison Medallion",
         body="Pedagogy Gown +3",hands="Hieros Mittens", ring1="Stikini Ring +1", ring2="Menelaus's ring",--ring1="Ephedra Ring",
-        legs="Academic's pants +2", feet="Vanya clogs"}
+        legs="Academic's pants +3", feet="Vanya clogs"}
 
     sets.midcast['Enhancing Magic'] = {main="Musa", sub="Khonsu",
 		head = "Telchine cap", neck = "Voltsurge torque", ear1 = "Etiolation earring", ear2 = "Loquacious earring",
@@ -183,12 +183,12 @@ function init_gear_sets()
     sets.midcast.MndEnfeebles = {main="Daybreak",sub="Ammurapi Shield",ammo="Pemphredo tathlum",
         neck="Argute Stole +2",ear1="Regal Earring",ear2="Malignance Earring",
         body="Cohort cloak +1",hands="Academic's bracers +3",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
-        back="Lugh's cape",waist="Rumination Sash",legs="Arbatel pants +3",feet="Academic's loafers +2"}
+        back="Lugh's cape",waist="Rumination Sash",legs="Arbatel pants +3",feet="Academic's loafers +3"}
 
     sets.midcast.IntEnfeebles = {main="Daybreak",sub="Ammurapi Shield",ammo="Pemphredo tathlum",
         head="Academic's mortarboard +3",neck="Argute Stole +2",ear1="Regal Earring",ear2="Malignance Earring",
-        body="Academic's gown +2",hands="Academic's bracers +3",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
-        back="Lugh's cape",waist="Rumination Sash",legs="Arbatel pants +3",feet="Academic's loafers +2"}
+        body="Academic's gown +3",hands="Academic's bracers +3",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
+        back="Lugh's cape",waist="Rumination Sash",legs="Arbatel pants +3",feet="Academic's loafers +3"}
 
     sets.midcast.ElementalEnfeeble = sets.midcast.IntEnfeebles
 
@@ -204,15 +204,15 @@ function init_gear_sets()
 
     sets.midcast.Drain = {main="Bunzi's rod",sub="Ammurapi Shield",ammo="Ghastly tathlum +1",
         head="Pixie hairpin +1",neck="Erra pendant",ear1="Regal Earring",ear2="Malignance Earring",
-        body="Academic's gown +2",hands="Amalric gages +1",ring1="Evanescence Ring",ring2="Archon Ring",
+        body="Academic's gown +3",hands="Amalric gages +1",ring1="Evanescence Ring",ring2="Archon Ring",
         back="Lugh's cape",waist="Orpheus's sash",legs="Pedagogy pants +3",feet="Agwu's pigaches"}
 
     sets.midcast.Aspir = sets.midcast.Drain
 
     sets.midcast.Stun = {main="Bunzi's rod",sub="Ammurapi Shield",ammo="Pemphredo tathlum",
         head="Arbatel bonnet +3",neck="Argute Stole +2",ear1="Regal Earring",ear2="Malignance Earring",
-        body="Academic's gown +2",hands="Academic's bracers +3",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
-        back="Lugh's cape",waist="Luminary Sash",legs="Academic's pants +2",feet="Academic's loafers +2"}
+        body="Academic's gown +3",hands="Academic's bracers +3",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
+        back="Lugh's cape",waist="Luminary Sash",legs="Academic's pants +3",feet="Academic's loafers +3"}
 
     sets.midcast.Stun.Resistant = set_combine(sets.midcast.Stun, {})
 
@@ -380,7 +380,7 @@ function init_gear_sets()
 		
 	sets.precast.WS['Myrkr'] = {ammo="Ghastly tathlum +1",
         head="Arbatel bonnet +3",neck="Sanctity Necklace",ear1="Etiolation Earring",ear2="Moonshade Earring",
-        body="Academic's gown +2",hands="Amalric gages +1",ring1="Sangoma Ring",ring2="Fortified Ring",
+        body="Academic's gown +3",hands="Amalric gages +1",ring1="Sangoma Ring",ring2="Fortified Ring",
         back="Bookworm's Cape",waist="Luminary sash",legs="Amalric slops +1",feet="Agwu's pigaches"}
 		
 	sets.precast.WS['Earth Crusher'] = {ammo="Ghastly tathlum +1",
@@ -729,6 +729,6 @@ end
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
     set_macro_page(1, 5)
-	send_command('wait 3; input /lockstyleset 017')
+	send_command('wait 5; input /lockstyleset 017')
 end
 

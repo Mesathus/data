@@ -92,7 +92,7 @@ function init_gear_sets()
     
     sets.precast.CorsairRoll = {head="Lanun Tricorne +3",neck="Regal Necklace",
 		body="Malignance tabard",hands="Chasseur's Gants +2",ring2="Defending Ring",
-		waist="Flume belt",legs="Desultor tassets",feet="Malignance boots"}
+		back=gear.CorMeleeCape,waist="Flume belt",legs="Desultor tassets",feet="Malignance boots"}
     
     sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Chasseur's Culottes +2"})
     sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Chasseur's bottes +2"})
@@ -501,6 +501,7 @@ function define_roll_values()
         ["Miser's Roll"]     = {lucky=5, unlucky=7, bonus="Save TP"},
         ["Companion's Roll"] = {lucky=2, unlucky=10, bonus="Pet Regain and Regen"},
         ["Avenger's Roll"]   = {lucky=4, unlucky=8, bonus="Counter Rate"},
+		["Naturalist's Roll"]= {lucky=3, unlucky=7, bonus="Enhancing Duration"},
     }
 end
 
@@ -599,5 +600,5 @@ end
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
     set_macro_page(10, 10)
-	send_command('wait 3; input /lockstyleset 002')
+	send_command('wait 5; input /lockstyleset 002')
 end

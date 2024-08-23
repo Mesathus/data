@@ -15,9 +15,6 @@ end
 function job_setup()
     state.Buff['Afflatus Solace'] = buffactive['Afflatus Solace'] or false
     state.Buff['Afflatus Misery'] = buffactive['Afflatus Misery'] or false
-	gear.ElementalObi = {name = "Hachirin-no-obi"}
-	gear.ElementalGorget = "Fotia gorget"
-	gear.ElementalBelt = "Fotia belt"
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -38,7 +35,8 @@ function init_gear_sets()
     --------------------------------------
     -- Start defining the sets
     --------------------------------------
-
+	include('Sef-Gear.lua')
+	
     -- Precast Sets
 
     -- Fast cast sets for spells
@@ -78,23 +76,30 @@ function init_gear_sets()
     -- Default set for any weaponskill that isn't any more specifically defined
     gear.default.weaponskill_neck = "Fotia gorget"
     gear.default.weaponskill_waist = "Fotia belt"
+	
     sets.precast.WS = {
-        head="Nahtirah Hat",neck=gear.ElementalGorget,ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Vanir Cotehardie",hands="Yaoyotl Gloves",ring1="Rajas Ring",ring2="K'ayres Ring",
-        back="Refraction Cape",waist=gear.ElementalBelt,legs="Gendewitha Spats",feet="Gendewitha Galoshes"}
+        head="Nyame helm",neck="Fotia gorget",ear1="Malignance Earring",ear2="Moonshade Earring",
+        body="Nyame mail",hands="Nyame Gloves",ring1="Epaminondas's Ring",ring2="Metamorph Ring +1",
+        back="Aurist's cape +1",waist="Fotia belt",legs="Nyame flanchard",feet="Nyame sollerets"}
     
     sets.precast.WS['Flash Nova'] = {
-        head="Nahtirah Hat",neck="Stoicheion Medal",ear1="Friomisi Earring",ear2="Hecate's Earring",
-        body="Vanir Cotehardie",hands="Yaoyotl Gloves",ring1="Rajas Ring",ring2="Metamorph Ring +1",
-        back="Toro Cape",waist="Thunder Belt",legs="Gendewitha Spats",feet="Gendewitha Galoshes"}
+        head="Nyame helm",neck="Fotia gorget",ear1="Malignance Earring",ear2="Friomisi Earring",
+        body="Nyame mail",hands="Nyame Gloves",ring1="Epaminondas's Ring",ring2="Metamorph Ring +1",
+        back="Aurist's cape +1",waist="Fotia belt",legs="Nyame flanchard",feet="Nyame sollerets"}
+		
+	sets.precast.WS['Cataclysm'] = {
+        head="Nyame helm",neck="Fotia gorget",ear1="Malignance Earring",ear2="Friomisi Earring",
+        body="Nyame mail",hands="Nyame Gloves",ring1="Epaminondas's Ring",ring2="Metamorph Ring +1",
+        back="Aurist's cape +1",waist="Fotia belt",legs="Nyame flanchard",feet="Nyame sollerets"}
     
 
     -- Midcast Sets
     
-    sets.midcast.FastRecast = {
-        head="Nahtirah Hat",ear2="Loquacious Earring",
-        body="Vanir Cotehardie",hands="Dynasty Mitts",ring1="Prolix Ring",
-        back="Swith Cape +1",waist="Goading Belt",legs="Gendewitha Spats",feet="Gendewitha Galoshes"}
+    sets.midcast.FastRecast = {ammo="Sapience orb",																-- 2
+        head="Ebers Cap +2",neck="Voltsurge torque",ear1="Etiolation Earring",ear2="Malignance Earring",		-- 10, 4, 1, 4
+        body="Pinga tunic +1",hands="Volte gloves",ring1="Prolix Ring",ring2="Kishar Ring",						-- 15, 6, 2, 4
+        back="Fi follet cape +1",waist="Embla sash",legs="Pinga pants +1",feet="Regal pumps +1"}				-- 10, 5, 13, 5~7
+		-- 79~81 FC   Pinga legs/Ebers +3 swap to DRing
     
     -- Cure sets
     gear.default.obi_waist = "Goading Belt"
@@ -141,7 +146,7 @@ function init_gear_sets()
         body="Vanir Cotehardie",hands="Dynasty Mitts",
         back="Swith Cape +1",waist="Siegel Sash",legs="Shedir seraweels",feet="Gendewitha Galoshes"}
 
-    sets.midcast.Auspice = {hands="Dynasty Mitts",feet="Ebers Duckbills +2"}
+    sets.midcast.Auspice = set_combine(sets.midcast['Enhancing Magic'])--, {hands="Dynasty Mitts",feet="Ebers Duckbills +2"})
 
     sets.midcast.BarElement = {main="Beneficus",sub="Genbu's Shield",
         head="Ebers Cap +2",neck="Colossus's Torque",
@@ -165,13 +170,13 @@ function init_gear_sets()
 	
 	sets.midcast['Dispelga'] = set_combine(sets.midcast.FastRecast, {main="Daybreak"})
 
-    sets.midcast['Divine Magic'] = {main="Bolelabunga",sub="Genbu's Shield",
-        head="Nahtirah Hat",neck="Colossus's Torque",ear1="Psystorm Earring",ear2="Lifestorm Earring",
-        body="Vanir Cotehardie",hands="Yaoyotl Gloves",ring2="Sangoma Ring",
-        back="Refraction Cape",waist=gear.ElementalObi,legs="Theophany Pantaloons",feet="Gendewitha Galoshes"}
+    sets.midcast['Divine Magic'] = {main="Daybreak",sub="Ammurapi Shield",
+        neck="Sanctity necklace",ear1="Regal Earring",ear2="Malignance Earring",
+        body="Cohort Cloak +1",hands="Bunzi's Gloves",ring1="Freke ring",ring2="Metamorph Ring +1",
+        back="Aurist's Cape +1",waist="Luminary Sash",legs="Bunzi's pants",feet="Bunzi's sabots"}
 
-    sets.midcast['Dark Magic'] = {main="Bolelabunga", sub="Genbu's Shield",
-        head="Nahtirah Hat",neck="Aesir Torque",ear1="Psystorm Earring",ear2="Lifestorm Earring",
+    sets.midcast['Dark Magic'] = {main="Bunzi's rod", sub="Ammurapi Shield",
+        head="Nahtirah Hat",neck="Erra pendant",ear1="Regal Earring",ear2="Malignance Earring",
         body="Vanir Cotehardie",hands="Yaoyotl Gloves",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
         back="Refraction Cape",waist="Demonry Sash",legs="Bokwus Slops",feet="Piety Duckbills +1"}
 
@@ -196,15 +201,17 @@ function init_gear_sets()
     
 
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
-    sets.idle = {main="Daybreak", sub="Genmei Shield",ammo="Homiliary",
-        head="Befouled crown",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Eabani Earring",
-        body="Kaykaus bliaut +1",hands="Volte gloves",ring1="Sheltered Ring",ring2="Defending Ring",
-        back="Moonlight Cape",waist="Luminary sash",legs="Volte brais",feet="Herald's Gaiters"}
+    sets.idle = {main="Daybreak", sub="Genmei Shield",ammo="Homiliary",											--0, 10, 0
+        head="Befouled crown",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Eabani Earring",		--0, 6, 0, 0
+        body="Kaykaus bliaut +1",hands="Volte gloves",ring1="Sheltered Ring",ring2="Defending Ring",			--0, 0, 0, 10
+        back="Moonlight Cape",waist="Luminary sash",legs="Volte brais",feet="Herald's Gaiters"}					--6, 0, 0, 0
+		-- 32% PDT
 
-    sets.idle.PDT = {main="Daybreak", sub="Genmei Shield",ammo="Homiliary",
-        head="Nyame helm",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Eabani Earring",
-        body="Kaykaus bliaut +1",hands="Nyame gauntlets",ring1="Sheltered Ring",ring2="Defending Ring",
-        back="Moonlight Cape",waist="Luminary sash",legs="Nyame flanchard",feet="Nyame sollerets"}
+    sets.idle.PDT = {main="Daybreak", sub="Genmei Shield",ammo="Homiliary",										--0, 10, 0
+        head="Nyame helm",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Eabani Earring",			--7, 6, 0, 0
+        body="Kaykaus bliaut +1",hands="Nyame gauntlets",ring1="Sheltered Ring",ring2="Defending Ring",			--0, 7, 0, 10
+        back="Moonlight Cape",waist="Luminary sash",legs="Nyame flanchard",feet="Nyame sollerets"}				--6, 0, 8, 7
+		-- 61% PDT
 
     sets.idle.Town = {main="Daybreak", sub="Genmei Shield",
         neck="Wiglen Gorget",ear1="Bloodgem Earring",ear2="Loquacious Earring",
@@ -240,14 +247,20 @@ function init_gear_sets()
     -- EG: sets.engaged.Dagger.Accuracy.Evasion
     
     -- Basic set for if no TP weapon is defined.
-    sets.engaged = {ammo="Amar cluster",
+    sets.engaged = {ammo="Staunch tathlum +1",
         head="Nyame helm", neck="Combatant's torque", left_ear="Telos Earring", right_ear="Mache earring +1",
-		body="Nyame mail", hands="Nyame gauntlets", left_ring="Chirich Ring +1", right_ring="Chirich Ring +1",
-		back="Aurist's cape +1", waist="Goading belt", legs="Nyame Flanchard", feet="Nyame Sollerets"}
+		body="Nyame mail", hands="Bunzi's gloves", left_ring="Chirich Ring +1", right_ring="Chirich Ring +1",
+		back="Aurist's cape +1", waist="Eschan stone", legs="Nyame Flanchard", feet="Nyame Sollerets"}
+		
+	sets.engaged.DW = {ammo="Staunch tathlum +1",
+        head="Nyame helm", neck="Combatant's torque", left_ear="Telos Earring", right_ear="Dedition earring",
+		body="Nyame mail", hands="Bunzi's gloves", left_ring="Chirich Ring +1", right_ring="Chirich Ring +1",
+		back="Aurist's cape +1", waist="Shetal stone", legs="Nyame Flanchard", feet="Nyame Sollerets"}
 
 
     -- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
     sets.buff['Divine Caress'] = {hands="Ebers Mitts +2",back="Mending Cape"}
+	sets.buff['Weather'] = {waist="Hachirin-no-obi"}
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -340,6 +353,12 @@ function job_update(cmdParams, eventArgs)
             end
         end
     end
+	
+	if S{'NIN','DNC'}:contains(player.sub_job) then  --and brd_daggers:contains(player.equipment.sub)
+		state.CombatForm:set('DW')
+	else
+		state.CombatForm:reset()
+	end
 end
 
 
