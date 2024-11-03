@@ -100,10 +100,10 @@ function init_gear_sets()
 	sets.precast.Step = sets.TreasureHunter
 
     -- Fast cast sets for spells
-    sets.precast.FC = {main="Vampirism",sub="Ammurapi shield",                                            --7             7
-		head="Haruspex Hat +1",neck="Voltsurge torque",ear1="Etiolation earring",ear2="Loquac. Earring",  --9, 4, 1, 2    23
-        body="Inyanga Jubbah +2",hands="Leyline gloves",ring1="Defending Ring",ring2="Kishar Ring",       --14, 8, 0, 4   49
-        back=gear.MAccCape,waist="Embla Sash",legs="Volte brais",feet="Fili Cothurnes +2"}                --10, 5, 8, 10  82
+    sets.precast.FC = {sub="Ammurapi shield",                                            				  --             
+		head="Haruspex Hat +1",neck="Voltsurge torque",ear1="Etiolation earring",ear2="Loquac. Earring",  --9, 4, 1, 2    16
+        body="Inyanga Jubbah +2",hands="Leyline gloves",ring1="Defending Ring",ring2="Kishar Ring",       --14, 8, 0, 4   42
+        back=gear.MAccCape,waist="Embla Sash",legs="Volte brais",feet="Fili Cothurnes +2"}                --10, 5, 8, 10  75
 		-- emp boots 13% need 2 more to drop vampirism  bunzi hat 10
 		
 
@@ -259,7 +259,7 @@ function init_gear_sets()
     -- Song-specific recast reduction
     sets.midcast.SongRecast = {ear2="Loquacious Earring",
         ring1="Prolix Ring", ring2="Kishar Ring",
-        back="Harmony Cape",waist="Corvax Sash",legs="Fili Rhingrave +2"}
+        back=gear.MAccCape,waist="Embla Sash",legs="Fili Rhingrave +2"}
 
     --sets.midcast.Daurdabla = set_combine(sets.midcast.FastRecast, sets.midcast.SongRecast, {range=info.ExtraSongInstrument})
 
@@ -267,7 +267,7 @@ function init_gear_sets()
     sets.midcast.Daurdabla = {range=info.ExtraSongInstrument}
 
     -- Dummy song with Daurdabla; minimize duration to make it easy to overwrite.
-    sets.midcast.DaurdablaDummy = set_combine(sets.midcast.FastRecast, {main="Vampirism",range=info.ExtraSongInstrument})
+    sets.midcast.DaurdablaDummy = set_combine(sets.midcast.FastRecast, {range=info.ExtraSongInstrument})
 
     -- Other general spells and classes.
     sets.midcast.Cure = {main="Grioavolr",sub="Enki strap",
@@ -313,8 +313,10 @@ function init_gear_sets()
 	sets.midcast['Dark Magic'] = {range=gear.linos_macc,
 		head="Bunzi's Hat",neck="Mnbw. Whistle +1",ear1="Enchntr. Earring +1",ear2="Fili Earring +1",
 		body="Zendik Robe",hands="Fili Manchettes +3",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
-		back=gear.intarabus_macc,waist="Obstin. Sash",legs="Volte Tights",feet="Fili Cothurnes +3"}
+		back=gear.MAccCape,waist="Obstin. Sash",legs="Volte Tights",feet="Fili Cothurnes +3"}
 		-- Ayanmo legs
+		
+	sets.midcast['Ninjutsu'] = set_combine(sets.midcast['Enfeebling Magic'],{})
 
     
     -- Sets to return to when not performing an action.

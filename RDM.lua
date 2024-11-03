@@ -47,7 +47,8 @@ function init_gear_sets()
     --------------------------------------
     -- Start defining the sets
     --------------------------------------
-    
+    include('Sef-Gear.lua')
+	
     -- Precast Sets
     
     -- Precast sets to enhance JAs
@@ -57,7 +58,7 @@ function init_gear_sets()
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {
         head="Atrophy Chapeau +2",
-        body="Atrophy Tabard +2",hands="Yaoyotl Gloves",
+        body="Atrophy tabard +3",hands="Yaoyotl Gloves",
         back="Refraction Cape",legs="Hagondes Pants",feet="Hagondes Sabots"}
         
     -- Don't need any special gear for Healing Waltz.
@@ -162,7 +163,7 @@ function init_gear_sets()
 	
 	sets.midcast.Cursna = set_combine(sets.midcast.FastRecast, {
         head="Kaykaus Mitra +1",neck="Incanter's torque",
-        body="Vitiation tabard +3",hands="Hieros Mittens",ring1="Stikini Ring +1", ring2="Menelaus's ring",
+        body="Vitiation tabard +3",hands="Hieros Mittens",ring1="Stikini Ring +1", ring2="Menelaus's ring",		
 		legs="Vanya slops",feet="Vanya clogs"})
 		
 	sets.midcast.EnhancingSkill = {main="Pukulatmuj +1",														--11
@@ -170,10 +171,10 @@ function init_gear_sets()
 		body="Vitiation Tabard +3",hands="Viti. Gloves +3",ring1="Stikini Ring +1",ring2="Stikini Ring +1",		--23, 24, 8, 8
 		back="Ghostfyre Cape",waist="Olympus Sash",legs="Atrophy Tights +2",feet="Lethargy Houseaux +3"}		--8, 5, 19, 35
 		-- + 179 skill   + 420 base/merits  456 master = 606 before master levels      609 currently
-
-    sets.midcast['Enhancing Magic'] = {sub = "Ammurapi shield", ammo="Staunch tathlum +1",
+		
+	sets.midcast['Enhancing Magic'] = {sub = "Ammurapi shield", ammo="Staunch tathlum +1",
 		head = "Telchine cap", neck = "Duelist's torque +2", ear1 = "Mimir earring", ear2 = "Lethargy earring +2",
-		body = "Vitiation tabard +3", hands = "Atrophy gloves +2", ring1="Kishar ring", ring2="Stikini ring +1",
+		body = "Vitiation tabard +3", hands = "Atrophy gloves +3", ring1="Kishar ring", ring2="Stikini ring +1",
 		back = "Ghostfyre Cape", waist = "Embla sash", legs = "Telchine Braconi",feet = "Lethargy houseaux +3" }
 		
 	sets.midcast.Phalanx = set_combine(sets.midcast['Enhancing Magic'], {main="Sakpata's sword", 
@@ -190,7 +191,7 @@ function init_gear_sets()
 
     sets.midcast.Refresh = set_combine(sets.midcast['Enhancing Magic'],{
 		head="Amalric coif +1",
-		body="Atrophy tabard +2",legs = "Lethargy fuseau +3"})
+		body="Atrophy tabard +3",legs = "Lethargy fuseau +3"})
 		
 	sets.midcast.Gain = {hands="Vitiation gloves +3"}
 
@@ -205,19 +206,26 @@ function init_gear_sets()
     sets.midcast['Enfeebling Magic'] = {main="Contemplator +1",sub="Enki strap",ammo="Regal gem",				--20
         head="Vitiation chapeau +3",neck="Duelist's torque +2",ear1="Regal Earring",ear2="Malignance Earring",	--26, 0, 0, 0
         body="Lethargy Sayon +3",hands="Lethargy Gantherots +3",ring1="Stikini ring +1",ring2="Kishar ring",	--0, 29, 8, 0
-        back=gear.CapeEnf,waist="Rumination sash",legs="Lethargy fuseau +3",feet="Vitiation boots +3"}			--0, 7, 0 , 16
+        back=gear.CapeEnf,waist="Obstinate sash",legs="Lethargy fuseau +3",feet="Vitiation boots +3"}			--0, 7, 0 , 16
 		-- 610/625 to cap     base 440 merits 476 master														--106=582
 		-- need 48 with master, earring 10, af body 2, obstinate sash 8 short 17 w/o MLs  15 more for Frazzle
+		
+	sets.midcast.EnfeeblingDuration = set_combine(sets.midcast['Enfeebling Magic'], {hands = "Regal cuffs", feet="Lethargy houseaux +3"})
 		
 	sets.midcast['Enfeebling Magic'].Burst = sets.midcast['Enfeebling Magic']
 		
 	sets.midcast['Enfeebling Magic'].Resistant = {main="Contemplator +1",sub="Khonsu",range="Ullr",
         head="Atrophy chapeau +2",neck="Duelist's torque +2",ear1="Regal Earring",ear2="Malignance Earring",
         body="Lethargy Sayon +3",hands="Lethargy Gantherots +3",ring1="Stikini ring +1",ring2="Stikini ring +1",
-        back=gear.CapeEnf,waist="Rumination sash",legs="Lethargy fuseau +3",feet="Vitiation boots +3"}
+        back=gear.CapeEnf,waist="Obstinate sash",legs="Lethargy fuseau +3",feet="Vitiation boots +3"}
 		--waist to obstinate sash at r22
 		
 	sets.midcast['Enfeebling Magic'].BurstResistant = sets.midcast['Enfeebling Magic'].Resistant
+	
+	sets.midcast['Enfeebling Magic'].Duration = {main="Contemplator +1",sub="Enki strap",ammo="Regal gem",			--20
+        head="Vitiation chapeau +3",neck="Duelist's torque +2",ear1="Snotra Earring",ear2="Malignance Earring",		--26, 0, 0, 0
+        body="Lethargy Sayon +3",hands="Regal cuffs",ring1="Stikini ring +1",ring2="Kishar ring",					--0, 0, 8, 0
+        back=gear.CapeEnf,waist="Obstinate sash",legs="Lethargy fuseau +3",feet="Vitiation boots +3"}				--0, 7, 0 , 16
 
     sets.midcast['Dia III'] = set_combine(sets.midcast['Enfeebling Magic'], {head="Vitiation chapeau +3"})
 
@@ -264,12 +272,12 @@ function init_gear_sets()
 
     sets.midcast.EnhancingDuration = {
 		head = "Telchine cap",ear2="Lethargy earring +2",
-		body = "Vitiation tabard +3",hands = "Atrophy gloves +2",
+		body = "Vitiation tabard +3",hands = "Atrophy gloves +3",
 		waist = "Embla Sash",legs = "Telchine Braconi",feet = "Lethargy houseaux +3" }
         
     sets.buff.ComposureOther = {
 		head = "Lethargy chappel +3",ear2="Lethargy earring +2",
-		body = "Vitiation tabard +3",hands = "Atrophy gloves +2",
+		body = "Vitiation tabard +3",hands = "Atrophy gloves +3",
 		legs = "Lethargy fuseau +3",feet = "Lethargy houseaux +3"}
 
     sets.buff.Saboteur = {hands="Lethargy Gantherots +3"}
@@ -281,7 +289,7 @@ function init_gear_sets()
     -- Resting sets
     sets.resting = {main="Chatoyant Staff",
         head="Vitiation chapeau +3",neck="Wiglen Gorget",
-        body="Atrophy Tabard +2",hands="Serpentes Cuffs",ring1="Sheltered Ring",ring2="Paguroidea Ring",
+        body="Atrophy tabard +3",hands="Serpentes Cuffs",ring1="Sheltered Ring",ring2="Paguroidea Ring",
         waist="Austerity Belt",legs="Nares Trews",feet="Chelona Boots +1"}
     
 
@@ -291,10 +299,10 @@ function init_gear_sets()
         body="Lethargy Sayon +3",hands="Malignance Gloves",ring1="Sheltered Ring",ring2="Defending Ring",
         back="Moonlight cape",waist="Flume Belt",legs="Carmine Cuisses +1",feet="Malignance boots"}
 
-    sets.idle.Town = {main="Bolelabunga",sub="Genbu's Shield",ammo="Impatiens",
-        head="Atrophy Chapeau +2",neck="Wiglen Gorget",ear1="Bloodgem Earring",ear2="Loquacious Earring",
-        body="Atrophy Tabard +2",hands="Atrophy Gloves +2",ring1="Sheltered Ring",ring2="Paguroidea Ring",
-        back="Shadow Mantle",waist="Flume Belt",legs="Carmine Cuisses +1",feet="Malignance boots"}
+    sets.idle.Town = {main="Daybreak",sub="Sacro Bulwark",ammo="Homiliary",
+        head="Vitiation chapeau +3",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Odnowa Earring +1",
+        body="Lethargy Sayon +3",hands="Volte Gloves",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
+        back="Moonlight cape",waist="Flume Belt",legs="Carmine Cuisses +1",feet="Malignance boots"}
     
     sets.idle.Weak = {main="Daybreak",sub="Sacro Bulwark",ammo="Homiliary",
         head="Vitiation chapeau +3",neck="Loricate torque +1",ear1="Infused Earring",ear2="Etiolation Earring",
@@ -325,7 +333,7 @@ function init_gear_sets()
 
     sets.defense.MDT = {ammo="Demonry Stone",
         head="Atrophy Chapeau +2",neck="Twilight Torque",ear1="Bloodgem Earring",ear2="Loquacious Earring",
-        body="Atrophy Tabard +2",hands="Yaoyotl Gloves",ring1="Defending Ring",ring2="Shadow Ring",
+        body="Atrophy tabard +3",hands="Yaoyotl Gloves",ring1="Defending Ring",ring2="Shadow Ring",
         back="Engulfer Cape",waist="Flume Belt",legs="Bokwus Slops",feet="Gendewitha Galoshes"}
 
     sets.Kiting = {legs="Carmine Cuisses +1"}
@@ -352,7 +360,7 @@ function init_gear_sets()
 
     sets.engaged.Defense = {ammo="Demonry Stone",
         head="Atrophy Chapeau +2",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Atrophy Tabard +2",hands="Atrophy Gloves +2",ring1="Rajas Ring",ring2="K'ayres Ring",
+        body="Atrophy tabard +3",hands="Atrophy gloves +3",ring1="Rajas Ring",ring2="K'ayres Ring",
         back="Kayapa Cape",waist="Goading Belt",legs="Osmium Cuisses",feet="Atrophy Boots +2"}
 
 end

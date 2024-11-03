@@ -65,8 +65,8 @@ function user_setup()
     state.PhysicalDefenseMode:options('Evasion', 'PDT')
 
 
-	gear.CapeCrit = {name="Senuna's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10'}}
-	gear.CapeWSD = {name="Senuna's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%'}}
+	gear.CapeCrit = {name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10'}}
+	gear.CapeWSD = {name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%'}}
 	gear.CapeTP = {name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}
 	gear.CapeMAB = {name="Senuna's Mantle", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','Weapon skill damage +10%'}}
 	gear.CapeFC = {}
@@ -128,26 +128,26 @@ function init_gear_sets()
         body="Maxixi Casaque +2",hands="Maxixi Bangles +3",ring1="Regal Ring",ring2="Chirich Ring +1",
         back=gear.CapeTP, waist="Kentarch belt +1",legs="Malignance tights",feet="Horos Toe Shoes +3"}
 		
-    sets.precast.Step['Feather Step'] = {feet="Maculele Toe Shoes +2"}
+    sets.precast.Step['Feather Step'] = {feet="Maculele Toe Shoes +3"}
 
     sets.precast.Flourish1 = {}
 	
     sets.precast.Flourish1['Violent Flourish'] = {ammo="Yamarang",
-		head="Maculele Tiara +2",ear1="Dignitary's Earring",ear2="Telos Earring",
+		head="Maculele Tiara +3",ear1="Dignitary's Earring",ear2="Telos Earring",
         body="Horos Casaque +3",hands="Maculele Bangles +2",ring1="",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
-        back=gear.CapeTP,waist="Eschan Stone",legs="Maculele Tights +2",feet="Maculele Toe Shoes +2"} -- magic accuracy
+        back=gear.CapeTP,waist="Eschan Stone",legs="Maculele Tights +2",feet="Maculele Toe Shoes +3"} -- magic accuracy
 		
     sets.precast.Flourish1['Desperate Flourish'] = {ammo="Yamarang",
-		head="Maculele Tiara +2",ear1="Dignitary's Earring",ear2="Telos Earring",
+		head="Maculele Tiara +3",ear1="Dignitary's Earring",ear2="Telos Earring",
         body="Horos Casaque +3",hands="Maculele Bangles +2",ring1="",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
-        back=gear.CapeTP,waist="Eschan Stone",legs="Maculele Tights +2",feet="Maculele Toe Shoes +2"} -- acc gear
+        back=gear.CapeTP,waist="Eschan Stone",legs="Maculele Tights +2",feet="Maculele Toe Shoes +3"} -- acc gear
 
     sets.precast.Flourish2 = {}
     sets.precast.Flourish2['Reverse Flourish'] = {hands="Maculele Bangles +2"}
 
     sets.precast.Flourish3 = {}
     sets.precast.Flourish3['Striking Flourish'] = {body="Maculele Casaque +2"}
-    sets.precast.Flourish3['Climactic Flourish'] = {head="Maculele Tiara +2"}
+    sets.precast.Flourish3['Climactic Flourish'] = {head="Maculele Tiara +3"}
 
     -- Fast cast sets for spells
     
@@ -163,9 +163,9 @@ function init_gear_sets()
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {ammo="Cath palug stone",
-		head="Maculele Tiara +2", neck="Fotia Gorget", left_ear="Sherida Earring", right_ear="Moonshade Earring",
+		head="Maculele Tiara +3", neck="Fotia Gorget", left_ear="Sherida Earring", right_ear="Moonshade Earring",
 		body="Nyame Mail", hands="Maxixi Bangles +3", left_ring="Epaminondas's Ring", right_ring="Regal Ring",
-		back=gear.CapeWSD, waist="Kentarch belt +1", legs="Horos tights +3",	feet="Nyame Sollerets"}
+		back=gear.CapeWSD, waist="Kentarch belt +1", legs="Horos tights +3", feet="Nyame Sollerets"}
 	
     sets.precast.WS.Acc = set_combine(sets.precast.WS, {})
     
@@ -185,10 +185,16 @@ function init_gear_sets()
 
     sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, { left_ear="Odr earring"})
     sets.precast.WS["Rudra's Storm"].Acc = set_combine(sets.precast.WS["Rudra's Storm"])
+	
+	sets.precast.WS['Shark Bite'] = sets.precast.WS["Rudra's Storm"]
+	sets.precast.WS['Shark Bite'].Acc = sets.precast.WS["Rudra's Storm"].Acc
+	
+	sets.precast.WS['Ruthless Stroke'] = sets.precast.WS["Rudra's Storm"]
+	sets.precast.WS['Ruthless Stroke'].Acc = sets.precast.WS["Rudra's Storm"].Acc
 
     sets.precast.WS['Aeolian Edge'] = {ammo="Ghastly Tathlum +1",
 		head="Nyame helm",neck="Sibyl scarf",left_ear="Friomisi Earring",right_ear="Moonshade Earring",
-		body="Nyame mail",hands="Nyame gauntlets",left_ring="Dingir Ring",ring2="Epaminondas's Ring",
+		body="Nyame mail",hands="Nyame gauntlets",left_ring="Metamorph Ring +1",ring2="Epaminondas's Ring",
 		back=gear.CapeMAB,waist="Orpheus's sash",legs="Nyame Flanchard",feet="Nyame Sollerets",}
     
     sets.precast.Skillchain = {}
@@ -282,7 +288,7 @@ function init_gear_sets()
 	sets.engaged.Hybrid ={ammo="Yamarang",
         head="Malignance chapeau",neck="Combatant's torque",ear1="Sherida Earring",ear2="Telos Earring",
         body="Malignance tabard",hands="Malignance gloves",ring1="Lehko Habhoka's ring",ring2="Gere Ring",
-        back=gear.CapeTP, waist="Reiki Yotai",legs="Malignance tights",feet="Malignance boots"
+        back=gear.CapeTP, waist="Reiki Yotai",legs="Malignance tights",feet="Maculele Toe Shoes +3"  --Malignance boots"
 	}
 	
 	sets.engaged.SB = {ammo="Yamarang",
@@ -389,7 +395,7 @@ function init_gear_sets()
     -- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
     sets.buff['Saber Dance'] = {legs="Horos Tights +3"}
 	sets.buff['Fan Dance'] = {hands="Horos Bangles +3"}
-    sets.buff['Climactic Flourish'] = {head="Maculele Tiara +2"}
+    sets.buff['Climactic Flourish'] = {head="Maculele Tiara +3"}
 end
 
 
@@ -441,13 +447,13 @@ end
 -- to the general aftercast() code in Mote-Include.
 function job_aftercast(spell, action, spellMap, eventArgs)
     if not spell.interrupted then
-        if spell.english == "Wild Flourish" then
-            state.SkillchainPending:set()
-            send_command('wait 5;gs c unset SkillchainPending')
-        elseif spell.type:lower() == "weaponskill" then
-            state.SkillchainPending:toggle()
-            send_command('wait 6;gs c unset SkillchainPending')
-        end
+        -- if spell.english == "Wild Flourish" then
+            -- state.SkillchainPending:set()
+            -- send_command('wait 5;gs c unset SkillchainPending')
+        -- elseif spell.type:lower() == "weaponskill" then
+            -- state.SkillchainPending:toggle()
+            -- send_command('wait 6;gs c unset SkillchainPending')
+        -- end
     end
 end
 
@@ -648,4 +654,5 @@ function select_default_macro_book()
     else
         set_macro_page(5, 20)
     end
+	send_command('wait 5; input /lockstyleset 019')
 end

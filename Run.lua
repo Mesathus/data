@@ -13,6 +13,7 @@ function get_sets()
 
 	-- Load and initialize the include file.
 	include('Mote-Include.lua')
+	include('Sef-Utility.lua')
 end
 
 
@@ -57,6 +58,9 @@ end
 
 
 function init_gear_sets()
+	
+	include('Sef-Gear.lua')
+
     sets.enmity = {ammo="Sapience orb", 
 		head="Halitus helm", neck="Moonlight necklace", Ear1="Cryptic Earring", Ear2={name="Odnowa Earring +1",priority=110}, 
 		body="Emet harness +1", hands="Futhark Gloves +1", 
@@ -134,7 +138,8 @@ function init_gear_sets()
 		{
 			head="Futhark Bandeau +1",
 			body={ name="Taeon Tabard", augments={'Attack+23','"Dual Wield"+5','Phalanx +3',}},
-			hands={ name="Taeon Gloves", augments={'Phalanx +3',}},left_ring="Stikini Ring +1",right_ring="Stikini Ring +1",
+			hands={ name="Taeon Gloves", augments={'Phalanx +3',}},
+			left_ring="Stikini Ring +1",right_ring="Stikini Ring +1",
 			back="Merciful Cape",
 			legs={ name="Taeon Tights", augments={'Accuracy+20 Attack+20','"Triple Atk."+2','Phalanx +3',}},
 			feet={ name="Taeon Boots", augments={'Phalanx +3',}}

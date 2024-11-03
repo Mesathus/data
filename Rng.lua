@@ -157,6 +157,11 @@ function init_gear_sets()
 		waist="Pya'ekue Belt +1",legs="Orion Braccae +2",feet="Orion Socks +2"}
 
 	sets.midcast.Utsusemi = {}
+	
+	sets.midcast['Phalanx'] = set_combine(sets.midcast.FastRecast, {
+		head=gear.PhalanxHeadTaeon, neck="Incanter's Torque", left_ear="Mimir Earring", right_ear="Andoaa Earring",
+		body=gear.PhalanxBodyTaeon, hands=gear.PhalanxHandsTaeon, left_ring="Stikini Ring +1", right_ring="Stikini Ring +1",
+		back="Merciful Cape", waist="Olympus Sash", legs=gear.PhalanxLegsTaeon, feet=gear.PhalanxFeetTaeon})
 
 	-- Ranged sets
 
@@ -226,7 +231,7 @@ function init_gear_sets()
 	sets.defense.MDT = {ammo="",
 		head="Orion Beret +2",neck="Loricate torque +1",
 		body="Orion Jerkin +3",hands="Orion Bracers +3",ring1="Defending Ring",ring2="Fortified Ring",
-		back="Moonlight Cape",waist="Flume Belt",legs="Nahtirah Trousers",feet="Orion Socks 21"}
+		back="Moonlight Cape",waist="Flume Belt",legs="Nahtirah Trousers",feet="Orion Socks +2"}
 
 	sets.Kiting = {legs="Carmine cuisses +1",feet="Hippomenes socks +1"}
 

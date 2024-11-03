@@ -227,6 +227,14 @@ function init_gear_sets()
     sets.precast.WS['Mandalic Stab'].TA = set_combine(sets.precast.WS['Mandalic Stab'].Mod, {ammo = "Yetshila +1",body="Plunderer's vest +3"})
     sets.precast.WS['Mandalic Stab'].SATA = set_combine(sets.precast.WS['Mandalic Stab'].Mod, {ammo = "Yetshila +1",body="Plunderer's vest +3"})
 	
+	sets.precast.WS["Ruthless Stroke"] = set_combine(sets.precast.WS, {head="Pillager's Bonnet +3",neck="Assassin's gorget +2", ear1="Odr earring",
+																	ring2="Epaminondas's Ring",waist="Kentarch belt +1"})
+    sets.precast.WS["Ruthless Stroke"].Acc = set_combine(sets.precast.WS["Ruthless Stroke"], {body="Gleti's Cuirass", legs="Gleti's breeches"})
+    sets.precast.WS["Ruthless Stroke"].Mod = set_combine(sets.precast.WS["Ruthless Stroke"], {})
+    sets.precast.WS["Ruthless Stroke"].SA = set_combine(sets.precast.WS["Ruthless Stroke"].Mod, {ammo = "Yetshila +1"})
+    sets.precast.WS["Ruthless Stroke"].TA = set_combine(sets.precast.WS["Ruthless Stroke"].Mod, {ammo = "Yetshila +1",body="Plunderer's vest +3"})
+    sets.precast.WS["Ruthless Stroke"].SATA = set_combine(sets.precast.WS["Ruthless Stroke"].Mod, {ammo = "Yetshila +1",body="Plunderer's vest +3"})	
+	
 	sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {ammo="Seething bomblet +1",
 																	head="Nyame Helm",neck="Republican Platinum Medal",
 																	body="Skulker's Vest +3", ring1="Sroda Ring", ring2="Epaminondas's Ring",
