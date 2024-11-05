@@ -486,10 +486,10 @@ function init_gear_sets()
 		-- 19% base + 39% gear    41% TA damage    22% crit rate    22% base + 11% gear crit damage
 		
 	sets.engaged.Hybrid = {ammo="Yamarang",
-        head="Skulker's Bonnet +3",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Telos Earring",		--0, 0, 0, 0
-        body="Malignance tabard",hands="Malignance gloves",ring1="Hetairoi Ring",ring2="Gere Ring",				--9, 5, 0, 0
-        back=gear.CapeSTP,waist="Reiki Yotai",legs="Skulker's Culottes +3",feet="Malignance boots"}				--10, 0, 13, 4
-		-- 41% PDT
+        head="Skulker's Bonnet +3",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Suppanomimi",		--0, 0, 0, 0
+        body="Malignance tabard",hands="Malignance gloves",ring1="Defending Ring",ring2="Gere Ring",			--9, 5, 10, 0
+        back=gear.CapeSTP,waist="Engraved Belt",legs="Skulker's Culottes +3",feet="Malignance boots"}			--10, 0, 13, 4
+		-- 51% PDT
 		
 	sets.engaged.OldHybrid = {ammo="Yamarang",
         head="Malignance chapeau",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Telos Earring",

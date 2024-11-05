@@ -91,7 +91,8 @@ function init_gear_sets()
 	--sets.precast.JA['Fold'] = {hands="Lanun Gants +3"}
 
     
-    sets.precast.CorsairRoll = {head="Lanun Tricorne +3",neck="Regal Necklace",
+    sets.precast.CorsairRoll = {
+		head="Lanun Tricorne +3",neck="Regal Necklace",
 		body="Malignance tabard",hands="Chasseur's Gants +3",ring2="Defending Ring",
 		back=gear.CorMeleeCape,waist="Flume belt",legs="Desultor tassets",feet="Malignance boots"}
     
@@ -119,19 +120,18 @@ function init_gear_sets()
     -- Fast cast sets for spells
     
     sets.precast.FC = {
-		head="Carmine Mask +1",neck="Voltsurge torque",ear1="Etiolation earring",ear2="Loquacious Earring",
-		body="Dread Jupon",hands="Leyline Gloves",ring1="Prolix Ring", 
-		back=gear.CorFCCape,legs="Rawhide trousers",feet="Carmine greaves +1"}
+		head="Carmine Mask +1",neck="Voltsurge torque",ear1="Etiolation earring",ear2="Loquacious Earring",		--14, 4, 1, 1
+		body="Dread Jupon",hands="Leyline Gloves",ring1="Prolix Ring", ring2="Kishar ring",						--7, 8, 2, 4
+		back=gear.CorFCCape,legs="Rawhide trousers",feet="Carmine greaves +1"}									--10, 4, 8
+		-- 63%
 
     sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads",body="Passion jacket"})
-
 
     sets.precast.RA = {ammo=gear.RAbullet,
         head="Chasseur's Tricorne +3",neck="Commodore charm +2",											--16r, 4
         body="Laksamana's Frac +3",hands="Lanun gants +3",ring1="Crepuscular ring",							--20r, 13, 3
         back="Navarch's Mantle",waist="Impulse Belt",legs="Adhemar kecks +1",feet="Meghanada jambeaux +2"}	--10, 3, 10, 10
 		-- 53 +10 gifts
-
        
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
@@ -158,7 +158,6 @@ function init_gear_sets()
 		body="Laksamana's Frac +3",hands="Meghanada gloves +2",ring1="Ilabrat Ring",ring2="Regal Ring",
 		back=gear.CorLeadenCape,waist="Fotia belt",legs="Meghanada chausses +2",feet="Lanun bottes +3" }
 
-
     sets.precast.WS['Wildfire'] = {
 		head="Nyame helm", neck="Commodore charm +2", left_ear="Friomisi Earring", right_ear="Crematio Earring",
 		body="Lanun Frac +3", hands="Nyame gauntlets", left_ring="Dingir Ring", right_ring="Epaminondas's Ring",
@@ -166,7 +165,7 @@ function init_gear_sets()
 		
 	sets.precast.WS['Hot Shot'] = {
 		head="Nyame helm", neck="Commodore charm +2", left_ear="Friomisi Earring", right_ear="Moonshade Earring",
-		body="Lanun Frac +3", hands="Nyame gauntlets", left_ring="Dingir Ring", right_ring="Epaminondas's Ring",
+		body="Nyame mail", hands="Nyame gauntlets", left_ring="Dingir Ring", right_ring="Epaminondas's Ring",
 		back=gear.CorLeadenCape, waist="Orpheus's sash", legs="Nyame flanchard",feet="Lanun Bottes +3",}
 		
 	sets.precast.WS['Aeolian Edge'] = {
@@ -227,7 +226,7 @@ function init_gear_sets()
 		body="Chasseur's Frac +3",
 		hands="Chasseur's Gants +3",
 		legs="Chasseur's Culottes +3",
-		feet="Chasseur's bottes +3",
+		feet="Carmine greaves +1",
 		neck="Comm. Charm +2",
 		waist="K. Kachina Belt +1",
 		left_ear="Dignitary's Earring",

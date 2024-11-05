@@ -42,7 +42,7 @@ function init_gear_sets()
     -- Fast cast sets for spells
     sets.precast.FC = {ammo="Sapience orb",																		-- 2
         head="Ebers Cap +2",neck="Voltsurge torque",ear1="Etiolation Earring",ear2="Malignance Earring",		-- 10, 4, 1, 4
-        body="Pinga tunic +1",hands="Volte gloves",ring1="Defending Ring",ring2="Kishar Ring",						-- 15, 6, 2, 4
+        body="Pinga tunic +1",hands="Volte gloves",ring1="Defending Ring",ring2="Kishar Ring",					-- 15, 6, 2, 4
         back="Fi follet cape +1",waist="Embla sash",legs="Pinga pants +1",feet="Regal pumps +1"}				-- 10, 5, 13, 5~7
 		-- 79~81 FC   Pinga legs/Ebers +3 swap to DRing
         
