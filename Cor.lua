@@ -45,7 +45,7 @@ function user_setup()
 
     gear.RAbullet = "Chrono Bullet"
     gear.WSbullet = "Chrono Bullet"
-    gear.MAbullet = "Chrono Bullet"
+    gear.MAbullet = "Devastating Bullet"
     gear.QDbullet = "Chrono Bullet"
 	gear.TrialBullet = "Bronze Bullet"
 	gear.CorLeadenCape = {name="Camulus's Mantle", augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+10','Weapon skill damage +10%',}}
@@ -61,7 +61,7 @@ function user_setup()
     -- Additional local binds
     send_command('bind ^` input /ja "Double-up" <me>')
     send_command('bind !` input /ja "Bolter\'s Roll" <me>')
-
+	send_command('bind !p input /item Panacea <me>')  --Alt + P
     update_combat_form()
 	select_default_macro_book()
 end
@@ -71,6 +71,7 @@ end
 function user_unload()
     send_command('unbind ^`')
     send_command('unbind !`')
+	send_command('unbind !p')
 end
 
 -- Define sets and vars used by this job file.
@@ -282,17 +283,16 @@ function init_gear_sets()
 
     sets.idle.Town = set_combine(sets.idle, {})
 	
-	sets.idle.Aminon = {head="Malignance Chapeau",
-		body="Malignance Tabard",
-		hands="Regal Gloves",
-		legs="Chasseur's Culottes +3",
-		feet="Malignance Boots",
-		neck="Combatant's Torque",
-		waist="Yemaya Belt",
-		left_ear="Crep. Earring",
-		right_ear="Dedition Earring",
-		left_ring="Roller's Ring",
-		right_ring="Chirich Ring +1",back="Moonlight cape"}
+	sets.idle.Aminon = {
+		head="Malignance Chapeau",neck="Combatant's Torque",left_ear="Crep. Earring",right_ear="Dedition Earring",
+		body="Malignance Tabard",hands="Regal Gloves",left_ring="Roller's Ring",right_ring="Chirich Ring +1",
+		back="Moonlight cape",waist="Yemaya Belt",legs="Chasseur's Culottes +3",feet="Malignance Boots",	
+		}
+		
+	sets.idle.PDT = {ammo=gear.RAbullet,
+        head="Malignance chapeau",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Infused Earring",
+        body="Malignance tabard",hands="Malignance gloves",ring1="Sheltered Ring",ring2="Defending Ring",
+        back="Moonlight cape",waist="Carrier's sash",legs="Malignance tights",feet="Malignance boots"}
     
     -- Defense sets
     sets.defense.PDT = {

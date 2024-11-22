@@ -17,8 +17,8 @@ end
 
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
-    state.OffenseMode:options('None', 'Normal')
-    state.CastingMode:options('Normal', 'Resistant', 'Burst')
+    state.OffenseMode:options('None', 'Idris', 'Maxentius')
+    state.CastingMode:options('Normal', 'Resistant', 'Burst', 'OA')
     state.IdleMode:options('Normal', 'PDT')
 	
 	gear.CapePetRegen = {name="Nantosuelta's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Pet: "Regen"+10','Phys. dmg. taken-10%'}}
@@ -34,6 +34,8 @@ function user_setup()
 	
 	send_command('unbind f9')
 	send_command('bind f9 gs c cycle CastingMode')
+	send_command('bind !f9 gs c cycle OffenseMode')  --Alt + F9
+	send_command('bind !p input /item Panacea <me>')  --Alt + P
 end
 
 function user_unload()
@@ -41,6 +43,7 @@ function user_unload()
     send_command('unbind @`')
 	send_command('unbind f9')
 	send_command('bind f9 gs c cycle OffenseMode')
+	send_command('unbind !p')
 end
  
  
@@ -54,7 +57,7 @@ function init_gear_sets()
 	
     -- Precast sets to enhance JAs
     sets.precast.JA.Bolster = {body="Bagua Tunic +1"}
-    sets.precast.JA['Life cycle'] = {body="Geomancy Tunic +1"}
+    sets.precast.JA['Life cycle'] = {body="Geomancy Tunic +2"}
 	sets.precast.JA['Full Circle'] = {head="Azimuth hood +2",hands="Bagua mitaines +1"}
 	sets.precast.JA['Radial Arcana'] = {feet="Bagua sandals +1"}
  
@@ -150,13 +153,13 @@ function init_gear_sets()
     sets.midcast.Geomancy = set_combine(sets.midcast.FastRecast, {main="Idris",range="Dunna",               --0, 18
 		head="Azimuth hood +2",neck="Incanter's torque",													--20, 20, 0, 0
 		body="Bagua Tunic +1",hands="Geomancy mitaines +2",ring1="Stikini Ring +1",     					--10, 15, 16, 0
-		back="Lifestream cape",legs="Azimuth tights +2",feet="Azimuth gaiters +2"})							--5, 0, 0, 0
+		back="Lifestream cape",legs="Azimuth tights +2",feet="Azimuth gaiters +3"})							--5, 0, 0, 0
 		--900 to cap, 788 from merits, 860 at master														--104
 		
     sets.midcast.Geomancy.Indi = set_combine(sets.midcast.FastRecast, {main="Idris",range="Dunna",
 		head="Azimuth hood +2",neck="Incanter's torque",
 		body="Azimuth coat +2",hands="Geomancy mitaines +2",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
-		back="Lifestream cape",legs="Bagua Pants +1",feet="Azimuth gaiters +2"})
+		back="Lifestream cape",legs="Bagua Pants +1",feet="Azimuth gaiters +3"})
  
     sets.midcast.Cure = {main="Daybreak",sub="Genmei shield",												--30
         head="Nahtirah hat",neck="Phalaina locket",ear1="Novia earring",ear2="Domesticator's earring",		--
@@ -211,35 +214,47 @@ function init_gear_sets()
  
     sets.midcast['Elemental Magic'].HighTierNuke.Resistant = set_combine(sets.midcast['Elemental Magic'].Resistant, 
 		{})
+		
+	sets.midcast['Elemental Magic'].OA = {
+		head="Welkin Crown", neck="Bathy choker +1", ear1="Dedition Earring", ear2="Dignitary's Earring",
+		body="Merlinic Jubbah",	hands="Merlinic Dastanas", ring1="Chirich Ring +1", ring2="Chirich Ring +1",
+		back=gear.CapeEnf, waist="Oneiros Rope" ,legs="Perdition Slops", feet="Merlinic Crackows",
+		}
  
     sets.midcast.Impact = {main="Bunzi's rod",sub="Culminus",
         head=empty,neck="Sibyl scarf",ear1="Regal Earring",ear2="Malignance Earring",
         body="Twilight cloak",hands="Azimuth gloves +2",ring1="Freke Ring",ring2="Metamorph Ring +1",
         back="Aurist's cape +1",waist="Orpheus's sash",legs="Azimuth tights +2",feet="Agwu's pigaches"}
 		
+	sets.midcast.Impact.OA = {
+		head=empty, neck="Bathy choker +1", ear1="Dedition Earring", ear2="Dignitary's Earring",
+		body="Twilight cloak",	hands="Merlinic Dastanas", ring1="Chirich Ring +1", ring2="Chirich Ring +1",
+		back="Aurist's cape +1", waist="Oneiros Rope" ,legs="Perdition Slops", feet="Merlinic Crackows",
+		} 
+		
 	-- Custom spell classes
     sets.midcast.MndEnfeebles = {main="Bunzi's rod", sub="Culminus", range="Dunna",
 		head="Azimuth Hood +2",neck="Loricate Torque +1",left_ear="Regal Earring", right_ear="Malignance Earring",
 		body="Azimuth coat +2", hands="Azimuth gloves +2", left_ring="Metamorph Ring +1", right_ring="Kishar Ring",
-		back="Aurist's cape +1", waist="Rumination sash", legs="Azimuth tights +2", feet="Azimuth gaiters +2",
+		back="Aurist's cape +1", waist="Rumination sash", legs="Azimuth tights +2", feet="Azimuth gaiters +3",
     }
  
     sets.midcast.IntEnfeebles = {main="Bunzi's rod", sub="Culminus", range="Dunna",
 		head="Azimuth Hood +2",neck="Loricate Torque +1",left_ear="Regal Earring", right_ear="Malignance Earring",
 		body="Azimuth coat +2", hands="Azimuth gloves +2", left_ring="Metamorph Ring +1", right_ring="Kishar Ring",
-		back="Aurist's cape +1", waist="Rumination sash", legs="Azimuth tights +2", feet="Azimuth gaiters +2",
+		back="Aurist's cape +1", waist="Rumination sash", legs="Azimuth tights +2", feet="Azimuth gaiters +3",
 	}
  
     sets.midcast.ElementalEnfeeble = set_combine(sets.midcast.IntEnfeebles, {body="Azimuth coat +2"})
  
     sets.midcast['Dark Magic'] = {main="Bunzi's rod", sub="Ammurapi shield", 
-        head="Pixie hairpin +1",neck="Erra pendant",ear1="Enchanter earring +1",ear2="Gwati earring",
-        body="Geomancy Tunic +1",hands="Lurid mitts",ring1="Perception ring",ring2="Sangoma Ring",
-        back="Merciful cape",waist="Tengu-no-obi",legs="Azimuth tights +2",feet="Artsieq boots"}
+        head="Bagua galero +1",neck="Erra pendant",ear1="Enchanter earring +1",ear2="Gwati earring",
+        body="Geomancy Tunic +2",hands="Lurid mitts",ring1="Archon ring",ring2="Evanescence Ring",
+        back="Merciful cape",waist="Fucho-no-obi",legs="Azimuth tights +2",feet="Agwu's pigaches"}
 		
 	sets.midcast.Drain = {main="Bunzi's rod", sub="Ammurapi shield", 
         head="Bagua galero +1",neck="Erra pendant",ear1="Enchanter earring +1",ear2="Gwati earring",
-        body="Geomancy Tunic +1",hands="Lurid mitts",ring1="Archon ring",ring2="Evanescence Ring",
+        body="Geomancy Tunic +2",hands="Lurid mitts",ring1="Archon ring",ring2="Evanescence Ring",
         back="Merciful cape",waist="Fucho-no-obi",legs="Azimuth tights +2",feet="Agwu's pigaches"}
  
     sets.midcast.Aspir = sets.midcast.Drain
@@ -247,11 +262,26 @@ function init_gear_sets()
     sets.midcast.Stun = {main="Bunzi's rod", sub="Culminus", range="Dunna",
 		head="Azimuth Hood +2",neck="Voltsurge torque",left_ear="Regal Earring", right_ear="Malignance Earring",
 		body="Azimuth coat +2", hands="Azimuth gloves +2", left_ring="Metamorph Ring +1", right_ring="Kishar Ring",
-		back="Aurist's cape +1", waist="Embla sash", legs="Azimuth tights +2", feet="Azimuth gaiters +2",}
+		back="Aurist's cape +1", waist="Embla sash", legs="Azimuth tights +2", feet="Azimuth gaiters +3",}
 		
 	sets.midcast.Stun.Resistant = set_combine(sets.midcast.Stun, {main="Marin staff",legs="Azimuth tights +2"})
  
- 
+	sets.midcast['Absorb TP'] = {
+        range="Dunna",
+        head="Amalric Coif +1",
+        body="Geomancy Tunic +2",
+        hands="Azimuth Gloves +2",
+        legs="Azimuth Tights +2",
+        feet="Agwu's Pigaches",
+        neck="Erra Pendant",
+        waist="Embla sash",
+        left_ear="Malignance Earring",
+        right_ear="Regal Earring",
+        left_ring="Kishar Ring",
+        right_ring={name="Stikini Ring +1", bag="Wardrobe 4"},
+		back="Fi follet cape +1",
+        --back="Nantosuelta's Cape, augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Fast Cast"+10','Phys. dmg. taken-10%'"
+    }
     --------------------------------------
     -- Idle/resting/defense/etc sets
     --------------------------------------
@@ -274,7 +304,7 @@ function init_gear_sets()
     sets.idle.PDT = {main="Daybreak",sub="Genmei shield",Range="Dunna",											-- 0, 10, 0
         head="Azimuth Hood +2",neck="Loricate Torque +1",ear1="Eabani earring",ear2="Odnowa earring +1",		-- 10, 6, 0, 3
         body="Azimuth coat +2",hands="Volte gloves",ring1="Defending ring",ring2="Gelatinous ring +1",			-- 0, 0, 10, 7
-        back="Moonlight Cape",waist="Carrier's sash",legs="Volte brais",feet="Azimuth gaiters +2"}				-- 6, 0, 0, 10
+        back="Moonlight Cape",waist="Carrier's sash",legs="Volte brais",feet="Azimuth gaiters +3"}				-- 6, 0, 0, 11
 		-- 62% PDT
  
     -- .Pet sets are for when Luopan is present.
@@ -307,12 +337,12 @@ function init_gear_sets()
     sets.defense.PDT = {main="Mafic cudgel",sub="Genmei shield",Range="Dunna",
         head=empty,neck="Loricate Torque +1",ear1="Sanare earring",ear2="ethereal earring",
         body="Respite cloak",hands="Hagondes cuffs +1",ring1="Defending Ring",ring2="Dark Ring",
-        back="Umbra Cape",waist="Fucho-no-obi",legs="Assiduity pants +1",feet="Azimuth gaiters +2"}
+        back="Umbra Cape",waist="Fucho-no-obi",legs="Assiduity pants +1",feet="Azimuth gaiters +3"}
  
     sets.defense.MDT = {main="Terra's staff",sub="Oneiros grip",Range="Dunna",
         head="Azimuth hood +2",neck="Loricate Torque +1",ear1="Sanare earring",ear2="Etiolation earring",
         body="Amalric doublet +1",hands="Geomancy mitaines +2",ring1="Defending Ring",ring2="Fortified Ring",
-        back="Solemnity Cape",waist="Fucho-no-obi",legs="Assiduity pants +1",feet="Azimuth gaiters +2"}
+        back="Solemnity Cape",waist="Fucho-no-obi",legs="Assiduity pants +1",feet="Azimuth gaiters +3"}
  
     sets.Kiting = {}
  
@@ -333,6 +363,10 @@ function init_gear_sets()
         head="Nyame Helm",neck="Combatant's torque",ear1="Telos earring",ear2="Cessance earring",
         body="Nyame mail",hands="Nyame gauntlets",ring1="Lehko Habhoka's ring",ring2="Chirich ring +1",
         back="Aurist's cape +1",waist="Windbuffet belt +1",legs="Nyame Flanchard", feet="Nyame Sollerets"}
+		
+	sets.engaged.Idris = set_combine(sets.engaged, {main="Idris", sub="Genmei shield"})
+	
+	sets.engaged.Maxentius = set_combine(sets.engaged, {main="Maxentius", sub="Genmei shield"})
  
     --------------------------------------
     -- Custom buff sets

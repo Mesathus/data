@@ -51,6 +51,7 @@ function user_setup()
     send_command('bind @n gs c toggle Neck') --Windowkey'N' 
 	send_command('bind @k gs c toggle Knockback') --Windows'K'
     send_command('bind @i input /ja "Invincible" <me>') --Windowkey'I'
+	send_command('bind !p input /item Panacea <me>')  --Alt + P
     --send_command('lua l gearinfo')
  
     select_default_macro_book()
@@ -82,7 +83,8 @@ function user_unload()
     send_command('unbind @w')
     send_command('unbind @t')
     send_command('unbind @n')
-    send_command('gs enable all')   
+    send_command('gs enable all')
+	send_command('unbind !p')
 end
  
 -- Define sets and vars used by this job file.
@@ -117,7 +119,7 @@ function init_gear_sets()
     sets.precast.JA['Rampart'] = set_combine(sets.Enmity, {head="Caballarius coronet +2"})
     sets.precast.JA['Fealty'] = set_combine(sets.Enmity, {head="Caballarius surcoat +3"})
     sets.precast.JA['Chivalry'] = {hands="Caballarius gauntlets +2"}
-    sets.precast.JA['Divine Emblem'] = set_combine(sets.Enmity, {hands="Chevalier's sabatons +2"})
+    sets.precast.JA['Divine Emblem'] = set_combine(sets.Enmity, {hands="Chevalier's sabatons +3"})
     sets.precast.JA['Sepulcher'] = set_combine(sets.Enmity, {})
     sets.precast.JA['Palisade'] = set_combine(sets.Enmity, {})
     sets.precast.JA['Intervene'] = set_combine(sets.Enmity, {})
@@ -134,12 +136,12 @@ function init_gear_sets()
         Hands="Leyline Gloves", --8
         Ring1="Prolix Ring", -- 3
         Legs="Arjuna Breeches", --4
-        Feet="Chevalier's sabatons +2", --10
+        Feet="Chevalier's sabatons +3", --13
         Waist="Platinum moogle belt", --10% HP
         back=gear.FCCape, --10FC
         Ring2="Kishar Ring", --  4FC --70HP
-    } 	-- 70FC 2QM
-		-- Enif legs 8%, Emp feet +3 13%, 
+    } 	-- 73FC 2QM
+		-- Enif legs 8% 
      
     sets.precast.Cure = set_combine(sets.precast.FC, {
         --Body="Jumalik Mail", --10

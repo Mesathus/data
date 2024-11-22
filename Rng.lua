@@ -48,6 +48,7 @@ function user_setup()
 
 	send_command('bind f9 gs c cycle RangedMode')
 	send_command('bind ^f9 gs c cycle OffenseMode')
+	send_command('bind !p input /item Panacea <me>')  --Alt + P
 end
 
 
@@ -55,6 +56,7 @@ end
 function user_unload()
 	send_command('unbind f9')
 	send_command('unbind ^f9')
+	send_command('unbind !p')
 end
 
 

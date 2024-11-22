@@ -27,7 +27,13 @@ function user_setup()
     state.CastingMode:options('Normal', 'Resistant')
     state.IdleMode:options('Normal', 'PDT')
 
+	send_command('bind !p input /item Panacea <me>')  --Alt + P
+	
     select_default_macro_book()
+end
+
+function user_unload()
+	send_command('unbind !p')
 end
 
 -- Define sets and vars used by this job file.

@@ -66,6 +66,7 @@ function user_setup()
     send_command('bind !- gs c cycle targetmode')
 	send_command('bind !f9 gs c cycle WeaponskillMode') --Alt + F9
 	send_command('bind @f9 gs c cycle RangedMode') --Windows + F9
+	send_command('bind !p input /item Panacea <me>')  --Alt + P
 
     select_default_macro_book()
 end
@@ -114,7 +115,7 @@ function init_gear_sets()
     sets.precast.JA['Perfect Dodge'] = {hands="Plunderer's Armlets +3"}
     sets.precast.JA['Feint'] = {legs="Plunderer's Culottes +3"}
 	sets.precast.JA['Mug'] = {ammo="C. Palug Stone",
-		head="Mummu Bonnet +2", neck="Asn. Gorget +2", ear1="Odr Earring", ear2="Mache Earring +1",
+		head="Mummu Bonnet +2", neck="Asn. Gorget +2", ear1="Odr Earring", ear2="Skulker's earring +2",
 		body="Mummu Jacket +2", hands="Mummu Wrists +2", ring1="Ilabrat Ring", ring2="Regal Ring",
 		back="Sacro Mantle", waist="Chaac Belt", legs="Mummu Kecks +2", feet="Mummu Gamash. +2"}
 		
@@ -192,7 +193,7 @@ function init_gear_sets()
     sets.precast.WS['Dancing Edge'].SATA = set_combine(sets.precast.WS['Dancing Edge'].Mod, {})
 
     sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {ammo = "Yetshila +1",								--2
-		head="Skulker's bonnet +3",ear1="Sherida Earring",ear2="Odr earring",											--0, 0, 0, 5
+		head="Skulker's bonnet +3",ear1="Odr earring",ear2="Skulker's earring +2",										--0, 0, 5, 0
         body ="Plunderer's vest +3",hands="Gleti's Gauntlets",ring1="Lehko Habhoka's ring",ring2="Mummu Ring",			--5, 6, 10, 3
 		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10'}},		--10, 0, 7, 4
 		legs="Gleti's breeches",feet="Gleti's Boots"})																	--52%
@@ -425,7 +426,7 @@ function init_gear_sets()
         back="Moonlight cape",waist="Flume Belt",legs="Malignance tights",feet="Turms leggings +1"}
 		
 	sets.idle.STP = {ammo="Yamarang",
-        head="Turms cap +1",neck="Ainia collar",ear1="Sherida Earring",ear2="Dedition earring",
+        head="Turms cap +1",neck="Ainia collar",ear1="Dedition earring",ear2="Skulker's earring +2",
         body="Malignance tabard",hands="Malignance gloves",ring1="Lehko Habhoka's ring",ring2="Ilabrat Ring",
         back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}},
 		waist="Patentia sash",legs="Malignance tights",feet="Malignance boots"}
@@ -479,16 +480,16 @@ function init_gear_sets()
         
     -- Mod set for trivial mobs (Skadi+1)
     sets.engaged.TA = {ammo="Yetshila +1",
-        head="Skulker's Bonnet +3",neck="Assassin's gorget +2",ear1="Odr Earring",ear2="Skulker's earring +1",									--6, 4, 0, 4
+        head="Skulker's Bonnet +3",neck="Assassin's gorget +2",ear1="Odr Earring",ear2="Skulker's earring +2",									--6, 4, 0, 4
         body="Adhemar jacket +1",hands="Adhemar Wristbands +1",ring1="Lehko Habhoka's ring",ring2="Gere Ring",									--4, 4, 0, 5
         back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10','Phys. dmg. taken-10%'}},			--0
 		waist="Chiner's Belt +1",legs="Pillager's culottes +3",feet="Plunderer's Poulaines +3"}													--2, 5, 5
 		-- 19% base + 39% gear    41% TA damage    22% crit rate    22% base + 11% gear crit damage
 		
 	sets.engaged.Hybrid = {ammo="Yamarang",
-        head="Skulker's Bonnet +3",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Suppanomimi",		--0, 0, 0, 0
-        body="Malignance tabard",hands="Malignance gloves",ring1="Defending Ring",ring2="Gere Ring",			--9, 5, 10, 0
-        back=gear.CapeSTP,waist="Engraved Belt",legs="Skulker's Culottes +3",feet="Malignance boots"}			--10, 0, 13, 4
+        head="Skulker's Bonnet +3",neck="Assassin's gorget +2",ear1="Suppanomimi",ear2="Skulker's earring +2",		--0, 0, 0, 0
+        body="Malignance tabard",hands="Malignance gloves",ring1="Defending Ring",ring2="Gere Ring",				--9, 5, 10, 0
+        back=gear.CapeSTP,waist="Engraved Belt",legs="Skulker's Culottes +3",feet="Malignance boots"}				--10, 0, 13, 4
 		-- 51% PDT
 		
 	sets.engaged.OldHybrid = {ammo="Yamarang",
@@ -497,27 +498,27 @@ function init_gear_sets()
         back=gear.CapeSTP,waist="Reiki Yotai",legs="Malignance tights",feet="Malignance boots"}
 		
 	sets.engaged.HybridSB = {ammo="Expeditious pinion",  															--7
-        head="Malignance chapeau",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Skulker's earring +1",  	--0,0,0|5,6
+        head="Malignance chapeau",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Skulker's earring +2",  	--0,0,0|5,7
         body="Malignance tabard",hands="Malignance gloves",ring1="Chirich Ring +1",ring2="Chirich Ring +1",  	   	--0,0,10,10
         back=gear.CapeSTP,waist="Reiki Yotai",legs="Gleti's breeches",feet="Volte spats"}  							--0,0,10,6  Mummu feet would be 9 SB 5 crit, less Str/Dex more Acc
-		--48 SB1 + 5 SB2    38 PDT     R30 Gleti's legs +5 SB, can drop ammo and be at 49 w/ Mummu
+		--49 SB1 + 5 SB2    38 PDT     R30 Gleti's legs +5 SB, can drop ammo and be at 49 w/ Mummu
 		
 	sets.engaged.HybridCrit = set_combine(sets.engaged.Hybrid, {ring1="Lehko Habhoka's ring", back=gear.CapeCrit})
 	
 	sets.engaged.HybridAM = {ammo="Yetshila +1",																	--2
-		head="Skulker's Bonnet +3",neck="Assassin's gorget +2",ear1="Odr Earring",ear2="Skulker's earring +1",  	--0|6, 0|4, 5, 0|4
+		head="Skulker's Bonnet +3",neck="Assassin's gorget +2",ear1="Odr Earring",ear2="Skulker's earring +2",  	--0|6, 0|4, 5, 0|4
         body="Gleti's cuirass",hands="Gleti's gauntlets",ring1="Lehko Habhoka's ring",ring2="Gere Ring",  	   		--8, 6, 10, 0|5
         back=gear.CapeCrit,waist="Reiki Yotai",legs="Skulker's Culottes +3",feet="Gleti's boots" 					--10, 0, 7, 4
 	} -- 44% PDT    52% crit rate   19% + 19% TA    31% PDL
 		
 		
 	sets.engaged.DT = {ammo="Yamarang",
-        head="Malignance chapeau",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Telos Earring",
+        head="Malignance chapeau",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Skulker's earring +2",
         body="Malignance tabard",hands="Malignance gloves",ring1="Moonlight Ring",ring2="Moonlight Ring",
         back=gear.CapeSTP,waist="Reiki Yotai",legs="Malignance tights",feet="Malignance boots"}
 		
 	sets.engaged.H2H = {ammo="Yamarang",
-        head="Malignance chapeau",neck="Assassin's gorget +2",ear1="Mache Earring +1",ear2="Telos Earring",
+        head="Malignance chapeau",neck="Assassin's gorget +2",ear1="Mache Earring +1",ear2="Skulker's earring +2",
         body="Malignance tabard",hands="Malignance gloves",ring1="Chirich Ring +1",ring2="Chirich Ring +1",
         back=gear.CapeSTP,waist="Chiner's Belt +1",legs="Malignance tights",feet="Malignance boots"}
 		
@@ -532,10 +533,9 @@ function init_gear_sets()
 		waist="Reiki Yotai",legs="Skulker's Culottes +3",feet="Turms leggings +1"}
 		
 	sets.engaged.Crit = {ammo="Yetshila +1",																				--2
-		head="Adhemar Bonnet +1", neck="Assassin's Gorget +2", left_ear="Sherida Earring", right_ear="Odr Earring",			--2, 0, 0, 5
+		head="Adhemar Bonnet +1", neck="Assassin's Gorget +2",  ear1="Odr Earring",ear2="Sherida Earring",					--2, 0, 5, 0
 		body="Plunderer's Vest +3", hands="Mummu Wrists +2", left_ring="Lehko Habhoka's ring", right_ring="Mummu Ring",		--5, 6, 10, 3
-		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10',}},			--10
-		waist="Kentarch Belt +1", legs="Skulker's Culottes +3",feet="Adhe. Gamashes +1"}									--0, 7, 6
+		back=gear.CapeCrit,	waist="Kentarch Belt +1", legs="Skulker's Culottes +3",feet="Adhe. Gamashes +1"}				--10, 0, 7, 6
 		-- 56% crit  Gleti's knife is 5 more, plus up to 25% base gives 81/86% crit  Gleti's head/feet 5/4    Gleti hands same as Mummu, swap ring to Hetaroi
 	
 

@@ -202,7 +202,7 @@ function init_gear_sets()
     -- PET SIC & READY MOVES
     sets.midcast.Pet.WS = {ammo="Hesperiidae",
         head="Nyame Helm",neck="Beastmaster collar +1",ear1="Domesticator's Earring",ear2="Enmerkar Earring",
-        body="Nyame mail",hands="Nukumi Manoplas +1",ring1="Angel's Ring",ring2="Cath Palug Ring",
+        body="Nyame mail",hands="Nukumi Manoplas +2",ring1="Angel's Ring",ring2="Cath Palug Ring",
         back="Ferine Mantle",waist="Isa belt",legs="Gleti's breeches",feet="Nyame sollerets"}
 
     sets.midcast.Pet.WS.Unleash = set_combine(sets.midcast.Pet.WS, {hands="Emicho gauntlets +1"})

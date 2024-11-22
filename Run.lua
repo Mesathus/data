@@ -42,7 +42,7 @@ function user_setup()
     state.OffenseMode:options('Tank', 'Normal', 'Hybrid')
     state.WeaponskillMode:options('Normal', 'Acc')
     state.PhysicalDefenseMode:options('PDT')
-    state.IdleMode:options('Normal','Regen', 'Refresh')
+    state.IdleMode:options('Tank', 'Normal','Regen', 'Refresh')
 	
 	gear.CapeIdle = {}
 	gear.CapeTank = {}
@@ -51,11 +51,14 @@ function user_setup()
 	gear.CapeDexWSD = {}
 	gear.CapeFC = {}
 	
-	
+	send_command('bind !p input /item Panacea <me>')  --Alt + P
 
 	select_default_macro_book()
 end
 
+function user_unload()
+	send_command('unbind !p')
+end
 
 function init_gear_sets()
 	
@@ -64,7 +67,7 @@ function init_gear_sets()
     sets.enmity = {ammo="Sapience orb", 
 		head="Halitus helm", neck="Moonlight necklace", Ear1="Cryptic Earring", Ear2={name="Odnowa Earring +1",priority=110}, 
 		body="Emet harness +1", hands="Futhark Gloves +1", 
-		back=gear.CapeTank, waist="Warwolf Belt", legs="Erilaz legguards", feet="Erilaz greaves"}
+		back=gear.CapeTank, waist="Warwolf Belt", legs="Erilaz leg guards", feet="Erilaz greaves"}
 
 	--------------------------------------
 	-- Precast sets

@@ -206,6 +206,7 @@ function user_setup()
     send_command('bind ^` input /ja "Chain Affinity" <me>')
     send_command('bind !` input /ja "Efflux" <me>')
     send_command('bind @` input /ja "Burst Affinity" <me>')
+	send_command('bind !p input /item Panacea <me>')  --Alt + P
 
     update_combat_form()
     select_default_macro_book()
@@ -217,6 +218,7 @@ function user_unload()
     send_command('unbind ^`')
     send_command('unbind !`')
     send_command('unbind @`')
+	send_command('unbind !p')
 end
 
 
@@ -229,12 +231,12 @@ function init_gear_sets()
 	
 	sets.TreasureHunter = {ammo="Perfect lucky egg", legs = {name="Herculean Trousers", augments={'"Mag.Atk.Bns."+30','Accuracy+24','"Treasure Hunter"+1','Mag. Acc.+6 "Mag.Atk.Bns."+6',}},}
 
-    sets.buff['Burst Affinity'] = {"Hashishin Basmak +2"}
+    sets.buff['Burst Affinity'] = {"Hashishin Basmak +3"}
     sets.buff['Chain Affinity'] = {"Hashishin Kavuk +3"}
     sets.buff.Convergence = {head="Luhlaza Keffiyeh +3"}
     sets.buff.Diffusion = {feet="Luhlaza Charuqs +3"}
     sets.buff.Enchainment = {body="Luhlaza Jubbah"}
-    sets.buff.Efflux = {legs="Hashishin Tayt +2"}
+    sets.buff.Efflux = {legs="Hashishin Tayt +3"}
 	sets.buff['Weather'] = {waist='Hachirin-no-obi'}
 
     
@@ -373,11 +375,11 @@ function init_gear_sets()
     sets.midcast['Blue Magic'].Magical = {ammo="Ghastly Tathlum +1",
         head="Hashishin Kavuk +3",neck="Sibyl scarf",ear1="Friomisi Earring",ear2="Regal Earring",
         body="Hashishin mintan +3",hands="Amalric gages +1",ring1="Metamorph Ring +1",ring2="Shiva Ring +1",
-        back=gear.NukeCape,waist="Orpheus's sash",legs="Amalric slops +1",feet="Amalric nails +1"}
+        back=gear.NukeCape,waist="Orpheus's sash",legs="Amalric slops +1",feet="Hashishin Basmak +3"}
 
     sets.midcast['Blue Magic'].Magical.Burst = set_combine(sets.midcast['Blue Magic'].Magical,
         {hands="Amalric gages +1",ring1="Locus Ring",ring2="Mujin Band",
-		 back="Seshaw Cape",feet="Hashishin Basmak +2"})
+		 back="Seshaw Cape",feet="Hashishin Basmak +3"})
 		 
 	sets.midcast['Blue Magic'].MagicalDark = set_combine(sets.midcast['Blue Magic'].Magical, {
 		head = "Pixie hairpin +1", body="Hashishin mintan +3", ring1="Archon Ring"
@@ -403,7 +405,7 @@ function init_gear_sets()
     sets.midcast['Blue Magic'].MagicAccuracy = {ammo="Pemphredo Tathlum",
         head="Hashishin Kavuk +3",neck="Mirage stole +2",ear1="Dignitary's Earring",ear2="Regal Earring",
         body="Hashishin mintan +3",hands="Nyame Gauntlets",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
-        back="Aurist's cape +1",waist="Luminary sash",legs="Hashishin tayt +2",feet="Hashishin basmak +2"}
+        back="Aurist's cape +1",waist="Luminary sash",legs="Hashishin Tayt +3",feet="Hashishin Basmak +3"}
 
     -- Breath Spells --
     
@@ -433,7 +435,7 @@ function init_gear_sets()
     sets.midcast['Blue Magic'].SkillBasedBuff = {ammo="Mavi Tathlum",
         head="Luhlaza Keffiyeh +3",neck="Mirage Stole +2",ear2="Hashishin earring +1",
         body="Assimilator's Jubbah +3",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
-        back="Cornflower Cape",legs="Hashishin Tayt +2",feet="Luhlaza Charuqs +3"}
+        back="Cornflower Cape",legs="Hashishin Tayt +3",feet="Luhlaza Charuqs +3"}
 
     sets.midcast['Blue Magic'].Buff = {}
 	

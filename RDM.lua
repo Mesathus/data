@@ -25,7 +25,7 @@ end
 function user_setup()
     state.OffenseMode:options('None', 'Normal', 'Enspell1')
     state.HybridMode:options('Normal', 'PhysicalDef', 'MagicalDef')
-    state.CastingMode:options('Normal', 'Resistant', 'Burst', 'BurstResistant')
+    state.CastingMode:options('Normal', 'Resistant', 'Burst', 'BurstResistant', 'OA')
     state.IdleMode:options('Normal', 'Refresh', 'DT')
 
     gear.CapeEnf = {name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','Weapon skill damage +10%'}}
@@ -38,9 +38,13 @@ function user_setup()
     gear.FeetPhalanx = { name="Taeon Boots", augments={'"Cure" potency +4%','Phalanx +3',}}
     
 	send_command('bind f11 gs c cycle CastingMode') --F11
+	send_command('bind !p input /item Panacea <me>')  --Alt + P
     select_default_macro_book()
 end
 
+function user_unload()
+	send_command('unbind !p')
+end
 
 -- Define sets and vars used by this job file.
 function init_gear_sets()
@@ -226,6 +230,8 @@ function init_gear_sets()
         head="Vitiation chapeau +3",neck="Duelist's torque +2",ear1="Snotra Earring",ear2="Malignance Earring",		--26, 0, 0, 0
         body="Lethargy Sayon +3",hands="Regal cuffs",ring1="Stikini ring +1",ring2="Kishar ring",					--0, 0, 8, 0
         back=gear.CapeEnf,waist="Obstinate sash",legs="Lethargy fuseau +3",feet="Vitiation boots +3"}				--0, 7, 0 , 16
+		
+	sets.midcast['Enfeebling Magic'].OA = sets.midcast['Enfeebling Magic']
 
     sets.midcast['Dia III'] = set_combine(sets.midcast['Enfeebling Magic'], {head="Vitiation chapeau +3"})
 
@@ -256,8 +262,16 @@ function init_gear_sets()
         body="Ea houppelande +1",hands="Bunzi's gloves",ring1="Freke Ring",ring2="Metamorph Ring +1",
         back="Aurist's cape +1",waist="Orpheus's sash",legs="Lethargy fuseau +3",feet="Lethargy houseaux +3"}
 		--41 MBB1   16 MBB2
+		
+	sets.midcast['Elemental Magic'].OA = {ammo="Coiste Bodhar",
+		head="Welkin Crown", neck="Ainia Collar", ear1="Dedition Earring", ear2="Crep. Earring",
+		body="Merlinic Jubbah",	hands="Merlinic Dastanas", ring1="Chirich Ring +1", ring2="Chirich Ring +1",
+		back=gear.CapeEnf, waist="Oneiros Rope" ,legs="Perdition Slops", feet="Merlinic Crackows",
+		}
         
     sets.midcast.Impact = set_combine(sets.midcast['Elemental Magic'], {head=empty,body="Twilight Cloak"})
+	
+	sets.midcast.Impact.OA = set_combine(sets.midcast['Elemental Magic'].OA, sets.midcast.Impact)
 
     sets.midcast['Dark Magic'] = set_combine(sets.midcast['Elemental Magic'], {})
 

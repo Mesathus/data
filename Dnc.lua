@@ -78,6 +78,7 @@ function user_setup()
     send_command('bind !- gs c toggle usealtstep')
     send_command('bind ^` input /ja "Chocobo Jig" <me>')  --CTRL + `
     send_command('bind !` input /ja "Chocobo Jig II" <me>')  --ALT + `
+	send_command('bind !p input /item Panacea <me>')  --Alt + P
 
     select_default_macro_book()
 end
@@ -91,6 +92,7 @@ function user_unload()
     send_command('unbind !=')
     send_command('unbind ^-')
     send_command('unbind !-')
+	send_command('unbind !p')
 end
 
 
@@ -124,7 +126,7 @@ function init_gear_sets()
     sets.precast.Jig = {legs="Horos Tights +3", feet="Maxixi Toe Shoes +2"}
 
     sets.precast.Step = {ammo="Yamarang",
-        head="Maxixi Tiara +2",neck="Combatant's torque",ear1="Mache Earring +1",ear2="Telos Earring",
+        head="Maxixi Tiara +2",neck="Etoile Gorget +2",ear1="Mache Earring +1",ear2="Telos Earring",
         body="Maxixi Casaque +2",hands="Maxixi Bangles +3",ring1="Regal Ring",ring2="Chirich Ring +1",
         back=gear.CapeTP, waist="Kentarch belt +1",legs="Malignance tights",feet="Horos Toe Shoes +3"}
 		
@@ -163,7 +165,7 @@ function init_gear_sets()
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {ammo="Cath palug stone",
-		head="Maculele Tiara +3", neck="Fotia Gorget", left_ear="Sherida Earring", right_ear="Moonshade Earring",
+		head="Maculele Tiara +3", neck="Etoile Gorget +2", left_ear="Sherida Earring", right_ear="Moonshade Earring",
 		body="Nyame Mail", hands="Maxixi Bangles +3", left_ring="Epaminondas's Ring", right_ring="Regal Ring",
 		back=gear.CapeWSD, waist="Kentarch belt +1", legs="Horos tights +3", feet="Nyame Sollerets"}
 	
@@ -239,6 +241,12 @@ function init_gear_sets()
         head="Turms cap +1",neck="Bathy choker +1",ear1="Etiolation Earring",ear2="Infused Earring",
         body="Malignance tabard",hands="Turms mittens +1",ring1="Defending Ring",ring2="Sheltered Ring",
         back="Moonlight cape",waist="Flume Belt",legs="Malignance tights",feet="Turms leggings +1"}
+		
+	sets.idle.Aminon = {
+		head="Malignance Chapeau",neck="Combatant's Torque",left_ear="Crep. Earring",right_ear="Dedition Earring",
+		body="Malignance Tabard",hands="Regal Gloves",left_ring="Roller's Ring",right_ring="Chirich Ring +1",
+		back="Moonlight cape",waist="Yemaya Belt",legs="Malignance tights",feet="Malignance Boots",	
+		}
     
     -- Defense sets
 
@@ -268,7 +276,7 @@ function init_gear_sets()
     
     -- Normal melee group
     sets.engaged = {ammo="Yamarang",
-		head="Adhemar Bonnet +1",neck="Lissome Necklace",left_ear="Sherida Earring",right_ear="Dedition Earring",
+		head="Adhemar Bonnet +1",neck="Etoile Gorget +2",left_ear="Sherida Earring",right_ear="Dedition Earring",
 		body="Horos Casaque +3",hands="Adhemar Wristbands +1",left_ring="Lehko Habhoka's ring",right_ring="Gere Ring",
 		back=gear.CapeTP,waist="Kentarch Belt +1",legs="Samnuha Tights",feet="Horos Toe Shoes +3" 
     }
@@ -280,26 +288,26 @@ function init_gear_sets()
         -- back="Atheling Mantle",waist="Patentia Sash",legs=gear.AugQuiahuiz,feet="Horos Toe Shoes"}
 
     sets.engaged.Acc = {ammo="Yamarang",
-		head="Adhemar Bonnet +1",neck="Lissome Necklace",left_ear="Sherida Earring",right_ear="Digni. Earring",
+		head="Adhemar Bonnet +1",neck="Etoile Gorget +2",left_ear="Sherida Earring",right_ear="Digni. Earring",
 		body="Horos Casaque +3",hands="Adhemar wristbands +1",left_ring="Lehko Habhoka's ring",right_ring="Regal Ring",
 		back=gear.CapeTP,waist="Sailfi Belt +1",legs="Samnuha tights",feet="Horos Toe Shoes +3"
     }
 	
 	sets.engaged.Hybrid ={ammo="Yamarang",
-        head="Malignance chapeau",neck="Combatant's torque",ear1="Sherida Earring",ear2="Telos Earring",
+        head="Malignance chapeau",neck="Etoile Gorget +2",ear1="Sherida Earring",ear2="Telos Earring",
         body="Malignance tabard",hands="Malignance gloves",ring1="Lehko Habhoka's ring",ring2="Gere Ring",
-        back=gear.CapeTP, waist="Reiki Yotai",legs="Malignance tights",feet="Maculele Toe Shoes +3"  --Malignance boots"
+        back=gear.CapeTP, waist="Engraved belt",legs="Malignance tights",feet="Maculele Toe Shoes +3"  --Malignance boots"
 	}
 	
 	sets.engaged.SB = {ammo="Yamarang",
-        head="Malignance chapeau",neck="Combatant's torque",ear1="Sherida Earring",ear2="Telos Earring",	--0, 0, 0|5, 0
+        head="Malignance chapeau",neck="Etoile Gorget +2",ear1="Sherida Earring",ear2="Telos Earring",		--0, 0, 0|5, 0
         body="Malignance tabard",hands="Malignance gloves",ring1="Chirich Ring +1",ring2="Gere Ring",		--0, 0, 10, 0
         back=gear.CapeTP, waist="Reiki Yotai",legs="Gleti's breeches",feet="Malignance boots"				--0, 0, 10, 0
 	}
 	-- 32SB with gifts
 	
     sets.engaged.Evasion = {ammo="Yamarang",
-        head="Malignance chapeau",neck="Combatant's torque",ear1="Sherida Earring",ear2="Telos Earring",
+        head="Malignance chapeau",neck="Etoile Gorget +2",ear1="Sherida Earring",ear2="Telos Earring",
         body="Malignance tabard",hands="Malignance gloves",ring1="Lehko Habhoka's ring",ring2="Gere Ring",
         back=gear.CapeTP, waist="Reiki Yotai",legs="Malignance tights",feet="Malignance boots"}
 		
