@@ -480,11 +480,11 @@ function init_gear_sets()
         
     -- Mod set for trivial mobs (Skadi+1)
     sets.engaged.TA = {ammo="Yetshila +1",
-        head="Skulker's Bonnet +3",neck="Assassin's gorget +2",ear1="Odr Earring",ear2="Skulker's earring +2",									--6, 4, 0, 4
+        head="Skulker's Bonnet +3",neck="Assassin's gorget +2",ear1="Odr Earring",ear2="Skulker's earring +2",									--6, 4, 0, 5
         body="Adhemar jacket +1",hands="Adhemar Wristbands +1",ring1="Lehko Habhoka's ring",ring2="Gere Ring",									--4, 4, 0, 5
         back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10','Phys. dmg. taken-10%'}},			--0
 		waist="Chiner's Belt +1",legs="Pillager's culottes +3",feet="Plunderer's Poulaines +3"}													--2, 5, 5
-		-- 19% base + 39% gear    41% TA damage    22% crit rate    22% base + 11% gear crit damage
+		-- 19% base + 40% gear    41% TA damage    22% crit rate    22% base + 11% gear crit damage
 		
 	sets.engaged.Hybrid = {ammo="Yamarang",
         head="Skulker's Bonnet +3",neck="Assassin's gorget +2",ear1="Suppanomimi",ear2="Skulker's earring +2",		--0, 0, 0, 0
@@ -506,10 +506,10 @@ function init_gear_sets()
 	sets.engaged.HybridCrit = set_combine(sets.engaged.Hybrid, {ring1="Lehko Habhoka's ring", back=gear.CapeCrit})
 	
 	sets.engaged.HybridAM = {ammo="Yetshila +1",																	--2
-		head="Skulker's Bonnet +3",neck="Assassin's gorget +2",ear1="Odr Earring",ear2="Skulker's earring +2",  	--0|6, 0|4, 5, 0|4
+		head="Skulker's Bonnet +3",neck="Assassin's gorget +2",ear1="Odr Earring",ear2="Skulker's earring +2",  	--0|6, 0|4, 5, 0|5
         body="Gleti's cuirass",hands="Gleti's gauntlets",ring1="Lehko Habhoka's ring",ring2="Gere Ring",  	   		--8, 6, 10, 0|5
         back=gear.CapeCrit,waist="Reiki Yotai",legs="Skulker's Culottes +3",feet="Gleti's boots" 					--10, 0, 7, 4
-	} -- 44% PDT    52% crit rate   19% + 19% TA    31% PDL
+	} -- 44% PDT    52% crit rate   19% + 20% TA    31% PDL
 		
 		
 	sets.engaged.DT = {ammo="Yamarang",

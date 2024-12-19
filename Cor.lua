@@ -151,8 +151,8 @@ function init_gear_sets()
 
     sets.precast.WS['Last Stand'] = {
 		head="Lanun Tricorne +3",neck="Fotia gorget",ear1="Enervating earring",ear2="Moonshade Earring",
-		body="Laksamana's Frac +3",hands="Meghanada gloves +2",ring1="Ilabrat Ring",ring2="Regal Ring",
-		back=gear.CorLeadenCape,waist="Fotia belt",legs="Meghanada chausses +2",feet="Lanun bottes +3" }
+		body="Nyame mail",hands="Nyame gauntlets",ring1="Ilabrat Ring",ring2="Regal Ring",
+		back=gear.CorLeadenCape,waist="Fotia belt",legs="Nyame flanchard",feet="Lanun bottes +3" }
 
     sets.precast.WS['Last Stand'].Acc = {
         head="Lanun Tricorne +3",neck="Fotia gorget",ear1="Enervating earring",ear2="Moonshade Earring",
@@ -322,7 +322,7 @@ function init_gear_sets()
         back=gear.CorMeleeCape,waist="Kentarch belt +1",legs="Malignance tights",feet="Malignance boots"}
     
     sets.engaged.Acc = {ammo=gear.RAbullet,
-        head="Adhemar bonnet +1",neck="Combatant's Torque",ear1="Brutal Earring",ear2="Telos Earring",
+        head="Adhemar bonnet +1",neck="Warder's charm +1",ear1="Brutal Earring",ear2="Telos Earring",
         body="Adhemar jacket +1",hands="Adhemar Wristbands +1",ring1="Lehko Habhoka's ring",ring2="Epona's Ring",
         back=gear.CorMeleeCape,waist="Kentarch belt +1",legs="Malignance tights",feet="Malignance boots"}
 		
@@ -350,10 +350,10 @@ function init_gear_sets()
 		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
 		legs="Carmine cuisses +1",
 		feet={ name="Herculean Boots", augments={'Accuracy+26','"Triple Atk."+4','DEX+9','Attack+1'}},
-		neck="Combatant's Torque",
+		neck="Warder's Charm +1",
 		waist="Reiki Yotai",
-		left_ear="Telos Earring",
-		right_ear="Odr Earring",
+		left_ear="Eabani Earring",
+		right_ear="Telos Earring",
 		left_ring="Ilabrat Ring",
 		right_ring="Regal Ring",
 		back=gear.CorMeleeCape}

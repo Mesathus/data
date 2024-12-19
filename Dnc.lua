@@ -50,7 +50,7 @@ function job_setup()
     state.CurrentStep = M{['description']='Current Step', 'Main', 'Alt'}
     state.SkillchainPending = M(false, 'Skillchain Pending')
 
-    determine_haste_group()
+    --determine_haste_group()
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -59,10 +59,11 @@ end
 
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
-    state.OffenseMode:options('Normal', 'Hybrid', 'SB')
+    state.OffenseMode:options('Hybrid', 'Aminon', 'Normal', 'SB')
     state.HybridMode:options('Normal', 'Evasion', 'PDT')
-    state.WeaponskillMode:options('Normal', 'Acc', 'Fodder')
+    state.WeaponskillMode:options('Normal', 'Acc')
     state.PhysicalDefenseMode:options('Evasion', 'PDT')
+	state.IdleMode:options('Normal', 'Aminon')
 
 
 	gear.CapeCrit = {name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10'}}
@@ -76,6 +77,8 @@ function user_setup()
     send_command('bind != gs c cycle altstep')
     send_command('bind ^- gs c toggle selectsteptarget')
     send_command('bind !- gs c toggle usealtstep')
+	send_command('bind !f9 gs c cycle WeaponskillMode') --Alt + F9
+	send_command('bind @f9 gs c cycle RangedMode') --Windows + F9
     send_command('bind ^` input /ja "Chocobo Jig" <me>')  --CTRL + `
     send_command('bind !` input /ja "Chocobo Jig II" <me>')  --ALT + `
 	send_command('bind !p input /item Panacea <me>')  --Alt + P
@@ -93,6 +96,8 @@ function user_unload()
     send_command('unbind ^-')
     send_command('unbind !-')
 	send_command('unbind !p')
+	send_command('unbind !f9')
+	send_command('unbind @f9')
 end
 
 
@@ -114,9 +119,9 @@ function init_gear_sets()
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {ammo="Yamarang",																			--5
         head="Horos Tiara +3",neck="Loricate torque +1",ear1="Tuisto earring",ear2="Odnowa earring +1",				--15, 
-        body="Maxixi Casaque +2",hands="Maculele Bangles +2",ring1="Metamorph Ring +1",ring2="Gelatinous Ring +1",	--17|7,  
-        back="Senuna's Mantle",waist="Chaac Belt",legs="Dashing subligar",feet="Maxixi Toe Shoes +2"}				--0,0,10,12
-		--55% Waltz potency
+        body="Maxixi Casaque +2",hands="Maculele Bangles +3",ring1="Metamorph Ring +1",ring2="Gelatinous Ring +1",	--17|7,  
+        back=gear.CapeTP,waist="Chaac Belt",legs="Dashing subligar",feet="Maxixi Toe Shoes +2"}						--0,0,10,12
+		--59% Waltz potency
         
     -- Don't need any special gear for Healing Waltz.
     sets.precast.Waltz['Healing Waltz'] = {body="Maxixi Casaque +2"}
@@ -136,16 +141,16 @@ function init_gear_sets()
 	
     sets.precast.Flourish1['Violent Flourish'] = {ammo="Yamarang",
 		head="Maculele Tiara +3",ear1="Dignitary's Earring",ear2="Telos Earring",
-        body="Horos Casaque +3",hands="Maculele Bangles +2",ring1="",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
-        back=gear.CapeTP,waist="Eschan Stone",legs="Maculele Tights +2",feet="Maculele Toe Shoes +3"} -- magic accuracy
+        body="Horos Casaque +3",hands="Maculele Bangles +3",ring1="",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
+        back=gear.CapeTP,waist="Eschan Stone",legs="Maculele Tights +3",feet="Maculele Toe Shoes +3"} -- magic accuracy
 		
     sets.precast.Flourish1['Desperate Flourish'] = {ammo="Yamarang",
 		head="Maculele Tiara +3",ear1="Dignitary's Earring",ear2="Telos Earring",
-        body="Horos Casaque +3",hands="Maculele Bangles +2",ring1="",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
-        back=gear.CapeTP,waist="Eschan Stone",legs="Maculele Tights +2",feet="Maculele Toe Shoes +3"} -- acc gear
+        body="Horos Casaque +3",hands="Maculele Bangles +3",ring1="",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
+        back=gear.CapeTP,waist="Eschan Stone",legs="Maculele Tights +3",feet="Maculele Toe Shoes +3"} -- acc gear
 
     sets.precast.Flourish2 = {}
-    sets.precast.Flourish2['Reverse Flourish'] = {hands="Maculele Bangles +2"}
+    sets.precast.Flourish2['Reverse Flourish'] = {hands="Maculele Bangles +3", back="Toetapper mantle"}
 
     sets.precast.Flourish3 = {}
     sets.precast.Flourish3['Striking Flourish'] = {body="Maculele Casaque +2"}
@@ -167,13 +172,13 @@ function init_gear_sets()
     sets.precast.WS = {ammo="Cath palug stone",
 		head="Maculele Tiara +3", neck="Etoile Gorget +2", left_ear="Sherida Earring", right_ear="Moonshade Earring",
 		body="Nyame Mail", hands="Maxixi Bangles +3", left_ring="Epaminondas's Ring", right_ring="Regal Ring",
-		back=gear.CapeWSD, waist="Kentarch belt +1", legs="Horos tights +3", feet="Nyame Sollerets"}
+		back=gear.CapeWSD, waist="Kentarch belt +1", legs="Nyame flanchard", feet="Nyame Sollerets"}
 	
     sets.precast.WS.Acc = set_combine(sets.precast.WS, {})
     
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
     sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {})
-    sets.precast.WS['Exenterator'].Acc = set_combine(sets.precast.WS['Exenterator'] )
+    sets.precast.WS['Exenterator'].Acc = set_combine(sets.precast.WS['Exenterator'], {legs="Maculele Tights +3"} )
     sets.precast.WS['Exenterator'].Fodder = set_combine(sets.precast.WS['Exenterator'], {})
 
     sets.precast.WS['Pyrrhic Kleos'] = set_combine(sets.precast.WS)
@@ -186,7 +191,7 @@ function init_gear_sets()
     sets.precast.WS['Evisceration'].Acc = set_combine(sets.precast.WS['Evisceration'], {})
 
     sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, { left_ear="Odr earring"})
-    sets.precast.WS["Rudra's Storm"].Acc = set_combine(sets.precast.WS["Rudra's Storm"])
+    sets.precast.WS["Rudra's Storm"].Acc = set_combine(sets.precast.WS["Rudra's Storm"], {ear1="Maculele earring +1", body="Gleti's Cuirass"})
 	
 	sets.precast.WS['Shark Bite'] = sets.precast.WS["Rudra's Storm"]
 	sets.precast.WS['Shark Bite'].Acc = sets.precast.WS["Rudra's Storm"].Acc
@@ -205,13 +210,13 @@ function init_gear_sets()
     -- Midcast Sets
     
     sets.midcast.FastRecast = {ammo="Sapience orb",
-		head=HercHatFC, neck="Voltsurge torque", ear1="Etiolation earring", ear2="Loquacious Earring", 
+		head=gear.HercHatFC, neck="Voltsurge torque", ear1="Etiolation earring", ear2="Loquacious Earring", 
 		body="Dread Jupon",	hands="Leyline Gloves", ring1="Prolix Ring", 
 		legs="Rawhide trousers", feet=gear.HercFeetFC}
         
     -- Specific spells
     sets.midcast.Utsusemi = {ammo="Sapience orb",
-		head=HercHatFC,	neck="Voltsurge torque", ear1="Etiolation earring", ear2="Loquacious Earring",
+		head=gear.HercHatFC,	neck="Voltsurge torque", ear1="Etiolation earring", ear2="Loquacious Earring",
 		body="Dread jupon",	hands="Leyline Gloves", ring1="Prolix Ring",
 		legs="Rawhide trousers", feet=gear.HercFeetFC}
 
@@ -219,8 +224,8 @@ function init_gear_sets()
     -- Sets to return to when not performing an action.
     
     -- Resting sets
-    sets.resting = {head="Turms cap +1",neck="Wiglen Gorget",
-        ring1="Sheltered Ring",ring2="Paguroidea Ring"}
+    sets.resting = {head="Turms cap +1",neck="Bathy choker +1",
+        ring1="Sheltered Ring",ring2="Chirich Ring +1"}
     sets.ExtraRegen = {head="Turms cap +1"}
     
 
@@ -232,21 +237,23 @@ function init_gear_sets()
         back=gear.CapeTP,waist="Engraved Belt",legs="Malignance tights",feet="Skadi's jambeaux +1"}				--10, 0, 7, 0
 		-- 47% PDT
 		
-    sets.idle.Town = {main="Izhiikoh", sub="Sabebus",ammo="Charis Feather",
-        head="Whirlpool Mask",neck="Maculele Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body="Qaaxo Harness",hands="Iuitl Wristbands",ring1="Sheltered Ring",ring2="Paguroidea Ring",
-        back="Atheling Mantle",waist="Patentia Sash",legs="Kaabnax Trousers",feet="Skadi's jambeaux +1"}
+    sets.idle.Town = {ammo="Yamarang",
+        head="Turms cap +1",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Infused Earring",			--0, 6, 0, 0
+        body="Malignance tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Sheltered Ring",		--9, 5, 10, 0
+        back=gear.CapeTP,waist="Engraved Belt",legs="Malignance tights",feet="Skadi's jambeaux +1"}				--10, 0, 7, 0
+		-- 47% PDT
     
     sets.idle.Weak = {ammo="Yamarang",
         head="Turms cap +1",neck="Bathy choker +1",ear1="Etiolation Earring",ear2="Infused Earring",
         body="Malignance tabard",hands="Turms mittens +1",ring1="Defending Ring",ring2="Sheltered Ring",
         back="Moonlight cape",waist="Flume Belt",legs="Malignance tights",feet="Turms leggings +1"}
 		
-	sets.idle.Aminon = {
-		head="Malignance Chapeau",neck="Combatant's Torque",left_ear="Crep. Earring",right_ear="Dedition Earring",
-		body="Malignance Tabard",hands="Regal Gloves",left_ring="Roller's Ring",right_ring="Chirich Ring +1",
-		back="Moonlight cape",waist="Yemaya Belt",legs="Malignance tights",feet="Malignance Boots",	
+	sets.idle.Aminon = {ammo="Yamarang",
+		head="Turms cap +1",neck="Ainia collar",left_ear="Telos Earring",right_ear="Dedition Earring",			--0, 0, 0, 0
+		body="Malignance Tabard",hands="Regal Gloves",left_ring="Roller's Ring",right_ring="Chirich Ring +1",	--9, +20, 0, 0
+		back=gear.CapeTP,waist="Goading Belt",legs="Malignance tights",feet="Maculele Toe Shoes +3",			--10, 0, 7, 10
 		}
+		-- 16% PDT
     
     -- Defense sets
 
@@ -294,22 +301,24 @@ function init_gear_sets()
     }
 	
 	sets.engaged.Hybrid ={ammo="Yamarang",
-        head="Malignance chapeau",neck="Etoile Gorget +2",ear1="Sherida Earring",ear2="Telos Earring",
-        body="Malignance tabard",hands="Malignance gloves",ring1="Lehko Habhoka's ring",ring2="Gere Ring",
-        back=gear.CapeTP, waist="Engraved belt",legs="Malignance tights",feet="Maculele Toe Shoes +3"  --Malignance boots"
+        head="Malignance chapeau",neck="Etoile Gorget +2",ear1="Sherida Earring",ear2="Telos Earring",							--6
+        body="Malignance tabard",hands="Malignance gloves",ring1="Lehko Habhoka's ring",ring2="Gere Ring",						--9, 5
+        back=gear.CapeTP, waist="Engraved belt",legs="Malignance tights",feet="Maculele Toe Shoes +3"  --Malignance boots"		--10, 0, 7, 10
 	}
 	
 	sets.engaged.SB = {ammo="Yamarang",
         head="Malignance chapeau",neck="Etoile Gorget +2",ear1="Sherida Earring",ear2="Telos Earring",		--0, 0, 0|5, 0
         body="Malignance tabard",hands="Malignance gloves",ring1="Chirich Ring +1",ring2="Gere Ring",		--0, 0, 10, 0
-        back=gear.CapeTP, waist="Reiki Yotai",legs="Gleti's breeches",feet="Malignance boots"				--0, 0, 10, 0
+        back=gear.CapeTP, waist="Engraved belt",legs="Gleti's breeches",feet="Malignance boots"				--0, 0, 10, 0
 	}
 	-- 32SB with gifts
 	
     sets.engaged.Evasion = {ammo="Yamarang",
         head="Malignance chapeau",neck="Etoile Gorget +2",ear1="Sherida Earring",ear2="Telos Earring",
         body="Malignance tabard",hands="Malignance gloves",ring1="Lehko Habhoka's ring",ring2="Gere Ring",
-        back=gear.CapeTP, waist="Reiki Yotai",legs="Malignance tights",feet="Malignance boots"}
+        back=gear.CapeTP, waist="Engraved belt",legs="Malignance tights",feet="Maculele Toe Shoes +3"}
+		
+	sets.engaged.Aminon = sets.idle.Aminon
 		
     -- sets.engaged.PDT = {ammo="Charis Feather",
         -- head="Felistris Mask",neck="Twilight Torque",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
@@ -660,7 +669,7 @@ function select_default_macro_book()
     elseif player.sub_job == 'SAM' then
         set_macro_page(2, 20)
     else
-        set_macro_page(5, 20)
+        set_macro_page(1, 20)
     end
 	send_command('wait 5; input /lockstyleset 019')
 end

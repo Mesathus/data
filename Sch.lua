@@ -120,7 +120,7 @@ function init_gear_sets()
 
     sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, {})
 	
-	sets.precast.FC['Dispelga'] = set_combine(sets.precast.FC, {main="Daybreak"})
+	sets.precast.FC['Dispelga'] = set_combine(sets.precast.FC, {main="Daybreak", sub="Genmei shield",})
 
     sets.precast.FC.Cure = set_combine(sets.precast.FC, {
 		legs="Vanya slops",feet="Vanya clogs"})
@@ -132,14 +132,14 @@ function init_gear_sets()
 
     -- Midcast Sets
 
-    sets.midcast.FastRecast = {main="Musa",sub="Khonsu",ammo="Sapience orb",
+    sets.midcast.FastRecast = {ammo="Sapience orb",
         head="Amalric coif +1",neck="Voltsurge torque",ear1="Etiolation Earring",ear2="Malignance Earring",
         body="Pinga tunic +1",hands="Academic's bracers +3",ring1="Prolix Ring",ring2="Kishar Ring",
         back="Fi Follet Cape +1",waist="Goading Belt",legs="Agwu's slops",feet="Pedagogy loafers +3"}
 
     sets.midcast.Cure = {main="Grioavolr",sub="Enki strap",
         head="Kaykaus mitra +1",neck="Incanter's torque",ear1="Mendicant's earring",ear2="Regal earring",
-        body="Kaykaus Bliaut +1",hands="Kaykaus cuffs +1",ring1="Stikini ring +1", ring2="Stikini ring +1",
+        body="Kaykaus Bliaut +1",hands="Kaykaus cuffs +1",ring1="Defending ring", ring2="Gelatinous ring +1",
         back="Aurist's cape +1",waist ="Luminary sash", legs="Kaykaus tights +1",feet="Kaykaus boots +1"}
 
     sets.midcast.CureWithLightWeather = set_combine(sets.midcast.Cure, {main="Chatoyant Staff", waist="Hachirin-no-obi"})
@@ -166,7 +166,7 @@ function init_gear_sets()
         back="Fi follet cape +1",waist="Emphatikos rope",legs="Shedir Seraweels",feet="Vanya clogs"}	  		--5, 12, 0, 15
 	
 	sets.midcast['Aquaveil'] = set_combine(sets.midcast.SIRD, {main="Vadose rod", sub="Genmei shield",head="Amalric coif +1",legs="Shedir Seraweels"})
-	sets.midcast['Dispelga'] = set_combine(sets.midcast.FastRecast, {main="Daybreak"})
+	sets.midcast['Dispelga'] = set_combine(sets.midcast.IntEnfeebles, {main="Daybreak", sub="Genmei shield",})
 		
 	sets.midcast.Haste = set_combine(sets.midcast['Enhancing Magic'], {ring2="Prolix ring"})
 
@@ -285,7 +285,19 @@ function init_gear_sets()
 
     sets.midcast.Impact = set_combine(sets.midcast['Elemental Magic'].Resistant, {})
 
-
+	-- sets.exported={
+		-- sub="Genmei Shield",
+		-- ammo="Staunch Tathlum +1",
+		-- hands="Andvaranauts",
+		-- neck={ name="Loricate Torque +1", augments={'Path: A',}},
+		-- waist="Acerbic Sash +1",
+		-- left_ear="Etiolation Earring",
+		-- right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
+		-- left_ring="Defending Ring",
+		-- right_ring={ name="Gelatinous Ring +1", augments={'Path: A',}},
+		-- back="Moonlight Cape",
+		-- } 
+	
     -- Sets to return to when not performing an action.
 
     -- Resting sets
@@ -318,7 +330,7 @@ function init_gear_sets()
         body="Arbatel gown +3",hands="Volte gloves",ring1="Sheltered Ring",ring2="Defending Ring",
         back="Moonlight cape",waist="Luminary sash",legs="Volte brais",feet="Herald's Gaiters"}
 
-    sets.idle.PDT = {main="Contemplator +1",sub="Khonsu", ammo="Homiliary",										--0, 6, 0
+    sets.idle.PDT = {main="Contemplator +1",sub="Khonsu", ammo="Homiliary",								--0, 6, 0
 		--main="Daybreak",sub="Genmei shield",ammo="Homiliary",	
         head="Nyame helm",neck="Bathy choker +1",ear1="Etiolation Earring",ear2="Infused Earring",		--7, 0, 0, 0
         body="Arbatel gown +3",hands="Nyame gauntlets",ring1="Sheltered Ring",ring2="Defending Ring",	--13, 7, 0, 10

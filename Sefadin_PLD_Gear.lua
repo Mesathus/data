@@ -859,6 +859,7 @@ function init_gear_sets()
 	sets.Burtgang = {main="Burtgang"}
 	sets.Naegling = {main="Naegling"}
 	sets.Malignance = {main="Malignance Sword"}
+	sets.Excalibur = {main='Excalibur'}
 	sets.Kiting = {legs="Carmine Cuisses +1", feet="Hippomenes socks +1"}
 end
  
@@ -1009,6 +1010,8 @@ function customize_idle_set(idleSet)
 		equip(sets.Naegling)
 	elseif state.WeaponMode.value == 'Malignance' then
 		equip(sets.Malignance)
+	elseif state.WeaponMode.value == 'Excalibur' then
+		equip(sets.Excalibur)
 	end
  
     return idleSet
