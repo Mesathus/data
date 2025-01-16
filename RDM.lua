@@ -85,7 +85,7 @@ function init_gear_sets()
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
-        head="Nyame Helm",neck="Combatant's torque",ear1="Ishvara Earring",ear2="Moonshade Earring",
+        head="Nyame Helm",neck="Combatant's torque",ear1="Moonshade Earring",ear2="Ishvara Earring",
         body="Nyame Mail",hands="Nyame gauntlets",ring1="Ilabrat Ring",ring2="Epaminondas's Ring",
         back="",waist="Fotia belt",legs="Nyame Flanchard",feet="Lethargy houseaux +3"}
 
@@ -291,7 +291,7 @@ function init_gear_sets()
         
     sets.buff.ComposureOther = {
 		head = "Lethargy chappel +3",ear2="Lethargy earring +2",
-		body = "Vitiation tabard +3",hands = "Atrophy gloves +3",
+		body = "Lethargy sayon +3",hands = "Atrophy gloves +3",
 		legs = "Lethargy fuseau +3",feet = "Lethargy houseaux +3"}
 
     sets.buff.Saboteur = {hands="Lethargy Gantherots +3"}
@@ -367,15 +367,15 @@ function init_gear_sets()
         body="Malignance tabard",hands="Bunzi's gloves",ring1="Hetairoi Ring",ring2="Chirich Ring +1",
         back=gear.CapeDW,waist="Reiki Yotai",legs="Malignance tights",feet="Malignance boots"}
 		
-	sets.engaged.Enspell1 = {main="Vitiation Sword",ammo="Sroda tathlum",
+	sets.engaged.Enspell1 = {ammo="Sroda tathlum",
 		head="Malignance Chapeau", neck="Sanctity Necklace", ear1="Hollow Earring", ear2="Lethargy earring +2",
 		body="Malignance Tabard", hands="Aya. Manopolas +2", ring1="Hetairoi Ring", ring2="Chirich Ring +1",
 		back=gear.CapeDW, waist="Orpheus's Sash", legs="Carmine Cuisses +1", feet="Malignance Boots"}
 
-    sets.engaged.Defense = {ammo="Demonry Stone",
-        head="Atrophy Chapeau +2",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Atrophy tabard +3",hands="Atrophy gloves +3",ring1="Rajas Ring",ring2="K'ayres Ring",
-        back="Kayapa Cape",waist="Goading Belt",legs="Osmium Cuisses",feet="Atrophy Boots +2"}
+    sets.engaged.Defense = {
+        head="Malignance chapeau",neck="Combatant's torque",ear1="Sherida Earring",ear2="Lethargy earring +2",
+        body="Malignance tabard",hands="Bunzi's gloves",ring1="Hetairoi Ring",ring2="Chirich Ring +1",
+        back=gear.CapeDW,waist="Reiki Yotai",legs="Malignance tights",feet="Malignance boots"}
 
 end
 
@@ -391,9 +391,9 @@ function job_post_precast(spell, action, spellMap, eventArgs)
 	-- Used to overwrite Moonshade Earring if TP is more than 2750.
     if spell.type == 'WeaponSkill' then	
 		if player.tp > 1750  and tp_bonus_weapons:contains(player.equipment.sub) then
-			equip({ear2 = "Sherida Earring"})
+			equip({ear1 = "Sherida Earring"})
         elseif player.tp > 2750 then
-			equip({ear2 = "Sherida Earring"})
+			equip({ear1 = "Sherida Earring"})
         end
     end
 end

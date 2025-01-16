@@ -17,9 +17,9 @@ end
 
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
-    state.OffenseMode:options('None', 'Maxentius')
+    state.OffenseMode:options('None', 'Maxentius', 'Idris')
     state.CastingMode:options('Normal', 'Resistant', 'Burst', 'OA')
-    state.IdleMode:options('Normal', 'PDT')
+    state.IdleMode:options('Normal', 'PDT', 'DD')
 	
 	gear.CapePetRegen = {name="Nantosuelta's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Pet: "Regen"+10','Phys. dmg. taken-10%'}}
 	
@@ -306,6 +306,12 @@ function init_gear_sets()
         body="Azimuth coat +3",hands="Volte gloves",ring1="Defending ring",ring2="Gelatinous ring +1",			-- 0, 0, 10, 7
         back="Moonlight Cape",waist="Carrier's sash",legs="Volte brais",feet="Azimuth gaiters +3"}				-- 6, 0, 0, 11
 		-- 62% PDT
+	
+	sets.idle.DD = {
+        head="Azimuth hood +3",neck="Loricate Torque +1",ear1="Eabani earring",ear2="Odnowa earring +1",		-- 10, 6, 0, 3
+        body="Azimuth coat +3",hands="Volte gloves",ring1="Defending ring",ring2="Gelatinous ring +1",			-- 0, 0, 10, 7
+        back="Moonlight Cape",waist="Carrier's sash",legs="Volte brais",feet="Geomancy sandals +2"}				-- 6, 0, 0, 0
+		-- 42% PDT
  
     -- .Pet sets are for when Luopan is present.
     sets.idle.Pet = {main="Idris",sub="Genmei shield",Range="Dunna",
@@ -318,12 +324,20 @@ function init_gear_sets()
         body="Azimuth coat +3",hands="Geomancy mitaines +2",ring1="Defending ring",ring2="Gelatinous ring +1",	-- 0, 2|12, 10, 7
         back=gear.CapePetRegen,waist="Carrier's sash",legs="Volte brais",feet="Bagua sandals +1"}				-- 10, 0, 0, 0
 		-- 59% PDT     Loricate -> JSE   isa belt?   Odnowa -> Etiolation
+		
+	sets.idle.DD.Pet = {
+		head="Azimuth hood +3",neck="Loricate Torque +1",ear1="Eabani earring",ear2="Odnowa earring +1",		-- 11, 6, 0, 3
+        body="Azimuth coat +3",hands="Geomancy mitaines +2",ring1="Defending ring",ring2="Gelatinous ring +1",	-- 0, 2|12, 10, 7
+        back=gear.CapePetRegen,waist="Carrier's sash",legs="Volte brais",feet="Geomancy sandals +2"}			-- 10, 0, 0, 0
+		-- 49% PDT     Loricate -> JSE   isa belt?   Odnowa -> Etiolation
  
     -- .Indi sets are for when an Indi-spell is active.
     sets.idle.Indi = set_combine(sets.idle, {})
     sets.idle.Pet.Indi = set_combine(sets.idle.Pet, {})
     sets.idle.PDT.Indi = set_combine(sets.idle.PDT, {})
     sets.idle.PDT.Pet.Indi = set_combine(sets.idle.PDT.Pet, {})
+	sets.idle.DD.Indi = set_combine(sets.idle.DD, {})
+    sets.idle.DD.Pet.Indi = set_combine(sets.idle.DD.Pet, {})
  
     sets.idle.Town = {main="Daybreak",sub="Genmei shield",Range="Dunna",
         head="Befouled Crown",neck="Loricate Torque +1",ear1="Eabani earring",ear2="Etiolation earring",
@@ -453,6 +467,12 @@ function job_update(cmdParams, eventArgs)
     if player.indi then
         classes.CustomIdleGroups:append('Indi')
     end
+	
+	if S{'NIN','DNC'}:contains(player.sub_job) then
+		state.CombatForm:set('DW')
+	else
+		state.CombatForm:reset()
+	end
 end
  
 -- Function to display the current relevant user state when doing an update.

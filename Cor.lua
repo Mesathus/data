@@ -52,6 +52,7 @@ function user_setup()
 	gear.CorSavageCape = {name="Camulus's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+5','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
 	gear.CorMeleeCape = {name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','Phys. dmg. taken-10%',}}
 	gear.CorFCCape = {name="Camulus's Mantle", augments={'MP+60','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Fast Cast"+10',}}
+	gear.CorRACape = {name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','"Store TP"+10','Phys. dmg. taken-10%'}}
 	
 	
     options.ammo_warning_limit = 15
@@ -131,8 +132,8 @@ function init_gear_sets()
     sets.precast.RA = {ammo=gear.RAbullet,
         head="Chasseur's Tricorne +3",neck="Commodore charm +2",											--16r, 4
         body="Laksamana's Frac +3",hands="Lanun gants +3",ring1="Crepuscular ring",							--20r, 13, 3
-        back="Navarch's Mantle",waist="Impulse Belt",legs="Adhemar kecks +1",feet="Meghanada jambeaux +2"}	--10, 3, 10, 10
-		-- 53 +10 gifts
+        back="Navarch's Mantle",waist="Impulse Belt",legs="Adhemar kecks +1",feet="Meghanada jambeaux +2"}	--6.5/10, 3, 10, 10
+		-- 49/53 +10 gifts
        
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
@@ -150,12 +151,12 @@ function init_gear_sets()
     sets.precast.WS['Requiescat'] = set_combine(sets.precast.WS, {})
 
     sets.precast.WS['Last Stand'] = {
-		head="Lanun Tricorne +3",neck="Fotia gorget",ear1="Enervating earring",ear2="Moonshade Earring",
-		body="Nyame mail",hands="Nyame gauntlets",ring1="Ilabrat Ring",ring2="Regal Ring",
-		back=gear.CorLeadenCape,waist="Fotia belt",legs="Nyame flanchard",feet="Lanun bottes +3" }
+		head="Lanun Tricorne +3",neck="Fotia gorget",ear1="Chasseur's earring +1",ear2="Moonshade Earring",
+		body="Ikenga's vest",hands="Chasseur's gants +3",ring1="Dingir Ring",ring2="Regal Ring",
+		back=gear.CorLeadenCape,waist="Fotia belt",legs="Nyame flanchard",feet="Lanun bottes +3"}
 
     sets.precast.WS['Last Stand'].Acc = {
-        head="Lanun Tricorne +3",neck="Fotia gorget",ear1="Enervating earring",ear2="Moonshade Earring",
+        head="Lanun Tricorne +3",neck="Fotia gorget",ear1="Chasseur's earring +1",ear2="Moonshade Earring",
 		body="Laksamana's Frac +3",hands="Meghanada gloves +2",ring1="Ilabrat Ring",ring2="Regal Ring",
 		back=gear.CorLeadenCape,waist="Fotia belt",legs="Meghanada chausses +2",feet="Lanun bottes +3" }
 
@@ -246,14 +247,14 @@ function init_gear_sets()
 
     -- Ranged gear
     sets.midcast.RA = {ammo=gear.RAbullet,
-        head="Malignance chapeau",neck="Iskur Gorget",ear1="Enervating Earring",ear2="Telos Earring",
-        body="Malignance tabard",hands="Malignance gloves",ring1="Regal Ring",ring2="Ilabrat Ring",
-        back=gear.CorMeleeCape,waist="Yemaya Belt",legs="Malignance tights",feet="Malignance boots"}
+        head="Malignance chapeau",neck="Iskur Gorget",ear1="Enervating Earring",ear2="Chasseur's Earring +1",
+        body="Malignance tabard",hands="Malignance gloves",ring1="Crepuscular Ring",ring2="Ilabrat Ring",
+        back=gear.CorRACape,waist="Yemaya Belt",legs="Chasseur's culottes +3",feet="Malignance boots"}
 
     sets.midcast.RA.Acc = {ammo=gear.RAbullet,
         head="Malignance chapeau",neck="Iskur Gorget",ear1="Enervating Earring",ear2="Telos Earring",
-        body="Malignance tabard",hands="Malignance gloves",ring1="Regal Ring",ring2="Ilabrat Ring",
-        back=gear.CorMeleeCape,waist="Yemaya Belt",legs="Malignance tights",feet="Malignance boots"}
+        body="Malignance tabard",hands="Malignance gloves",ring1="Crepuscular Ring",ring2="Cacoethic Ring +1",
+        back=gear.CorRACape,waist="Yemaya Belt",legs="Chasseur's culottes +3",feet="Malignance boots"}
 		
 	sets.midcast.RA.AM = {
 		
@@ -584,8 +585,8 @@ function do_bullet_checks(spell, spellMap, eventArgs)
             add_to_chat(104, 'No weaponskill ammo left.  Using what\'s currently equipped (standard ranged bullets: '..player.equipment.ammo..').')
             return
         else
-            add_to_chat(104, 'No ammo ('..tostring(bullet_name)..') available for that action.')
-            eventArgs.cancel = true
+            --add_to_chat(104, 'No ammo ('..tostring(bullet_name)..') available for that action.')
+            --eventArgs.cancel = true
             return
         end
     end

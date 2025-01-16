@@ -24,7 +24,7 @@ function init_gear_sets()
     sets.precast.JA['Dodge'] = {feet="Anchorite's Gaiters +1"}
     sets.precast.JA['Focus'] = {head="Anchorite's Crown +2"}
     sets.precast.JA['Counterstance'] = {feet="Melee Gaiters +2"}
-    sets.precast.JA['Footwork'] = {feet="Bhikku Gaiters +1"}
+    sets.precast.JA['Footwork'] = {feet="Bhikku Gaiters +2"}
     sets.precast.JA['Formless Strikes'] = {body="Hesychast's Cyclas +1"}
     sets.precast.JA['Mantra'] = {feet="Melee Gaiters +2"}
 
@@ -405,9 +405,9 @@ function init_gear_sets()
 		feet="Kendatsuba Sune-Ate +1"}
 		
 	sets.engaged.Hybrid = {ammo="Mantoptera eye",
-		head="Kendatsuba Jinpachi +1", neck="Mnk. Nodowa +2", ear1="Sherida Earring", ear2="Mache Earring +1",   --0, 0, 0, 0
+		head="Mpaca's cap", neck="Mnk. Nodowa +2", ear1="Sherida Earring", ear2="Mache Earring +1",   --0, 0, 0, 0
 		body="Mpaca's Doublet",	hands="Malignance Gloves", ring1="Niqmaddu Ring", ring2="Gere Ring",			 --10, 5, 0, 0
-		back="Sacro Mantle",	waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's gaiters +2"		
+		back="Sacro Mantle",	waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Mpaca's boots"		
 	}
 
 
@@ -416,7 +416,7 @@ function init_gear_sets()
 	sets.engaged.Hybrid.Impetus = set_combine(sets.engaged.Hybrid, {head="Mpaca's cap", body="Bhikku Cyclas +2"})
 	sets.engaged.SomeAcc.Impetus = set_combine(sets.engaged.SomeAcc, {body="Bhikku Cyclas +2"})
 	sets.engaged.Acc.Impetus = set_combine(sets.engaged.Acc, {body="Bhikku Cyclas +2"})
-	--sets.engaged.Kick.Impetus = set_combine(sets.engaged.Kick, {body="Bhikku Cyclas +1"})
+	--sets.engaged.Kick.Impetus = set_combine(sets.engaged.Kick, {body="Bhikku Cyclas +2"})
     sets.engaged.HF = set_combine(sets.engaged)
     sets.engaged.HF.Impetus = set_combine(sets.engaged, {body="Bhikku Cyclas +2"})
     sets.engaged.Acc.HF = set_combine(sets.engaged.Acc)

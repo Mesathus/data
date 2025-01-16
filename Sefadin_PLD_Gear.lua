@@ -30,7 +30,7 @@ function user_setup()
     state.HybridMode:options('Normal', 'HIGH', 'MID', 'LOW')
     state.WeaponskillMode:options('Normal', 'Acc')
     state.CastingMode:options('Normal', 'SIRD', 'HPBAL')    
-    state.IdleMode:options('Pulling', 'DT', 'Normal', 'Knockback')  --Ctrl 'F12'
+    state.IdleMode:options('Pulling', 'Normal', 'Knockback')  --Ctrl 'F12'
 	state.ShieldMode = M{'Duban','Aegis','Ochain','Srivatsa'}		--Alt F9
 	state.WeaponMode = M{'Burtgang', 'Naegling', 'Malignance'}		--Alt F10
      
@@ -474,18 +474,18 @@ function init_gear_sets()
     sets.idle = {
 		Main="Burtgang",
         Ammo="Homiliary",
-        Head="Souveran Schaller +1",
-        Neck="Loricate Torque +1",
+        Head="Sakpata's Helm",
+        Neck="Republican Platinum medal",
         ear1="Tuisto Earring",
         ear2="Odnowa Earring +1",
-        Body="Souveran Cuirass +1",
-        Hands="Souveran Handschuhs +1",
-        Ring1="Defending Ring",
-        Ring2="Moonlight Ring",
+        Body="Sakpata's Plate",
+        Hands="Sakpata's Gauntlets",
+        Ring1="Stikini Ring +1",
+        Ring2="Stikini Ring +1",
         Back=gear.PDTCape,
-        Waist="Flume Belt",
+        Waist="Fucho-no-obi",
         Legs="Carmine Cuisses +1",
-        Feet="Souveran Schuhs +1",
+        Feet="Sakpata's Leggings",
     }
  
     sets.idle.DT = {
@@ -532,7 +532,7 @@ function init_gear_sets()
     }
      
     sets.idle.Town = {
-		Main="Sakpata's sword",
+		Main="Burtgang",
         Ammo="Homiliary",
         Head="Souveran Schaller +1",
         Neck="Loricate Torque +1",
@@ -847,7 +847,7 @@ function init_gear_sets()
     ------------------------------------------------------------------------------------------------
  
     sets.buff.Doom = {ring1="Purity Ring",ring2="Eshmun's Ring",waist="Gishdubar sash"}
-    sets.Warp = {ring1="Dim. Ring (Holla)",ring2="Warp Ring"}
+    sets.Warp = {ring1="Dim. Ring (Dem)",ring2="Warp Ring"}
     sets.CP = {back="Mecisto. Mantle"}
     sets.MP = {back="Rudianos's Mantle",Ear1="Ethereal Earring",Waist="Flume Belt",Ammo="Homiliary",}
     sets.Weapon = {}

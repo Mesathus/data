@@ -216,13 +216,14 @@ function init_gear_sets()
     sets.idle.PDT = {main="Daybreak", sub="Genmei Shield",ammo="Homiliary",										--0, 10, 0
         head="Nyame helm",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Eabani Earring",			--7, 6, 0, 0
         body="Kaykaus bliaut +1",hands="Nyame gauntlets",ring1="Sheltered Ring",ring2="Defending Ring",			--0, 7, 0, 10
-        back="Moonlight Cape",waist="Luminary sash",legs="Nyame flanchard",feet="Nyame sollerets"}				--6, 0, 8, 7
+        back="Moonlight Cape",waist="Carrier's sash",legs="Nyame flanchard",feet="Nyame sollerets"}				--6, 0, 8, 7
 		-- 61% PDT
 
-    sets.idle.Town = {main="Daybreak", sub="Genmei Shield",
-        neck="Wiglen Gorget",ear1="Bloodgem Earring",ear2="Loquacious Earring",
-        body="Cohort cloak +1",hands="Gendewitha Gages",ring1="Sheltered Ring",ring2="Paguroidea Ring",
-        back="Umbra Cape",waist="Witful Belt",legs="Inyanga shalwar +2",feet="Herald's Gaiters"}
+    sets.idle.Town = {main="Daybreak", sub="Genmei Shield",ammo="Homiliary",									--0, 10, 0
+        head="Befouled crown",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Eabani Earring",		--0, 6, 0, 0
+        body="Kaykaus bliaut +1",hands="Volte gloves",ring1="Sheltered Ring",ring2="Defending Ring",			--0, 0, 0, 10
+        back="Moonlight Cape",waist="Luminary sash",legs="Volte brais",feet="Herald's Gaiters"}					--6, 0, 0, 0
+		-- 32% PDT
     
     sets.idle.Weak = {main="Daybreak", sub="Genmei Shield",ammo="Homiliary",
         head="Befouled crown",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Eabani Earring",
