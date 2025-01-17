@@ -129,7 +129,7 @@ function init_gear_sets()
 
 	sets.Enmity = {ammo="Sapience orb",																--2
 	head="Halitus helm", neck="Unmoving collar +1", ear1="Trux earring", ear2="Cryptic earring",	--8, 10, 5, 4
-	body="Plunderer's vest +3", hands="Kurys gloves", ring2="Begrudging Ring",						--30, 9, 5
+	body="Plunderer's vest +3", hands="Kurys gloves", ring2="Supershear Ring",						--30, 9, 5
 	waist="Goading belt", legs="Obatala subligar", feet="Ahosi leggings"							--3, 5, 7
 	} --88 enmity
 	
@@ -501,7 +501,7 @@ function init_gear_sets()
         head="Malignance chapeau",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Skulker's earring +2",  	--0,0,0|5,7
         body="Malignance tabard",hands="Malignance gloves",ring1="Chirich Ring +1",ring2="Chirich Ring +1",  	   	--0,0,10,10
         back=gear.CapeSTP,waist="Reiki Yotai",legs="Gleti's breeches",feet="Volte spats"}  							--0,0,10,6  Mummu feet would be 9 SB 5 crit, less Str/Dex more Acc
-		--49 SB1 + 5 SB2    38 PDT     R30 Gleti's legs +5 SB, can drop ammo and be at 49 w/ Mummu
+		--50 SB1 + 5 SB2    38 PDT     R30 Gleti's legs +5 SB, can drop ammo and be at 49 w/ Mummu
 		
 	sets.engaged.HybridCrit = set_combine(sets.engaged.Hybrid, {ring1="Lehko Habhoka's ring", back=gear.CapeCrit})
 	

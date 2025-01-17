@@ -22,7 +22,7 @@ function init_gear_sets()
     sets.precast.JA['Hundred Fists'] = {legs="Hesychast's Hose +3"}
     sets.precast.JA['Boost'] = {hands="Anchorite's Gloves +3",waist="Ask Sash"}
     sets.precast.JA['Dodge'] = {feet="Anchorite's Gaiters +1"}
-    sets.precast.JA['Focus'] = {head="Anchorite's Crown +2"}
+    sets.precast.JA['Focus'] = {head="Anchorite's Crown +1"}
     sets.precast.JA['Counterstance'] = {feet="Melee Gaiters +2"}
     sets.precast.JA['Footwork'] = {feet="Bhikku Gaiters +2"}
     sets.precast.JA['Formless Strikes'] = {body="Hesychast's Cyclas +1"}
@@ -35,14 +35,15 @@ function init_gear_sets()
 
     sets.precast.JA['Chakra'] = {ammo="Iron Gobbet",
         head="Genmei Kabuto",neck="Unmoving Collar +1",
-        body="Anchorite's Cyclas +3",hands="Hesychast's Gloves +3",ring1="Niqmaddu Ring",ring2="Regal Ring",
+        body="Anchorite's Cyclas +1",hands="Hesychast's Gloves +3",ring1="Niqmaddu Ring",ring2="Regal Ring",
         back="Moonbeam Cape",waist="Caudata Belt",legs="Kendatsuba Hakama +1",feet="Rao Sune-Ate +1"}
 
     -- Waltz set (chr and vit)
-    sets.precast.Waltz = {ammo="Sonia's Plectrum",
-        head="Felistris Mask",
-        body="Otronif Harness +1",hands="Hesychast's Gloves +3",ring1="Spiral Ring",
-        back="Iximulew Cape",waist="Caudata Belt",legs="Ighwa Trousers",feet="Rao Sune-Ate +1"}
+    sets.precast.Waltz = {																									--0
+        head="Mummu Bonnet +2",neck="Unmoving collar +1",ear1="Tuisto earring",ear2="Odnowa earring +1",					--9r, 0, 0, 0
+        body="Passion jacket",hands=gear.HercWaltzHands,ring1="Gelatinous Ring +1",ring2="Metamorph Ring +1",				--13, 11, 0, 0
+        back="Moonlight Cape",waist="Platinum moogle Belt",legs="Dashing subligar",feet=gear.HercWaltzFeet}					--0, 0, 10, 11
+		-- 45%  Dashing subligar, herc hands/feet to cap
         
     -- Don't need any special gear for Healing Waltz.
     sets.precast.Waltz['Healing Waltz'] = {}
@@ -220,7 +221,7 @@ function init_gear_sets()
         back="Moonbeam Cape",waist="Moonbow Belt +1",legs="Malignance Tights",feet="Malignance Boots"}
     
     -- Defense sets
-    sets.defense.PDT = {ammo="Staunch Tathlum",
+    sets.defense.PDT = {ammo="Staunch Tathlum +1",
         head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Infused Earring",
         body="Malignance Tabard",hands="Malignance Gloves",ring1="Gelatinous Ring +1",ring2="Defending Ring",
         back="Moonbeam Cape",waist="Moonbow Belt +1",legs="Malignance Tights",feet="Malignance Boots"}
@@ -230,7 +231,7 @@ function init_gear_sets()
         body="Hesychast's Cyclas +1",hands="Hesychast's Gloves +3",ring1="K'ayres Ring",ring2="Defending Ring",
         back="Moonbeam Cape",waist="Moonbow Belt +1",legs="Malignance Tights",feet="Hesychast's Gaiters +1"}
 
-    sets.defense.MDT = {ammo="Staunch Tathlum",
+    sets.defense.MDT = {ammo="Staunch Tathlum +1",
         head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Infused Earring",
         body="Kendatsuba Samue +1",hands="Malignance Gloves",ring1="Gelatinous Ring +1",ring2="Defending Ring",
         back="Moonbeam Cape",waist="Moonbow Belt +1",legs="Malignance Tights",feet="Kendatsuba Sune-Ate +1"}
@@ -376,7 +377,7 @@ function init_gear_sets()
 		legs="Kendatsuba Hakama +1",
 		feet="Kendatsuba Sune-Ate +1"}
 		
-    sets.engaged.SomeAcc.Counter = {ammo="Staunch Tathlum",
+    sets.engaged.SomeAcc.Counter = {ammo="Staunch Tathlum +1",
         head="Malignance Chapeau",
 		neck="Monk's Nodowa +2",
 		ear1="Sherida Earring",
@@ -390,7 +391,7 @@ function init_gear_sets()
 		legs="Kendatsuba Hakama +1",
 		feet="Kendatsuba Sune-Ate +1"}
 	
-	sets.engaged.Acc.Counter = {ammo="Staunch Tathlum",
+	sets.engaged.Acc.Counter = {ammo="Staunch Tathlum +1",
         head="Malignance Chapeau",
 		neck="Monk's Nodowa +2",
 		ear1="Sherida Earring",
@@ -404,9 +405,9 @@ function init_gear_sets()
 		legs="Kendatsuba Hakama +1",
 		feet="Kendatsuba Sune-Ate +1"}
 		
-	sets.engaged.Hybrid = {ammo="Mantoptera eye",
-		head="Mpaca's cap", neck="Mnk. Nodowa +2", ear1="Sherida Earring", ear2="Mache Earring +1",   --0, 0, 0, 0
-		body="Mpaca's Doublet",	hands="Malignance Gloves", ring1="Niqmaddu Ring", ring2="Gere Ring",			 --10, 5, 0, 0
+	sets.engaged.Hybrid = {ammo="Staunch Tathlum +1",
+		head="Mpaca's cap", neck="Mnk. Nodowa +2", ear1="Sherida Earring", ear2="Mache Earring +1",   			--0, 0, 0, 0
+		body="Mpaca's Doublet",	hands="Malignance Gloves", ring1="Niqmaddu Ring", ring2="Gere Ring",			--10, 5, 0, 0
 		back="Sacro Mantle",	waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Mpaca's boots"		
 	}
 

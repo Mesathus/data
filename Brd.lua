@@ -101,9 +101,9 @@ function init_gear_sets()
 
     -- Fast cast sets for spells
     sets.precast.FC = {						                                            				  --             
-		head="Haruspex Hat +1",neck="Voltsurge torque",ear1="Etiolation earring",ear2="Loquac. Earring",  --9, 4, 1, 2    16
-        body="Inyanga Jubbah +2",hands="Leyline gloves",ring1="Defending Ring",ring2="Kishar Ring",       --14, 8, 0, 4   42
-        back=gear.MAccCape,waist="Embla Sash",legs="Volte brais",feet="Fili Cothurnes +3"}                --10, 5, 8, 13  78
+		head="Bunzi's hat",neck="Voltsurge torque",ear1="Etiolation earring",ear2="Loquac. Earring",  	  --10, 4, 1, 2   17
+        body="Inyanga Jubbah +2",hands="Leyline gloves",ring1="Defending Ring",ring2="Kishar Ring",       --14, 8, 0, 4   43
+        back=gear.MAccCape,waist="Embla Sash",legs="Volte brais",feet="Fili Cothurnes +3"}                --10, 5, 8, 13  79
 		-- emp boots 13% need 2 more to drop vampirism  bunzi hat 10
 		
 

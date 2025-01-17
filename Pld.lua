@@ -400,47 +400,47 @@ end
 
 
 function display_current_job_state(eventArgs)
-    local msg = 'Melee'
+    -- local msg = 'Melee'
     
-    if state.CombatForm.has_value then
-        msg = msg .. ' (' .. state.CombatForm.value .. ')'
-    end
+    -- if state.CombatForm.has_value then
+        -- msg = msg .. ' (' .. state.CombatForm.value .. ')'
+    -- end
     
-    msg = msg .. ': '
+    -- msg = msg .. ': '
     
-    msg = msg .. state.OffenseMode.value
-    if state.HybridMode.value ~= 'Normal' then
-        msg = msg .. '/' .. state.HybridMode.value
-    end
-    msg = msg .. ', WS: ' .. state.WeaponskillMode.value
+    -- msg = msg .. state.OffenseMode.value
+    -- if state.HybridMode.value ~= 'Normal' then
+        -- msg = msg .. '/' .. state.HybridMode.value
+    -- end
+    -- msg = msg .. ', WS: ' .. state.WeaponskillMode.value
     
-    if state.DefenseMode.value ~= 'None' then
-        msg = msg .. ', Defense: ' .. state.DefenseMode.value .. ' (' .. state[state.DefenseMode.value .. 'DefenseMode'].value .. ')'
-    end
+    -- if state.DefenseMode.value ~= 'None' then
+        -- msg = msg .. ', Defense: ' .. state.DefenseMode.value .. ' (' .. state[state.DefenseMode.value .. 'DefenseMode'].value .. ')'
+    -- end
 
-    if state.ExtraDefenseMode.value ~= 'None' then
-        msg = msg .. ', Extra: ' .. state.ExtraDefenseMode.value
-    end
+    -- if state.ExtraDefenseMode.value ~= 'None' then
+        -- msg = msg .. ', Extra: ' .. state.ExtraDefenseMode.value
+    -- end
     
-    if state.EquipShield.value == true then
-        msg = msg .. ', Force Equip Shield'
-    end
+    -- if state.EquipShield.value == true then
+        -- msg = msg .. ', Force Equip Shield'
+    -- end
     
-    if state.Kiting.value == true then
-        msg = msg .. ', Kiting'
-    end
+    -- if state.Kiting.value == true then
+        -- msg = msg .. ', Kiting'
+    -- end
 
-    if state.PCTargetMode.value ~= 'default' then
-        msg = msg .. ', Target PC: '..state.PCTargetMode.value
-    end
+    -- if state.PCTargetMode.value ~= 'default' then
+        -- msg = msg .. ', Target PC: '..state.PCTargetMode.value
+    -- end
 
-    if state.SelectNPCTargets.value == true then
-        msg = msg .. ', Target NPCs'
-    end
+    -- if state.SelectNPCTargets.value == true then
+        -- msg = msg .. ', Target NPCs'
+    -- end
 
-    add_to_chat(122, msg)
+    -- add_to_chat(122, msg)
 
-    eventArgs.handled = true
+    -- eventArgs.handled = true
 end
 
 -------------------------------------------------------------------------------------------------------------------

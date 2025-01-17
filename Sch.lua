@@ -236,6 +236,11 @@ function init_gear_sets()
         back="Lugh's cape",waist="Orpheus's sash",legs="Agwu's slops",feet="Arbatel loafers +3"}						--0, 0, 9, 0|5
 		-- 47 MBB  12 MBB2
 		
+	sets.midcast['Elemental Magic'].OA = {
+		head="Welkin Crown", neck="Bathy choker +1", ear1="Dedition Earring", ear2="Dignitary's Earring",
+		body="Merlinic Jubbah",	hands="Merlinic Dastanas", ring1="Chirich Ring +1", ring2="Chirich Ring +1",
+		back=gear.CapeEnf, waist="Oneiros Rope" ,legs="Perdition Slops", feet="Merlinic Crackows"}
+		
 	sets.midcast['Elemental Magic'].Helix = {main="Bunzi's rod",sub="Culminus",ammo="Ghastly tathlum +1",
         head="Arbatel bonnet +3",neck="Argute stole +2",ear1="Regal Earring",ear2="Malignance Earring",
         body="Agwu's robe",hands="Agwu's gages",ring1="Freke Ring",ring2="Metamorph Ring +1",

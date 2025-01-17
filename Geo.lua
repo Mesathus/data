@@ -218,7 +218,7 @@ function init_gear_sets()
 	sets.midcast['Elemental Magic'].OA = {
 		head="Welkin Crown", neck="Bathy choker +1", ear1="Dedition Earring", ear2="Dignitary's Earring",
 		body="Merlinic Jubbah",	hands="Merlinic Dastanas", ring1="Chirich Ring +1", ring2="Chirich Ring +1",
-		back=gear.CapeEnf, waist="Oneiros Rope" ,legs="Perdition Slops", feet="Merlinic Crackows",
+		back=gear.CapeEnf, waist="Oneiros Rope" ,legs="Perdition Slops", feet="Merlinic Crackows"
 		}
  
     sets.midcast.Impact = {main="Bunzi's rod",sub="Culminus",

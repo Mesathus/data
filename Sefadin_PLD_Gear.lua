@@ -16,6 +16,7 @@ function job_setup()
     state.MP = M(false, "Mana Mode")
     state.Weapon = M(false, "Weapon Lock")
     state.Neck = M(false, "Neck Mode")
+	state.Knockback = M(false, "Knockback")
  
     -- lockstyleset = 14
 end
@@ -30,7 +31,7 @@ function user_setup()
     state.HybridMode:options('Normal', 'HIGH', 'MID', 'LOW')
     state.WeaponskillMode:options('Normal', 'Acc')
     state.CastingMode:options('Normal', 'SIRD', 'HPBAL')    
-    state.IdleMode:options('Pulling', 'Normal', 'Knockback')  --Ctrl 'F12'
+    state.IdleMode:options('Pulling', 'Normal', 'Aminon')  --Ctrl 'F12'
 	state.ShieldMode = M{'Duban','Aegis','Ochain','Srivatsa'}		--Alt F9
 	state.WeaponMode = M{'Burtgang', 'Naegling', 'Malignance'}		--Alt F10
      
@@ -190,7 +191,7 @@ function init_gear_sets()
     sets.precast.WS['Atonement'] = {ammo="Oshasha's treatise",
 		head="Nyame Helm",neck="Loricate torque +1",ear1="Ishvara Earring",ear2="Moonshade Earring",
         body="Nyame mail",hands="Nyame gauntlets",ring1="Defending Ring",ring2="Epaminondas's Ring",
-        back=gear.WSCape,waist="Grunfeld rope",legs="Nyame Flanchard",feet="Nyame Sollerets"}
+        back=gear.WSCape,waist="Sailfi Belt +1",legs="Nyame Flanchard",feet="Nyame Sollerets"}
 		
     sets.precast.WS['Requiescat'] = {}
     sets.precast.WS['Chant du Cygne'] = {}
@@ -549,7 +550,7 @@ function init_gear_sets()
     }
 	
 	-- Aminon set
-	sets.idle.Knockback = {
+	sets.idle.Aminon = {
 		ammo="Staunch Tathlum +1",
 		head="Nyame Helm",
 		body="Sakpata's Plate", 	--body="Adamantite Armor",
@@ -719,37 +720,9 @@ function init_gear_sets()
         back=gear.TPCape
     } --40 
      
-    sets.engaged.DT2 = {
-        Ammo="Aurgelmir Orb +1",
-        Neck="Asperity Necklace",
-        ear1="Telos Earring",
-        ear2="Brutal Earring",
-        Ring1="Defending Ring", --10
-        Ring2="Hetairoi Ring",
-        back=gear.TPCape,
-        Waist="Sailfi Belt +1", 
-        Head="Sakpata's Helm", --7
-        Body="Sakpata's Breastplate", --10
-        Hands="Sakpata's Gauntlets", --8
-        Legs="Sakpata's Cuisses", --9
-        Feet="Sakpata's Leggings", --6
-    } --50DT
+    sets.engaged.DT2 = sets.engaged.DT1
  
-    sets.engaged.DT3 = { --10 Set Bonus
-        Ammo="Amar Cluster",
-        Head="Souveran Schaller +1",
-        Neck="Decimus Torque",
-        Ear1="Odnowa Earring",
-        Ear2="Odnowa Earring +1",
-        Body="Souveran Cuirass +1", --10DT
-        Hands="Souveran Handschuhs +1", --4DT
-        Ring1="Defending Ring", --10DT
-        Ring2="Vocane Ring", --7DT Moonlight?
-        back=gear.TPCape,
-        Waist="Sarissaphoroi Belt",
-        Legs="Souveran Diechlings +1", --4DT
-        Feet="Souveran Schuhs +1", --5DT
-    } --50DT
+    sets.engaged.DT3 =  sets.engaged.DT1
  
 -- Shield Base
     sets.engaged.LOW = set_combine(sets.engaged, sets.engaged.DT1)
@@ -861,6 +834,7 @@ function init_gear_sets()
 	sets.Malignance = {main="Malignance Sword"}
 	sets.Excalibur = {main='Excalibur'}
 	sets.Kiting = {legs="Carmine Cuisses +1", feet="Hippomenes socks +1"}
+	sets.Knockback = {back="Philidor Mantle", legs="Dashing subligar"}
 end
  
 -------------------------------------------------------------------------------------------------------------------
@@ -988,11 +962,14 @@ function customize_idle_set(idleSet)
         enable('Neck')
     end
 	
-	--if state.Knockback.current == 'on' then
-	--	equip(sets.Knockback)
-	--	disable('back')
-	--	disable('legs')
-	--end
+	if state.Knockback.current == 'on' then
+		equip(sets.Knockback)
+		disable('back')
+		disable('legs')
+	else
+		enable('back')
+		enable('legs')
+	end
 	
 	if state.ShieldMode.value == 'Aegis' then
 		equip(sets.Aegis)	
@@ -1084,7 +1061,7 @@ end
 -- Set eventArgs.handled to true if display was handled, and you don't want the default info shown.
 function display_current_job_state(eventArgs)
     
-	local msg = '[ '
+	local msg = '[ [ Idle: ' .. state.IdleMode.value .. '] [Casting: ' .. state.CastingMode.value .. '] [Shield: ' .. state.ShieldMode.value .. '] [Weapon: '.. state.WeaponMode.value ..'] '
 	-- local msg = '[ Melee'
  
     -- if state.CombatForm.has_value then
@@ -1104,36 +1081,40 @@ function display_current_job_state(eventArgs)
     -- end
  
     if state.Kiting.value then
-        msg = msg .. '[ Kiting Mode: ON ]'
+        msg = msg .. '[ Kiting Mode: On ] '
     end
 	
-	if state.IdleMode.value == 'DT' then
-		msg = msg .. '[ Idle: DT ] '
-	elseif state.IdleMode.value == 'Pulling' then
-		msg = msg .. '[ Idle: Pulling ] '
-	else
-		msg = msg .. '[ Idle: Normal ] '
+	if state.Knockback.value then
+		msg = msg .. '[ Knockback: On ] '
 	end
 	
-	if state.ShieldMode.value == 'Aegis' then
-		msg = msg .. '[ Shield: Aegis ] '
-	elseif state.ShieldMode.value == 'Duban' then
-		msg = msg .. '[ Shield: Duban ] '
-	elseif state.ShieldMode.value == 'Ochain' then
-		msg = msg .. '[ Shield: Ochain ] '
-	else
-		msg = msg .. '[ Shield: Srivatsa ] '
-	end
+	-- if state.IdleMode.value == 'DT' then
+		-- msg = msg .. '[ Idle: DT ] '
+	-- elseif state.IdleMode.value == 'Pulling' then
+		-- msg = msg .. '[ Idle: Pulling ] '
+	-- else
+		-- msg = msg .. '[ Idle: Normal ] '
+	-- end
 	
-	if state.CastingMode.value == 'SIRD' then
-		msg = msg .. '[ Casting: SIRD ]'
-	elseif state.CastingMode.value == 'HPBAL' then
-		msg = msg .. '[ Casting: HPBAL ]'
-	else
-		msg = msg .. '[ Casting: Normal ]'
-	end
+	-- if state.ShieldMode.value == 'Aegis' then
+		-- msg = msg .. '[ Shield: Aegis ] '
+	-- elseif state.ShieldMode.value == 'Duban' then
+		-- msg = msg .. '[ Shield: Duban ] '
+	-- elseif state.ShieldMode.value == 'Ochain' then
+		-- msg = msg .. '[ Shield: Ochain ] '
+	-- else
+		-- msg = msg .. '[ Shield: Srivatsa ] '
+	-- end
 	
-    msg = msg .. ' ]'
+	-- if state.CastingMode.value == 'SIRD' then
+		-- msg = msg .. '[ Casting: SIRD ]'
+	-- elseif state.CastingMode.value == 'HPBAL' then
+		-- msg = msg .. '[ Casting: HPBAL ]'
+	-- else
+		-- msg = msg .. '[ Casting: Normal ]'
+	-- end
+	
+    msg = msg .. ']'	
  
     add_to_chat(060, msg)
  
