@@ -203,7 +203,7 @@ function init_gear_sets()
         hands="Nyame Gauntlets", --30
         legs="Nyame Flanchard", --30
         feet="Nyame Sollerets", --30
-        neck="Sanctity Necklace",
+        neck="Sibyl scarf",
         waist="Orpheus's Sash",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
@@ -235,7 +235,7 @@ function init_gear_sets()
         hands="Nyame Gauntlets", --30
         legs="Nyame Flanchard", --30
         feet="Nyame Sollerets", --30
-        neck="Sanctity Necklace",
+        neck="Sibyl scarf",
         waist="Orpheus's Sash",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
@@ -854,15 +854,6 @@ function job_precast(spell, action, spellMap, eventArgs)
             send_command('cancel 66; cancel 444; cancel Copy Image; cancel Copy Image (2)')
         end
     end
-     
--- Used to overwrite Moonshade Earring if TP is more than 2750.  Moved to post_precast
-    -- if spell.type == 'WeaponSkill' then
-        -- if player.tp > 275 then
-			-- add_to_chat('Using Telos')
-			-- equip({left_ear = "Telos Earring"})
-        -- end
-    -- end
-     
 end
  
 function job_post_precast(spell, action, spellMap, eventArgs)
@@ -1087,33 +1078,7 @@ function display_current_job_state(eventArgs)
 	if state.Knockback.value then
 		msg = msg .. '[ Knockback: On ] '
 	end
-	
-	-- if state.IdleMode.value == 'DT' then
-		-- msg = msg .. '[ Idle: DT ] '
-	-- elseif state.IdleMode.value == 'Pulling' then
-		-- msg = msg .. '[ Idle: Pulling ] '
-	-- else
-		-- msg = msg .. '[ Idle: Normal ] '
-	-- end
-	
-	-- if state.ShieldMode.value == 'Aegis' then
-		-- msg = msg .. '[ Shield: Aegis ] '
-	-- elseif state.ShieldMode.value == 'Duban' then
-		-- msg = msg .. '[ Shield: Duban ] '
-	-- elseif state.ShieldMode.value == 'Ochain' then
-		-- msg = msg .. '[ Shield: Ochain ] '
-	-- else
-		-- msg = msg .. '[ Shield: Srivatsa ] '
-	-- end
-	
-	-- if state.CastingMode.value == 'SIRD' then
-		-- msg = msg .. '[ Casting: SIRD ]'
-	-- elseif state.CastingMode.value == 'HPBAL' then
-		-- msg = msg .. '[ Casting: HPBAL ]'
-	-- else
-		-- msg = msg .. '[ Casting: Normal ]'
-	-- end
-	
+		
     msg = msg .. ']'	
  
     add_to_chat(060, msg)

@@ -10,13 +10,11 @@ function init_gear_sets()
     -- include('yer_augmented-items.lua')
     -- Precast Sets
 	include('Sef-Utility.lua')
+	include('Sef-Gear.lua')
     
 	DEX_DA = { name="Segomo's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
 	STR_DA = { name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}}
 	STR_WSD = { name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
-	gear.TAFeet = { name="Herculean Boots", augments={'Accuracy+26','"Triple Atk."+4','DEX+9','Attack+1',}}
-	gear.HercHatFC =  {name="Herculean Helm", augments={'"Mag.Atk.Bns."+24','"Fast Cast"+6','STR+7','Mag. Acc.+14'}}
-	gear.HercFeetFC = { name="Herculean Boots", augments={'Mag. Acc.+15','"Fast Cast"+5','MND+6','"Mag.Atk.Bns."+15',}}
 	
     -- Precast sets to enhance JAs on use
     sets.precast.JA['Hundred Fists'] = {legs="Hesychast's Hose +3"}
@@ -43,7 +41,7 @@ function init_gear_sets()
         head="Mummu Bonnet +2",neck="Unmoving collar +1",ear1="Tuisto earring",ear2="Odnowa earring +1",					--9r, 0, 0, 0
         body="Passion jacket",hands=gear.HercWaltzHands,ring1="Gelatinous Ring +1",ring2="Metamorph Ring +1",				--13, 11, 0, 0
         back="Moonlight Cape",waist="Platinum moogle Belt",legs="Dashing subligar",feet=gear.HercWaltzFeet}					--0, 0, 10, 11
-		-- 45%  Dashing subligar, herc hands/feet to cap
+		-- 45%  
         
     -- Don't need any special gear for Healing Waltz.
     sets.precast.Waltz['Healing Waltz'] = {}
@@ -55,14 +53,9 @@ function init_gear_sets()
     -- Fast cast sets for spells
     
     sets.precast.FC = {ammo="Sapience Orb",
-		head=gear.HercHatFC,
-		neck="Voltsurge Torque",
-		ear1="Etiolation Earring",ear2="Loquacious Earring",
-		body="Adhemar Jacket",
-		hands="Leyline Gloves",
-		ring1="Weatherspoon Ring +1",ring2="Prolix Ring",
-		legs=HercPantsFC,
-		feet=HercBootsFC}
+		head=gear.HercHatFC, neck="Voltsurge Torque", ear1="Etiolation Earring", ear2="Loquacious Earring",
+		body="Adhemar Jacket", hands="Leyline Gloves", ring2="Prolix Ring",
+		legs="Rawhide trousers", feet=gear.HercFeetFC}
 
     sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {body="Passion Jacket",neck="Magoraga Beads"})
 
@@ -168,27 +161,13 @@ function init_gear_sets()
 		body="Nyame mail",hands="Nyame gauntlets",left_ring="Archon Ring",ring2="Epaminondas's Ring",
 		waist="Orpheus's sash",legs="Nyame Flanchard",feet="Nyame Sollerets",}
     
-    sets.precast.WS["Shell Crusher"]   = set_combine(sets.precast.WS, {
-		ammo="Pemphredo Tathlum",
-		head="Malignance Chapeau",
-		neck="Sanctity Necklace",
-		ear1="Telos Earring",
-		ear2="Dignitary's Earring",
-		body="Malignance tabard",
-		hands="Malignance Gloves",
-		ring1="Niqmaddu Ring",
-		ring2="Regal Ring",
-		back=STR_DA,
-		waist="Eschan Stone",
-		legs="Malignance Tights",
-		feet="Malignance Boots"})
+    sets.precast.WS["Shell Crusher"] = set_combine(sets.precast.WS, {ammo="Pemphredo Tathlum",
+		head="Malignance Chapeau", neck="Null loop", ear1="Telos Earring", ear2="Dignitary's Earring",
+		body="Malignance tabard", hands="Malignance Gloves", ring1="Niqmaddu Ring", ring2="Regal Ring",
+		back="Null shawl", waist="Null belt", legs="Malignance Tights",	feet="Malignance Boots"})
 	
     -- Midcast Sets
-    sets.midcast.FastRecast = {
-        head="Herculean Helm",
-		ear2="Loquacious Earring",
-        body="Otronif Harness +1",hands="Otronif Gloves +1",
-        waist="Moonbow Belt +1",feet="Otronif Boots +1"}
+    sets.midcast.FastRecast = sets.precast.FC
         
     -- Specific spells
     sets.midcast.Utsusemi = {
@@ -210,12 +189,12 @@ function init_gear_sets()
         body="Malignance Tabard",hands="Malignance Gloves",ring1="Sheltered Ring",ring2="Defending Ring",
         back="Reiki Cloak",waist="Moonbow Belt +1",legs="Malignance Tights",feet="Hermes' Sandals"}
 
-    sets.idle.Town = {ammo="Iron Gobbet",
+    sets.idle.Town = {ammo="Staunch Tathlum +1",
         head="Hesychast's Crown +3",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Infused Earring",
         body="Councilor's Garb",hands="Hesychast's Gloves +3",ring1="Sheltered Ring",ring2="Paguroidea Ring",
         back="Moonbeam Cape",waist="Moonbow Belt +1",legs="Malignance Tights",feet="Hermes' Sandals"}
     
-    sets.idle.Weak = {ammo="Iron Gobbet",
+    sets.idle.Weak = {ammo="Staunch Tathlum +1",
         head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Eabani Earring",ear2="Infused Earring",
         body="Ashera Harness",hands="Malignance Gloves",ring1="Sheltered Ring",ring2="Defending Ring",
         back="Moonbeam Cape",waist="Moonbow Belt +1",legs="Malignance Tights",feet="Malignance Boots"}
@@ -248,169 +227,67 @@ function init_gear_sets()
     -- EG: sets.engaged.Dagger.Accuracy.Evasion
     
     -- Normal melee sets
-    sets.engaged = {head="Adhemar Bonnet +1", neck="Mnk. Nodowa +2", ear1="Sherida Earring", ear2="Mache Earring +1",
+    sets.engaged = {ammo="Coiste bodhar",
+		head="Adhemar Bonnet +1", neck="Mnk. Nodowa +2", ear1="Sherida Earring", ear2="Schere Earring",
 		body="Tatena. Harama. +1", hands="Adhemar Wrist. +1", ring1="Gere Ring", ring2="Niqmaddu Ring",
-		back="Sacro Mantle", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's gaiters +2"}
+		back="Sacro Mantle", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's gaiters +2"
+	}
 		
-    sets.engaged.SomeAcc = {ammo="Ginsen",
-		head="Kendatsuba Jinpachi +1",
-		neck="Monk's Nodowa +2",
-		ear1="Sherida Earring",ear2="Brutal Earring",
-		body="Kendatsuba Samue +1",
-		hands="Adhemar Wristbands +1",
-		ring1="Niqmaddu Ring",ring2="Epona's Ring",
-		back=DEX_DA,
-		waist="Moonbow Belt +1",
-		legs="Kendatsuba Hakama +1",
-		feet="Kendatsuba Sune-Ate +1"
-		}
-		
-    sets.engaged.Acc = {ammo="Ginsen",
-		head="Kendatsuba Jinpachi +1",
-		neck="Monk's Nodowa +2",
-		ear1="Dignitary's Earring",ear2="Telos Earring",
-		body="Kendatsuba Samue +1",
-		hands="Kendatsuba Tekko +1",
-		ring1="Niqmaddu Ring",ring2="Ilabrat Ring",
-		back=DEX_DA,
-		waist="Moonbow Belt +1",
-		legs="Kendatsuba Hakama +1",
-		feet="Kendatsuba Sune-Ate +1"
-		}
-
-    -- Defensive melee hybrid sets
-    sets.engaged.PDT = {ammo="Ginsen",
-		head="Malignance Chapeau",
-		neck="Monk's Nodowa +2",
-		ear1="Sherida Earring",
-		ear2="Brutal Earring",
-		body="Malignance Tabard",
-		hands="Malignance Gloves",
-		ring1="Niqmaddu Ring",
-		ring2="Epona's Ring",
-		back= DEX_DA,
-		waist="Moonbow Belt +1",
-		legs="Malignance Tights",
-		feet="Malignance Boots"}
-		
-    sets.engaged.SomeAcc.PDT = {ammo="Ginsen",
-        head="Malignance Chapeau",
-		neck="Monk's Nodowa +2",
-		ear1="Sherida Earring",
-		ear2="Telos Earring",
-		body="Malignance Tabard",
-		hands="Malignance Gloves",
-		ring1="Niqmaddu Ring",
-		ring2="Ilabrat Ring",
-		back= DEX_DA,
-		waist="Moonbow Belt +1",
-		legs="Malignance Tights",
-		feet="Malignance Boots"}
-		
-    sets.engaged.Acc.PDT = {ammo="Ginsen",
-        head="Malignance Chapeau",
-		neck="Monk's Nodowa +2",
-		ear1="Sherida Earring",
-		ear2="Telos Earring",
-		body="Malignance Tabard",
-		hands="Malignance Gloves",
-		ring1="Niqmaddu Ring",
-		ring2="Ilabrat Ring",
-		back= DEX_DA,
-		waist="Moonbow Belt +1",
-		legs="Malignance Tights",
-		feet="Malignance Boots"}
-		
-	sets.engaged.MEVA = {ammo="Ginsen",
-		head="Kendatsuba Jinpachi +1",
-		neck="Monk's Nodowa +2",
-		ear1="Sherida Earring",
-		ear2="Brutal Earring",
-		body="Kendatsuba Samue +1",
-		hands="Kendatsuba Tekko +1",
-		ring1="Niqmaddu Ring",
-		ring2="Epona's Ring",
-		back= DEX_DA,
-		waist="Moonbow Belt +1",
-		legs="Kendatsuba Hakama +1",
-		feet="Kendatsuba Sune-Ate +1"}
-		
-    sets.engaged.SomeAcc.MEVA = {ammo="Ginsen",
-        head="Kendatsuba Jinpachi +1",
-		neck="Monk's Nodowa +2",
-		ear1="Sherida Earring",
-		ear2="Telos Earring",
-		body="Kendatsuba Samue +1",
-		hands="Kendatsuba Tekko +1",
-		ring1="Niqmaddu Ring",
-		ring2="Ilabrat Ring",
-		back= DEX_DA,
-		waist="Moonbow Belt +1",
-		legs="Kendatsuba Hakama +1",
-		feet="Kendatsuba Sune-Ate +1"}
-		
-    sets.engaged.Acc.MEVA = {ammo="Ginsen",
-        head="Kendatsuba Jinpachi +1",
-		neck="Monk's Nodowa +2",
-		ear1="Dignitary's Earring",
-		ear2="Telos Earring",
-		body="Kendatsuba Samue +1",
-		hands="Kendatsuba Tekko +1",
-		ring1="Niqmaddu Ring",
-		ring2="Cacoethic Ring +1",
-		back= DEX_DA,
-		waist="Moonbow Belt +1",
-		legs="Kendatsuba Hakama +1",
-		feet="Kendatsuba Sune-Ate +1"}
-		
-    sets.engaged.Counter = {ammo="Ginsen",
-        head="Malignance Chapeau",
-		neck="Monk's Nodowa +2",
-		ear1="Sherida Earring",
-		ear2="Brutal Earring",
-		body="Malignance Tabard",
-		hands="Malignance Gloves",
-		ring1="Niqmaddu Ring",
-		ring2="Epona's Ring",
-		back= DEX_DA,
-		waist="Moonbow Belt +1",
-		legs="Kendatsuba Hakama +1",
-		feet="Kendatsuba Sune-Ate +1"}
-		
-    sets.engaged.SomeAcc.Counter = {ammo="Staunch Tathlum +1",
-        head="Malignance Chapeau",
-		neck="Monk's Nodowa +2",
-		ear1="Sherida Earring",
-		ear2="Telos Earring",
-		body="Malignance Tabard",
-		hands="Malignance Gloves",
-		ring1="Niqmaddu Ring",
-		ring2="Ilabrat Ring",
-		back= DEX_DA,
-		waist="Moonbow Belt +1",
-		legs="Kendatsuba Hakama +1",
-		feet="Kendatsuba Sune-Ate +1"}
-	
-	sets.engaged.Acc.Counter = {ammo="Staunch Tathlum +1",
-        head="Malignance Chapeau",
-		neck="Monk's Nodowa +2",
-		ear1="Sherida Earring",
-		ear2="Telos Earring",
-		body="Malignance Tabard",
-		hands="Malignance Gloves",
-		ring1="Niqmaddu Ring",
-		ring2="Ilabrat Ring",
-		back= DEX_DA,
-		waist="Moonbow Belt +1",
-		legs="Kendatsuba Hakama +1",
-		feet="Kendatsuba Sune-Ate +1"}
-		
-	sets.engaged.Hybrid = {ammo="Staunch Tathlum +1",
-		head="Mpaca's cap", neck="Mnk. Nodowa +2", ear1="Sherida Earring", ear2="Mache Earring +1",   			--0, 0, 0, 0
-		body="Mpaca's Doublet",	hands="Malignance Gloves", ring1="Niqmaddu Ring", ring2="Gere Ring",			--10, 5, 0, 0
-		back="Sacro Mantle",	waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Mpaca's boots"		
+    sets.engaged.Acc = {ammo="Coiste bodhar",
+		head="Adhemar Bonnet +1", neck="Mnk. Nodowa +2", ear1="Sherida Earring", ear2="Schere Earring",
+		body="Tatena. Harama. +1", hands="Adhemar Wrist. +1", ring1="Gere Ring", ring2="Niqmaddu Ring",
+		back="Sacro Mantle", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's gaiters +2"
 	}
 
+    -- Defensive melee hybrid sets
+    sets.engaged.PDT = {ammo="Coiste bodhar",
+		head="Adhemar Bonnet +1", neck="Mnk. Nodowa +2", ear1="Sherida Earring", ear2="Schere Earring",
+		body="Tatena. Harama. +1", hands="Adhemar Wrist. +1", ring1="Gere Ring", ring2="Niqmaddu Ring",
+		back="Sacro Mantle", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's gaiters +2"
+	}
+		
+    sets.engaged.Acc.PDT = {ammo="Coiste bodhar",
+		head="Adhemar Bonnet +1", neck="Mnk. Nodowa +2", ear1="Sherida Earring", ear2="Schere Earring",
+		body="Tatena. Harama. +1", hands="Adhemar Wrist. +1", ring1="Gere Ring", ring2="Niqmaddu Ring",
+		back="Sacro Mantle", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's gaiters +2"
+	}
+		
+	sets.engaged.MEVA = {ammo="Coiste bodhar",
+		head="Adhemar Bonnet +1", neck="Mnk. Nodowa +2", ear1="Sherida Earring", ear2="Schere Earring",
+		body="Tatena. Harama. +1", hands="Adhemar Wrist. +1", ring1="Gere Ring", ring2="Niqmaddu Ring",
+		back="Sacro Mantle", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's gaiters +2"
+	}
+		
+    sets.engaged.Acc.MEVA = {ammo="Coiste bodhar",
+		head="Adhemar Bonnet +1", neck="Mnk. Nodowa +2", ear1="Sherida Earring", ear2="Schere Earring",
+		body="Tatena. Harama. +1", hands="Adhemar Wrist. +1", ring1="Gere Ring", ring2="Niqmaddu Ring",
+		back="Sacro Mantle", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's gaiters +2"
+	}
+		
+    sets.engaged.Counter = {ammo="Coiste bodhar",
+		head="Adhemar Bonnet +1", neck="Mnk. Nodowa +2", ear1="Sherida Earring", ear2="Schere Earring",
+		body="Tatena. Harama. +1", hands="Adhemar Wrist. +1", ring1="Gere Ring", ring2="Niqmaddu Ring",
+		back="Sacro Mantle", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's gaiters +2"
+	}
+	
+	sets.engaged.Acc.Counter = {ammo="Coiste bodhar",
+		head="Adhemar Bonnet +1", neck="Mnk. Nodowa +2", ear1="Sherida Earring", ear2="Schere Earring",
+		body="Tatena. Harama. +1", hands="Adhemar Wrist. +1", ring1="Gere Ring", ring2="Niqmaddu Ring",
+		back="Sacro Mantle", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's gaiters +2"
+	}
+		
+	sets.engaged.Hybrid = {ammo="Staunch Tathlum +1",															--3
+		head="Mpaca's cap", neck="Mnk. Nodowa +2", ear1="Sherida Earring", ear2="Schere Earring",   			--0, 0, 0, 0
+		body="Mpaca's Doublet",	hands="Malignance Gloves", ring1="Niqmaddu Ring", ring2="Gere Ring",			--10, 5, 0, 0
+		back="Null shawl", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Mpaca's boots"					--0, 6, 14, 6
+	}	-- 44% PDT
+	
+	sets.engaged.Defense = {ammo="Staunch Tathlum +1",															--3
+		head="Malignance Chapeau", neck="Mnk. Nodowa +2", ear1="Sherida Earring", ear2="Schere Earring", 		--6, 0, 0, 0
+		body="Malignance Tabard", hands="Malignance Gloves", ring1="Niqmaddu Ring", ring2="Gere Ring",			--9, 5, 0, 0
+		back="Null shawl", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Malignance boots"				--0, 6, 14, 4
+	}	-- 47% PDT
+	
 
     -- Hundred Fists/Impetus melee set mods
 	sets.engaged.Impetus = set_combine(sets.engaged, {body="Bhikku Cyclas +2"})
@@ -431,29 +308,16 @@ function init_gear_sets()
 	sets.precast.WS["Victory Smite"].Acc.Impetus = set_combine(sets.precast.WS["Victory Smite"].Acc, {body="Bhikku Cyclas +2"})
 
     -- Footwork combat form
-    sets.engaged.Footwork = {ammo="Ginsen",
-		head="Adhemar Bonnet +1",
-		neck="Monk's Nodowa +2",
-		ear1="Sherida Earring",ear2="Telos Earring",
-		body="Kendatsuba Samue +1",
-		hands="Adhemar Wristbands +1",
-		ring1="Niqmaddu Ring",ring2="Epona's Ring",
-		back=DEX_DA,
-		waist="Moonbow Belt +1",
-		legs="Bhikku Hose +2",
-		feet="Anchorite's Gaiters +2"
+    sets.engaged.Footwork = {ammo="Coiste bodhar",
+		head="Adhemar Bonnet +1", neck="Mnk. Nodowa +2", ear1="Sherida Earring", ear2="Schere Earring",
+		body="Tatena. Harama. +1", hands="Adhemar Wrist. +1", ring1="Gere Ring", ring2="Niqmaddu Ring",
+		back="Sacro Mantle", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's gaiters +2"
 		}
-    sets.engaged.Footwork.Acc = {ammo="Ginsen",
-		head="Adhemar Bonnet +1",
-		neck="Monk's Nodowa +2",
-		ear1="Sherida Earring",ear2="Telos Earring",
-		body="Kendatsuba Samue +1",
-		hands="Adhemar Wristbands +1",
-		ring1="Niqmaddu Ring",ring2="Epona's Ring",
-		back=DEX_DA,
-		waist="Moonbow Belt +1",
-		legs="Bhikku Hose +2",
-		feet="Anchorite's Gaiters +2"
+		
+    sets.engaged.Footwork.Acc = {ammo="Coiste bodhar",
+		head="Adhemar Bonnet +1", neck="Mnk. Nodowa +2", ear1="Sherida Earring", ear2="Schere Earring",
+		body="Tatena. Harama. +1", hands="Adhemar Wrist. +1", ring1="Gere Ring", ring2="Niqmaddu Ring",
+		back="Sacro Mantle", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's gaiters +2"
 		}    
     
 	-- Quick sets for post-precast adjustments, listed here so that the gear can be Validated.

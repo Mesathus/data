@@ -284,7 +284,7 @@ function init_gear_sets()
     sets.precast.WS['Sanguine Blade'] = {ammo="Pemphredo tathlum",
         head="Pixie hairpin +1",neck="Sibyl scarf",ear1="Friomisi Earring",ear2="Regal Earring",
         body="Nyame mail",hands="Jhakri cuffs +2",ring1="Archon Ring",ring2="Epaminondas's Ring",
-        back=gear.NukeCape,waist="Orpheus's sash",legs="Luhlaza Shalwar +3",feet="Amalric nails +1"}
+        back=gear.NukeCape,waist="Orpheus's sash",legs="Luhlaza Shalwar +3",feet="Nyame sollerets"}
     
     sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {ammo="Mantoptera eye",
 		head="Hashishin Kavuk +3",neck="Mirage stole +2",ear1="Moonshade Earring",
@@ -299,12 +299,12 @@ function init_gear_sets()
 	sets.precast.WS['Flash Nova'] = {ammo="Pemphredo tathlum",
         head="Nyame helm",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Regal Earring",
         body="Nyame mail",hands="Jhakri cuffs +2",ring1="Rufescent ring",ring2="Epaminondas's Ring",
-        back=gear.NukeCape,waist="Orpheus's sash",legs="Luhlaza Shalwar +3",feet="Amalric nails +1"}
+        back=gear.NukeCape,waist="Orpheus's sash",legs="Luhlaza Shalwar +3",feet="Nyame Sollerets"}
 		
 	sets.precast.WS['Seraph Blade'] = {ammo="Pemphredo tathlum",
         head="Nyame helm",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Regal Earring",
         body="Nyame mail",hands="Jhakri cuffs +2",ring1="Rufescent ring",ring2="Epaminondas's Ring",
-        back=gear.NukeCape,waist="Orpheus's sash",legs="Luhlaza Shalwar +3",feet="Amalric nails +1"}
+        back=gear.NukeCape,waist="Orpheus's sash",legs="Luhlaza Shalwar +3",feet="Nyame Sollerets"}
 		
 	sets.precast.WS['Realmrazer'] = set_combine(sets.precast.WS, {
 		head="Adhemar bonnet +1",ear2="Regal Earring",

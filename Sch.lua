@@ -196,7 +196,7 @@ function init_gear_sets()
 
     sets.midcast['Dark Magic'] = {main="Bunzi's rod",sub="Ammurapi Shield",ammo="Seraphic ampulla",
         head="Arbatel bonnet +3",neck="Argute Stole +2",ear1="Regal Earring",ear2="Malignance Earring",
-        body="Amalric doublet +1",hands="Amalric gages +1",ring1="Freke Ring",ring2="Shiva Ring +1",
+        body="Academic's gown +3",hands="Amalric gages +1",ring1="Freke Ring",ring2="Shiva Ring +1",
         back="Lugh's cape",waist="Orpheus's sash",legs="Pedagogy pants +3",feet="Agwu's pigaches"}
 
     sets.midcast.Kaustra = {main="Bunzi's rod",sub="Ammurapi shield",ammo="Ghastly tathlum +1",
@@ -288,7 +288,10 @@ function init_gear_sets()
 	
 	sets.midcast['Elemental Magic'].HighTierNuke.Burst = set_combine(sets.midcast['Elemental Magic'].Burst, {})
 
-    sets.midcast.Impact = set_combine(sets.midcast['Elemental Magic'].Resistant, {})
+    sets.midcast.Impact = set_combine(sets.midcast['Elemental Magic'].Resistant, {head=empty, body="Twilight cloak"})
+	
+	sets.midcast.Impact.OA = set_combine(sets.midcast['Elemental Magic'].OA, {head=empty, body="Twilight cloak"})
+
 
 	-- sets.exported={
 		-- sub="Genmei Shield",
@@ -314,7 +317,7 @@ function init_gear_sets()
 
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 
-	sets.idle = {main="Musa",sub="Khonsu", ammo="Homiliary",
+	sets.idle = {main="Daybreak",sub="Genmei shield", ammo="Homiliary",
 		--{main="Daybreak",sub="Genmei shield",ammo="Homiliary",
         head="Befouled crown",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Loquacious Earring",
         body="Arbatel gown +3",hands="Volte gloves",ring1="Sheltered Ring",ring2="Defending Ring",
@@ -324,11 +327,6 @@ function init_gear_sets()
         head="Befouled crown",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Loquacious Earring",
         body="Agwu's robe",hands="Volte gloves",ring1="Sheltered Ring",ring2="Defending Ring",
         back="Moonlight cape",waist="Carrier's sash",legs="Volte brais",feet="Herald's Gaiters"}
-
-    -- sets.idle.Field = {main="Daybreak",sub="Genmei shield",ammo="Incantor Stone",
-        -- head="Befouled crown",neck="Argute stole +2",ear1="Etiolation Earring",ear2="Loquacious Earring",
-        -- body="Amalric doublet +1",hands="Volte gloves",ring1="Sheltered Ring",ring2="Defending Ring",
-        -- back="Moonlight cape",waist="Hierarch Belt",legs="Volte brais",feet="Herald's Gaiters"}
 		
 	sets.idle.Myrkr = {ammo="Homiliary",
         head="Befouled crown",neck="Argute stole +2",ear1="Etiolation Earring",ear2="Loquacious Earring",
@@ -398,7 +396,7 @@ function init_gear_sets()
 		back="Aurist's cape +1", waist="Fotia belt", legs="Nyame Flanchard", feet="Nyame Sollerets"	}	
 		
 	sets.precast.WS['Myrkr'] = {ammo="Ghastly tathlum +1",
-        head="Arbatel bonnet +3",neck="Sanctity Necklace",ear1="Etiolation Earring",ear2="Moonshade Earring",
+        head="Arbatel bonnet +3",neck="Warder's charm +1",ear1="Etiolation Earring",ear2="Moonshade Earring",
         body="Academic's gown +3",hands="Amalric gages +1",ring1="Sangoma Ring",ring2="Fortified Ring",
         back="Bookworm's Cape",waist="Luminary sash",legs="Amalric slops +1",feet="Agwu's pigaches"}
 		
@@ -432,8 +430,14 @@ function init_gear_sets()
     sets.buff['Klimaform'] = {feet="Arbatel loafers +3"}
 	sets.buff['Weather'] = {waist="Hachirin-no-obi"}
 
-    sets.buff.FullSublimation = {head="Academic's mortarboard +3",body="Pedagogy gown +3",ear1="Savant's Earring",waist="Embla Sash"}
-    sets.buff.PDTSublimation = {head="Academic's mortarboard +3",ear1="Savant's Earring"}
+    sets.buff.FullSublimation = {head="Academic's mortarboard +3", body="Pedagogy gown +3", waist="Embla Sash"}
+    sets.buff.PDTSublimation = {head="Academic's mortarboard +3"}		--,ear1="Savant's Earring"}
+	-- //gs equip when there's idle time to wait for a max sublimation
+	sets.MaxHP = {main="Musa", sub="Khonsu", ammo="Homiliary",
+		head="Acad. Mortar. +3", neck="Unmoving Collar +1", left_ear="Odnowa Earring +1", right_ear="Tuisto Earring",
+		body="Peda. Gown +3", hands="Nyame Gauntlets", left_ring="Gelatinous Ring +1", right_ring="Supershear Ring",
+		back="Moonlight Cape", waist="Embla Sash", legs="Nyame Flanchard", feet="Nyame Sollerets" 
+	}	-- 44% DT
 
     --sets.buff['Sandstorm'] = {feet="Desert Boots"}
 end

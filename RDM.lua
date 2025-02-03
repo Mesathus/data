@@ -60,10 +60,7 @@ function init_gear_sets()
     
 
     -- Waltz set (chr and vit)
-    sets.precast.Waltz = {
-        head="Atrophy Chapeau +2",
-        body="Atrophy tabard +3",hands="Yaoyotl Gloves",
-        back="Refraction Cape",legs="Hagondes Pants",feet="Hagondes Sabots"}
+    sets.precast.Waltz = {legs="Dashing subligar"}
         
     -- Don't need any special gear for Healing Waltz.
     sets.precast.Waltz['Healing Waltz'] = {}
@@ -73,10 +70,10 @@ function init_gear_sets()
     -- 80% Fast Cast (including trait) for all spells, plus 5% quick cast
     -- No other FC sets necessary.
     sets.precast.FC = {ammo="Staunch tathlum +1",
-        head="Atrophy Chapeau +2",neck="Loricate torque +1",ear1="Malignance Earring",ear2="Lethargy earring +2",  --14, 0, 4, 9
+        head="Atrophy chapeau +3",neck="Loricate torque +1",ear1="Malignance Earring",ear2="Lethargy earring +2",  --16, 0, 4, 9
         body="Vitiation tabard +3",hands="Volte gloves",ring1="Kishar Ring", ring2="Defending ring",               --15, 6, 4, 0
         back="Fi follet Cape +1",waist="Carrier's sash",legs="Malignance tights",feet="Malignance boots"}          --10, 0, 0, 0
-		-- 61% FC + 30% traits
+		-- 63% FC + 30% traits
 
     sets.precast.FC.Impact = set_combine(sets.precast.FC, {head=empty,body="Twilight Cloak"})
 	
@@ -173,8 +170,8 @@ function init_gear_sets()
 	sets.midcast.EnhancingSkill = {main="Pukulatmuj +1",														--11
 		head="Befouled Crown",neck="Incanter's Torque",ear1="Mimir Earring",ear2="Andoaa Earring",				--16, 10, 10, 5
 		body="Vitiation Tabard +3",hands="Viti. Gloves +3",ring1="Stikini Ring +1",ring2="Stikini Ring +1",		--23, 24, 8, 8
-		back="Ghostfyre Cape",waist="Olympus Sash",legs="Atrophy Tights +2",feet="Lethargy Houseaux +3"}		--8, 5, 19, 35
-		-- + 179 skill   + 420 base/merits  456 master = 606 before master levels      609 currently
+		back="Ghostfyre Cape",waist="Olympus Sash",legs="Atrophy Tights +3",feet="Lethargy Houseaux +3"}		--8, 5, 21, 35
+		-- + 184 skill   + 420 base/merits  456 master = 640 before master levels      645 currently
 		
 	sets.midcast['Enhancing Magic'] = {sub = "Ammurapi shield", ammo="Staunch tathlum +1",
 		head = "Telchine cap", neck = "Duelist's torque +2", ear1 = "Mimir earring", ear2 = "Lethargy earring +2",
@@ -219,7 +216,7 @@ function init_gear_sets()
 	sets.midcast['Enfeebling Magic'].Burst = sets.midcast['Enfeebling Magic']
 		
 	sets.midcast['Enfeebling Magic'].Resistant = {main="Contemplator +1",sub="Khonsu",range="Ullr",
-        head="Atrophy chapeau +2",neck="Duelist's torque +2",ear1="Regal Earring",ear2="Malignance Earring",
+        head="Atrophy chapeau +3",neck="Duelist's torque +2",ear1="Regal Earring",ear2="Malignance Earring",
         body="Lethargy Sayon +3",hands="Lethargy Gantherots +3",ring1="Stikini ring +1",ring2="Stikini ring +1",
         back=gear.CapeEnf,waist="Obstinate sash",legs="Lethargy fuseau +3",feet="Vitiation boots +3"}
 		--waist to obstinate sash at r22
@@ -301,10 +298,10 @@ function init_gear_sets()
     -- Sets to return to when not performing an action.
     
     -- Resting sets
-    sets.resting = {main="Chatoyant Staff",
-        head="Vitiation chapeau +3",neck="Wiglen Gorget",
-        body="Atrophy tabard +3",hands="Serpentes Cuffs",ring1="Sheltered Ring",ring2="Paguroidea Ring",
-        waist="Austerity Belt",legs="Nares Trews",feet="Chelona Boots +1"}
+    sets.resting = {main="Chatoyant Staff",amm0="Homiliary",
+        head="Vitiation chapeau +3",neck="Warder's charm +1",
+        body="Lethargy Sayon +3",hands="Volte gloves",ring1="Sheltered Ring",ring2="Shadow ring",
+        back="Shadow mantle",waist="Carrier's sash",legs="Volte brais",feet="Nyame sollerets"}
     
 
     -- Idle sets
@@ -333,22 +330,22 @@ function init_gear_sets()
         body="Lethargy Sayon +3",hands="Malignance Gloves",ring1="Sheltered Ring",ring2="Defending Ring",
         back="Moonlight cape",waist="Carrier's sash",legs="Malignance tights",feet="Malignance boots"}
 
-    sets.idle.MDT = {main="Bolelabunga",sub="Genbu's Shield",ammo="Demonry Stone",
-        head="Gendewitha Caubeen +1",neck="Twilight Torque",ear1="Bloodgem Earring",ear2="Loquacious Earring",
-        body="Gendewitha Caubeen +1",hands="Yaoyotl Gloves",ring1="Defending Ring",ring2="Shadow Ring",
-        back="Engulfer Cape",waist="Flume Belt",legs="Osmium Cuisses",feet="Gendewitha Galoshes"}
+    sets.idle.MDT = {main="Daybreak",sub="Sacro Bulwark",ammo="Staunch tathlum +1",
+        head="Vitiation chapeau +3",neck="Loricate torque +1",ear1="Infused Earring",ear2="Loquacious Earring",
+        body="Lethargy Sayon +3",hands="Malignance Gloves",ring1="Sheltered Ring",ring2="Defending Ring",
+        back="Moonlight cape",waist="Carrier's sash",legs="Malignance tights",feet="Malignance boots"}
     
     
     -- Defense sets
-    sets.defense.PDT = {
-        head="Atrophy Chapeau +2",neck="Twilight Torque",ear1="Bloodgem Earring",ear2="Loquacious Earring",
-        body="Hagondes Coat",hands="Gendewitha Gages",ring1="Defending Ring",ring2=gear.DarkRing.physical,
-        back="Shadow Mantle",waist="Flume Belt",legs="Hagondes Pants",feet="Gendewitha Galoshes"}
+    sets.defense.PDT = {ammo="Staunch tathlum +1",
+        head="Vitiation chapeau +3",neck="Loricate torque +1",ear1="Infused Earring",ear2="Loquacious Earring",
+        body="Lethargy Sayon +3",hands="Malignance Gloves",ring1="Sheltered Ring",ring2="Defending Ring",
+        back="Moonlight cape",waist="Carrier's sash",legs="Malignance tights",feet="Malignance boots"}
 
-    sets.defense.MDT = {ammo="Demonry Stone",
-        head="Atrophy Chapeau +2",neck="Twilight Torque",ear1="Bloodgem Earring",ear2="Loquacious Earring",
-        body="Atrophy tabard +3",hands="Yaoyotl Gloves",ring1="Defending Ring",ring2="Shadow Ring",
-        back="Engulfer Cape",waist="Flume Belt",legs="Bokwus Slops",feet="Gendewitha Galoshes"}
+    sets.defense.MDT = {ammo="Staunch tathlum +1",
+        head="Vitiation chapeau +3",neck="Loricate torque +1",ear1="Infused Earring",ear2="Loquacious Earring",
+        body="Lethargy Sayon +3",hands="Malignance Gloves",ring1="Sheltered Ring",ring2="Defending Ring",
+        back="Moonlight cape",waist="Carrier's sash",legs="Malignance tights",feet="Malignance boots"}
 
     sets.Kiting = {legs="Carmine Cuisses +1"}
 

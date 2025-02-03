@@ -113,7 +113,7 @@ function init_gear_sets()
   -- Default set for any weaponskill that isn't any more specifically defined
   sets.precast.WS = {
     head="Mpaca's cap",neck="Fotia Gorget",ear1="Mache Earring +1",ear2="Moonshade Earring",
-    body="Mpaca's doublet",hands="Mpaca's gloves",ring1="Rajas Ring",ring2="Epona's Ring",
+    body="Mpaca's doublet",hands="Mpaca's gloves",ring1="Niqmaddu Ring",ring2="Epona's Ring",
     back="Visucius's mantle",waist="Fotia Belt",legs="Mpaca's hose",feet="Mpaca's boots"}
 
   -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
@@ -149,9 +149,9 @@ function init_gear_sets()
 
   -- Resting sets
   sets.resting = {
-    head="Pitre Taj +1",neck="Sanctity Necklace",ear1="Infused Earring",ear2="Burana Earring",
+    head="Pitre Taj +1",neck="Warder's charm +1",ear1="Infused Earring",ear2="Burana Earring",
     ring1="Sheltered Ring",ring2="Paguroidea Ring",
-    back="Contriver's Cape"}
+    back="Contriver's Cape", waist="Null belt"}
 
   -- Idle sets
   sets.idle = {

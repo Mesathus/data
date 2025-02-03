@@ -115,9 +115,9 @@ function init_gear_sets()
     sets.precast.JA['Perfect Dodge'] = {hands="Plunderer's Armlets +3"}
     sets.precast.JA['Feint'] = {legs="Plunderer's Culottes +3"}
 	sets.precast.JA['Mug'] = {ammo="C. Palug Stone",
-		head="Mummu Bonnet +2", neck="Asn. Gorget +2", ear1="Odr Earring", ear2="Skulker's earring +2",
-		body="Mummu Jacket +2", hands="Mummu Wrists +2", ring1="Ilabrat Ring", ring2="Regal Ring",
-		back="Sacro Mantle", waist="Chaac Belt", legs="Mummu Kecks +2", feet="Mummu Gamash. +2"}
+		head="Skulker's Bonnet +3", neck="Asn. Gorget +2", ear1="Odr Earring", ear2="Skulker's earring +2",
+		body="Skulker's Vest +3", hands="Mummu Wrists +2", ring1="Ilabrat Ring", ring2="Regal Ring",
+		back="Sacro Mantle", waist="Chaac Belt", legs="Skulker's Culottes +3", feet="Skulker's Poulaines +3"}
 		
 		-- {ammo="C. Palug Stone",
 		-- head="Skulker's Bonnet +3", neck="Asn. Gorget +2", ear1="Odr Earring", ear2="Mache Earring +1",
@@ -293,7 +293,7 @@ function init_gear_sets()
 		hands="Nyame gauntlets",
 		legs="Nyame Flanchard",
 		feet="Nyame Sollerets",
-		neck="Sanctity Necklace",
+		neck="Sibyl scarf",
 		waist="Orpheus's sash",
 		left_ear="Friomisi Earring",
 		right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +25',}},
@@ -359,7 +359,7 @@ function init_gear_sets()
 		hands="Nyame gauntlets",
 		legs="Nyame Flanchard",
 		feet="Nyame Sollerets",
-		neck="Sanctity Necklace",
+		neck="Sibyl scarf",
 		waist="Orpheus's sash",
 		left_ear="Friomisi Earring",
 		right_ear="Crematio earring",
@@ -553,6 +553,13 @@ function init_gear_sets()
         back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%'}},
 		waist="Reiki Yotai",legs="Pillager's Culottes +3",feet="Turms Leggings +1"}
     
+	
+	sets.buff.Doom = {
+        neck="Nicander's Necklace", --20
+        ring1="Eshmun's Ring", --20
+        ring2="Purity Ring", --7
+        waist="Gishdubar Sash", --10
+        }
     sets.buff['Weather'] = {waist="Hachirin-no-obi"}
 
 end
@@ -589,13 +596,13 @@ function job_post_precast(spell, action, spellMap, eventArgs)
 			if data.weaponskills.elemental:contains(spell.name) then
 				equip({ear2 = "Crematio Earring"})
 			else
-				equip({ear2 = "Mache Earring +1"})
+				equip({ear2 = "Skulker's Earring +2"})
 			end
         elseif player.tp > 2750 then
 			if data.weaponskills.elemental:contains(spell.name) then
 				equip({ear2 = "Crematio Earring"})
 			else
-				equip({ear2 = "Mache Earring +1"})
+				equip({ear2 = "Skulker's Earring +2"})
 			end
         end
     end
@@ -644,6 +651,17 @@ end
 function job_buff_change(buff, gain)
     if state.Buff[buff] ~= nil then
         if not midaction() then
+            handle_equipping_gear(player.status)
+        end
+    end
+	
+	if buff == "doom" then
+        if gain then
+            equip(sets.buff.Doom)
+            send_command('@input /p Doomed.')
+             disable('ring1','ring2','waist')
+        else
+            enable('ring1','ring2','waist')
             handle_equipping_gear(player.status)
         end
     end

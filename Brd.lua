@@ -168,7 +168,7 @@ function init_gear_sets()
 					back=gear.BrdStrWSDCape, waist="Kentarch belt +1"})
     
 	sets.precast.WS['Shining Strike'] = set_combine(sets.precast.WS, {
-					neck="Sanctity necklace", ear1="Regal Earring",
+					neck="Sibyl scarf", ear1="Regal Earring",
 					body="Nyame mail", ring1="Rufescent Ring",
 					waist="Orpheus's sash"
 					})
@@ -176,7 +176,7 @@ function init_gear_sets()
 	sets.precast.WS['Judgment'] = sets.precast.WS['Savage Blade']
 	
 	sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
-					neck="Sanctity necklace", ear1="Regal Earring",
+					neck="Sibyl scarf", ear1="Regal Earring",
 					body="Nyame mail", ring1="Metamorph Ring +1",
 					back="Seshaw cape",waist="Orpheus's sash"
 					})
@@ -324,6 +324,8 @@ function init_gear_sets()
 		-- Ayanmo legs
 		
 	sets.midcast['Ninjutsu'] = set_combine(sets.midcast['Enfeebling Magic'],{})
+	
+	sets.midcast.Utsusemi = set_combine(sets.midcast.FastRecast, {})
 
     
     -- Sets to return to when not performing an action.

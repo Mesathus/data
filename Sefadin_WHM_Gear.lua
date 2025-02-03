@@ -177,7 +177,7 @@ function init_gear_sets()
 	sets.midcast['Dispelga'] = set_combine(sets.midcast.FastRecast, {main="Daybreak"})
 
     sets.midcast['Divine Magic'] = {main="Daybreak",sub="Ammurapi Shield",
-        neck="Sanctity necklace",ear1="Regal Earring",ear2="Malignance Earring",
+        neck="Sibyl scarf",ear1="Regal Earring",ear2="Malignance Earring",
         body="Cohort Cloak +1",hands="Bunzi's Gloves",ring1="Freke ring",ring2="Metamorph Ring +1",
         back="Aurist's Cape +1",waist="Luminary Sash",legs="Bunzi's pants",feet="Bunzi's sabots"}
 

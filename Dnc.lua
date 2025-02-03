@@ -117,11 +117,11 @@ function init_gear_sets()
     
 
     -- Waltz set (chr and vit)
-    sets.precast.Waltz = {ammo="Yamarang",																			--5
-        head="Horos Tiara +3",neck="Loricate torque +1",ear1="Tuisto earring",ear2="Odnowa earring +1",				--15, 
-        body="Maxixi Casaque +2",hands="Maculele Bangles +3",ring1="Metamorph Ring +1",ring2="Gelatinous Ring +1",	--17|7,  
-        back=gear.CapeTP,waist="Chaac Belt",legs="Dashing subligar",feet="Maxixi Toe Shoes +2"}						--0,0,10,12
-		--59% Waltz potency
+    sets.precast.Waltz = {ammo="Staunch tathlum +1",																--				--3
+        head="Horos Tiara +3",neck="Loricate torque +1",ear1="Tuisto earring",ear2="Odnowa earring +1",				--15, 			--0, 6, 0, 3
+        body="Maxixi Casaque +2",hands="Maculele Bangles +3",ring1="Defending Ring",ring2="Gelatinous Ring +1",		--17|7,  		--0, 11, 10, 7
+        back=gear.CapeTP,waist="Engraved belt",legs="Dashing subligar",feet="Maxixi Toe Shoes +2"}					--0,0,10,12		--10, 0, 0, 0
+		--54% Waltz potency			50% PDT
         
     -- Don't need any special gear for Healing Waltz.
     sets.precast.Waltz['Healing Waltz'] = {body="Maxixi Casaque +2"}
@@ -130,10 +130,16 @@ function init_gear_sets()
 
     sets.precast.Jig = {legs="Horos Tights +3", feet="Maxixi Toe Shoes +2"}
 
-    sets.precast.Step = {ammo="Yamarang",
-        head="Maxixi Tiara +2",neck="Etoile Gorget +2",ear1="Mache Earring +1",ear2="Telos Earring",
-        body="Maxixi Casaque +2",hands="Maxixi Bangles +3",ring1="Regal Ring",ring2="Chirich Ring +1",
-        back=gear.CapeTP, waist="Kentarch belt +1",legs="Malignance tights",feet="Horos Toe Shoes +3"}
+    -- sets.precast.Step = {ammo="Yamarang",
+        -- head="Maxixi Tiara +2",neck="Etoile Gorget +2",ear1="Mache Earring +1",ear2="Telos Earring",
+        -- body="Maxixi Casaque +2",hands="Maxixi Bangles +3",ring1="Regal Ring",ring2="Chirich Ring +1",
+        -- back=gear.CapeTP, waist="Kentarch belt +1",legs="Malignance tights",feet="Horos Toe Shoes +3"}
+		
+	sets.precast.Step = {ammo="Staunch tathlum +1",															--3
+        head="Malignance chapeau",neck="Etoile Gorget +2",ear1="Mache Earring +1",ear2="Telos Earring",		--6, 0, 0, 0
+        body="Malignance Tabard",hands="Malignance gloves",ring1="Shadow Ring",ring2="Defending Ring",		--9, 5, 0, 10
+        back=gear.CapeTP, waist="Engraved belt",legs="Malignance tights",feet="Horos Toe Shoes +3"}			--10, 0, 7, 0
+		-- 50% PDT
 		
     sets.precast.Step['Feather Step'] = {feet="Maculele Toe Shoes +3"}
 
@@ -142,12 +148,12 @@ function init_gear_sets()
     sets.precast.Flourish1['Violent Flourish'] = {ammo="Yamarang",
 		head="Maculele Tiara +3",ear1="Dignitary's Earring",ear2="Telos Earring",
         body="Horos Casaque +3",hands="Maculele Bangles +3",ring1="",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
-        back=gear.CapeTP,waist="Eschan Stone",legs="Maculele Tights +3",feet="Maculele Toe Shoes +3"} -- magic accuracy
+        back="Null shawl",waist="Null belt",legs="Maculele Tights +3",feet="Maculele Toe Shoes +3"} -- magic accuracy
 		
     sets.precast.Flourish1['Desperate Flourish'] = {ammo="Yamarang",
 		head="Maculele Tiara +3",ear1="Dignitary's Earring",ear2="Telos Earring",
         body="Horos Casaque +3",hands="Maculele Bangles +3",ring1="",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
-        back=gear.CapeTP,waist="Eschan Stone",legs="Maculele Tights +3",feet="Maculele Toe Shoes +3"} -- acc gear
+        back=gear.CapeTP,waist="Null belt",legs="Maculele Tights +3",feet="Maculele Toe Shoes +3"} -- acc gear
 
     sets.precast.Flourish2 = {}
     sets.precast.Flourish2['Reverse Flourish'] = {hands="Maculele Bangles +3", back="Toetapper mantle"}

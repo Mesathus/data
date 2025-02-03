@@ -176,7 +176,7 @@ function init_gear_sets()
 		hands="Nyame gauntlets",
 		legs="Nyame Flanchard",
 		feet="Lanun Bottes +3",
-		neck="Sanctity Necklace",
+		neck="Sibyl scarf",
 		waist="Orpheus's sash",
 		left_ear="Friomisi Earring",
 		right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +25',}},
@@ -197,7 +197,7 @@ function init_gear_sets()
 		
 	sets.precast.WS['Savage Blade'] = {
         head="Nyame helm",neck="Commodore charm +2",ear2="Moonshade Earring",ear1="Ishvara Earring",
-        body="Nyame mail",	hands="Chasseur's Gants +3",ring1="Sroda Ring",ring2="Epaminondas's ring",
+        body="Ikenga's vest",hands="Chasseur's Gants +3",ring1="Sroda Ring",ring2="Epaminondas's ring",
         back=gear.CorSavageCape,waist="Kentarch Belt +1",legs="Nyame Flanchard",feet="Lanun Bottes +3"}
 		
 	sets.precast.WS['Viper Bite'] = set_combine(sets.precast.WS['Savage Blade'],{})		

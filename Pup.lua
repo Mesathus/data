@@ -114,7 +114,7 @@ function init_gear_sets()
   -- Default set for any weaponskill that isn't any more specifically defined
   sets.precast.WS = {
     head="Hizamaru somen +1",neck="Fotia Gorget",ear1="Ishvara Earring",ear2="Moonshade Earring",
-    body="Hizamaru Haramaki +1",hands="Hizamaru Kote +1",ring1="Rajas Ring",ring2="Epona's Ring",
+    body="Hizamaru Haramaki +1",hands="Hizamaru Kote +1",ring1="Niqmaddu Ring",ring2="Epona's Ring",
     back="Dispersal mantle",waist="Fotia Belt",legs="Hizamaru Hizayoroi +1",feet="Herculean boots"}
 
   -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
@@ -199,7 +199,7 @@ function init_gear_sets()
     ammo="Automat. Oil +3",
     head="Hizamaru Somen +1", body="Hiza. Haramaki +1", hands="Hizamaru Kote +1",
     legs="Hiza. Hizayoroi +1", feet="Herculean boots", neck="Clotharius Torque", waist="Olseni belt", back="Visucius's mantle",
-    left_ear="Digni. Earring", right_ear="Cessance Earring", left_ring="Rajas Ring", right_ring="Ramuh Ring +1"}
+    left_ear="Digni. Earring", right_ear="Cessance Earring", left_ring="Niqmaddu Ring", right_ring="Ramuh Ring +1"}
 
   sets.engaged.Acc = set_combine(sets.engaged, {
     head="Ptica Headgear",neck="Subtlety Spectacles",ear1="Zennaroi Earring",

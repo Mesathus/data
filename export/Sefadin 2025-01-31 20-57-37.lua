@@ -1,0 +1,17 @@
+sets.exported={
+    main={ name="Musa", augments={'Path: C',}},
+    sub="Khonsu",
+    ammo="Homiliary",
+    head="Acad. Mortar. +3",
+    body={ name="Peda. Gown +3", augments={'Enhances "Enlightenment" effect',}},
+    hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+    legs={ name="Nyame Flanchard", augments={'Path: B',}},
+    feet={ name="Nyame Sollerets", augments={'Path: B',}},
+    neck={ name="Unmoving Collar +1", augments={'Path: A',}},
+    waist="Embla Sash",
+    left_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
+    right_ear="Tuisto Earring",
+    left_ring={ name="Gelatinous Ring +1", augments={'Path: A',}},
+    right_ring="Supershear Ring",
+    back="Moonlight Cape",
+}
