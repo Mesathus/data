@@ -70,7 +70,7 @@ function init_gear_sets()
         ring1="Kishar Ring", --4
         ring2="Prolix Ring", --2
         back=Ankou_FC, --10
-        waist="Tempus Fugit",
+        waist="Tempus Fugit +1",
         legs="Arjuna breeches", --4
         feet="Odyssean greaves"} --5
 
@@ -87,7 +87,7 @@ function init_gear_sets()
         ring1="Kishar Ring", --4
         ring2="Prolix Ring", --2
         back=Ankou_FC, --10
-        waist="Tempus Fugit",
+        waist="Tempus Fugit +1",
         legs="Arjuna breeches", --4
         feet="Odyssean greaves"} --5
                    
@@ -235,7 +235,7 @@ function init_gear_sets()
 
 	sets.precast.WS.SomeAcc = set_combine(sets.precast.WS, {})
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {})
-	sets.precast.WS.FullAcc = set_combine(sets.precast.WS, {neck="Combatant's Torque"})
+	sets.precast.WS.FullAcc = set_combine(sets.precast.WS, {})
 	sets.precast.WS.Fodder = set_combine(sets.precast.WS, {})
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.	
@@ -579,7 +579,12 @@ function init_gear_sets()
      
 	sets.Kiting = {legs="Carmine Cuisses +1"}
 	--sets.passive.Reraise = {head="Twilight Helm",body="Twilight Mail"}
-	sets.buff.Doom = set_combine(sets.buff.Doom, {waist="Gishdubar sash",ring1="Saida Ring",ring2="Saida Ring"})
+	sets.buff.Doom = {
+        neck="Nicander's Necklace", --20
+        ring1="Eshmun's Ring", --20
+        ring2="Purity Ring", --7
+        waist="Gishdubar Sash", --10
+        }
 	sets.buff.Sleep = {neck="Vim Torque +1"}
 	sets.buff['Dark Seal'] = {} --head="Fallen's Burgeonet +3"
      

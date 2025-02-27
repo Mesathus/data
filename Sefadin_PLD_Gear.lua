@@ -31,7 +31,7 @@ function user_setup()
     state.HybridMode:options('Normal', 'HIGH', 'MID', 'LOW')
     state.WeaponskillMode:options('Normal', 'Acc')
     state.CastingMode:options('Normal', 'SIRD', 'HPBAL')    
-    state.IdleMode:options('Pulling', 'Normal', 'Aminon')  --Ctrl 'F12'
+    state.IdleMode:options('Pulling', 'Normal', 'Aminon')  			--Ctrl 'F12'
 	state.ShieldMode = M{'Duban','Aegis','Ochain','Srivatsa'}		--Alt F9
 	state.WeaponMode = M{'Burtgang', 'Naegling', 'Malignance'}		--Alt F10
      
@@ -301,7 +301,7 @@ function init_gear_sets()
 	sets.midcast.Stoneskin = {--main="Sakpata's sword", 
 		ammo="Sapience orb",		
 		head="Carmine mask +1", neck="Stone gorget", ear1="Odnowa earring +1",
-		body="Reverence surcoat", ring1="Defending Ring",
+		body="Reverence surcoat +3", ring1="Defending Ring",
 		back=gear.FCCape, waist="Siegal sash", legs="Sakpata's cuisses"
 	}
 	 

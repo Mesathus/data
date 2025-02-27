@@ -62,6 +62,7 @@ function user_setup()
     -- Additional local binds
     send_command('bind ^` input /ja "Double-up" <me>')
     send_command('bind !` input /ja "Bolter\'s Roll" <me>')
+	send_command('bind != gs c toggle LuzafRing')	--Alt + =
 	send_command('bind !p input /item Panacea <me>')  --Alt + P
     update_combat_form()
 	select_default_macro_book()
@@ -72,6 +73,7 @@ end
 function user_unload()
     send_command('unbind ^`')
     send_command('unbind !`')
+	send_command('unbind !=')
 	send_command('unbind !p')
 end
 

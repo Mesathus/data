@@ -161,7 +161,7 @@ function init_gear_sets()
         -- ammo="Knobkierrie",
         -- head="Peltast's Mezail +3",
         -- body="Gleti's Cuirass",
-        -- hands="Pteroslaver Fin. G. +3",
+        -- hands="Pteroslaver finger gauntlets +3",
 		-- legs="Gleti's Breeches",
         -- feet="Nyame Sollerets",
         -- neck="Dragoon's Collar +2",
@@ -324,7 +324,7 @@ function init_gear_sets()
     sets.idle = {
         ammo="Staunch Tathlum +1", 		--3
         head="Gleti's Mask",			--6
-        body="Pteroslaver Mail +3", 			--
+        body="Pteroslaver Mail +3", 	--
         hands="Gleti's Gauntlets", 		--7
         legs="Carmine cuisses +1",		--
         feet="Gleti's Boots",			--5

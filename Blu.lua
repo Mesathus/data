@@ -288,12 +288,12 @@ function init_gear_sets()
     
     sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {ammo="Mantoptera eye",
 		head="Hashishin Kavuk +3",neck="Mirage stole +2",ear1="Moonshade Earring",
-		hands="Jhakri cuffs +2",ring1="Epaminondas's ring",ring2="Sroda ring",
+		body="Nyame mail",hands="Jhakri cuffs +2",ring1="Epaminondas's ring",ring2="Sroda ring",
 		waist="Kentarch belt +1",legs="Nyame Flanchard",feet="Nyame Sollerets"})
 		
 	sets.precast.WS['Black Halo'] = set_combine(sets.precast.WS, {ammo="Mantoptera eye",
-		head="Hashishin Kavuk +3",neck="Mirage stole +2",ear1="Moonshade Earring",
-		hands="Jhakri cuffs +2",ring1="Epaminondas's ring",ring2="Sroda ring",
+		head="Hashishin Kavuk +3",neck="Mirage stole +2",ear1="Moonshade Earring",ear2="Regal Earring",
+		body="Nyame mail",hands="Nyame gauntlets",ring1="Epaminondas's ring",ring2="Sroda ring",
 		waist="Kentarch belt +1",legs="Nyame Flanchard",feet="Nyame Sollerets"})
 		
 	sets.precast.WS['Flash Nova'] = {ammo="Pemphredo tathlum",
@@ -389,7 +389,8 @@ function init_gear_sets()
 		head = "Pixie hairpin +1", body="Hashishin mintan +3", ring1="Archon Ring"
 	})
 	
-	sets.midcast['Subduction'] = set_combine(sets.midcast['Blue Magic'].Magical, sets.TreasureHunter)
+	
+	
 	--sets.midcast['Palling Salvo'] = set_combine(sets.midcast['Blue Magic'].Magical.Burst, {head = "Pixie hairpin +1"})
 	
     -- sets.midcast['Blue Magic'].MagicalMnd = set_combine(sets.midcast['Blue Magic'].Magical,
@@ -406,13 +407,12 @@ function init_gear_sets()
         head="Hashishin Kavuk +3",neck="Mirage stole +2",ear1="Dignitary's Earring",ear2="Regal Earring",
         body="Hashishin mintan +3",hands="Nyame Gauntlets",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
         back="Aurist's cape +1",waist="Luminary sash",legs="Hashishin Tayt +3",feet="Hashishin Basmak +3"}
-
+		
+	sets.midcast['Subduction'] = set_combine(sets.midcast['Blue Magic'].Magical, sets.TreasureHunter)
+	--set_combine(sets.midcast['Blue Magic'].MagicAccuracy, {hands="Hashishin bazubands +2"}) 
     -- Breath Spells --
     
-    sets.midcast['Blue Magic'].Breath = {ammo="Mavi Tathlum",
-        head="Luhlaza Keffiyeh +3",neck="Ej Necklace",ear1="Lifestorm Earring",ear2="Psystorm Earring",
-        body="Vanir Cotehardie",hands="Assimilator's Bazubands +1",ring1="K'ayres Ring",ring2="Beeline Ring",
-        back="Refraction Cape",legs="Enif Cosciales",feet="Iuitl Gaiters +1"}
+    sets.midcast['Blue Magic'].Breath = set_combine(sets.midcast['Blue Magic'].Magical, {hands="Hashishin bazubands +2"}) 
 
     -- Other Types --
     
@@ -426,11 +426,12 @@ function init_gear_sets()
         body="Pinga tunic +1",hands="Telchine Gloves",ring1="Gelatinous Ring +1",ring2="Ilabrat Ring",
         back="Moonlight cape",waist="Platinum moogle belt",legs="Pinga Pants +1",feet="Medium's Sabots"}
 
-    sets.midcast['Blue Magic'].Healing = {																							--cure pot			--mnd				--vit
+    sets.midcast['Blue Magic'].Healing = {ammo="Staunch tathlum +1",																--cure pot			--mnd				--vit
         head="Nyame helm",neck="Incanter's torque",ear1="Regal Earring",ear2="Tuisto Earring",										--0, 0, 0, 0		--26, 0, 10, 0		--24, 0, 0, 10
         body="Pinga tunic +1",hands="Telchine Gloves",ring1="Metamorph Ring +1",ring2="Stikini Ring +1",							--15, 10, 0, 0		--40, 33, 16, 8		--21, 23, 0. 0
         back="Aurist's Cape +1",waist={name={"Platinum moogle belt"}, priority=200},legs="Pinga Pants +1",feet="Medium's Sabots"}	--0, 0, 13, 12		--33, 0, 35, 29		--0, 0, 17, 10
 		-- 1240 power target  ~100mnd/vit base     																					--50%				--230				--105
+		-- 10% DT
 
     sets.midcast['Blue Magic'].SkillBasedBuff = {ammo="Mavi Tathlum",
         head="Luhlaza Keffiyeh +3",neck="Mirage Stole +2",ear2="Hashishin earring +1",
@@ -516,28 +517,28 @@ function init_gear_sets()
     -- EG: sets.engaged.Dagger.Accuracy.Evasion
     
     -- Normal melee group
-    sets.engaged = {ammo="Mantoptera eye",
+    sets.engaged = {ammo="Coiste Bodhar",
         head="Adhemar bonnet +1",neck="Mirage stole +2",ear1="Brutal Earring",ear2="Telos earring",
         body="Adhemar jacket +1",hands="Adhemar Wristbands +1",ring1="Rajas Ring",ring2="Epona's Ring",
         back="Bleating Mantle",waist="Chiner's belt +1",legs="Samnuha tights",feet={ name="Herculean Boots", augments={'Accuracy+26','"Triple Atk."+4','DEX+9','Attack+1',}}}
 
-    sets.engaged.Acc = {ammo="Mantoptera eye",
+    sets.engaged.Acc = {ammo="Coiste Bodhar",
         head="Whirlpool Mask",neck="Mirage stole +2",ear1="Bladeborn Earring",ear2="Steelflash Earring",
         body="Adhemar jacket +1",hands="Buremte Gloves",ring1="Rajas Ring",ring2="Epona's Ring",
         back="Letalis Mantle",waist="Hurch'lan Sash",legs="Manibozho Brais",feet="Qaaxo Leggings"}
 
-    sets.engaged.Refresh = {ammo="Mantoptera eye",
+    sets.engaged.Refresh = {ammo="Coiste Bodhar",
         head="Whirlpool Mask",neck="Mirage stole +2",ear1="Bladeborn Earring",ear2="Steelflash Earring",
         body="Assimilator's Jubbah +3",hands="Assimilator's Bazubands +1",ring1="Rajas Ring",ring2="Epona's Ring",
         back="Atheling Mantle",waist="Windbuffet Belt",legs="Manibozho Brais",feet="Qaaxo Leggings"}
 
-    sets.engaged.DW = {ammo="Mantoptera eye",
+    sets.engaged.DW = {ammo="Coiste Bodhar",
         head="Adhemar bonnet +1",neck="Mirage stole +2",ear1="Cessance Earring",ear2="Suppanomimi",
         body="Adhemar jacket +1",hands="Adhemar Wristbands +1",ring1="Hetairoi Ring",ring2="Epona's Ring",
         back=gear.CritCape,waist="Reiki Yotai",legs="Carmine cuisses +1",feet={ name="Herculean Boots", augments={'Accuracy+26','"Triple Atk."+4','DEX+9','Attack+1',}}}
 
-    sets.engaged.DW.Acc = {ammo="Mantoptera eye",
-        head="Carmine Mask +1",neck="Mirage stole +2",ear1="Telos Earring",ear2="Cessance Earring",
+    sets.engaged.DW.Acc = {ammo="Coiste Bodhar",
+        head="Carmine Mask +1",neck="Mirage stole +2",ear1="Telos Earring",ear2="Hashishin Earring +1",
         body="Adhemar jacket +1",hands="Adhemar Wristbands +1",ring1="Ilabrat Ring",ring2="Epona's Ring",
         back=gear.CritCape,waist="Reiki Yotai",legs="Carmine cuisses +1",feet={name="Herculean boots", augments={'Accuracy+26','"Triple Atk."+4','DEX+9','Attack+1'}}}
 		

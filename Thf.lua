@@ -43,7 +43,7 @@ end
 
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
-    state.OffenseMode:options('Normal', 'TA', 'Hybrid', 'TAcc', 'H2H', 'DT', 'Evasion', 'HybridSB')
+    state.OffenseMode:options('Hybrid', 'Normal', 'TA', 'TAcc', 'H2H', 'DT', 'Evasion', 'HybridSB')
     state.HybridMode:options('Normal', 'Evasion', 'PDT')
     state.RangedMode:options('Normal', 'Acc')
     state.WeaponskillMode:options('Normal', 'Acc', 'Mod')
@@ -61,9 +61,9 @@ function user_setup()
 	gear.CapeEva = {name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%'}}
 
     -- Additional local binds
-    send_command('bind ^` input /ja "Flee" <me>')
-    send_command('bind ^= gs c cycle treasuremode')
-    send_command('bind !- gs c cycle targetmode')
+    send_command('bind ^` input /ja "Flee" <me>')	--Ctrl + `
+    send_command('bind ^= gs c cycle treasuremode')  --Ctrl + =
+    send_command('bind !- gs c cycle targetmode')	--Ctrl + -
 	send_command('bind !f9 gs c cycle WeaponskillMode') --Alt + F9
 	send_command('bind @f9 gs c cycle RangedMode') --Windows + F9
 	send_command('bind !p input /item Panacea <me>')  --Alt + P
@@ -77,6 +77,7 @@ function user_unload()
     send_command('unbind !-')
 	send_command('unbind !f9')
 	send_command('unbind @f9')
+	send_command('unbind !p')
 end
 
 
@@ -173,8 +174,7 @@ function init_gear_sets()
     sets.precast.WS = {ammo="Cath Palug stone",
         head="Pillager's Bonnet +3",neck="Fotia Gorget",ear1="Sherida Earring",ear2="Moonshade Earring",
         body="Skulker's Vest +3",hands="Meghanada gloves +2",ring1="Regal Ring",ring2="Ilabrat Ring",
-        back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}},
-		waist="Fotia Belt",legs="Plunderer's culottes +3",feet="Nyame Sollerets"}
+        back=gear.CapeWSD,waist="Fotia Belt",legs="Nyame flanchard",feet="Nyame Sollerets"}
     sets.precast.WS.Acc = set_combine(sets.precast.WS, {})
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.

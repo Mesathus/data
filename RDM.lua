@@ -26,6 +26,7 @@ function user_setup()
     state.OffenseMode:options('None', 'Normal', 'Enspell1')
     state.HybridMode:options('Normal', 'PhysicalDef', 'MagicalDef')
     state.CastingMode:options('Normal', 'Resistant', 'Burst', 'BurstResistant', 'OA')
+	state.WeaponskillMode:options('Normal', 'Acc')
     state.IdleMode:options('Normal', 'Refresh', 'DT')
 
     gear.CapeEnf = {name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','Weapon skill damage +10%'}}
@@ -81,10 +82,12 @@ function init_gear_sets()
        
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
-    sets.precast.WS = {
+    sets.precast.WS = {ammo="Coiste Bodhar",
         head="Nyame Helm",neck="Combatant's torque",ear1="Moonshade Earring",ear2="Ishvara Earring",
         body="Nyame Mail",hands="Nyame gauntlets",ring1="Ilabrat Ring",ring2="Epaminondas's Ring",
         back="",waist="Fotia belt",legs="Nyame Flanchard",feet="Lethargy houseaux +3"}
+	
+	sets.precast.WS.Acc = set_combine(sets.precast.WS, {})
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
     sets.precast.WS['Requiescat'] = set_combine(sets.precast.WS, {
@@ -92,7 +95,7 @@ function init_gear_sets()
 		body="Lethargy Sayon +3",hands="Bunzi's gloves",ring1="Metamorph Ring +1",
 		back="Aurist's cape +1",waist="Fotia belt",legs="Lethargy fuseau +3",feet="Lethargy houseaux +3"})
 		
-	sets.precast.WS['Savage Blade'] = {
+	sets.precast.WS['Savage Blade'] = {ammo="Coiste Bodhar",
         head="Nyame Helm",neck="Republican Platinum Medal",ear1="Moonshade Earring",ear2="Lethargy earring +2",
         body="Nyame Mail",hands="Nyame gauntlets",ring1="Sroda Ring",ring2="Epaminondas's Ring",
         back=gear.CapeEnf,waist="Kentarch belt +1",legs="Nyame Flanchard",feet="Lethargy houseaux +3"}
@@ -139,7 +142,7 @@ function init_gear_sets()
         body="Nyame Mail",hands="Lethargy Gantherots +3",ring1="Metamorph Ring +1",ring2="Epaminondas's Ring",
         back=gear.CapeEnf,waist="Orpheus's sash",legs="Nyame Flanchard",feet="Lethargy houseaux +3"}
 		
-	sets.precast.WS['Black Halo'] = {
+	sets.precast.WS['Black Halo'] = {ammo="Coiste Bodhar",
         head="Nyame Helm",neck="Republican Platinum Medal",ear1="Moonshade Earring",ear2="Lethargy earring +2",
         body="Nyame Mail",hands="Nyame gauntlets",ring1="Sroda Ring",ring2="Epaminondas's Ring",
         back=gear.CapeEnf,waist="Kentarch belt +1",legs="Nyame Flanchard",feet="Lethargy houseaux +3"}
@@ -240,12 +243,12 @@ function init_gear_sets()
     
     sets.midcast['Elemental Magic'] = {main="Bunzi's rod",sub="Ammurapi Shield",ammo="Ghastly tathlum +1",
         head="Lethargy chappel +3",neck="Sibyl scarf",ear1="Regal Earring",ear2="Malignance Earring",
-        body="Amalric doublet +1",hands="Amalric gages +1",ring1="Freke Ring",ring2="Metamorph Ring +1",
+        body="Lethargy Sayon +3",hands="Amalric gages +1",ring1="Freke Ring",ring2="Metamorph Ring +1",
         back="Aurist's cape +1",waist="Orpheus's sash",legs="Amalric slops +1",feet="Amalric nails +1"}
 		
 	sets.midcast['Elemental Magic'].Resistant = {main="Bunzi's rod",sub="Ammurapi Shield",ammo="Ghastly tathlum +1",
         head="Lethargy chappel +3",neck="Sibyl scarf",ear1="Regal Earring",ear2="Malignance Earring",
-        body="Amalric doublet +1",hands="Amalric gages +1",ring1="Freke Ring",ring2="Metamorph Ring +1",
+        body="Lethargy Sayon +3",hands="Amalric gages +1",ring1="Freke Ring",ring2="Metamorph Ring +1",
         back="Aurist's cape +1",waist="Orpheus's sash",legs="Amalric slops +1",feet="Lethargy houseaux +3"}
 		
 	sets.midcast['Elemental Magic'].Burst = {main="Bunzi's rod",sub="Ammurapi Shield",ammo="Ghastly tathlum +1",		--10, 0, 0
@@ -308,17 +311,17 @@ function init_gear_sets()
     sets.idle = {main="Daybreak",sub="Sacro Bulwark",ammo="Homiliary",
         head="Vitiation chapeau +3",neck="Loricate torque +1",ear1="Infused Earring",ear2="Etiolation Earring",
         body="Lethargy Sayon +3",hands="Malignance Gloves",ring1="Sheltered Ring",ring2="Defending Ring",
-        back="Moonlight cape",waist="Flume Belt",legs="Carmine Cuisses +1",feet="Malignance boots"}
+        back="Moonlight cape",waist="Carrier's sash",legs="Carmine Cuisses +1",feet="Malignance boots"}
 
     sets.idle.Town = {main="Daybreak",sub="Sacro Bulwark",ammo="Homiliary",
         head="Vitiation chapeau +3",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Odnowa Earring +1",
         body="Lethargy Sayon +3",hands="Volte Gloves",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
-        back="Moonlight cape",waist="Flume Belt",legs="Carmine Cuisses +1",feet="Malignance boots"}
+        back="Moonlight cape",waist="Carrier's sash",legs="Carmine Cuisses +1",feet="Malignance boots"}
     
     sets.idle.Weak = {main="Daybreak",sub="Sacro Bulwark",ammo="Homiliary",
         head="Vitiation chapeau +3",neck="Loricate torque +1",ear1="Infused Earring",ear2="Etiolation Earring",
         body="Lethargy Sayon +3",hands="Malignance Gloves",ring1="Sheltered Ring",ring2="Defending Ring",
-        back="Moonlight cape",waist="Flume Belt",legs="Carmine Cuisses +1",feet="Malignance boots"}
+        back="Moonlight cape",waist="Carrier's sash",legs="Carmine Cuisses +1",feet="Malignance boots"}
 		
 	sets.idle.Refresh = {main="Daybreak",sub="Sacro Bulwark",ammo="Homiliary",
         head="Vitiation chapeau +3",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Odnowa Earring +1",
@@ -359,20 +362,36 @@ function init_gear_sets()
     -- EG: sets.engaged.Dagger.Accuracy.Evasion
     
     -- Normal melee group
-    sets.engaged = {
-        head="Malignance chapeau",neck="Combatant's torque",ear1="Sherida Earring",ear2="Lethargy earring +2",
+    sets.engaged = {ammo="Coiste Bodhar",
+        head="Malignance chapeau",neck="Null loop",ear1="Sherida Earring",ear2="Lethargy earring +2",
         body="Malignance tabard",hands="Bunzi's gloves",ring1="Hetairoi Ring",ring2="Chirich Ring +1",
-        back=gear.CapeDW,waist="Reiki Yotai",legs="Malignance tights",feet="Malignance boots"}
+        back="Null shawl",waist="Null belt",legs="Malignance tights",feet="Malignance boots"}	
 		
 	sets.engaged.Enspell1 = {ammo="Sroda tathlum",
-		head="Malignance Chapeau", neck="Sanctity Necklace", ear1="Hollow Earring", ear2="Lethargy earring +2",
+		head="Malignance Chapeau", neck="Null loop", ear1="Hollow Earring", ear2="Lethargy earring +2",
+		body="Malignance Tabard", hands="Aya. Manopolas +2", ring1="Hetairoi Ring", ring2="Chirich Ring +1",
+		back="Null shawl", waist="Orpheus's Sash", legs="Malignance tights", feet="Malignance Boots"}
+
+    sets.engaged.Defense = {ammo="Coiste Bodhar",
+        head="Malignance chapeau",neck="Combatant's torque",ear1="Sherida Earring",ear2="Lethargy earring +2",
+        body="Malignance tabard",hands="Bunzi's gloves",ring1="Hetairoi Ring",ring2="Chirich Ring +1",
+        back="Null shawl",waist="Null belt",legs="Malignance tights",feet="Malignance boots"}
+		
+	sets.engaged.DW = {ammo="Coiste Bodhar",
+        head="Malignance chapeau",neck="Null loop",ear1="Sherida Earring",ear2="Lethargy earring +2",
+        body="Malignance tabard",hands="Bunzi's gloves",ring1="Hetairoi Ring",ring2="Chirich Ring +1",
+        back=gear.CapeDW,waist="Reiki Yotai",legs="Malignance tights",feet="Malignance boots"}	
+		
+	sets.engaged.Enspell1.DW = {ammo="Sroda tathlum",
+		head="Malignance Chapeau", neck="Null loop", ear1="Hollow Earring", ear2="Lethargy earring +2",
 		body="Malignance Tabard", hands="Aya. Manopolas +2", ring1="Hetairoi Ring", ring2="Chirich Ring +1",
 		back=gear.CapeDW, waist="Orpheus's Sash", legs="Carmine Cuisses +1", feet="Malignance Boots"}
 
-    sets.engaged.Defense = {
+    sets.engaged.Defense.DW = {ammo="Coiste Bodhar",
         head="Malignance chapeau",neck="Combatant's torque",ear1="Sherida Earring",ear2="Lethargy earring +2",
         body="Malignance tabard",hands="Bunzi's gloves",ring1="Hetairoi Ring",ring2="Chirich Ring +1",
         back=gear.CapeDW,waist="Reiki Yotai",legs="Malignance tights",feet="Malignance boots"}
+
 
 end
 
@@ -452,6 +471,18 @@ function job_state_change(stateField, newValue, oldValue)
     end
 end
 
+function job_update(cmdParams, eventArgs)    
+	update_combat_form()
+end
+
+function update_combat_form()
+    -- Check for H2H or single-wielding
+    if S{'NIN','DNC'}:contains(player.sub_job) then
+        state.CombatForm:set('DW')		
+    else
+        state.CombatForm:reset()
+    end
+end
 -------------------------------------------------------------------------------------------------------------------
 -- User code that supplements standard library decisions.
 -------------------------------------------------------------------------------------------------------------------

@@ -607,7 +607,16 @@ end
 
 -- Function to display the current relevant user state when doing an update.
 function display_current_job_state(eventArgs)
-    display_current_caster_state()
+    --display_current_caster_state()
+	local msg = '[ [ Idle: ' .. state.IdleMode.value .. '] [Casting: ' .. state.CastingMode.value .. '] [Offense: ' .. state.OffenseMode.value .. '] '
+	
+    if state.Kiting.value then
+        msg = msg .. '[ Kiting Mode: On ] '
+    end
+			
+    msg = msg .. ']'	
+ 
+    add_to_chat(060, msg)
     eventArgs.handled = true
 end
 

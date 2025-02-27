@@ -63,7 +63,7 @@ function user_setup()
     state.HybridMode:options('Normal', 'Evasion', 'PDT')
     state.WeaponskillMode:options('Normal', 'Acc')
     state.PhysicalDefenseMode:options('Evasion', 'PDT')
-	state.IdleMode:options('Normal', 'Aminon')
+	state.IdleMode:options('Normal', 'Regain')
 
 
 	gear.CapeCrit = {name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10'}}
@@ -146,12 +146,12 @@ function init_gear_sets()
     sets.precast.Flourish1 = {}
 	
     sets.precast.Flourish1['Violent Flourish'] = {ammo="Yamarang",
-		head="Maculele Tiara +3",ear1="Dignitary's Earring",ear2="Telos Earring",
+		head="Maculele Tiara +3",neck="Null loop",ear1="Dignitary's Earring",ear2="Telos Earring",
         body="Horos Casaque +3",hands="Maculele Bangles +3",ring1="",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
         back="Null shawl",waist="Null belt",legs="Maculele Tights +3",feet="Maculele Toe Shoes +3"} -- magic accuracy
 		
     sets.precast.Flourish1['Desperate Flourish'] = {ammo="Yamarang",
-		head="Maculele Tiara +3",ear1="Dignitary's Earring",ear2="Telos Earring",
+		head="Maculele Tiara +3",neck="Etoile Gorget +2",ear1="Dignitary's Earring",ear2="Telos Earring",
         body="Horos Casaque +3",hands="Maculele Bangles +3",ring1="",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
         back=gear.CapeTP,waist="Null belt",legs="Maculele Tights +3",feet="Maculele Toe Shoes +3"} -- acc gear
 
@@ -197,7 +197,7 @@ function init_gear_sets()
     sets.precast.WS['Evisceration'].Acc = set_combine(sets.precast.WS['Evisceration'], {})
 
     sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, { left_ear="Odr earring"})
-    sets.precast.WS["Rudra's Storm"].Acc = set_combine(sets.precast.WS["Rudra's Storm"], {ear1="Maculele earring +1", body="Gleti's Cuirass"})
+    sets.precast.WS["Rudra's Storm"].Acc = set_combine(sets.precast.WS["Rudra's Storm"], {ear1="Maculele earring +2", body="Gleti's Cuirass"})
 	
 	sets.precast.WS['Shark Bite'] = sets.precast.WS["Rudra's Storm"]
 	sets.precast.WS['Shark Bite'].Acc = sets.precast.WS["Rudra's Storm"].Acc
@@ -260,6 +260,11 @@ function init_gear_sets()
 		back=gear.CapeTP,waist="Goading Belt",legs="Malignance tights",feet="Maculele Toe Shoes +3",			--10, 0, 7, 10
 		}
 		-- 16% PDT
+	
+	sets.idle.Regain = {ammo="Yamarang",
+        head="Turms cap +1",neck="Republican platinum medal",ear1="Etiolation Earring",ear2="Infused Earring",		--0, 6, 0, 0
+        body="Gleti's cuirass",hands="Gleti's gauntlets",ring1="Defending Ring",ring2="Roller's Ring",				--9, 5, 10, 0
+        back=gear.CapeTP,waist="Engraved Belt",legs="Gleti's breeches",feet="Skadi's jambeaux +1"}					--10, 0, 7, 0
     
     -- Defense sets
 
