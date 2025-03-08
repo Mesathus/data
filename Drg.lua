@@ -143,7 +143,7 @@ function init_gear_sets()
         head="Carmine Mask +1", --14
         body="Sacro Breastplate", --10
         hands="Leyline Gloves", --8
-        --legs="Aya. Cosciales +2", --6
+        --legs="Ayanmo Cosciales +2", --6
         feet="Carmine Greaves +1", --8
         neck="Voltsurge Torque", --4
         ear1="Loquacious Earring", --2

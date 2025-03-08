@@ -121,6 +121,8 @@ function init_gear_sets()
     sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, {})
 	
 	sets.precast.FC['Dispelga'] = set_combine(sets.precast.FC, {main="Daybreak", sub="Genmei shield",})
+	sets.precast.FC['Dispelga'].Grimoire = set_combine(sets.precast.FC.Grimoire, {main="Daybreak", sub="Genmei shield",})
+	sets.precast.FC['Dispelga'].OffArts = set_combine(sets.precast.FC.OffArts, {main="Daybreak", sub="Genmei shield",})
 
     sets.precast.FC.Cure = set_combine(sets.precast.FC, {
 		legs="Vanya slops",feet="Vanya clogs"})
@@ -478,11 +480,23 @@ function job_post_precast(spell, action, spellMap, eventArgs)
 	if buffactive['accession'] or buffactive['manifestation'] then
 		equip(sets.precast.FC)
 	elseif (spell.type == 'WhiteMagic' and (buffactive['light arts'] or buffactive['addendum: white'])) or (spell.type == 'BlackMagic' and (buffactive['dark arts'] or buffactive['addendum: black'])) then
-		equip(sets.precast.FC.Grimoire)
+		if spell.name ~= 'Dispelga' then
+			equip(sets.precast.FC.Grimoire)
+		else
+			equip(sets.precast.FC['Dispelga'].Grimoire)
+		end
 	elseif (spell.type == 'WhiteMagic' and (buffactive['dark arts'] or buffactive['addendum: black'])) or (spell.type == 'BlackMagic' and (buffactive['light arts'] or buffactive['addendum: white'])) then
-		equip(sets.precast.FC.OffArts)
+		if spell.name ~= 'Dispelga' then
+			equip(sets.precast.FC.OffArts)
+		else
+			equip(sets.precast.FC['Dispelga'].OffArts)
+		end
 	else
-		equip(sets.precast.FC)
+		if spell.name ~= 'Dispelga' then
+			equip(sets.precast.FC)
+		else
+			equip(sets.precast.FC['Dispelga'])
+		end
 	end
 end
 
@@ -585,7 +599,16 @@ end
 -- Function to display the current relevant user state when doing an update.
 -- Return true if display was handled, and you don't want the default info shown.
 function display_current_job_state(eventArgs)
-    display_current_caster_state()
+    --display_current_caster_state()
+	local msg = '[ [ Idle: ' .. state.IdleMode.value .. '] [Casting: ' .. state.CastingMode.value .. '] [Offense: ' .. state.OffenseMode.value .. '] '
+	
+    if state.Kiting.value then
+        msg = msg .. '[ Kiting Mode: On ] '
+    end
+			
+    msg = msg .. ']'	
+ 
+    add_to_chat(060, msg)
     eventArgs.handled = true
 end
 

@@ -281,6 +281,7 @@ function init_gear_sets()
         head="Kaykaus mitra +1",neck="Loricate torque +1",ear2="Regal earring",
         body="Kaykaus Bliaut +1",hands="Nyame gauntlets",ring1="Defending ring", ring2="Gelatinous ring +1",
         back=gear.BrdSTPCape,waist ="Carrier's sash", legs="Kaykaus tights +1",feet="Kaykaus boots +1"}
+		-- 50% PDT
 		
 	sets.midcast.Curaga.Resistant = sets.midcast.Cure.Resistant
 	
@@ -387,33 +388,20 @@ function init_gear_sets()
     -- Basic set for if no TP weapon is defined.
     sets.engaged = {
         range="Linos",
-		head="Aya. Zucchetto +2", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Mache earring +1",
+		head="Nyame Helm", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Mache earring +1",
 		body="Ashera Harness", hands="Bunzi's gloves", left_ring="Lehko's Ring", right_ring="Moonlight Ring",
 		back=gear.BrdSTPCape, waist="Sailfi belt +1", legs="Nyame Flanchard", feet="Nyame Sollerets"
-	}
-
-    -- Sets with weapons defined.
-    -- sets.engaged.Dagger = {
-        -- range="Linos",
-		-- head="Aya. Zucchetto +2", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Mache earring +1",
-		-- body="Ashera Harness", hands="Volte mittens", left_ring="Ilabrat Ring", right_ring="Moonlight Ring",
-		-- back=gear.BrdSTPCape, waist="Sailfi belt +1", legs="Volte tights", feet="Volte spats"
-	-- }
+	}    
 
     -- Set if dual-wielding
     sets.engaged.DW = {
 		range="Linos",
-		head="Aya. Zucchetto +2", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Eabani earring",
+		head="Nyame Helm", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Eabani earring",
 		body="Ashera Harness", hands="Bunzi's gloves", left_ring="Lehko's Ring", right_ring="Moonlight Ring",
 		back=gear.BrdSTPCape, waist="Reiki Yotai", legs="Nyame Flanchard", feet="Nyame Sollerets"
 	}
 	
-	-- sets.engaged.Dagger.DW = {
-		-- range="Linos",
-		-- head="Aya. Zucchetto +2", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Suppanomimi",
-		-- body="Ashera Harness", hands="Volte mittens", left_ring="Moonlight Ring", right_ring="Moonlight Ring",
-		-- back=gear.BrdSTPCape, waist="Reiki Yotai", legs="Volte tights", feet="Volte spats"
-	-- }
+	-- Sets with weapons defined.
 	
 	sets.engaged.Savage = {main="Naegling", sub="Genmei shield", range="Linos",
 		head="Nyame Helm", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Mache Earring +1",

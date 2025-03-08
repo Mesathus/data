@@ -17,11 +17,15 @@ end
 
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
-    state.OffenseMode:options('None', 'Maxentius', 'Idris')
+    state.OffenseMode:options('None', 'Normal', 'Acc')
     state.CastingMode:options('Normal', 'Resistant', 'Burst', 'OA')
+	state.WeaponskillMode:options('Normal', 'Acc')
     state.IdleMode:options('Normal', 'PDT', 'DD')
+	state.WeaponMode = M{'None', 'Idris', 'Maxentius', 'Tish', 'Mage'}
 	
 	gear.CapePetRegen = {name="Nantosuelta's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Pet: "Regen"+10','Phys. dmg. taken-10%'}}
+	gear.CapeTP = {}
+	gear.CapeWS = {}
 	
 	
 	info.low_nukes = S{"Stone", "Water", "Aero", "Fire", "Blizzard", "Thunder"}
@@ -85,7 +89,7 @@ function init_gear_sets()
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
         head="Nyame helm",neck="Fotia gorget",ear1="Telos Earring",ear2="Moonshade Earring",
-        body="Nyame mail",hands="Nyame Gloves",ring1="Epaminondas's Ring",ring2="Rufescent Ring",
+        body="Nyame mail",hands="Nyame Gauntlets",ring1="Epaminondas's Ring",ring2="Rufescent Ring",
         back="Aurist's cape +1",waist="Fotia belt",legs="Nyame flanchard",feet="Nyame sollerets"}
  
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
@@ -101,8 +105,19 @@ function init_gear_sets()
 		
 	sets.precast.WS['Black Halo'] = {
         head="Nyame helm",neck="Republican Platinum Medal",ear1="Regal earring",ear2="Moonshade earring",
-        body="Nyame mail",hands="Jhakri cuffs +2",ring1="Epaminondas's Ring",ring2="Metamorph ring +1",
+        body="Nyame mail",hands="Nyame Gauntlets",ring1="Epaminondas's Ring",ring2="Metamorph ring +1",
         back="Aurist's cape +1",waist="Fotia belt",legs="Nyame flanchard",feet="Nyame sollerets"}
+		
+	sets.precast.WS['Black Halo'].Acc = {}
+		
+	sets.precast.WS['Judgment'] = {
+        head="Nyame helm",neck="Republican Platinum Medal",ear1="Regal earring",ear2="Moonshade earring",
+        body="Nyame mail",hands="Nyame Gauntlets",ring1="Epaminondas's Ring",ring2="Metamorph ring +1",
+        back="Aurist's cape +1",waist="Fotia belt",legs="Nyame flanchard",feet="Nyame sollerets"}
+	
+	--   HM 58 Madrigal 114/85 = 172/257  SV 344/514      Sabo Distract 189/205
+	--   Aita/Gartell 1613   1661 for 99% acc      Aminon 1774   1822 for cap
+	sets.precast.WS['Judgment'].Acc = {}
 		
 	sets.precast.WS['Exudiation'] = {
         head="Nyame helm",neck="Fotia gorget",ear1="Regal earring",ear2="Malignance earring",
@@ -111,12 +126,12 @@ function init_gear_sets()
 		
 	sets.precast.WS['Realmrazor'] = {
         head="Nyame helm",neck="Fotia gorget",ear1="Regal earring",ear2="Mache earring +1",
-        body="Nyame mail",hands="Nyame Gloves",ring1="Rufescent ring",ring2="Metamorph ring +1",
+        body="Nyame mail",hands="Nyame Gauntlets",ring1="Rufescent ring",ring2="Metamorph ring +1",
         back="Aurist's cape +1",waist="Fotia belt",legs="Nyame flanchard",feet="Nyame sollerets"}
 		
 	sets.precast.WS['Hexastrike'] = {
         head="Blistering sallet +1",neck="Fotia gorget",ear1="Odr earring",ear2="Regal earring",
-        body="Nyame mail",hands="Nyame Gloves",ring1="Lehko Habhoka's ring",ring2="Begrudging ring",
+        body="Nyame mail",hands="Nyame Gauntlets",ring1="Lehko Habhoka's ring",ring2="Begrudging ring",
         back="Aurist's cape +1",waist="Fotia belt",legs="Nyame flanchard",feet="Nyame sollerets"}
 		
 	sets.precast.WS['Cataclysm'] = {
@@ -131,7 +146,7 @@ function init_gear_sets()
 		
 	sets.precast.WS['Shattersoul'] = {
         head="Nyame helm",neck="Fotia gorget",ear1="Telos Earring",ear2="Regal Earring",
-        body="Nyame mail",hands="Nyame Gloves",ring1="Epaminondas's Ring",ring2="Metamorph ring +1",
+        body="Nyame mail",hands="Nyame Gauntlets",ring1="Epaminondas's Ring",ring2="Metamorph ring +1",
         back="Aurist's cape +1",waist="Fotia belt",legs="Nyame flanchard",feet="Nyame sollerets"}
  
     sets.precast.WS['Starlight'] = {ear2="Moonshade Earring"}
@@ -144,10 +159,10 @@ function init_gear_sets()
     --------------------------------------
  
     -- Base fast recast for spells
-    sets.midcast.FastRecast = {range="Dunna",													--5, 2
+    sets.midcast.FastRecast = {range="Dunna",																	--2
         head="Amalric coif +1",neck="Voltsurge torque",ear1="Loquacious Earring",ear2="Malignance Earring",		--11,4,2,4
         body="Agwu's robe",hands="Volte gloves",ring1="Prolix Ring",ring2="Kishar ring",						--8,6,2,4
-        back="Fi follet cape +1",waist="Embla sash",legs="Geomancy pants +2",feet="Amalric nails +1"}			--10,5,11,6
+        back="Fi follet cape +1",waist="Embla sash",legs="Geomancy pants +2",feet="Amalric nails +1"}			--10,5,13,6
 		--80%
  
     sets.midcast.Geomancy = set_combine(sets.midcast.FastRecast, {main="Idris",range="Dunna",               --0, 18
@@ -376,13 +391,17 @@ function init_gear_sets()
  
     -- Normal melee group
     sets.engaged = {Range="Dunna",
-        head="Nyame Helm",neck="Combatant's torque",ear1="Telos earring",ear2="Cessance earring",
+        head="Nyame Helm",neck="Null loop",ear1="Telos earring",ear2="Cessance earring",
         body="Nyame mail",hands="Nyame gauntlets",ring1="Lehko Habhoka's ring",ring2="Chirich ring +1",
-        back="Aurist's cape +1",waist="Null belt",legs="Nyame Flanchard", feet="Nyame Sollerets"}
+        back="Null shawl",waist="Null belt",legs="Nyame Flanchard", feet="Nyame Sollerets"}
 		
-	sets.engaged.Idris = set_combine(sets.engaged, {main="Idris", sub="Genmei shield"})
+	sets.Idris = {main="Idris"}	
+	sets.Maxentius = {main="Maxentius"}
+	sets.Mage = {main="Magesmasher +1"}
+	sets.Tish = {main="Tishtrya"}
+	sets.Genmei = {sub="Genmei shield"}
 	
-	sets.engaged.Maxentius = set_combine(sets.engaged, {main="Maxentius", sub="Genmei shield"})
+	
  
     --------------------------------------
     -- Custom buff sets
@@ -418,7 +437,7 @@ end
  
 function job_state_change(stateField, newValue, oldValue)
     if stateField == 'Offense Mode' then
-        if newValue == 'Normal' then
+        if newValue ~= 'None' then
             disable('main','sub','range')
         else
             enable('main','sub','range')
@@ -479,10 +498,35 @@ function job_update(cmdParams, eventArgs)
 		state.CombatForm:reset()
 	end
 end
+
+function customize_melee_set(meleeSet)	
+	if state.WeaponMode.value == 'Idris' then
+		equip(sets.Idris)
+	elseif state.WeaponMode.value == 'Maxentius' then
+		equip(sets.Maxentius)
+	elseif state.WeaponMode.value == 'Magesmasher +1' then
+		equip(sets.Mage)
+	elseif state.WeaponMode.value == 'Tishtrya' then
+		equip(sets.Tish)		
+	end
+	if state.CombatForm ~= 'DW' then
+		equip(sets.Genmei)
+	end
+	return meleeSet
+end
  
 -- Function to display the current relevant user state when doing an update.
 function display_current_job_state(eventArgs)
-    display_current_caster_state()
+    --display_current_caster_state()
+	local msg = '[ [ Idle: ' .. state.IdleMode.value .. '] [Casting: ' .. state.CastingMode.value .. '] [Offense: ' .. state.OffenseMode.value .. '] '
+	
+    if state.Kiting.value then
+        msg = msg .. '[ Kiting Mode: On ] '
+    end
+			
+    msg = msg .. ']'	
+ 
+    add_to_chat(060, msg)
     eventArgs.handled = true
 end
  

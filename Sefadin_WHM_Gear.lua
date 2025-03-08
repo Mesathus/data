@@ -68,7 +68,7 @@ function init_gear_sets()
     -- CureMelee spell map should default back to Healing Magic.
     
     -- Precast sets to enhance JAs
-    sets.precast.JA.Benediction = {body="Piety Briault"}
+    sets.precast.JA.Benediction = {body="Piety Briault +1"}
 
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {
@@ -160,7 +160,7 @@ function init_gear_sets()
         back="Mending Cape",waist="Olympus Sash",legs="Piety Pantaloons",feet="Ebers Duckbills +2"}
 
     sets.midcast.Regen = {main="Bolelabunga",sub="Genbu's Shield",
-        body="Piety Briault",hands="Ebers Mitts +2",
+        body="Piety Briault +1",hands="Ebers Mitts +2",
         legs="Theophany Pantaloons +1"}
 
 	sets.midcast.SIRD = {ammo="Staunch tathlum +1",         													--11
@@ -371,7 +371,16 @@ end
 
 -- Function to display the current relevant user state when doing an update.
 function display_current_job_state(eventArgs)
-    display_current_caster_state()
+    --display_current_caster_state()
+	local msg = '[ [ Idle: ' .. state.IdleMode.value .. '] [Casting: ' .. state.CastingMode.value .. '] [Offense: ' .. state.OffenseMode.value .. '] '
+	
+    if state.Kiting.value then
+        msg = msg .. '[ Kiting Mode: On ] '
+    end
+			
+    msg = msg .. ']'	
+ 
+    add_to_chat(060, msg)
     eventArgs.handled = true
 end
 

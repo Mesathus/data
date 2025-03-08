@@ -28,6 +28,7 @@ function user_setup()
     state.CastingMode:options('Normal', 'Resistant', 'Burst', 'BurstResistant', 'OA')
 	state.WeaponskillMode:options('Normal', 'Acc')
     state.IdleMode:options('Normal', 'Refresh', 'DT')
+	state.WeaponMode = M{'None', 'Maxentius', 'Naegling', 'Excalibur'}		--Alt F10
 
     gear.CapeEnf = {name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','Weapon skill damage +10%'}}
 	gear.CapeDW = {name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dual Wield"+10','Phys. dmg. taken-10%'}}
@@ -40,6 +41,7 @@ function user_setup()
     
 	send_command('bind f11 gs c cycle CastingMode') --F11
 	send_command('bind !p input /item Panacea <me>')  --Alt + P
+	send_command('bind !f10 gs c cycle WeaponMode') --Alt 'F10'
     select_default_macro_book()
 end
 
@@ -96,6 +98,11 @@ function init_gear_sets()
 		back="Aurist's cape +1",waist="Fotia belt",legs="Lethargy fuseau +3",feet="Lethargy houseaux +3"})
 		
 	sets.precast.WS['Savage Blade'] = {ammo="Coiste Bodhar",
+        head="Nyame Helm",neck="Republican Platinum Medal",ear1="Moonshade Earring",ear2="Lethargy earring +2",
+        body="Nyame Mail",hands="Nyame gauntlets",ring1="Sroda Ring",ring2="Epaminondas's Ring",
+        back=gear.CapeEnf,waist="Kentarch belt +1",legs="Nyame Flanchard",feet="Lethargy houseaux +3"}
+		
+	sets.precast.WS['Knights of Round'] = {ammo="Coiste Bodhar",
         head="Nyame Helm",neck="Republican Platinum Medal",ear1="Moonshade Earring",ear2="Lethargy earring +2",
         body="Nyame Mail",hands="Nyame gauntlets",ring1="Sroda Ring",ring2="Epaminondas's Ring",
         back=gear.CapeEnf,waist="Kentarch belt +1",legs="Nyame Flanchard",feet="Lethargy houseaux +3"}
@@ -208,23 +215,28 @@ function init_gear_sets()
 		--102/102 SIRD     HQ body + Khun earring or Fi Follet OR cape to cap, both is 1 short of dropping hands for Regal for +2
     
     sets.midcast['Enfeebling Magic'] = {main="Contemplator +1",sub="Enki strap",ammo="Regal gem",				--20
-        head="Vitiation chapeau +3",neck="Duelist's torque +2",ear1="Regal Earring",ear2="Malignance Earring",	--26, 0, 0, 0
+        head="Vitiation chapeau +3",neck="Duelist's torque +2",ear1="Snotra Earring",ear2="Malignance Earring",	--26, 0, 0, 0
         body="Lethargy Sayon +3",hands="Lethargy Gantherots +3",ring1="Stikini ring +1",ring2="Kishar ring",	--0, 29, 8, 0
         back=gear.CapeEnf,waist="Obstinate sash",legs="Lethargy fuseau +3",feet="Vitiation boots +3"}			--0, 7, 0 , 16
 		-- 610/625 to cap     base 440 merits 476 master														--106=582
 		-- need 48 with master, earring 10, af body 2, obstinate sash 8 short 17 w/o MLs  15 more for Frazzle
+		-- Aminon 468 Mnd
 		
 	sets.midcast.EnfeeblingDuration = set_combine(sets.midcast['Enfeebling Magic'], {hands = "Regal cuffs", feet="Lethargy houseaux +3"})
 		
 	sets.midcast['Enfeebling Magic'].Burst = sets.midcast['Enfeebling Magic']
 		
-	sets.midcast['Enfeebling Magic'].Resistant = {main="Contemplator +1",sub="Khonsu",range="Ullr",
-        head="Atrophy chapeau +3",neck="Duelist's torque +2",ear1="Regal Earring",ear2="Malignance Earring",
+	sets.midcast['Enfeebling Magic'].Resistant = {main="Contemplator +1",sub="Enki strap",ammo="Regal gem",
+        head="Vitiation chapeau +3",neck="Duelist's torque +2",ear1="Snotra Earring",ear2="Malignance Earring",
         body="Lethargy Sayon +3",hands="Lethargy Gantherots +3",ring1="Stikini ring +1",ring2="Stikini ring +1",
-        back=gear.CapeEnf,waist="Obstinate sash",legs="Lethargy fuseau +3",feet="Vitiation boots +3"}
+        back=gear.CapeEnf,waist="Obstinate sash",legs="Chironic hose",feet="Vitiation boots +3"}
 		--waist to obstinate sash at r22
 		
-	sets.midcast['Enfeebling Magic'].BurstResistant = sets.midcast['Enfeebling Magic'].Resistant
+	sets.midcast['Enfeebling Magic'].BurstResistant = {main="Contemplator +1",sub="Enki strap",range="Ullr",
+        head="Vitiation chapeau +3",neck="Duelist's torque +2",ear1="Snotra Earring",ear2="Malignance Earring",
+        body="Lethargy Sayon +3",hands="Lethargy Gantherots +3",ring1="Stikini ring +1",ring2="Stikini ring +1",
+        back=gear.CapeEnf,waist="Obstinate sash",legs="Chironic hose",feet="Vitiation boots +3"}
+		--waist to obstinate sash at r22
 	
 	sets.midcast['Enfeebling Magic'].Duration = {main="Contemplator +1",sub="Enki strap",ammo="Regal gem",			--20
         head="Vitiation chapeau +3",neck="Duelist's torque +2",ear1="Snotra Earring",ear2="Malignance Earring",		--26, 0, 0, 0
@@ -369,7 +381,7 @@ function init_gear_sets()
 		
 	sets.engaged.Enspell1 = {ammo="Sroda tathlum",
 		head="Malignance Chapeau", neck="Null loop", ear1="Hollow Earring", ear2="Lethargy earring +2",
-		body="Malignance Tabard", hands="Aya. Manopolas +2", ring1="Hetairoi Ring", ring2="Chirich Ring +1",
+		body="Malignance Tabard", hands="Ayanmo Manopolas +2", ring1="Hetairoi Ring", ring2="Chirich Ring +1",
 		back="Null shawl", waist="Orpheus's Sash", legs="Malignance tights", feet="Malignance Boots"}
 
     sets.engaged.Defense = {ammo="Coiste Bodhar",
@@ -384,7 +396,7 @@ function init_gear_sets()
 		
 	sets.engaged.Enspell1.DW = {ammo="Sroda tathlum",
 		head="Malignance Chapeau", neck="Null loop", ear1="Hollow Earring", ear2="Lethargy earring +2",
-		body="Malignance Tabard", hands="Aya. Manopolas +2", ring1="Hetairoi Ring", ring2="Chirich Ring +1",
+		body="Malignance Tabard", hands="Ayanmo Manopolas +2", ring1="Hetairoi Ring", ring2="Chirich Ring +1",
 		back=gear.CapeDW, waist="Orpheus's Sash", legs="Carmine Cuisses +1", feet="Malignance Boots"}
 
     sets.engaged.Defense.DW = {ammo="Coiste Bodhar",
@@ -392,7 +404,10 @@ function init_gear_sets()
         body="Malignance tabard",hands="Bunzi's gloves",ring1="Hetairoi Ring",ring2="Chirich Ring +1",
         back=gear.CapeDW,waist="Reiki Yotai",legs="Malignance tights",feet="Malignance boots"}
 
-
+	sets.Naegling = {main="Naegling"}
+	sets.Maxentius = {main="Maxentius"}
+	sets.Excal = {main='Excalibur'}
+	sets.Genmei = {sub="Genmei shield"}
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -466,6 +481,18 @@ function job_state_change(stateField, newValue, oldValue)
         if newValue == 'None' then
             enable('main','sub','range')
         else
+			if newValue == 'Normal' then
+				if state.WeaponMode.value == 'Naegling' then
+				equip(sets.Naegling)
+				elseif state.WeaponMode.value == 'Maxentius' then
+					equip(sets.Maxentius)
+				elseif state.WeaponMode.value == 'Excalibur' then
+					equip(sets.Excal)
+				end
+				if state.CombatForm ~= 'DW' then
+					equip(sets.Genmei)
+				end
+			end
             disable('main','sub','range')
         end
     end
@@ -491,14 +518,34 @@ end
 function customize_idle_set(idleSet)
     if player.mpp < 51 then
         idleSet = set_combine(idleSet, sets.latent_refresh)
-    end
-    
+    end	
     return idleSet
+end
+
+function customize_melee_set(meleeSet)	
+	if state.WeaponMode.value == 'Naegling' then
+		equip(sets.Naegling)
+	elseif state.WeaponMode.value == 'Maxentius' then
+		equip(sets.Maxentius)
+	end
+	if state.CombatForm ~= 'DW' then
+		equip(sets.Genmei)
+	end
+	return meleeSet
 end
 
 -- Set eventArgs.handled to true if we don't want the automatic display to be run.
 function display_current_job_state(eventArgs)
-    display_current_caster_state()
+    --display_current_caster_state()
+	local msg = '[ [ Idle: ' .. state.IdleMode.value .. '] [Casting: ' .. state.CastingMode.value .. '] [Offense: ' .. state.OffenseMode.value .. '] ' .. '] [Weapon: '.. state.WeaponMode.value .. '] '
+	
+    if state.Kiting.value then
+        msg = msg .. '[ Kiting Mode: On ] '
+    end
+			
+    msg = msg .. ']'	
+ 
+    add_to_chat(060, msg)
     eventArgs.handled = true
 end
 
