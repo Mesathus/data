@@ -5,6 +5,10 @@
 tp_bonus_weapons = S{'Fusetto +2','Fusetto +3','Centovente',
 					 'Machaera +2','Machaera +3','Thibron',
 					 'Anarchy +2', 'Anarchy +3', 'Ataktos',
+					 'Uzura +2', 'Uzura +3', 'Hitaki',
+					 'Sparrowhawk +2', 'Sparrowhawk +3', 'Accipiter',
+					 'Renaud\'s axe +2', 'Renaud\'s axe +2', 'Fernagu',
+					 'Makhila +2', 'Makhila +3', 'Ukaldi',					 
 	}
 	
 enspells_map = S{'Enfire', 'Enblizzard', 'Enaero', 'Enstone', 'Enthunder', 'Enwater', 

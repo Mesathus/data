@@ -34,7 +34,7 @@ function init_gear_sets()
     sets.precast.JA['Chakra'] = {ammo="Iron Gobbet",
         head="Genmei Kabuto",neck="Unmoving Collar +1",
         body="Anchorite's Cyclas +1",hands="Hesychast's Gloves +3",ring1="Niqmaddu Ring",ring2="Regal Ring",
-        back="Moonbeam Cape",waist="Caudata Belt",legs="Kendatsuba Hakama +1",feet="Rao Sune-Ate +1"}
+        back="Moonlight Cape",waist="Caudata Belt",legs="Kendatsuba Hakama +1",feet="Rao Sune-Ate +1"}
 
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {																									--0
@@ -70,8 +70,8 @@ function init_gear_sets()
     
 	sets.precast.WSAcc = {}
     
-	sets.precast.WSMod = {ammo="Tantra Tathlum",head="Taeon Chapeau",legs="Hizamaru Hizayoroi +2",feet="Rao Sune-Ate +1"}
-    sets.precast.MaxTP = {ear2="Cessance Earring"}
+	sets.precast.WSMod = {ammo="Crepuscular pebble", neck="Monk's nodowa +2"}
+    sets.precast.MaxTP = {ear2="Sherida Earring"}
     sets.precast.WS.Acc = set_combine(sets.precast.WS, sets.precast.WSAcc)
     sets.precast.WS.Mod = set_combine(sets.precast.WS, sets.precast.WSMod)
 
@@ -111,9 +111,9 @@ function init_gear_sets()
     
 	-- STR MOD
 	sets.precast.WS["Victory Smite"]   = set_combine(sets.precast.WS, {ammo="Knobkierrie",
-		head="Mpaca's Cap",	neck="Fotia Gorget", ear1="Sherida Earring", ear2="Schere Earring",		
-		body="Mpaca's Doublet", hands="Mummu wrists +2", ring1="Niqmaddu Ring",	ring2="Gere Ring",
-		back="Sacro Mantle", waist="Moonbow Belt +1", legs="Kendatsuba Hakama +1", feet="Adhemar gamashes +1"})
+		head="Blistering sallet +1", neck="Fotia Gorget", ear1="Sherida Earring", ear2="Schere Earring",		
+		body="Mpaca's Doublet", hands="Bhikku Gloves +2", ring1="Niqmaddu Ring",	ring2="Gere Ring",
+		back="Sacro Mantle", waist="Moonbow Belt +1", legs="Mpaca's hose", feet="Mpaca's Boots"})
     
 	-- DEX MOD
 	sets.precast.WS['Shijin Spiral']   = set_combine(sets.precast.WS, {	ammo="Knobkierrie",
@@ -173,7 +173,7 @@ function init_gear_sets()
     sets.midcast.Utsusemi = {
         head="Kendatsuba Jinpachi +1",ear2="Loquacious Earring",
         body="Emet Harness +1",hands="Malignance Gloves",ring2="Defending Ring",
-        back="Moonbeam Cape", waist="Moonbow Belt +1",legs="Malignance Tights",feet="Kendatsuba Sune-Ate +1"}
+        back="Moonlight Cape", waist="Moonbow Belt +1",legs="Malignance Tights",feet="Kendatsuba Sune-Ate +1"}
 
     
     -- Sets to return to when not performing an action.
@@ -187,33 +187,33 @@ function init_gear_sets()
     sets.idle = {ammo="Staunch Tathlum +1",
         head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Eabani Earring",ear2="Sanare Earring",
         body="Malignance Tabard",hands="Malignance Gloves",ring1="Sheltered Ring",ring2="Defending Ring",
-        back="Reiki Cloak",waist="Moonbow Belt +1",legs="Malignance Tights",feet="Hermes' Sandals"}
+        back="Moonlight Cape",waist="Moonbow Belt +1",legs="Malignance Tights",feet="Hermes' Sandals"}
 
     sets.idle.Town = {ammo="Staunch Tathlum +1",
         head="Hesychast's Crown +3",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Infused Earring",
         body="Councilor's Garb",hands="Hesychast's Gloves +3",ring1="Sheltered Ring",ring2="Paguroidea Ring",
-        back="Moonbeam Cape",waist="Moonbow Belt +1",legs="Malignance Tights",feet="Hermes' Sandals"}
+        back="Moonlight Cape",waist="Moonbow Belt +1",legs="Malignance Tights",feet="Hermes' Sandals"}
     
     sets.idle.Weak = {ammo="Staunch Tathlum +1",
         head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Eabani Earring",ear2="Infused Earring",
         body="Ashera Harness",hands="Malignance Gloves",ring1="Sheltered Ring",ring2="Defending Ring",
-        back="Moonbeam Cape",waist="Moonbow Belt +1",legs="Malignance Tights",feet="Malignance Boots"}
+        back="Moonlight Cape",waist="Moonbow Belt +1",legs="Malignance Tights",feet="Malignance Boots"}
     
     -- Defense sets
     sets.defense.PDT = {ammo="Staunch Tathlum +1",
         head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Infused Earring",
         body="Malignance Tabard",hands="Malignance Gloves",ring1="Gelatinous Ring +1",ring2="Defending Ring",
-        back="Moonbeam Cape",waist="Moonbow Belt +1",legs="Malignance Tights",feet="Malignance Boots"}
+        back="Moonlight Cape",waist="Moonbow Belt +1",legs="Malignance Tights",feet="Malignance Boots"}
 
     sets.defense.HP = {ammo="Iron Gobbet",
         head="Otronif Mask +1",neck="Loricate Torque +1",ear1="Brutal Earring",ear2="Bloodgem Earring",
         body="Hesychast's Cyclas +1",hands="Hesychast's Gloves +3",ring1="K'ayres Ring",ring2="Defending Ring",
-        back="Moonbeam Cape",waist="Moonbow Belt +1",legs="Malignance Tights",feet="Hesychast's Gaiters +1"}
+        back="Moonlight Cape",waist="Moonbow Belt +1",legs="Malignance Tights",feet="Hesychast's Gaiters +1"}
 
     sets.defense.MDT = {ammo="Staunch Tathlum +1",
         head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Infused Earring",
         body="Kendatsuba Samue +1",hands="Malignance Gloves",ring1="Gelatinous Ring +1",ring2="Defending Ring",
-        back="Moonbeam Cape",waist="Moonbow Belt +1",legs="Malignance Tights",feet="Kendatsuba Sune-Ate +1"}
+        back="Moonlight Cape",waist="Moonbow Belt +1",legs="Malignance Tights",feet="Kendatsuba Sune-Ate +1"}
 
     sets.Kiting = {feet="Hermes' Sandals"}
 
@@ -230,50 +230,50 @@ function init_gear_sets()
     sets.engaged = {ammo="Coiste bodhar",
 		head="Adhemar Bonnet +1", neck="Mnk. Nodowa +2", ear1="Sherida Earring", ear2="Schere Earring",
 		body="Tatena. Harama. +1", hands="Adhemar Wrist. +1", ring1="Gere Ring", ring2="Niqmaddu Ring",
-		back="Sacro Mantle", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's gaiters +2"
+		back="Null shawl", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's gaiters +2"
 	}
 		
     sets.engaged.Acc = {ammo="Coiste bodhar",
 		head="Adhemar Bonnet +1", neck="Mnk. Nodowa +2", ear1="Sherida Earring", ear2="Schere Earring",
 		body="Tatena. Harama. +1", hands="Adhemar Wrist. +1", ring1="Gere Ring", ring2="Niqmaddu Ring",
-		back="Sacro Mantle", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's gaiters +2"
+		back="Null shawl", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's gaiters +2"
 	}
 
     -- Defensive melee hybrid sets
     sets.engaged.PDT = {ammo="Coiste bodhar",
 		head="Adhemar Bonnet +1", neck="Mnk. Nodowa +2", ear1="Sherida Earring", ear2="Schere Earring",
 		body="Tatena. Harama. +1", hands="Adhemar Wrist. +1", ring1="Gere Ring", ring2="Niqmaddu Ring",
-		back="Sacro Mantle", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's gaiters +2"
+		back="Null shawl", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's gaiters +2"
 	}
 		
     sets.engaged.Acc.PDT = {ammo="Coiste bodhar",
 		head="Adhemar Bonnet +1", neck="Mnk. Nodowa +2", ear1="Sherida Earring", ear2="Schere Earring",
 		body="Tatena. Harama. +1", hands="Adhemar Wrist. +1", ring1="Gere Ring", ring2="Niqmaddu Ring",
-		back="Sacro Mantle", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's gaiters +2"
+		back="Null shawl", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's gaiters +2"
 	}
 		
 	sets.engaged.MEVA = {ammo="Coiste bodhar",
 		head="Adhemar Bonnet +1", neck="Mnk. Nodowa +2", ear1="Sherida Earring", ear2="Schere Earring",
 		body="Tatena. Harama. +1", hands="Adhemar Wrist. +1", ring1="Gere Ring", ring2="Niqmaddu Ring",
-		back="Sacro Mantle", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's gaiters +2"
+		back="Null shawl", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's gaiters +2"
 	}
 		
     sets.engaged.Acc.MEVA = {ammo="Coiste bodhar",
 		head="Adhemar Bonnet +1", neck="Mnk. Nodowa +2", ear1="Sherida Earring", ear2="Schere Earring",
 		body="Tatena. Harama. +1", hands="Adhemar Wrist. +1", ring1="Gere Ring", ring2="Niqmaddu Ring",
-		back="Sacro Mantle", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's gaiters +2"
+		back="Null shawl", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's gaiters +2"
 	}
 		
     sets.engaged.Counter = {ammo="Coiste bodhar",
 		head="Adhemar Bonnet +1", neck="Mnk. Nodowa +2", ear1="Sherida Earring", ear2="Schere Earring",
 		body="Tatena. Harama. +1", hands="Adhemar Wrist. +1", ring1="Gere Ring", ring2="Niqmaddu Ring",
-		back="Sacro Mantle", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's gaiters +2"
+		back="Null shawl", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's gaiters +2"
 	}
 	
 	sets.engaged.Acc.Counter = {ammo="Coiste bodhar",
 		head="Adhemar Bonnet +1", neck="Mnk. Nodowa +2", ear1="Sherida Earring", ear2="Schere Earring",
 		body="Tatena. Harama. +1", hands="Adhemar Wrist. +1", ring1="Gere Ring", ring2="Niqmaddu Ring",
-		back="Sacro Mantle", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's gaiters +2"
+		back="Null shawl", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's gaiters +2"
 	}
 		
 	sets.engaged.Hybrid = {ammo="Staunch Tathlum +1",															--3
@@ -288,10 +288,18 @@ function init_gear_sets()
 		back="Null shawl", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Malignance boots"				--0, 6, 14, 4
 	}	-- 47% PDT
 	
+	sets.engaged.SB = {ammo="Staunch Tathlum +1",																--3
+		head="Bhikku crown +2", neck="Mnk. Nodowa +2", ear1="Sherida Earring", ear2="Schere Earring", 			--0, 0, 0, 0		--13, 0, |5, 3
+		body="Mpaca's Doublet",	hands="Malignance Gloves", ring1="Niqmaddu Ring", ring2="Gere Ring",			--10, 5, 0, 0		--0, 0, |5, 0
+		back="Null shawl", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Mpaca's boots"					--0, 6, 14, 6		--0, |15, 0, 0
+	}	-- 29 SB + 16 SB + 25 SB2 = 70   master 6, needs 0-5
+	
 
     -- Hundred Fists/Impetus melee set mods
 	sets.engaged.Impetus = set_combine(sets.engaged, {body="Bhikku Cyclas +2"})
 	sets.engaged.Hybrid.Impetus = set_combine(sets.engaged.Hybrid, {head="Mpaca's cap", body="Bhikku Cyclas +2"})
+	sets.engaged.Defense.Impetus = set_combine(sets.engaged.Defense, {body="Bhikku Cyclas +2"})
+	sets.engaged.SB.Impetus = set_combine(sets.engaged.SB, {body="Bhikku Cyclas +2"})
 	sets.engaged.SomeAcc.Impetus = set_combine(sets.engaged.SomeAcc, {body="Bhikku Cyclas +2"})
 	sets.engaged.Acc.Impetus = set_combine(sets.engaged.Acc, {body="Bhikku Cyclas +2"})
 	--sets.engaged.Kick.Impetus = set_combine(sets.engaged.Kick, {body="Bhikku Cyclas +2"})
@@ -311,14 +319,18 @@ function init_gear_sets()
     sets.engaged.Footwork = {ammo="Coiste bodhar",
 		head="Adhemar Bonnet +1", neck="Mnk. Nodowa +2", ear1="Sherida Earring", ear2="Schere Earring",
 		body="Tatena. Harama. +1", hands="Adhemar Wrist. +1", ring1="Gere Ring", ring2="Niqmaddu Ring",
-		back="Sacro Mantle", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's gaiters +2"
+		back="Null shawl", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's gaiters +2"
 		}
 		
     sets.engaged.Footwork.Acc = {ammo="Coiste bodhar",
 		head="Adhemar Bonnet +1", neck="Mnk. Nodowa +2", ear1="Sherida Earring", ear2="Schere Earring",
 		body="Tatena. Harama. +1", hands="Adhemar Wrist. +1", ring1="Gere Ring", ring2="Niqmaddu Ring",
 		back="Sacro Mantle", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's gaiters +2"
-		}    
+		}
+		
+	sets.engaged.Footwork.Hybrid = set_combine(sets.engaged.Hybrid, {feet="Anchorite's gaiters +2"})
+	sets.engaged.Footwork.Defense = set_combine(sets.engaged.Defense, {feet="Anchorite's gaiters +2"})
+	sets.engaged.Footwork.SB = set_combine(sets.engaged.SB, {feet="Anchorite's gaiters +2"})
     
 	-- Quick sets for post-precast adjustments, listed here so that the gear can be Validated.
     sets.impetus_body = {body="Bhikku Cyclas +2"}

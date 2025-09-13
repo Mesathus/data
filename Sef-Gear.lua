@@ -18,7 +18,7 @@
 	gear.PhalanxFeetTaeon = { name="Taeon Boots", augments={'"Cure" potency +4%','Phalanx +3'}}
 	
 	gear.PhalanxHeadPld = {name="Valorous Mask", augments={'Magic dmg. taken -2%','Pet: DEX+15','Phalanx +4','Accuracy+3 Attack+3',}}
-	gear.PhalanxBodyPld = {name="Odyss. Chestplate", augments={'"Mag.Atk.Bns."+21','MND+6','Phalanx +3',}}
+	gear.PhalanxBodyPld = {name="Odyss. Chestplate", augments={'"Store TP"+4','Pet: Mag. Acc.+1','Phalanx +5'}}
 	
 	--Melee stuff
 	gear.AdhemarBodyMelee = { name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20'}}

@@ -20,7 +20,7 @@ function user_setup()
     state.OffenseMode:options('None', 'Normal', 'Acc')
     state.CastingMode:options('Normal', 'Resistant', 'Burst', 'OA')
 	state.WeaponskillMode:options('Normal', 'Acc')
-    state.IdleMode:options('Normal', 'PDT', 'DD')
+    state.IdleMode:options('Normal', 'PDT', 'DD', 'Aminon')
 	state.WeaponMode = M{'None', 'Idris', 'Maxentius', 'Tish', 'Mage'}
 	
 	gear.CapePetRegen = {name="Nantosuelta's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Pet: "Regen"+10','Phys. dmg. taken-10%'}}
@@ -39,6 +39,8 @@ function user_setup()
 	send_command('unbind f9')
 	send_command('bind f9 gs c cycle CastingMode')
 	send_command('bind !f9 gs c cycle OffenseMode')  --Alt + F9
+	send_command('bind !f10 gs c cycle WeaponMode') --Alt 'F10'
+	send_command('bind ^f10 gs c cycle WeaponSkillMode') --Ctrl 'F10'
 	send_command('bind !p input /item Panacea <me>')  --Alt + P
 end
 
@@ -60,10 +62,11 @@ function init_gear_sets()
 	include('Sef-Gear.lua')
 	
     -- Precast sets to enhance JAs
-    sets.precast.JA.Bolster = {body="Bagua Tunic +1"}
+    sets.precast.JA.Bolster = {body="Bagua Tunic +3"}
     sets.precast.JA['Life cycle'] = {body="Geomancy Tunic +2"}
-	sets.precast.JA['Full Circle'] = {head="Azimuth hood +3",hands="Bagua mitaines +1"}
-	sets.precast.JA['Radial Arcana'] = {feet="Bagua sandals +1"}
+	sets.precast.JA['Full Circle'] = {head="Azimuth hood +3",hands="Bagua mitaines +3"}
+	sets.precast.JA['Radial Arcana'] = {feet="Bagua sandals +3"}
+	sets.precast.JA['Mending Halation'] = {legs="Bagua pants +3"}
  
     -- Fast cast sets for spells
  
@@ -74,12 +77,14 @@ function init_gear_sets()
 		--76%  merlinic feet 5+aug 6(7)  AF legs 15
  
     sets.precast.FC.Cure = set_combine(sets.precast.FC, {})
+	
+	sets.precast.FC['Dispelga'] = set_combine(sets.precast.FC, {main="Daybreak"})
 		
 	sets.precast.Geomancy = set_combine(sets.precast.FC, {main="Idris",range="Dunna"})
 	sets.precast.Geomancy.Indi = set_combine(sets.precast.FC, {main="Idris",range="Dunna"})
 		
 	sets.precast.FC['Stoneskin'] = set_combine(sets.precast.FC, {neck ="Stone Gorget",waist="Siegel sash",legs="Shedir Seraweels"})
-    sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, {hands="Bagua mitaines +1"})
+    sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, {hands="Bagua mitaines +3"})
 	sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash"})	
 	sets.precast.FC.Impact = set_combine(sets.precast.FC['Elemental Magic'], 
 		{head=empty,body="Twilight Cloak"})
@@ -117,7 +122,7 @@ function init_gear_sets()
 	
 	--   HM 58 Madrigal 114/85 = 172/257  SV 344/514      Sabo Distract 189/205
 	--   Aita/Gartell 1613   1661 for 99% acc      Aminon 1774   1822 for cap
-	sets.precast.WS['Judgment'].Acc = {}
+	sets.precast.WS['Judgment'].Acc = set_combine(sets.precast.WS['Judgment'], {head="Azimuth hood +3", neck = "Null loop", hands="Azimuth gloves +3"})
 		
 	sets.precast.WS['Exudiation'] = {
         head="Nyame helm",neck="Fotia gorget",ear1="Regal earring",ear2="Malignance earring",
@@ -174,7 +179,7 @@ function init_gear_sets()
     sets.midcast.Geomancy.Indi = set_combine(sets.midcast.FastRecast, {main="Idris",range="Dunna",
 		head="Azimuth hood +3",neck="Incanter's torque",
 		body="Azimuth coat +3",hands="Geomancy mitaines +2",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
-		back="Lifestream cape",legs="Bagua Pants +1",feet="Azimuth gaiters +3"})
+		back="Lifestream cape",legs="Bagua pants +3",feet="Azimuth gaiters +3"})
 		
 	sets.midcast.Geomancy.Entrust = set_combine(sets.midcast.Geomancy.Indi, {main="Solstice"})
  
@@ -188,6 +193,8 @@ function init_gear_sets()
     sets.midcast.Protectra = {ring1="Sheltered Ring"}
  
     sets.midcast.Shellra = {ring1="Sheltered Ring"}
+	
+	sets.midcast['Dispelga'] = {main="Daybreak"}
 		
 	sets.midcast.Regen = {main="Bolelabunga", 
 		head=gear.EnhHead,
@@ -265,12 +272,12 @@ function init_gear_sets()
     sets.midcast.ElementalEnfeeble = set_combine(sets.midcast.IntEnfeebles, {body="Azimuth coat +3"})
  
     sets.midcast['Dark Magic'] = {main="Bunzi's rod", sub="Ammurapi shield", 
-        head="Bagua galero +1",neck="Erra pendant",ear1="Enchanter earring +1",ear2="Gwati earring",
+        head="Bagua galero +3",neck="Erra pendant",ear1="Enchanter earring +1",ear2="Gwati earring",
         body="Geomancy Tunic +2",hands="Lurid mitts",ring1="Archon ring",ring2="Evanescence Ring",
         back="Merciful cape",waist="Fucho-no-obi",legs="Azimuth tights +3",feet="Agwu's pigaches"}
 		
 	sets.midcast.Drain = {main="Bunzi's rod", sub="Ammurapi shield", 
-        head="Bagua galero +1",neck="Erra pendant",ear1="Enchanter earring +1",ear2="Gwati earring",
+        head="Bagua galero +3",neck="Erra pendant",ear1="Enchanter earring +1",ear2="Gwati earring",
         body="Geomancy Tunic +2",hands="Lurid mitts",ring1="Archon ring",ring2="Evanescence Ring",
         back="Merciful cape",waist="Fucho-no-obi",legs="Azimuth tights +3",feet="Agwu's pigaches"}
  
@@ -332,18 +339,18 @@ function init_gear_sets()
  
     -- .Pet sets are for when Luopan is present.
     sets.idle.Pet = {main="Idris",sub="Genmei shield",Range="Dunna",
-        head="Azimuth hood +3",neck="Loricate Torque +1",ear1="Eabani earring",ear2="Odnowa earring +1",
+        head="Azimuth hood +3",neck="Bagua charm +2",ear1="Eabani earring",ear2="Odnowa earring +1",
         body="Azimuth coat +3",hands="Geomancy mitaines +2",ring1="Defending Ring",ring2="Gelatinous ring +1",
-        back=gear.CapePetRegen,waist="Carrier's sash",legs="Volte brais",feet="Bagua sandals +1"}
+        back=gear.CapePetRegen,waist="Carrier's sash",legs="Volte brais",feet="Bagua sandals +3"}
  
     sets.idle.PDT.Pet = {main="Idris",sub="Genmei shield",Range="Dunna",										-- 0|25, 10, 0|5
-        head="Azimuth hood +3",neck="Loricate Torque +1",ear1="Eabani earring",ear2="Odnowa earring +1",		-- 11, 6, 0, 3
+        head="Azimuth hood +3",neck="Bagua charm +2",ear1="Eabani earring",ear2="Odnowa earring +1",			-- 11, 6, 0, 3
         body="Azimuth coat +3",hands="Geomancy mitaines +2",ring1="Defending ring",ring2="Gelatinous ring +1",	-- 0, 2|12, 10, 7
-        back=gear.CapePetRegen,waist="Carrier's sash",legs="Volte brais",feet="Bagua sandals +1"}				-- 10, 0, 0, 0
+        back=gear.CapePetRegen,waist="Carrier's sash",legs="Volte brais",feet="Bagua sandals +3"}				-- 10, 0, 0, 0
 		-- 59% PDT     Loricate -> JSE   isa belt?   Odnowa -> Etiolation
 		
 	sets.idle.DD.Pet = {
-		head="Azimuth hood +3",neck="Loricate Torque +1",ear1="Eabani earring",ear2="Odnowa earring +1",		-- 11, 6, 0, 3
+		head="Azimuth hood +3",neck="Bagua charm +2",ear1="Eabani earring",ear2="Odnowa earring +1",			-- 11, 6, 0, 3
         body="Azimuth coat +3",hands="Geomancy mitaines +2",ring1="Defending ring",ring2="Gelatinous ring +1",	-- 0, 2|12, 10, 7
         back=gear.CapePetRegen,waist="Carrier's sash",legs="Volte brais",feet="Geomancy sandals +2"}			-- 10, 0, 0, 0
 		-- 49% PDT     Loricate -> JSE   isa belt?   Odnowa -> Etiolation
@@ -395,6 +402,8 @@ function init_gear_sets()
         body="Nyame mail",hands="Nyame gauntlets",ring1="Lehko Habhoka's ring",ring2="Chirich ring +1",
         back="Null shawl",waist="Null belt",legs="Nyame Flanchard", feet="Nyame Sollerets"}
 		
+	sets.engaged.Acc = set_combine(sets.engaged, {hands = "Azimuth gloves +3", legs = "Azimuth tights +3"})
+		
 	sets.Idris = {main="Idris"}	
 	sets.Maxentius = {main="Maxentius"}
 	sets.Mage = {main="Magesmasher +1"}
@@ -437,10 +446,24 @@ end
  
 function job_state_change(stateField, newValue, oldValue)
     if stateField == 'Offense Mode' then
-        if newValue ~= 'None' then
-            disable('main','sub','range')
-        else
+        if newValue == 'None' then
             enable('main','sub','range')
+        else
+			if newValue == 'Normal' then
+				if state.WeaponMode.value == 'Idris' then
+					equip(sets.Idris)
+				elseif state.WeaponMode.value == 'Maxentius' then
+					equip(sets.Maxentius)
+				elseif state.WeaponMode.value == 'Tish' then
+					equip(sets.Tish)
+				elseif state.WeaponMode.value == 'Mage' then
+					equip(sets.Mage)
+				end
+				if state.CombatForm ~= 'DW' then
+					equip(sets.Genmei)
+				end
+			end			
+            disable('main','sub','range')
         end
     end
 end
@@ -506,7 +529,7 @@ function customize_melee_set(meleeSet)
 		equip(sets.Maxentius)
 	elseif state.WeaponMode.value == 'Magesmasher +1' then
 		equip(sets.Mage)
-	elseif state.WeaponMode.value == 'Tishtrya' then
+	elseif state.WeaponMode.value == 'Tish' then
 		equip(sets.Tish)		
 	end
 	if state.CombatForm ~= 'DW' then
@@ -518,7 +541,7 @@ end
 -- Function to display the current relevant user state when doing an update.
 function display_current_job_state(eventArgs)
     --display_current_caster_state()
-	local msg = '[ [ Idle: ' .. state.IdleMode.value .. '] [Casting: ' .. state.CastingMode.value .. '] [Offense: ' .. state.OffenseMode.value .. '] '
+	local msg = '[ [Idle: ' .. state.IdleMode.value .. '] [Casting: ' .. state.CastingMode.value .. '] [Offense: ' .. state.OffenseMode.value  .. '] [Weaponskill: ' .. state.WeaponskillMode.value .. '] '
 	
     if state.Kiting.value then
         msg = msg .. '[ Kiting Mode: On ] '
@@ -537,5 +560,6 @@ end
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
     set_macro_page(1, 19)
+	send_command('wait 5; input /lockstyleset 031')
 end
 

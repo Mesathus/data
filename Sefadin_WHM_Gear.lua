@@ -103,7 +103,7 @@ function init_gear_sets()
     
     sets.midcast.FastRecast = {ammo="Sapience orb",																-- 2
         head="Ebers Cap +2",neck="Voltsurge torque",ear1="Etiolation Earring",ear2="Malignance Earring",		-- 10, 4, 1, 4
-        body="Pinga tunic +1",hands="Volte gloves",ring1="Prolix Ring",ring2="Kishar Ring",						-- 15, 6, 2, 4
+        body="Pinga tunic +1",hands="Volte gloves",ring1="Defending Ring",ring2="Kishar Ring",					-- 15, 6, 0, 4
         back="Fi follet cape +1",waist="Embla sash",legs="Pinga pants +1",feet="Regal pumps +1"}				-- 10, 5, 13, 5~7
 		-- 79~81 FC   Pinga legs/Ebers +3 swap to DRing
     
@@ -115,7 +115,7 @@ function init_gear_sets()
         head="Kaykaus mitra +1",neck="Incanter's torque",ear1="Glorious earring",ear2="Regal earring",
         body="Kaykaus Bliaut +1",hands="Kaykaus cuffs +1",ring1="Stikini ring +1", ring2="Stikini ring +1",
         back="Solemnity cape",waist ="Luminary sash", legs="Kaykaus tights +1",feet="Kaykaus boots +1"}
-
+		--Emp legs
     sets.midcast.Cure = {main="Grioavolr",sub="Enki strap",
         head="Kaykaus mitra +1",neck="Incanter's torque",ear1="Glorious earring",ear2="Regal earring",
         body="Kaykaus Bliaut +1",hands="Kaykaus cuffs +1",ring1="Stikini ring +1", ring2="Stikini ring +1",
@@ -124,7 +124,7 @@ function init_gear_sets()
     sets.midcast.Curaga = {main="Grioavolr",sub="Enki strap",
         head="Kaykaus mitra +1",neck="Incanter's torque",ear1="Glorious earring",ear2="Regal earring",
         body="Kaykaus Bliaut +1",hands="Kaykaus cuffs +1",ring1="Stikini ring +1", ring2="Stikini ring +1",
-        back="Solemnity cape",waist ="Luminary sash", legs="Kaykaus tights +1",feet="Kaykaus boots +1"}
+        back="Solemnity cape",waist ="Luminary sash", legs="Ebers pantaloons +2",feet="Kaykaus boots +1"}
 
     sets.midcast.CureMelee = {ammo="Incantor Stone",
         head="Kaykaus mitra +1",neck="Incanter's torque",ear1="Glorious earring",ear2="Regal earring",
@@ -134,7 +134,7 @@ function init_gear_sets()
     sets.midcast.Cursna = {main="Yagrush",sub="Genbu's Shield",
         head="Ebers Cap +2",neck="Malison Medallion",
         body="Ebers Bliaud +2",hands="Fanatic gloves",ring1="Stikini ring +1", ring2="Menelaus's ring",
-        back="Mending Cape",waist="Goading Belt",legs="Vanya slops",feet="Vanya clogs"}
+        back="Mending Cape",waist="Goading Belt",legs="Vanya slops",feet=gear.FeetCurse}
 
     sets.midcast.StatusRemoval = {main="Yagrush",sub="Genbu's Shield",
         head="Ebers Cap +2",legs="Ebers Pantaloons +2"}
@@ -202,22 +202,22 @@ function init_gear_sets()
     
     -- Resting sets
     sets.resting = {main=gear.Staff.HMP, 
-        body="Gendewitha Bliaut",hands="Serpentes Cuffs",
-        waist="Austerity Belt",legs="Nares Trews",feet="Chelona Boots +1"}
+        body="Ebers bliaut +2",hands="Volte gloves",
+        waist="Carrier's sash",legs="Volte brais"}
     
 
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
     sets.idle = {main="Daybreak", sub="Genmei Shield",ammo="Homiliary",											--0, 10, 0
         head="Befouled crown",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Eabani Earring",		--0, 6, 0, 0
-        body="Kaykaus bliaut +1",hands="Volte gloves",ring1="Sheltered Ring",ring2="Defending Ring",			--0, 0, 0, 10
-        back="Moonlight Cape",waist="Luminary sash",legs="Volte brais",feet="Herald's Gaiters"}					--6, 0, 0, 0
+        body="Ebers bliaut +2",hands="Volte gloves",ring1="Sheltered Ring",ring2="Defending Ring",			--0, 0, 0, 10
+        back="Moonlight Cape",waist="Carrier's sash",legs="Volte brais",feet="Herald's Gaiters"}				--6, 0, 0, 0
 		-- 32% PDT
 
     sets.idle.PDT = {main="Daybreak", sub="Genmei Shield",ammo="Homiliary",										--0, 10, 0
-        head="Nyame helm",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Eabani Earring",			--7, 6, 0, 0
-        body="Kaykaus bliaut +1",hands="Nyame gauntlets",ring1="Sheltered Ring",ring2="Defending Ring",			--0, 7, 0, 10
-        back="Moonlight Cape",waist="Carrier's sash",legs="Nyame flanchard",feet="Nyame sollerets"}				--6, 0, 8, 7
-		-- 61% PDT
+        head="Nyame helm",neck="Warder's charm +1",ear1="Etiolation Earring",ear2="Eabani Earring",				--7, 0, 0, 0
+        body="Ebers bliaut +2",hands="Ebers mitts +2",ring1="Fortified Ring",ring2="Defending Ring",			--0, 10, 0, 10
+        back="Moonlight Cape",waist="Carrier's sash",legs="Ebers pantaloons +2",feet="Nyame sollerets"}			--6, 0, 12, 7
+		-- 62% PDT
 
     sets.idle.Town = {main="Daybreak", sub="Genmei Shield",ammo="Homiliary",									--0, 10, 0
         head="Befouled crown",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Eabani Earring",		--0, 6, 0, 0
@@ -255,14 +255,14 @@ function init_gear_sets()
     
     -- Basic set for if no TP weapon is defined.
     sets.engaged = {ammo="Staunch tathlum +1",
-        head="Nyame helm", neck="Combatant's torque", left_ear="Telos Earring", right_ear="Mache earring +1",
+        head="Nyame helm", neck="Null loop", left_ear="Telos Earring", right_ear="Mache earring +1",
 		body="Nyame mail", hands="Bunzi's gloves", left_ring="Chirich Ring +1", right_ring="Chirich Ring +1",
-		back="Aurist's cape +1", waist="Eschan stone", legs="Nyame Flanchard", feet="Nyame Sollerets"}
+		back="Null shawl", waist="Null belt", legs="Nyame Flanchard", feet="Nyame Sollerets"}
 		
 	sets.engaged.DW = {ammo="Staunch tathlum +1",
-        head="Nyame helm", neck="Combatant's torque", left_ear="Telos Earring", right_ear="Dedition earring",
+        head="Nyame helm", neck="Null loop", left_ear="Telos Earring", right_ear="Dedition earring",
 		body="Nyame mail", hands="Bunzi's gloves", left_ring="Chirich Ring +1", right_ring="Chirich Ring +1",
-		back="Aurist's cape +1", waist="Shetal stone", legs="Nyame Flanchard", feet="Nyame Sollerets"}
+		back="Null shawl", waist="Shetal stone", legs="Nyame Flanchard", feet="Nyame Sollerets"}
 
 
     -- Buff sets: Gear that needs to be worn to actively enhance a current player buff.

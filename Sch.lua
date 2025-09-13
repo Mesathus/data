@@ -325,9 +325,9 @@ function init_gear_sets()
         body="Arbatel gown +3",hands="Volte gloves",ring1="Sheltered Ring",ring2="Defending Ring",
         back="Moonlight cape",waist="Carrier's sash",legs="Volte brais",feet="Herald's Gaiters"}	
 	
-    sets.idle.Town = {main="Daybreak",sub="Genmei shield",ammo="Incantor Stone",
+    sets.idle.Town = {main="Daybreak",sub="Genmei shield",ammo="Homiliary",
         head="Befouled crown",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Loquacious Earring",
-        body="Agwu's robe",hands="Volte gloves",ring1="Sheltered Ring",ring2="Defending Ring",
+        body="Arbatel gown +3",hands="Volte gloves",ring1="Sheltered Ring",ring2="Defending Ring",
         back="Moonlight cape",waist="Carrier's sash",legs="Volte brais",feet="Herald's Gaiters"}
 		
 	sets.idle.Myrkr = {ammo="Homiliary",

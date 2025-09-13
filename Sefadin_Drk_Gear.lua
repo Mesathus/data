@@ -610,7 +610,7 @@ function init_gear_sets()
         hands="Sakpata's Gauntlets",		--  8% DT
         legs="Sakpata's Cuisses",			--  9% DT
         feet="Sakpata's Leggings",			--  6% DT
-        neck="Combatant's torque",--"Abyssal Bead Necklace +2",	
+        neck="Null loop",--"Abyssal Bead Necklace +2",	
         waist="Sailfi Belt +1",
         right_ear="Brutal Earring",
         left_ear="Cessance Earring",

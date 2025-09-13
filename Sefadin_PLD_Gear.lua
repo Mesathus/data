@@ -30,10 +30,10 @@ function user_setup()
     state.OffenseMode:options('Tank', 'Normal', 'LowAcc', 'MidAcc', 'HighAcc')
     state.HybridMode:options('Normal', 'HIGH', 'MID', 'LOW')
     state.WeaponskillMode:options('Normal', 'Acc')
-    state.CastingMode:options('Normal', 'SIRD', 'HPBAL')    
+    state.CastingMode:options('Normal', 'SIRD', 'HPBAL', 'Aminon')    
     state.IdleMode:options('Pulling', 'Normal', 'Aminon')  			--Ctrl 'F12'
 	state.ShieldMode = M{'Duban','Aegis','Ochain','Srivatsa'}		--Alt F9
-	state.WeaponMode = M{'Burtgang', 'Naegling', 'Malignance'}		--Alt F10
+	state.WeaponMode = M{'Burtgang', 'Naegling', 'Malignance','Excalibur'}		--Alt F10
      
 -- Allows the use of Ctrl + ~ and Alt + ~ for 2 more macros of your choice.
     -- send_command('bind ^` input /ja "Cover" <stal>') --Ctrl'~'
@@ -136,12 +136,12 @@ function init_gear_sets()
         Body="Reverence Surcoat +3", --10
         Hands="Leyline Gloves", --8
         Ring1="Prolix Ring", -- 3
-        Legs="Arjuna Breeches", --4
+        Legs="Enif Cosciales", --8
         Feet="Chevalier's sabatons +3", --13
         Waist="Platinum moogle belt", --10% HP
         back=gear.FCCape, --10FC
         Ring2="Kishar Ring", --  4FC --70HP
-    } 	-- 73FC 2QM
+    } 	-- 77FC 2QM
 		-- Enif legs 8% 
      
     sets.precast.Cure = set_combine(sets.precast.FC, {
@@ -282,21 +282,22 @@ function init_gear_sets()
     sets.midcast.Phalanx = {
 		Main="Sakpata's Sword", --5
 		sub="Priwen", --2
-		ammo="Staunch Tathlum +1",
+		ammo="Staunch Tathlum +1",								--11 SIRD
 		Head=gear.PhalanxHeadPld, --4
-		ear1="Mimir earring",   			--10 skill
-		ear2="Andoaa earring",				--5 skill
-		neck="Incanter's Torque",			--10 skill
-		Body=gear.PhalanxBodyPld, --3
+		ear1="Mimir earring",   			--10 skill			--9 knightly
+		ear2="Andoaa earring",				--5 skill			--8 magnetic  5 halasz
+		neck="Incanter's Torque",			--10 skill			--15 Moonbow
+		Body=gear.PhalanxBodyPld, --5
 		Hands="Souveran Handschuhs +1", --5
-		left_ring="Defending Ring",			
-		right_ring="Stikini Ring +1",		--8 skill
-		waist="Flume Belt",
-		Feet="Souveran Schuhs +1", --5
+		left_ring="Defending Ring",								--5 evanescense
+		right_ring="Stikini Ring +1",		--8 skill			
+		waist="Flume Belt",										--10 Rumination
+		Feet="Souveran Schuhs +1", --5							--20 Odyssean
 		Back="Weard Mantle", --4
 		Legs="Sakpata's Cuisses", --5
-    } 	-- +33 Need to DarkMatter Ody Head and Body   418 skill @ML35   tiers: 415 -32 / 443 -33
+    } 	-- +35 Need to DarkMatter Ody Head    418 skill @ML35   tiers: 415 -32 / 443 -33, ML47 to hit the final skill tier, loses DT
 		-- 46% DT
+		-- SIRD swaps -> 78%
      
 	sets.midcast.Stoneskin = {--main="Sakpata's sword", 
 		ammo="Sapience orb",		
@@ -467,13 +468,41 @@ function init_gear_sets()
     sets.midcast['Blue Magic'].HPBAL = set_combine(sets.midcast['Blue Magic'], sets.midcast.HPBAL)
  
     sets.precast.WS.HPBAL = {}
+	
+    ------------------------------------------------------------------------------------------------
+    ---------------------------------------- Aminon Sets -------------------------------------------
+    ------------------------------------------------------------------------------------------------
+	
+	sets.precast.FC.Aminon = {}
+	sets.midcast.Aminon = {ammo="Vanir battery",
+		head="Sakpata's Helm",
+		body="Sakpata's Plate", 	--body="Adamantite Armor",
+		hands="Sakpata's Gauntlets",
+		legs="Sakpata's cuisses",	--legs="Dashing Subligar",
+		feet="Sakpata's Leggings",
+		neck="Moonlight Necklace",
+		waist="Null belt",
+		left_ear="Sanare Earring",
+		right_ear="Chev. Earring +1",
+		left_ring="Vexer Ring +1", 	--Lunette ring / Apeile +1 with augments
+		right_ring="Roller's Ring",
+		back=gear.PDTCape			--back="Philidor Mantle"
+	}
+	
+	sets.midcast.Flash.Aminon = sets.midcast.Flash
+	
+	sets.midcast.Cure.Aminon = set_combine(sets.midcast.Aminon, {neck="Sacro gorget", waist="Sroda belt"})
+    sets.midcast.Phalanx.Aminon = set_combine(sets.midcast.Aminon)
+    sets.midcast.Reprisal.Aminon = set_combine(sets.midcast.Aminon)
+    sets.midcast.Crusade.Aminon = set_combine(sets.midcast.Aminon)
+    sets.midcast.Utsusemi.Aminon = set_combine(sets.midcast.Aminon)
+    sets.midcast['Blue Magic'].Aminon = set_combine(sets.midcast.Aminon)
      
     ------------------------------------------------------------------------------------------------
     ----------------------------------------- Idle Sets --------------------------------------------
     ------------------------------------------------------------------------------------------------
  
     sets.idle = {
-		Main="Burtgang",
         Ammo="Homiliary",
         Head="Sakpata's Helm",
         Neck="Republican Platinum medal",
@@ -490,7 +519,6 @@ function init_gear_sets()
     }
  
     sets.idle.DT = {
-		Main="Burtgang",
         Ammo="Homiliary",
         Head="Souveran Schaller +1",
         Neck="Loricate Torque +1",
@@ -551,19 +579,19 @@ function init_gear_sets()
 	
 	-- Aminon set
 	sets.idle.Aminon = {
-		ammo="Staunch Tathlum +1",
-		head="Nyame Helm",
+		ammo="Vanir battery",
+		head="Sakpata's Helm",
 		body="Sakpata's Plate", 	--body="Adamantite Armor",
-		hands="Nyame Gauntlets",
-		legs="Dashing Subligar",
-		feet="Nyame Sollerets",
+		hands="Sakpata's Gauntlets",
+		legs="Sakpata's cuisses",	--legs="Dashing Subligar",
+		feet="Sakpata's Leggings",
 		neck="Moonlight Necklace",
-		waist="Carrier's Sash",
-		left_ear="Eabani Earring",
-		right_ear="Chev. Earring +1",
-		left_ring="Defending Ring",
-		right_ring="Shadow Ring",
-		back="Philidor Mantle",
+		waist="Null belt",
+		left_ear="Sanare Earring",
+		right_ear="Spellbreaker Earring",
+		left_ring="Vexer Ring +1",	 --Lunette ring / Apeile +1 with augments
+		right_ring="Roller's Ring",
+		back=gear.PDTCape			--back="Philidor Mantle",
 	}
 
 	-- alternative Aminon set

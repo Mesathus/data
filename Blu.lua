@@ -192,7 +192,7 @@ end
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
     state.OffenseMode:options('Normal', 'Acc','Hybrid')
-    state.WeaponskillMode:options('Normal', 'Acc')
+    state.WeaponskillMode:options('Normal', 'Acc', 'SB')
     state.CastingMode:options('Normal', 'Burst')
     state.IdleMode:options('Normal', 'PDT', 'Refresh')
 
@@ -207,6 +207,7 @@ function user_setup()
     send_command('bind !` input /ja "Efflux" <me>')
     send_command('bind @` input /ja "Burst Affinity" <me>')
 	send_command('bind !p input /item Panacea <me>')  --Alt + P
+	send_command('bind ^f10 gs c cycle WeaponSkillMode') --Ctrl 'F10'
 
     update_combat_form()
     select_default_macro_book()
@@ -271,7 +272,7 @@ function init_gear_sets()
        
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
-    sets.precast.WS = {ammo="Mantoptera eye",
+    sets.precast.WS = {ammo="Coiste bodhar",
         head="Adhemar bonnet +1",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Ishvara Earring",
         body="Assimilator's Jubbah +3",hands="Adhemar Wristbands +1",ring1="Ilabrat Ring",ring2="Epona's Ring",
         back=gear.WSDCape,waist="Fotia Belt",legs="Samnuha tights",feet="Herculean boots"}
@@ -286,12 +287,17 @@ function init_gear_sets()
         body="Nyame mail",hands="Jhakri cuffs +2",ring1="Archon Ring",ring2="Epaminondas's Ring",
         back=gear.NukeCape,waist="Orpheus's sash",legs="Luhlaza Shalwar +3",feet="Nyame sollerets"}
     
-    sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {ammo="Mantoptera eye",
+    sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {ammo="Coiste bodhar",
 		head="Hashishin Kavuk +3",neck="Mirage stole +2",ear1="Moonshade Earring",
-		body="Nyame mail",hands="Jhakri cuffs +2",ring1="Epaminondas's ring",ring2="Sroda ring",
+		body="Nyame mail",hands="Nyame gauntlets",ring1="Epaminondas's ring",ring2="Sroda ring",
 		waist="Kentarch belt +1",legs="Nyame Flanchard",feet="Nyame Sollerets"})
 		
-	sets.precast.WS['Black Halo'] = set_combine(sets.precast.WS, {ammo="Mantoptera eye",
+	sets.precast.WS['Expiacion'] = set_combine(sets.precast.WS, {ammo="Coiste bodhar",
+		head="Hashishin Kavuk +3",neck="Mirage stole +2",ear1="Moonshade Earring",
+		body="Nyame mail",hands="Nyame gauntlets",ring1="Epaminondas's ring",ring2="Sroda ring",
+		waist="Kentarch belt +1",legs="Nyame Flanchard",feet="Nyame Sollerets"})
+		
+	sets.precast.WS['Black Halo'] = set_combine(sets.precast.WS, {ammo="Coiste bodhar",
 		head="Hashishin Kavuk +3",neck="Mirage stole +2",ear1="Moonshade Earring",ear2="Regal Earring",
 		body="Nyame mail",hands="Nyame gauntlets",ring1="Epaminondas's ring",ring2="Sroda ring",
 		waist="Kentarch belt +1",legs="Nyame Flanchard",feet="Nyame Sollerets"})
@@ -313,7 +319,13 @@ function init_gear_sets()
     sets.precast.WS['Chant du Cygne'] = set_combine(sets.precast.WS, {
 		head="Adhemar bonnet +1",neck="Mirage stole +2",ear1="Odr earring", ear2="Mache earring +1",
 		body="Gleti's cuirass",ring1="Lehko Habhoka's ring",ring2="Begrudging ring",
-		back=gear.CritCape,legs="Gleti's breeches",feet="Adhemar gamashes +1"})    
+		back=gear.CritCape,legs="Gleti's breeches",feet="Adhemar gamashes +1"})
+		
+	-- Subtle Blow sets
+	sets.precast.WS['Savage Blade'].SB = set_combine(sets.precast.WS, {ammo="Coiste bodhar",
+		head="Hashishin Kavuk +3",neck="Mirage stole +2",ear1="Moonshade Earring",
+		body="Nyame mail",hands="Nyame gauntlets",ring1="Chirich ring +1",ring2="Chirich ring +1",
+		waist="Kentarch belt +1",legs="Gleti's breeches",feet="Nyame Sollerets"})
 
     -- Midcast Sets
     sets.midcast.FastRecast = {ammo="Sapience orb",
@@ -693,7 +705,9 @@ function select_default_macro_book()
     elseif player.sub_job == 'NIN' then
         set_macro_page(4, 4)
 	elseif player.sub_job == 'BLM' then
-        set_macro_page(6, 4)	
+        set_macro_page(6, 4)
+	elseif player.sub_job == 'RDM' then
+        set_macro_page(6, 4)		
 	else
         set_macro_page(1, 4)
     end

@@ -96,9 +96,9 @@ function init_gear_sets()
     sets.precast.Waltz['Healing Waltz'] = {}
  
     -- Sets for fast cast gear for spells
-    sets.precast.FC = {ammo="Impatiens",
-    head="Quiahuiz Helm",neck="Voltsurge Torque",ear1="Etiolation Earring",ear2="Loquacious Earring",
-    body="Odyssean Chestplate",hands="Leyline Gloves",ring1="Lebeche Ring",
+    sets.precast.FC = {ammo="Sapience orb",
+    head="Sakpata's Helm",neck="Voltsurge Torque",ear1="Etiolation Earring",ear2="Loquacious Earring",
+    body="Odyssean Chestplate",hands="Leyline Gloves",ring1="Prolix Ring",
     waist="Sanctuary Obi",legs="Eschite Cuisses",feet=gear.OdysseanFeetVIT}
  
     -- Fast cast gear for specific spells or spell maps
@@ -208,7 +208,18 @@ function init_gear_sets()
         body="Odyssean Chestplate", hands="Eschite Gauntlets", ring1="Evanescence Ring", ring2= "Haverton Ring",
         back="Grounded Mantle +1",waist="Resolute Belt",legs="Founder's Hose",feet="Odyssean Greaves"}
  
-   
+    sets.midcast.Phalanx = {
+		Main="Sakpata's Sword", --5
+		ammo="Staunch Tathlum +1",								--11 SIRD
+		Head=gear.PhalanxHeadPld, --4
+		neck="Incanter's Torque",			--10 skill			--15 Moonbow
+		Body=gear.PhalanxBodyPld, --5
+		Hands="Souveran Handschuhs +1", --5
+		left_ring="Defending Ring",								--5 evanescense
+		waist="Flume Belt",										--10 Rumination
+		Feet="Souveran Schuhs +1", --5							--20 Odyssean
+		Legs="Sakpata's Cuisses", --5
+    }
     --------------------------------------
     -- Idle/resting/defense/etc sets
     --------------------------------------
@@ -448,33 +459,33 @@ end
  
 -- Set eventArgs.handled to true if we don't want the automatic display to be run.
 function display_current_job_state(eventArgs)
-local msg = 'Melee'
-if state.CombatForm.has_value then
-msg = msg .. ' (' .. state.CombatForm.value .. ')'
-end
-if state.CombatWeapon.has_value then
-msg = msg .. ' (' .. state.CombatWeapon.value .. ')'
-end
-msg = msg .. ': '
-msg = msg .. state.OffenseMode.value
-if state.HybridMode.value ~= 'Normal' then
-msg = msg .. '/' .. state.HybridMode.value
-end
-msg = msg .. ', WS: ' .. state.WeaponskillMode.value
-if state.DefenseMode.value ~= 'None' then
-msg = msg .. ', ' .. 'Defense: ' .. state.DefenseMode.value .. ' (' .. state[state.DefenseMode.value .. 'DefenseMode'].value .. ')'
-end
-if state.Kiting.value == true then
-msg = msg .. ', Kiting'
-end
-if state.PCTargetMode.value ~= 'default' then
-msg = msg .. ', Target PC: '..state.PCTargetMode.value
-end
-if state.SelectNPCTargets.value == true then
-msg = msg .. ', Target NPCs'
-end
-add_to_chat(122, msg)
-eventArgs.handled = true
+	local msg = 'Melee'
+	if state.CombatForm.has_value then
+	msg = msg .. ' (' .. state.CombatForm.value .. ')'
+	end
+	if state.CombatWeapon.has_value then
+	msg = msg .. ' (' .. state.CombatWeapon.value .. ')'
+	end
+	msg = msg .. ': '
+	msg = msg .. state.OffenseMode.value
+	if state.HybridMode.value ~= 'Normal' then
+	msg = msg .. '/' .. state.HybridMode.value
+	end
+	msg = msg .. ', WS: ' .. state.WeaponskillMode.value
+	if state.DefenseMode.value ~= 'None' then
+	msg = msg .. ', ' .. 'Defense: ' .. state.DefenseMode.value .. ' (' .. state[state.DefenseMode.value .. 'DefenseMode'].value .. ')'
+	end
+	if state.Kiting.value == true then
+	msg = msg .. ', Kiting'
+	end
+	if state.PCTargetMode.value ~= 'default' then
+	msg = msg .. ', Target PC: '..state.PCTargetMode.value
+	end
+	if state.SelectNPCTargets.value == true then
+	msg = msg .. ', Target NPCs'
+	end
+	add_to_chat(122, msg)
+	eventArgs.handled = true
 end
  
 -------------------------------------------------------------------------------------------------------------------

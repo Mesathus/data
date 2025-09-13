@@ -30,8 +30,8 @@ end
 
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
-    state.OffenseMode:options('Normal', 'Acc', 'Hybrid', 'Defense')
-    state.WeaponskillMode:options('Normal', 'Acc')
+    state.OffenseMode:options('Normal', 'Acc', 'Hybrid', 'SB', 'Defense')
+    state.WeaponskillMode:options('Normal', 'SB', 'Acc')
     state.HybridMode:options('Normal', 'PDT', 'Counter')
     state.PhysicalDefenseMode:options('PDT', 'HP')
 

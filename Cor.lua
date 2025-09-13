@@ -42,11 +42,12 @@ function user_setup()
     state.WeaponskillMode:options('Normal', 'Acc', 'Att', 'Mod')
     state.CastingMode:options('Normal', 'Resistant')
     state.IdleMode:options('Normal', 'PDT', 'Refresh', 'Aminon')
+	state.QDMode = M{'Damage', 'STP'}
 
     gear.RAbullet = "Chrono Bullet"
     gear.WSbullet = "Chrono Bullet"
-    gear.MAbullet = "Devastating Bullet"
-    gear.QDbullet = "Chrono Bullet"
+    gear.MAbullet = "Living Bullet"
+    gear.QDbullet = "Living Bullet"
 	gear.TrialBullet = "Bronze Bullet"
 	gear.CorLeadenCape = {name="Camulus's Mantle", augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+10','Weapon skill damage +10%',}}
 	gear.CorSavageCape = {name="Camulus's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+5','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
@@ -162,17 +163,17 @@ function init_gear_sets()
 		body="Laksamana's Frac +3",hands="Meghanada gloves +2",ring1="Ilabrat Ring",ring2="Regal Ring",
 		back=gear.CorLeadenCape,waist="Fotia belt",legs="Meghanada chausses +2",feet="Lanun bottes +3" }
 
-    sets.precast.WS['Wildfire'] = {
+    sets.precast.WS['Wildfire'] = {ammo = "Living Bullet",
 		head="Nyame helm", neck="Commodore charm +2", left_ear="Friomisi Earring", right_ear="Crematio Earring",
 		body="Lanun Frac +3", hands="Nyame gauntlets", left_ring="Dingir Ring", right_ring="Epaminondas's Ring",
 		back=gear.CorLeadenCape, waist="Orpheus's sash", legs="Nyame flanchard",feet="Lanun Bottes +3",}
 		
-	sets.precast.WS['Hot Shot'] = {
+	sets.precast.WS['Hot Shot'] = {ammo = "Living Bullet",
 		head="Nyame helm", neck="Commodore charm +2", left_ear="Friomisi Earring", right_ear="Moonshade Earring",
 		body="Nyame mail", hands="Nyame gauntlets", left_ring="Dingir Ring", right_ring="Epaminondas's Ring",
 		back=gear.CorLeadenCape, waist="Orpheus's sash", legs="Nyame flanchard",feet="Lanun Bottes +3",}
 		
-	sets.precast.WS['Aeolian Edge'] = {
+	sets.precast.WS['Aeolian Edge'] = {ammo = "Living Bullet",
 		head="Nyame helm",
 		body="Lanun frac +3",
 		hands="Nyame gauntlets",
@@ -191,7 +192,7 @@ function init_gear_sets()
     --    body="Manibozho Jerkin",hands="Iuitl Wristbands",ring1="Stormsoul Ring",ring2="Demon's Ring",
     --    back="Toro Cape",waist=gear.ElementalBelt,legs="Iuitl Tights",feet="Iuitl Gaiters +1"}
     
-    sets.precast.WS['Leaden Salute'] = {
+    sets.precast.WS['Leaden Salute'] = {ammo = "Living Bullet",
 		head="Pixie Hairpin +1", neck="Commodore charm +2", left_ear="Friomisi Earring", right_ear="Moonshade Earring",
 		body="Lanun Frac +3", hands="Nyame gauntlets", left_ring="Dingir Ring", right_ring="Archon Ring",
 		back=gear.CorLeadenCape, waist="Orpheus's sash", legs="Nyame flanchard", feet="Lanun Bottes +3"
@@ -225,14 +226,29 @@ function init_gear_sets()
 		back=gear.CorLeadenCape,
 		}
 		
-	sets.midcast['Absorb-TP'] = {ammo="Devastating Bullet",
+	sets.midcast.CorsairShot.STP = {ammo=gear.QDbullet,
+        head="Nyame helm",
+		body="Lanun Frac +3",
+		hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}},
+		legs="Nyame flanchard",
+		feet="Chasseur's bottes +3",
+		neck="Commodore charm +2",
+		waist="Orpheus's sash",
+		left_ear="Friomisi Earring",
+		right_ear="Crematio Earring",
+		left_ring="Dingir Ring",
+		right_ring="Regal Ring",
+		back=gear.CorLeadenCape,
+		}
+		
+	sets.midcast['Absorb-TP'] = {ammo = "Living Bullet",
 		head="Carmine Mask +1",
 		body="Chasseur's Frac +3",
 		hands="Chasseur's Gants +3",
 		legs="Chasseur's Culottes +3",
 		feet="Carmine greaves +1",
-		neck="Comm. Charm +2",
-		waist="K. Kachina Belt +1",
+		neck="Null loop",
+		waist="Null belt",
 		left_ear="Dignitary's Earring",
 		right_ear="Chasseur's Earring +1",
 		left_ring="Metamor. Ring +1",
@@ -258,15 +274,17 @@ function init_gear_sets()
         body="Malignance tabard",hands="Malignance gloves",ring1="Crepuscular Ring",ring2="Cacoethic Ring +1",
         back=gear.CorRACape,waist="Yemaya Belt",legs="Chasseur's culottes +3",feet="Malignance boots"}
 		
-	sets.midcast.RA.AM = {
-		
+	sets.midcast.RA.AM = {ammo=gear.RAbullet,
+        head="Malignance chapeau",neck="Iskur Gorget",ear1="Odr Earring",ear2="Chasseur's Earring +1",
+        body="Ikenga's vest",hands="Chasseur's gants +3",ring1="Crepuscular Ring",ring2="Begrudging Ring",
+        back=gear.CorRACape,waist="Kwahu Kachina Belt +1",legs="Chasseur's culottes +3",feet="Oshosi leggings +1"		
 		}
 		
 	sets.TripleShot = set_combine(sets.midcast.RA, {
         head="Oshosi Mask +1", --5
         body="Chasseur's Frac +3", --13
         hands="Lanun gants +3", -- relic hands
-		back="Camulus's Mantle", --5
+		back=gear.CorRACape, --5
         legs="Oshosi Trousers +1", --6
         feet="Oshosi Leggings +1", --3
         }) --32   +40 base +20 job points
@@ -287,7 +305,7 @@ function init_gear_sets()
     sets.idle.Town = set_combine(sets.idle, {})
 	
 	sets.idle.Aminon = {
-		head="Malignance Chapeau",neck="Combatant's Torque",left_ear="Crep. Earring",right_ear="Dedition Earring",
+		head="Malignance Chapeau",neck="Ainia collar",left_ear="Crep. Earring",right_ear="Dedition Earring",
 		body="Malignance Tabard",hands="Regal Gloves",left_ring="Roller's Ring",right_ring="Chirich Ring +1",
 		back="Moonlight cape",waist="Yemaya Belt",legs="Chasseur's Culottes +3",feet="Malignance Boots",	
 		}
@@ -339,7 +357,7 @@ function init_gear_sets()
 		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
 		legs={ name="Samnuha Tights", augments={'STR+10','DEX+10','"Dbl.Atk."+3','"Triple Atk."+3',}},
 		feet={ name="Herculean Boots", augments={'Accuracy+26','"Triple Atk."+4','DEX+9','Attack+1'}},
-		neck="Combatant's Torque",
+		neck="Null loop",
 		waist="Reiki Yotai",
 		left_ear="Cessance Earring",
 		right_ear="Telos Earring",
@@ -459,7 +477,14 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     end
     if spell.type == 'CorsairShot' then
         if spell.english ~= "Light Shot" and spell.english ~= "Dark Shot" then
-            equip(sets.buff['Weather'])
+			if state.QDMode == 'Damage' then
+				equip(sets.midcast.CorsairShot)
+			else
+				equip(sets.midcast.CorsairShot.STP)
+			end
+            if get_obi_bonus(spell) > 0 then
+				equip(sets.buff['Weather'])
+			end
         end
     end
 end

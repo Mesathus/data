@@ -60,7 +60,7 @@ function user_setup()
     state.CP = M(false, "Capacity Points Mode")
 	
 	gear.CapeSTP = {}
-	gear.CapeStrWSD = {name="Brigantia's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
+	gear.CapeStrWSD = {name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
 	
 
     -- Additional local binds
@@ -111,7 +111,7 @@ function init_gear_sets()
         feet="Pteroslaver Greaves +3",
         neck="Dragoon's Collar +2",
         ear1="Lancer's Earring",
-        back=gear.BrigDA,
+        back="Null shawl",
         }
 
     sets.precast.JA['Jump'] = {
@@ -126,7 +126,7 @@ function init_gear_sets()
         ear2="Telos Earring",
         ring1="Petrov Ring",
         ring2="Niqmaddu Ring",
-        back=gear.BrigSTP,
+        back="Null shawl",
         waist="Ioskeha Belt +1",
         }
 
@@ -135,7 +135,7 @@ function init_gear_sets()
     sets.precast.JA['Soul Jump'] = set_combine(sets.precast.JA['Jump'], {body="Vishap Mail +3", hands="Gleti's Gauntlets",})
     sets.precast.JA['Super Jump'] = {}
 
-    sets.precast.JA['Angon'] = {ammo="Angon", hands="Pteroslaver Fin. G. +3"}
+    sets.precast.JA['Angon'] = {ammo="Angon", hands="Pteroslaver finger gauntlets +3"}
 
     -- Fast cast sets for spells
     sets.precast.FC = {
@@ -212,7 +212,7 @@ function init_gear_sets()
     sets.precast.WS['Impulse Drive'].Acc = set_combine(sets.precast.WS['Impulse Drive'], {})
 	sets.precast.WS['Impulse Drive'].Uncapped = set_combine(sets.precast.WS['Impulse Drive'], {
 		head="Pteroslaver Armet +3",
-		hands="Pteroslaver Fin. G. +3",
+		hands="Pteroslaver finger gauntlets +3",
 		legs="Nyame Flanchard",
 		feet="Nyame Sollerets",
 		ring1="Regal Ring",
@@ -392,7 +392,7 @@ function init_gear_sets()
     sets.engaged = {ammo="Coiste Bodhar",																					--3
         head="Flamma Zucchetto +2",neck="Dragoon's Collar +2",ear1="Sherida Earring",ear2="Telos Earring",					--0, 0, 5, 0	--5, 0, 0, 0
         body="Peltast's plackart +2",hands="Peltast's vambraces +2",ring1="Niqmaddu Ring",ring2="Lehko Habhoka's ring",		--0, 6, 0, 0	--0, 0, 0, 0
-        back="Null shawl",waist="Sailfi Belt +1", legs="Gleti's breeches", feet="Flam. Gambieras +2",						--7, 3, 0, 6	--0, 2, 0, 0
+        back="Null shawl",waist="Ioskeha Belt +1", legs="Gleti's breeches", feet="Flam. Gambieras +2",						--7, 3, 0, 6	--0, 2, 0, 0
         } --30% DA   7% TA   3% QA     37% DA w/ sroda, 52% @ 1200	Pteroslaver Brais +3
 
     ------------------------------------------------------------------------------------------------
@@ -402,7 +402,7 @@ function init_gear_sets()
     sets.engaged.Hybrid = {ammo="Coiste Bodhar",																		--3
 		head="Nyame Helm", neck="Dragoon's Collar +2", ear1="Sherida earring", ear2="Telos earring",					--7, 0, 0, 0		DA 	--4, 0, 5, 0
 		body="Gleti's Cuirass",	hands="Peltast's vambraces +2", ring1="Niqmaddu Ring", ring2="Lehko Habhoka's ring",	--9, 11, 0, 0			--9, 6, 0, 0
-		back="Null shawl", waist="Sailfi Belt +1", legs="Gleti's breeches", feet="Nyame Sollerets",						--0, 0, 8, 7			--7, 3, 0, 4
+		back="Null shawl", waist="Ioskeha Belt +1", legs="Gleti's breeches", feet="Nyame Sollerets",					--0, 0, 8, 7			--7, 3, 0, 4
         }  --42 PDT  25 DT			41% DA  48% w/ sroda, 63% @ 1200
 		
 	sets.engaged.Defense = {ammo="Staunch tathlum +1",																	--3
