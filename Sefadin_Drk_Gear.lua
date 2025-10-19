@@ -616,7 +616,7 @@ function init_gear_sets()
         left_ear="Cessance Earring",
         left_ring="Lehko habhoka's Ring",			-- 
         right_ring="Niqmaddu Ring",			--	 
-        back="Bleating mantle"--Ankou_TP}
+        back="Null shawl"--Ankou_TP}
 		}
 		
 	sets.engaged.Acc = {ammo="Seething Bomblet +1",						-- 3 STP

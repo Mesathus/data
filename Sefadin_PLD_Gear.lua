@@ -291,7 +291,7 @@ function init_gear_sets()
 		Hands="Souveran Handschuhs +1", --5
 		left_ring="Defending Ring",								--5 evanescense
 		right_ring="Stikini Ring +1",		--8 skill			
-		waist="Flume Belt",										--10 Rumination
+		waist="Flume Belt",										--10 Rumination/Audumbla
 		Feet="Souveran Schuhs +1", --5							--20 Odyssean
 		Back="Weard Mantle", --4
 		Legs="Sakpata's Cuisses", --5

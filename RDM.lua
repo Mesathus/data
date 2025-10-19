@@ -32,6 +32,7 @@ function user_setup()
 
     gear.CapeEnf = {name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','Weapon skill damage +10%'}}
 	gear.CapeDW = {name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dual Wield"+10','Phys. dmg. taken-10%'}}
+	gear.CapeSavage = {name="Sucellos's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%'}}
 	
 	gear.HeadPhalanx = { name="Taeon Chapeau", augments={'"Repair" potency +5%','Phalanx +3',}}
     gear.BodyPhalanx = { name="Taeon Tabard", augments={'Attack+23','"Cure" potency +5%','Phalanx +3',}}
@@ -86,8 +87,8 @@ function init_gear_sets()
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {ammo="Coiste Bodhar",
-        head="Nyame Helm",neck="Fotia gorget",ear1="Moonshade Earring",ear2="Ishvara Earring",
-        body="Nyame Mail",hands="Nyame gauntlets",ring1="Ilabrat Ring",ring2="Epaminondas's Ring",
+        head="Vitiation chapeau +4",neck="Fotia gorget",ear1="Moonshade Earring",ear2="Ishvara Earring",
+        body="Nyame Mail",hands="Atrophy gloves +4",ring1="Ilabrat Ring",ring2="Epaminondas's Ring",
         back="",waist="Fotia belt",legs="Nyame Flanchard",feet="Lethargy houseaux +3"}
 	
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {})
@@ -99,14 +100,14 @@ function init_gear_sets()
 		back="Aurist's cape +1",waist="Fotia belt",legs="Lethargy fuseau +3",feet="Lethargy houseaux +3"})
 		
 	sets.precast.WS['Savage Blade'] = {ammo="Coiste Bodhar",
-        head="Nyame Helm",neck="Republican Platinum Medal",ear1="Moonshade Earring",ear2="Lethargy earring +2",
+        head="Vitiation chapeau +4",neck="Republican Platinum Medal",ear1="Moonshade Earring",ear2="Lethargy earring +2",
         body="Nyame Mail",hands="Nyame gauntlets",ring1="Sroda Ring",ring2="Epaminondas's Ring",
-        back=gear.CapeEnf,waist="Sailfi belt +1",legs="Nyame Flanchard",feet="Lethargy houseaux +3"}
+        back=gear.CapeSavage,waist="Sailfi belt +1",legs="Nyame Flanchard",feet="Lethargy houseaux +3"}
 		
 	sets.precast.WS['Knights of Round'] = {ammo="Coiste Bodhar",
-        head="Nyame Helm",neck="Republican Platinum Medal",ear1="Moonshade Earring",ear2="Lethargy earring +2",
+        head="Vitiation chapeau +4",neck="Republican Platinum Medal",ear1="Moonshade Earring",ear2="Lethargy earring +2",
         body="Nyame Mail",hands="Nyame gauntlets",ring1="Sroda Ring",ring2="Epaminondas's Ring",
-        back=gear.CapeEnf,waist="Sailfi belt +1",legs="Nyame Flanchard",feet="Lethargy houseaux +3"}
+        back=gear.CapeSavage,waist="Sailfi belt +1",legs="Nyame Flanchard",feet="Lethargy houseaux +3"}
 		
 	sets.precast.WS['Chant du Cygne'] = set_combine(sets.precast.WS,{ammo="Yetshila +1",
         head="Blistering sallet +1",neck="Fotia gorget",ear1="Mache earring +1",ear2="Lethargy earring +2",
@@ -151,11 +152,20 @@ function init_gear_sets()
         back=gear.CapeEnf,waist="Orpheus's sash",legs="Nyame Flanchard",feet="Lethargy houseaux +3"}
 		
 	sets.precast.WS['Black Halo'] = {ammo="Coiste Bodhar",
-        head="Nyame Helm",neck="Republican Platinum Medal",ear1="Moonshade Earring",ear2="Lethargy earring +2",
+        head="Vitiation chapeau +4",neck="Republican Platinum Medal",ear1="Moonshade Earring",ear2="Lethargy earring +2",
         body="Nyame Mail",hands="Nyame gauntlets",ring1="Sroda Ring",ring2="Epaminondas's Ring",
-        back=gear.CapeEnf,waist="Sailfi belt +1",legs="Nyame Flanchard",feet="Lethargy houseaux +3"}
+        back=gear.CapeSavage,waist="Sailfi belt +1",legs="Nyame Flanchard",feet="Lethargy houseaux +3"}
+		--1068 Acc
+		--1053 with Ammurapi
+		
 
-    
+    sets.precast.WS['Black Halo'].Acc = {ammo="Coiste Bodhar",
+        head="Vitiation chapeau +4",neck="Null loop",ear1="Moonshade Earring",ear2="Lethargy earring +2",
+        body="Lethargy Sayon +3",hands="Atrophy gloves +4",ring1="Cacoethic Ring +1",ring2="Epaminondas's Ring",
+        back=gear.CapeSavage,waist="Kentarch belt +1",legs="Nyame Flanchard",feet="Lethargy houseaux +3"}
+		--1227
+		
+		
     -- Midcast Sets
     
     sets.midcast.FastRecast = sets.precast.FC
@@ -186,7 +196,7 @@ function init_gear_sets()
 		
 	sets.midcast['Enhancing Magic'] = {sub = "Ammurapi shield", ammo="Staunch tathlum +1",
 		head = "Telchine cap", neck = "Duelist's torque +2", ear1 = "Mimir earring", ear2 = "Lethargy earring +2",
-		body = "Vitiation tabard +3", hands = "Atrophy gloves +3", ring1="Kishar ring", ring2="Stikini ring +1",
+		body = "Vitiation tabard +3", hands = "Atrophy gloves +4", ring1="Kishar ring", ring2="Stikini ring +1",
 		back = "Ghostfyre Cape", waist = "Embla sash", legs = "Telchine Braconi",feet = "Lethargy houseaux +3" }
 		
 	sets.midcast.Phalanx = set_combine(sets.midcast['Enhancing Magic'], {main="Sakpata's sword", 
@@ -216,39 +226,39 @@ function init_gear_sets()
 		--102/102 SIRD     HQ body + Khun earring or Fi Follet OR cape to cap, both is 1 short of dropping hands for Regal for +2
     
     sets.midcast['Enfeebling Magic'] = {main="Contemplator +1",sub="Enki strap",ammo="Regal gem",				--20
-        head="Vitiation chapeau +3",neck="Duelist's torque +2",ear1="Snotra Earring",ear2="Malignance Earring",	--26, 0, 0, 0
+        head="Vitiation chapeau +4",neck="Duelist's torque +2",ear1="Snotra Earring",ear2="Malignance Earring",	--27, 0, 0, 0
         body="Lethargy Sayon +3",hands="Lethargy Gantherots +3",ring1="Stikini ring +1",ring2="Kishar ring",	--0, 29, 8, 0
         back=gear.CapeEnf,waist="Obstinate sash",legs="Lethargy fuseau +3",feet="Vitiation boots +3"}			--0, 7, 0 , 16
-		-- 610/625 to cap     base 440 merits 476 master														--106=582
+		-- 610/625 to cap     base 440 merits 476 master														--107=583
 		-- need 48 with master, earring 10, af body 2, obstinate sash 8 short 17 w/o MLs  15 more for Frazzle
-		-- Aminon 468 Mnd
+		-- Aminon 468 Mnd    435 mnd,  83 from cap
 		
 	sets.midcast.EnfeeblingDuration = set_combine(sets.midcast['Enfeebling Magic'], {hands = "Regal cuffs", feet="Lethargy houseaux +3"})
 		
 	sets.midcast['Enfeebling Magic'].Burst = sets.midcast['Enfeebling Magic']
 		
 	sets.midcast['Enfeebling Magic'].Resistant = {main="Contemplator +1",sub="Enki strap",ammo="Regal gem",
-        head="Vitiation chapeau +3",neck="Duelist's torque +2",ear1="Snotra Earring",ear2="Malignance Earring",
+        head="Vitiation chapeau +4",neck="Duelist's torque +2",ear1="Snotra Earring",ear2="Malignance Earring",
         body="Lethargy Sayon +3",hands="Lethargy Gantherots +3",ring1="Stikini ring +1",ring2="Stikini ring +1",
         back=gear.CapeEnf,waist="Obstinate sash",legs="Chironic hose",feet="Vitiation boots +3"}
 		--waist to obstinate sash at r22
 		
 	sets.midcast['Enfeebling Magic'].BurstResistant = {main="Contemplator +1",sub="Enki strap",range="Ullr",
-        head="Vitiation chapeau +3",neck="Duelist's torque +2",ear1="Snotra Earring",ear2="Malignance Earring",
+        head="Vitiation chapeau +4",neck="Duelist's torque +2",ear1="Snotra Earring",ear2="Malignance Earring",
         body="Lethargy Sayon +3",hands="Lethargy Gantherots +3",ring1="Stikini ring +1",ring2="Stikini ring +1",
         back=gear.CapeEnf,waist="Obstinate sash",legs="Chironic hose",feet="Vitiation boots +3"}
 		--waist to obstinate sash at r22
 	
 	sets.midcast['Enfeebling Magic'].Duration = {main="Contemplator +1",sub="Enki strap",ammo="Regal gem",			--20
-        head="Vitiation chapeau +3",neck="Duelist's torque +2",ear1="Snotra Earring",ear2="Malignance Earring",		--26, 0, 0, 0
+        head="Vitiation chapeau +4",neck="Duelist's torque +2",ear1="Snotra Earring",ear2="Malignance Earring",		--26, 0, 0, 0
         body="Lethargy Sayon +3",hands="Regal cuffs",ring1="Stikini ring +1",ring2="Kishar ring",					--0, 0, 8, 0
         back=gear.CapeEnf,waist="Obstinate sash",legs="Lethargy fuseau +3",feet="Vitiation boots +3"}				--0, 7, 0 , 16
 		
 	sets.midcast['Enfeebling Magic'].OA = sets.midcast['Enfeebling Magic']
 
-    sets.midcast['Dia III'] = set_combine(sets.midcast['Enfeebling Magic'], {head="Vitiation chapeau +3"})
+    sets.midcast['Dia III'] = set_combine(sets.midcast['Enfeebling Magic'], {head="Vitiation chapeau +4"})
 
-    sets.midcast['Slow II'] = set_combine(sets.midcast['Enfeebling Magic'], {head="Vitiation chapeau +3"})
+    sets.midcast['Slow II'] = set_combine(sets.midcast['Enfeebling Magic'], {head="Vitiation chapeau +4"})
 	
 	sets.midcast['Dispel'] = {neck="Duelist's torque +2"}
 	
@@ -305,12 +315,12 @@ function init_gear_sets()
 
     sets.midcast.EnhancingDuration = {sub = "Ammurapi shield", 
 		head = "Telchine cap",ear2="Lethargy earring +2",
-		body = "Vitiation tabard +3",hands = "Atrophy gloves +3",
+		body = "Vitiation tabard +3",hands = "Atrophy gloves +4",
 		waist = "Embla Sash",legs = "Telchine Braconi",feet = "Lethargy houseaux +3" }
         
     sets.buff.ComposureOther = {sub = "Ammurapi shield", 
 		head = "Lethargy chappel +3",ear2="Lethargy earring +2",
-		body = "Lethargy sayon +3",hands = "Atrophy gloves +3",
+		body = "Lethargy sayon +3",hands = "Atrophy gloves +4",
 		legs = "Lethargy fuseau +3",feet = "Lethargy houseaux +3"}
 
     sets.buff.Saboteur = {hands="Lethargy Gantherots +3"}
@@ -321,51 +331,56 @@ function init_gear_sets()
     
     -- Resting sets
     sets.resting = {main="Chatoyant Staff",ammo="Homiliary",
-        head="Vitiation chapeau +3",neck="Warder's charm +1",
+        head="Vitiation chapeau +4",neck="Warder's charm +1",
         body="Lethargy Sayon +3",hands="Volte gloves",ring1="Sheltered Ring",ring2="Shadow ring",
         back="Shadow mantle",waist="Carrier's sash",legs="Volte brais",feet="Nyame sollerets"}
     
 
     -- Idle sets
     sets.idle = {main="Daybreak",sub="Sacro Bulwark",ammo="Homiliary",
-        head="Vitiation chapeau +3",neck="Loricate torque +1",ear1="Infused Earring",ear2="Etiolation Earring",
+        head="Vitiation chapeau +4",neck="Loricate torque +1",ear1="Infused Earring",ear2="Etiolation Earring",
         body="Lethargy Sayon +3",hands="Malignance Gloves",ring1="Sheltered Ring",ring2="Defending Ring",
         back="Moonlight cape",waist="Carrier's sash",legs="Carmine Cuisses +1",feet="Malignance boots"}
 
     sets.idle.Town = {main="Daybreak",sub="Sacro Bulwark",ammo="Homiliary",
-        head="Vitiation chapeau +3",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Odnowa Earring +1",
+        head="Vitiation chapeau +4",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Odnowa Earring +1",
         body="Lethargy Sayon +3",hands="Volte Gloves",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
         back="Moonlight cape",waist="Carrier's sash",legs="Carmine Cuisses +1",feet="Malignance boots"}
     
     sets.idle.Weak = {main="Daybreak",sub="Sacro Bulwark",ammo="Homiliary",
-        head="Vitiation chapeau +3",neck="Loricate torque +1",ear1="Infused Earring",ear2="Etiolation Earring",
+        head="Vitiation chapeau +4",neck="Loricate torque +1",ear1="Infused Earring",ear2="Etiolation Earring",
         body="Lethargy Sayon +3",hands="Malignance Gloves",ring1="Sheltered Ring",ring2="Defending Ring",
         back="Moonlight cape",waist="Carrier's sash",legs="Carmine Cuisses +1",feet="Malignance boots"}
 		
 	sets.idle.Refresh = {main="Daybreak",sub="Sacro Bulwark",ammo="Homiliary",
-        head="Vitiation chapeau +3",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Odnowa Earring +1",
+        head="Vitiation chapeau +4",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Odnowa Earring +1",
         body="Lethargy Sayon +3",hands="Volte Gloves",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
         back="Moonlight cape",waist="Flume Belt",legs="Volte brais",feet="Malignance boots"}
 
     sets.idle.DT = {main="Daybreak",sub="Sacro Bulwark",ammo="Staunch tathlum +1",
-        head="Vitiation chapeau +3",neck="Loricate torque +1",ear1="Infused Earring",ear2="Loquacious Earring",
+        head="Vitiation chapeau +4",neck="Loricate torque +1",ear1="Infused Earring",ear2="Loquacious Earring",
         body="Lethargy Sayon +3",hands="Malignance Gloves",ring1="Sheltered Ring",ring2="Defending Ring",
         back="Moonlight cape",waist="Carrier's sash",legs="Malignance tights",feet="Malignance boots"}
 
     sets.idle.MDT = {main="Daybreak",sub="Sacro Bulwark",ammo="Staunch tathlum +1",
-        head="Vitiation chapeau +3",neck="Loricate torque +1",ear1="Infused Earring",ear2="Loquacious Earring",
+        head="Vitiation chapeau +4",neck="Loricate torque +1",ear1="Infused Earring",ear2="Loquacious Earring",
         body="Lethargy Sayon +3",hands="Malignance Gloves",ring1="Sheltered Ring",ring2="Defending Ring",
         back="Moonlight cape",waist="Carrier's sash",legs="Malignance tights",feet="Malignance boots"}
+		
+	sets.idle.Aminon = {ammo="Coiste bodhar",
+		head="Vitiation chapeau +4",neck="Republican Platinum Medal",ear1="Dedition earring",ear2="Telos Earring",
+        body="Lethargy Sayon +3",hands="Malignance Gloves",ring1="Roller's Ring",ring2="Defending Ring",
+        back="Null shawl",waist="Carrier's sash",legs="Malignance tights",feet="Malignance boots"}
     
     
     -- Defense sets
     sets.defense.PDT = {ammo="Staunch tathlum +1",
-        head="Vitiation chapeau +3",neck="Loricate torque +1",ear1="Infused Earring",ear2="Loquacious Earring",
+        head="Vitiation chapeau +4",neck="Loricate torque +1",ear1="Infused Earring",ear2="Loquacious Earring",
         body="Lethargy Sayon +3",hands="Malignance Gloves",ring1="Sheltered Ring",ring2="Defending Ring",
         back="Moonlight cape",waist="Carrier's sash",legs="Malignance tights",feet="Malignance boots"}
 
     sets.defense.MDT = {ammo="Staunch tathlum +1",
-        head="Vitiation chapeau +3",neck="Loricate torque +1",ear1="Infused Earring",ear2="Loquacious Earring",
+        head="Vitiation chapeau +4",neck="Loricate torque +1",ear1="Infused Earring",ear2="Loquacious Earring",
         body="Lethargy Sayon +3",hands="Malignance Gloves",ring1="Sheltered Ring",ring2="Defending Ring",
         back="Moonlight cape",waist="Carrier's sash",legs="Malignance tights",feet="Malignance boots"}
 
@@ -490,7 +505,7 @@ function job_state_change(stateField, newValue, oldValue)
         else
 			if newValue == 'Normal' then
 				if state.WeaponMode.value == 'Naegling' then
-				equip(sets.Naegling)
+					equip(sets.Naegling)
 				elseif state.WeaponMode.value == 'Maxentius' then
 					equip(sets.Maxentius)
 				elseif state.WeaponMode.value == 'Excalibur' then

@@ -49,7 +49,7 @@ end
 
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
-    state.OffenseMode:options('None', 'Savage', 'Rudra', 'Gandring', 'Daybreak', 'Carn')
+    state.OffenseMode:options('None', 'Savage', 'Rudra', 'Gandring', 'Daybreak', 'Carn')  --F9
     state.CastingMode:options('Resistant' , 'Normal', 'Enmity')   --Ctrl + F11
     state.IdleMode:options('Normal', 'PDT', 'DD')  --Ctrl + F12
 
@@ -234,7 +234,7 @@ function init_gear_sets()
 
     -- For song buffs (duration and AF3 set bonus)
     sets.midcast.SongEffect = {main="Carnwenhan", sub="Genmei shield", range="Gjallarhorn",
-        head="Fili Calot +3",neck="Moonbow whistle +1",ear1="Fili earring +1",ear2="Loquacious Earring",
+        head="Fili Calot +3",neck="Moonbow whistle +1",ear1="Loquacious Earring",ear2="Fili earring +1",
         body="Fili Hongreline +3",hands="Fili Manchettes +3",ring1="Defending Ring", ring2="Moonlight ring",
         back=gear.MAccCape,waist="Sailfi belt +1",legs="Inyanga Shalwar +2",feet="Brioso Slippers +4"}
 
@@ -290,10 +290,10 @@ function init_gear_sets()
 		
 	sets.midcast.Curaga.Resistant = sets.midcast.Cure.Resistant
 	
-	sets.midcast['Enhancing Magic'] = {sub = "Ammurapi shield",
-		head = "Telchine cap", neck = "Voltsurge torque", ear1 = "Etiolation earring", ear2 = "Loquacious earring",
-		body = "Telchine Chasuble", hands = "Telchine gloves", ring1="Kishar ring",
-		back = gear.MAccCape, waist = "Embla sash", legs = "Telchine Braconi",feet = "Telchine pigaches" }
+	sets.midcast['Enhancing Magic'] = {sub="Ammurapi shield",
+		head="Telchine cap", neck="Voltsurge torque", ear1="Etiolation earring", ear2="Loquacious earring",
+		body="Telchine Chasuble", hands="Telchine gloves", ring1="Kishar ring", ring2="Defending ring",
+		back=gear.MAccCape, waist="Embla sash", legs="Telchine Braconi",feet="Telchine pigaches" }
 		
 	sets.midcast.Regen = set_combine(sets.midcast['Enhancing Magic'], {head = "Inyanga tiara +2"})
         
@@ -399,7 +399,7 @@ function init_gear_sets()
     -- Basic set for if no TP weapon is defined.
     sets.engaged = {
         range="Linos",
-		head="Nyame Helm", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Mache earring +1",
+		head="Bunzi's hat", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Mache earring +1",
 		body="Ashera Harness", hands="Bunzi's gloves", left_ring="Lehko's Ring", right_ring="Moonlight Ring",
 		back=gear.BrdSTPCape, waist="Sailfi belt +1", legs="Nyame Flanchard", feet="Nyame Sollerets"
 	}    
@@ -407,7 +407,7 @@ function init_gear_sets()
     -- Set if dual-wielding
     sets.engaged.DW = {
 		range="Linos",
-		head="Nyame Helm", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Eabani earring",
+		head="Bunzi's hat", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Eabani earring",
 		body="Ashera Harness", hands="Bunzi's gloves", left_ring="Lehko's Ring", right_ring="Moonlight Ring",
 		back=gear.BrdSTPCape, waist="Reiki Yotai", legs="Nyame Flanchard", feet="Nyame Sollerets"
 	}
@@ -415,62 +415,62 @@ function init_gear_sets()
 	-- Sets with weapons defined.
 	
 	sets.engaged.Savage = {main="Naegling", sub="Genmei shield", range="Linos",
-		head="Nyame Helm", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Mache Earring +1",
-		body="Ashera Harness", hands="Bunzi's gloves", left_ring="Lehko's Ring", right_ring="Moonlight Ring",
+		head="Bunzi's hat", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Mache Earring +1",
+		body="Ashera Harness", hands="Bunzi's gloves", left_ring="Lehko's Ring", right_ring="Chirich Ring +1",
 		back=gear.BrdSTPCape, waist="Carrier's sash", legs="Nyame Flanchard", feet="Nyame Sollerets"}		
 		
 	sets.engaged.DW.Savage = {main="Naegling", sub="Centovente", range="Linos",
-		head="Nyame Helm", neck="Bard's charm +2", left_ear="Eabani Earring", right_ear="Suppanomimi",
+		head="Bunzi's hat", neck="Bard's charm +2", left_ear="Eabani Earring", right_ear="Suppanomimi",
 		body="Ashera Harness", hands="Bunzi's gloves", left_ring="Lehko's Ring", right_ring="Moonlight Ring",
 		back=gear.BrdSTPCape, waist="Carrier's sash", legs="Nyame Flanchard", feet="Nyame Sollerets"}
 		
 	sets.engaged.Carn = {main="Carnwenhan",sub="Genmei shield",range="Linos",
-		head="Nyame Helm", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Mache Earring +1",
+		head="Bunzi's hat", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Mache Earring +1",
 		body="Ashera Harness", hands="Bunzi's gloves", left_ring="Lehko's Ring", right_ring="Moonlight Ring",
 		back=gear.BrdSTPCape, waist="Carrier's sash", legs="Nyame Flanchard", feet="Nyame Sollerets"}
 		
 	sets.engaged.DW.Carn = {main="Carnwenhan", sub="Gleti's Knife", range="Linos",
-		head="Nyame Helm", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Eabani earring",
+		head="Bunzi's hat", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Eabani earring",
 		body="Ashera Harness", hands="Bunzi's gloves", left_ring="Lehko's Ring", right_ring="Moonlight Ring",
 		back=gear.BrdSTPCape, waist="Reiki yotai", legs="Nyame Flanchard", feet="Nyame Sollerets"}
 		
 	sets.engaged.Rudra = {main="Twashtar", sub="Genmei shield",range="Linos",
-		head="Nyame Helm", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Mache Earring +1",
+		head="Bunzi's hat", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Mache Earring +1",
 		body="Ashera Harness", hands="Bunzi's gloves", left_ring="Lehko's Ring", right_ring="Moonlight Ring",
 		back=gear.BrdSTPCape, waist="Carrier's sash", legs="Nyame Flanchard", feet="Nyame Sollerets"}
 		
 	sets.engaged.DW.Rudra = {main="Twashtar", sub="Centovente", range="Linos",
-		head="Nyame Helm", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Eabani earring",
+		head="Bunzi's hat", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Eabani earring",
 		body="Ashera Harness", hands="Bunzi's gloves", left_ring="Lehko's Ring", right_ring="Moonlight Ring",
 		back=gear.BrdSTPCape, waist="Reiki yotai", legs="Nyame Flanchard", feet="Nyame Sollerets"}
 		
 	sets.engaged.DW.RudraAcc = {main="Twashtar", sub="Gleti's knife", range="Linos",
-		head="Nyame Helm", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Suppanomimi",
+		head="Bunzi's hat", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Suppanomimi",
 		body="Ashera Harness", hands="Bunzi's gloves", left_ring="Lehko's Ring", right_ring="Moonlight Ring",
 		back=gear.BrdSTPCape, waist="Reiki yotai", legs="Nyame Flanchard", feet="Nyame Sollerets"}
 		
 	sets.engaged.Daybreak = {main="Daybreak", sub="Genmei shield", range="Linos",
-		head="Nyame Helm", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Mache Earring +1",
+		head="Bunzi's hat", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Mache Earring +1",
 		body="Ashera Harness", hands="Bunzi's gloves", left_ring="Lehko's Ring", right_ring="Moonlight Ring",
 		back=gear.BrdSTPCape, waist="Carrier's sash", legs="Nyame Flanchard", feet="Nyame Sollerets"}
 	
 	sets.engaged.DW.Daybreak = {main="Daybreak", sub="Centovente", range="Linos",
-		head="Nyame Helm", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Eabani earring",
+		head="Bunzi's hat", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Eabani earring",
 		body="Ashera Harness", hands="Bunzi's gloves", left_ring="Lehko's Ring", right_ring="Moonlight Ring",
 		back=gear.BrdSTPCape, waist="Reiki yotai", legs="Nyame Flanchard", feet="Nyame Sollerets"}
 		
 	sets.engaged.Gandring = {main="Mpu Gandring", sub="Genmei shield", range="Linos",
-		head="Nyame Helm", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Mache Earring +1",
+		head="Bunzi's hat", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Mache Earring +1",
 		body="Ashera Harness", hands="Bunzi's gloves", left_ring="Lehko's Ring", right_ring="Moonlight Ring",
 		back=gear.BrdSTPCape, waist="Carrier's sash", legs="Nyame Flanchard", feet="Nyame Sollerets"}
 	
 	sets.engaged.DW.Gandring = {main="Mpu Gandring", sub="Centovente", range="Linos",
-		head="Nyame Helm", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Eabani earring",
+		head="Bunzi's hat", neck="Bard's charm +2", left_ear="Telos Earring", right_ear="Eabani earring",
 		body="Ashera Harness", hands="Bunzi's gloves", left_ring="Lehko's Ring", right_ring="Moonlight Ring",
 		back=gear.BrdSTPCape, waist="Reiki yotai", legs="Nyame Flanchard", feet="Nyame Sollerets"}
 		
 	sets.engaged.Arebati = {main="Tauret",sub="Genmei shield",range="Linos",
-        head="Nyame Helm",neck="Bard's charm +2",ear1="Mache Earring +1",ear2="Telos Earring",
+        head="Bunzi's hat",neck="Bard's charm +2",ear1="Mache Earring +1",ear2="Telos Earring",
         body="Nyame mail",hands="Bunzi's gloves",ring1="Moonlight Ring",ring2="Moonlight Ring",
         back=gear.BrdSTPCape,waist="Sailfi Belt +1",legs="Nyame Flanchard",feet="Nyame Sollerets"}
 		

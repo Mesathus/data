@@ -80,7 +80,7 @@ function init_gear_sets()
     -- Default set for any weaponskill that isn't any more specifically defined
 	-- Set for single hit Str WS
     sets.precast.WS = {ammo="Knobkierrie",
-        head="Mpaca's cap",neck="Fotia gorget",ear1="Moonshade Earring",ear2="Kasuga Earring +1",
+        head="Mpaca's cap",neck="Fotia gorget",ear1="Moonshade Earring",ear2="Thrud Earring",
         body="Nyame mail",hands="Kasuga Kote +2",ring1="Regal Ring",ring2="Epaminondas's Ring",
         back=gear.CapeStrWSD,waist="Sailfi Belt +1",legs="Nyame Flanchard",feet="Nyame Sollerets"}
 		-- neck +2
@@ -111,6 +111,12 @@ function init_gear_sets()
 	}
 	
 	sets.precast.WS['Stardiver'] = {ammo="Coiste bodhar",
+		head="Mpaca's cap", neck="Fotia gorget", ear1="Schere earring", ear2="Moonshade earring",
+		body="Mpaca's Doublet", hands="Mpaca's Gloves", ring1="Niqmaddu Ring", ring2="Regal Ring",
+		back=gear.CapeStrWSD, waist="Fotia belt", legs="Mpaca's Hose", feet="Mpaca's Boots"	
+	}
+	
+	sets.precast.WS['Impulse Drive'] = {ammo="Coiste bodhar",
 		head="Mpaca's cap", neck="Fotia gorget", ear1="Schere earring", ear2="Moonshade earring",
 		body="Mpaca's Doublet", hands="Mpaca's Gloves", ring1="Niqmaddu Ring", ring2="Regal Ring",
 		back=gear.CapeStrWSD, waist="Fotia belt", legs="Mpaca's Hose", feet="Mpaca's Boots"	

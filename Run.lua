@@ -109,7 +109,7 @@ function init_gear_sets()
 	sets.precast.WS = {ammo="Seething bomblet +1",
         head="Nyame Helm",neck="Fotia gorget", left_ear="Sherida Earring",right_ear="Odnowa Earring +1",
 		body="Nyame Mail",hands="Nyame gauntlets",left_ring="Regal Ring",right_ring="Epaminondas's Ring",
-		back="Bleating mantle",waist="Fotia belt", legs="Nyame Flanchard", feet="Nyame sollerets"}
+		back="Null shawl",waist="Fotia belt", legs="Nyame Flanchard", feet="Nyame sollerets"}
 	
 	
 	
@@ -130,7 +130,7 @@ function init_gear_sets()
 		ring1="Evanescence ring", 										--5
 		legs="Carmine cuisses +1"										--20
 	}
-	-- 66/102  rawhide gloves 15, cape 10, agwu feet 10, halasz earring 5, audumbla/rumination 10, erilaz hat +3 20
+	-- 66/102  rawhide gloves 15, cape 10, agwu feet 10, halasz earring 5, audumbla/rumination 10, erilaz hat +3 5
     sets.midcast.FastRecast = {}
     sets.midcast['Enhancing Magic'] = {neck="Incanter's Torque", left_ear="Mimir Earring",right_ear="Andoaa Earring",
 		hands="Runeist mitons +1", waist="Olympus Sash", legs="Futhark Trousers +1"}
@@ -190,7 +190,7 @@ function init_gear_sets()
     sets.engaged = {ammo="Seeth. Bomblet +1",
 		head="Adhemar Bonnet +1",neck="Ainia Collar",left_ear="Sherida Earring", right_ear="Brutal Earring",
 		body="Adhemar Jacket +1", hands="Adhemar Wrist. +1",left_ring="Epona's Ring", right_ring="Hetairoi Ring",
-		back="Bleating Mantle",	legs="Samnuha Tights",waist="Sailfi Belt +1",
+		back="Null shawl",	legs="Samnuha Tights",waist="Sailfi Belt +1",
 		feet={ name="Herculean Boots", augments={'Accuracy+26','"Triple Atk."+4','DEX+9','Attack+1',}} 
     }
     
@@ -210,7 +210,7 @@ function init_gear_sets()
     sets.engaged.DW = {ammo="Seeth. Bomblet +1",
 		head="Adhemar Bonnet +1",neck="Ainia Collar",left_ear="Sherida Earring", right_ear="Suppanomimi",
 		body="Adhemar Jacket +1", hands="Adhemar Wrist. +1",left_ring="Epona's Ring", right_ring="Hetairoi Ring",
-		back="Bleating Mantle",	legs="Samnuha Tights",waist="Sailfi Belt +1",
+		back="Null shawl",	legs="Samnuha Tights",waist="Sailfi Belt +1",
 		feet={ name="Herculean Boots", augments={'Accuracy+26','"Triple Atk."+4','DEX+9','Attack+1',}} 
     }
 			

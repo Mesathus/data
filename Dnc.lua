@@ -225,6 +225,11 @@ function init_gear_sets()
 		head=gear.HercHatFC,	neck="Voltsurge torque", ear1="Etiolation earring", ear2="Loquacious Earring",
 		body="Dread jupon",	hands="Leyline Gloves", ring1="Prolix Ring",
 		legs="Rawhide trousers", feet=gear.HercFeetFC}
+		
+	sets.midcast.Phalanx = set_combine(sets.midcast.FastRecast, {
+		head=gear.PhalanxHeadTaeon,
+		body=gear.PhalanxBodyTaeon, hands=gear.PhalanxHandsTaeon, 
+		legs=gear.PhalanxLegsTaeon, feet=gear.PhalanxFeetTaeon})
 
     
     -- Sets to return to when not performing an action.

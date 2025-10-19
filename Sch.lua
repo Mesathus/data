@@ -130,6 +130,8 @@ function init_gear_sets()
     sets.precast.FC.Curaga = sets.precast.FC.Cure
 
     sets.precast.FC.Impact = set_combine(sets.precast.FC['Elemental Magic'].Resistant, {head=empty,body="Twilight Cloak"})
+	sets.precast.FC.Impact.Grimoire = set_combine(sets.precast.FC['Elemental Magic'].Resistant, {head=empty,body="Twilight Cloak"})
+	sets.precast.FC.Impact.OffArts = set_combine(sets.precast.FC['Elemental Magic'].Resistant, {head=empty,body="Twilight Cloak"})
 
 
     -- Midcast Sets
@@ -480,22 +482,28 @@ function job_post_precast(spell, action, spellMap, eventArgs)
 	if buffactive['accession'] or buffactive['manifestation'] then
 		equip(sets.precast.FC)
 	elseif (spell.type == 'WhiteMagic' and (buffactive['light arts'] or buffactive['addendum: white'])) or (spell.type == 'BlackMagic' and (buffactive['dark arts'] or buffactive['addendum: black'])) then
-		if spell.name ~= 'Dispelga' then
-			equip(sets.precast.FC.Grimoire)
-		else
+		if spell.name == 'Dispelga' then			
 			equip(sets.precast.FC['Dispelga'].Grimoire)
+		elseif spell.name == 'Impact' then
+			equip(sets.precast.FC.Impact.Grimoire)
+		else
+			equip(sets.precast.FC.Grimoire)
 		end
 	elseif (spell.type == 'WhiteMagic' and (buffactive['dark arts'] or buffactive['addendum: black'])) or (spell.type == 'BlackMagic' and (buffactive['light arts'] or buffactive['addendum: white'])) then
-		if spell.name ~= 'Dispelga' then
-			equip(sets.precast.FC.OffArts)
-		else
+		if spell.name == 'Dispelga' then			
 			equip(sets.precast.FC['Dispelga'].OffArts)
+		elseif spell.name == 'Impact' then
+			equip(sets.precast.FC.Impact.OffArts)
+		else
+			equip(sets.precast.FC.OffArts)
 		end
 	else
-		if spell.name ~= 'Dispelga' then
-			equip(sets.precast.FC)
-		else
+		if spell.name == 'Dispelga' then			
 			equip(sets.precast.FC['Dispelga'])
+		elseif spell.name == 'Impact' then
+			equip(sets.precast.FC.Impact)
+		else
+			equip(sets.precast.FC)
 		end
 	end
 end

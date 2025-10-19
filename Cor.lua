@@ -90,7 +90,7 @@ function init_gear_sets()
     include('Sef-Gear.lua')
 
     sets.precast.JA['Triple Shot'] = {body="Chasseur's Frac +3"}
-    sets.precast.JA['Snake Eye'] = {legs="Lanun Trews"}
+    sets.precast.JA['Snake Eye'] = {legs="Lanun Trews +1"}
     sets.precast.JA['Wild Card'] = {feet="Lanun Bottes +3"}
     sets.precast.JA['Random Deal'] = {body="Lanun Frac +3"}
 	--sets.precast.JA['Fold'] = {hands="Lanun Gants +3"}

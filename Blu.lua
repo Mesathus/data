@@ -532,7 +532,7 @@ function init_gear_sets()
     sets.engaged = {ammo="Coiste Bodhar",
         head="Adhemar bonnet +1",neck="Mirage stole +2",ear1="Brutal Earring",ear2="Telos earring",
         body="Adhemar jacket +1",hands="Adhemar Wristbands +1",ring1="Rajas Ring",ring2="Epona's Ring",
-        back="Bleating Mantle",waist="Chiner's belt +1",legs="Samnuha tights",feet={ name="Herculean Boots", augments={'Accuracy+26','"Triple Atk."+4','DEX+9','Attack+1',}}}
+        back="Null shawl",waist="Chiner's belt +1",legs="Samnuha tights",feet={ name="Herculean Boots", augments={'Accuracy+26','"Triple Atk."+4','DEX+9','Attack+1',}}}
 
     sets.engaged.Acc = {ammo="Coiste Bodhar",
         head="Whirlpool Mask",neck="Mirage stole +2",ear1="Bladeborn Earring",ear2="Steelflash Earring",
@@ -554,15 +554,15 @@ function init_gear_sets()
         body="Adhemar jacket +1",hands="Adhemar Wristbands +1",ring1="Ilabrat Ring",ring2="Epona's Ring",
         back=gear.CritCape,waist="Reiki Yotai",legs="Carmine cuisses +1",feet={name="Herculean boots", augments={'Accuracy+26','"Triple Atk."+4','DEX+9','Attack+1'}}}
 		
-	sets.engaged.DW.Hybrid = set_combine(sets.engaged.DW.Acc, {
-		head="Malignance chapeau",
-		body="Malignance tabard", hands="Malignance gloves", ring1="Hetairoi Ring",
-		legs="Malignance tights", feet="Malignance boots"})
-		
 	-- sets.engaged.DW.Hybrid = set_combine(sets.engaged.DW.Acc, {
-		-- head="Malignance chapeau", ear2="Cessance Earring",
-		-- body="Malignance tabard", hands="Malignance gloves", ring1="Chirich Ring +1", ring2 = "Chirich Ring +1",
+		-- head="Malignance chapeau",
+		-- body="Malignance tabard", hands="Malignance gloves", ring1="Hetairoi Ring",
 		-- legs="Malignance tights", feet="Malignance boots"})
+		
+	sets.engaged.DW.Hybrid = set_combine(sets.engaged.DW.Acc, {
+		head="Malignance chapeau", ear2="Cessance Earring", ear2="Eabani earring",
+		body="Malignance tabard", hands="Malignance gloves", ring1="Chirich Ring +1", ring2 = "Chirich Ring +1",
+		waist="Carrier's sash",legs="Malignance tights", feet="Malignance boots"})
 
     sets.engaged.DW.Refresh = {ammo="Ginsen",
         head="Rawhide Mask",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Suppanomimi",

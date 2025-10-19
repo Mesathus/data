@@ -1,0 +1,17 @@
+sets.exported = {
+    main="Maxentius",
+    sub="Genmei Shield",
+    ammo="Staunch Tathlum +1",
+    head="Amalric Coif +1",
+    body="Inyanga Jubbah +2",
+    hands="Volte Gloves",
+    legs="Volte Brais",
+    feet={ name="Amalric Nails +1", augments={'Mag. Acc.+20','"Mag.Atk.Bns."+20','"Conserve MP"+7',}},
+    neck="Voltsurge Torque",
+    waist="Embla Sash",
+    left_ear="Etiolation Earring",
+    right_ear="Malignance Earring",
+    left_ring="Kishar Ring",
+    right_ring="Metamor. Ring +1",
+    back="Fi Follet Cape +1",
+}

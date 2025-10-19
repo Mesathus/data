@@ -8,6 +8,7 @@ function get_sets()
 
     -- Load and initialize the include file.
     include('Mote-Include.lua')
+	include('Sef-Utility.lua')
 end
 
 
@@ -47,10 +48,11 @@ end
 
 -- Define sets and vars used by this job file.
 function init_gear_sets()
+	include('Sef-Gear.lua')
     --------------------------------------
     -- Precast sets
     --------------------------------------
-
+	
     -- Precast sets to enhance JAs
     sets.precast.JA['Mijin Gakure'] = {legs="Mochizuki Hakama"}
     sets.precast.JA['Futae'] = {legs="Iga Tekko +2"}
@@ -89,7 +91,7 @@ function init_gear_sets()
     sets.precast.WS = {ammo="Cath Palug stone",
         head="Adhemar bonnet +1",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Ishvara Earring",
         body="Adhemar Jacket +1",hands="Adhemar Wristbands +1",ring1="Regal Ring",ring2="Ilabrat Ring",
-        back="Bleating Mantle",waist="Fotia Belt",legs="Samnuha Tights",feet="Adhemar Gamashes +1"}
+        back="Null shawl",waist="Fotia Belt",legs="Samnuha Tights",feet="Adhemar Gamashes +1"}
     
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {})
 
@@ -212,12 +214,12 @@ function init_gear_sets()
     sets.engaged = {ammo="Seething Bomblet +1"
 		,head="Adhemar Bonnet +1", neck="Iskur gorget",left_ear="Brutal Earring",right_ear="Telos Earring"
 		,body="Adhemar Jacket +1", hands="Adhemar Wristbands +1", left_ring="Hetaroi Ring", right_ring="Epona's Ring"
-		,back="Bleating Mantle", waist="Sailfi Belt +1", legs="Samnuha Tights", feet={ name="Herculean Boots", augments={'Accuracy+28','"Triple Atk."+4',}}}
+		,back="Null shawl", waist="Sailfi Belt +1", legs="Samnuha Tights", feet={ name="Herculean Boots", augments={'Accuracy+28','"Triple Atk."+4',}}}
 		
 	sets.engaged.Hybrid = {ammo="Yamarang"
 		,head="Malignance chapeau", neck="Loricate torque +1",left_ear="Brutal Earring",right_ear="Telos Earring"
 		,body="Malignance tabard", hands="Malignance gloves", left_ring="Defending Ring", right_ring="Epona's Ring"
-		,back="Bleating Mantle", waist="Sailfi Belt +1", legs="Malignance Tights", feet="Malignance boots"}
+		,back="Null shawl", waist="Sailfi Belt +1", legs="Malignance Tights", feet="Malignance boots"}
 		
     sets.engaged.Acc = {ammo="Qirmiz Tathlum",
         head="Whirlpool Mask",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
@@ -244,7 +246,7 @@ function init_gear_sets()
     --sets.engaged.HighHaste = {ammo="Qirmiz Tathlum",
     --    head="Adhemar bonnet",neck="Lissome Necklace",ear1="Brutal Earring",ear2="Suppanomimi",
     --    body="Adhemar jacket",hands="Adhemar wristbands",ring1="Rajas Ring",ring2="Epona's Ring",
-    --    back="Bleating Mantle",waist="Patentia Sash",legs="Samnuha tights",feet="Herculean Boots"}
+    --    back="Null shawl",waist="Patentia Sash",legs="Samnuha tights",feet="Herculean Boots"}
     --sets.engaged.Acc.HighHaste = {ammo="Qirmiz Tathlum",
     --    head="Whirlpool Mask",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
     --    body="Mochizuki Chainmail",hands="Otronif Gloves",ring1="Rajas Ring",ring2="Epona's Ring",
@@ -296,7 +298,7 @@ function init_gear_sets()
     --sets.engaged.MaxHaste = {ammo="Qirmiz Tathlum",
     --    head="Adhemar bonnet",neck="Lissome Necklace",ear1="Brutal Earring",ear2="Cessance earring",
     --    body="Adhemar jacket",hands="Adhemar wristbands",ring1="Rajas Ring",ring2="Epona's Ring",
-    --    back="Bleating Mantle",waist="Windbuffet belt +1",legs="Samnuha tights",feet="Herculean Boots"}
+    --    back="Null shawl",waist="Windbuffet belt +1",legs="Samnuha tights",feet="Herculean Boots"}
     --sets.engaged.Acc.MaxHaste = {ammo="Qirmiz Tathlum",
     --    head="Whirlpool Mask",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
     --    body="Otronif Harness +1",hands="Otronif Gloves",ring1="Rajas Ring",ring2="Epona's Ring",
@@ -339,6 +341,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     if state.Buff.Doom then
         equip(sets.buff.Doom)
     end
+	get_obi_bonus(spell)
 end
 
 

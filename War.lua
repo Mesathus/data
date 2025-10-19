@@ -84,7 +84,7 @@ function init_gear_sets()
        head="Pummeler's Mask +3",neck="Unmoving Collar +1",ear1="Friomisi Earring",ear2="Trux Earring",
        body="Souveran Cuirass",hands="Pumm. Mufflers +2",ring1="Apeile Ring",ring2="Apeile Ring +1",
        waist="Goading Belt",feet="Souveran Schuhs"}
-    sets.precast.JA['Blood Rage'] = set_combine(sets.precast.JA['Provoke'], {body="Boii Lorica +1"})
+    sets.precast.JA['Blood Rage'] = set_combine(sets.precast.JA['Provoke'], {body="Boii Lorica +2"})
     sets.precast.JA['Warcry'] = set_combine(sets.precast.JA['Provoke'], {head="Agoge Mask +1"})  
        
     -- Sets to apply to any actions of spell.type
@@ -108,7 +108,7 @@ function init_gear_sets()
     -- Weaponskill sets
     sets.precast.WS = {ammo="Knobkierrie",
         head="Nyame helm", neck="Warrior's beads +2", ear1="Moonshade Earring", ear2="Boii Earring +2",
-        body="Nyame mail", hands="Boii mulfflers +2", ring1="Regal Ring", ring2="Epaminondas's Ring",
+        body="Nyame mail", hands="Boii mufflers +2", ring1="Regal Ring", ring2="Epaminondas's Ring",
         back=gear.CapeStrWSD, waist="Sailfi Belt +1", legs="Nyame Flanchard", feet="Nyame Sollerets"}
 		
 	sets.precast.WS.Multi = {ammo="Coiste Bodhar",																		-- 3
@@ -119,7 +119,7 @@ function init_gear_sets()
 	
 	sets.precast.WS.Magic = {ammo="Knobkierrie",
         head="Nyame helm",neck="Sibyl scarf",ear1="Moonshade Earring",ear2="Friomisi earring",
-        body="Nyame mail",hands="Boii mulfflers +2",ring1="Regal Ring",ring2="Epaminondas's Ring",
+        body="Nyame mail",hands="Boii mufflers +2",ring1="Regal Ring",ring2="Epaminondas's Ring",
         back=gear.CapeStrWSD,waist="Orpheus's sash",legs="Nyame Flanchard",feet="Nyame Sollerets"}
    
     -- Specific weaponskill sets.
@@ -300,7 +300,7 @@ function init_gear_sets()
  
     sets.engaged.Odium =   {ammo="Seething Bomblet +1",
         head="Skormoth Mask",neck="Lissome Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
-        body="Boii Lorica +1",hands="Acro Gauntlets",ring1="Petrov Ring",ring2="Haverton Ring",
+        body="Boii Lorica +2",hands="Acro Gauntlets",ring1="Petrov Ring",ring2="Haverton Ring",
         back="Cichol's Mantle",waist="Shetal Stone",legs=gear.OdysseanLegsTP,feet="Boii Calligae +1"}
    
     --------------------------------------

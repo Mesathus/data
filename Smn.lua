@@ -163,9 +163,9 @@ function init_gear_sets()
     -- Fast cast sets for spells
     
     sets.precast.FC = {
-        head="Nahtirah Hat",ear2="Loquacious Earring",
-        body="Vanir Cotehardie",ring1="Prolix Ring",
-        back="Swith Cape +1",waist="Witful Belt",legs="Orvail Pants +1",feet="Chelona Boots +1"}
+        head="Amalric Coif +1",neck="Voltsurge Torque",left_ear="Etiolation Earring",right_ear="Malignance Earring",	--11, 4, 1, 4   20
+		body="Inyanga Jubbah +2",hands="Volte Gloves",left_ring="Kishar Ring",right_ring="Defending Ring",				--14, 6, 4, 0   44
+		back="Fi Follet Cape +1",waist="Embla Sash",legs="Volte Brais",feet="Amalric Nails +1"}							--10, 5, 8, 6   73
 
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash"})
 
@@ -173,9 +173,9 @@ function init_gear_sets()
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
-        head="Nahtirah Hat",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Vanir Cotehardie",hands="Yaoyotl Gloves",ring1="Rajas Ring",ring2="K'ayres Ring",
-        back="Pahtli Cape",waist="Cascade Belt",legs="Hagondes Pants",feet="Hagondes Sabots"}
+        head="Nyame helm", neck="Fotia gorget", left_ear="Moonshade Earring", right_ear="Malignance earring",
+		body="Nyame mail", hands="Nyame gauntlets", left_ring="Epaminodas's Ring", right_ring="Metamorph Ring +1",
+		back="Null shawl", waist="Fotia belt", legs="Nyame Flanchard", feet="Nyame Sollerets"}
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
     sets.precast.WS['Myrkr'] = {
@@ -188,16 +188,18 @@ function init_gear_sets()
     -- Midcast sets
     --------------------------------------
 
-    sets.midcast.FastRecast = {
-        head="Nahtirah Hat",ear2="Loquacious Earring",
-        body="Vanir Cotehardie",hands="Bokwus Gloves",ring1="Prolix Ring",
-        back="Swith Cape +1",waist="Witful Belt",legs="Hagondes Pants",feet="Hagondes Sabots"}
+    sets.midcast.FastRecast = sets.precast.FC
 
-    sets.midcast.Cure = {main="Tamaxchi",sub="Genbu's Shield",
-        head="Nahtirah Hat",ear2="Loquacious Earring",
-        body="Heka's Kalasiris",hands="Bokwus Gloves",ring1="Prolix Ring",ring2="Sirona's Ring",
-        back="Swith Cape +1",waist="Witful Belt",legs="Hagondes Pants",feet="Hagondes Sabots"}
+    sets.midcast.Cure = {main="Daybreak",sub="Genbu's Shield",
+        head="Nyame helm",neck="Voltsurge Torque",left_ear="Etiolation Earring",right_ear="Malignance Earring",
+        body="Bunzi's robe",hands="Nyame gauntlets",ring1="Kishar Ring",ring2="Defending Ring",
+        back="Fi follet Cape +1",waist="Carrier's sash",legs="Vanya slops",feet="Medium's Sabots"}
 
+	sets.midcast['Enhancing Magic'] = {sub = "Ammurapi shield",
+		head="Telchine cap", neck="Voltsurge torque", ear1="Etiolation earring", ear2="Loquacious earring",
+		body="Telchine Chasuble", hands="Telchine gloves", ring1="Kishar ring", ring2="Defending ring",
+		back="Null shawl", waist="Embla sash", legs="Telchine Braconi",feet="Telchine pigaches" }
+	
     sets.midcast.Stoneskin = {waist="Siegel Sash"}
 
     sets.midcast['Elemental Magic'] = {main="Lehbrailg +2",sub="Wizzan Grip",
@@ -260,10 +262,10 @@ function init_gear_sets()
         back="Pahtli Cape",waist="Austerity Belt",legs="Nares Trews",feet="Chelona Boots +1"}
     
     -- Idle sets
-    sets.idle = {main="Bolelabunga",sub="Genbu's Shield",ammo="Seraphicaller",
-        head="Convoker's Horn",neck="Wiglen Gorget",ear1="Gifted Earring",ear2="Loquacious Earring",
-        body="Hagondes Coat",hands="Serpentes Cuffs",ring1="Sheltered Ring",ring2="Sangoma Ring",
-        back="Umbra Cape",waist="Fucho-no-Obi",legs="Nares Trews",feet="Herald's Gaiters"}
+    sets.idle = {main="Daybreak",sub="Genbu's Shield",ammo="Seraphicaller",
+        head="Bunzi's hat",neck="Warder's charm +1",ear1="Etiolation Earring",ear2="Odnowa Earring +1",
+        body="Nyame mail",hands="Volte gloves",ring1="Defending Ring",ring2="Warden's Ring",
+        back="Null shawl",waist="Carrier's sash",legs="Volte brais",feet="Herald's Gaiters"}
 
     sets.idle.PDT = {main=gear.Staff.PDT,sub="Achaq Grip",ammo="Seraphicaller",
         head="Convoker's Horn",neck="Twilight Torque",ear1="Gifted Earring",ear2="Loquacious Earring",
@@ -352,9 +354,9 @@ function init_gear_sets()
     
     -- Normal melee group
     sets.engaged = {ammo="Seraphicaller",
-        head="Zelus Tiara",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Vanir Cotehardie",hands="Bokwus Gloves",ring1="Rajas Ring",ring2="K'ayres Ring",
-        back="Umbra Cape",waist="Goading Belt",legs="Hagondes Pants",feet="Hagondes Sabots"}
+        head="Bunzi's hat", neck="Null loop", left_ear="Brutal Earring", right_ear="Dedition earring",
+		body="Nyame mail", hands="Bunzi's gloves", left_ring="Lehko's Ring", right_ring="Chirich Ring +1",
+		back="Null shawl", waist="Carrier's sash", legs="Nyame Flanchard", feet="Nyame Sollerets"}
 end
 
 -------------------------------------------------------------------------------------------------------------------
