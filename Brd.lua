@@ -337,9 +337,7 @@ function init_gear_sets()
     -- Sets to return to when not performing an action.
     
     -- Resting sets
-    sets.resting = {main=gear.Staff.HMP, 
-        body="Gendewitha Bliaut",
-        legs="Nares Trews",feet="Chelona Boots +1"}
+    sets.resting = {main=gear.Staff.HMP}
     
     
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
@@ -356,7 +354,7 @@ function init_gear_sets()
 		
 	sets.idle.DD = {range="Nibiru Harp",																--3
         head="Nyame helm",neck="Warder's charm +1",ear1="Etiolation Earring",ear2="Infused Earring",	--7, 0, 0, 0
-        body="Nyame mail",hands="Nyame gauntlets",ring1="Defending Ring",ring2="Moonlight Ring",		--9, 7, 10, 5
+        body="Nyame mail",hands="Nyame gauntlets",ring1="Murky Ring",ring2="Moonlight Ring",			--9, 7, 10, 5
         back="Moonlight cape",waist="Carrier's sash",legs="Nyame flanchard",feet="Fili Cothurnes +3"}	--6, 0, 8, 0
 		-- 55%
 		

@@ -1,0 +1,17 @@
+sets.exported = {
+    main="Ukonvasara",
+    sub="Utu Grip",
+    ammo="Staunch Tathlum +1",
+    head={ name="Valorous Mask", augments={'Pet: STR+2','Pet: DEX+6','Phalanx +3','Accuracy+18 Attack+18',}},
+    body="Sakpata's Plate",
+    hands="Sakpata's Gauntlets",
+    legs="Sakpata's Cuisses",
+    feet="Hermes' Sandals",
+    neck="Warder's Charm +1",
+    waist="Engraved Belt",
+    left_ear="Etiolation Earring",
+    right_ear="Infused Earring",
+    left_ring="Defending Ring",
+    right_ring="Shadow Ring",
+    back="Moonlight Cape",
+}

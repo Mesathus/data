@@ -470,7 +470,7 @@ function init_gear_sets()
     -- Sets to return to when not performing an action.
 
     -- Gear for learning spells: +skill and AF hands.
-    sets.Learning = {ammo="Mavi Tathlum",hands="Assimilator's Bazubands +1"}
+    sets.Learning = {hands="Assimilator's Bazubands +1"}
         --head="Luhlaza Keffiyeh +3",  
         --body="Assimilator's Jubbah",hands="Assimilator's Bazubands +1",
         --back="Cornflower Cape",legs="Mavi Tayt +2",feet="Luhlaza Charuqs"}

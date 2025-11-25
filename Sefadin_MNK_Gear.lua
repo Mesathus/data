@@ -19,7 +19,7 @@ function init_gear_sets()
     -- Precast sets to enhance JAs on use
     sets.precast.JA['Hundred Fists'] = {legs="Hesychast's Hose +3"}
     sets.precast.JA['Boost'] = {hands="Anchorite's Gloves +3",waist="Ask Sash"}
-    sets.precast.JA['Dodge'] = {feet="Anchorite's Gaiters +1"}
+    sets.precast.JA['Dodge'] = {feet="Anchorite's Gaiters +3"}
     sets.precast.JA['Focus'] = {head="Anchorite's Crown +1"}
     sets.precast.JA['Counterstance'] = {feet="Melee Gaiters +2"}
     sets.precast.JA['Footwork'] = {feet="Bhikku Gaiters +2"}
@@ -29,7 +29,7 @@ function init_gear_sets()
     sets.precast.JA['Chi Blast'] = {
         head="Hesychast's Crown +3",
         body="Otronif Harness +1",hands="Hesychast's Gloves +3",
-        back="Tuilha Cape",legs="Hesychast's Hose +3",feet="Anchorite's Gaiters +2"}
+        back="Tuilha Cape",legs="Hesychast's Hose +3",feet="Anchorite's Gaiters +3"}
 
     sets.precast.JA['Chakra'] = {ammo="Iron Gobbet",
         head="Genmei Kabuto",neck="Unmoving Collar +1",
@@ -130,7 +130,7 @@ function init_gear_sets()
     sets.precast.WS['Tornado Kick']    = set_combine(sets.precast.WS, {
 		head="Mpaca's Cap", neck="Fotia Gorget", ear1="Moonshade Earring",	ear2="Schere Earring",
         body="Mpaca's Doublet",	hands="Mpaca's Gloves", ring1="Niqmaddu Ring", ring2="Gere Ring",
-        back="Sacro Mantle", waist="Moonbow Belt +1", legs="Mpaca's hose", feet="Anchorite's Gaiters +2"
+        back="Sacro Mantle", waist="Moonbow Belt +1", legs="Mpaca's hose", feet="Anchorite's Gaiters +3"
 		})
 		
 	sets.precast.WS['Dragon Kick']     = set_combine(sets.precast.WS['Tornado Kick'], {})
@@ -230,50 +230,50 @@ function init_gear_sets()
     sets.engaged = {ammo="Coiste bodhar",
 		head="Adhemar Bonnet +1", neck="Mnk. Nodowa +2", ear1="Sherida Earring", ear2="Schere Earring",
 		body="Tatena. Harama. +1", hands="Adhemar Wrist. +1", ring1="Gere Ring", ring2="Niqmaddu Ring",
-		back="Null shawl", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's gaiters +2"
+		back="Null shawl", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's Gaiters +3"
 	}
 		
     sets.engaged.Acc = {ammo="Coiste bodhar",
 		head="Adhemar Bonnet +1", neck="Mnk. Nodowa +2", ear1="Sherida Earring", ear2="Schere Earring",
 		body="Tatena. Harama. +1", hands="Adhemar Wrist. +1", ring1="Gere Ring", ring2="Niqmaddu Ring",
-		back="Null shawl", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's gaiters +2"
+		back="Null shawl", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's Gaiters +3"
 	}
 
     -- Defensive melee hybrid sets
     sets.engaged.PDT = {ammo="Coiste bodhar",
 		head="Adhemar Bonnet +1", neck="Mnk. Nodowa +2", ear1="Sherida Earring", ear2="Schere Earring",
 		body="Tatena. Harama. +1", hands="Adhemar Wrist. +1", ring1="Gere Ring", ring2="Niqmaddu Ring",
-		back="Null shawl", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's gaiters +2"
+		back="Null shawl", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's Gaiters +3"
 	}
 		
     sets.engaged.Acc.PDT = {ammo="Coiste bodhar",
 		head="Adhemar Bonnet +1", neck="Mnk. Nodowa +2", ear1="Sherida Earring", ear2="Schere Earring",
 		body="Tatena. Harama. +1", hands="Adhemar Wrist. +1", ring1="Gere Ring", ring2="Niqmaddu Ring",
-		back="Null shawl", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's gaiters +2"
+		back="Null shawl", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's Gaiters +3"
 	}
 		
 	sets.engaged.MEVA = {ammo="Coiste bodhar",
 		head="Adhemar Bonnet +1", neck="Mnk. Nodowa +2", ear1="Sherida Earring", ear2="Schere Earring",
 		body="Tatena. Harama. +1", hands="Adhemar Wrist. +1", ring1="Gere Ring", ring2="Niqmaddu Ring",
-		back="Null shawl", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's gaiters +2"
+		back="Null shawl", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's Gaiters +3"
 	}
 		
     sets.engaged.Acc.MEVA = {ammo="Coiste bodhar",
 		head="Adhemar Bonnet +1", neck="Mnk. Nodowa +2", ear1="Sherida Earring", ear2="Schere Earring",
 		body="Tatena. Harama. +1", hands="Adhemar Wrist. +1", ring1="Gere Ring", ring2="Niqmaddu Ring",
-		back="Null shawl", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's gaiters +2"
+		back="Null shawl", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's Gaiters +3"
 	}
 		
     sets.engaged.Counter = {ammo="Coiste bodhar",
 		head="Adhemar Bonnet +1", neck="Mnk. Nodowa +2", ear1="Sherida Earring", ear2="Schere Earring",
 		body="Tatena. Harama. +1", hands="Adhemar Wrist. +1", ring1="Gere Ring", ring2="Niqmaddu Ring",
-		back="Null shawl", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's gaiters +2"
+		back="Null shawl", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's Gaiters +3"
 	}
 	
 	sets.engaged.Acc.Counter = {ammo="Coiste bodhar",
 		head="Adhemar Bonnet +1", neck="Mnk. Nodowa +2", ear1="Sherida Earring", ear2="Schere Earring",
 		body="Tatena. Harama. +1", hands="Adhemar Wrist. +1", ring1="Gere Ring", ring2="Niqmaddu Ring",
-		back="Null shawl", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's gaiters +2"
+		back="Null shawl", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's Gaiters +3"
 	}
 		
 	sets.engaged.Hybrid = {ammo="Staunch Tathlum +1",															--3
@@ -319,23 +319,23 @@ function init_gear_sets()
     sets.engaged.Footwork = {ammo="Coiste bodhar",
 		head="Adhemar Bonnet +1", neck="Mnk. Nodowa +2", ear1="Sherida Earring", ear2="Schere Earring",
 		body="Tatena. Harama. +1", hands="Adhemar Wrist. +1", ring1="Gere Ring", ring2="Niqmaddu Ring",
-		back="Null shawl", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's gaiters +2"
+		back="Null shawl", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's Gaiters +3"
 		}
 		
     sets.engaged.Footwork.Acc = {ammo="Coiste bodhar",
 		head="Adhemar Bonnet +1", neck="Mnk. Nodowa +2", ear1="Sherida Earring", ear2="Schere Earring",
 		body="Tatena. Harama. +1", hands="Adhemar Wrist. +1", ring1="Gere Ring", ring2="Niqmaddu Ring",
-		back="Sacro Mantle", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's gaiters +2"
+		back="Sacro Mantle", waist="Moonbow Belt +1", legs="Bhikku Hose +2", feet="Anchorite's Gaiters +3"
 		}
 		
-	sets.engaged.Footwork.Hybrid = set_combine(sets.engaged.Hybrid, {feet="Anchorite's gaiters +2"})
-	sets.engaged.Footwork.Defense = set_combine(sets.engaged.Defense, {feet="Anchorite's gaiters +2"})
-	sets.engaged.Footwork.SB = set_combine(sets.engaged.SB, {feet="Anchorite's gaiters +2"})
+	sets.engaged.Footwork.Hybrid = set_combine(sets.engaged.Hybrid, {feet="Anchorite's Gaiters +3"})
+	sets.engaged.Footwork.Defense = set_combine(sets.engaged.Defense, {feet="Anchorite's Gaiters +3"})
+	sets.engaged.Footwork.SB = set_combine(sets.engaged.SB, {feet="Anchorite's Gaiters +3"})
     
 	-- Quick sets for post-precast adjustments, listed here so that the gear can be Validated.
     sets.impetus_body = {body="Bhikku Cyclas +2"}
 	sets.boost = {waist="Ask Sash"}
-	sets.footwork_kick_feet = {feet="Anchorite's Gaiters +2"}
+	sets.footwork_kick_feet = {feet="Anchorite's Gaiters +3"}
 
 end
 

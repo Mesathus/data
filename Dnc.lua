@@ -119,20 +119,20 @@ function init_gear_sets()
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {ammo="Staunch tathlum +1",																--				--3
         head="Horos Tiara +3",neck="Loricate torque +1",ear1="Tuisto earring",ear2="Odnowa earring +1",				--15, 			--0, 6, 0, 3
-        body="Maxixi Casaque +2",hands="Maculele Bangles +3",ring1="Defending Ring",ring2="Gelatinous Ring +1",		--17|7,  		--0, 11, 10, 7
-        back=gear.CapeTP,waist="Engraved belt",legs="Dashing subligar",feet="Maxixi Toe Shoes +2"}					--0,0,10,12		--10, 0, 0, 0
-		--54% Waltz potency			50% PDT
+        body="Maxixi Casaque +3",hands="Maculele Bangles +3",ring1="Defending Ring",ring2="Gelatinous Ring +1",		--9|8,  		--0, 11, 10, 7
+        back=gear.CapeTP,waist="Engraved belt",legs="Dashing subligar",feet="Maxixi Toe Shoes +3"}					--0,0,10,12		--10, 0, 0, 0
+		--56% Waltz potency			50% PDT
         
     -- Don't need any special gear for Healing Waltz.
-    sets.precast.Waltz['Healing Waltz'] = {body="Maxixi Casaque +2"}
+    sets.precast.Waltz['Healing Waltz'] = {body="Maxixi Casaque +3"}
     
-    sets.precast.Samba = {head="Maxixi Tiara +2", back=gear.CapeTP}
+    sets.precast.Samba = {head="Maxixi Tiara +3", back=gear.CapeTP}
 
-    sets.precast.Jig = {legs="Horos Tights +3", feet="Maxixi Toe Shoes +2"}
+    sets.precast.Jig = {legs="Horos Tights +3", feet="Maxixi Toe Shoes +3"}
 
     -- sets.precast.Step = {ammo="Yamarang",
-        -- head="Maxixi Tiara +2",neck="Etoile Gorget +2",ear1="Mache Earring +1",ear2="Telos Earring",
-        -- body="Maxixi Casaque +2",hands="Maxixi Bangles +3",ring1="Regal Ring",ring2="Chirich Ring +1",
+        -- head="Maxixi Tiara +3",neck="Etoile Gorget +2",ear1="Mache Earring +1",ear2="Telos Earring",
+        -- body="Maxixi Casaque +3",hands="Maxixi Bangles +3",ring1="Regal Ring",ring2="Chirich Ring +1",
         -- back=gear.CapeTP, waist="Kentarch belt +1",legs="Malignance tights",feet="Horos Toe Shoes +3"}
 		
 	sets.precast.Step = {ammo="Staunch tathlum +1",															--3

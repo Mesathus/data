@@ -116,7 +116,7 @@ function init_gear_sets()
 
     sets.precast.JA['Jump'] = {
         ammo="Aurgelmir Orb +1",
-        head="Flam. Zucchetto +2",
+        head="Flamma Zucchetto +2",
         body="Pteroslaver Mail +3",
         hands="Vishap Fng. Gaunt. +3",
         legs="Pteroslaver Brais +3",
@@ -392,7 +392,7 @@ function init_gear_sets()
     sets.engaged = {ammo="Coiste Bodhar",																					--3
         head="Flamma Zucchetto +2",neck="Dragoon's Collar +2",ear1="Sherida Earring",ear2="Telos Earring",					--0, 0, 5, 0	--5, 0, 0, 0
         body="Peltast's plackart +2",hands="Peltast's vambraces +2",ring1="Niqmaddu Ring",ring2="Lehko Habhoka's ring",		--0, 6, 0, 0	--0, 0, 0, 0
-        back="Null shawl",waist="Ioskeha Belt +1", legs="Gleti's breeches", feet="Flam. Gambieras +2",						--7, 3, 0, 6	--0, 2, 0, 0
+        back="Null shawl",waist="Ioskeha Belt +1", legs="Gleti's breeches", feet="Flamma Gambieras +2",						--7, 3, 0, 6	--0, 2, 0, 0
         } --30% DA   7% TA   3% QA     37% DA w/ sroda, 52% @ 1200	Pteroslaver Brais +3
 
     ------------------------------------------------------------------------------------------------

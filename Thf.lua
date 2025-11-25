@@ -435,10 +435,11 @@ function init_gear_sets()
 		waist="Patentia sash",legs="Malignance tights",feet="Malignance boots"}
 		
 	sets.idle.Evasion = {ammo="Yamarang",
-        head="Turms cap +1",neck="Assassin's gorget +2",ear1="Infused Earring",ear2="Eabani Earring",
-        body="Nyame mail",hands="Turms Mittens +1",ring1="Defending Ring",ring2="Moonlight Ring",
-        back={ name="Toutatis's Cape", augments={'AGI+20','Eva.+20 /Mag. Eva.+20','Evasion+10','"Store TP"+10','Phys. dmg. taken-10%'}},
-		waist="Engraved belt",legs="Skulker's culottes +3",feet="Pillager's Poulaines +3"}
+        head="Turms cap +1",neck="Assassin's gorget +2",ear1="Infused Earring",ear2="Eabani Earring",											--
+        body="Nyame mail",hands="Turms Mittens +1",ring1="Defending Ring",ring2="Moonlight Ring",												--9, 0, 10, 5
+        back={ name="Toutatis's Cape", augments={'AGI+20','Eva.+20 /Mag. Eva.+20','Evasion+10','"Store TP"+10','Phys. dmg. taken-10%'}},		--10
+		waist="Engraved belt",legs="Skulker's culottes +3",feet="Pillager's Poulaines +3"}														--0, 13, 0
+		-- 47% PDT
 
     -- Defense sets
 

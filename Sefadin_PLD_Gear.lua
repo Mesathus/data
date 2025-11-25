@@ -114,7 +114,7 @@ function init_gear_sets()
      
     sets.precast.JA['Invincible'] = set_combine(sets.Enmity, {legs="Caballarius breeches +1"})
     sets.precast.JA['Shield Bash'] = set_combine(sets.Enmity, {ear1="Knightly earring", hands="Caballarius gauntlets +2"})    --sub="Aegis", 
-    sets.precast.JA['Holy Circle'] = set_combine(sets.Enmity, {feet="Reverence leggings +1"})
+    sets.precast.JA['Holy Circle'] = set_combine(sets.Enmity, {feet="Reverence leggings +4"})
     sets.precast.JA['Sentinel'] = set_combine(sets.Enmity, {feet="Caballarius leggings +2"})
     sets.precast.JA['Cover'] = set_combine(sets.Enmity, {head="Reverence coronet +1"})
     sets.precast.JA['Rampart'] = set_combine(sets.Enmity, {head="Caballarius coronet +2"})
@@ -173,7 +173,7 @@ function init_gear_sets()
     ------------------------------------------------------------------------------------------------
  
     sets.precast.WS = {
-        ammo="Aurgelmir Orb +1",
+        ammo="Coiste Bodhar",
         Head="Sakpata's Helm", --7
         Body="Sakpata's Breastplate", --10
         Hands="Sakpata's Gauntlets", --8
@@ -213,7 +213,7 @@ function init_gear_sets()
 	}  
      
     sets.precast.WS['Savage Blade'] = {
-        ammo="Aurgelmir Orb +1",			--coiste, crep, oshasha's,
+        ammo="Coiste Bodhar",			--coiste, crep, oshasha's,
         Head="Nyame Helm", --7
         Body="Nyame Mail", --10
         Hands="Nyame Gauntlets", --8
@@ -227,6 +227,10 @@ function init_gear_sets()
         Ring2="Rufescent Ring",
         back=gear.WSCape
     }
+	
+	sets.precast.WS['Knights of Round'] = set_combine(sets.precast.WS['Savage Blade'], {neck="Null loop", ear1="Mache earring +1",
+																						ring2="Regal ring",
+																						waist="Null belt", feet="Reverence leggings +4"})
  
     sets.precast.WS['Aeolian Edge'] = {
         ammo="Ghastly Tathlum +1",
@@ -243,6 +247,9 @@ function init_gear_sets()
         right_ring="Epaminondas's Ring",
         back=gear.WSCape
         }
+		
+	sets.precast.WS['Black Halo'] = sets.precast.WS['Savage Blade']
+	sets.precast.WS['Judgment'] = sets.precast.WS['Savage Blade']
  
     --------------------------------------- Accuracy Mode ------------------------------------------
     sets.precast.WS.Acc = set_combine(sets.precast.WS, {})
@@ -251,6 +258,7 @@ function init_gear_sets()
     sets.precast.WS['Savage Blade'].Acc = set_combine(sets.precast.WS['Savage Blade'], {})  
     sets.precast.WS['Chant du Cygne'].Acc = set_combine(sets.precast.WS['Chant du Cygne'], {})
     sets.precast.WS['Sanguine Blade'].Acc = set_combine(sets.precast.WS['Sanguine Blade'], {})
+	sets.precast.WS['Knights of Round'].Acc = set_combine(sets.precast.WS['Knights of Round'], {})
  
     ------------------------------------------------------------------------------------------------
     ---------------------------------------- Midcast Sets ------------------------------------------
@@ -283,19 +291,19 @@ function init_gear_sets()
 		Main="Sakpata's Sword", --5
 		sub="Priwen", --2
 		ammo="Staunch Tathlum +1",								--11 SIRD
-		Head=gear.PhalanxHeadPld, --4
+		Head=gear.PhalanxHeadPld, --5
 		ear1="Mimir earring",   			--10 skill			--9 knightly
 		ear2="Andoaa earring",				--5 skill			--8 magnetic  5 halasz
 		neck="Incanter's Torque",			--10 skill			--15 Moonbow
 		Body=gear.PhalanxBodyPld, --5
 		Hands="Souveran Handschuhs +1", --5
-		left_ring="Defending Ring",								--5 evanescense
+		left_ring="Murky Ring",								--5 evanescense
 		right_ring="Stikini Ring +1",		--8 skill			
 		waist="Flume Belt",										--10 Rumination/Audumbla
 		Feet="Souveran Schuhs +1", --5							--20 Odyssean
-		Back="Weard Mantle", --4
+		Back="Weard Mantle", --5
 		Legs="Sakpata's Cuisses", --5
-    } 	-- +35 Need to DarkMatter Ody Head    418 skill @ML35   tiers: 415 -32 / 443 -33, ML47 to hit the final skill tier, loses DT
+    } 	-- +37 Need to DarkMatter Ody Head    418 skill @ML35   tiers: 415 -32 / 443 -33, ML47 to hit the final skill tier, loses DT
 		-- 46% DT
 		-- SIRD swaps -> 78%
      
@@ -733,7 +741,7 @@ function init_gear_sets()
     ------------------------------------------------------------------------------------------------
 -- Define three tiers of Defense Taken.  These sets are cycled with the F10 Button.
     sets.engaged.DT1 = { -- 48%
-        ammo="Aurgelmir Orb +1",
+        ammo="Coiste Bodhar",
         Head="Sakpata's Helm", --7
         Body="Sakpata's Breastplate", --10
         Hands="Sakpata's Gauntlets", --8
@@ -860,7 +868,8 @@ function init_gear_sets()
 	sets.Burtgang = {main="Burtgang"}
 	sets.Naegling = {main="Naegling"}
 	sets.Malignance = {main="Malignance Sword"}
-	sets.Excalibur = {main='Excalibur'}
+	sets.Excalibur = {main="Excalibur"}
+	sets.Club = {main="Beryllium Mace +1"}
 	sets.Kiting = {legs="Carmine Cuisses +1", feet="Hippomenes socks +1"}
 	sets.Knockback = {back="Philidor Mantle", legs="Dashing subligar"}
 end

@@ -9,6 +9,7 @@ function get_sets()
   mote_include_version = 2
   -- Load and initialize the include file.
   include('Mote-Include.lua')
+  include('Sef-Utility.lua')
 end
 
 
@@ -97,12 +98,12 @@ function init_gear_sets()
 		main="Nibiru Sainti",ammo="Automaton Oil +3",
 		head=gear.taeon_head_pet,ear1="Guignol Earring",ear2="Pratik Earring",
 		body=gear.taeon_body_pet,hands=gear.taeon_hands_pet,
-		legs="Desultor Tassets",feet="Foire Bab. +1"
+		legs="Desultor Tassets",feet="Foire Babouches +2"
 	}
 
 	sets.precast.JA['Maintenance'] = {ammo="Automaton Oil"}
 
-	sets.precast.JA.Maneuver = {main="Kenkonken",neck="Bfn. Collar +1",ear2="Burana Earring",body="Karagoz Farsetto +1",hands="Foire Dastanas +1",back="Dispersal Mantle"}
+	sets.precast.JA.Maneuver = {main="Kenkonken",neck="Bfn. Collar +1",ear2="Burana Earring",body="Karagoz Farsetto +1",hands="Foire Dastanas +2",back="Dispersal Mantle"}
 
 	  -- Waltz set (chr and vit)
 	sets.precast.Waltz = {
@@ -137,7 +138,7 @@ function init_gear_sets()
 	sets.midcast.Pet.Cure = {
 		head="Naga Somen",
 		body="Naga Samue",hands="Regimen Mittens",ring1="Kunaji Ring",ring2="Thurandaut Ring",
-		back="Refraction Cape",waist="Gishdubar Sash",legs="Naga Hakama",feet="Foire Bab. +1"}
+		back="Refraction Cape",waist="Gishdubar Sash",legs="Naga Hakama",feet="Foire Babouches +2"}
 
 	sets.midcast.Pet['Elemental Magic'] = {main="Nibiru Sainti",
 		head="Rawhide Mask",ear1="Charivari Earring",ear2="Burana Earring",

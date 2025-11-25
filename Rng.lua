@@ -70,7 +70,7 @@ function init_gear_sets()
 	-- Precast sets to enhance JAs
 	sets.precast.JA['Bounty Shot'] = {hands="Amini Glovelettes +3",waist="Chaac Belt"}
 	sets.precast.JA['Camouflage'] = {body="Orion Jerkin +3"}
-	sets.precast.JA['Scavenge'] = {feet="Orion Socks +2"}
+	sets.precast.JA['Scavenge'] = {feet="Orion Socks +3"}
 	sets.precast.JA['Shadowbind'] = {hands="Orion Bracers +3"}
 	sets.precast.JA['Sharpshot'] = {legs="Orion Braccae +2"}
 	sets.precast.JA['Velocity Shot'] = {body="Amini Caban +3"}
@@ -156,7 +156,7 @@ function init_gear_sets()
 	sets.midcast.FastRecast = {
 		head="Orion Beret +3",ear1="Loquacious Earring",
 		ring1="Prolix Ring",
-		waist="Pya'ekue Belt +1",legs="Orion Braccae +2",feet="Orion Socks +2"}
+		waist="Pya'ekue Belt +1",legs="Orion Braccae +2",feet="Orion Socks +3"}
 
 	sets.midcast.Utsusemi = {}
 	
@@ -233,7 +233,7 @@ function init_gear_sets()
 	sets.defense.MDT = {ammo="",
 		head="Orion Beret +2",neck="Loricate torque +1",
 		body="Orion Jerkin +3",hands="Orion Bracers +3",ring1="Defending Ring",ring2="Fortified Ring",
-		back="Moonlight Cape",waist="Flume Belt",legs="Nahtirah Trousers",feet="Orion Socks +2"}
+		back="Moonlight Cape",waist="Flume Belt",legs="Nahtirah Trousers",feet="Orion Socks +3"}
 
 	sets.Kiting = {legs="Carmine cuisses +1",feet="Hippomenes socks +1"}
 

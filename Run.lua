@@ -67,23 +67,23 @@ function init_gear_sets()
     sets.enmity = {ammo="Sapience orb", 
 		head="Halitus helm", neck="Moonlight necklace", Ear1="Cryptic Earring", Ear2={name="Odnowa Earring +1",priority=110}, 
 		body="Emet harness +1", hands="Futhark Gloves +1", 
-		back=gear.CapeTank, waist="Warwolf Belt", legs="Erilaz leg guards", feet="Erilaz greaves"}
+		back=gear.CapeTank, waist="Warwolf Belt", legs="Erilaz leg guards +2", feet="Erilaz greaves +2"}
 
 	--------------------------------------
 	-- Precast sets
 	--------------------------------------
 
 	-- Precast sets to enhance JAs
-    sets.precast.JA['Vallation'] = set_combine(sets.enmity, {body="Runeist coat +1", legs="Futhark trousers +1"})
+    sets.precast.JA['Vallation'] = set_combine(sets.enmity, {body="Runeist coat +2", legs="Futhark trousers +1"})
     sets.precast.JA['Valiance'] = sets.precast.JA['Vallation']
-    sets.precast.JA['Pflug'] = set_combine(sets.enmity, {feet="Runeist bottes +1"})
+    sets.precast.JA['Pflug'] = set_combine(sets.enmity, {feet="Runeist bottes +2"})
     sets.precast.JA['Battuta'] = set_combine(sets.enmity, {head="Futhark Bandeau +1"})
     sets.precast.JA['Liement'] = set_combine(sets.enmity, {body="Futhark Coat +1"})
     sets.precast.JA['Lunge'] = {head="Nyame helm", neck="Sibyl scarf", ear1="Crematio Earring", ear2="Friomisi Earring",
             body="Agwu's robe", hands="Agwu's gages",ring1="Defending Ring", ring2="Metamorph Ring +1",
             back="Evasionist's Cape", waist="Orpheus's sash", legs="Agwu's slops", feet="Nyame sollerets"}
     sets.precast.JA['Swipe'] = sets.precast.JA['Lunge']
-    sets.precast.JA['Gambit'] = set_combine(sets.enmity, {hands="Runeist Mitons +1"})
+    sets.precast.JA['Gambit'] = set_combine(sets.enmity, {hands="Runeist Mitons +2"})
     sets.precast.JA['Rayke'] = set_combine(sets.enmity, {feet="Futhark Bottes +1"})
     sets.precast.JA['Elemental Sforzo'] = set_combine(sets.enmity, {body="Futhark Coat 1"})
     sets.precast.JA['Swordplay'] = set_combine(sets.enmity, {hands="Futhark Mitons +1"})
@@ -131,9 +131,10 @@ function init_gear_sets()
 		legs="Carmine cuisses +1"										--20
 	}
 	-- 66/102  rawhide gloves 15, cape 10, agwu feet 10, halasz earring 5, audumbla/rumination 10, erilaz hat +3 5
+	
     sets.midcast.FastRecast = {}
     sets.midcast['Enhancing Magic'] = {neck="Incanter's Torque", left_ear="Mimir Earring",right_ear="Andoaa Earring",
-		hands="Runeist mitons +1", waist="Olympus Sash", legs="Futhark Trousers +1"}
+		hands="Runeist mitons +2", waist="Olympus Sash", legs="Futhark Trousers +1"}
 	
 	sets.midcast.EnhancingDuration = {}
 	
@@ -218,12 +219,12 @@ function init_gear_sets()
     sets.engaged.PDT = {ammo="Aqreqaq Bomblet",
             head="Futhark Bandeau +1", neck="Twilight Torque", ear1="Ethereal Earring", ear2="Colossus's earring",
             body="Futhark Coat +1", hands="Umuthi Gloves", ring1="Dark Ring", ring2="Dark Ring",
-            back="Mollusca Mantle", waist="Flume Belt", legs="Runeist Trousers +1", feet="Iuitl Gaiters +1"}
+            back="Mollusca Mantle", waist="Flume Belt", legs="Runeist Trousers +2", feet="Iuitl Gaiters +1"}
 			
     sets.engaged.MDT = {
             head="Futhark Bandeau +1", neck="Twilight Torque", ear1="Ethereal Earring", ear2="Sanare Earring",
-            body="Runeist Coat +1", hands="Umuthi Gloves", ring1="Dark Ring", ring2="Dark Ring",
-            back="Mubvumbamiri mantle", waist="Flume Belt", legs="Runeist Trousers +1", feet="Iuitl Gaiters +1"}
+            body="Runeist Coat +2", hands="Umuthi Gloves", ring1="Dark Ring", ring2="Dark Ring",
+            back="Mubvumbamiri mantle", waist="Flume Belt", legs="Runeist Trousers +2", feet="Iuitl Gaiters +1"}
 			
     sets.engaged.repulse = {back="Repulse Mantle"}
 

@@ -1,3 +1,13 @@
+-- Initialization function for this job file.
+function get_sets()
+    mote_include_version = 2
+ 
+    -- Load and initialize the include file.
+    include('Mote-Include.lua')
+	include('Sef-Utility.lua')
+    --include('organizer-lib')
+end
+
 function user_setup()
 	-- Options: Override default values
     state.OffenseMode:options('Hybrid','Normal','Acc')
@@ -61,7 +71,7 @@ function init_gear_sets()
 	-- Fast cast sets for spells
 
 	sets.precast.FC = {ammo="Sapience Orb", --2
-        head="Sakpata's Helm", --12
+        head="Carmine Mask +1", --14
         neck="Voltsurge Torque", --4
         ear1="Loquacious Earring", --2
         ear2="Malignance Earring", --1
@@ -72,24 +82,13 @@ function init_gear_sets()
         back=Ankou_FC, --10
         waist="Tempus Fugit +1",
         legs="Arjuna breeches", --4
-        feet="Odyssean greaves"} --5
+        feet="Carmine greaves +1"} --8
+		--69%
 
 	sets.precast.FC.Impact = set_combine(sets.precast.FC, {head=empty,body="Twilight Cloak"})
 		
 	-- Midcast Sets
-	sets.midcast.FastRecast = {ammo="Sapience Orb", --2
-        head="Carmine Mask", --12
-        neck="Voltsurge Torque", --4
-        ear1="Loquacious Earring", --2
-        ear2="Malignance Earring", --1
-        body="Sacro Breastplate", --10
-        hands="Leyline Gloves", --8
-        ring1="Kishar Ring", --4
-        ring2="Prolix Ring", --2
-        back=Ankou_FC, --10
-        waist="Tempus Fugit +1",
-        legs="Arjuna breeches", --4
-        feet="Odyssean greaves"} --5
+	sets.midcast.FastRecast = set_combine(sets.precast.FC, {})
                    
 	-- Specific spells
 	sets.midcast.Endark = {
@@ -133,7 +132,7 @@ function init_gear_sets()
         left_ear="Dignitary's Earring",
         right_ear="Malignance Earring",
         left_ring="Stikini Ring +1",
-        right_ring="Weatherspoon Ring +1",
+        right_ring="Kishar Ring",
         back=Ankou_FC,}
 		   
 	sets.midcast['Dread Spikes'] = set_combine(sets.midcast['Dark Magic'], {
@@ -414,7 +413,7 @@ function init_gear_sets()
         left_ear="Moonshade Earring",
         right_ear="Malignance Earring",
         left_ring="Flamma Ring",
-        right_ring="Weatherspoon Ring +1",
+        right_ring="",
         back=Ankou_WSDmg}
 	
 	sets.precast.WS['Shadow of Death'] = {

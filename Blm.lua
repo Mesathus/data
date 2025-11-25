@@ -8,6 +8,7 @@ function get_sets()
     
     -- Load and initialize the include file.
     include('Mote-Include.lua')
+	include('Sef-Utility.lua')
 end
 
 
@@ -63,7 +64,7 @@ function init_gear_sets()
     ---- Precast Sets ----
     
     -- Precast sets to enhance JAs
-    sets.precast.JA['Mana Wall'] = {feet="Goetia Sabots +2"}
+    sets.precast.JA['Mana Wall'] = {feet="Wicce Sabots"}
 
     sets.precast.JA.Manafont = {body="Sorcerer's Coat +2"}
     
@@ -141,7 +142,7 @@ function init_gear_sets()
     sets.midcast.Drain = {main="Lehbrailg +2",sub="Mephitis Grip",ammo="Sturm's Report",
         head="Nahtirah Hat",neck="Aesir Torque",ear1="Psystorm Earring",ear2="Lifestorm Earring",
         body="Vanir Cotehardie",hands="Yaoyotl Gloves",ring1="Excelsis Ring",ring2="Sangoma Ring",
-        back="Refraction Cape",waist="Fucho-no-Obi",legs="Bokwus Slops",feet="Goetia Sabots +2"}
+        back="Refraction Cape",waist="Fucho-no-Obi",legs="Bokwus Slops",feet="Wicce Sabots"}
     
     sets.midcast.Aspir = sets.midcast.Drain
 
@@ -160,7 +161,7 @@ function init_gear_sets()
     
     sets.midcast['Elemental Magic'] = {main="Lathi",sub="Niobid strap",ammo="Seraphic ampulla",
         head="Merlinic hood",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Regal Earring",
-        body="Spaekona's Coat +1",hands="Amalric gages +1",ring1="Sangoma Ring",ring2="Shiva Ring +1",
+        body="Spaekona's Coat +3",hands="Amalric gages +1",ring1="Sangoma Ring",ring2="Shiva Ring +1",
         back="Bane Cape",waist="Orpheus's sash",legs="Merlinic shalwar",feet="Merlinic crackows"}
 
     sets.midcast['Elemental Magic'].Resistant = {main="Lathi",sub="Enki strap",ammo="Pemphredo Tathlum",
@@ -170,7 +171,7 @@ function init_gear_sets()
 		
 	sets.midcast['Elemental Magic'].Burst = {main="Lathi",sub="Niobid strap",ammo="Seraphic ampulla",
         head="Merlinic hood",neck="Mizukage-no-Kubikazari",ear1="Barkarole Earring",ear2="Regal Earring",
-        body="Spaekona's Coat +1",hands="Amalric gages +1",ring1="Mujin band",ring2="Locus Ring",
+        body="Spaekona's Coat +3",hands="Amalric gages +1",ring1="Mujin band",ring2="Locus Ring",
         back="Seshaw Cape",waist="Orpheus's sash",legs="Merlinic shalwar",feet="Merlinic crackows"}
 		
 	sets.midcast['Elemental Magic'].Burst2 = {main="Lathi",sub="Niobid strap",ammo="Pemphredo Tathlum",
@@ -249,7 +250,7 @@ function init_gear_sets()
 
     -- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
     
-    sets.buff['Mana Wall'] = {feet="Goetia Sabots +2"}
+    sets.buff['Mana Wall'] = {feet="Wicce Sabots"}
 
     sets.magic_burst = {neck="Mizukage-no-Kubikazari"}
 
@@ -263,18 +264,18 @@ function init_gear_sets()
     -- Normal melee group
     sets.engaged ={
     ammo="Staunch Tathlum +1",
-    head={ name="Nyame Helm", augments={'Path: B',}},
-    body={ name="Nyame Mail", augments={'Path: B',}},
-    hands={ name="Nyame Gauntlets", augments={'Path: B',}},
-    legs={ name="Nyame Flanchard", augments={'Path: B',}},
-    feet={ name="Nyame Sollerets", augments={'Path: B',}},
+    head="Nyame Helm", 
+    body="Nyame Mail", 
+    hands="Nyame Gauntlets", 
+    legs="Nyame Flanchard", 
+    feet="Nyame Sollerets", 
     neck="Combatant's Torque",
     waist="Goading Belt",
     left_ear="Brutal Earring",
     right_ear="Telos Earring",
     left_ring="Chirich Ring +1",
     right_ring="Chirich Ring +1",
-    back={ name="Aurist's Cape +1", augments={'Path: A',}}}
+    back="Aurist's Cape +1}}
 end
 
 -------------------------------------------------------------------------------------------------------------------

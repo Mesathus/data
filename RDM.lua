@@ -25,7 +25,7 @@ end
 function user_setup()
     state.OffenseMode:options('None', 'Normal', 'Enspell1')
     state.HybridMode:options('Normal', 'PhysicalDef', 'MagicalDef')
-    state.CastingMode:options('Normal', 'Resistant', 'Burst', 'BurstResistant', 'OA')
+    state.CastingMode:options('Normal', 'Resistant', 'Burst', 'BurstResistant', 'OA', 'Duration')
 	state.WeaponskillMode:options('Normal', 'Acc')
     state.IdleMode:options('Normal', 'Refresh', 'DT', 'Aminon')
 	state.WeaponMode = M{'None', 'Maxentius', 'Naegling', 'Excalibur'}		--Alt F10
@@ -157,6 +157,7 @@ function init_gear_sets()
         back=gear.CapeSavage,waist="Sailfi belt +1",legs="Nyame Flanchard",feet="Lethargy houseaux +3"}
 		--1068 Acc
 		--1053 with Ammurapi
+		-- 1068 + 262 distract + 116 SV Honor + 228 SV Blade + 20 Ionis + 90 stewpot = 1784
 		
 
     sets.precast.WS['Black Halo'].Acc = {ammo="Coiste Bodhar",
@@ -164,16 +165,17 @@ function init_gear_sets()
         body="Lethargy Sayon +3",hands="Atrophy gloves +4",ring1="Cacoethic Ring +1",ring2="Epaminondas's Ring",
         back=gear.CapeSavage,waist="Kentarch belt +1",legs="Nyame Flanchard",feet="Lethargy houseaux +3"}
 		--1227
+		-- 1227 + 262 distract + 116 SV Honor + 228 SV Blade + 20 Ionis + 90 stewpot = 1943
 		
 		
     -- Midcast Sets
     
     sets.midcast.FastRecast = sets.precast.FC
 
-    sets.midcast.Cure = {main="Grioavolr",sub="Enki strap",
+    sets.midcast.Cure = {main="Grioavolr",sub="Enki strap", ammo="Staunch tathlum +1",
         head="Kaykaus mitra +1",neck="Incanter's torque",ear2="Regal earring",
-        body="Kaykaus Bliaut +1",hands="Kaykaus cuffs +1",ring1="Stikini ring +1", ring2="Stikini ring +1",
-        back="Aurist's cape +1",waist ="Luminary sash", legs="Kaykaus tights +1",feet="Kaykaus boots +1"}
+        body="Kaykaus Bliaut +1",hands="Kaykaus cuffs +1",ring1="Defending ring", ring2="Murky ring",
+        back="Moonlight cape",waist ="Luminary sash", legs="Kaykaus tights +1",feet="Kaykaus boots +1"}
         
     sets.midcast.Curaga = sets.midcast.Cure
     sets.midcast.CureSelf = {waist="Gishdubar sash"}
@@ -397,7 +399,7 @@ function init_gear_sets()
     
     -- Normal melee group
     sets.engaged = {ammo="Coiste Bodhar",
-        head="Malignance chapeau",neck="Null loop",ear1="Sherida Earring",ear2="Lethargy earring +2",
+        head="Bunzi's hat",neck="Null loop",ear1="Sherida Earring",ear2="Lethargy earring +2",
         body="Malignance tabard",hands="Bunzi's gloves",ring1="Hetairoi Ring",ring2="Chirich Ring +1",
         back="Null shawl",waist="Null belt",legs="Malignance tights",feet="Malignance boots"}	
 		
@@ -407,12 +409,12 @@ function init_gear_sets()
 		back="Null shawl", waist="Orpheus's Sash", legs="Malignance tights", feet="Malignance Boots"}
 
     sets.engaged.Defense = {ammo="Coiste Bodhar",
-        head="Malignance chapeau",neck="Null loop",ear1="Sherida Earring",ear2="Lethargy earring +2",
+        head="Bunzi's hat",neck="Null loop",ear1="Sherida Earring",ear2="Lethargy earring +2",
         body="Malignance tabard",hands="Bunzi's gloves",ring1="Hetairoi Ring",ring2="Chirich Ring +1",
         back="Null shawl",waist="Null belt",legs="Malignance tights",feet="Malignance boots"}
 		
 	sets.engaged.DW = {ammo="Coiste Bodhar",
-        head="Malignance chapeau",neck="Null loop",ear1="Sherida Earring",ear2="Lethargy earring +2",
+        head="Bunzi's hat",neck="Null loop",ear1="Sherida Earring",ear2="Lethargy earring +2",
         body="Malignance tabard",hands="Bunzi's gloves",ring1="Hetairoi Ring",ring2="Chirich Ring +1",
         back=gear.CapeDW,waist="Reiki Yotai",legs="Malignance tights",feet="Malignance boots"}	
 		
@@ -422,7 +424,7 @@ function init_gear_sets()
 		back=gear.CapeDW, waist="Orpheus's Sash", legs="Carmine Cuisses +1", feet="Carmine greaves +1"}
 
     sets.engaged.DW.Defense = {ammo="Coiste Bodhar",
-        head="Malignance chapeau",neck="Null loop",ear1="Sherida Earring",ear2="Lethargy earring +2",
+        head="Bunzi's hat",neck="Null loop",ear1="Sherida Earring",ear2="Lethargy earring +2",
         body="Malignance tabard",hands="Bunzi's gloves",ring1="Hetairoi Ring",ring2="Chirich Ring +1",
         back=gear.CapeDW,waist="Reiki Yotai",legs="Malignance tights",feet="Malignance boots"}
 

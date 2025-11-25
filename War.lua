@@ -12,6 +12,7 @@ function get_sets()
  
     -- Load and initialize the include file.
     include('Mote-Include.lua')
+	include('Sef-Utility.lua')
     --include('organizer-lib')
 end
  
@@ -31,7 +32,7 @@ end
  
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
-    state.OffenseMode:options('Normal', 'Hybrid')
+    state.OffenseMode:options('Normal', 'Hybrid', 'Defense')
     state.RangedMode:options('Normal')
     state.HybridMode:options('Normal', 'PDT')
     state.WeaponskillMode:options('Normal', 'Attack')
@@ -58,6 +59,9 @@ function user_setup()
     gear.OdysseanLegsTP = { name="Odyssean Cuisses", augments={'Accuracy+24 Attack+24','Weapon skill damage +3%','VIT+15','Accuracy+10','Attack+3',}}
     gear.OdysseanLegsAcc = { name="Odyssean Cuisses", augments={'Accuracy+24 Attack+24','Weapon skill damage +3%','VIT+15','Accuracy+10','Attack+3',}}
     gear.OdysseanLegsVIT = { name="Odyssean Cuisses", augments={'Accuracy+24 Attack+24','Weapon skill damage +3%','VIT+15','Accuracy+10','Attack+3',}}
+	
+	gear.CapeStrWSD = {name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%'}}
+	gear.CapeStrDA = {name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10'}}
    
     update_combat_weapon()
     update_melee_groups()
@@ -70,22 +74,24 @@ function user_setup()
 end
  
 function init_gear_sets()
+
+	include('Sef-Gear.lua')
    
     --------------------------------------
     -- Precast sets
     --------------------------------------
    
     -- Sets to apply to arbitrary JAs
-    sets.precast.JA['Berserk'] = {feet="Agoge Calligae +1", body="Pumm. Lorica +3",back="Cichol's Mantle"}
-    sets.precast.JA['Aggressor'] = {body="Agoge Lorica +1", head="Pummeler's Mask +3"}
-    sets.precast.JA['Mighty Strikes'] = {hands="Agoge Mufflers +1"}
-    sets.precast.JA['Tomahawk'] = {ammo="Thr. Tomahawk",feet="Agoge Calligae +1"}
-    sets.precast.JA['Provoke'] = {ammo="Iron Gobbet",
+    sets.precast.JA['Berserk'] = {feet="Agoge Calligae +3", body="Pummeler's Lorica +3",back="Cichol's Mantle"}
+    sets.precast.JA['Aggressor'] = {body="Agoge Lorica +3", head="Pummeler's Mask +3"}
+    sets.precast.JA['Mighty Strikes'] = {hands="Agoge Mufflers +3"}
+    sets.precast.JA['Tomahawk'] = {ammo="Throwing Tomahawk",feet="Agoge Calligae +3"}
+    sets.precast.JA['Provoke'] = {
        head="Pummeler's Mask +3",neck="Unmoving Collar +1",ear1="Friomisi Earring",ear2="Trux Earring",
-       body="Souveran Cuirass",hands="Pumm. Mufflers +2",ring1="Apeile Ring",ring2="Apeile Ring +1",
-       waist="Goading Belt",feet="Souveran Schuhs"}
+       body="Souveran Cuirass +1",hands="Pummeler's Mufflers +3",ring1="Apeile Ring",ring2="Apeile Ring +1",
+       waist="Goading Belt",feet="Souveran Schuhs +1"}
     sets.precast.JA['Blood Rage'] = set_combine(sets.precast.JA['Provoke'], {body="Boii Lorica +2"})
-    sets.precast.JA['Warcry'] = set_combine(sets.precast.JA['Provoke'], {head="Agoge Mask +1"})  
+    sets.precast.JA['Warcry'] = set_combine(sets.precast.JA['Provoke'], {head="Agoge Mask +3"})  
        
     -- Sets to apply to any actions of spell.type
     sets.precast.Waltz = {}
@@ -96,10 +102,11 @@ function init_gear_sets()
     sets.precast.Waltz['Healing Waltz'] = {}
  
     -- Sets for fast cast gear for spells
-    sets.precast.FC = {ammo="Sapience orb",
-    head="Sakpata's Helm",neck="Voltsurge Torque",ear1="Etiolation Earring",ear2="Loquacious Earring",
-    body="Odyssean Chestplate",hands="Leyline Gloves",ring1="Prolix Ring",
-    waist="Sanctuary Obi",legs="Eschite Cuisses",feet=gear.OdysseanFeetVIT}
+    sets.precast.FC = {ammo="Sapience orb",																		--2
+    head="Sakpata's Helm",neck="Voltsurge Torque",ear1="Etiolation Earring",ear2="Loquacious Earring",			--8, 4, 1, 2
+    body="Odyssean Chestplate",hands="Leyline Gloves",ring1="Prolix Ring",										--5, 8, 2
+    legs="Arjuna breeches",feet="Odyssean greaves"}																--4, 5
+	-- 41%     cape 10, ody augs 12, orunmila 1, rahab ring 2, enchanters earring 1, Ody legs 2  --69%
  
     -- Fast cast gear for specific spells or spell maps
     sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {})
@@ -107,19 +114,19 @@ function init_gear_sets()
    
     -- Weaponskill sets
     sets.precast.WS = {ammo="Knobkierrie",
-        head="Nyame helm", neck="Warrior's beads +2", ear1="Moonshade Earring", ear2="Boii Earring +2",
+        head="Agoge Mask +3", neck="Warrior's bead necklace +2", ear1="Moonshade Earring", ear2="Boii Earring +2",
         body="Nyame mail", hands="Boii mufflers +2", ring1="Regal Ring", ring2="Epaminondas's Ring",
         back=gear.CapeStrWSD, waist="Sailfi Belt +1", legs="Nyame Flanchard", feet="Nyame Sollerets"}
 		
 	sets.precast.WS.Multi = {ammo="Coiste Bodhar",																		-- 3
 		head="Boii Mask +2", neck="Fotia gorget", left_ear="Schere Earring", right_ear="Boii Earring +2",				-- 6, 7, 6, 9
 		body="Sakpata's plate",	hands="Sakpata's Gauntlets", left_ring="Niqmaddu Ring", right_ring="Regal Ring",		-- 8, 6, 0, 0
-		back=gear.CapeTP, waist="Fotia belt", legs="Sakpata's Cuisses", feet="Sakpata's leggings",						-- 10, 9, 7, 4
+		back=gear.CapeStrDA, waist="Fotia belt", legs="Boii Cuisses +2", feet="Sakpata's leggings",						-- 10, 9, 7, 4
 	} --18% base + 10 gifts + 75% DA gear
 	
 	sets.precast.WS.Magic = {ammo="Knobkierrie",
         head="Nyame helm",neck="Sibyl scarf",ear1="Moonshade Earring",ear2="Friomisi earring",
-        body="Nyame mail",hands="Boii mufflers +2",ring1="Regal Ring",ring2="Epaminondas's Ring",
+        body="Nyame mail",hands="Nyame gauntlets",ring1="Shiva Ring +1",ring2="Epaminondas's Ring",
         back=gear.CapeStrWSD,waist="Orpheus's sash",legs="Nyame Flanchard",feet="Nyame Sollerets"}
    
     -- Specific weaponskill sets.
@@ -127,15 +134,15 @@ function init_gear_sets()
     --GAXE
     sets.precast.WS['Upheaval'] = set_combine(sets.precast.WS.Multi, {})
 	sets.precast.WS['Upheaval'].Attack = set_combine(sets.precast.WS.Multi, {})
-    sets.precast.WS['Upheaval'].MS = set_combine(sets.precast.WS['Upheaval'], {ammo="Yetshila",feet="Boii Calligae +2"})
+    sets.precast.WS['Upheaval'].MS = set_combine(sets.precast.WS['Upheaval'], {ammo="Yetshila +1",ring2="Sroda ring", waist="Sailfi belt +1", feet="Boii Calligae +2"})
    
-    sets.precast.WS['Ukko\'s Fury'] = set_combine(sets.precast.WS.Multi, {})
+    sets.precast.WS['Ukko\'s Fury'] = set_combine(sets.precast.WS.Multi, {ammo="Yetshila +1",ring2="Sroda ring", waist="Sailfi belt +1", feet="Boii Calligae +2"})
     sets.precast.WS['Ukko\'s Fury'].Attack = set_combine(sets.precast.WS['Ukko\'s Fury'], {})
-    sets.precast.WS['Ukko\'s Fury'].MS = set_combine(sets.precast.WS['Ukko\'s Fury'], {ammo="Yetshila",feet="Boii Calligae +2"})
+    sets.precast.WS['Ukko\'s Fury'].MS = set_combine(sets.precast.WS['Ukko\'s Fury'], {})
    
     sets.precast.WS['Steel Cyclone'] = set_combine(sets.precast.WS, {})
     sets.precast.WS['Steel Cyclone'].Attack = set_combine(sets.precast.WS['Steel Cyclone'], {})
-    sets.precast.WS['Steel Cyclone'].MS = set_combine(sets.precast.WS['Steel Cyclone'], {ammo="Yetshila",feet="Boii Calligae +2"})
+    sets.precast.WS['Steel Cyclone'].MS = set_combine(sets.precast.WS['Steel Cyclone'], {ammo="Yetshila +1",feet="Boii Calligae +2"})
    
     sets.precast.WS['King\'s Justice'] = set_combine(sets.precast.WS.Multi, {})
     sets.precast.WS['King\'s Justice'].Attack = set_combine(sets.precast.WS['King\'s Justice'], {})
@@ -145,23 +152,23 @@ function init_gear_sets()
     --sets.precast.WS['Metatron Torment'].AccLow = set_combine(sets.precast.WS['Metatron Torment'], {})
     --sets.precast.WS['Metatron Torment'].AccHigh = set_combine(sets.precast.WS['Metatron Torment'].AccLow, {})
     --sets.precast.WS['Metatron Torment'].Attack = set_combine(sets.precast.WS['Metatron Torment'], {})
-    --sets.precast.WS['Metatron Torment'].MS = set_combine(sets.precast.WS['Metatron Torment'], {ammo="Yetshila +1",back="Cavaros Mantle",feet="Huginn Gambieras"})
+    --sets.precast.WS['Metatron Torment'].MS = set_combine(sets.precast.WS['Metatron Torment'], {ammo="Yetshila +1 +1",back="Cavaros Mantle",feet="Huginn Gambieras"})
    
    
     --GSWD
     sets.precast.WS['Resolution'] = set_combine(sets.precast.WS.Multi, {})
     sets.precast.WS['Resolution'].Attack = set_combine(sets.precast.WS['Resolution'], {})
-    sets.precast.WS['Resolution'].MS = set_combine(sets.precast.WS['Resolution'], {ammo="Yetshila",feet="Boii Calligae +2"})
+    sets.precast.WS['Resolution'].MS = set_combine(sets.precast.WS['Resolution'], {ammo="Yetshila +1",feet="Boii Calligae +2"})
    
     sets.precast.WS['Scourge'] = set_combine(sets.precast.WS, {})
     sets.precast.WS['Scourge'].Attack = set_combine(sets.precast.WS['Scourge'], {})
-    sets.precast.WS['Scourge'].MS = set_combine(sets.precast.WS['Scourge'], {ammo="Yetshila",feet="Boii Calligae +2"})
+    sets.precast.WS['Scourge'].MS = set_combine(sets.precast.WS['Scourge'], {ammo="Yetshila +1",feet="Boii Calligae +2"})
    
    
     --SWD
     sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {})
     sets.precast.WS['Savage Blade'].Attack = set_combine(sets.precast.WS['Savage Blade'], {})
-    sets.precast.WS['Savage Blade'].MS = set_combine(sets.precast.WS['Savage Blade'], {ammo="Yetshila",feet="Boii Calligae +2"})
+    sets.precast.WS['Savage Blade'].MS = set_combine(sets.precast.WS['Savage Blade'], {ammo="Yetshila +1",feet="Boii Calligae +2"})
    
     sets.precast.WS['Sanguine Blade'] = set_combine(sets.precast.WS.Magic, {ring1="Archon ring"})
    
@@ -191,6 +198,7 @@ function init_gear_sets()
        
     sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS.Magic, {ring1="Shiva ring +1"})      
     
+	--POLEARM
     sets.precast.WS['Stardiver'] = set_combine(sets.precast.WS.Multi, {})
     sets.precast.WS['Impulse Drive'] = set_combine(sets.precast.WS.Multi, {})
    
@@ -204,18 +212,18 @@ function init_gear_sets()
        
     -- Specific spells
     sets.midcast.Utsusemi = {ammo="Impatiens",
-        head="Souveran Schaller",neck="Baetyl Pendant",ear1="Halasz Earring",ear2="Loquacious Earring",
-        body="Odyssean Chestplate", hands="Eschite Gauntlets", ring1="Evanescence Ring", ring2= "Haverton Ring",
-        back="Grounded Mantle +1",waist="Resolute Belt",legs="Founder's Hose",feet="Odyssean Greaves"}
+        head="Souveran Schaller +1",neck="Moonlight necklace",ear1="Etiolation Earring",ear2="Loquacious Earring",
+        body="Sakpata's breastplate", hands="Eschite Gauntlets", ring1="Evanescence Ring", ring2= "Defending Ring",
+        back="Moonlight cape",waist="Engraved Belt",legs="Founder's Hose",feet="Odyssean Greaves"}
  
     sets.midcast.Phalanx = {
-		Main="Sakpata's Sword", --5
 		ammo="Staunch Tathlum +1",								--11 SIRD
-		Head=gear.PhalanxHeadPld, --4
-		neck="Incanter's Torque",			--10 skill			--15 Moonbow
+		Head=gear.PhalanxHeadPld, --5
+		neck="Loricate Torque +1",			
 		Body=gear.PhalanxBodyPld, --5
 		Hands="Souveran Handschuhs +1", --5
 		left_ring="Defending Ring",								--5 evanescense
+		right_ring="Murky Ring",
 		waist="Flume Belt",										--10 Rumination
 		Feet="Souveran Schuhs +1", --5							--20 Odyssean
 		Legs="Sakpata's Cuisses", --5
@@ -229,10 +237,10 @@ function init_gear_sets()
    
  
     -- Idle sets
-    sets.idle = {ammo="Staunch Tathlum",																				-- 3
+    sets.idle = {ammo="Staunch Tathlum +1",																				-- 3
         head="Sakpata's helm", neck="Warder's charm +1", left_ear="Etiolation Earring", right_ear="Infused Earring",	-- 7, 0, 0, 0
 		body="Sakpata's plate",	hands="Sakpata's Gauntlets", left_ring="Defending Ring", right_ring="Shadow Ring",		-- 10, 8, 10, 0
-		back="Moonlight Cape", waist="Carrier's sash", legs="Sakpata's Cuisses", feet="Hermes' Sandals",				-- 6, 0, 9, 0
+		back="Moonlight Cape", waist="Engraved Belt", legs="Sakpata's Cuisses", feet="Hermes' Sandals",					-- 6, 0, 9, 0
     }	-- 53% PDT
 	
 	sets.idle.Reraise = set_combine(sets.idle, {head="Twilight helm",body="Crepuscular mail"})
@@ -257,18 +265,26 @@ function init_gear_sets()
     -- Normal melee group
     -- If using a weapon that isn't specified later, the basic engaged sets should automatically be used.
     -- Equip the weapon you want to use and engage, disengage, or force update with f12, the correct gear will be used; default weapon is whats equip when file loads.
-    sets.engaged = {ammo="Coiste Bodhar",																				-- 3
-		head="Boii Mask +3", neck="Warrior's beads +2", left_ear="Schere Earring", right_ear="Boii Earring +2",			-- 7, 7, 6, 9
-		body="Sakpata's plate",	hands="Sakpata's Gauntlets", left_ring="Niqmaddu Ring", right_ring="Chirich Ring +1",	-- 8, 6, 0, 0
-		back="Null shawl", waist="Ioskeha belt +1", legs="Sakpata's Cuisses", feet="Sakpata's leggings",				-- 7, 9, 7, 4
+    
+	sets.engaged = {ammo="Coiste Bodhar",																						-- 3
+		head="Boii Mask +2", neck="Warrior's bead necklace +2", left_ear="Schere Earring", right_ear="Boii Earring +2",			-- 7, 7, 6, 9
+		body="Sakpata's plate",	hands="Sakpata's Gauntlets", left_ring="Niqmaddu Ring", right_ring="Lehko Habhoka's Ring",		-- 8, 6, 0, 0
+		back="Null shawl", waist="Ioskeha Belt +1", legs="Pummeler's cuisses +4", feet="Pummeler's calligae",					-- 10, 0, 11, 9
+	}	-- 18% base + 10 gifts, 76 gear  = 104% DA
+	
+	sets.engaged.Hybrid = {ammo="Coiste Bodhar",																				-- 3
+		head="Boii Mask +2", neck="Warrior's bead necklace +2", left_ear="Schere Earring", right_ear="Boii Earring +2",			-- 7, 7, 6, 9
+		body="Sakpata's plate",	hands="Sakpata's Gauntlets", left_ring="Niqmaddu Ring", right_ring="Lehko Habhoka's Ring",		-- 8, 6, 0, 0
+		back="Null shawl", waist="Ioskeha belt +1", legs="Sakpata's Cuisses", feet="Sakpata's leggings",						-- 7, 9, 7, 4
 	}	-- 18% base + 10 gifts, 73 gear  = 101% DA
 	
-	sets.engaged.Hybrid = {ammo="Coiste Bodhar",																		-- 3
-		head="Boii Mask +3", neck="Warrior's beads +2", left_ear="Schere Earring", right_ear="Boii Earring +2",			-- 7, 7, 6, 9
-		body="Sakpata's plate",	hands="Sakpata's Gauntlets", left_ring="Niqmaddu Ring", right_ring="Chirich Ring +1",	-- 8, 6, 0, 0
-		back=gear.CapeTP, waist="Carrier's sash", legs="Sakpata's Cuisses", feet="Sakpata's leggings",					-- 10, 0, 7, 4
+	sets.engaged.Defense = {ammo="Coiste Bodhar",																				-- 3
+		head="Boii Mask +2", neck="Warrior's bead necklace +2", left_ear="Schere Earring", right_ear="Boii Earring +2",			-- 7, 7, 6, 9
+		body="Sakpata's plate",	hands="Sakpata's Gauntlets", left_ring="Niqmaddu Ring", right_ring="Lehko Habhoka's Ring",		-- 8, 6, 0, 0
+		back="Null shawl", waist="Engraved Belt", legs="Sakpata's Cuisses", feet="Sakpata's leggings",							-- 10, 0, 7, 4
 	}	-- 18% base + 10 gifts, 67 gear  = 95% DA
 	
+	sets.engaged.AM3 = set_combine(sets.engaged, {ammo="Yetshila +1", legs="Boii cuisses +2", feet="Boii Calligae +2"})
    
 --***Great Axes***--
     --504: base = 4-hit--
@@ -282,32 +298,32 @@ function init_gear_sets()
 --***Great Swords***--
  
     --Rag: base = 5-hit--
-    sets.engaged.Ragnarok =  {ammo="Yetshila",
-    head="Flam. Zucchetto +2",
-    body="Flamma Korazin +2",
-    hands="Flam. Manopolas +2",
-    legs="Sulev. Cuisses +2",
-    feet="Flam. Gambieras +2",
-    neck="Lissome Necklace",
+    sets.engaged.Ragnarok =  {ammo="Yetshila +1",
+    head="Boii Mask +2",
+    body="Sakpata's plate",
+    hands="Sakpata's Gauntlets",
+    legs="Sakpata's Cuisses",
+    feet="Pummeler's calligae +4",
+    neck="Warrior's bead necklace +2",
     waist="Sailfi Belt +1",
-    left_ear="Brutal Earring",
-    right_ear="Cessance Earring",
-    left_ring="Rajas Ring",
-    right_ring="Petrov Ring",
-    back={ name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}}}
+    left_ear="Schere Earring",
+    right_ear="Boii Earring +2",
+    left_ring="Niqmaddu Ring",
+    right_ring="Lehko Habhoka's Ring",
+    back="Null shawl"}
       
 --Dual Wield and other misc.-- 
  
     sets.engaged.Odium =   {ammo="Seething Bomblet +1",
-        head="Skormoth Mask",neck="Lissome Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
-        body="Boii Lorica +2",hands="Acro Gauntlets",ring1="Petrov Ring",ring2="Haverton Ring",
-        back="Cichol's Mantle",waist="Shetal Stone",legs=gear.OdysseanLegsTP,feet="Boii Calligae +1"}
+        head="Boii Mask +2",neck="Warrior's bead necklace +2",ear1="Schere Earring",ear2="Boii Earring +2",
+        body="Boii Lorica +2",hands="Sakpata's Gauntlets",ring1="Niqmaddu Ring",ring2="Lehko Habhoka's Ring",
+        back="Null shawl",waist="Shetal Stone",legs="Sakpata's Cuisses",feet="Boii Calligae +2"}
    
     --------------------------------------
     -- Custom buff sets
     --------------------------------------
     -- Mighty Strikes TP Gear, combines with current melee set.
-    sets.buff.MS = {ammo="Yetshila", feet="Boii Calligae +1", back="Mauler's Mantle"}
+    sets.buff.MS = {ammo="Yetshila +1", feet="Boii Calligae +2"}
     -- Day/Element Helm, if helm is not in inventory or wardrobe, this will not fire, for those who do not own one
     sets.WSDayBonus = {}
     -- Earrings to use with Upheaval when TP is 3000
@@ -379,8 +395,8 @@ end
  
 -- Called when the player's status changes.
 function job_status_change(newStatus, oldStatus, eventArgs)
-    update_combat_weapon()
-    update_melee_groups()
+    --update_combat_weapon()
+    --update_melee_groups()
 end
  
 -- Called when a player gains or loses a buff.
@@ -419,11 +435,11 @@ function job_buff_change(buff, gain)
         else
         send_command('timers delete "Warcry"')
     end
-    if buff == "sleep" and gain and player.hp > 200 and player.status == "Engaged" then
-        equip({neck="Berserker's Torque"})
-        else
-        handle_equipping_gear(player.status)
-    end
+    -- if buff == "sleep" and gain and player.hp > 200 and player.status == "Engaged" then
+        -- equip({neck="Berserker's Torque"})
+        -- else
+        -- handle_equipping_gear(player.status)
+    -- end
 end
  
 -------------------------------------------------------------------------------------------------------------------
@@ -453,8 +469,8 @@ end
 -- Called by the 'update' self-command, for common needs.
 -- Set eventArgs.handled to true if we don't want automatic equipping of gear.
 function job_update(cmdParams, eventArgs)
-    update_combat_weapon()
-    update_melee_groups()
+    --update_combat_weapon()
+    --update_melee_groups()
 end
  
 -- Set eventArgs.handled to true if we don't want the automatic display to be run.
@@ -495,6 +511,7 @@ end
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book(WAR)
     set_macro_page(2,7)
+	send_command('wait 20; input /lockstyleset 005')
 end
  
 function update_combat_weapon()
@@ -504,7 +521,7 @@ end
 function update_melee_groups()
     classes.CustomMeleeGroups:clear()
     if (player.equipment.ring1 ~= 'Warp Ring' and player.equipment.ring2 ~= 'Warp Ring') then
-        if buffactive['Aftermath: Lv.3'] and player.equipment.main == "Conqueror" then
+        if buffactive['Aftermath: Lv.3'] and player.equipment.main == "Ukonvasara" then
             classes.CustomMeleeGroups:append('AM3')
         end
         if buffactive.Aftermath and player.equipment.main == "Bravura" and state.HybridMode.value == 'PDT' then
