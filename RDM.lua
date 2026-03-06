@@ -191,10 +191,10 @@ function init_gear_sets()
 		legs="Vanya slops",feet="Vanya clogs"})
 		
 	sets.midcast.EnhancingSkill = {main="Pukulatmuj +1",														--11
-		head="Befouled Crown",neck="Incanter's Torque",ear1="Mimir Earring",ear2="Andoaa Earring",				--16, 10, 10, 5
+		head="Befouled Crown",neck="Hoxne Torque",ear1="Mimir Earring",ear2="Andoaa Earring",					--16, 30, 10, 5
 		body="Vitiation Tabard +3",hands="Viti. Gloves +3",ring1="Stikini Ring +1",ring2="Stikini Ring +1",		--23, 24, 8, 8
-		back="Ghostfyre Cape",waist="Olympus Sash",legs="Atrophy Tights +3",feet="Lethargy Houseaux +3"}		--8, 5, 21, 35
-		-- + 184 skill   + 420 base/merits  456 master = 640 before master levels      645 currently
+		back="Ghostfyre Cape",waist="Olympus Sash",legs="Atrophy Tights +4",feet="Lethargy Houseaux +3"}		--10, 5, 22, 35
+		-- + 207 skill   + 420 base/merits  456 master = 663 before master levels      681 currently
 		
 	sets.midcast['Enhancing Magic'] = {sub = "Ammurapi shield", ammo="Staunch tathlum +1",
 		head = "Telchine cap", neck = "Duelist's torque +2", ear1 = "Mimir earring", ear2 = "Lethargy earring +2",
@@ -230,9 +230,9 @@ function init_gear_sets()
     sets.midcast['Enfeebling Magic'] = {main="Contemplator +1",sub="Enki strap",ammo="Regal gem",				--20
         head="Vitiation chapeau +4",neck="Duelist's torque +2",ear1="Snotra Earring",ear2="Malignance Earring",	--27, 0, 0, 0
         body="Lethargy Sayon +3",hands="Lethargy Gantherots +3",ring1="Stikini ring +1",ring2="Kishar ring",	--0, 29, 8, 0
-        back=gear.CapeEnf,waist="Obstinate sash",legs="Lethargy fuseau +3",feet="Vitiation boots +3"}			--0, 7, 0 , 16
-		-- 610/625 to cap     base 440 merits 476 master														--107=583
-		-- need 48 with master, earring 10, af body 2, obstinate sash 8 short 17 w/o MLs  15 more for Frazzle
+        back=gear.CapeEnf,waist="Obstinate sash",legs="Lethargy fuseau +3",feet="Vitiation boots +3"}			--0, 14, 0 , 16
+		-- 610/625 to cap     base 440 merits 476 master														--114=590
+		-- need 48 with master, earring 10, af body 2, obstinate sash 1 short 17 w/o MLs  15 more for Frazzle
 		-- Aminon 468 Mnd    435 mnd,  83 from cap
 		
 	sets.midcast.EnfeeblingDuration = set_combine(sets.midcast['Enfeebling Magic'], {hands = "Regal cuffs", feet="Lethargy houseaux +3"})
@@ -291,7 +291,7 @@ function init_gear_sets()
 	sets.midcast['Elemental Magic'].OA = {ammo="Coiste Bodhar",
 		head="Welkin Crown", neck="Ainia Collar", ear1="Dedition Earring", ear2="Crep. Earring",
 		body="Merlinic Jubbah",	hands="Merlinic Dastanas", ring1="Chirich Ring +1", ring2="Chirich Ring +1",
-		back=gear.CapeEnf, waist="Oneiros Rope" ,legs="Perdition Slops", feet="Merlinic Crackows",
+		back="Null shawl", waist="Oneiros Rope" ,legs="Perdition Slops", feet="Merlinic Crackows",
 		}
         
     sets.midcast.Impact = set_combine(sets.midcast['Elemental Magic'], {head=empty,body="Twilight Cloak"})
@@ -302,7 +302,10 @@ function init_gear_sets()
 
     --sets.midcast.Stun = set_combine(sets.midcast['Dark Magic'], {})
 
-    sets.midcast.Drain = set_combine(sets.midcast['Dark Magic'], {ring1="Excelsis Ring", waist="Fucho-no-Obi"})
+    sets.midcast.Drain = {ammo="Ullr",																				--FC				--Haste
+        head="Pixie hairpin +1",neck="Erra pendant",ear1="Malignance Earring",ear2="Lethargy earring +2",  			--16, 0, 4, 9		--6, 0, 0, 0
+        body="Vitiation tabard +3",hands="Atrophy gloves +4",ring1="Evanescence Ring", ring2="Archon ring",    	    --15, 6, 4, 0		--3, 4
+        back="Fi follet Cape +1",waist="Fucho-no-obi",legs="Atrophy Tights +4",feet="Lethargy houseaux +3"}		    --10, 0, 0, 0		--0, 0, 9, 3
 
     sets.midcast.Aspir = sets.midcast.Drain
 	
@@ -430,8 +433,10 @@ function init_gear_sets()
 
 	sets.Naegling = {main="Naegling"}
 	sets.Maxentius = {main="Maxentius"}
-	sets.Excal = {main='Excalibur'}
+	sets.Excalibur = {main='Excalibur'}
+	sets.Gleti = {sub="Gleti's Knife"}
 	sets.Genmei = {sub="Genmei shield"}
+	sets.HolyWater = {neck="Nicander's necklace", ring2="Purity Ring"}
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -511,9 +516,10 @@ function job_state_change(stateField, newValue, oldValue)
 				elseif state.WeaponMode.value == 'Maxentius' then
 					equip(sets.Maxentius)
 				elseif state.WeaponMode.value == 'Excalibur' then
-					equip(sets.Excal)
+					equip(sets.Excalibur)
+					equip(sets.Gleti)
 				end
-				if state.CombatForm ~= 'DW' then
+				if state.CombatForm.value ~= 'DW' then
 					equip(sets.Genmei)
 				end
 			elseif newValue =='Enspell1' then
@@ -553,8 +559,11 @@ function customize_melee_set(meleeSet)
 		equip(sets.Naegling)
 	elseif state.WeaponMode.value == 'Maxentius' then
 		equip(sets.Maxentius)
+	elseif state.WeaponMode.value == 'Excalibur' then
+		equip(sets.Excalibur)
+		equip(sets.Gleti)
 	end
-	if state.CombatForm ~= 'DW' then
+	if state.CombatForm.value ~= 'DW' then
 		equip(sets.Genmei)
 	end
 	return meleeSet

@@ -4,7 +4,7 @@ function get_sets()
  
     -- Load and initialize the include file.
     include('Mote-Include.lua')
-	include('Sef-Utility.lua')
+	--include('Sef-Utility.lua')
 end
  
 -- Setup variables that are user-independent.  state.Buff vars initialized here will automatically be tracked.
@@ -62,6 +62,8 @@ function user_setup()
 	gear.FCCape = { name="Rudianos's Mantle", augments={'"Fast Cast"+10','Phys. dmg. taken-10%'}}
 	gear.WSCape = {name="Rudianos's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%'}}
 	gear.TPCape = {name="Rudianos's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}
+	gear.PhalanxHeadPld = {name="Valorous Mask", augments={'Accuracy+11','Weapon skill damage +2%','Phalanx +5','Accuracy+10 Attack+10','Mag. Acc.+1 "Mag.Atk.Bns."+1'}}
+	gear.PhalanxBodyPld = {name="Odyss. Chestplate", augments={'"Store TP"+4','Pet: Mag. Acc.+1','Phalanx +5'}}
  
     Haste = 0
     DW_needed = 0
@@ -93,7 +95,7 @@ function init_gear_sets()
     ------------------------------------------------------------------------------------------------
     ---------------------------------------- Precast Sets ------------------------------------------
     ------------------------------------------------------------------------------------------------
-    include('Sef-Gear.lua')
+    --include('Sef-Gear.lua')
 	
     sets.Enmity = {
         --Main="Burtgang", --18
@@ -297,13 +299,13 @@ function init_gear_sets()
 		neck="Incanter's Torque",			--10 skill			--15 Moonbow
 		Body=gear.PhalanxBodyPld, --5
 		Hands="Souveran Handschuhs +1", --5
-		left_ring="Murky Ring",									--5 evanescense
+		left_ring="Murky Ring",								--5 evanescense
 		right_ring="Stikini Ring +1",		--8 skill			
 		waist="Flume Belt",										--10 Rumination/Audumbla
 		Feet="Souveran Schuhs +1", --5							--20 Odyssean
 		Back="Weard Mantle", --5
 		Legs="Sakpata's Cuisses", --5
-    } 	-- +37     418 skill @ML35   tiers: 415 -32 / 443 -33, ML47 to hit the final skill tier, loses DT, Hoxne torque at ML44 to get 443 tier
+    } 	-- +37 Need to DarkMatter Ody Head    418 skill @ML35   tiers: 415 -32 / 443 -33, ML47 to hit the final skill tier, loses DT
 		-- 46% DT
 		-- SIRD swaps -> 78%
      

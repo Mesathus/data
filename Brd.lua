@@ -65,7 +65,7 @@ function user_setup()
 	
 	
     -- Adjust this if using the Terpander (new +song instrument)
-    info.ExtraSongInstrument = 'Daurdabla'
+    info.ExtraSongInstrument = 'Loughnashade'
     -- How many extra songs we can keep from Daurdabla/Terpander
     info.ExtraSongs = 2
     
@@ -113,7 +113,7 @@ function init_gear_sets()
 
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {})
 
-    sets.precast.FC.BardSong = {range="Gjallarhorn",
+    sets.precast.FC.BardSong = {range="Loughnashade",
         head="Fili Calot +3",neck="Voltsurge torque",ear1="Etiolation Earring",ear2="Loquac. Earring",		-- 15, 4, 1, 1
         body="Brioso justaucorps +3",hands="Leyline gloves",ring1="Defending Ring",ring2="Kishar Ring",    	-- 15, 8, 0, 4
         back=gear.MAccCape,waist="Embla Sash",legs="Volte brais",feet="Bihu slippers +3"}					-- 10, 5, 8, 10
@@ -129,21 +129,18 @@ function init_gear_sets()
     -- Precast sets to enhance JAs
     
     sets.precast.JA.Nightingale = {feet="Bihu Slippers +3"}
-    sets.precast.JA.Troubadour = {body="Bihu Justaucorps +3"}
+    sets.precast.JA.Troubadour = {body="Bihu justaucorps +4"}
     sets.precast.JA['Soul Voice'] = {legs="Bihu Cannions +3"}
 
     -- Waltz set (chr and vit)
-    sets.precast.Waltz = {range="Gjallarhorn",
-        head="Nahtirah Hat",
-        body="Gendewitha Bliaut",hands="Buremte Gloves",
-        back="Kumbira Cape",legs="Gendewitha Spats",feet="Gendewitha Galoshes"}
+    sets.precast.Waltz = {range="Gjallarhorn"}
     
        
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {range="Linos",
         head="Nyame Helm",neck="Bard's charm +2",ear1="Ishvara Earring",ear2="Moonshade Earring",
-        body="Bihu justaucorps +3",hands="Nyame gauntlets",ring1="Ilabrat Ring",ring2="Epaminondas's Ring",
+        body="Bihu justaucorps +4",hands="Nyame gauntlets",ring1="Ilabrat Ring",ring2="Epaminondas's Ring",
         back=gear.BrdDexWSDCape,waist="Kentarch belt +1",legs="Nyame Flanchard",feet="Nyame Sollerets"}
     
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
@@ -190,10 +187,10 @@ function init_gear_sets()
 
     -- General set for recast times.
     sets.midcast.FastRecast = {
-        head="Haruspex Hat +1",neck="Voltsurge torque",ear1="Etiolation earring",ear2="Loquacious Earring",   	-- 9, 4, 1, 1
+        head="Bunzi's hat",neck="Voltsurge torque",ear1="Etiolation earring",ear2="Loquacious Earring", 	  	-- 10, 4, 1, 1
         body="Inyanga jubbah +2",hands="Leyline gloves",ring1="Prolix Ring",ring2="Kishar ring", 				-- 14, 8, 2, 4
         back="Fi follet cape +1",waist="Embla sash",legs="Volte brais",feet="Fili Cothurnes +3"}				-- 10, 5, 8, 10
-		-- 76%
+		-- 77%
 		
 	sets.midcast['Haste'] = set_combine(sets.midcast.FastRecast, {sub="Ammurapi shield",
 		head="Telchine cap", 
@@ -233,7 +230,7 @@ function init_gear_sets()
     
 
     -- For song buffs (duration and AF3 set bonus)
-    sets.midcast.SongEffect = {main="Carnwenhan", sub="Genmei shield", range="Gjallarhorn",
+    sets.midcast.SongEffect = {main="Carnwenhan", sub="Genmei shield", range="Loughnashade",
         head="Fili Calot +3",neck="Moonbow whistle +1",ear1="Loquacious Earring",ear2="Fili earring +1",
         body="Fili Hongreline +3",hands="Fili Manchettes +3",ring1="Defending Ring", ring2="Moonlight ring",
         back=gear.MAccCape,waist="Sailfi belt +1",legs="Inyanga Shalwar +2",feet="Brioso Slippers +4"}
@@ -326,7 +323,7 @@ function init_gear_sets()
 	sets.midcast['Dark Magic'] = {
 		head="Bunzi's Hat",neck="Null loop",ear1="Loquac. Earring",ear2="Fili Earring +1",
 		body="Inyanga Jubbah +2",hands="Fili Manchettes +3",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
-		back=gear.MAccCape,waist="Null belt",legs="Volte Tights",feet="Fili Cothurnes +3"}
+		back=gear.MAccCape,waist="Null belt",legs="Volte brais",feet="Fili Cothurnes +3"}
 		-- Ayanmo legs   Zendik Robe   Enchanter's earring
 		
 	sets.midcast['Ninjutsu'] = set_combine(sets.midcast['Enfeebling Magic'],{})
@@ -365,10 +362,7 @@ function init_gear_sets()
 	}
 
 
-    -- --sets.idle.Weak = {main=gear.Staff.PDT,sub="Mephitis Grip",range="Oneiros Harp",
-        -- head="Genmei kabuto",neck="Loricate torque +1",ear1="Bloodgem Earring",
-        -- body="Gendewitha Bliaut",hands="Gendewitha Gages",ring1="Defending Ring",ring2="Sangoma Ring",
-        -- back="Umbra Cape",waist="Flume Belt",legs="Gendewitha Spats",feet="Gendewitha Galoshes"}
+    -- --sets.idle.Weak = {}
     
     
     -- Defense sets
@@ -378,12 +372,9 @@ function init_gear_sets()
         ring1="Defending Ring",ring2="Moonlight Ring",
         back="Moonlight cape"}
 
-    sets.defense.MDT = {main=gear.Staff.PDT,sub="Mephitis Grip",
-        head="Nahtirah Hat",neck="Loricate torque +1",
-        body="Gendewitha Bliaut",hands="Gendewitha Gages",ring1="Defending Ring",ring2="Shadow Ring",
-        back="Engulfer Cape",waist="Flume Belt",legs="Bihu Cannions +3",feet="Gendewitha Galoshes"}
+    sets.defense.MDT = {ring2="Shadow Ring"}
 
-    sets.Kiting = {feet="Aoidos' Cothurnes +2"}
+    sets.Kiting = {feet="Fili Cothurnes +3"}
 
     sets.latent_refresh = {waist="Fucho-no-obi"}
 

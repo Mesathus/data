@@ -28,3 +28,12 @@
 	
 	gear.FeetCurse = {name="Vanya Clogs", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3'}}
 	gear.FeetSIRD = {name="Vanya Clogs", augments={'MND+10','Spell interruption rate down +15%','"Conserve MP"+6'}}
+	
+	--Enhancing duration
+	
+	gear.TelchineHeadDuration = {name="Telchine Cap", augments={'Enh. Mag. eff. dur. +10'}}
+	gear.TelchineBodyDuration = {name="Telchine Chasuble", augments={'Enh. Mag. eff. dur. +10'}}
+	gear.TelchineHandsDuration = {name="Telchine Gloves", augments={'Enh. Mag. eff. dur. +9'}}
+	gear.TelchineLegsDuration = {name="Telchine Braconi", augments={'Enh. Mag. eff. dur. +10'}}
+	gear.TelchineFeetDuration = {name="Telchine Pigaches", augments={'Mag. Acc.+20','"Fast Cast"+4','Enh. Mag. eff. dur. +10'}}
+	

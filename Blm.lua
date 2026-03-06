@@ -275,7 +275,7 @@ function init_gear_sets()
     right_ear="Telos Earring",
     left_ring="Chirich Ring +1",
     right_ring="Chirich Ring +1",
-    back="Aurist's Cape +1}}
+    back="Aurist's Cape +1"}
 end
 
 -------------------------------------------------------------------------------------------------------------------

@@ -22,6 +22,7 @@ function user_setup()
 	state.WeaponskillMode:options('Normal', 'Acc')
     state.IdleMode:options('Normal', 'PDT', 'DD', 'Aminon')
 	state.WeaponMode = M{'None', 'Idris', 'Maxentius', 'Tish', 'Mage'}
+	state.OffhandMode = M{'None', 'TPClub'}
 	
 	gear.CapePetRegen = {name="Nantosuelta's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Pet: "Regen"+10','Phys. dmg. taken-10%'}}
 	gear.CapeTP = {}
@@ -39,8 +40,9 @@ function user_setup()
 	send_command('unbind f9')
 	send_command('bind f9 gs c cycle CastingMode')
 	send_command('bind !f9 gs c cycle OffenseMode')  --Alt + F9
-	send_command('bind !f10 gs c cycle WeaponMode') --Alt 'F10'
+	send_command('bind f10 gs c cycle WeaponMode') --'F10'
 	send_command('bind ^f10 gs c cycle WeaponSkillMode') --Ctrl 'F10'
+	send_command('bind !f10 gs c cycle OffhandMode') --Alt 'F10'
 	send_command('bind !p input /item Panacea <me>')  --Alt + P
 end
 
@@ -73,8 +75,8 @@ function init_gear_sets()
     sets.precast.FC = {range="Dunna",																			--2
         head="Amalric coif +1",neck="Voltsurge torque",ear1="Etiolation Earring",ear2="Malignance Earring",		--11,4,1,4
         body="Agwu's robe",hands="Volte gloves",ring1="Prolix Ring",ring2="Kishar ring",						--8,6,2,4
-        back="Fi follet cape +1",waist="Embla sash",legs="Geomancy pants +2",feet="Amalric nails +1"}			--10,5,13,6
-		--76%  merlinic feet 5+aug 6(7)  AF legs 15
+        back="Fi follet cape +1",waist="Embla sash",legs="Geomancy pants +3",feet="Amalric nails +1"}			--10,5,15,6
+		--78%  merlinic feet 5+aug 6(7)  AF legs 15
  
     sets.precast.FC.Cure = set_combine(sets.precast.FC, {})
 	
@@ -167,11 +169,11 @@ function init_gear_sets()
     sets.midcast.FastRecast = {range="Dunna",																	--2
         head="Amalric coif +1",neck="Voltsurge torque",ear1="Loquacious Earring",ear2="Malignance Earring",		--11,4,2,4
         body="Agwu's robe",hands="Volte gloves",ring1="Prolix Ring",ring2="Kishar ring",						--8,6,2,4
-        back="Fi follet cape +1",waist="Embla sash",legs="Geomancy pants +2",feet="Amalric nails +1"}			--10,5,13,6
+        back="Fi follet cape +1",waist="Embla sash",legs="Geomancy pants +3",feet="Amalric nails +1"}			--10,5,13,6
 		--80%
  
     sets.midcast.Geomancy = set_combine(sets.midcast.FastRecast, {main="Idris",range="Dunna",               --0, 18
-		head="Azimuth hood +3",neck="Incanter's torque",													--20, 20, 0, 0
+		head="Azimuth hood +3",neck="Bagua charm +2",														--20, 0, 0, 0
 		body="Azimuth coat +3",hands="Geomancy mitaines +3",ring1="Stikini Ring +1",     					--10, 15, 16, 0
 		back="Lifestream cape",legs="Azimuth tights +3",feet="Azimuth gaiters +3"})							--5, 0, 0, 0
 		--900 to cap, 788 from merits, 860 at master														--104
@@ -229,8 +231,8 @@ function init_gear_sets()
 	sets.midcast['Elemental Magic'].Burst = {main="Bunzi's rod",sub="Ammurapi shield", ammo="Sroda tathlum",	--10, 0
         head="Ea hat +1",neck="Sibyl scarf",ear1="Regal Earring",ear2="Malignance Earring",						--7|7, 0, 0, 0
         body="Ea houppelande +1",hands="Amalric gages +1",ring1="Mujin band",ring2="Freke Ring",				--9|9, 0|5, 0|5, 0
-        back="Aurist's cape +1",waist="Orpheus's sash",legs="Azimuth tights +3",feet="Agwu's pigaches"}			--0, 0, 10, 6
-		-- 42 MBB1  26 MBB2  amalric to agwu at R21
+        back="Aurist's cape +1",waist="Orpheus's sash",legs="Azimuth tights +3",feet="Agwu's pigaches"}			--0, 0, 15, 6
+		-- 47 MBB1  26 MBB2  amalric to agwu at R21
  
     -- Custom refinements for certain nuke tiers
     sets.midcast['Elemental Magic'].HighTierNuke = set_combine(sets.midcast['Elemental Magic'], 
@@ -242,7 +244,7 @@ function init_gear_sets()
 	sets.midcast['Elemental Magic'].OA = {
 		head="Welkin Crown", neck="Bathy choker +1", ear1="Dedition Earring", ear2="Dignitary's Earring",
 		body="Merlinic Jubbah",	hands="Merlinic Dastanas", ring1="Chirich Ring +1", ring2="Chirich Ring +1",
-		back=gear.CapeEnf, waist="Oneiros Rope" ,legs="Perdition Slops", feet="Merlinic Crackows"
+		back="Null shawl", waist="Oneiros Rope" ,legs="Perdition Slops", feet="Merlinic Crackows"
 		}
  
     sets.midcast.Impact = {main="Bunzi's rod",sub="Culminus",
@@ -321,7 +323,7 @@ function init_gear_sets()
  
     sets.idle = {main="Daybreak",sub="Genmei shield",Range="Dunna",
         head="Befouled Crown",neck="Loricate Torque +1",ear1="Eabani earring",ear2="Etiolation earring",
-        body="Azimuth coat +3",hands="Volte gloves",ring1="Defending Ring",ring2="Sheltered Ring",
+        body="Azimuth coat +3",hands="Bagua mitaines +3",ring1="Defending Ring",ring2="Sheltered Ring",
         back="Moonlight Cape",waist="Fucho-no-obi",legs="Volte brais",feet="Geomancy sandals +3"}
 		--bagua hands +3
  
@@ -402,6 +404,11 @@ function init_gear_sets()
         body="Nyame mail",hands="Nyame gauntlets",ring1="Lehko Habhoka's ring",ring2="Chirich ring +1",
         back="Null shawl",waist="Null belt",legs="Nyame Flanchard", feet="Nyame Sollerets"}
 		
+	sets.engaged.DW = {Range="Dunna",
+        head="Nyame Helm",neck="Null loop",ear1="Eabani earring",ear2="Suppanomimi",
+        body="Nyame mail",hands="Nyame gauntlets",ring1="Lehko Habhoka's ring",ring2="Chirich ring +1",
+        back="Null shawl",waist="Null belt",legs="Nyame Flanchard", feet="Nyame Sollerets"}
+		
 	sets.engaged.Acc = set_combine(sets.engaged, {hands = "Azimuth gloves +3", legs = "Azimuth tights +3"})
 		
 	sets.Idris = {main="Idris"}	
@@ -409,6 +416,7 @@ function init_gear_sets()
 	sets.Mage = {main="Magesmasher +1"}
 	sets.Tish = {main="Tishtrya"}
 	sets.Genmei = {sub="Genmei shield"}
+	sets.TPClub = {sub="Makhila"}
 	
 	
  
@@ -459,8 +467,12 @@ function job_state_change(stateField, newValue, oldValue)
 				elseif state.WeaponMode.value == 'Mage' then
 					equip(sets.Mage)
 				end
-				if state.CombatForm ~= 'DW' then
+				if state.CombatForm.value ~= 'DW' then
 					equip(sets.Genmei)
+				elseif state.OffhandMode.value == 'None' then
+					equip(sets.Genmei)
+				elseif state.OffhandMode.value == 'TPClub' then
+					equip(sets.TPClub)
 				end
 			end			
             disable('main','sub','range')
@@ -505,6 +517,11 @@ function customize_idle_set(idleSet)
     if player.mpp < 51 then
         idleSet = set_combine(idleSet, sets.latent_refresh)
     end
+	if state.CombatForm.value == 'DW' then
+		if state.OffhandMode.value == 'TPClub' then
+			equip(sets.TPClub)
+		end
+	end
     return idleSet
 end
  
@@ -522,18 +539,22 @@ function job_update(cmdParams, eventArgs)
 	end
 end
 
-function customize_melee_set(meleeSet)	
+function customize_melee_set(meleeSet)
 	if state.WeaponMode.value == 'Idris' then
 		equip(sets.Idris)
 	elseif state.WeaponMode.value == 'Maxentius' then
 		equip(sets.Maxentius)
 	elseif state.WeaponMode.value == 'Magesmasher +1' then
-		equip(sets.Mage)
+		equip(meleeSet, sets.Mage)
 	elseif state.WeaponMode.value == 'Tish' then
-		equip(sets.Tish)		
+		equip(meleeSet, sets.Tish)		
 	end
-	if state.CombatForm ~= 'DW' then
+	if state.CombatForm.value ~= 'DW' then
 		equip(sets.Genmei)
+	elseif state.OffhandMode.value == 'None' then
+		equip(sets.Genmei)
+	elseif state.OffhandMode.value == 'TPClub' then
+		equip(sets.TPClub)
 	end
 	return meleeSet
 end
@@ -541,7 +562,7 @@ end
 -- Function to display the current relevant user state when doing an update.
 function display_current_job_state(eventArgs)
     --display_current_caster_state()
-	local msg = '[ [Idle: ' .. state.IdleMode.value .. '] [Casting: ' .. state.CastingMode.value .. '] [Offense: ' .. state.OffenseMode.value  .. '] [Weaponskill: ' .. state.WeaponskillMode.value .. '] '
+	local msg = '[ [Idle: ' .. state.IdleMode.value .. '] [Casting: ' .. state.CastingMode.value .. '] [Offense: ' .. state.OffenseMode.value  .. '] [Mainhand: ' .. state.WeaponMode.value  .. '] [Offhand: ' .. state.OffhandMode.value  .. '] [Weaponskill: ' .. state.WeaponskillMode.value .. '] '
 	
     if state.Kiting.value then
         msg = msg .. '[ Kiting Mode: On ] '

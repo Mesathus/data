@@ -89,7 +89,7 @@ function init_gear_sets()
 	include('Sef-Gear.lua')
     sets.TreasureHunter = {feet="Skulker's poulaines +3"}
     sets.ExtraRegen = {head="Turms cap +1"}
-    sets.Kiting = {feet="Pillager's Poulaines +3"}
+    sets.Kiting = {feet="Pillager's Poulaines +4"}
 
     sets.buff['Sneak Attack'] = {}
 
@@ -108,13 +108,13 @@ function init_gear_sets()
     -- Precast sets to enhance JAs
     sets.precast.JA['Collaborator'] = {head="Skulker's Bonnet +3"}
     sets.precast.JA['Accomplice'] = {head="Skulker's Bonnet +3"}
-    sets.precast.JA['Flee'] = {feet="Pillager's Poulaines +3"}
+    sets.precast.JA['Flee'] = {feet="Pillager's Poulaines +4"}
     sets.precast.JA['Hide'] = {body="Pillager's Vest +3"}
     sets.precast.JA['Conspirator'] = {body="Skulker's Vest +3"}
-    sets.precast.JA['Steal'] = {ammo="Barathrum",neck="Pentalagus Charm",hands="Thief's Kote",legs="Assassin's Culottes",feet="Pillager's Poulaines +3"}
+    sets.precast.JA['Steal'] = {ammo="Barathrum",neck="Pentalagus Charm",hands="Thief's Kote",legs="Assassin's Culottes",feet="Pillager's Poulaines +4"}
     sets.precast.JA['Despoil'] = {legs="Skulker's Culottes +3",feet="Skulker's Poulaines +3"}
     sets.precast.JA['Perfect Dodge'] = {hands="Plunderer's Armlets +3"}
-    sets.precast.JA['Feint'] = {legs="Plunderer's Culottes +3"}
+    sets.precast.JA['Feint'] = {legs="Plunderer's Culottes +4"}
 	sets.precast.JA['Mug'] = {ammo="C. Palug Stone",
 		head="Skulker's Bonnet +3", neck="Asn. Gorget +2", ear1="Odr Earring", ear2="Skulker's earring +2",
 		body="Skulker's Vest +3", hands="Mummu Wrists +2", ring1="Ilabrat Ring", ring2="Regal Ring",
@@ -174,7 +174,7 @@ function init_gear_sets()
     sets.precast.WS = {ammo="Cath Palug stone",
         head="Pillager's Bonnet +4",neck="Fotia Gorget",ear1="Sherida Earring",ear2="Moonshade Earring",
         body="Skulker's Vest +3",hands="Meghanada gloves +2",ring1="Regal Ring",ring2="Ilabrat Ring",
-        back=gear.CapeWSD,waist="Fotia Belt",legs="Nyame flanchard",feet="Nyame Sollerets"}
+        back=gear.CapeWSD,waist="Fotia Belt",legs="Plunderer's Culottes +4",feet="Nyame Sollerets"}
     sets.precast.WS.Acc = set_combine(sets.precast.WS, {})
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
@@ -341,7 +341,7 @@ function init_gear_sets()
 		back=gear.CapeFC, legs="Rawhide trousers", feet=gear.HercFeetFC}
 		
 	sets.midcast['Phalanx'] = set_combine(sets.midcast.FastRecast, {
-		head=gear.PhalanxHeadTaeon, neck="Incanter's Torque", left_ear="Mimir Earring", right_ear="Andoaa Earring",
+		head=gear.PhalanxHeadTaeon, neck="Hoxne Torque", left_ear="Mimir Earring", right_ear="Andoaa Earring",
 		body=gear.PhalanxBodyTaeon, hands=gear.PhalanxHandsTaeon, left_ring="Stikini Ring +1", right_ring="Stikini Ring +1",
 		back="Merciful Cape", waist="Olympus Sash", legs=gear.PhalanxLegsTaeon, feet=gear.PhalanxFeetTaeon})
 		
@@ -409,7 +409,7 @@ function init_gear_sets()
     sets.idle = {ammo="Yamarang",
         head="Turms cap +1",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Infused Earring",
         body="Malignance tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Sheltered Ring",
-        back="Moonlight cape",waist="Flume Belt",legs="Malignance tights",feet="Pillager's Poulaines +3"}
+        back="Moonlight cape",waist="Flume Belt",legs="Malignance tights",feet="Pillager's Poulaines +4"}
 		
 	sets.idle.Vagary = {
         head="Malignance chapeau",neck="Iskur Gorget",ear1="Enervating earring",ear2="Telos Earring",
@@ -419,7 +419,7 @@ function init_gear_sets()
     sets.idle.Town = {
         head="Turms cap +1",neck="Tanner's torque",
         body="Tanner's smock",hands="Tanner's gloves",ring1="Orvail Ring +1",
-        back="Shadow Mantle",waist="Tanner's belt",legs="Pillager's Culottes +3",feet="Pillager's Poulaines +3"}
+        back="Shadow Mantle",waist="Tanner's belt",legs="Pillager's Culottes +3",feet="Pillager's Poulaines +4"}
 		
 	sets.idle.Town.STP = set_combine(sets.idle.Town, {hands="Tanner's cuffs"})
 
@@ -438,7 +438,7 @@ function init_gear_sets()
         head="Turms cap +1",neck="Assassin's gorget +2",ear1="Infused Earring",ear2="Eabani Earring",											--
         body="Nyame mail",hands="Turms Mittens +1",ring1="Defending Ring",ring2="Moonlight Ring",												--9, 0, 10, 5
         back={ name="Toutatis's Cape", augments={'AGI+20','Eva.+20 /Mag. Eva.+20','Evasion+10','"Store TP"+10','Phys. dmg. taken-10%'}},		--10
-		waist="Engraved belt",legs="Skulker's culottes +3",feet="Pillager's Poulaines +3"}														--0, 13, 0
+		waist="Engraved belt",legs="Skulker's culottes +3",feet="Pillager's Poulaines +4"}														--0, 13, 0
 		-- 47% PDT
 
     -- Defense sets
@@ -504,8 +504,14 @@ function init_gear_sets()
 	sets.engaged.HybridSB = {ammo="Expeditious pinion",  															--7
         head="Malignance chapeau",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Skulker's earring +2",  	--0,0,0|5,7
         body="Malignance tabard",hands="Malignance gloves",ring1="Chirich Ring +1",ring2="Chirich Ring +1",  	   	--0,0,10,10
-        back=gear.CapeSTP,waist="Reiki Yotai",legs="Gleti's breeches",feet="Volte spats"}  							--0,0,10,6  Mummu feet would be 9 SB 5 crit, less Str/Dex more Acc
-		--50 SB1 + 5 SB2    38 PDT     R30 Gleti's legs +5 SB, can drop ammo and be at 49 w/ Mummu
+        back=gear.CapeSTP,waist="Reiki Yotai",legs="Gleti's breeches",feet="Volte spats"}  							--0,0,13,6  Mummu feet would be 9 SB 5 crit, less Str/Dex more Acc
+		--53 SB1 + 5 SB2    38 PDT     R30 Gleti's legs +5 SB, can drop ammo and be at 49 w/ Mummu,  new cursed feet are 3/4 SB better defense
+		
+	sets.engaged.CursedHybridSB = {ammo="Expeditious pinion",  															--7					DT				
+        head="Malignance chapeau",neck="Assassin's gorget +2",ear1="Sherida Earring",ear2="Skulker's earring +2",  		--0,0,0|5,7			6, 0, 0, 0
+        body="Duty Cyclas",hands="Duty Gauntlets",ring1="Murky Ring",ring2="Chirich Ring +1",  	  				 		--7,3,0,10			7, 3, 10, 0
+        back=gear.CapeSTP,waist="Reiki Yotai",legs="Gleti's breeches",feet="Duty Sollerets"}  							--0,0,13,4  		10, 0, 8, 4
+		--51 SB1 + 5 SB2    48 PDT     R30 Gleti's legs +5 SB, new cursed feet are 3/4 SB better defense
 		
 	sets.engaged.HybridCrit = set_combine(sets.engaged.Hybrid, {ring1="Lehko Habhoka's ring", back=gear.CapeCrit})
 	

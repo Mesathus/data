@@ -69,7 +69,7 @@ function init_gear_sets()
     -- CureMelee spell map should default back to Healing Magic.
     
     -- Precast sets to enhance JAs
-    sets.precast.JA.Benediction = {body="Piety Briault +1"}
+    sets.precast.JA.Benediction = {body="Piety bliaut +1"}
 
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {
@@ -86,17 +86,17 @@ function init_gear_sets()
 	
     sets.precast.WS = {
         head="Nyame helm",neck="Fotia gorget",ear1="Ebers Earring +2",ear2="Moonshade Earring",
-        body="Nyame mail",hands="Nyame Gloves",ring1="Epaminondas's Ring",ring2="Metamorph Ring +1",
+        body="Nyame mail",hands="Nyame Gauntlets",ring1="Epaminondas's Ring",ring2="Metamorph Ring +1",
         back="Aurist's cape +1",waist="Fotia belt",legs="Nyame flanchard",feet="Nyame sollerets"}
     
     sets.precast.WS['Flash Nova'] = {
         head="Nyame helm",neck="Fotia gorget",ear1="Malignance Earring",ear2="Friomisi Earring",
-        body="Nyame mail",hands="Nyame Gloves",ring1="Epaminondas's Ring",ring2="Metamorph Ring +1",
+        body="Nyame mail",hands="Nyame Gauntlets",ring1="Epaminondas's Ring",ring2="Metamorph Ring +1",
         back="Aurist's cape +1",waist="Fotia belt",legs="Nyame flanchard",feet="Nyame sollerets"}
 		
 	sets.precast.WS['Cataclysm'] = {
         head="Nyame helm",neck="Fotia gorget",ear1="Malignance Earring",ear2="Friomisi Earring",
-        body="Nyame mail",hands="Nyame Gloves",ring1="Epaminondas's Ring",ring2="Metamorph Ring +1",
+        body="Nyame mail",hands="Nyame Gauntlets",ring1="Epaminondas's Ring",ring2="Metamorph Ring +1",
         back="Aurist's cape +1",waist="Fotia belt",legs="Nyame flanchard",feet="Nyame sollerets"}
     
 
@@ -134,7 +134,7 @@ function init_gear_sets()
 
     sets.midcast.Cursna = {
         head="Ebers Cap +2",neck="Debilis Medallion",
-        body="Ebers Bliaud +2",hands="Fanatic gloves",ring1="Stikini ring +1", ring2="Menelaus's ring",
+        body="Ebers Bliaut +2",hands="Fanatic gloves",ring1="Stikini ring +1", ring2="Menelaus's ring",
         back="Mending Cape",waist="Goading Belt",legs="Theophany pantaloons +2",feet=gear.FeetCurse}
 		--
 		
@@ -145,6 +145,8 @@ function init_gear_sets()
 
     sets.midcast.StatusRemoval = {main="Yagrush",sub="Genbu's Shield",
         head="Ebers Cap +2",legs="Ebers Pantaloons +2"}
+		
+	sets.midcast['Erase'] = set_combine(sets.midcast.StatusRemoval, {neck="Cleric's torque +2"})
 
     -- 110 total Enhancing Magic Skill; caps even without Light Arts
     sets.midcast['Enhancing Magic'] = {sub="Ammurapi shield",
@@ -162,12 +164,12 @@ function init_gear_sets()
 
     sets.midcast.BarElement = {main="Beneficus",sub="Genbu's Shield",
         head="Ebers Cap +2",neck="Incanter's Torque",
-        body="Ebers Bliaud +2",hands="Ebers Mitts +2",
+        body="Ebers bliaut +2",hands="Ebers Mitts +2",
         back="Mending Cape",waist="Olympus Sash",legs="Piety Pantaloons +1",feet="Ebers Duckbills +2"}
 
     sets.midcast.Regen = set_combine(sets.midcast['Enhancing Magic'], {main="Bolelabunga", 
-		body="Piety briault +1",hands="Ebers mitts +2",
-		legs="Theophany pantaloons +2",feet="Theopnany duckbills +2"})
+		body="Piety bliaut +1",hands="Ebers mitts +2",
+		legs="Theophany pantaloons +2",feet="Theophany duckbills +2"})
 
 	sets.midcast.SIRD = {ammo="Staunch tathlum +1",         													--11
         head="Chironic hat",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Odnowa Earring +1",  		--0, 5, 0, 0
@@ -262,12 +264,12 @@ function init_gear_sets()
     
     -- Basic set for if no TP weapon is defined.
     sets.engaged = {ammo="Staunch tathlum +1",
-        head="Nyame helm", neck="Null loop", left_ear="Telos Earring", right_ear="Mache earring +1",
+        head="Bunzi's hat", neck="Null loop", left_ear="Telos Earring", right_ear="Mache earring +1",
 		body="Nyame mail", hands="Bunzi's gloves", left_ring="Chirich Ring +1", right_ring="Chirich Ring +1",
 		back="Null shawl", waist="Null belt", legs="Nyame Flanchard", feet="Nyame Sollerets"}
 		
 	sets.engaged.DW = {ammo="Staunch tathlum +1",
-        head="Nyame helm", neck="Null loop", left_ear="Telos Earring", right_ear="Dedition earring",
+        head="Bunzi's hat", neck="Null loop", left_ear="Telos Earring", right_ear="Dedition earring",
 		body="Nyame mail", hands="Bunzi's gloves", left_ring="Chirich Ring +1", right_ring="Chirich Ring +1",
 		back="Null shawl", waist="Shetal stone", legs="Nyame Flanchard", feet="Nyame Sollerets"}
 

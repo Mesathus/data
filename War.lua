@@ -82,13 +82,13 @@ function init_gear_sets()
     --------------------------------------
    
     -- Sets to apply to arbitrary JAs
-    sets.precast.JA['Berserk'] = {feet="Agoge Calligae +3", body="Pummeler's Lorica +3",back="Cichol's Mantle"}
-    sets.precast.JA['Aggressor'] = {body="Agoge Lorica +3", head="Pummeler's Mask +3"}
+    sets.precast.JA['Berserk'] = {feet="Agoge Calligae +3", body="Pummeler's Lorica +4",back="Cichol's Mantle"}
+    sets.precast.JA['Aggressor'] = {body="Agoge Lorica +3", head="Pummeler's Mask +4"}
     sets.precast.JA['Mighty Strikes'] = {hands="Agoge Mufflers +3"}
     sets.precast.JA['Tomahawk'] = {ammo="Throwing Tomahawk",feet="Agoge Calligae +3"}
     sets.precast.JA['Provoke'] = {
-       head="Pummeler's Mask +3",neck="Unmoving Collar +1",ear1="Friomisi Earring",ear2="Trux Earring",
-       body="Souveran Cuirass +1",hands="Pummeler's Mufflers +3",ring1="Apeile Ring",ring2="Apeile Ring +1",
+       head="Pummeler's Mask +4",neck="Unmoving Collar +1",ear1="Friomisi Earring",ear2="Trux Earring",
+       body="Souveran Cuirass +1",hands="Pummeler's Mufflers +4",ring1="Apeile Ring",ring2="Apeile Ring +1",
        waist="Goading Belt",feet="Souveran Schuhs +1"}
     sets.precast.JA['Blood Rage'] = set_combine(sets.precast.JA['Provoke'], {body="Boii Lorica +2"})
     sets.precast.JA['Warcry'] = set_combine(sets.precast.JA['Provoke'], {head="Agoge Mask +3"})  
@@ -115,7 +115,7 @@ function init_gear_sets()
     -- Weaponskill sets
     sets.precast.WS = {ammo="Knobkierrie",
         head="Agoge Mask +3", neck="Warrior's bead necklace +2", ear1="Moonshade Earring", ear2="Boii Earring +2",
-        body="Nyame mail", hands="Boii mufflers +2", ring1="Regal Ring", ring2="Epaminondas's Ring",
+        body="Pummeler's Lorica +4", hands="Boii mufflers +2", ring1="Regal Ring", ring2="Epaminondas's Ring",
         back=gear.CapeStrWSD, waist="Sailfi Belt +1", legs="Nyame Flanchard", feet="Nyame Sollerets"}
 		
 	sets.precast.WS.Multi = {ammo="Coiste Bodhar",																		-- 3
@@ -269,8 +269,8 @@ function init_gear_sets()
 	sets.engaged = {ammo="Coiste Bodhar",																						-- 3
 		head="Boii Mask +2", neck="Warrior's bead necklace +2", left_ear="Schere Earring", right_ear="Boii Earring +2",			-- 7, 7, 6, 9
 		body="Sakpata's plate",	hands="Sakpata's Gauntlets", left_ring="Niqmaddu Ring", right_ring="Lehko Habhoka's Ring",		-- 8, 6, 0, 0
-		back="Null shawl", waist="Ioskeha Belt +1", legs="Pummeler's cuisses +4", feet="Pummeler's calligae",					-- 10, 0, 11, 9
-	}	-- 18% base + 10 gifts, 76 gear  = 104% DA
+		back="Null shawl", waist="Ioskeha Belt +1", legs="Pummeler's cuisses +4", feet="Pummeler's calligae",					-- 7, 9, 11, 9
+	}	-- 18% base + 10 gifts + 5 merits = 33, 73 gear  = 106% DA			Su4/5 boots 7/6 DA, 100% DA finish neck, +6/8 sTP
 	
 	sets.engaged.Hybrid = {ammo="Coiste Bodhar",																				-- 3
 		head="Boii Mask +2", neck="Warrior's bead necklace +2", left_ear="Schere Earring", right_ear="Boii Earring +2",			-- 7, 7, 6, 9
@@ -303,7 +303,7 @@ function init_gear_sets()
     body="Sakpata's plate",
     hands="Sakpata's Gauntlets",
     legs="Sakpata's Cuisses",
-    feet="Pummeler's calligae +4",
+    feet="Pummeler's calligae",
     neck="Warrior's bead necklace +2",
     waist="Sailfi Belt +1",
     left_ear="Schere Earring",

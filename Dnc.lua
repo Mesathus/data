@@ -128,11 +128,11 @@ function init_gear_sets()
     
     sets.precast.Samba = {head="Maxixi Tiara +3", back=gear.CapeTP}
 
-    sets.precast.Jig = {legs="Horos Tights +3", feet="Maxixi Toe Shoes +3"}
+    sets.precast.Jig = {legs="Horos Tights +4", feet="Maxixi Toe Shoes +3"}
 
     -- sets.precast.Step = {ammo="Yamarang",
         -- head="Maxixi Tiara +3",neck="Etoile Gorget +2",ear1="Mache Earring +1",ear2="Telos Earring",
-        -- body="Maxixi Casaque +3",hands="Maxixi Bangles +3",ring1="Regal Ring",ring2="Chirich Ring +1",
+        -- body="Maxixi Casaque +3",hands="Maxixi Bangles +4",ring1="Regal Ring",ring2="Chirich Ring +1",
         -- back=gear.CapeTP, waist="Kentarch belt +1",legs="Malignance tights",feet="Horos Toe Shoes +3"}
 		
 	sets.precast.Step = {ammo="Staunch tathlum +1",															--3
@@ -159,7 +159,7 @@ function init_gear_sets()
     sets.precast.Flourish2['Reverse Flourish'] = {hands="Maculele Bangles +3", back="Toetapper mantle"}
 
     sets.precast.Flourish3 = {}
-    sets.precast.Flourish3['Striking Flourish'] = {body="Maculele Casaque +2"}
+    sets.precast.Flourish3['Striking Flourish'] = {body="Maculele Casaque +3"}
     sets.precast.Flourish3['Climactic Flourish'] = {head="Maculele Tiara +3"}
 
     -- Fast cast sets for spells
@@ -177,7 +177,7 @@ function init_gear_sets()
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {ammo="Cath palug stone",
 		head="Maculele Tiara +3", neck="Etoile Gorget +2", left_ear="Sherida Earring", right_ear="Moonshade Earring",
-		body="Nyame Mail", hands="Maxixi Bangles +3", left_ring="Epaminondas's Ring", right_ring="Regal Ring",
+		body="Nyame Mail", hands="Maxixi Bangles +4", left_ring="Epaminondas's Ring", right_ring="Regal Ring",
 		back=gear.CapeWSD, waist="Kentarch belt +1", legs="Nyame flanchard", feet="Nyame Sollerets"}
 	
     sets.precast.WS.Acc = set_combine(sets.precast.WS, {})
@@ -307,7 +307,7 @@ function init_gear_sets()
     sets.engaged.Fodder = sets.engaged
     -- sets.engaged.Fodder.Evasion = {ammo="Charis Feather",
         -- head="Felistris Mask",neck="Maculele Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        -- body="Qaaxo Harness",hands="Maxixi Bangles +3",ring1="Rajas Ring",ring2="Epona's Ring",
+        -- body="Qaaxo Harness",hands="Maxixi Bangles +4",ring1="Rajas Ring",ring2="Epona's Ring",
         -- back="Atheling Mantle",waist="Patentia Sash",legs=gear.AugQuiahuiz,feet="Horos Toe Shoes"}
 
     sets.engaged.Acc = {ammo="Yamarang",
@@ -352,16 +352,16 @@ function init_gear_sets()
     -- -- Custom melee group: High Haste (2x March or Haste)
     -- sets.engaged.HighHaste = {ammo="Charis Feather",
         -- head="Felistris Mask",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        -- body="Qaaxo Harness",hands="Maxixi Bangles +3",ring1="Rajas Ring",ring2="Epona's Ring",
+        -- body="Qaaxo Harness",hands="Maxixi Bangles +4",ring1="Rajas Ring",ring2="Epona's Ring",
         -- back="Atheling Mantle",waist="Patentia Sash",legs="Kaabnax Trousers",feet="Manibozho Boots"}
 
     -- sets.engaged.Fodder.HighHaste = {ammo="Charis Feather",
         -- head="Felistris Mask",neck="Maculele Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        -- body="Maculele Casaque +2",hands="Maxixi Bangles +3",ring1="Rajas Ring",ring2="Epona's Ring",
+        -- body="Maculele Casaque +3",hands="Maxixi Bangles +4",ring1="Rajas Ring",ring2="Epona's Ring",
         -- back="Atheling Mantle",waist="Patentia Sash",legs=gear.AugQuiahuiz,feet="Horos Toe Shoes"}
     -- sets.engaged.Fodder.Evasion.HighHaste = {ammo="Charis Feather",
         -- head="Felistris Mask",neck="Maculele Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        -- body="Qaaxo Harness",hands="Maxixi Bangles +3",ring1="Rajas Ring",ring2="Epona's Ring",
+        -- body="Qaaxo Harness",hands="Maxixi Bangles +4",ring1="Rajas Ring",ring2="Epona's Ring",
         -- back="Atheling Mantle",waist="Patentia Sash",legs="Kaabnax Trousers",feet="Iuitl Gaiters +1"}
 
     -- sets.engaged.Acc.HighHaste = {ammo="Honed Tathlum",
@@ -389,17 +389,17 @@ function init_gear_sets()
     -- -- Custom melee group: Max Haste (2x March + Haste)
     -- sets.engaged.MaxHaste = {ammo="Charis Feather",
         -- head="Felistris Mask",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        -- body="Qaaxo Harness",hands="Maxixi Bangles +3",ring1="Rajas Ring",ring2="Epona's Ring",
+        -- body="Qaaxo Harness",hands="Maxixi Bangles +4",ring1="Rajas Ring",ring2="Epona's Ring",
         -- back="Atheling Mantle",waist="Windbuffet Belt",legs=gear.AugQuiahuiz,feet="Manibozho Boots"}
 
     -- -- Getting Marches+Haste from Trust NPCs, doesn't cap delay.
     -- sets.engaged.Fodder.MaxHaste = {ammo="Charis Feather",
         -- head="Felistris Mask",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        -- body="Thaumas Coat",hands="Maxixi Bangles +3",ring1="Rajas Ring",ring2="Epona's Ring",
+        -- body="Thaumas Coat",hands="Maxixi Bangles +4",ring1="Rajas Ring",ring2="Epona's Ring",
         -- back="Atheling Mantle",waist="Patentia Sash",legs=gear.AugQuiahuiz,feet="Horos Toe Shoes"}
     -- sets.engaged.Fodder.Evasion.MaxHaste = {ammo="Charis Feather",
         -- head="Felistris Mask",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        -- body="Qaaxo Harness",hands="Maxixi Bangles +3",ring1="Rajas Ring",ring2="Epona's Ring",
+        -- body="Qaaxo Harness",hands="Maxixi Bangles +4",ring1="Rajas Ring",ring2="Epona's Ring",
         -- back="Atheling Mantle",waist="Patentia Sash",legs="Kaabnax Trousers",feet="Manibozho Boots"}
 
     -- sets.engaged.Acc.MaxHaste = {ammo="Honed Tathlum",
@@ -426,7 +426,7 @@ function init_gear_sets()
 
 
     -- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
-    sets.buff['Saber Dance'] = {legs="Horos Tights +3"}
+    sets.buff['Saber Dance'] = {legs="Horos Tights +4"}
 	sets.buff['Fan Dance'] = {hands="Horos Bangles +3"}
     sets.buff['Climactic Flourish'] = {head="Maculele Tiara +3"}
 end

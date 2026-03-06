@@ -248,10 +248,11 @@ function init_gear_sets()
 
 
     -- Waltz set (chr and vit)
-    sets.precast.Waltz = {ammo="Sonia's Plectrum",
-        head="Uk'uxkaj Cap",
-        body="Vanir Cotehardie",hands="Buremte Gloves",ring1="Spiral Ring",
-        back="Iximulew Cape",waist="Caudata Belt",legs="Hagondes Pants",feet="Iuitl Gaiters +1"}
+    sets.precast.Waltz = {																									--0
+        head="Nyame Helm",neck="Unmoving collar +1",ear1="Tuisto earring",ear2="Odnowa earring +1",							--0, 0, 0, 0
+        body="Passion jacket",hands=gear.HercWaltzHands,ring1="Gelatinous Ring +1",ring2="Metamorph Ring +1",				--13, 11, 0, 0
+        back="Moonlight Cape",waist="Platinum moogle Belt",legs="Dashing subligar",feet=gear.HercWaltzFeet}					--0, 0, 10, 11
+		-- 45%  
         
     -- Don't need any special gear for Healing Waltz.
     sets.precast.Waltz['Healing Waltz'] = {}
@@ -274,7 +275,7 @@ function init_gear_sets()
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {ammo="Coiste bodhar",
         head="Adhemar bonnet +1",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Ishvara Earring",
-        body="Assimilator's Jubbah +3",hands="Adhemar Wristbands +1",ring1="Ilabrat Ring",ring2="Epona's Ring",
+        body="Assimilator's Jubbah +4",hands="Adhemar Wristbands +1",ring1="Ilabrat Ring",ring2="Epona's Ring",
         back=gear.WSDCape,waist="Fotia Belt",legs="Samnuha tights",feet="Herculean boots"}
     
     -- sets.precast.WS.acc = set_combine(sets.precast.WS, {hands="Buremte Gloves"})
@@ -285,32 +286,32 @@ function init_gear_sets()
     sets.precast.WS['Sanguine Blade'] = {ammo="Pemphredo tathlum",
         head="Pixie hairpin +1",neck="Sibyl scarf",ear1="Friomisi Earring",ear2="Regal Earring",
         body="Nyame mail",hands="Jhakri cuffs +2",ring1="Archon Ring",ring2="Epaminondas's Ring",
-        back=gear.NukeCape,waist="Orpheus's sash",legs="Luhlaza Shalwar +3",feet="Nyame sollerets"}
+        back=gear.NukeCape,waist="Orpheus's sash",legs="Luhlaza Shalwar +4",feet="Nyame sollerets"}
     
     sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {ammo="Coiste bodhar",
 		head="Hashishin Kavuk +3",neck="Mirage stole +2",ear1="Moonshade Earring",
 		body="Nyame mail",hands="Nyame gauntlets",ring1="Epaminondas's ring",ring2="Sroda ring",
-		waist="Kentarch belt +1",legs="Nyame Flanchard",feet="Nyame Sollerets"})
+		waist="Kentarch belt +1",legs="Luhlaza Shalwar +4",feet="Nyame Sollerets"})
 		
 	sets.precast.WS['Expiacion'] = set_combine(sets.precast.WS, {ammo="Coiste bodhar",
 		head="Hashishin Kavuk +3",neck="Mirage stole +2",ear1="Moonshade Earring",
-		body="Nyame mail",hands="Nyame gauntlets",ring1="Epaminondas's ring",ring2="Sroda ring",
-		waist="Kentarch belt +1",legs="Nyame Flanchard",feet="Nyame Sollerets"})
+		body="Assimilator's Jubbah +4",hands="Nyame gauntlets",ring1="Epaminondas's ring",ring2="Sroda ring",
+		waist="Kentarch belt +1",legs="Luhlaza Shalwar +4",feet="Nyame Sollerets"})
 		
 	sets.precast.WS['Black Halo'] = set_combine(sets.precast.WS, {ammo="Coiste bodhar",
 		head="Hashishin Kavuk +3",neck="Mirage stole +2",ear1="Moonshade Earring",ear2="Regal Earring",
 		body="Nyame mail",hands="Nyame gauntlets",ring1="Epaminondas's ring",ring2="Sroda ring",
-		waist="Kentarch belt +1",legs="Nyame Flanchard",feet="Nyame Sollerets"})
+		waist="Kentarch belt +1",legs="Luhlaza Shalwar +4",feet="Nyame Sollerets"})
 		
 	sets.precast.WS['Flash Nova'] = {ammo="Pemphredo tathlum",
         head="Nyame helm",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Regal Earring",
         body="Nyame mail",hands="Jhakri cuffs +2",ring1="Rufescent ring",ring2="Epaminondas's Ring",
-        back=gear.NukeCape,waist="Orpheus's sash",legs="Luhlaza Shalwar +3",feet="Nyame Sollerets"}
+        back=gear.NukeCape,waist="Orpheus's sash",legs="Luhlaza Shalwar +4",feet="Nyame Sollerets"}
 		
 	sets.precast.WS['Seraph Blade'] = {ammo="Pemphredo tathlum",
         head="Nyame helm",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Regal Earring",
         body="Nyame mail",hands="Jhakri cuffs +2",ring1="Rufescent ring",ring2="Epaminondas's Ring",
-        back=gear.NukeCape,waist="Orpheus's sash",legs="Luhlaza Shalwar +3",feet="Nyame Sollerets"}
+        back=gear.NukeCape,waist="Orpheus's sash",legs="Luhlaza Shalwar +4",feet="Nyame Sollerets"}
 		
 	sets.precast.WS['Realmrazer'] = set_combine(sets.precast.WS, {
 		head="Adhemar bonnet +1",ear2="Regal Earring",
@@ -345,7 +346,7 @@ function init_gear_sets()
     
     sets.midcast['Blue Magic'].Physical = {ammo="Mavi Tathlum",
         head="Adhemar bonnet +1",neck="Incantor's torque",ear1="Suppanomimi",ear2="Cessance Earring",
-        body="Assimilator's Jubbah +3",hands="Adhemar Wristbands +1",ring1="Rajas Ring",ring2="Ilabrat Ring",
+        body="Assimilator's Jubbah +4",hands="Adhemar Wristbands +1",ring1="Rajas Ring",ring2="Ilabrat Ring",
         back="Cornflower Cape",waist="Grunfeld rope",legs="Samnuha tights",feet="Luhlaza Charuqs +3"}
 
     -- sets.midcast['Blue Magic'].PhysicalAcc = {ammo="Mantoptera eye",
@@ -447,7 +448,7 @@ function init_gear_sets()
 
     sets.midcast['Blue Magic'].SkillBasedBuff = {ammo="Mavi Tathlum",
         head="Luhlaza Keffiyeh +3",neck="Mirage Stole +2",ear2="Hashishin earring +1",
-        body="Assimilator's Jubbah +3",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
+        body="Assimilator's Jubbah +4",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
         back="Cornflower Cape",legs="Hashishin Tayt +3",feet="Luhlaza Charuqs +3"}
 
     sets.midcast['Blue Magic'].Buff = {}
@@ -541,7 +542,7 @@ function init_gear_sets()
 
     sets.engaged.Refresh = {ammo="Coiste Bodhar",
         head="Whirlpool Mask",neck="Mirage stole +2",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Assimilator's Jubbah +3",hands="Assimilator's Bazubands +1",ring1="Rajas Ring",ring2="Epona's Ring",
+        body="Assimilator's Jubbah +4",hands="Assimilator's Bazubands +1",ring1="Rajas Ring",ring2="Epona's Ring",
         back="Atheling Mantle",waist="Windbuffet Belt",legs="Manibozho Brais",feet="Qaaxo Leggings"}
 
     sets.engaged.DW = {ammo="Coiste Bodhar",
@@ -566,7 +567,7 @@ function init_gear_sets()
 
     sets.engaged.DW.Refresh = {ammo="Ginsen",
         head="Rawhide Mask",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Suppanomimi",
-        body="Assimilator's Jubbah +3",hands="Taeon gloves",ring1="Rajas Ring",ring2="Epona's Ring",
+        body="Assimilator's Jubbah +4",hands="Taeon gloves",ring1="Rajas Ring",ring2="Epona's Ring",
         back="Atheling Mantle",waist="Shetal stone",legs="Samnuha tights",feet="Taeon Boots"}
 
     sets.engaged.Learning = set_combine(sets.engaged, sets.Learning)
