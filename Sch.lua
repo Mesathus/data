@@ -68,8 +68,8 @@ function user_setup()
 	send_command('unbind f9')
 	send_command('unbind ^f9')
 	send_command('bind f9 gs c cycle CastingMode')
-	send_command('bind ^f9 gs c cycle OffenseMode')
-	send_command('bind !p input /item Panacea <me>')  --Alt + P
+	send_command('bind ^f9 gs c cycle OffenseMode')		--rebound to ctrl + f9
+	send_command('bind !p input /item Panacea <me>')  	--Alt + P
 
     select_default_macro_book()
 end

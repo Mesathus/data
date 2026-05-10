@@ -25,7 +25,7 @@ end
 function user_setup()
     state.OffenseMode:options('None', 'Normal', 'Enspell1')
     state.HybridMode:options('Normal', 'PhysicalDef', 'MagicalDef')
-    state.CastingMode:options('Normal', 'Resistant', 'Burst', 'BurstResistant', 'OA', 'Duration')
+    state.CastingMode:options('Normal', 'Resistant', 'Burst', 'BurstResistant', 'OA', 'Duration')  --Ctrl + F11
 	state.WeaponskillMode:options('Normal', 'Acc')
     state.IdleMode:options('Normal', 'Refresh', 'DT', 'Aminon')
 	state.WeaponMode = M{'None', 'Maxentius', 'Naegling', 'Excalibur'}		--Alt F10
@@ -203,13 +203,14 @@ function init_gear_sets()
 		
 	sets.midcast.Phalanx = set_combine(sets.midcast['Enhancing Magic'], {main="Sakpata's sword", 
 		head=gear.HeadPhalanx,
-		ear1="Mimir earring",
-		ear2="Andoaa earring",
-		body=gear.BodyPhalanx,
-		hands=gear.HandsPhalanx,
-		ring1="Stikini ring +1",
+		ear1="Odnowa earring +1",
+		ear2="Lethargy earring +2",
+		body=gear.PhalanxBodyChironic,
+		hands=gear.PhalanxHandsChironic,
+		ring1="Defending ring",
+		ring2="Murky ring",
 		back="Ghostfyre cape",
-		waist="Olympus sash",
+		waist="Embla sash",
 		legs=gear.LegsPhalanx,
 		feet=gear.FeetPhalanx})
 
@@ -233,7 +234,7 @@ function init_gear_sets()
         back=gear.CapeEnf,waist="Obstinate sash",legs="Lethargy fuseau +3",feet="Vitiation boots +3"}			--0, 14, 0 , 16
 		-- 610/625 to cap     base 440 merits 476 master														--114=590
 		-- need 48 with master, earring 10, af body 2, obstinate sash 1 short 17 w/o MLs  15 more for Frazzle
-		-- Aminon 468 Mnd    435 mnd,  83 from cap
+		-- Aminon 468 Mnd    439 mnd,  79 from cap
 		
 	sets.midcast.EnfeeblingDuration = set_combine(sets.midcast['Enfeebling Magic'], {hands = "Regal cuffs", feet="Lethargy houseaux +3"})
 		
@@ -299,6 +300,7 @@ function init_gear_sets()
 	sets.midcast.Impact.OA = set_combine(sets.midcast['Elemental Magic'].OA, sets.midcast.Impact)
 
     sets.midcast['Dark Magic'] = set_combine(sets.midcast['Elemental Magic'], {})
+	sets.midcast['Dark Magic'].Resistant = set_combine(sets.midcast['Elemental Magic'].Resistant, {})
 
     --sets.midcast.Stun = set_combine(sets.midcast['Dark Magic'], {})
 

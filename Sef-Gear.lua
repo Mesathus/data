@@ -5,6 +5,7 @@
 	--Fast Cast gear
 	gear.HercFeetFC = {name="Herculean Boots", augments={'Mag. Acc.+15','"Fast Cast"+5','MND+6','"Mag.Atk.Bns."+15'}}
 	gear.HercHatFC = {name="Herculean Helm", augments={'"Mag.Atk.Bns."+24','"Fast Cast"+6','STR+7','Mag. Acc.+14'}}
+	gear.AdhemarFC = {name="Adhemar Jacket +1", augments={'HP+105','"Fast Cast"+10','Magic dmg. taken -4'}}
 	
 	--Waltz Gear
 	gear.HercWaltzHands = {name="Herculean Gloves", augments={'"Waltz" potency +11%','AGI+2','Attack+13'}}
@@ -20,6 +21,12 @@
 	gear.PhalanxHeadPld = {name="Valorous Mask", augments={'Accuracy+11','Weapon skill damage +2%','Phalanx +5','Accuracy+10 Attack+10','Mag. Acc.+1 "Mag.Atk.Bns."+1'}}
 	gear.PhalanxBodyPld = {name="Odyss. Chestplate", augments={'"Store TP"+4','Pet: Mag. Acc.+1','Phalanx +5'}}
 	
+	gear.PhalanxHeadChironic = {}
+	gear.PhalanxBodyChironic = {name="Chironic Doublet", augments={'Pet: Accuracy+25 Pet: Rng. Acc.+25','Rng.Atk.+7','Phalanx +5','Accuracy+16 Attack+16','Mag. Acc.+1 "Mag.Atk.Bns."+1'}}
+	gear.PhalanxHandsChironic = {name="Chironic Gloves", augments={'MND+1','Mag. Acc.+25','Phalanx +4','Accuracy+3 Attack+3'}}
+	gear.PhalanxLegsChironic = {}
+	gear.PhalanxFeetChironic = {}
+	
 	--Melee stuff
 	gear.AdhemarBodyMelee = {name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20'}}
 	
@@ -28,6 +35,7 @@
 	
 	gear.FeetCurse = {name="Vanya Clogs", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3'}}
 	gear.FeetSIRD = {name="Vanya Clogs", augments={'MND+10','Spell interruption rate down +15%','"Conserve MP"+6'}}
+	gear.MAccLegsChironic = {name="Chironic Hose", augments={'Pet: INT+5','Mag. Acc.+24','Mag. Acc.+19 "Mag.Atk.Bns."+19'}}
 	
 	--Enhancing duration
 	
@@ -37,3 +45,5 @@
 	gear.TelchineLegsDuration = {name="Telchine Braconi", augments={'Enh. Mag. eff. dur. +10'}}
 	gear.TelchineFeetDuration = {name="Telchine Pigaches", augments={'Mag. Acc.+20','"Fast Cast"+4','Enh. Mag. eff. dur. +10'}}
 	
+	--Spell Interrupt
+	gear.SIRDHandsChironic = {name="Chironic Gloves", augments={'Spell interruption rate down -10%','CHR+7','Mag. Acc.+6'}}

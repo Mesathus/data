@@ -166,7 +166,7 @@ function init_gear_sets()
     
     sets.precast.FC = {ammo="Sapience orb",																			--2
 		head = gear.HercHatFC, neck="Voltsurge torque", ear1="Etiolation earring", ear2="Loquacious Earring",		--13, 4, 1, 2
-		body="Dread Jupon", hands="Leyline Gloves", ring1="Prolix Ring",											--7, 8, 2
+		body=gear.AdhemarFC, hands="Leyline Gloves", ring1="Prolix Ring",											--7, 8, 2
 		back=gear.CapeFC, legs="Rawhide trousers", feet=gear.HercFeetFC}											--10, 5, 5
 		-- 59% FC
 
@@ -217,13 +217,13 @@ function init_gear_sets()
     
     sets.midcast.FastRecast = {ammo="Sapience orb",
 		head=gear.HercHatFC, neck="Voltsurge torque", ear1="Etiolation earring", ear2="Loquacious Earring", 
-		body="Dread Jupon",	hands="Leyline Gloves", ring1="Prolix Ring", 
+		body=gear.AdhemarFC,	hands="Leyline Gloves", ring1="Prolix Ring", 
 		legs="Rawhide trousers", feet=gear.HercFeetFC}
         
     -- Specific spells
     sets.midcast.Utsusemi = {ammo="Sapience orb",
 		head=gear.HercHatFC,	neck="Voltsurge torque", ear1="Etiolation earring", ear2="Loquacious Earring",
-		body="Dread jupon",	hands="Leyline Gloves", ring1="Prolix Ring",
+		body=gear.AdhemarFC,	hands="Leyline Gloves", ring1="Prolix Ring",
 		legs="Rawhide trousers", feet=gear.HercFeetFC}
 		
 	sets.midcast.Phalanx = set_combine(sets.midcast.FastRecast, {

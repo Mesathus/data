@@ -293,16 +293,18 @@ function init_gear_sets()
 		back=gear.MAccCape, waist="Embla sash", legs="Telchine Braconi",feet="Telchine pigaches" }
 		
 	sets.midcast.Regen = set_combine(sets.midcast['Enhancing Magic'], {head = "Inyanga tiara +2"})
+	
+	sets.midcast.Phalanx = set_combine(sets.midcast['Enhancing Magic'], {body=gear.PhalanxBodyChironic,hands=gear.PhalanxHandsChironic})
         
     sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {
         head="Telchine cap",neck ="Stone Gorget",
         body="Telchine Chasuble",hands="Telchine gloves",ring1="Stikini ring +1",
         back="Moonlight cape",waist="Siegel sash",legs="Shedir Seraweels",feet="Telchine pigaches"})
 		
-	sets.midcast['Aquaveil'] = {main="Mafic cudgel",sub="Genmei shield",ammo="Staunch tathlum +1",         		--0, 0, 11
-        head="Chironic hat",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Odnowa Earring +1",  		--0, 5, 0, 0
-        body="Rosette jaseran +1",hands="Chironic gloves",ring1="Moonlight Ring",ring2="Defending Ring",   	  	--25, 20+10, 0, 0
-        back="Fi follet cape +1",waist="Emphatikos rope",legs="Shedir Seraweels",feet=gear.FeetSIRD}	  		--5, 12, 0, 15
+	sets.midcast['Aquaveil'] = {main="Mafic cudgel",sub="Genmei shield",ammo="Staunch tathlum +1",         				--0, 0, 11
+        head="Chironic hat",neck="Loricate torque +1",ear1="Etiolation Earring",ear2="Odnowa Earring +1",  				--0, 5, 0, 0
+        body="Rosette jaseran +1",hands=gear.SIRDHandsChironic,ring1="Moonlight Ring",ring2="Defending Ring",   	  	--25, 20+10, 0, 0
+        back="Fi follet cape +1",waist="Emphatikos rope",legs="Shedir Seraweels",feet=gear.FeetSIRD}	  				--5, 12, 0, 15
 		-- 103%      Evanescence ring 5%     53% PDT
         
     sets.midcast.Cursna = {
@@ -713,6 +715,7 @@ function calculate_duration(spellName, spellMap)
     if player.equipment.range == 'Daurdabla' then mult = mult + 0.3 end -- change to 0.25 with 90 Daur
     if player.equipment.range == "Gjallarhorn" then mult = mult + 0.4 end -- change to 0.3 with 95 Gjall
 	if player.equipment.range == 'Marsyas' then mult = mult + 0.5 end
+	if player.equipment.range == "Loughnashade" then mult = mult + 0.4 end
     
     if player.equipment.main == "Carnwenhan" then mult = mult + 0.5 end -- 0.1 for 75, 0.4 for 95, 0.5 for 99/119
     if player.equipment.main == "Legato Dagger" then mult = mult + 0.05 end

@@ -48,7 +48,7 @@ function user_setup()
     state.RangedMode:options('Normal', 'Acc')
     state.WeaponskillMode:options('Normal', 'Acc', 'Mod')
     state.PhysicalDefenseMode:options('PDT')
-	state.IdleMode:options('Normal', 'STP', 'Evasion')
+	state.IdleMode:options('Normal', 'STP', 'Evasion', 'Regain', 'Refresh')
 
 
     gear.default.weaponskill_neck = "Fotia gorget"
@@ -57,7 +57,7 @@ function user_setup()
 	gear.CapeCrit = {name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10'}}
 	gear.CapeSTP = {name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}}
 	gear.CapeStr = { name="Toutatis's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%'}}
-	gear.CapeFC = {name="Toutatis's Cape", augments={'"Fast Cast"+10','Phys. dmg. taken-10%'}}
+	gear.CapeFC = {name="Toutatis's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Fast Cast"+10','Phys. dmg. taken-10%'}}
 	gear.CapeEva = {name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%'}}
 
     -- Additional local binds
@@ -149,10 +149,10 @@ function init_gear_sets()
     -- Fast cast sets for spells
     sets.precast.FC = {ammo="Sapience orb",																		--2
 		head = gear.HercHatFC,neck="Voltsurge torque",ear1="Etiolation earring",ear2="Loquacious Earring",		--13, 4, 1, 2
-		body="Dread Jupon",hands="Leyline Gloves",ring1="Prolix Ring",											--7, 8, 2
+		body=gear.AdhemarFC,hands="Leyline Gloves",ring1="Prolix Ring",											--10, 8, 2
 		back=gear.CapeFC,legs="Enif Cosciales",feet=gear.HercFeetFC}											--10, 8, 5
-		-- 62%   
-		--Rahab ring 2, herc feet 6, second adhemar jacket 10, Enchanters 2  66%
+		-- 65%   
+		--Rahab ring 2, herc feet 6, Enchanters 2, Orunmila 5  70%
 
     sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads",body="Passion Jacket"})
 	
@@ -331,13 +331,13 @@ function init_gear_sets()
 
     sets.midcast.FastRecast = {ammo="Sapience orb",
 		head=HercHatFC, neck="Voltsurge torque", ear1="Etiolation earring", ear2="Loquacious Earring", 
-		body="Dread Jupon",	hands="Leyline Gloves", ring1="Prolix Ring", 
+		body=gear.AdhemarFC,	hands="Leyline Gloves", ring1="Prolix Ring", 
 		back=gear.CapeFC, legs="Rawhide trousers", feet=gear.HercFeetFC}
 
     -- Specific spells
     sets.midcast.Utsusemi = {ammo="Sapience orb",
 		head=HercHatFC,	neck="Voltsurge torque", ear1="Etiolation earring", ear2="Loquacious Earring",
-		body="Dread jupon",	hands="Leyline Gloves", ring1="Prolix Ring",
+		body=gear.AdhemarFC,	hands="Leyline Gloves", ring1="Prolix Ring",
 		back=gear.CapeFC, legs="Rawhide trousers", feet=gear.HercFeetFC}
 		
 	sets.midcast['Phalanx'] = set_combine(sets.midcast.FastRecast, {
@@ -365,7 +365,7 @@ function init_gear_sets()
 		right_ear="Crematio earring",
 		left_ring="Dingir Ring",
 		ring2="Metamorph Ring +1",
-		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}}}
+		back=gear.CapeFC}
 		
 	sets.midcast.Cure = {
 		neck="Phalaina locket", ear1="Mendicant's earring",														--4|4, 5
@@ -400,8 +400,8 @@ function init_gear_sets()
     --------------------------------------
 
     -- Resting sets
-    sets.resting = {head="Turms cap +1",neck="Wiglen Gorget",
-        ring1="Sheltered Ring",ring2="Paguroidea Ring"}
+    sets.resting = {head="Turms cap +1",neck="Bathy choker +1",
+        ring1="Shadow Ring",ring2="Sheltered Ring"}
 
 
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
@@ -425,7 +425,7 @@ function init_gear_sets()
 
     sets.idle.Weak = {ammo="Yamarang",
         head="Turms cap +1",neck="Bathy choker +1",ear1="Etiolation Earring",ear2="Infused Earring",
-        body="Malignance tabard",hands="Turms mittens +1",ring1="Defending Ring",ring2="Sheltered Ring",
+        body="Malignance tabard",hands="Turms mittens +1",ring1="Murky Ring",ring2="Sheltered Ring",
         back="Moonlight cape",waist="Flume Belt",legs="Malignance tights",feet="Turms leggings +1"}
 		
 	sets.idle.STP = {ammo="Yamarang",
@@ -436,10 +436,17 @@ function init_gear_sets()
 		
 	sets.idle.Evasion = {ammo="Yamarang",
         head="Turms cap +1",neck="Assassin's gorget +2",ear1="Infused Earring",ear2="Eabani Earring",											--
-        body="Nyame mail",hands="Turms Mittens +1",ring1="Defending Ring",ring2="Moonlight Ring",												--9, 0, 10, 5
+        body="Nyame mail",hands="Turms Mittens +1",ring1="Murky Ring",ring2="Moonlight Ring",												--9, 0, 10, 5
         back={ name="Toutatis's Cape", augments={'AGI+20','Eva.+20 /Mag. Eva.+20','Evasion+10','"Store TP"+10','Phys. dmg. taken-10%'}},		--10
 		waist="Engraved belt",legs="Skulker's culottes +3",feet="Pillager's Poulaines +4"}														--0, 13, 0
 		-- 47% PDT
+		
+	sets.idle.Regain = {ammo="Yamarang",
+        head="Turms cap +1",neck="Republican platinum medal",ear1="Etiolation Earring",ear2="Infused Earring",		--0, 6, 0, 0
+        body="Gleti's cuirass",hands="Gleti's gauntlets",ring1="Murky Ring",ring2="Sheltered Ring",					--9, 5, 10, 0
+        back=gear.CapeEva,waist="Engraved Belt",legs="Gleti's breeches",feet="Pillager's Poulaines +4"}				--10, 0, 7, 0
+		
+	sets.idle.Refresh = set_combine(sets.idle.Regain, {head="Rawhide Mask", body="Mekosuchinae harness", ring1="Stikini Ring +1", ring2="Stikini Ring +1"})
 
     -- Defense sets
 

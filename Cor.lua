@@ -126,7 +126,7 @@ function init_gear_sets()
     
     sets.precast.FC = {
 		head="Carmine Mask +1",neck="Voltsurge torque",ear1="Etiolation earring",ear2="Loquacious Earring",		--14, 4, 1, 1
-		body="Dread Jupon",hands="Leyline Gloves",ring1="Prolix Ring", ring2="Kishar ring",						--7, 8, 2, 4
+		body=gear.AdhemarFC,hands="Leyline Gloves",ring1="Prolix Ring", ring2="Kishar ring",						--7, 8, 2, 4
 		back=gear.CorFCCape,legs="Rawhide trousers",feet="Carmine greaves +1"}									--10, 4, 8
 		-- 63%
 

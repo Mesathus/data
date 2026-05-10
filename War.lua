@@ -90,7 +90,7 @@ function init_gear_sets()
        head="Pummeler's Mask +4",neck="Unmoving Collar +1",ear1="Friomisi Earring",ear2="Trux Earring",
        body="Souveran Cuirass +1",hands="Pummeler's Mufflers +4",ring1="Apeile Ring",ring2="Apeile Ring +1",
        waist="Goading Belt",feet="Souveran Schuhs +1"}
-    sets.precast.JA['Blood Rage'] = set_combine(sets.precast.JA['Provoke'], {body="Boii Lorica +2"})
+    sets.precast.JA['Blood Rage'] = set_combine(sets.precast.JA['Provoke'], {body="Boii Lorica +3"})
     sets.precast.JA['Warcry'] = set_combine(sets.precast.JA['Provoke'], {head="Agoge Mask +3"})  
        
     -- Sets to apply to any actions of spell.type
@@ -115,13 +115,13 @@ function init_gear_sets()
     -- Weaponskill sets
     sets.precast.WS = {ammo="Knobkierrie",
         head="Agoge Mask +3", neck="Warrior's bead necklace +2", ear1="Moonshade Earring", ear2="Boii Earring +2",
-        body="Pummeler's Lorica +4", hands="Boii mufflers +2", ring1="Regal Ring", ring2="Epaminondas's Ring",
+        body="Pummeler's Lorica +4", hands="Boii mufflers +3", ring1="Regal Ring", ring2="Epaminondas's Ring",
         back=gear.CapeStrWSD, waist="Sailfi Belt +1", legs="Nyame Flanchard", feet="Nyame Sollerets"}
 		
 	sets.precast.WS.Multi = {ammo="Coiste Bodhar",																		-- 3
-		head="Boii Mask +2", neck="Fotia gorget", left_ear="Schere Earring", right_ear="Boii Earring +2",				-- 6, 7, 6, 9
+		head="Boii Mask +3", neck="Fotia gorget", left_ear="Schere Earring", right_ear="Boii Earring +2",				-- 6, 7, 6, 9
 		body="Sakpata's plate",	hands="Sakpata's Gauntlets", left_ring="Niqmaddu Ring", right_ring="Regal Ring",		-- 8, 6, 0, 0
-		back=gear.CapeStrDA, waist="Fotia belt", legs="Boii Cuisses +2", feet="Sakpata's leggings",						-- 10, 9, 7, 4
+		back=gear.CapeStrDA, waist="Fotia belt", legs="Boii Cuisses +3", feet="Sakpata's leggings",						-- 10, 9, 7, 4
 	} --18% base + 10 gifts + 75% DA gear
 	
 	sets.precast.WS.Magic = {ammo="Knobkierrie",
@@ -134,19 +134,19 @@ function init_gear_sets()
     --GAXE
     sets.precast.WS['Upheaval'] = set_combine(sets.precast.WS.Multi, {})
 	sets.precast.WS['Upheaval'].Attack = set_combine(sets.precast.WS.Multi, {})
-    sets.precast.WS['Upheaval'].MS = set_combine(sets.precast.WS['Upheaval'], {ammo="Yetshila +1",ring2="Sroda ring", waist="Sailfi belt +1", feet="Boii Calligae +2"})
+    sets.precast.WS['Upheaval'].MS = set_combine(sets.precast.WS['Upheaval'], {ammo="Yetshila +1",ring2="Sroda ring", waist="Sailfi belt +1", feet="Boii Calligae +3"})
    
-    sets.precast.WS['Ukko\'s Fury'] = set_combine(sets.precast.WS.Multi, {ammo="Yetshila +1",ring2="Sroda ring", waist="Sailfi belt +1", feet="Boii Calligae +2"})
+    sets.precast.WS['Ukko\'s Fury'] = set_combine(sets.precast.WS.Multi, {ammo="Yetshila +1",ring2="Sroda ring", waist="Sailfi belt +1", feet="Boii Calligae +3"})
     sets.precast.WS['Ukko\'s Fury'].Attack = set_combine(sets.precast.WS['Ukko\'s Fury'], {})
     sets.precast.WS['Ukko\'s Fury'].MS = set_combine(sets.precast.WS['Ukko\'s Fury'], {})
    
     sets.precast.WS['Steel Cyclone'] = set_combine(sets.precast.WS, {})
     sets.precast.WS['Steel Cyclone'].Attack = set_combine(sets.precast.WS['Steel Cyclone'], {})
-    sets.precast.WS['Steel Cyclone'].MS = set_combine(sets.precast.WS['Steel Cyclone'], {ammo="Yetshila +1",feet="Boii Calligae +2"})
+    sets.precast.WS['Steel Cyclone'].MS = set_combine(sets.precast.WS['Steel Cyclone'], {ammo="Yetshila +1",feet="Boii Calligae +3"})
    
     sets.precast.WS['King\'s Justice'] = set_combine(sets.precast.WS.Multi, {})
     sets.precast.WS['King\'s Justice'].Attack = set_combine(sets.precast.WS['King\'s Justice'], {})
-    sets.precast.WS['King\'s Justice'].MS = set_combine(sets.precast.WS['King\'s Justice'], {ammo="Yetshila +1",feet="Boii Calligae +2"})
+    sets.precast.WS['King\'s Justice'].MS = set_combine(sets.precast.WS['King\'s Justice'], {ammo="Yetshila +1",feet="Boii Calligae +3"})
    
     --sets.precast.WS['Metatron Torment'] = set_combine(sets.precast.WS, {})
     --sets.precast.WS['Metatron Torment'].AccLow = set_combine(sets.precast.WS['Metatron Torment'], {})
@@ -158,17 +158,17 @@ function init_gear_sets()
     --GSWD
     sets.precast.WS['Resolution'] = set_combine(sets.precast.WS.Multi, {})
     sets.precast.WS['Resolution'].Attack = set_combine(sets.precast.WS['Resolution'], {})
-    sets.precast.WS['Resolution'].MS = set_combine(sets.precast.WS['Resolution'], {ammo="Yetshila +1",feet="Boii Calligae +2"})
+    sets.precast.WS['Resolution'].MS = set_combine(sets.precast.WS['Resolution'], {ammo="Yetshila +1",feet="Boii Calligae +3"})
    
     sets.precast.WS['Scourge'] = set_combine(sets.precast.WS, {})
     sets.precast.WS['Scourge'].Attack = set_combine(sets.precast.WS['Scourge'], {})
-    sets.precast.WS['Scourge'].MS = set_combine(sets.precast.WS['Scourge'], {ammo="Yetshila +1",feet="Boii Calligae +2"})
+    sets.precast.WS['Scourge'].MS = set_combine(sets.precast.WS['Scourge'], {ammo="Yetshila +1",feet="Boii Calligae +3"})
    
    
     --SWD
     sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {})
     sets.precast.WS['Savage Blade'].Attack = set_combine(sets.precast.WS['Savage Blade'], {})
-    sets.precast.WS['Savage Blade'].MS = set_combine(sets.precast.WS['Savage Blade'], {ammo="Yetshila +1",feet="Boii Calligae +2"})
+    sets.precast.WS['Savage Blade'].MS = set_combine(sets.precast.WS['Savage Blade'], {ammo="Yetshila +1",feet="Boii Calligae +3"})
    
     sets.precast.WS['Sanguine Blade'] = set_combine(sets.precast.WS.Magic, {ring1="Archon ring"})
    
@@ -267,24 +267,24 @@ function init_gear_sets()
     -- Equip the weapon you want to use and engage, disengage, or force update with f12, the correct gear will be used; default weapon is whats equip when file loads.
     
 	sets.engaged = {ammo="Coiste Bodhar",																						-- 3
-		head="Boii Mask +2", neck="Warrior's bead necklace +2", left_ear="Schere Earring", right_ear="Boii Earring +2",			-- 7, 7, 6, 9
+		head="Boii Mask +3", neck="Warrior's bead necklace +2", left_ear="Schere Earring", right_ear="Boii Earring +2",			-- 7, 7, 6, 9
 		body="Sakpata's plate",	hands="Sakpata's Gauntlets", left_ring="Niqmaddu Ring", right_ring="Lehko Habhoka's Ring",		-- 8, 6, 0, 0
 		back="Null shawl", waist="Ioskeha Belt +1", legs="Pummeler's cuisses +4", feet="Pummeler's calligae",					-- 7, 9, 11, 9
 	}	-- 18% base + 10 gifts + 5 merits = 33, 73 gear  = 106% DA			Su4/5 boots 7/6 DA, 100% DA finish neck, +6/8 sTP
 	
 	sets.engaged.Hybrid = {ammo="Coiste Bodhar",																				-- 3
-		head="Boii Mask +2", neck="Warrior's bead necklace +2", left_ear="Schere Earring", right_ear="Boii Earring +2",			-- 7, 7, 6, 9
+		head="Boii Mask +3", neck="Warrior's bead necklace +2", left_ear="Schere Earring", right_ear="Boii Earring +2",			-- 7, 7, 6, 9
 		body="Sakpata's plate",	hands="Sakpata's Gauntlets", left_ring="Niqmaddu Ring", right_ring="Lehko Habhoka's Ring",		-- 8, 6, 0, 0
 		back="Null shawl", waist="Ioskeha belt +1", legs="Sakpata's Cuisses", feet="Sakpata's leggings",						-- 7, 9, 7, 4
 	}	-- 18% base + 10 gifts, 73 gear  = 101% DA
 	
 	sets.engaged.Defense = {ammo="Coiste Bodhar",																				-- 3
-		head="Boii Mask +2", neck="Warrior's bead necklace +2", left_ear="Schere Earring", right_ear="Boii Earring +2",			-- 7, 7, 6, 9
+		head="Boii Mask +3", neck="Warrior's bead necklace +2", left_ear="Schere Earring", right_ear="Boii Earring +2",			-- 7, 7, 6, 9
 		body="Sakpata's plate",	hands="Sakpata's Gauntlets", left_ring="Niqmaddu Ring", right_ring="Lehko Habhoka's Ring",		-- 8, 6, 0, 0
 		back="Null shawl", waist="Engraved Belt", legs="Sakpata's Cuisses", feet="Sakpata's leggings",							-- 10, 0, 7, 4
 	}	-- 18% base + 10 gifts, 67 gear  = 95% DA
 	
-	sets.engaged.AM3 = set_combine(sets.engaged, {ammo="Yetshila +1", legs="Boii cuisses +2", feet="Boii Calligae +2"})
+	sets.engaged.AM3 = set_combine(sets.engaged, {ammo="Yetshila +1", legs="Boii Cuisses +3", feet="Boii Calligae +3"})
    
 --***Great Axes***--
     --504: base = 4-hit--
@@ -299,7 +299,7 @@ function init_gear_sets()
  
     --Rag: base = 5-hit--
     sets.engaged.Ragnarok =  {ammo="Yetshila +1",
-    head="Boii Mask +2",
+    head="Boii Mask +3",
     body="Sakpata's plate",
     hands="Sakpata's Gauntlets",
     legs="Sakpata's Cuisses",
@@ -315,15 +315,15 @@ function init_gear_sets()
 --Dual Wield and other misc.-- 
  
     sets.engaged.Odium =   {ammo="Seething Bomblet +1",
-        head="Boii Mask +2",neck="Warrior's bead necklace +2",ear1="Schere Earring",ear2="Boii Earring +2",
-        body="Boii Lorica +2",hands="Sakpata's Gauntlets",ring1="Niqmaddu Ring",ring2="Lehko Habhoka's Ring",
-        back="Null shawl",waist="Shetal Stone",legs="Sakpata's Cuisses",feet="Boii Calligae +2"}
+        head="Boii Mask +3",neck="Warrior's bead necklace +2",ear1="Schere Earring",ear2="Boii Earring +2",
+        body="Boii Lorica +3",hands="Sakpata's Gauntlets",ring1="Niqmaddu Ring",ring2="Lehko Habhoka's Ring",
+        back="Null shawl",waist="Shetal Stone",legs="Sakpata's Cuisses",feet="Boii Calligae +3"}
    
     --------------------------------------
     -- Custom buff sets
     --------------------------------------
     -- Mighty Strikes TP Gear, combines with current melee set.
-    sets.buff.MS = {ammo="Yetshila +1", feet="Boii Calligae +2"}
+    sets.buff.MS = {ammo="Yetshila +1", feet="Boii Calligae +3"}
     -- Day/Element Helm, if helm is not in inventory or wardrobe, this will not fire, for those who do not own one
     sets.WSDayBonus = {}
     -- Earrings to use with Upheaval when TP is 3000

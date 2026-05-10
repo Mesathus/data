@@ -75,7 +75,7 @@ function init_gear_sets()
 	--------------------------------------
 
 	-- Precast sets to enhance JAs
-    sets.precast.JA['Vallation'] = set_combine(sets.enmity, {body="Runeist coat +2", legs="Futhark trousers +1"})
+    sets.precast.JA['Vallation'] = set_combine(sets.enmity, {body="Runeist coat +2", legs="Futhark trousers +3"})
     sets.precast.JA['Valiance'] = sets.precast.JA['Vallation']
     sets.precast.JA['Pflug'] = set_combine(sets.enmity, {feet="Runeist bottes +2"})
     sets.precast.JA['Battuta'] = set_combine(sets.enmity, {head="Futhark Bandeau +3"})
@@ -89,7 +89,8 @@ function init_gear_sets()
     sets.precast.JA['Elemental Sforzo'] = set_combine(sets.enmity, {body="Futhark Coat +1"})
     sets.precast.JA['Swordplay'] = set_combine(sets.enmity, {hands="Futhark Mitons +1"})
     sets.precast.JA['Embolden'] = set_combine(sets.enmity, {})
-    sets.precast.JA['Vivacious Pulse'] = set_combine(sets.enmity, {})
+    sets.precast.JA['Vivacious Pulse'] = set_combine(sets.enmity, {head="Erilaz Galea +3",neck="Hoxne torque",
+																   ring1="Stikini ring +1",ring2="Stikini ring +1",legs="Runeist trousers +2"})
     sets.precast.JA['One For All'] = set_combine(sets.enmity, {})
     sets.precast.JA['Provoke'] = sets.enmity
 
@@ -100,7 +101,7 @@ function init_gear_sets()
             body="Erilaz Surcoat +3", hands="Leyline gloves", ring1="Prolix Ring", ring2="Kishar ring",			--13, 8, 2, 4
             back=gear.CapeFC,waist="Flume belt",legs="Agwu's slops", feet="Carmine greaves +1"}					--10, 0, 7, 8
 			-- 72% FC  witful 3
-    sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash", legs="Futhark Trousers +1"})
+    sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash", legs="Futhark trousers +3"})
     sets.precast.FC['Utsusemi: Ichi'] = set_combine(sets.precast.FC, {neck='Magoraga beads', body="Passion jacket"})
     sets.precast.FC['Utsusemi: Ni'] = set_combine(sets.precast.FC['Utsusemi: Ichi'], {})
 
@@ -137,7 +138,7 @@ function init_gear_sets()
     sets.midcast['Enhancing Magic'] = {
 			head="Erilaz galea +3",neck="Incanter's Torque", left_ear="Mimir Earring",right_ear="Andoaa Earring",
 			body="Nyame mail",hands="Runeist mitons +2", left_ring="Defending Ring",right_ring="Murky Ring",
-			back=gear.CapeTank,waist="Olympus Sash", legs="Futhark Trousers +1",feet="Erilaz greaves +3"}
+			back=gear.CapeTank,waist="Olympus Sash", legs="Futhark trousers +3",feet="Erilaz greaves +3"}
 	
 	sets.midcast.EnhancingDuration =  set_combine(sets.midcast['Enhancing Magic'],{})
 	
